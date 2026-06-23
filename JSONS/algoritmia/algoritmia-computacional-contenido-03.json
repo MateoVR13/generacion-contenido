@@ -1,0 +1,2193 @@
+{
+  "subject": {
+    "id": "algoritmia-computacional",
+    "title": "Algoritmia Computacional",
+    "program": "Facultad de Ingenierías",
+    "contentNumber": "03",
+    "contentTotal": "07",
+    "contentTitle": "Datos, arreglos y representación estructurada",
+    "description": "Asignatura introductoria orientada a descomponer problemas complejos en pasos lógicos, precisos y ejecutables mediante estructuras de programación, análisis de algoritmos y evaluación del uso de memoria dinámica.",
+    "level": "Pregrado",
+    "language": "español",
+    "syllabus": {
+      "source": {
+        "type": "user-provided-summary",
+        "fileName": ""
+      },
+      "extractedFields": {
+        "code": "",
+        "faculty": "Facultad de Ingenierías",
+        "program": "",
+        "level": "Pregrado",
+        "type": "",
+        "modality": "Virtual",
+        "semester": "",
+        "credits": "",
+        "hours": {
+          "total": "",
+          "autonomous": "",
+          "directTeaching": ""
+        },
+        "updatedAt": "2026-06-22",
+        "version": "Borrador generado desde información suministrada por usuario"
+      },
+      "learningOutcomes": [
+        {
+          "id": "RA1",
+          "text": "Reconocerá y empleará las principales estructuras de programación para generar algoritmos computacionales con herramientas de control."
+        },
+        {
+          "id": "RA2",
+          "text": "Evaluará adecuadamente la asignación dinámica de memoria en la ejecución de algoritmos a partir de programación estructurada."
+        }
+      ],
+      "priorKnowledge": [
+        "Lectura comprensiva de enunciados técnicos.",
+        "Operaciones aritméticas básicas y razonamiento lógico elemental.",
+        "Uso básico de computador, archivos y entorno de programación.",
+        "Disposición para escribir, probar y corregir soluciones paso a paso."
+      ],
+      "competencies": [
+        "Descomposición de problemas en pasos ejecutables.",
+        "Diseño de algoritmos con estructuras de control.",
+        "Razonamiento sobre estado, trazas, memoria y datos.",
+        "Evaluación cualitativa de corrección, eficiencia y uso responsable de recursos."
+      ],
+      "evaluationCriteria": [
+        "Claridad en la identificación de entradas, salidas, restricciones y casos límite.",
+        "Uso pertinente de secuencia, selección, iteración, funciones y estructuras de datos básicas.",
+        "Capacidad para trazar algoritmos y justificar su comportamiento.",
+        "Manejo responsable de asignación y liberación de memoria dinámica cuando se requiera.",
+        "Comunicación ordenada de decisiones de diseño, pruebas y mejoras."
+      ],
+      "topics": [
+        "Pensamiento algorítmico y modelado del problema",
+        "Estructuras de control y programación estructurada",
+        "Datos, arreglos y representación estructurada",
+        "Memoria dinámica y ciclo de vida de los datos",
+        "Eficiencia, complejidad y crecimiento",
+        "Recursión y estructuras dinámicas",
+        "Integración, pruebas y calidad algorítmica"
+      ],
+      "methodologyNotes": [
+        "Asignatura 100% virtual organizada en siete contenidos mediante Aprendizaje Guiado."
+      ],
+      "evaluationPlan": [],
+      "bibliography": {
+        "basic": [
+          {
+            "type": "Currículo internacional",
+            "text": "Association for Computing Machinery, IEEE Computer Society, & Association for the Advancement of Artificial Intelligence. (2023). Computer Science Curricula 2023: Curriculum guidelines for undergraduate degree programs in computer science. https://doi.org/10.1145/3664191"
+          },
+          {
+            "type": "Artículo académico",
+            "text": "Wing, J. M. (2006). Computational thinking. Communications of the ACM, 49(3), 33-35. https://doi.org/10.1145/1118178.1118215"
+          },
+          {
+            "type": "Libro base",
+            "text": "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). Introduction to algorithms (4th ed.). MIT Press."
+          },
+          {
+            "type": "Libro base",
+            "text": "Kernighan, B. W., & Ritchie, D. M. (1988). The C programming language (2nd ed.). Prentice Hall."
+          },
+          {
+            "type": "Libro base",
+            "text": "Bryant, R. E., & O'Hallaron, D. R. (2016). Computer systems: A programmer's perspective (3rd ed.). Pearson."
+          },
+          {
+            "type": "Libro base",
+            "text": "Sedgewick, R., & Wayne, K. (2011). Algorithms (4th ed.). Addison-Wesley."
+          }
+        ],
+        "complementary": [
+          {
+            "type": "Libro base",
+            "text": "Bryant, R. E., & O'Hallaron, D. R. (2016). Computer systems: A programmer's perspective (3rd ed.). Pearson."
+          },
+          {
+            "type": "Libro base",
+            "text": "Sedgewick, R., & Wayne, K. (2011). Algorithms (4th ed.). Addison-Wesley."
+          }
+        ]
+      },
+      "missingFields": [
+        "Código de asignatura",
+        "Programa académico específico",
+        "Tipo de asignatura",
+        "Semestre",
+        "Créditos",
+        "Horas totales",
+        "Horas de trabajo autónomo",
+        "Horas de docencia directa",
+        "Cronograma oficial del sílabo",
+        "Porcentajes o pesos evaluativos oficiales"
+      ]
+    },
+    "methodology": {
+      "code": "AG",
+      "name": "Aprendizaje Guiado",
+      "rationale": "La asignatura es virtual y requiere una ruta progresiva, explícita y verificable: primero comprensión conceptual, luego visualización, práctica guiada, validación formativa y transferencia.",
+      "moments": [
+        "Fase 1",
+        "Fase 2",
+        "Fase 3",
+        "Fase 4"
+      ]
+    }
+  },
+  "scorm": {
+    "labels": {
+      "theoryNav": "Ruta de aprendizaje",
+      "materialNav": "Material complementario"
+    },
+    "sectionOrder": [
+      "intro",
+      "seccion-1",
+      "seccion-2",
+      "seccion-3",
+      "seccion-4",
+      "seccion-5"
+    ],
+    "sections": {
+      "intro": {
+        "kind": "theory",
+        "theme": "Intro",
+        "badge": "Intro",
+        "navLabel": "Introducción",
+        "title": "Datos, arreglos y representación estructurada",
+        "intro": [
+          "Organizar información para procesarla correctamente"
+        ],
+        "estimatedTime": "35 minutos",
+        "studentAction": "Leer la ruta, activar saberes previos y preparar la bitácora.",
+        "evidence": "Respuesta diagnóstica y bitácora inicial.",
+        "feedbackRoute": "Retroalimentación automática y revisión de bitácora.",
+        "componentOrder": [
+          "intro-teoria",
+          "intro-objetivos",
+          "intro-fases",
+          "intro-diagnostico"
+        ],
+        "components": {
+          "intro-teoria": {
+            "type": "theory-block",
+            "title": "Presentación del contenido 03",
+            "eyebrow": "Base de estudio",
+            "body": [
+              "Este contenido desarrolla representar datos en variables, arreglos y registros para que los algoritmos puedan recorrerlos, validarlos y transformarlos. La ruta está diseñada para que el estudiante avance desde una comprensión inicial hasta una aplicación verificable mediante práctica y retroalimentación.",
+              "La asignatura trabaja de forma simultánea RA1 y RA2: las estructuras de programación permiten construir el flujo del algoritmo, mientras que la evaluación de memoria ayuda a decidir si los datos pueden sostenerse durante la ejecución.",
+              "El aprendizaje guiado propone estudiar primero el concepto, luego observar una representación visual o técnica, practicar con pasos concretos, validar comprensión y cerrar con una evidencia breve."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "route",
+                "text": "La ruta avanza con Aprendizaje Guiado por fases."
+              },
+              {
+                "icon": "schema",
+                "text": "Cada sección conecta teoría, ejemplo, práctica y validación."
+              },
+              {
+                "icon": "memory",
+                "text": "RA1 y RA2 se observan de manera integrada."
+              },
+              {
+                "icon": "task_alt",
+                "text": "La evidencia principal es una bitácora verificable."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Cómo trabajar este contenido",
+                "body": [
+                  "Lee el bloque teórico antes de interactuar con imágenes, código, fórmulas o actividades. Después completa la práctica guiada y registra una evidencia breve en tu bitácora."
+                ]
+              },
+              {
+                "title": "Evidencia esperada",
+                "body": [
+                  "Al finalizar, debes poder explicar una decisión algorítmica, mostrar una traza o prueba y justificar cómo se usan los datos en memoria cuando aplique."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo de recorrido",
+              "body": [
+                "Si aparece un fragmento de código, primero identifica entrada, procesamiento, salida y memoria involucrada; luego ejecútalo o trázalo con los datos indicados."
+              ]
+            },
+            "closing": [
+              "Antes de avanzar, prepara una bitácora con tres columnas: decisión, evidencia y mejora."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "intro-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos del contenido",
+            "items": [
+              {
+                "icon": "check_circle",
+                "text": "Explicar el propósito de datos, arreglos y representación estructurada dentro de la asignatura."
+              },
+              {
+                "icon": "code",
+                "text": "Aplicar estructuras de programación o representación de datos en una tarea guiada."
+              },
+              {
+                "icon": "memory",
+                "text": "Relacionar decisiones de datos con memoria, ejecución y evidencia de prueba."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "intro-fases": {
+            "type": "table",
+            "title": "Ruta de Aprendizaje Guiado",
+            "columns": [
+              "Fase",
+              "Acción del estudiante",
+              "Evidencia"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Fase 1",
+                  "Contextualizar el concepto.",
+                  "Respuesta de presaberes."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 2",
+                  "Desarrollar teoría y observar ejemplos.",
+                  "Notas de lectura o mapa breve."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 3",
+                  "Aplicar con práctica guiada.",
+                  "Traza, código o tabla de decisión."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 4",
+                  "Validar y transferir.",
+                  "Bitácora y reflexión final."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "intro-diagnostico": {
+            "type": "quiz",
+            "title": "Chequeo inicial",
+            "questions": [
+              {
+                "prompt": "¿Qué evidencia permite saber si un algoritmo está suficientemente definido?",
+                "options": [
+                  {
+                    "text": "Entradas, salidas, pasos y casos de prueba verificables.",
+                    "correct": true,
+                    "feedback": "Correcto: la definición algorítmica se valida por reproducibilidad y evidencia."
+                  },
+                  {
+                    "text": "Que el algoritmo tenga muchas instrucciones.",
+                    "correct": false,
+                    "feedback": "Revisa la presentación: la longitud no garantiza claridad ni corrección."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-1": {
+        "kind": "theory",
+        "theme": "1",
+        "badge": "Sección 1",
+        "navLabel": "Tipos de datos, variables y dominio",
+        "title": "Tipos de datos, variables y dominio",
+        "intro": [
+          "Un dato no es solo un valor: tiene tipo, dominio, unidad y propósito. Elegir entre entero, real, carácter o lógico afecta operaciones permitidas y memoria requerida."
+        ],
+        "estimatedTime": "50 minutos",
+        "studentAction": "Leer, observar, practicar, validar y registrar evidencia.",
+        "evidence": "Bitácora con decisión técnica, traza o prueba.",
+        "feedbackRoute": "Retroalimentación automática en validaciones y revisión docente de evidencia.",
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
+        "componentOrder": [
+          "teoria",
+          "visual",
+          "apoyo",
+          "practica",
+          "validacion",
+          "cierre"
+        ],
+        "components": {
+          "teoria": {
+            "type": "theory-block",
+            "title": "Tipos de datos, variables y dominio",
+            "eyebrow": "Desarrollo conceptual",
+            "body": [
+              "Un dato no es solo un valor: tiene tipo, dominio, unidad y propósito. Elegir entre entero, real, carácter o lógico afecta operaciones permitidas y memoria requerida.",
+              "La variable representa un espacio de almacenamiento con nombre. Su valor cambia durante la ejecución, pero su significado debe mantenerse estable para que el algoritmo sea legible.",
+              "Definir dominio evita operaciones imposibles. Una edad no debería ser negativa; una cantidad de elementos no debería ser fraccionaria; un índice debe respetar límites."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "task_alt",
+                "text": "Tipo y dominio reducen ambigüedad."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Una variable necesita significado estable."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Los límites protegen la memoria."
+              },
+              {
+                "icon": "task_alt",
+                "text": "El dato correcto facilita el algoritmo correcto."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura técnica",
+                "body": [
+                  "Un dato no es solo un valor: tiene tipo, dominio, unidad y propósito. Elegir entre entero, real, carácter o lógico afecta operaciones permitidas y memoria requerida."
+                ]
+              },
+              {
+                "title": "Decisión de diseño",
+                "body": [
+                  "La variable representa un espacio de almacenamiento con nombre. Su valor cambia durante la ejecución, pero su significado debe mantenerse estable para que el algoritmo sea legible."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "Definir dominio evita operaciones imposibles. Una edad no debería ser negativa; una cantidad de elementos no debería ser fraccionaria; un índice debe respetar límites."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, explica con tus palabras qué decisión permite tomar este concepto."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "visual": {
+            "type": "image",
+            "title": "Visual: Tipos de datos, variables y dominio",
+            "assetId": "algoritmia-computacional-03-s1-visual",
+            "src": "",
+            "alt": "Recurso visual para comprender tipos de datos, variables y dominio y conectar el concepto con una decisión algorítmica.",
+            "caption": "Recurso visual para comprender tipos de datos, variables y dominio y conectar el concepto con una decisión algorítmica.",
+            "prompt": "Crear tarjetas de tipos de datos con ejemplo, dominio válido, operación permitida y riesgo de uso incorrecto."
+          },
+          "apoyo": {
+            "type": "table",
+            "title": "Tipo, dominio y riesgo",
+            "columns": [
+              "Dato",
+              "Tipo sugerido",
+              "Riesgo"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Cantidad de estudiantes",
+                  "Entero no negativo",
+                  "Aceptar fracciones o negativos."
+                ]
+              },
+              {
+                "cells": [
+                  "Promedio",
+                  "Real",
+                  "Perder decimales por truncamiento."
+                ]
+              },
+              {
+                "cells": [
+                  "Activo",
+                  "Lógico",
+                  "Confundir estados con textos."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: Tipos de datos, variables y dominio",
+            "statement": "Define tipo y dominio para cinco datos de un sistema de inventario.",
+            "steps": [
+              {
+                "title": "Comprender",
+                "body": "Reescribe el enunciado con entradas, salida esperada y restricción principal.",
+                "final": false
+              },
+              {
+                "title": "Aplicar",
+                "body": "Usa la teoría de la sección para decidir estructura, condición, recorrido o memoria.",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Contrasta tu respuesta con un caso normal y un caso límite.",
+                "final": false
+              },
+              {
+                "title": "Registrar",
+                "body": "Anota en la bitácora la decisión tomada, la evidencia y una mejora posible.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "validacion": {
+            "type": "quiz",
+            "title": "Validación rápida: Tipos de datos, variables y dominio",
+            "questions": [
+              {
+                "prompt": "¿Qué debe quedar claro antes de considerar completa esta sección?",
+                "options": [
+                  {
+                    "text": "La decisión técnica, su evidencia y la forma de verificarla.",
+                    "correct": true,
+                    "feedback": "Correcto: el aprendizaje se evidencia con decisión, aplicación y verificación."
+                  },
+                  {
+                    "text": "Solo la definición memorizada del concepto.",
+                    "correct": false,
+                    "feedback": "Revisa la práctica guiada: memorizar no basta si no puedes aplicar y validar."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "cierre": {
+            "type": "callout",
+            "title": "Cierre de sección",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Registra una conclusión breve: qué comprendiste, qué evidencia lo demuestra y qué revisarías si el algoritmo fallara."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      },
+      "seccion-2": {
+        "kind": "theory",
+        "theme": "2",
+        "badge": "Sección 2",
+        "navLabel": "Arreglos: colección indexada",
+        "title": "Arreglos: colección indexada",
+        "intro": [
+          "Un arreglo almacena varios valores del mismo tipo bajo un nombre común. Cada elemento se accede por un índice, y ese índice debe permanecer dentro del rango válido."
+        ],
+        "estimatedTime": "50 minutos",
+        "studentAction": "Leer, observar, practicar, validar y registrar evidencia.",
+        "evidence": "Bitácora con decisión técnica, traza o prueba.",
+        "feedbackRoute": "Retroalimentación automática en validaciones y revisión docente de evidencia.",
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
+        "componentOrder": [
+          "teoria",
+          "visual",
+          "apoyo",
+          "practica",
+          "validacion",
+          "cierre"
+        ],
+        "components": {
+          "teoria": {
+            "type": "theory-block",
+            "title": "Arreglos: colección indexada",
+            "eyebrow": "Desarrollo conceptual",
+            "body": [
+              "Un arreglo almacena varios valores del mismo tipo bajo un nombre común. Cada elemento se accede por un índice, y ese índice debe permanecer dentro del rango válido.",
+              "Recorrer un arreglo exige coordinar ciclo, tamaño e índice. El error típico consiste en usar una posición inexistente, especialmente al confundir tamaño con último índice.",
+              "En memoria, los arreglos suelen ocupar posiciones contiguas. Esta propiedad facilita recorrido eficiente, pero hace necesario conocer el tamaño o reservarlo correctamente."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "task_alt",
+                "text": "El índice identifica posición."
+              },
+              {
+                "icon": "task_alt",
+                "text": "El tamaño no es el último índice."
+              },
+              {
+                "icon": "task_alt",
+                "text": "El recorrido debe respetar límites."
+              },
+              {
+                "icon": "task_alt",
+                "text": "La contigüidad mejora acceso pero exige cuidado."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura técnica",
+                "body": [
+                  "Un arreglo almacena varios valores del mismo tipo bajo un nombre común. Cada elemento se accede por un índice, y ese índice debe permanecer dentro del rango válido."
+                ]
+              },
+              {
+                "title": "Decisión de diseño",
+                "body": [
+                  "Recorrer un arreglo exige coordinar ciclo, tamaño e índice. El error típico consiste en usar una posición inexistente, especialmente al confundir tamaño con último índice."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "En memoria, los arreglos suelen ocupar posiciones contiguas. Esta propiedad facilita recorrido eficiente, pero hace necesario conocer el tamaño o reservarlo correctamente."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, explica con tus palabras qué decisión permite tomar este concepto."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "visual": {
+            "type": "image",
+            "title": "Visual: Arreglos: colección indexada",
+            "assetId": "algoritmia-computacional-03-s2-visual",
+            "src": "",
+            "alt": "Recurso visual para comprender arreglos: colección indexada y conectar el concepto con una decisión algorítmica.",
+            "caption": "Recurso visual para comprender arreglos: colección indexada y conectar el concepto con una decisión algorítmica.",
+            "prompt": "Crear una figura de arreglo de 6 posiciones con índices 0 a 5, valores, flecha de recorrido y advertencia sobre índice fuera de rango."
+          },
+          "apoyo": {
+            "type": "formula",
+            "title": "Rango de índices",
+            "context": [
+              "Para un arreglo de tamaño n con índices desde cero, las posiciones válidas se describen con esta expresión."
+            ],
+            "latex": "0 \\leq i < n",
+            "variables": [
+              {
+                "symbol": "i",
+                "description": "índice usado para acceder al arreglo."
+              },
+              {
+                "symbol": "n",
+                "description": "cantidad de elementos del arreglo."
+              }
+            ],
+            "explanation": [
+              "La expresión evita acceder a memoria que no pertenece al arreglo."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: Arreglos: colección indexada",
+            "statement": "Traza un recorrido de arreglo y marca el primer índice inválido si el ciclo usa i <= n.",
+            "steps": [
+              {
+                "title": "Comprender",
+                "body": "Reescribe el enunciado con entradas, salida esperada y restricción principal.",
+                "final": false
+              },
+              {
+                "title": "Aplicar",
+                "body": "Usa la teoría de la sección para decidir estructura, condición, recorrido o memoria.",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Contrasta tu respuesta con un caso normal y un caso límite.",
+                "final": false
+              },
+              {
+                "title": "Registrar",
+                "body": "Anota en la bitácora la decisión tomada, la evidencia y una mejora posible.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "validacion": {
+            "type": "quiz",
+            "title": "Validación rápida: Arreglos: colección indexada",
+            "questions": [
+              {
+                "prompt": "¿Qué debe quedar claro antes de considerar completa esta sección?",
+                "options": [
+                  {
+                    "text": "La decisión técnica, su evidencia y la forma de verificarla.",
+                    "correct": true,
+                    "feedback": "Correcto: el aprendizaje se evidencia con decisión, aplicación y verificación."
+                  },
+                  {
+                    "text": "Solo la definición memorizada del concepto.",
+                    "correct": false,
+                    "feedback": "Revisa la práctica guiada: memorizar no basta si no puedes aplicar y validar."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "cierre": {
+            "type": "callout",
+            "title": "Cierre de sección",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Registra una conclusión breve: qué comprendiste, qué evidencia lo demuestra y qué revisarías si el algoritmo fallara."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      },
+      "seccion-3": {
+        "kind": "theory",
+        "theme": "3",
+        "badge": "Sección 3",
+        "navLabel": "Búsqueda lineal y recorrido completo",
+        "title": "Búsqueda lineal y recorrido completo",
+        "intro": [
+          "La búsqueda lineal revisa elementos uno por uno hasta encontrar el objetivo o terminar la colección. Es simple, útil y sirve para comprender el costo de recorrer datos."
+        ],
+        "estimatedTime": "50 minutos",
+        "studentAction": "Leer, observar, practicar, validar y registrar evidencia.",
+        "evidence": "Bitácora con decisión técnica, traza o prueba.",
+        "feedbackRoute": "Retroalimentación automática en validaciones y revisión docente de evidencia.",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "teoria",
+          "visual",
+          "apoyo",
+          "practica",
+          "validacion",
+          "cierre"
+        ],
+        "components": {
+          "teoria": {
+            "type": "theory-block",
+            "title": "Búsqueda lineal y recorrido completo",
+            "eyebrow": "Desarrollo conceptual",
+            "body": [
+              "La búsqueda lineal revisa elementos uno por uno hasta encontrar el objetivo o terminar la colección. Es simple, útil y sirve para comprender el costo de recorrer datos.",
+              "El algoritmo debe definir qué devuelve cuando no encuentra el objetivo. Sin esa convención, la función queda incompleta y puede confundirse una posición válida con un error.",
+              "Aunque la búsqueda lineal no es siempre la más eficiente, es una base importante para entender precondiciones: si los datos no están ordenados, descartar mitades no es válido."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "task_alt",
+                "text": "La búsqueda lineal no exige orden."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Debe declarar resultado cuando no encuentra."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Cada comparación aporta evidencia."
+              },
+              {
+                "icon": "task_alt",
+                "text": "El costo depende del tamaño de entrada."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura técnica",
+                "body": [
+                  "La búsqueda lineal revisa elementos uno por uno hasta encontrar el objetivo o terminar la colección. Es simple, útil y sirve para comprender el costo de recorrer datos."
+                ]
+              },
+              {
+                "title": "Decisión de diseño",
+                "body": [
+                  "El algoritmo debe definir qué devuelve cuando no encuentra el objetivo. Sin esa convención, la función queda incompleta y puede confundirse una posición válida con un error."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "Aunque la búsqueda lineal no es siempre la más eficiente, es una base importante para entender precondiciones: si los datos no están ordenados, descartar mitades no es válido."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, explica con tus palabras qué decisión permite tomar este concepto."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "visual": {
+            "type": "image",
+            "title": "Visual: Búsqueda lineal y recorrido completo",
+            "assetId": "algoritmia-computacional-03-s3-visual",
+            "src": "",
+            "alt": "Recurso visual para comprender búsqueda lineal y recorrido completo y conectar el concepto con una decisión algorítmica.",
+            "caption": "Recurso visual para comprender búsqueda lineal y recorrido completo y conectar el concepto con una decisión algorítmica.",
+            "prompt": "Crear una fila de datos con una lupa avanzando posición por posición hasta encontrar un objetivo; incluir caso no encontrado."
+          },
+          "apoyo": {
+            "type": "code",
+            "title": "Búsqueda lineal en C",
+            "language": "c",
+            "languageLabel": "C",
+            "fileName": "busqueda_lineal.c",
+            "instructions": [
+              "Guarda el fragmento como busqueda_lineal.c.",
+              "Ábrelo en un editor o IDE con compilador C. Desde una terminal ubicada en la carpeta del archivo ejecuta: gcc busqueda_lineal.c -o busqueda_lineal.",
+              "En Windows ejecuta .\\busqueda_lineal.exe; en macOS/Linux ejecuta ./busqueda_lineal.",
+              "Usa como entrada de prueba: objetivo 2 en {7,4,9,2,5}.",
+              "Antes de ejecutar, identifica cuántas comparaciones se realizan y qué valor se retorna si el objetivo no aparece.",
+              "Después de ejecutar, compara la salida con tu traza y explica cualquier diferencia."
+            ],
+            "code": "#include <stdio.h>\n\nint buscar(const int datos[], int n, int objetivo) {\n    for (int i = 0; i < n; i++) {\n        if (datos[i] == objetivo) {\n            return i;\n        }\n    }\n    return -1;\n}\n\nint main(void) {\n    int datos[] = {7, 4, 9, 2, 5};\n    int pos = buscar(datos, 5, 2);\n    printf(\"Posicion: %d\\n\", pos);\n    return 0;\n}",
+            "expectedOutput": [
+              "La salida esperada es Posicion: 3 porque el valor 2 está en el índice 3."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: Búsqueda lineal y recorrido completo",
+            "statement": "Modifica la función para contar comparaciones y reportarlas junto con la posición.",
+            "steps": [
+              {
+                "title": "Comprender",
+                "body": "Reescribe el enunciado con entradas, salida esperada y restricción principal.",
+                "final": false
+              },
+              {
+                "title": "Aplicar",
+                "body": "Usa la teoría de la sección para decidir estructura, condición, recorrido o memoria.",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Contrasta tu respuesta con un caso normal y un caso límite.",
+                "final": false
+              },
+              {
+                "title": "Registrar",
+                "body": "Anota en la bitácora la decisión tomada, la evidencia y una mejora posible.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "validacion": {
+            "type": "quiz",
+            "title": "Validación rápida: Búsqueda lineal y recorrido completo",
+            "questions": [
+              {
+                "prompt": "¿Qué debe quedar claro antes de considerar completa esta sección?",
+                "options": [
+                  {
+                    "text": "La decisión técnica, su evidencia y la forma de verificarla.",
+                    "correct": true,
+                    "feedback": "Correcto: el aprendizaje se evidencia con decisión, aplicación y verificación."
+                  },
+                  {
+                    "text": "Solo la definición memorizada del concepto.",
+                    "correct": false,
+                    "feedback": "Revisa la práctica guiada: memorizar no basta si no puedes aplicar y validar."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "cierre": {
+            "type": "callout",
+            "title": "Cierre de sección",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Registra una conclusión breve: qué comprendiste, qué evidencia lo demuestra y qué revisarías si el algoritmo fallara."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-4": {
+        "kind": "theory",
+        "theme": "4",
+        "badge": "Sección 4",
+        "navLabel": "Registros y datos relacionados",
+        "title": "Registros y datos relacionados",
+        "intro": [
+          "Un registro agrupa datos relacionados que describen una misma entidad. En lugar de manejar nombre, código y nota como variables sueltas, se pueden organizar como partes de un estudiante."
+        ],
+        "estimatedTime": "50 minutos",
+        "studentAction": "Leer, observar, practicar, validar y registrar evidencia.",
+        "evidence": "Bitácora con decisión técnica, traza o prueba.",
+        "feedbackRoute": "Retroalimentación automática en validaciones y revisión docente de evidencia.",
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
+        "componentOrder": [
+          "teoria",
+          "visual",
+          "apoyo",
+          "practica",
+          "validacion",
+          "cierre"
+        ],
+        "components": {
+          "teoria": {
+            "type": "theory-block",
+            "title": "Registros y datos relacionados",
+            "eyebrow": "Desarrollo conceptual",
+            "body": [
+              "Un registro agrupa datos relacionados que describen una misma entidad. En lugar de manejar nombre, código y nota como variables sueltas, se pueden organizar como partes de un estudiante.",
+              "La organización estructurada reduce errores de correspondencia. Si se usan arreglos separados, un índice mal usado puede mezclar datos de personas distintas.",
+              "Los registros preparan el camino hacia estructuras más complejas: listas, colas, árboles y objetos. En todos los casos, la pregunta sigue siendo qué datos pertenecen juntos y cómo se recorren."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "task_alt",
+                "text": "Un registro expresa pertenencia."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Agrupar datos reduce inconsistencias."
+              },
+              {
+                "icon": "task_alt",
+                "text": "La estructura elegida afecta recorrido."
+              },
+              {
+                "icon": "task_alt",
+                "text": "RA2 observa cómo se almacena la entidad."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura técnica",
+                "body": [
+                  "Un registro agrupa datos relacionados que describen una misma entidad. En lugar de manejar nombre, código y nota como variables sueltas, se pueden organizar como partes de un estudiante."
+                ]
+              },
+              {
+                "title": "Decisión de diseño",
+                "body": [
+                  "La organización estructurada reduce errores de correspondencia. Si se usan arreglos separados, un índice mal usado puede mezclar datos de personas distintas."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "Los registros preparan el camino hacia estructuras más complejas: listas, colas, árboles y objetos. En todos los casos, la pregunta sigue siendo qué datos pertenecen juntos y cómo se recorren."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, explica con tus palabras qué decisión permite tomar este concepto."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "visual": {
+            "type": "image",
+            "title": "Visual: Registros y datos relacionados",
+            "assetId": "algoritmia-computacional-03-s4-visual",
+            "src": "",
+            "alt": "Recurso visual para comprender registros y datos relacionados y conectar el concepto con una decisión algorítmica.",
+            "caption": "Recurso visual para comprender registros y datos relacionados y conectar el concepto con una decisión algorítmica.",
+            "prompt": "Crear una ficha de registro Estudiante con campos código, nombre, nota y estado; mostrar arreglo de registros."
+          },
+          "apoyo": {
+            "type": "table",
+            "title": "Registro frente a variables sueltas",
+            "columns": [
+              "Criterio",
+              "Variables sueltas",
+              "Registro"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Lectura",
+                  "Datos dispersos.",
+                  "Datos agrupados por entidad."
+                ]
+              },
+              {
+                "cells": [
+                  "Riesgo",
+                  "Cruzar índices incorrectos.",
+                  "Mantener campos juntos."
+                ]
+              },
+              {
+                "cells": [
+                  "Escalabilidad",
+                  "Difícil al crecer.",
+                  "Facilita arreglos de entidades."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: Registros y datos relacionados",
+            "statement": "Diseña un registro para representar una medición de sensor con valor, unidad, fecha y estado.",
+            "steps": [
+              {
+                "title": "Comprender",
+                "body": "Reescribe el enunciado con entradas, salida esperada y restricción principal.",
+                "final": false
+              },
+              {
+                "title": "Aplicar",
+                "body": "Usa la teoría de la sección para decidir estructura, condición, recorrido o memoria.",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Contrasta tu respuesta con un caso normal y un caso límite.",
+                "final": false
+              },
+              {
+                "title": "Registrar",
+                "body": "Anota en la bitácora la decisión tomada, la evidencia y una mejora posible.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "validacion": {
+            "type": "quiz",
+            "title": "Validación rápida: Registros y datos relacionados",
+            "questions": [
+              {
+                "prompt": "¿Qué debe quedar claro antes de considerar completa esta sección?",
+                "options": [
+                  {
+                    "text": "La decisión técnica, su evidencia y la forma de verificarla.",
+                    "correct": true,
+                    "feedback": "Correcto: el aprendizaje se evidencia con decisión, aplicación y verificación."
+                  },
+                  {
+                    "text": "Solo la definición memorizada del concepto.",
+                    "correct": false,
+                    "feedback": "Revisa la práctica guiada: memorizar no basta si no puedes aplicar y validar."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "cierre": {
+            "type": "callout",
+            "title": "Cierre de sección",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Registra una conclusión breve: qué comprendiste, qué evidencia lo demuestra y qué revisarías si el algoritmo fallara."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      },
+      "seccion-5": {
+        "kind": "theory",
+        "theme": "5",
+        "badge": "Sección 5",
+        "navLabel": "Errores de representación y validación de datos",
+        "title": "Errores de representación y validación de datos",
+        "intro": [
+          "Muchos algoritmos fallan no por la estructura de control, sino por una representación de datos incoherente. Elegir tipo, rango o estructura incorrecta obliga a corregir problemas después."
+        ],
+        "estimatedTime": "50 minutos",
+        "studentAction": "Leer, observar, practicar, validar y registrar evidencia.",
+        "evidence": "Bitácora con decisión técnica, traza o prueba.",
+        "feedbackRoute": "Retroalimentación automática en validaciones y revisión docente de evidencia.",
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
+        "componentOrder": [
+          "teoria",
+          "visual",
+          "apoyo",
+          "practica",
+          "validacion",
+          "cierre"
+        ],
+        "components": {
+          "teoria": {
+            "type": "theory-block",
+            "title": "Errores de representación y validación de datos",
+            "eyebrow": "Desarrollo conceptual",
+            "body": [
+              "Muchos algoritmos fallan no por la estructura de control, sino por una representación de datos incoherente. Elegir tipo, rango o estructura incorrecta obliga a corregir problemas después.",
+              "La validación temprana impide que datos inválidos entren al procesamiento central. Esto protege resultados y evita accesos fuera de rango en estructuras indexadas.",
+              "La representación también tiene costo de memoria. Guardar datos innecesarios, duplicados o sin liberar puede afectar la ejecución cuando la entrada crece."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "task_alt",
+                "text": "Validar temprano reduce daños."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Representar mal obliga a parches."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Los datos duplicados consumen memoria."
+              },
+              {
+                "icon": "task_alt",
+                "text": "El diseño de datos conecta RA1 y RA2."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura técnica",
+                "body": [
+                  "Muchos algoritmos fallan no por la estructura de control, sino por una representación de datos incoherente. Elegir tipo, rango o estructura incorrecta obliga a corregir problemas después."
+                ]
+              },
+              {
+                "title": "Decisión de diseño",
+                "body": [
+                  "La validación temprana impide que datos inválidos entren al procesamiento central. Esto protege resultados y evita accesos fuera de rango en estructuras indexadas."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "La representación también tiene costo de memoria. Guardar datos innecesarios, duplicados o sin liberar puede afectar la ejecución cuando la entrada crece."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, explica con tus palabras qué decisión permite tomar este concepto."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "visual": {
+            "type": "image",
+            "title": "Visual: Errores de representación y validación de datos",
+            "assetId": "algoritmia-computacional-03-s5-visual",
+            "src": "",
+            "alt": "Recurso visual para comprender errores de representación y validación de datos y conectar el concepto con una decisión algorítmica.",
+            "caption": "Recurso visual para comprender errores de representación y validación de datos y conectar el concepto con una decisión algorítmica.",
+            "prompt": "Crear un diagrama de tubería con entrada, validación, estructura de datos, procesamiento y salida; señalar puntos de error."
+          },
+          "apoyo": {
+            "type": "multi-select",
+            "title": "Detecta riesgos de representación",
+            "prompt": "¿Qué decisiones ayudan a evitar errores al procesar arreglos?",
+            "options": [
+              {
+                "text": "Validar que el tamaño sea positivo.",
+                "correct": true
+              },
+              {
+                "text": "Usar índices dentro del rango.",
+                "correct": true
+              },
+              {
+                "text": "Definir qué ocurre con datos inválidos.",
+                "correct": true
+              },
+              {
+                "text": "Ignorar el tamaño porque el ciclo se detendrá solo.",
+                "correct": false
+              }
+            ],
+            "feedbackCorrect": "Correcto: esas decisiones protegen la lógica y la memoria.",
+            "feedbackIncomplete": "Revisa la relación entre tamaño, índice y validación antes de recorrer datos.",
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: Errores de representación y validación de datos",
+            "statement": "Revisa un algoritmo que procesa notas y propone tres validaciones antes del recorrido.",
+            "steps": [
+              {
+                "title": "Comprender",
+                "body": "Reescribe el enunciado con entradas, salida esperada y restricción principal.",
+                "final": false
+              },
+              {
+                "title": "Aplicar",
+                "body": "Usa la teoría de la sección para decidir estructura, condición, recorrido o memoria.",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Contrasta tu respuesta con un caso normal y un caso límite.",
+                "final": false
+              },
+              {
+                "title": "Registrar",
+                "body": "Anota en la bitácora la decisión tomada, la evidencia y una mejora posible.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "validacion": {
+            "type": "quiz",
+            "title": "Validación rápida: Errores de representación y validación de datos",
+            "questions": [
+              {
+                "prompt": "¿Qué debe quedar claro antes de considerar completa esta sección?",
+                "options": [
+                  {
+                    "text": "La decisión técnica, su evidencia y la forma de verificarla.",
+                    "correct": true,
+                    "feedback": "Correcto: el aprendizaje se evidencia con decisión, aplicación y verificación."
+                  },
+                  {
+                    "text": "Solo la definición memorizada del concepto.",
+                    "correct": false,
+                    "feedback": "Revisa la práctica guiada: memorizar no basta si no puedes aplicar y validar."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "cierre": {
+            "type": "callout",
+            "title": "Cierre de sección",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Registra una conclusión breve: qué comprendiste, qué evidencia lo demuestra y qué revisarías si el algoritmo fallara."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "pdf": {
+    "guideLabel": "GUÍA DE ESTUDIO VIRTUAL",
+    "kicker": "Aprendizaje guiado · Práctica aplicada · Autoevaluación",
+    "institution": "Universidad de América",
+    "year": "2026",
+    "title": "Algoritmia Computacional: Datos, arreglos y representación estructurada",
+    "subtitle": "Organizar información para procesarla correctamente",
+    "purpose": "Guiar el estudio autónomo del contenido 03 mediante teoría, ejemplos, visualizaciones, práctica y evaluación cualitativa conectada con RA1 y RA2.",
+    "structure": "Introducción · cinco secciones teóricas · prácticas guiadas · ejercicios imprimibles",
+    "minimumPages": 10,
+    "sectionOrder": [
+      "pdf-intro",
+      "pdf-seccion-1",
+      "pdf-seccion-2",
+      "pdf-seccion-3",
+      "pdf-seccion-4",
+      "pdf-seccion-5"
+    ],
+    "sections": {
+      "pdf-intro": {
+        "title": "Introducción al contenido 03",
+        "intro": [
+          "Organizar información para procesarla correctamente"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-objetivos",
+          "pdf-fases",
+          "pdf-callout"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Presentación del contenido 03",
+            "eyebrow": "Base de estudio",
+            "body": [
+              "Este contenido desarrolla representar datos en variables, arreglos y registros para que los algoritmos puedan recorrerlos, validarlos y transformarlos. La ruta está diseñada para que el estudiante avance desde una comprensión inicial hasta una aplicación verificable mediante práctica y retroalimentación.",
+              "La asignatura trabaja de forma simultánea RA1 y RA2: las estructuras de programación permiten construir el flujo del algoritmo, mientras que la evaluación de memoria ayuda a decidir si los datos pueden sostenerse durante la ejecución.",
+              "El aprendizaje guiado propone estudiar primero el concepto, luego observar una representación visual o técnica, practicar con pasos concretos, validar comprensión y cerrar con una evidencia breve."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "route",
+                "text": "La ruta avanza con Aprendizaje Guiado por fases."
+              },
+              {
+                "icon": "schema",
+                "text": "Cada sección conecta teoría, ejemplo, práctica y validación."
+              },
+              {
+                "icon": "memory",
+                "text": "RA1 y RA2 se observan de manera integrada."
+              },
+              {
+                "icon": "task_alt",
+                "text": "La evidencia principal es una bitácora verificable."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Cómo trabajar este contenido",
+                "body": [
+                  "Lee el bloque teórico antes de interactuar con imágenes, código, fórmulas o actividades. Después completa la práctica guiada y registra una evidencia breve en tu bitácora."
+                ]
+              },
+              {
+                "title": "Evidencia esperada",
+                "body": [
+                  "Al finalizar, debes poder explicar una decisión algorítmica, mostrar una traza o prueba y justificar cómo se usan los datos en memoria cuando aplique."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo de recorrido",
+              "body": [
+                "Si aparece un fragmento de código, primero identifica entrada, procesamiento, salida y memoria involucrada; luego ejecútalo o trázalo con los datos indicados."
+              ]
+            },
+            "closing": [
+              "Antes de avanzar, prepara una bitácora con tres columnas: decisión, evidencia y mejora."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos del contenido",
+            "items": [
+              {
+                "icon": "check_circle",
+                "text": "Explicar el propósito de datos, arreglos y representación estructurada dentro de la asignatura."
+              },
+              {
+                "icon": "code",
+                "text": "Aplicar estructuras de programación o representación de datos en una tarea guiada."
+              },
+              {
+                "icon": "memory",
+                "text": "Relacionar decisiones de datos con memoria, ejecución y evidencia de prueba."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-fases": {
+            "type": "table",
+            "title": "Ruta de Aprendizaje Guiado",
+            "columns": [
+              "Fase",
+              "Acción del estudiante",
+              "Evidencia"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Fase 1",
+                  "Contextualizar el concepto.",
+                  "Respuesta de presaberes."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 2",
+                  "Desarrollar teoría y observar ejemplos.",
+                  "Notas de lectura o mapa breve."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 3",
+                  "Aplicar con práctica guiada.",
+                  "Traza, código o tabla de decisión."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 4",
+                  "Validar y transferir.",
+                  "Bitácora y reflexión final."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-callout": {
+            "type": "callout",
+            "title": "Uso de la guía",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Esta guía corresponde al contenido 03 de 07. Trabaja las secciones en orden, resuelve las prácticas y conserva la bitácora como evidencia de progreso.",
+              "Extensión objetivo: mínimo 10 páginas imprimibles para este PDF."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-1": {
+        "title": "Tipos de datos, variables y dominio",
+        "intro": [
+          "Un dato no es solo un valor: tiene tipo, dominio, unidad y propósito. Elegir entre entero, real, carácter o lógico afecta operaciones permitidas y memoria requerida."
+        ],
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-visual",
+          "pdf-apoyo",
+          "pdf-practica",
+          "pdf-ejercicios"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Tipos de datos, variables y dominio",
+            "eyebrow": "Desarrollo teórico",
+            "body": [
+              "Un dato no es solo un valor: tiene tipo, dominio, unidad y propósito. Elegir entre entero, real, carácter o lógico afecta operaciones permitidas y memoria requerida.",
+              "La variable representa un espacio de almacenamiento con nombre. Su valor cambia durante la ejecución, pero su significado debe mantenerse estable para que el algoritmo sea legible.",
+              "Definir dominio evita operaciones imposibles. Una edad no debería ser negativa; una cantidad de elementos no debería ser fraccionaria; un índice debe respetar límites."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "Tipo y dominio reducen ambigüedad."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Una variable necesita significado estable."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Los límites protegen la memoria."
+              },
+              {
+                "icon": "check_circle",
+                "text": "El dato correcto facilita el algoritmo correcto."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Profundización",
+                "body": [
+                  "La variable representa un espacio de almacenamiento con nombre. Su valor cambia durante la ejecución, pero su significado debe mantenerse estable para que el algoritmo sea legible."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Definir dominio evita operaciones imposibles. Una edad no debería ser negativa; una cantidad de elementos no debería ser fraccionaria; un índice debe respetar límites."
+              ]
+            },
+            "closing": [
+              "Escribe una conclusión de tres líneas conectando el concepto con RA1 o RA2."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-visual": {
+            "type": "image",
+            "title": "Figura 1. Tipos de datos, variables y dominio",
+            "assetId": "algoritmia-computacional-03-s1-visual",
+            "src": "",
+            "alt": "La figura sintetiza tipos de datos, variables y dominio para apoyar la lectura impresa.",
+            "caption": "La figura sintetiza tipos de datos, variables y dominio para apoyar la lectura impresa.",
+            "prompt": "Crear tarjetas de tipos de datos con ejemplo, dominio válido, operación permitida y riesgo de uso incorrecto."
+          },
+          "pdf-apoyo": {
+            "type": "table",
+            "title": "Tipo, dominio y riesgo",
+            "columns": [
+              "Dato",
+              "Tipo sugerido",
+              "Riesgo"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Cantidad de estudiantes",
+                  "Entero no negativo",
+                  "Aceptar fracciones o negativos."
+                ]
+              },
+              {
+                "cells": [
+                  "Promedio",
+                  "Real",
+                  "Perder decimales por truncamiento."
+                ]
+              },
+              {
+                "cells": [
+                  "Activo",
+                  "Lógico",
+                  "Confundir estados con textos."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-practica": {
+            "type": "stepper",
+            "title": "Práctica impresa: Tipos de datos, variables y dominio",
+            "statement": "Define tipo y dominio para cinco datos de un sistema de inventario.",
+            "steps": [
+              {
+                "title": "Modelar",
+                "body": "Identifica entradas, salida y restricción.",
+                "final": false
+              },
+              {
+                "title": "Resolver",
+                "body": "Aplica el procedimiento de la sección.",
+                "final": false
+              },
+              {
+                "title": "Validar",
+                "body": "Contrasta con un caso límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de sección 1",
+            "items": [
+              {
+                "prompt": "Nivel 1. Explica con tus palabras el concepto central de tipos de datos, variables y dominio."
+              },
+              {
+                "prompt": "Nivel 2. Aplica el concepto a un caso pequeño relacionado con define tipo y dominio para cinco datos de un sistema de inventario.."
+              },
+              {
+                "prompt": "Nivel 3. Diseña una prueba normal y una prueba límite para validar tu respuesta."
+              },
+              {
+                "prompt": "Nivel 4. Propón una mejora y justifica si afecta tiempo, memoria o claridad."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-2": {
+        "title": "Arreglos: colección indexada",
+        "intro": [
+          "Un arreglo almacena varios valores del mismo tipo bajo un nombre común. Cada elemento se accede por un índice, y ese índice debe permanecer dentro del rango válido."
+        ],
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-visual",
+          "pdf-apoyo",
+          "pdf-practica",
+          "pdf-ejercicios"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Arreglos: colección indexada",
+            "eyebrow": "Desarrollo teórico",
+            "body": [
+              "Un arreglo almacena varios valores del mismo tipo bajo un nombre común. Cada elemento se accede por un índice, y ese índice debe permanecer dentro del rango válido.",
+              "Recorrer un arreglo exige coordinar ciclo, tamaño e índice. El error típico consiste en usar una posición inexistente, especialmente al confundir tamaño con último índice.",
+              "En memoria, los arreglos suelen ocupar posiciones contiguas. Esta propiedad facilita recorrido eficiente, pero hace necesario conocer el tamaño o reservarlo correctamente."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "El índice identifica posición."
+              },
+              {
+                "icon": "check_circle",
+                "text": "El tamaño no es el último índice."
+              },
+              {
+                "icon": "check_circle",
+                "text": "El recorrido debe respetar límites."
+              },
+              {
+                "icon": "check_circle",
+                "text": "La contigüidad mejora acceso pero exige cuidado."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Profundización",
+                "body": [
+                  "Recorrer un arreglo exige coordinar ciclo, tamaño e índice. El error típico consiste en usar una posición inexistente, especialmente al confundir tamaño con último índice."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "En memoria, los arreglos suelen ocupar posiciones contiguas. Esta propiedad facilita recorrido eficiente, pero hace necesario conocer el tamaño o reservarlo correctamente."
+              ]
+            },
+            "closing": [
+              "Escribe una conclusión de tres líneas conectando el concepto con RA1 o RA2."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-visual": {
+            "type": "image",
+            "title": "Figura 2. Arreglos: colección indexada",
+            "assetId": "algoritmia-computacional-03-s2-visual",
+            "src": "",
+            "alt": "La figura sintetiza arreglos: colección indexada para apoyar la lectura impresa.",
+            "caption": "La figura sintetiza arreglos: colección indexada para apoyar la lectura impresa.",
+            "prompt": "Crear una figura de arreglo de 6 posiciones con índices 0 a 5, valores, flecha de recorrido y advertencia sobre índice fuera de rango."
+          },
+          "pdf-apoyo": {
+            "type": "formula",
+            "title": "Rango de índices",
+            "context": [
+              "Para un arreglo de tamaño n con índices desde cero, las posiciones válidas se describen con esta expresión."
+            ],
+            "latex": "0 \\leq i < n",
+            "variables": [
+              {
+                "symbol": "i",
+                "description": "índice usado para acceder al arreglo."
+              },
+              {
+                "symbol": "n",
+                "description": "cantidad de elementos del arreglo."
+              }
+            ],
+            "explanation": [
+              "La expresión evita acceder a memoria que no pertenece al arreglo."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-practica": {
+            "type": "stepper",
+            "title": "Práctica impresa: Arreglos: colección indexada",
+            "statement": "Traza un recorrido de arreglo y marca el primer índice inválido si el ciclo usa i <= n.",
+            "steps": [
+              {
+                "title": "Modelar",
+                "body": "Identifica entradas, salida y restricción.",
+                "final": false
+              },
+              {
+                "title": "Resolver",
+                "body": "Aplica el procedimiento de la sección.",
+                "final": false
+              },
+              {
+                "title": "Validar",
+                "body": "Contrasta con un caso límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de sección 2",
+            "items": [
+              {
+                "prompt": "Nivel 1. Explica con tus palabras el concepto central de arreglos: colección indexada."
+              },
+              {
+                "prompt": "Nivel 2. Aplica el concepto a un caso pequeño relacionado con traza un recorrido de arreglo y marca el primer índice inválido si el ciclo usa i <= n.."
+              },
+              {
+                "prompt": "Nivel 3. Diseña una prueba normal y una prueba límite para validar tu respuesta."
+              },
+              {
+                "prompt": "Nivel 4. Propón una mejora y justifica si afecta tiempo, memoria o claridad."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-3": {
+        "title": "Búsqueda lineal y recorrido completo",
+        "intro": [
+          "La búsqueda lineal revisa elementos uno por uno hasta encontrar el objetivo o terminar la colección. Es simple, útil y sirve para comprender el costo de recorrer datos."
+        ],
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-visual",
+          "pdf-apoyo",
+          "pdf-practica",
+          "pdf-ejercicios"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Búsqueda lineal y recorrido completo",
+            "eyebrow": "Desarrollo teórico",
+            "body": [
+              "La búsqueda lineal revisa elementos uno por uno hasta encontrar el objetivo o terminar la colección. Es simple, útil y sirve para comprender el costo de recorrer datos.",
+              "El algoritmo debe definir qué devuelve cuando no encuentra el objetivo. Sin esa convención, la función queda incompleta y puede confundirse una posición válida con un error.",
+              "Aunque la búsqueda lineal no es siempre la más eficiente, es una base importante para entender precondiciones: si los datos no están ordenados, descartar mitades no es válido."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "La búsqueda lineal no exige orden."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Debe declarar resultado cuando no encuentra."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Cada comparación aporta evidencia."
+              },
+              {
+                "icon": "check_circle",
+                "text": "El costo depende del tamaño de entrada."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Profundización",
+                "body": [
+                  "El algoritmo debe definir qué devuelve cuando no encuentra el objetivo. Sin esa convención, la función queda incompleta y puede confundirse una posición válida con un error."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Aunque la búsqueda lineal no es siempre la más eficiente, es una base importante para entender precondiciones: si los datos no están ordenados, descartar mitades no es válido."
+              ]
+            },
+            "closing": [
+              "Escribe una conclusión de tres líneas conectando el concepto con RA1 o RA2."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-visual": {
+            "type": "image",
+            "title": "Figura 3. Búsqueda lineal y recorrido completo",
+            "assetId": "algoritmia-computacional-03-s3-visual",
+            "src": "",
+            "alt": "La figura sintetiza búsqueda lineal y recorrido completo para apoyar la lectura impresa.",
+            "caption": "La figura sintetiza búsqueda lineal y recorrido completo para apoyar la lectura impresa.",
+            "prompt": "Crear una fila de datos con una lupa avanzando posición por posición hasta encontrar un objetivo; incluir caso no encontrado."
+          },
+          "pdf-apoyo": {
+            "type": "code",
+            "title": "Búsqueda lineal en C",
+            "language": "c",
+            "languageLabel": "C",
+            "fileName": "busqueda_lineal.c",
+            "instructions": [
+              "Guarda el fragmento como busqueda_lineal.c.",
+              "Ábrelo en un editor o IDE con compilador C. Desde una terminal ubicada en la carpeta del archivo ejecuta: gcc busqueda_lineal.c -o busqueda_lineal.",
+              "En Windows ejecuta .\\busqueda_lineal.exe; en macOS/Linux ejecuta ./busqueda_lineal.",
+              "Usa como entrada de prueba: objetivo 2 en {7,4,9,2,5}.",
+              "Antes de ejecutar, identifica cuántas comparaciones se realizan y qué valor se retorna si el objetivo no aparece.",
+              "Después de ejecutar, compara la salida con tu traza y explica cualquier diferencia."
+            ],
+            "code": "#include <stdio.h>\n\nint buscar(const int datos[], int n, int objetivo) {\n    for (int i = 0; i < n; i++) {\n        if (datos[i] == objetivo) {\n            return i;\n        }\n    }\n    return -1;\n}\n\nint main(void) {\n    int datos[] = {7, 4, 9, 2, 5};\n    int pos = buscar(datos, 5, 2);\n    printf(\"Posicion: %d\\n\", pos);\n    return 0;\n}",
+            "expectedOutput": [
+              "La salida esperada es Posicion: 3 porque el valor 2 está en el índice 3."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-practica": {
+            "type": "stepper",
+            "title": "Práctica impresa: Búsqueda lineal y recorrido completo",
+            "statement": "Modifica la función para contar comparaciones y reportarlas junto con la posición.",
+            "steps": [
+              {
+                "title": "Modelar",
+                "body": "Identifica entradas, salida y restricción.",
+                "final": false
+              },
+              {
+                "title": "Resolver",
+                "body": "Aplica el procedimiento de la sección.",
+                "final": false
+              },
+              {
+                "title": "Validar",
+                "body": "Contrasta con un caso límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de sección 3",
+            "items": [
+              {
+                "prompt": "Nivel 1. Explica con tus palabras el concepto central de búsqueda lineal y recorrido completo."
+              },
+              {
+                "prompt": "Nivel 2. Aplica el concepto a un caso pequeño relacionado con modifica la función para contar comparaciones y reportarlas junto con la posición.."
+              },
+              {
+                "prompt": "Nivel 3. Diseña una prueba normal y una prueba límite para validar tu respuesta."
+              },
+              {
+                "prompt": "Nivel 4. Propón una mejora y justifica si afecta tiempo, memoria o claridad."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-4": {
+        "title": "Registros y datos relacionados",
+        "intro": [
+          "Un registro agrupa datos relacionados que describen una misma entidad. En lugar de manejar nombre, código y nota como variables sueltas, se pueden organizar como partes de un estudiante."
+        ],
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-visual",
+          "pdf-apoyo",
+          "pdf-practica",
+          "pdf-ejercicios"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Registros y datos relacionados",
+            "eyebrow": "Desarrollo teórico",
+            "body": [
+              "Un registro agrupa datos relacionados que describen una misma entidad. En lugar de manejar nombre, código y nota como variables sueltas, se pueden organizar como partes de un estudiante.",
+              "La organización estructurada reduce errores de correspondencia. Si se usan arreglos separados, un índice mal usado puede mezclar datos de personas distintas.",
+              "Los registros preparan el camino hacia estructuras más complejas: listas, colas, árboles y objetos. En todos los casos, la pregunta sigue siendo qué datos pertenecen juntos y cómo se recorren."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "Un registro expresa pertenencia."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Agrupar datos reduce inconsistencias."
+              },
+              {
+                "icon": "check_circle",
+                "text": "La estructura elegida afecta recorrido."
+              },
+              {
+                "icon": "check_circle",
+                "text": "RA2 observa cómo se almacena la entidad."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Profundización",
+                "body": [
+                  "La organización estructurada reduce errores de correspondencia. Si se usan arreglos separados, un índice mal usado puede mezclar datos de personas distintas."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Los registros preparan el camino hacia estructuras más complejas: listas, colas, árboles y objetos. En todos los casos, la pregunta sigue siendo qué datos pertenecen juntos y cómo se recorren."
+              ]
+            },
+            "closing": [
+              "Escribe una conclusión de tres líneas conectando el concepto con RA1 o RA2."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-visual": {
+            "type": "image",
+            "title": "Figura 4. Registros y datos relacionados",
+            "assetId": "algoritmia-computacional-03-s4-visual",
+            "src": "",
+            "alt": "La figura sintetiza registros y datos relacionados para apoyar la lectura impresa.",
+            "caption": "La figura sintetiza registros y datos relacionados para apoyar la lectura impresa.",
+            "prompt": "Crear una ficha de registro Estudiante con campos código, nombre, nota y estado; mostrar arreglo de registros."
+          },
+          "pdf-apoyo": {
+            "type": "table",
+            "title": "Registro frente a variables sueltas",
+            "columns": [
+              "Criterio",
+              "Variables sueltas",
+              "Registro"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Lectura",
+                  "Datos dispersos.",
+                  "Datos agrupados por entidad."
+                ]
+              },
+              {
+                "cells": [
+                  "Riesgo",
+                  "Cruzar índices incorrectos.",
+                  "Mantener campos juntos."
+                ]
+              },
+              {
+                "cells": [
+                  "Escalabilidad",
+                  "Difícil al crecer.",
+                  "Facilita arreglos de entidades."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-practica": {
+            "type": "stepper",
+            "title": "Práctica impresa: Registros y datos relacionados",
+            "statement": "Diseña un registro para representar una medición de sensor con valor, unidad, fecha y estado.",
+            "steps": [
+              {
+                "title": "Modelar",
+                "body": "Identifica entradas, salida y restricción.",
+                "final": false
+              },
+              {
+                "title": "Resolver",
+                "body": "Aplica el procedimiento de la sección.",
+                "final": false
+              },
+              {
+                "title": "Validar",
+                "body": "Contrasta con un caso límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de sección 4",
+            "items": [
+              {
+                "prompt": "Nivel 1. Explica con tus palabras el concepto central de registros y datos relacionados."
+              },
+              {
+                "prompt": "Nivel 2. Aplica el concepto a un caso pequeño relacionado con diseña un registro para representar una medición de sensor con valor, unidad, fecha y estado.."
+              },
+              {
+                "prompt": "Nivel 3. Diseña una prueba normal y una prueba límite para validar tu respuesta."
+              },
+              {
+                "prompt": "Nivel 4. Propón una mejora y justifica si afecta tiempo, memoria o claridad."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-5": {
+        "title": "Errores de representación y validación de datos",
+        "intro": [
+          "Muchos algoritmos fallan no por la estructura de control, sino por una representación de datos incoherente. Elegir tipo, rango o estructura incorrecta obliga a corregir problemas después."
+        ],
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-visual",
+          "pdf-apoyo",
+          "pdf-practica",
+          "pdf-ejercicios"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Errores de representación y validación de datos",
+            "eyebrow": "Desarrollo teórico",
+            "body": [
+              "Muchos algoritmos fallan no por la estructura de control, sino por una representación de datos incoherente. Elegir tipo, rango o estructura incorrecta obliga a corregir problemas después.",
+              "La validación temprana impide que datos inválidos entren al procesamiento central. Esto protege resultados y evita accesos fuera de rango en estructuras indexadas.",
+              "La representación también tiene costo de memoria. Guardar datos innecesarios, duplicados o sin liberar puede afectar la ejecución cuando la entrada crece."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "Validar temprano reduce daños."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Representar mal obliga a parches."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Los datos duplicados consumen memoria."
+              },
+              {
+                "icon": "check_circle",
+                "text": "El diseño de datos conecta RA1 y RA2."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Profundización",
+                "body": [
+                  "La validación temprana impide que datos inválidos entren al procesamiento central. Esto protege resultados y evita accesos fuera de rango en estructuras indexadas."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "La representación también tiene costo de memoria. Guardar datos innecesarios, duplicados o sin liberar puede afectar la ejecución cuando la entrada crece."
+              ]
+            },
+            "closing": [
+              "Escribe una conclusión de tres líneas conectando el concepto con RA1 o RA2."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-visual": {
+            "type": "image",
+            "title": "Figura 5. Errores de representación y validación de datos",
+            "assetId": "algoritmia-computacional-03-s5-visual",
+            "src": "",
+            "alt": "La figura sintetiza errores de representación y validación de datos para apoyar la lectura impresa.",
+            "caption": "La figura sintetiza errores de representación y validación de datos para apoyar la lectura impresa.",
+            "prompt": "Crear un diagrama de tubería con entrada, validación, estructura de datos, procesamiento y salida; señalar puntos de error."
+          },
+          "pdf-apoyo": {
+            "type": "callout",
+            "title": "Detecta riesgos de representación",
+            "tone": "example",
+            "icon": "task_alt",
+            "body": [
+              "Criterio de análisis: ¿Qué decisiones ayudan a evitar errores al procesar arreglos?",
+              "Aspectos que deberían aparecer en una respuesta completa: Validar que el tamaño sea positivo.; Usar índices dentro del rango.; Definir qué ocurre con datos inválidos.",
+              "Correcto: esas decisiones protegen la lógica y la memoria."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-practica": {
+            "type": "stepper",
+            "title": "Práctica impresa: Errores de representación y validación de datos",
+            "statement": "Revisa un algoritmo que procesa notas y propone tres validaciones antes del recorrido.",
+            "steps": [
+              {
+                "title": "Modelar",
+                "body": "Identifica entradas, salida y restricción.",
+                "final": false
+              },
+              {
+                "title": "Resolver",
+                "body": "Aplica el procedimiento de la sección.",
+                "final": false
+              },
+              {
+                "title": "Validar",
+                "body": "Contrasta con un caso límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de sección 5",
+            "items": [
+              {
+                "prompt": "Nivel 1. Explica con tus palabras el concepto central de errores de representación y validación de datos."
+              },
+              {
+                "prompt": "Nivel 2. Aplica el concepto a un caso pequeño relacionado con revisa un algoritmo que procesa notas y propone tres validaciones antes del recorrido.."
+              },
+              {
+                "prompt": "Nivel 3. Diseña una prueba normal y una prueba límite para validar tu respuesta."
+              },
+              {
+                "prompt": "Nivel 4. Propón una mejora y justifica si afecta tiempo, memoria o claridad."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

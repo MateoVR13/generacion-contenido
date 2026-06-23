@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Plantilla JSON SCORM/PDF</title>
+<meta name="description" content="Plantilla reutilizable para contenido SCORM y guía PDF a partir de un archivo JSON."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="assets/theme.js"></script>
+<link href="assets/styles.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md">
+
+<div class="flex min-h-screen">
+
+  <aside id="sidebar"
+         class="w-sidebar shrink-0 bg-surface-container-low border-r border-outline-variant
+                flex flex-col fixed lg:sticky top-0 h-screen z-40 -translate-x-full lg:translate-x-0
+                transition-transform duration-300">
+
+    <div class="sidebar-brand min-h-banner shrink-0 bg-primary-container text-on-primary px-md py-sm border-b-4 border-secondary-fixed flex items-center">
+      <div class="min-w-0">
+        <p id="sidebar-subject-label" class="font-label-caps text-label-caps text-secondary-fixed uppercase leading-none">Asignatura</p>
+        <h1 id="sidebar-subject-title" class="sidebar-subject-title font-h3 text-[20px] font-bold text-on-primary leading-tight">Plantilla JSON SCORM/PDF</h1>
+        <p class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest leading-none">
+          Contenido <span id="sidebar-content-number" class="text-secondary-fixed">01</span>
+        </p>
+      </div>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto p-md space-y-lg" aria-label="Contenido de la asignatura">
+      <div>
+        <p id="theory-nav-label" class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-sm px-base">
+          Contenido Teórico
+        </p>
+        <ul id="theory-nav" class="space-y-1"></ul>
+      </div>
+
+      <div>
+        <p id="material-nav-label" class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-sm px-base">
+          Material Complementario
+        </p>
+        <ul id="material-nav" class="space-y-1"></ul>
+      </div>
+    </nav>
+
+    <footer class="sidebar-footer shrink-0">
+      <img src="assets/logo-blanco.png" alt="Universidad de América"/>
+    </footer>
+  </aside>
+
+  <div id="sidebar-overlay" class="hidden fixed inset-0 bg-black/40 z-30 lg:hidden"></div>
+
+  <div class="flex-1 min-w-0 flex flex-col">
+
+    <header class="h-banner sticky top-0 z-20 bg-primary-container border-b-4 border-secondary-fixed px-gutter
+                   flex items-center gap-md">
+      <button id="menu-btn" class="lg:hidden p-xs text-secondary-fixed hover:text-white" aria-label="Abrir menú" title="Menú">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+
+      <div class="min-w-0">
+        <p id="banner-subject-program" class="font-label-caps text-label-caps text-secondary-fixed uppercase tracking-wide truncate">
+          Plantilla JSON SCORM/PDF · Programa académico
+        </p>
+        <h2 class="font-h2 text-h2 text-white leading-tight truncate">
+          Tema actual: <span id="banner-theme-name" class="text-secondary-fixed">Cargando...</span>
+        </h2>
+      </div>
+
+      <div class="hidden 2xl:flex items-center gap-sm shrink-0">
+        <span id="banner-content-label" class="font-label-caps text-label-caps text-secondary-fixed uppercase">Contenido 01</span>
+        <span id="banner-content-number" class="w-9 h-9 rounded-full bg-secondary-fixed text-primary flex items-center justify-center font-bold">
+          01
+        </span>
+      </div>
+
+      <div class="author-toolbar ml-auto flex items-center shrink-0">
+        <input id="json-file-input" type="file" accept="application/json,.json" class="hidden"/>
+        <label for="json-file-input" class="author-action" title="Cargar JSON">
+          <span class="material-symbols-outlined" aria-hidden="true">upload_file</span>
+          <span class="hidden xl:inline">JSON</span>
+        </label>
+        <button id="clear-template" type="button" class="author-action" title="Limpiar plantilla">
+          <span class="material-symbols-outlined" aria-hidden="true">cleaning_services</span>
+          <span class="hidden xl:inline">Limpiar</span>
+        </button>
+        <button id="editor-toggle" type="button" class="author-action" title="Editar plantilla">
+          <span class="material-symbols-outlined" aria-hidden="true">edit_note</span>
+          <span class="hidden xl:inline">Editar</span>
+        </button>
+        <button id="pdf-export" type="button" class="author-action" title="Vista PDF">
+          <span class="material-symbols-outlined" aria-hidden="true">picture_as_pdf</span>
+          <span class="hidden xl:inline">PDF</span>
+        </button>
+        <button id="scorm-export" type="button" class="author-action" title="Exportar SCORM">
+          <span class="material-symbols-outlined" aria-hidden="true">archive</span>
+          <span class="hidden xl:inline">SCORM</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="notebook-grid flex-1 px-gutter py-lg">
+      <div class="max-w-container-max mx-auto">
+        <section id="loading-state" class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg hard-shadow">
+          <span class="font-label-caps text-label-caps bg-secondary-fixed text-primary px-base py-xs rounded inline-block mb-md">JSON</span>
+          <h1 class="font-h1 text-h1 text-primary mb-md">Cargando contenido</h1>
+          <p class="text-on-surface-variant max-w-2xl">
+            Carga un JSON de asignatura para visualizar, editar, exportar SCORM o abrir la vista PDF.
+          </p>
+        </section>
+
+        <div id="content-root" class="space-y-lg"></div>
+
+        <nav id="theme-pager" class="flex justify-between items-center gap-md pt-lg" aria-label="Navegación entre temas">
+          <button id="prev-theme" class="inline-flex items-center gap-sm py-sm px-lg font-label-caps text-label-caps rounded
+                         border-2 border-primary text-primary hover:bg-primary hover:text-on-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed">
+            <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_back</span> Tema anterior
+          </button>
+          <button id="next-theme" class="inline-flex items-center gap-sm py-sm px-lg font-label-caps text-label-caps rounded
+                         bg-primary text-on-primary hover:opacity-90 transition-opacity hard-shadow disabled:opacity-40 disabled:cursor-not-allowed">
+            Tema siguiente <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
+          </button>
+        </nav>
+      </div>
+    </main>
+
+  </div>
+
+</div>
+
+<aside id="json-editor-panel" class="author-panel translate-x-full" aria-label="Editor de plantilla JSON">
+  <div class="author-panel-header">
+    <div>
+      <p class="font-label-caps text-label-caps text-secondary-fixed uppercase">Autoría</p>
+      <h2 class="font-h3 text-[20px] text-on-primary">Editor JSON</h2>
+    </div>
+    <button id="editor-close" type="button" class="author-icon-btn" title="Cerrar editor" aria-label="Cerrar editor">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
+  </div>
+
+  <div class="author-panel-body">
+    <section class="author-tool-section">
+      <h3 class="author-tool-title">Asignatura</h3>
+      <div class="grid grid-cols-1 gap-sm">
+        <label class="author-field-label">Nombre<input id="subject-title-input" class="author-field" type="text"/></label>
+        <label class="author-field-label">Programa<input id="subject-program-input" class="author-field" type="text"/></label>
+        <label class="author-field-label">Contenido<input id="subject-content-input" class="author-field" type="text"/></label>
+      </div>
+    </section>
+
+    <section class="author-tool-section">
+      <div class="flex items-center justify-between gap-sm mb-sm">
+        <h3 class="author-tool-title">Estructura</h3>
+        <button id="sync-editor" type="button" class="author-mini-btn">Sincronizar</button>
+      </div>
+      <div id="structure-editor" class="space-y-sm"></div>
+    </section>
+
+    <section class="author-tool-section">
+      <h3 class="author-tool-title">Componente seleccionado</h3>
+      <p id="selected-component-label" class="text-xs text-on-surface-variant mb-sm">Selecciona un componente.</p>
+      <textarea id="component-editor" class="author-textarea min-h-[180px]" spellcheck="false"></textarea>
+      <button id="apply-component-json" type="button" class="author-primary-btn mt-sm">Aplicar componente</button>
+    </section>
+
+    <section class="author-tool-section">
+      <h3 class="author-tool-title">JSON completo</h3>
+      <textarea id="json-editor" class="author-textarea min-h-[320px]" spellcheck="false"></textarea>
+      <div class="flex flex-wrap gap-sm mt-sm">
+        <button id="validate-json" type="button" class="author-mini-btn">Validar</button>
+        <button id="apply-json" type="button" class="author-primary-btn">Aplicar JSON</button>
+        <button id="download-json" type="button" class="author-mini-btn">Descargar JSON</button>
+      </div>
+      <p id="json-status" class="author-status" role="status"></p>
+    </section>
+  </div>
+</aside>
+
+<script src="assets/sidebar.js"></script>
+<script src="assets/content-renderer.js"></script>
+<script src="assets/editor.js"></script>
+</body>
+</html>

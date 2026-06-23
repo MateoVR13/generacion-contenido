@@ -1,0 +1,2147 @@
+{
+  "subject": {
+    "id": "algoritmia-computacional",
+    "title": "Algoritmia Computacional",
+    "program": "Facultad de Ingenierías",
+    "contentNumber": "02",
+    "contentTotal": "07",
+    "contentTitle": "Estructuras de control y programación estructurada",
+    "description": "Asignatura introductoria orientada a descomponer problemas complejos en pasos lógicos, precisos y ejecutables mediante estructuras de programación, análisis de algoritmos y evaluación del uso de memoria dinámica.",
+    "level": "Pregrado",
+    "language": "español",
+    "syllabus": {
+      "source": {
+        "type": "user-provided-summary",
+        "fileName": ""
+      },
+      "extractedFields": {
+        "code": "",
+        "faculty": "Facultad de Ingenierías",
+        "program": "",
+        "level": "Pregrado",
+        "type": "",
+        "modality": "Virtual",
+        "semester": "",
+        "credits": "",
+        "hours": {
+          "total": "",
+          "autonomous": "",
+          "directTeaching": ""
+        },
+        "updatedAt": "2026-06-22",
+        "version": "Borrador generado desde información suministrada por usuario"
+      },
+      "learningOutcomes": [
+        {
+          "id": "RA1",
+          "text": "Reconocerá y empleará las principales estructuras de programación para generar algoritmos computacionales con herramientas de control."
+        },
+        {
+          "id": "RA2",
+          "text": "Evaluará adecuadamente la asignación dinámica de memoria en la ejecución de algoritmos a partir de programación estructurada."
+        }
+      ],
+      "priorKnowledge": [
+        "Lectura comprensiva de enunciados técnicos.",
+        "Operaciones aritméticas básicas y razonamiento lógico elemental.",
+        "Uso básico de computador, archivos y entorno de programación.",
+        "Disposición para escribir, probar y corregir soluciones paso a paso."
+      ],
+      "competencies": [
+        "Descomposición de problemas en pasos ejecutables.",
+        "Diseño de algoritmos con estructuras de control.",
+        "Razonamiento sobre estado, trazas, memoria y datos.",
+        "Evaluación cualitativa de corrección, eficiencia y uso responsable de recursos."
+      ],
+      "evaluationCriteria": [
+        "Claridad en la identificación de entradas, salidas, restricciones y casos límite.",
+        "Uso pertinente de secuencia, selección, iteración, funciones y estructuras de datos básicas.",
+        "Capacidad para trazar algoritmos y justificar su comportamiento.",
+        "Manejo responsable de asignación y liberación de memoria dinámica cuando se requiera.",
+        "Comunicación ordenada de decisiones de diseño, pruebas y mejoras."
+      ],
+      "topics": [
+        "Pensamiento algorítmico y modelado del problema",
+        "Estructuras de control y programación estructurada",
+        "Datos, arreglos y representación estructurada",
+        "Memoria dinámica y ciclo de vida de los datos",
+        "Eficiencia, complejidad y crecimiento",
+        "Recursión y estructuras dinámicas",
+        "Integración, pruebas y calidad algorítmica"
+      ],
+      "methodologyNotes": [
+        "Asignatura 100% virtual organizada en siete contenidos mediante Aprendizaje Guiado."
+      ],
+      "evaluationPlan": [],
+      "bibliography": {
+        "basic": [
+          {
+            "type": "Currículo internacional",
+            "text": "Association for Computing Machinery, IEEE Computer Society, & Association for the Advancement of Artificial Intelligence. (2023). Computer Science Curricula 2023: Curriculum guidelines for undergraduate degree programs in computer science. https://doi.org/10.1145/3664191"
+          },
+          {
+            "type": "Artículo académico",
+            "text": "Wing, J. M. (2006). Computational thinking. Communications of the ACM, 49(3), 33-35. https://doi.org/10.1145/1118178.1118215"
+          },
+          {
+            "type": "Libro base",
+            "text": "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). Introduction to algorithms (4th ed.). MIT Press."
+          },
+          {
+            "type": "Libro base",
+            "text": "Kernighan, B. W., & Ritchie, D. M. (1988). The C programming language (2nd ed.). Prentice Hall."
+          },
+          {
+            "type": "Libro base",
+            "text": "Bryant, R. E., & O'Hallaron, D. R. (2016). Computer systems: A programmer's perspective (3rd ed.). Pearson."
+          },
+          {
+            "type": "Libro base",
+            "text": "Sedgewick, R., & Wayne, K. (2011). Algorithms (4th ed.). Addison-Wesley."
+          }
+        ],
+        "complementary": [
+          {
+            "type": "Libro base",
+            "text": "Bryant, R. E., & O'Hallaron, D. R. (2016). Computer systems: A programmer's perspective (3rd ed.). Pearson."
+          },
+          {
+            "type": "Libro base",
+            "text": "Sedgewick, R., & Wayne, K. (2011). Algorithms (4th ed.). Addison-Wesley."
+          }
+        ]
+      },
+      "missingFields": [
+        "Código de asignatura",
+        "Programa académico específico",
+        "Tipo de asignatura",
+        "Semestre",
+        "Créditos",
+        "Horas totales",
+        "Horas de trabajo autónomo",
+        "Horas de docencia directa",
+        "Cronograma oficial del sílabo",
+        "Porcentajes o pesos evaluativos oficiales"
+      ]
+    },
+    "methodology": {
+      "code": "AG",
+      "name": "Aprendizaje Guiado",
+      "rationale": "La asignatura es virtual y requiere una ruta progresiva, explícita y verificable: primero comprensión conceptual, luego visualización, práctica guiada, validación formativa y transferencia.",
+      "moments": [
+        "Fase 1",
+        "Fase 2",
+        "Fase 3",
+        "Fase 4"
+      ]
+    }
+  },
+  "scorm": {
+    "labels": {
+      "theoryNav": "Ruta de aprendizaje",
+      "materialNav": "Material complementario"
+    },
+    "sectionOrder": [
+      "intro",
+      "seccion-1",
+      "seccion-2",
+      "seccion-3",
+      "seccion-4",
+      "seccion-5"
+    ],
+    "sections": {
+      "intro": {
+        "kind": "theory",
+        "theme": "Intro",
+        "badge": "Intro",
+        "navLabel": "Introducción",
+        "title": "Estructuras de control y programación estructurada",
+        "intro": [
+          "Secuencia, selección, iteración y funciones"
+        ],
+        "estimatedTime": "35 minutos",
+        "studentAction": "Leer la ruta, activar saberes previos y preparar la bitácora.",
+        "evidence": "Respuesta diagnóstica y bitácora inicial.",
+        "feedbackRoute": "Retroalimentación automática y revisión de bitácora.",
+        "componentOrder": [
+          "intro-teoria",
+          "intro-objetivos",
+          "intro-fases",
+          "intro-diagnostico"
+        ],
+        "components": {
+          "intro-teoria": {
+            "type": "theory-block",
+            "title": "Presentación del contenido 02",
+            "eyebrow": "Base de estudio",
+            "body": [
+              "Este contenido desarrolla usar estructuras de control para construir algoritmos claros, finitos y trazables. La ruta está diseñada para que el estudiante avance desde una comprensión inicial hasta una aplicación verificable mediante práctica y retroalimentación.",
+              "La asignatura trabaja de forma simultánea RA1 y RA2: las estructuras de programación permiten construir el flujo del algoritmo, mientras que la evaluación de memoria ayuda a decidir si los datos pueden sostenerse durante la ejecución.",
+              "El aprendizaje guiado propone estudiar primero el concepto, luego observar una representación visual o técnica, practicar con pasos concretos, validar comprensión y cerrar con una evidencia breve."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "route",
+                "text": "La ruta avanza con Aprendizaje Guiado por fases."
+              },
+              {
+                "icon": "schema",
+                "text": "Cada sección conecta teoría, ejemplo, práctica y validación."
+              },
+              {
+                "icon": "memory",
+                "text": "RA1 y RA2 se observan de manera integrada."
+              },
+              {
+                "icon": "task_alt",
+                "text": "La evidencia principal es una bitácora verificable."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Cómo trabajar este contenido",
+                "body": [
+                  "Lee el bloque teórico antes de interactuar con imágenes, código, fórmulas o actividades. Después completa la práctica guiada y registra una evidencia breve en tu bitácora."
+                ]
+              },
+              {
+                "title": "Evidencia esperada",
+                "body": [
+                  "Al finalizar, debes poder explicar una decisión algorítmica, mostrar una traza o prueba y justificar cómo se usan los datos en memoria cuando aplique."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo de recorrido",
+              "body": [
+                "Si aparece un fragmento de código, primero identifica entrada, procesamiento, salida y memoria involucrada; luego ejecútalo o trázalo con los datos indicados."
+              ]
+            },
+            "closing": [
+              "Antes de avanzar, prepara una bitácora con tres columnas: decisión, evidencia y mejora."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "intro-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos del contenido",
+            "items": [
+              {
+                "icon": "check_circle",
+                "text": "Explicar el propósito de estructuras de control y programación estructurada dentro de la asignatura."
+              },
+              {
+                "icon": "code",
+                "text": "Aplicar estructuras de programación o representación de datos en una tarea guiada."
+              },
+              {
+                "icon": "memory",
+                "text": "Relacionar decisiones de datos con memoria, ejecución y evidencia de prueba."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "intro-fases": {
+            "type": "table",
+            "title": "Ruta de Aprendizaje Guiado",
+            "columns": [
+              "Fase",
+              "Acción del estudiante",
+              "Evidencia"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Fase 1",
+                  "Contextualizar el concepto.",
+                  "Respuesta de presaberes."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 2",
+                  "Desarrollar teoría y observar ejemplos.",
+                  "Notas de lectura o mapa breve."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 3",
+                  "Aplicar con práctica guiada.",
+                  "Traza, código o tabla de decisión."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 4",
+                  "Validar y transferir.",
+                  "Bitácora y reflexión final."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "intro-diagnostico": {
+            "type": "quiz",
+            "title": "Chequeo inicial",
+            "questions": [
+              {
+                "prompt": "¿Qué evidencia permite saber si un algoritmo está suficientemente definido?",
+                "options": [
+                  {
+                    "text": "Entradas, salidas, pasos y casos de prueba verificables.",
+                    "correct": true,
+                    "feedback": "Correcto: la definición algorítmica se valida por reproducibilidad y evidencia."
+                  },
+                  {
+                    "text": "Que el algoritmo tenga muchas instrucciones.",
+                    "correct": false,
+                    "feedback": "Revisa la presentación: la longitud no garantiza claridad ni corrección."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-1": {
+        "kind": "theory",
+        "theme": "1",
+        "badge": "Sección 1",
+        "navLabel": "Secuencia y estado del programa",
+        "title": "Secuencia y estado del programa",
+        "intro": [
+          "La secuencia define qué ocurre primero y qué ocurre después. Aunque parece simple, muchos errores nacen de calcular antes de leer, validar después de usar o actualizar una variable en el lugar equivocado."
+        ],
+        "estimatedTime": "50 minutos",
+        "studentAction": "Leer, observar, practicar, validar y registrar evidencia.",
+        "evidence": "Bitácora con decisión técnica, traza o prueba.",
+        "feedbackRoute": "Retroalimentación automática en validaciones y revisión docente de evidencia.",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "teoria",
+          "visual",
+          "apoyo",
+          "practica",
+          "validacion",
+          "cierre"
+        ],
+        "components": {
+          "teoria": {
+            "type": "theory-block",
+            "title": "Secuencia y estado del programa",
+            "eyebrow": "Desarrollo conceptual",
+            "body": [
+              "La secuencia define qué ocurre primero y qué ocurre después. Aunque parece simple, muchos errores nacen de calcular antes de leer, validar después de usar o actualizar una variable en el lugar equivocado.",
+              "El estado del programa está formado por los valores actuales de las variables. Cada instrucción puede conservar, transformar o invalidar ese estado.",
+              "Leer una secuencia como cambios de estado permite explicar el algoritmo sin memorizar líneas. Lo importante es comprender qué efecto produce cada instrucción."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "task_alt",
+                "text": "El orden modifica el resultado."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Las variables representan estado."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Una asignación cambia evidencia futura."
+              },
+              {
+                "icon": "task_alt",
+                "text": "La traza revela errores de secuencia."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura técnica",
+                "body": [
+                  "La secuencia define qué ocurre primero y qué ocurre después. Aunque parece simple, muchos errores nacen de calcular antes de leer, validar después de usar o actualizar una variable en el lugar equivocado."
+                ]
+              },
+              {
+                "title": "Decisión de diseño",
+                "body": [
+                  "El estado del programa está formado por los valores actuales de las variables. Cada instrucción puede conservar, transformar o invalidar ese estado."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "Leer una secuencia como cambios de estado permite explicar el algoritmo sin memorizar líneas. Lo importante es comprender qué efecto produce cada instrucción."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, explica con tus palabras qué decisión permite tomar este concepto."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "visual": {
+            "type": "image",
+            "title": "Visual: Secuencia y estado del programa",
+            "assetId": "algoritmia-computacional-02-s1-visual",
+            "src": "",
+            "alt": "Recurso visual para comprender secuencia y estado del programa y conectar el concepto con una decisión algorítmica.",
+            "caption": "Recurso visual para comprender secuencia y estado del programa y conectar el concepto con una decisión algorítmica.",
+            "prompt": "Crear un diagrama de flujo lineal con lectura, validación, cálculo y salida; mostrar cómo cambia una variable acumulador."
+          },
+          "apoyo": {
+            "type": "table",
+            "title": "Errores de secuencia frecuentes",
+            "columns": [
+              "Error",
+              "Síntoma",
+              "Corrección"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Calcular antes de leer",
+                  "Resultado basura o cero.",
+                  "Leer y validar primero."
+                ]
+              },
+              {
+                "cells": [
+                  "Actualizar tarde",
+                  "Contador desfasado.",
+                  "Actualizar dentro del bloque correcto."
+                ]
+              },
+              {
+                "cells": [
+                  "Imprimir antes de cerrar",
+                  "Salida incompleta.",
+                  "Imprimir al final del cálculo."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: Secuencia y estado del programa",
+            "statement": "Ordena instrucciones desordenadas para calcular el total de una factura.",
+            "steps": [
+              {
+                "title": "Comprender",
+                "body": "Reescribe el enunciado con entradas, salida esperada y restricción principal.",
+                "final": false
+              },
+              {
+                "title": "Aplicar",
+                "body": "Usa la teoría de la sección para decidir estructura, condición, recorrido o memoria.",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Contrasta tu respuesta con un caso normal y un caso límite.",
+                "final": false
+              },
+              {
+                "title": "Registrar",
+                "body": "Anota en la bitácora la decisión tomada, la evidencia y una mejora posible.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "validacion": {
+            "type": "quiz",
+            "title": "Validación rápida: Secuencia y estado del programa",
+            "questions": [
+              {
+                "prompt": "¿Qué debe quedar claro antes de considerar completa esta sección?",
+                "options": [
+                  {
+                    "text": "La decisión técnica, su evidencia y la forma de verificarla.",
+                    "correct": true,
+                    "feedback": "Correcto: el aprendizaje se evidencia con decisión, aplicación y verificación."
+                  },
+                  {
+                    "text": "Solo la definición memorizada del concepto.",
+                    "correct": false,
+                    "feedback": "Revisa la práctica guiada: memorizar no basta si no puedes aplicar y validar."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "cierre": {
+            "type": "callout",
+            "title": "Cierre de sección",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Registra una conclusión breve: qué comprendiste, qué evidencia lo demuestra y qué revisarías si el algoritmo fallara."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-2": {
+        "kind": "theory",
+        "theme": "2",
+        "badge": "Sección 2",
+        "navLabel": "Selección: condiciones completas",
+        "title": "Selección: condiciones completas",
+        "intro": [
+          "La selección permite que el algoritmo tome caminos diferentes según una condición. Una condición debe poder evaluarse como verdadera o falsa, sin depender de interpretaciones vagas."
+        ],
+        "estimatedTime": "50 minutos",
+        "studentAction": "Leer, observar, practicar, validar y registrar evidencia.",
+        "evidence": "Bitácora con decisión técnica, traza o prueba.",
+        "feedbackRoute": "Retroalimentación automática en validaciones y revisión docente de evidencia.",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "teoria",
+          "visual",
+          "apoyo",
+          "practica",
+          "validacion",
+          "cierre"
+        ],
+        "components": {
+          "teoria": {
+            "type": "theory-block",
+            "title": "Selección: condiciones completas",
+            "eyebrow": "Desarrollo conceptual",
+            "body": [
+              "La selección permite que el algoritmo tome caminos diferentes según una condición. Una condición debe poder evaluarse como verdadera o falsa, sin depender de interpretaciones vagas.",
+              "Las condiciones incompletas suelen olvidar igualdad, rangos cerrados, datos inválidos o prioridades entre reglas. Por eso no basta escribir si el dato es válido; hay que definir qué significa válido.",
+              "La selección también exige pensar en consecuencias. Cada camino debe dejar el estado en una forma coherente para las instrucciones que siguen."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "task_alt",
+                "text": "Una condición debe ser evaluable."
+              },
+              {
+                "icon": "task_alt",
+                "text": "La igualdad cambia fronteras."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Todo camino debe dejar estado coherente."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Validar antes de calcular evita errores."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura técnica",
+                "body": [
+                  "La selección permite que el algoritmo tome caminos diferentes según una condición. Una condición debe poder evaluarse como verdadera o falsa, sin depender de interpretaciones vagas."
+                ]
+              },
+              {
+                "title": "Decisión de diseño",
+                "body": [
+                  "Las condiciones incompletas suelen olvidar igualdad, rangos cerrados, datos inválidos o prioridades entre reglas. Por eso no basta escribir si el dato es válido; hay que definir qué significa válido."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "La selección también exige pensar en consecuencias. Cada camino debe dejar el estado en una forma coherente para las instrucciones que siguen."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, explica con tus palabras qué decisión permite tomar este concepto."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "visual": {
+            "type": "image",
+            "title": "Visual: Selección: condiciones completas",
+            "assetId": "algoritmia-computacional-02-s2-visual",
+            "src": "",
+            "alt": "Recurso visual para comprender selección: condiciones completas y conectar el concepto con una decisión algorítmica.",
+            "caption": "Recurso visual para comprender selección: condiciones completas y conectar el concepto con una decisión algorítmica.",
+            "prompt": "Crear un árbol de decisión en español con condiciones para clasificar una calificación: inválida, reprobada, aprobada, sobresaliente."
+          },
+          "apoyo": {
+            "type": "formula",
+            "title": "Condición de rango válido",
+            "context": [
+              "La expresión representa una validación antes de clasificar una nota."
+            ],
+            "latex": "0 \\leq nota \\leq 100",
+            "variables": [
+              {
+                "symbol": "nota",
+                "description": "valor numérico recibido como entrada."
+              }
+            ],
+            "explanation": [
+              "Si la condición no se cumple, el algoritmo debe reportar entrada inválida antes de continuar."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: Selección: condiciones completas",
+            "statement": "Diseña una estructura de selección para validar edad, clasificar mayoría de edad y reportar entradas imposibles.",
+            "steps": [
+              {
+                "title": "Comprender",
+                "body": "Reescribe el enunciado con entradas, salida esperada y restricción principal.",
+                "final": false
+              },
+              {
+                "title": "Aplicar",
+                "body": "Usa la teoría de la sección para decidir estructura, condición, recorrido o memoria.",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Contrasta tu respuesta con un caso normal y un caso límite.",
+                "final": false
+              },
+              {
+                "title": "Registrar",
+                "body": "Anota en la bitácora la decisión tomada, la evidencia y una mejora posible.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "validacion": {
+            "type": "quiz",
+            "title": "Validación rápida: Selección: condiciones completas",
+            "questions": [
+              {
+                "prompt": "¿Qué debe quedar claro antes de considerar completa esta sección?",
+                "options": [
+                  {
+                    "text": "La decisión técnica, su evidencia y la forma de verificarla.",
+                    "correct": true,
+                    "feedback": "Correcto: el aprendizaje se evidencia con decisión, aplicación y verificación."
+                  },
+                  {
+                    "text": "Solo la definición memorizada del concepto.",
+                    "correct": false,
+                    "feedback": "Revisa la práctica guiada: memorizar no basta si no puedes aplicar y validar."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "cierre": {
+            "type": "callout",
+            "title": "Cierre de sección",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Registra una conclusión breve: qué comprendiste, qué evidencia lo demuestra y qué revisarías si el algoritmo fallara."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-3": {
+        "kind": "theory",
+        "theme": "3",
+        "badge": "Sección 3",
+        "navLabel": "Iteración: ciclos con parada clara",
+        "title": "Iteración: ciclos con parada clara",
+        "intro": [
+          "La iteración repite una acción mientras una condición lo permita o hasta recorrer una colección. Todo ciclo necesita inicio, avance y criterio de parada."
+        ],
+        "estimatedTime": "50 minutos",
+        "studentAction": "Leer, observar, practicar, validar y registrar evidencia.",
+        "evidence": "Bitácora con decisión técnica, traza o prueba.",
+        "feedbackRoute": "Retroalimentación automática en validaciones y revisión docente de evidencia.",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "teoria",
+          "visual",
+          "apoyo",
+          "practica",
+          "validacion",
+          "cierre"
+        ],
+        "components": {
+          "teoria": {
+            "type": "theory-block",
+            "title": "Iteración: ciclos con parada clara",
+            "eyebrow": "Desarrollo conceptual",
+            "body": [
+              "La iteración repite una acción mientras una condición lo permita o hasta recorrer una colección. Todo ciclo necesita inicio, avance y criterio de parada.",
+              "Un ciclo mal diseñado puede no ejecutarse, ejecutarse de más o no terminar. La pregunta central es qué cambia en cada vuelta y qué evidencia muestra que el ciclo avanza.",
+              "Los centinelas son valores especiales que indican fin de entrada. Deben excluirse del cálculo cuando representan control y no datos reales."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "task_alt",
+                "text": "Todo ciclo necesita avance."
+              },
+              {
+                "icon": "task_alt",
+                "text": "El centinela controla, no se procesa."
+              },
+              {
+                "icon": "task_alt",
+                "text": "El acumulador resume datos aceptados."
+              },
+              {
+                "icon": "task_alt",
+                "text": "El contador permite calcular promedios."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura técnica",
+                "body": [
+                  "La iteración repite una acción mientras una condición lo permita o hasta recorrer una colección. Todo ciclo necesita inicio, avance y criterio de parada."
+                ]
+              },
+              {
+                "title": "Decisión de diseño",
+                "body": [
+                  "Un ciclo mal diseñado puede no ejecutarse, ejecutarse de más o no terminar. La pregunta central es qué cambia en cada vuelta y qué evidencia muestra que el ciclo avanza."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "Los centinelas son valores especiales que indican fin de entrada. Deben excluirse del cálculo cuando representan control y no datos reales."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, explica con tus palabras qué decisión permite tomar este concepto."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "visual": {
+            "type": "image",
+            "title": "Visual: Iteración: ciclos con parada clara",
+            "assetId": "algoritmia-computacional-02-s3-visual",
+            "src": "",
+            "alt": "Recurso visual para comprender iteración: ciclos con parada clara y conectar el concepto con una decisión algorítmica.",
+            "caption": "Recurso visual para comprender iteración: ciclos con parada clara y conectar el concepto con una decisión algorítmica.",
+            "prompt": "Crear una figura de ciclo while con centinela 0, acumulador suma y lectura del siguiente dato dentro del ciclo."
+          },
+          "apoyo": {
+            "type": "code",
+            "title": "Ciclo centinela en C",
+            "language": "c",
+            "languageLabel": "C",
+            "fileName": "suma_positivos.c",
+            "instructions": [
+              "Guarda el fragmento como suma_positivos.c.",
+              "Ábrelo en un editor o IDE con compilador C. Desde una terminal ubicada en la carpeta del archivo ejecuta: gcc suma_positivos.c -o suma_positivos.",
+              "En Windows ejecuta .\\suma_positivos.exe; en macOS/Linux ejecuta ./suma_positivos.",
+              "Usa como entrada de prueba: 5 8 -2 0.",
+              "Antes de ejecutar, identifica cuál valor funciona como centinela, cuáles se acumulan y dónde se lee el siguiente dato.",
+              "Después de ejecutar, compara la salida con tu traza y explica cualquier diferencia."
+            ],
+            "code": "#include <stdio.h>\n\nint main(void) {\n    int valor;\n    int suma = 0;\n\n    printf(\"Ingrese valores positivos. Use 0 para terminar:\\n\");\n    scanf(\"%d\", &valor);\n\n    while (valor != 0) {\n        if (valor > 0) {\n            suma = suma + valor;\n        }\n        scanf(\"%d\", &valor);\n    }\n\n    printf(\"Suma de positivos: %d\\n\", suma);\n    return 0;\n}",
+            "expectedOutput": [
+              "Con entrada 5, 8, -2, 0, la salida esperada es Suma de positivos: 13."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: Iteración: ciclos con parada clara",
+            "statement": "Modifica el algoritmo para contar cuántos valores positivos fueron aceptados.",
+            "steps": [
+              {
+                "title": "Comprender",
+                "body": "Reescribe el enunciado con entradas, salida esperada y restricción principal.",
+                "final": false
+              },
+              {
+                "title": "Aplicar",
+                "body": "Usa la teoría de la sección para decidir estructura, condición, recorrido o memoria.",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Contrasta tu respuesta con un caso normal y un caso límite.",
+                "final": false
+              },
+              {
+                "title": "Registrar",
+                "body": "Anota en la bitácora la decisión tomada, la evidencia y una mejora posible.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "validacion": {
+            "type": "quiz",
+            "title": "Validación rápida: Iteración: ciclos con parada clara",
+            "questions": [
+              {
+                "prompt": "¿Qué debe quedar claro antes de considerar completa esta sección?",
+                "options": [
+                  {
+                    "text": "La decisión técnica, su evidencia y la forma de verificarla.",
+                    "correct": true,
+                    "feedback": "Correcto: el aprendizaje se evidencia con decisión, aplicación y verificación."
+                  },
+                  {
+                    "text": "Solo la definición memorizada del concepto.",
+                    "correct": false,
+                    "feedback": "Revisa la práctica guiada: memorizar no basta si no puedes aplicar y validar."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "cierre": {
+            "type": "callout",
+            "title": "Cierre de sección",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Registra una conclusión breve: qué comprendiste, qué evidencia lo demuestra y qué revisarías si el algoritmo fallara."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-4": {
+        "kind": "theory",
+        "theme": "4",
+        "badge": "Sección 4",
+        "navLabel": "Funciones y responsabilidad única",
+        "title": "Funciones y responsabilidad única",
+        "intro": [
+          "Una función agrupa una responsabilidad clara: calcular, validar, buscar, convertir o reportar. Cuando una función intenta hacer demasiadas cosas, se vuelve difícil de probar."
+        ],
+        "estimatedTime": "50 minutos",
+        "studentAction": "Leer, observar, practicar, validar y registrar evidencia.",
+        "evidence": "Bitácora con decisión técnica, traza o prueba.",
+        "feedbackRoute": "Retroalimentación automática en validaciones y revisión docente de evidencia.",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "teoria",
+          "visual",
+          "apoyo",
+          "practica",
+          "validacion",
+          "cierre"
+        ],
+        "components": {
+          "teoria": {
+            "type": "theory-block",
+            "title": "Funciones y responsabilidad única",
+            "eyebrow": "Desarrollo conceptual",
+            "body": [
+              "Una función agrupa una responsabilidad clara: calcular, validar, buscar, convertir o reportar. Cuando una función intenta hacer demasiadas cosas, se vuelve difícil de probar.",
+              "La programación estructurada usa funciones para hacer visible la arquitectura del algoritmo. Cada función debe declarar qué recibe, qué devuelve y qué condiciones espera.",
+              "Diseñar funciones pequeñas facilita reutilización y pruebas. También ayuda a separar lógica de entrada/salida, una práctica clave para validar algoritmos."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "task_alt",
+                "text": "Una función debe tener propósito claro."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Parámetros y retorno comunican contrato."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Separar entrada/salida mejora pruebas."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Funciones pequeñas reducen complejidad."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura técnica",
+                "body": [
+                  "Una función agrupa una responsabilidad clara: calcular, validar, buscar, convertir o reportar. Cuando una función intenta hacer demasiadas cosas, se vuelve difícil de probar."
+                ]
+              },
+              {
+                "title": "Decisión de diseño",
+                "body": [
+                  "La programación estructurada usa funciones para hacer visible la arquitectura del algoritmo. Cada función debe declarar qué recibe, qué devuelve y qué condiciones espera."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "Diseñar funciones pequeñas facilita reutilización y pruebas. También ayuda a separar lógica de entrada/salida, una práctica clave para validar algoritmos."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, explica con tus palabras qué decisión permite tomar este concepto."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "visual": {
+            "type": "image",
+            "title": "Visual: Funciones y responsabilidad única",
+            "assetId": "algoritmia-computacional-02-s4-visual",
+            "src": "",
+            "alt": "Recurso visual para comprender funciones y responsabilidad única y conectar el concepto con una decisión algorítmica.",
+            "caption": "Recurso visual para comprender funciones y responsabilidad única y conectar el concepto con una decisión algorítmica.",
+            "prompt": "Crear un diagrama modular con funciones leer_datos, validar, calcular_promedio y mostrar_resultado conectadas por datos."
+          },
+          "apoyo": {
+            "type": "table",
+            "title": "Contrato de una función",
+            "columns": [
+              "Elemento",
+              "Pregunta",
+              "Ejemplo"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Nombre",
+                  "¿Qué hace?",
+                  "calcular_promedio"
+                ]
+              },
+              {
+                "cells": [
+                  "Parámetros",
+                  "¿Qué necesita?",
+                  "arreglo y tamaño"
+                ]
+              },
+              {
+                "cells": [
+                  "Retorno",
+                  "¿Qué produce?",
+                  "promedio o error"
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: Funciones y responsabilidad única",
+            "statement": "Divide un algoritmo de promedio en tres funciones con responsabilidad única.",
+            "steps": [
+              {
+                "title": "Comprender",
+                "body": "Reescribe el enunciado con entradas, salida esperada y restricción principal.",
+                "final": false
+              },
+              {
+                "title": "Aplicar",
+                "body": "Usa la teoría de la sección para decidir estructura, condición, recorrido o memoria.",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Contrasta tu respuesta con un caso normal y un caso límite.",
+                "final": false
+              },
+              {
+                "title": "Registrar",
+                "body": "Anota en la bitácora la decisión tomada, la evidencia y una mejora posible.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "validacion": {
+            "type": "quiz",
+            "title": "Validación rápida: Funciones y responsabilidad única",
+            "questions": [
+              {
+                "prompt": "¿Qué debe quedar claro antes de considerar completa esta sección?",
+                "options": [
+                  {
+                    "text": "La decisión técnica, su evidencia y la forma de verificarla.",
+                    "correct": true,
+                    "feedback": "Correcto: el aprendizaje se evidencia con decisión, aplicación y verificación."
+                  },
+                  {
+                    "text": "Solo la definición memorizada del concepto.",
+                    "correct": false,
+                    "feedback": "Revisa la práctica guiada: memorizar no basta si no puedes aplicar y validar."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "cierre": {
+            "type": "callout",
+            "title": "Cierre de sección",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Registra una conclusión breve: qué comprendiste, qué evidencia lo demuestra y qué revisarías si el algoritmo fallara."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-5": {
+        "kind": "theory",
+        "theme": "5",
+        "badge": "Sección 5",
+        "navLabel": "Trazas integradas de control",
+        "title": "Trazas integradas de control",
+        "intro": [
+          "Cuando secuencia, selección, iteración y funciones trabajan juntas, la traza debe mostrar tanto el flujo como los datos. Esta lectura integrada permite explicar por qué el algoritmo llega a una salida."
+        ],
+        "estimatedTime": "50 minutos",
+        "studentAction": "Leer, observar, practicar, validar y registrar evidencia.",
+        "evidence": "Bitácora con decisión técnica, traza o prueba.",
+        "feedbackRoute": "Retroalimentación automática en validaciones y revisión docente de evidencia.",
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
+        "componentOrder": [
+          "teoria",
+          "visual",
+          "apoyo",
+          "practica",
+          "validacion",
+          "cierre"
+        ],
+        "components": {
+          "teoria": {
+            "type": "theory-block",
+            "title": "Trazas integradas de control",
+            "eyebrow": "Desarrollo conceptual",
+            "body": [
+              "Cuando secuencia, selección, iteración y funciones trabajan juntas, la traza debe mostrar tanto el flujo como los datos. Esta lectura integrada permite explicar por qué el algoritmo llega a una salida.",
+              "La traza integrada también prepara el análisis de memoria: cada variable tiene alcance, valor y momento de vida. Aunque todavía no se reserve memoria dinámica, ya se empieza a pensar qué datos existen y cuándo dejan de ser necesarios.",
+              "Un estudiante que sabe trazar controla mejor la depuración. No adivina dónde está el error: lo localiza observando el primer punto donde la salida esperada deja de coincidir con el estado real."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "task_alt",
+                "text": "La traza une flujo y datos."
+              },
+              {
+                "icon": "task_alt",
+                "text": "El alcance anticipa decisiones de memoria."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Depurar exige localizar el primer desvío."
+              },
+              {
+                "icon": "task_alt",
+                "text": "RA1 prepara el terreno para RA2."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura técnica",
+                "body": [
+                  "Cuando secuencia, selección, iteración y funciones trabajan juntas, la traza debe mostrar tanto el flujo como los datos. Esta lectura integrada permite explicar por qué el algoritmo llega a una salida."
+                ]
+              },
+              {
+                "title": "Decisión de diseño",
+                "body": [
+                  "La traza integrada también prepara el análisis de memoria: cada variable tiene alcance, valor y momento de vida. Aunque todavía no se reserve memoria dinámica, ya se empieza a pensar qué datos existen y cuándo dejan de ser necesarios."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "Un estudiante que sabe trazar controla mejor la depuración. No adivina dónde está el error: lo localiza observando el primer punto donde la salida esperada deja de coincidir con el estado real."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, explica con tus palabras qué decisión permite tomar este concepto."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "visual": {
+            "type": "image",
+            "title": "Visual: Trazas integradas de control",
+            "assetId": "algoritmia-computacional-02-s5-visual",
+            "src": "",
+            "alt": "Recurso visual para comprender trazas integradas de control y conectar el concepto con una decisión algorítmica.",
+            "caption": "Recurso visual para comprender trazas integradas de control y conectar el concepto con una decisión algorítmica.",
+            "prompt": "Crear una matriz de traza con columnas función, línea, condición, variables activas y observación."
+          },
+          "apoyo": {
+            "type": "quiz",
+            "title": "Chequeo de traza",
+            "questions": [
+              {
+                "prompt": "¿Qué evidencia muestra mejor que un ciclo está avanzando correctamente?",
+                "options": [
+                  {
+                    "text": "La variable de control cambia hacia la condición de parada y la traza lo confirma.",
+                    "correct": true,
+                    "feedback": "Correcto: el avance observable evita ciclos infinitos y permite justificar la ejecución."
+                  },
+                  {
+                    "text": "El ciclo tiene muchas líneas de código.",
+                    "correct": false,
+                    "feedback": "Revisa el concepto de criterio de parada: la longitud del código no demuestra avance."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: Trazas integradas de control",
+            "statement": "Construye una traza integrada de un algoritmo que lea edades hasta un valor negativo.",
+            "steps": [
+              {
+                "title": "Comprender",
+                "body": "Reescribe el enunciado con entradas, salida esperada y restricción principal.",
+                "final": false
+              },
+              {
+                "title": "Aplicar",
+                "body": "Usa la teoría de la sección para decidir estructura, condición, recorrido o memoria.",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Contrasta tu respuesta con un caso normal y un caso límite.",
+                "final": false
+              },
+              {
+                "title": "Registrar",
+                "body": "Anota en la bitácora la decisión tomada, la evidencia y una mejora posible.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "validacion": {
+            "type": "quiz",
+            "title": "Validación rápida: Trazas integradas de control",
+            "questions": [
+              {
+                "prompt": "¿Qué debe quedar claro antes de considerar completa esta sección?",
+                "options": [
+                  {
+                    "text": "La decisión técnica, su evidencia y la forma de verificarla.",
+                    "correct": true,
+                    "feedback": "Correcto: el aprendizaje se evidencia con decisión, aplicación y verificación."
+                  },
+                  {
+                    "text": "Solo la definición memorizada del concepto.",
+                    "correct": false,
+                    "feedback": "Revisa la práctica guiada: memorizar no basta si no puedes aplicar y validar."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "cierre": {
+            "type": "callout",
+            "title": "Cierre de sección",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Registra una conclusión breve: qué comprendiste, qué evidencia lo demuestra y qué revisarías si el algoritmo fallara."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "pdf": {
+    "guideLabel": "GUÍA DE ESTUDIO VIRTUAL",
+    "kicker": "Aprendizaje guiado · Práctica aplicada · Autoevaluación",
+    "institution": "Universidad de América",
+    "year": "2026",
+    "title": "Algoritmia Computacional: Estructuras de control y programación estructurada",
+    "subtitle": "Secuencia, selección, iteración y funciones",
+    "purpose": "Guiar el estudio autónomo del contenido 02 mediante teoría, ejemplos, visualizaciones, práctica y evaluación cualitativa conectada con RA1 y RA2.",
+    "structure": "Introducción · cinco secciones teóricas · prácticas guiadas · ejercicios imprimibles",
+    "minimumPages": 10,
+    "sectionOrder": [
+      "pdf-intro",
+      "pdf-seccion-1",
+      "pdf-seccion-2",
+      "pdf-seccion-3",
+      "pdf-seccion-4",
+      "pdf-seccion-5"
+    ],
+    "sections": {
+      "pdf-intro": {
+        "title": "Introducción al contenido 02",
+        "intro": [
+          "Secuencia, selección, iteración y funciones"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-objetivos",
+          "pdf-fases",
+          "pdf-callout"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Presentación del contenido 02",
+            "eyebrow": "Base de estudio",
+            "body": [
+              "Este contenido desarrolla usar estructuras de control para construir algoritmos claros, finitos y trazables. La ruta está diseñada para que el estudiante avance desde una comprensión inicial hasta una aplicación verificable mediante práctica y retroalimentación.",
+              "La asignatura trabaja de forma simultánea RA1 y RA2: las estructuras de programación permiten construir el flujo del algoritmo, mientras que la evaluación de memoria ayuda a decidir si los datos pueden sostenerse durante la ejecución.",
+              "El aprendizaje guiado propone estudiar primero el concepto, luego observar una representación visual o técnica, practicar con pasos concretos, validar comprensión y cerrar con una evidencia breve."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "route",
+                "text": "La ruta avanza con Aprendizaje Guiado por fases."
+              },
+              {
+                "icon": "schema",
+                "text": "Cada sección conecta teoría, ejemplo, práctica y validación."
+              },
+              {
+                "icon": "memory",
+                "text": "RA1 y RA2 se observan de manera integrada."
+              },
+              {
+                "icon": "task_alt",
+                "text": "La evidencia principal es una bitácora verificable."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Cómo trabajar este contenido",
+                "body": [
+                  "Lee el bloque teórico antes de interactuar con imágenes, código, fórmulas o actividades. Después completa la práctica guiada y registra una evidencia breve en tu bitácora."
+                ]
+              },
+              {
+                "title": "Evidencia esperada",
+                "body": [
+                  "Al finalizar, debes poder explicar una decisión algorítmica, mostrar una traza o prueba y justificar cómo se usan los datos en memoria cuando aplique."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo de recorrido",
+              "body": [
+                "Si aparece un fragmento de código, primero identifica entrada, procesamiento, salida y memoria involucrada; luego ejecútalo o trázalo con los datos indicados."
+              ]
+            },
+            "closing": [
+              "Antes de avanzar, prepara una bitácora con tres columnas: decisión, evidencia y mejora."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos del contenido",
+            "items": [
+              {
+                "icon": "check_circle",
+                "text": "Explicar el propósito de estructuras de control y programación estructurada dentro de la asignatura."
+              },
+              {
+                "icon": "code",
+                "text": "Aplicar estructuras de programación o representación de datos en una tarea guiada."
+              },
+              {
+                "icon": "memory",
+                "text": "Relacionar decisiones de datos con memoria, ejecución y evidencia de prueba."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-fases": {
+            "type": "table",
+            "title": "Ruta de Aprendizaje Guiado",
+            "columns": [
+              "Fase",
+              "Acción del estudiante",
+              "Evidencia"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Fase 1",
+                  "Contextualizar el concepto.",
+                  "Respuesta de presaberes."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 2",
+                  "Desarrollar teoría y observar ejemplos.",
+                  "Notas de lectura o mapa breve."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 3",
+                  "Aplicar con práctica guiada.",
+                  "Traza, código o tabla de decisión."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 4",
+                  "Validar y transferir.",
+                  "Bitácora y reflexión final."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-callout": {
+            "type": "callout",
+            "title": "Uso de la guía",
+            "tone": "light",
+            "icon": "task_alt",
+            "body": [
+              "Esta guía corresponde al contenido 02 de 07. Trabaja las secciones en orden, resuelve las prácticas y conserva la bitácora como evidencia de progreso.",
+              "Extensión objetivo: mínimo 10 páginas imprimibles para este PDF."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-1": {
+        "title": "Secuencia y estado del programa",
+        "intro": [
+          "La secuencia define qué ocurre primero y qué ocurre después. Aunque parece simple, muchos errores nacen de calcular antes de leer, validar después de usar o actualizar una variable en el lugar equivocado."
+        ],
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-visual",
+          "pdf-apoyo",
+          "pdf-practica",
+          "pdf-ejercicios"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Secuencia y estado del programa",
+            "eyebrow": "Desarrollo teórico",
+            "body": [
+              "La secuencia define qué ocurre primero y qué ocurre después. Aunque parece simple, muchos errores nacen de calcular antes de leer, validar después de usar o actualizar una variable en el lugar equivocado.",
+              "El estado del programa está formado por los valores actuales de las variables. Cada instrucción puede conservar, transformar o invalidar ese estado.",
+              "Leer una secuencia como cambios de estado permite explicar el algoritmo sin memorizar líneas. Lo importante es comprender qué efecto produce cada instrucción."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "El orden modifica el resultado."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Las variables representan estado."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Una asignación cambia evidencia futura."
+              },
+              {
+                "icon": "check_circle",
+                "text": "La traza revela errores de secuencia."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Profundización",
+                "body": [
+                  "El estado del programa está formado por los valores actuales de las variables. Cada instrucción puede conservar, transformar o invalidar ese estado."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Leer una secuencia como cambios de estado permite explicar el algoritmo sin memorizar líneas. Lo importante es comprender qué efecto produce cada instrucción."
+              ]
+            },
+            "closing": [
+              "Escribe una conclusión de tres líneas conectando el concepto con RA1 o RA2."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-visual": {
+            "type": "image",
+            "title": "Figura 1. Secuencia y estado del programa",
+            "assetId": "algoritmia-computacional-02-s1-visual",
+            "src": "",
+            "alt": "La figura sintetiza secuencia y estado del programa para apoyar la lectura impresa.",
+            "caption": "La figura sintetiza secuencia y estado del programa para apoyar la lectura impresa.",
+            "prompt": "Crear un diagrama de flujo lineal con lectura, validación, cálculo y salida; mostrar cómo cambia una variable acumulador."
+          },
+          "pdf-apoyo": {
+            "type": "table",
+            "title": "Errores de secuencia frecuentes",
+            "columns": [
+              "Error",
+              "Síntoma",
+              "Corrección"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Calcular antes de leer",
+                  "Resultado basura o cero.",
+                  "Leer y validar primero."
+                ]
+              },
+              {
+                "cells": [
+                  "Actualizar tarde",
+                  "Contador desfasado.",
+                  "Actualizar dentro del bloque correcto."
+                ]
+              },
+              {
+                "cells": [
+                  "Imprimir antes de cerrar",
+                  "Salida incompleta.",
+                  "Imprimir al final del cálculo."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-practica": {
+            "type": "stepper",
+            "title": "Práctica impresa: Secuencia y estado del programa",
+            "statement": "Ordena instrucciones desordenadas para calcular el total de una factura.",
+            "steps": [
+              {
+                "title": "Modelar",
+                "body": "Identifica entradas, salida y restricción.",
+                "final": false
+              },
+              {
+                "title": "Resolver",
+                "body": "Aplica el procedimiento de la sección.",
+                "final": false
+              },
+              {
+                "title": "Validar",
+                "body": "Contrasta con un caso límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de sección 1",
+            "items": [
+              {
+                "prompt": "Nivel 1. Explica con tus palabras el concepto central de secuencia y estado del programa."
+              },
+              {
+                "prompt": "Nivel 2. Aplica el concepto a un caso pequeño relacionado con ordena instrucciones desordenadas para calcular el total de una factura.."
+              },
+              {
+                "prompt": "Nivel 3. Diseña una prueba normal y una prueba límite para validar tu respuesta."
+              },
+              {
+                "prompt": "Nivel 4. Propón una mejora y justifica si afecta tiempo, memoria o claridad."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-2": {
+        "title": "Selección: condiciones completas",
+        "intro": [
+          "La selección permite que el algoritmo tome caminos diferentes según una condición. Una condición debe poder evaluarse como verdadera o falsa, sin depender de interpretaciones vagas."
+        ],
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-visual",
+          "pdf-apoyo",
+          "pdf-practica",
+          "pdf-ejercicios"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Selección: condiciones completas",
+            "eyebrow": "Desarrollo teórico",
+            "body": [
+              "La selección permite que el algoritmo tome caminos diferentes según una condición. Una condición debe poder evaluarse como verdadera o falsa, sin depender de interpretaciones vagas.",
+              "Las condiciones incompletas suelen olvidar igualdad, rangos cerrados, datos inválidos o prioridades entre reglas. Por eso no basta escribir si el dato es válido; hay que definir qué significa válido.",
+              "La selección también exige pensar en consecuencias. Cada camino debe dejar el estado en una forma coherente para las instrucciones que siguen."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "Una condición debe ser evaluable."
+              },
+              {
+                "icon": "check_circle",
+                "text": "La igualdad cambia fronteras."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Todo camino debe dejar estado coherente."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Validar antes de calcular evita errores."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Profundización",
+                "body": [
+                  "Las condiciones incompletas suelen olvidar igualdad, rangos cerrados, datos inválidos o prioridades entre reglas. Por eso no basta escribir si el dato es válido; hay que definir qué significa válido."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "La selección también exige pensar en consecuencias. Cada camino debe dejar el estado en una forma coherente para las instrucciones que siguen."
+              ]
+            },
+            "closing": [
+              "Escribe una conclusión de tres líneas conectando el concepto con RA1 o RA2."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-visual": {
+            "type": "image",
+            "title": "Figura 2. Selección: condiciones completas",
+            "assetId": "algoritmia-computacional-02-s2-visual",
+            "src": "",
+            "alt": "La figura sintetiza selección: condiciones completas para apoyar la lectura impresa.",
+            "caption": "La figura sintetiza selección: condiciones completas para apoyar la lectura impresa.",
+            "prompt": "Crear un árbol de decisión en español con condiciones para clasificar una calificación: inválida, reprobada, aprobada, sobresaliente."
+          },
+          "pdf-apoyo": {
+            "type": "formula",
+            "title": "Condición de rango válido",
+            "context": [
+              "La expresión representa una validación antes de clasificar una nota."
+            ],
+            "latex": "0 \\leq nota \\leq 100",
+            "variables": [
+              {
+                "symbol": "nota",
+                "description": "valor numérico recibido como entrada."
+              }
+            ],
+            "explanation": [
+              "Si la condición no se cumple, el algoritmo debe reportar entrada inválida antes de continuar."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-practica": {
+            "type": "stepper",
+            "title": "Práctica impresa: Selección: condiciones completas",
+            "statement": "Diseña una estructura de selección para validar edad, clasificar mayoría de edad y reportar entradas imposibles.",
+            "steps": [
+              {
+                "title": "Modelar",
+                "body": "Identifica entradas, salida y restricción.",
+                "final": false
+              },
+              {
+                "title": "Resolver",
+                "body": "Aplica el procedimiento de la sección.",
+                "final": false
+              },
+              {
+                "title": "Validar",
+                "body": "Contrasta con un caso límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de sección 2",
+            "items": [
+              {
+                "prompt": "Nivel 1. Explica con tus palabras el concepto central de selección: condiciones completas."
+              },
+              {
+                "prompt": "Nivel 2. Aplica el concepto a un caso pequeño relacionado con diseña una estructura de selección para validar edad, clasificar mayoría de edad y reportar entradas imposibles.."
+              },
+              {
+                "prompt": "Nivel 3. Diseña una prueba normal y una prueba límite para validar tu respuesta."
+              },
+              {
+                "prompt": "Nivel 4. Propón una mejora y justifica si afecta tiempo, memoria o claridad."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-3": {
+        "title": "Iteración: ciclos con parada clara",
+        "intro": [
+          "La iteración repite una acción mientras una condición lo permita o hasta recorrer una colección. Todo ciclo necesita inicio, avance y criterio de parada."
+        ],
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-visual",
+          "pdf-apoyo",
+          "pdf-practica",
+          "pdf-ejercicios"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Iteración: ciclos con parada clara",
+            "eyebrow": "Desarrollo teórico",
+            "body": [
+              "La iteración repite una acción mientras una condición lo permita o hasta recorrer una colección. Todo ciclo necesita inicio, avance y criterio de parada.",
+              "Un ciclo mal diseñado puede no ejecutarse, ejecutarse de más o no terminar. La pregunta central es qué cambia en cada vuelta y qué evidencia muestra que el ciclo avanza.",
+              "Los centinelas son valores especiales que indican fin de entrada. Deben excluirse del cálculo cuando representan control y no datos reales."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "Todo ciclo necesita avance."
+              },
+              {
+                "icon": "check_circle",
+                "text": "El centinela controla, no se procesa."
+              },
+              {
+                "icon": "check_circle",
+                "text": "El acumulador resume datos aceptados."
+              },
+              {
+                "icon": "check_circle",
+                "text": "El contador permite calcular promedios."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Profundización",
+                "body": [
+                  "Un ciclo mal diseñado puede no ejecutarse, ejecutarse de más o no terminar. La pregunta central es qué cambia en cada vuelta y qué evidencia muestra que el ciclo avanza."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Los centinelas son valores especiales que indican fin de entrada. Deben excluirse del cálculo cuando representan control y no datos reales."
+              ]
+            },
+            "closing": [
+              "Escribe una conclusión de tres líneas conectando el concepto con RA1 o RA2."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-visual": {
+            "type": "image",
+            "title": "Figura 3. Iteración: ciclos con parada clara",
+            "assetId": "algoritmia-computacional-02-s3-visual",
+            "src": "",
+            "alt": "La figura sintetiza iteración: ciclos con parada clara para apoyar la lectura impresa.",
+            "caption": "La figura sintetiza iteración: ciclos con parada clara para apoyar la lectura impresa.",
+            "prompt": "Crear una figura de ciclo while con centinela 0, acumulador suma y lectura del siguiente dato dentro del ciclo."
+          },
+          "pdf-apoyo": {
+            "type": "code",
+            "title": "Ciclo centinela en C",
+            "language": "c",
+            "languageLabel": "C",
+            "fileName": "suma_positivos.c",
+            "instructions": [
+              "Guarda el fragmento como suma_positivos.c.",
+              "Ábrelo en un editor o IDE con compilador C. Desde una terminal ubicada en la carpeta del archivo ejecuta: gcc suma_positivos.c -o suma_positivos.",
+              "En Windows ejecuta .\\suma_positivos.exe; en macOS/Linux ejecuta ./suma_positivos.",
+              "Usa como entrada de prueba: 5 8 -2 0.",
+              "Antes de ejecutar, identifica cuál valor funciona como centinela, cuáles se acumulan y dónde se lee el siguiente dato.",
+              "Después de ejecutar, compara la salida con tu traza y explica cualquier diferencia."
+            ],
+            "code": "#include <stdio.h>\n\nint main(void) {\n    int valor;\n    int suma = 0;\n\n    printf(\"Ingrese valores positivos. Use 0 para terminar:\\n\");\n    scanf(\"%d\", &valor);\n\n    while (valor != 0) {\n        if (valor > 0) {\n            suma = suma + valor;\n        }\n        scanf(\"%d\", &valor);\n    }\n\n    printf(\"Suma de positivos: %d\\n\", suma);\n    return 0;\n}",
+            "expectedOutput": [
+              "Con entrada 5, 8, -2, 0, la salida esperada es Suma de positivos: 13."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-practica": {
+            "type": "stepper",
+            "title": "Práctica impresa: Iteración: ciclos con parada clara",
+            "statement": "Modifica el algoritmo para contar cuántos valores positivos fueron aceptados.",
+            "steps": [
+              {
+                "title": "Modelar",
+                "body": "Identifica entradas, salida y restricción.",
+                "final": false
+              },
+              {
+                "title": "Resolver",
+                "body": "Aplica el procedimiento de la sección.",
+                "final": false
+              },
+              {
+                "title": "Validar",
+                "body": "Contrasta con un caso límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de sección 3",
+            "items": [
+              {
+                "prompt": "Nivel 1. Explica con tus palabras el concepto central de iteración: ciclos con parada clara."
+              },
+              {
+                "prompt": "Nivel 2. Aplica el concepto a un caso pequeño relacionado con modifica el algoritmo para contar cuántos valores positivos fueron aceptados.."
+              },
+              {
+                "prompt": "Nivel 3. Diseña una prueba normal y una prueba límite para validar tu respuesta."
+              },
+              {
+                "prompt": "Nivel 4. Propón una mejora y justifica si afecta tiempo, memoria o claridad."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-4": {
+        "title": "Funciones y responsabilidad única",
+        "intro": [
+          "Una función agrupa una responsabilidad clara: calcular, validar, buscar, convertir o reportar. Cuando una función intenta hacer demasiadas cosas, se vuelve difícil de probar."
+        ],
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-visual",
+          "pdf-apoyo",
+          "pdf-practica",
+          "pdf-ejercicios"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Funciones y responsabilidad única",
+            "eyebrow": "Desarrollo teórico",
+            "body": [
+              "Una función agrupa una responsabilidad clara: calcular, validar, buscar, convertir o reportar. Cuando una función intenta hacer demasiadas cosas, se vuelve difícil de probar.",
+              "La programación estructurada usa funciones para hacer visible la arquitectura del algoritmo. Cada función debe declarar qué recibe, qué devuelve y qué condiciones espera.",
+              "Diseñar funciones pequeñas facilita reutilización y pruebas. También ayuda a separar lógica de entrada/salida, una práctica clave para validar algoritmos."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "Una función debe tener propósito claro."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Parámetros y retorno comunican contrato."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Separar entrada/salida mejora pruebas."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Funciones pequeñas reducen complejidad."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Profundización",
+                "body": [
+                  "La programación estructurada usa funciones para hacer visible la arquitectura del algoritmo. Cada función debe declarar qué recibe, qué devuelve y qué condiciones espera."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Diseñar funciones pequeñas facilita reutilización y pruebas. También ayuda a separar lógica de entrada/salida, una práctica clave para validar algoritmos."
+              ]
+            },
+            "closing": [
+              "Escribe una conclusión de tres líneas conectando el concepto con RA1 o RA2."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-visual": {
+            "type": "image",
+            "title": "Figura 4. Funciones y responsabilidad única",
+            "assetId": "algoritmia-computacional-02-s4-visual",
+            "src": "",
+            "alt": "La figura sintetiza funciones y responsabilidad única para apoyar la lectura impresa.",
+            "caption": "La figura sintetiza funciones y responsabilidad única para apoyar la lectura impresa.",
+            "prompt": "Crear un diagrama modular con funciones leer_datos, validar, calcular_promedio y mostrar_resultado conectadas por datos."
+          },
+          "pdf-apoyo": {
+            "type": "table",
+            "title": "Contrato de una función",
+            "columns": [
+              "Elemento",
+              "Pregunta",
+              "Ejemplo"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Nombre",
+                  "¿Qué hace?",
+                  "calcular_promedio"
+                ]
+              },
+              {
+                "cells": [
+                  "Parámetros",
+                  "¿Qué necesita?",
+                  "arreglo y tamaño"
+                ]
+              },
+              {
+                "cells": [
+                  "Retorno",
+                  "¿Qué produce?",
+                  "promedio o error"
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-practica": {
+            "type": "stepper",
+            "title": "Práctica impresa: Funciones y responsabilidad única",
+            "statement": "Divide un algoritmo de promedio en tres funciones con responsabilidad única.",
+            "steps": [
+              {
+                "title": "Modelar",
+                "body": "Identifica entradas, salida y restricción.",
+                "final": false
+              },
+              {
+                "title": "Resolver",
+                "body": "Aplica el procedimiento de la sección.",
+                "final": false
+              },
+              {
+                "title": "Validar",
+                "body": "Contrasta con un caso límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de sección 4",
+            "items": [
+              {
+                "prompt": "Nivel 1. Explica con tus palabras el concepto central de funciones y responsabilidad única."
+              },
+              {
+                "prompt": "Nivel 2. Aplica el concepto a un caso pequeño relacionado con divide un algoritmo de promedio en tres funciones con responsabilidad única.."
+              },
+              {
+                "prompt": "Nivel 3. Diseña una prueba normal y una prueba límite para validar tu respuesta."
+              },
+              {
+                "prompt": "Nivel 4. Propón una mejora y justifica si afecta tiempo, memoria o claridad."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-5": {
+        "title": "Trazas integradas de control",
+        "intro": [
+          "Cuando secuencia, selección, iteración y funciones trabajan juntas, la traza debe mostrar tanto el flujo como los datos. Esta lectura integrada permite explicar por qué el algoritmo llega a una salida."
+        ],
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
+        "componentOrder": [
+          "pdf-teoria",
+          "pdf-visual",
+          "pdf-apoyo",
+          "pdf-practica",
+          "pdf-ejercicios"
+        ],
+        "components": {
+          "pdf-teoria": {
+            "type": "theory-block",
+            "title": "Trazas integradas de control",
+            "eyebrow": "Desarrollo teórico",
+            "body": [
+              "Cuando secuencia, selección, iteración y funciones trabajan juntas, la traza debe mostrar tanto el flujo como los datos. Esta lectura integrada permite explicar por qué el algoritmo llega a una salida.",
+              "La traza integrada también prepara el análisis de memoria: cada variable tiene alcance, valor y momento de vida. Aunque todavía no se reserve memoria dinámica, ya se empieza a pensar qué datos existen y cuándo dejan de ser necesarios.",
+              "Un estudiante que sabe trazar controla mejor la depuración. No adivina dónde está el error: lo localiza observando el primer punto donde la salida esperada deja de coincidir con el estado real."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "La traza une flujo y datos."
+              },
+              {
+                "icon": "check_circle",
+                "text": "El alcance anticipa decisiones de memoria."
+              },
+              {
+                "icon": "check_circle",
+                "text": "Depurar exige localizar el primer desvío."
+              },
+              {
+                "icon": "check_circle",
+                "text": "RA1 prepara el terreno para RA2."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Profundización",
+                "body": [
+                  "La traza integrada también prepara el análisis de memoria: cada variable tiene alcance, valor y momento de vida. Aunque todavía no se reserve memoria dinámica, ya se empieza a pensar qué datos existen y cuándo dejan de ser necesarios."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Un estudiante que sabe trazar controla mejor la depuración. No adivina dónde está el error: lo localiza observando el primer punto donde la salida esperada deja de coincidir con el estado real."
+              ]
+            },
+            "closing": [
+              "Escribe una conclusión de tres líneas conectando el concepto con RA1 o RA2."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-visual": {
+            "type": "image",
+            "title": "Figura 5. Trazas integradas de control",
+            "assetId": "algoritmia-computacional-02-s5-visual",
+            "src": "",
+            "alt": "La figura sintetiza trazas integradas de control para apoyar la lectura impresa.",
+            "caption": "La figura sintetiza trazas integradas de control para apoyar la lectura impresa.",
+            "prompt": "Crear una matriz de traza con columnas función, línea, condición, variables activas y observación."
+          },
+          "pdf-apoyo": {
+            "type": "callout",
+            "title": "Chequeo de traza",
+            "tone": "example",
+            "icon": "task_alt",
+            "body": [
+              "Pregunta orientadora: ¿Qué evidencia muestra mejor que un ciclo está avanzando correctamente?",
+              "Criterio de respuesta esperada: La variable de control cambia hacia la condición de parada y la traza lo confirma.",
+              "Retroalimentación: Correcto: el avance observable evita ciclos infinitos y permite justificar la ejecución."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-practica": {
+            "type": "stepper",
+            "title": "Práctica impresa: Trazas integradas de control",
+            "statement": "Construye una traza integrada de un algoritmo que lea edades hasta un valor negativo.",
+            "steps": [
+              {
+                "title": "Modelar",
+                "body": "Identifica entradas, salida y restricción.",
+                "final": false
+              },
+              {
+                "title": "Resolver",
+                "body": "Aplica el procedimiento de la sección.",
+                "final": false
+              },
+              {
+                "title": "Validar",
+                "body": "Contrasta con un caso límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          },
+          "pdf-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de sección 5",
+            "items": [
+              {
+                "prompt": "Nivel 1. Explica con tus palabras el concepto central de trazas integradas de control."
+              },
+              {
+                "prompt": "Nivel 2. Aplica el concepto a un caso pequeño relacionado con construye una traza integrada de un algoritmo que lea edades hasta un valor negativo.."
+              },
+              {
+                "prompt": "Nivel 3. Diseña una prueba normal y una prueba límite para validar tu respuesta."
+              },
+              {
+                "prompt": "Nivel 4. Propón una mejora y justifica si afecta tiempo, memoria o claridad."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2391 @@
+{
+  "subject": {
+    "id": "calculo-diferencial",
+    "title": "Cálculo Diferencial",
+    "program": "",
+    "contentNumber": "01",
+    "contentTotal": "01",
+    "contentTitle": "Funciones, límites y derivada como razón de cambio",
+    "description": "Unidad introductoria para comprender el cálculo diferencial como lenguaje para modelar variación, tendencia, continuidad y cambio instantáneo en problemas académicos y de ingeniería.",
+    "level": "Pregrado",
+    "language": "español",
+    "syllabus": {
+      "source": {
+        "type": "not-provided",
+        "fileName": ""
+      },
+      "extractedFields": {
+        "code": "",
+        "faculty": "",
+        "program": "",
+        "level": "Pregrado",
+        "type": "",
+        "modality": "Virtual",
+        "semester": "",
+        "credits": "",
+        "hours": {
+          "total": "",
+          "autonomous": "",
+          "directTeaching": ""
+        },
+        "updatedAt": "2026-06-22",
+        "version": "Borrador generado sin sílabo adjunto"
+      },
+      "learningOutcomes": [
+        {
+          "id": "RA1",
+          "text": "Reconoce funciones, límites y continuidad como herramientas para describir variación y comportamiento local."
+        },
+        {
+          "id": "RA2",
+          "text": "Interpreta la derivada como razón de cambio instantánea y pendiente de la recta tangente."
+        },
+        {
+          "id": "RA3",
+          "text": "Aplica reglas básicas de derivación para resolver problemas contextualizados y justificar resultados."
+        }
+      ],
+      "priorKnowledge": [
+        "Álgebra elemental.",
+        "Plano cartesiano.",
+        "Evaluación de expresiones algebraicas.",
+        "Lectura básica de gráficas."
+      ],
+      "competencies": [
+        "Razonamiento matemático.",
+        "Modelación de fenómenos de cambio.",
+        "Comunicación de procedimientos y resultados."
+      ],
+      "evaluationCriteria": [
+        "Explica el significado de límite, continuidad y derivada en lenguaje matemático y contextual.",
+        "Selecciona procedimientos adecuados para analizar funciones elementales.",
+        "Justifica cálculos y conclusiones con notación, interpretación gráfica y verificación."
+      ],
+      "topics": [
+        "Funciones y variación.",
+        "Límites laterales e interpretación de tendencia.",
+        "Continuidad.",
+        "Derivada desde la definición.",
+        "Reglas básicas de derivación y aplicaciones."
+      ],
+      "methodologyNotes": [
+        "Aprendizaje guiado para modalidad virtual.",
+        "Secuencia de explicación, visualización, práctica y validación formativa."
+      ],
+      "evaluationPlan": [
+        "Diagnóstico inicial de presaberes.",
+        "Prácticas guiadas por sección.",
+        "Actividad integradora con retroalimentación cualitativa."
+      ],
+      "bibliography": {
+        "basic": [
+          "Stewart, J. (2016). Cálculo de una variable: Trascendentes tempranas. Cengage Learning.",
+          "Larson, R., & Edwards, B. H. (2018). Cálculo. Cengage Learning.",
+          "Thomas, G. B., Weir, M. D., Hass, J., & Giordano, F. R. (2010). Cálculo: Una variable. Pearson."
+        ],
+        "complementary": [
+          "Apostol, T. M. (2001). Calculus, Volume 1. Wiley.",
+          "Spivak, M. (2008). Calculus. Publish or Perish."
+        ]
+      },
+      "missingFields": [
+        "Código oficial de la asignatura.",
+        "Programa académico específico.",
+        "Número de créditos.",
+        "Distribución horaria.",
+        "Resultados de aprendizaje oficiales del sílabo.",
+        "Bibliografía institucional obligatoria.",
+        "Criterios o ponderaciones oficiales de evaluación."
+      ]
+    },
+    "methodology": {
+      "code": "AG",
+      "name": "Aprendizaje Guiado",
+      "rationale": "Ruta virtual que acompaña al estudiante desde la comprensión conceptual hasta la práctica aplicada, con ejemplos, visualizaciones, autoevaluación y retroalimentación formativa.",
+      "moments": [
+        "Fase 1",
+        "Fase 2",
+        "Fase 3",
+        "Fase 4"
+      ]
+    }
+  },
+  "scorm": {
+    "labels": {
+      "theoryNav": "Contenido teórico",
+      "materialNav": "Material complementario",
+      "practiceNav": "Práctica guiada",
+      "assessmentNav": "Validación formativa"
+    },
+    "sectionOrder": [
+      "intro",
+      "seccion-1",
+      "seccion-2",
+      "seccion-3",
+      "seccion-4",
+      "seccion-5"
+    ],
+    "sections": {
+      "intro": {
+        "kind": "theory",
+        "theme": "Introducción",
+        "badge": "Inicio",
+        "navLabel": "Presentación",
+        "title": "Cálculo diferencial para comprender el cambio",
+        "intro": [
+          "Esta unidad presenta el cálculo diferencial como una forma de estudiar cómo cambian las cantidades y cómo se comporta una función cerca de un punto."
+        ],
+        "estimatedTime": "45 minutos",
+        "studentAction": "Leer la presentación, revisar los objetivos, reconocer la ruta de trabajo y responder el diagnóstico inicial.",
+        "evidence": "Registro breve de saberes previos y dudas iniciales.",
+        "feedbackRoute": "Retroalimentación automática en el diagnóstico y orientación docente a partir de las respuestas.",
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2",
+          "RA3"
+        ],
+        "componentOrder": [
+          "intro-teoria",
+          "intro-objetivos",
+          "intro-ruta",
+          "intro-diagnostico"
+        ],
+        "components": {
+          "intro-teoria": {
+            "type": "theory-block",
+            "title": "¿Para qué sirve el cálculo diferencial?",
+            "eyebrow": "Base de la asignatura",
+            "body": [
+              "El cálculo diferencial permite estudiar fenómenos que cambian: la posición de un objeto, el crecimiento de una población, la variación de un costo, la respuesta de un sistema o la inclinación de una curva. Su valor no está solo en aplicar fórmulas, sino en interpretar qué significa cambiar y cómo se mide ese cambio.",
+              "La unidad avanza desde la idea de función hasta la derivada. Primero se identifica cómo una variable depende de otra; luego se estudia qué ocurre cuando la variable se acerca a un valor; después se reconoce cuándo el comportamiento es continuo; finalmente se interpreta la derivada como cambio instantáneo.",
+              "Trabajar cálculo diferencial exige combinar tres lenguajes: verbal, gráfico y simbólico. Una respuesta completa no solo muestra operaciones; también explica qué representa el resultado, qué condiciones se usaron y por qué la conclusión tiene sentido en el contexto."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "timeline",
+                "text": "El cálculo diferencial estudia variación local."
+              },
+              {
+                "icon": "show_chart",
+                "text": "Una gráfica ayuda a anticipar límites, continuidad y pendientes."
+              },
+              {
+                "icon": "functions",
+                "text": "La notación matemática resume relaciones, no reemplaza la interpretación."
+              },
+              {
+                "icon": "rule",
+                "text": "Cada procedimiento debe justificarse con condiciones y verificación."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Del cambio promedio al cambio instantáneo",
+                "body": [
+                  "Cuando una magnitud cambia entre dos puntos, se puede medir un cambio promedio. La derivada surge cuando esa medición se hace cada vez más local, hasta describir el comportamiento en un punto."
+                ]
+              },
+              {
+                "title": "Ruta de trabajo sugerida",
+                "body": [
+                  "Lee primero la explicación, observa la gráfica o tabla, sigue la práctica guiada y responde la validación. Si una respuesta falla, vuelve al concepto que la actividad señala."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientador",
+              "body": [
+                "Si el costo de producción aumenta al fabricar más unidades, la derivada permite estimar el costo marginal: cuánto cambia el costo alrededor de una cantidad específica."
+              ]
+            },
+            "closing": [
+              "Antes de entrar a los temas, escribe una situación de tu programa en la que una cantidad cambie respecto a otra."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ]
+          },
+          "intro-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos de aprendizaje",
+            "items": [
+              {
+                "icon": "track_changes",
+                "text": "Distinguir función, límite, continuidad y derivada como ideas conectadas."
+              },
+              {
+                "icon": "analytics",
+                "text": "Interpretar gráficas y tablas para explicar comportamiento local."
+              },
+              {
+                "icon": "edit_note",
+                "text": "Resolver ejercicios básicos de derivación con justificación."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ]
+          },
+          "intro-ruta": {
+            "type": "table",
+            "title": "Ruta de aprendizaje",
+            "columns": [
+              "Fase",
+              "Acción del estudiante",
+              "Evidencia"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Fase 1",
+                  "Reconocer funciones y comportamiento gráfico.",
+                  "Notas de observación y diagnóstico."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 2",
+                  "Explicar límites y continuidad con tablas, gráficas y notación.",
+                  "Resolución guiada de ejercicios."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 3",
+                  "Interpretar la derivada y aplicar reglas básicas.",
+                  "Práctica aplicada con justificación."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 4",
+                  "Integrar conceptos en un problema contextualizado.",
+                  "Actividad evaluativa cualitativa."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ]
+          },
+          "intro-diagnostico": {
+            "type": "quiz",
+            "title": "Diagnóstico inicial",
+            "questions": [
+              {
+                "prompt": "¿Qué información entrega una gráfica de una función?",
+                "options": [
+                  {
+                    "text": "Muestra cómo una cantidad de salida cambia cuando cambia una cantidad de entrada.",
+                    "correct": true,
+                    "feedback": "Correcto: esa relación entre entrada y salida es la base para estudiar variación."
+                  },
+                  {
+                    "text": "Solo permite ubicar puntos aislados sin relación entre ellos.",
+                    "correct": false,
+                    "feedback": "Revisa la idea de función: una gráfica permite observar patrones de dependencia y cambio."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-1": {
+        "kind": "theory",
+        "theme": "Funciones",
+        "badge": "Sección 1",
+        "navLabel": "Funciones y variación",
+        "title": "Funciones como modelos de cambio",
+        "intro": [
+          "Una función organiza la relación entre una variable de entrada y una variable de salida."
+        ],
+        "estimatedTime": "55 minutos",
+        "studentAction": "Leer la explicación, interpretar la gráfica, seguir la práctica y resolver el chequeo.",
+        "evidence": "Tabla de valores interpretada y conclusión escrita.",
+        "feedbackRoute": "Retroalimentación automática del chequeo y revisión de la conclusión.",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "s1-teoria",
+          "s1-grafico",
+          "s1-tabla",
+          "s1-practica",
+          "s1-validacion",
+          "s1-cierre"
+        ],
+        "components": {
+          "s1-teoria": {
+            "type": "theory-block",
+            "title": "De una relación a una función",
+            "eyebrow": "Concepto central",
+            "body": [
+              "Una función asigna a cada entrada permitida una única salida. Esta condición permite analizar fenómenos de manera ordenada: para cada valor elegido de la variable independiente, el modelo produce un valor de la variable dependiente.",
+              "En cálculo diferencial, una función no se estudia solo para calcular valores. También interesa saber si crece, decrece, se aproxima a un número, presenta saltos o cambia con rapidez. Por eso la función es el punto de partida de límites, continuidad y derivadas.",
+              "La lectura de una función debe combinar dominio, regla de correspondencia, tabla y gráfica. Si alguno de esos elementos se ignora, es fácil confundir el valor de una función con su tendencia o la forma global de la curva con su comportamiento cerca de un punto."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "input",
+                "text": "El dominio indica qué entradas tienen sentido."
+              },
+              {
+                "icon": "output",
+                "text": "La salida depende de la entrada según una regla."
+              },
+              {
+                "icon": "monitoring",
+                "text": "La gráfica revela patrones de crecimiento o disminución."
+              },
+              {
+                "icon": "search",
+                "text": "El análisis local observa qué ocurre cerca de un valor."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Dominio y contexto",
+                "body": [
+                  "El dominio no siempre es todos los números posibles. Si una variable representa tiempo, cantidad producida o longitud, algunos valores pueden no tener sentido físico o profesional."
+                ]
+              },
+              {
+                "title": "Representaciones equivalentes",
+                "body": [
+                  "Una misma función puede describirse con palabras, tabla, expresión simbólica o gráfica. Cambiar de representación ayuda a detectar errores y a comunicar resultados."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Si una empresa modela el costo total según unidades producidas, la entrada es la cantidad y la salida es el costo. La forma de la gráfica permite anticipar si el costo crece de manera constante, acelerada o con cambios por tramos."
+              ]
+            },
+            "closing": [
+              "Antes de calcular, identifica siempre qué representa cada variable y qué valores son razonables."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s1-grafico": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Comportamiento de una función cuadrática",
+            "height": "300px",
+            "labels": [
+              "-2",
+              "-1",
+              "0",
+              "1",
+              "2"
+            ],
+            "datasets": [
+              {
+                "label": "Valor de la función",
+                "data": [
+                  4,
+                  1,
+                  0,
+                  1,
+                  4
+                ],
+                "borderColor": "#00a6b2",
+                "backgroundColor": "rgba(0, 166, 178, 0.15)",
+                "tension": 0.25
+              }
+            ],
+            "options": {
+              "responsive": true,
+              "plugins": {
+                "legend": {
+                  "position": "bottom"
+                }
+              }
+            },
+            "note": "La gráfica muestra simetría y crecimiento al alejarse del punto central.",
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s1-tabla": {
+            "type": "table",
+            "title": "Lectura de representaciones",
+            "columns": [
+              "Representación",
+              "Pregunta que responde",
+              "Riesgo común"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Tabla",
+                  "¿Qué valores concretos toma la función?",
+                  "Creer que pocos puntos describen toda la curva."
+                ]
+              },
+              {
+                "cells": [
+                  "Gráfica",
+                  "¿Cómo se comporta visualmente la relación?",
+                  "Confundir apariencia global con comportamiento local."
+                ]
+              },
+              {
+                "cells": [
+                  "Expresión",
+                  "¿Qué regla permite calcular salidas?",
+                  "Aplicar operaciones sin revisar dominio."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s1-practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: leer una función",
+            "statement": "Analiza una función que modela una cantidad que aumenta con el tiempo.",
+            "steps": [
+              {
+                "title": "Identificar variables",
+                "body": "Escribe qué representa la entrada y qué representa la salida. Indica unidades si el contexto las sugiere.",
+                "final": false
+              },
+              {
+                "title": "Revisar dominio",
+                "body": "Decide qué valores de entrada son razonables. Si la entrada es tiempo, evita valores negativos salvo que el contexto los justifique.",
+                "final": false
+              },
+              {
+                "title": "Leer tendencia",
+                "body": "Observa si la salida aumenta, disminuye o cambia de forma. No concluyas solo con un punto.",
+                "final": false
+              },
+              {
+                "title": "Cerrar interpretación",
+                "body": "Redacta una frase que conecte la forma de la función con el fenómeno modelado.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s1-validacion": {
+            "type": "quiz",
+            "title": "Chequeo formativo",
+            "questions": [
+              {
+                "prompt": "Si una función representa costo según cantidad producida, ¿qué debe revisarse antes de interpretar la gráfica?",
+                "options": [
+                  {
+                    "text": "El significado de las variables y el dominio razonable del contexto.",
+                    "correct": true,
+                    "feedback": "Correcto: una interpretación matemática necesita sentido contextual."
+                  },
+                  {
+                    "text": "Solo el punto más alto de la gráfica, sin revisar unidades ni dominio.",
+                    "correct": false,
+                    "feedback": "Revisa la sección de dominio: una conclusión requiere variables, unidades y rango válido."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s1-cierre": {
+            "type": "callout",
+            "title": "Idea para transferir",
+            "tone": "success",
+            "icon": "task_alt",
+            "body": [
+              "Una función es útil cuando permite explicar una relación, no solo calcular valores. En la siguiente sección se estudia qué ocurre cuando la entrada se acerca a un valor específico."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-2": {
+        "kind": "theory",
+        "theme": "Límites",
+        "badge": "Sección 2",
+        "navLabel": "Límites",
+        "title": "Límites como tendencia",
+        "intro": [
+          "El límite describe el valor al que se aproxima una función cuando la entrada se acerca a un punto."
+        ],
+        "estimatedTime": "60 minutos",
+        "studentAction": "Relacionar explicación, fórmula, tabla y gráfica para interpretar una tendencia.",
+        "evidence": "Análisis de un límite con tabla de aproximación y conclusión.",
+        "feedbackRoute": "Retroalimentación automática en selección múltiple y guía docente sobre el razonamiento escrito.",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "s2-teoria",
+          "s2-formula",
+          "s2-grafico",
+          "s2-practica",
+          "s2-validacion",
+          "s2-cierre"
+        ],
+        "components": {
+          "s2-teoria": {
+            "type": "theory-block",
+            "title": "Aproximarse no es lo mismo que evaluar",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Un límite se centra en el comportamiento de la función cerca de un valor, no necesariamente en el valor exacto de la función en ese punto. Esta distinción es esencial porque una función puede no estar definida en un punto y aun así tener una tendencia clara alrededor de él.",
+              "La idea de aproximación se estudia desde ambos lados. Si la función se acerca al mismo valor por la izquierda y por la derecha, se puede afirmar que el límite existe. Si las aproximaciones laterales no coinciden, el límite bilateral no existe.",
+              "Los límites preparan el camino para la continuidad y la derivada. Sin la idea de acercamiento, no sería posible hablar de cambio instantáneo ni de pendiente en un punto de manera rigurosa."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "compare_arrows",
+                "text": "El límite observa tendencia alrededor de un punto."
+              },
+              {
+                "icon": "alt_route",
+                "text": "Los límites laterales deben coincidir para que exista el límite bilateral."
+              },
+              {
+                "icon": "warning",
+                "text": "Evaluar directamente no siempre es posible ni suficiente."
+              },
+              {
+                "icon": "functions",
+                "text": "La notación de límite resume un comportamiento local."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Lectura lateral",
+                "body": [
+                  "Acercarse por la izquierda significa usar valores menores que el punto; acercarse por la derecha significa usar valores mayores. Ambas lecturas deben compararse."
+                ]
+              },
+              {
+                "title": "Indeterminación y simplificación",
+                "body": [
+                  "Cuando la sustitución directa produce una forma no concluyente, se transforma la expresión para revelar la tendencia sin cambiar el comportamiento cerca del punto."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "En un sensor, puede interesar la tendencia de una medición justo antes y justo después de activar un proceso. Si las lecturas laterales difieren, existe un salto que debe interpretarse técnicamente."
+              ]
+            },
+            "closing": [
+              "Cuando resuelvas un límite, escribe primero qué tendencia esperas observar y después realiza el procedimiento algebraico."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s2-formula": {
+            "type": "formula",
+            "title": "Notación de límite",
+            "context": [
+              "Esta expresión se usa para afirmar que los valores de una función se aproximan a un número cuando la entrada se aproxima a un punto."
+            ],
+            "latex": "\\lim_{x \\to a} f(x)=L",
+            "variables": [
+              {
+                "symbol": "x",
+                "description": "variable de entrada que se aproxima al punto de interés."
+              },
+              {
+                "symbol": "a",
+                "description": "valor al que se acerca la entrada."
+              },
+              {
+                "symbol": "f(x)",
+                "description": "valor de salida de la función."
+              },
+              {
+                "symbol": "L",
+                "description": "valor al que se aproxima la función."
+              }
+            ],
+            "explanation": [
+              "La expresión no dice necesariamente que la función valga L en a; dice que cerca de a sus valores tienden a L."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s2-grafico": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Valores que se aproximan a un límite",
+            "height": "300px",
+            "labels": [
+              "0.50",
+              "0.90",
+              "0.99",
+              "1.01",
+              "1.10",
+              "1.50"
+            ],
+            "datasets": [
+              {
+                "label": "Valor observado",
+                "data": [
+                  1.5,
+                  1.9,
+                  1.99,
+                  2.01,
+                  2.1,
+                  2.5
+                ],
+                "borderColor": "#b6f000",
+                "backgroundColor": "rgba(182, 240, 0, 0.2)",
+                "tension": 0.2
+              }
+            ],
+            "options": {
+              "responsive": true,
+              "plugins": {
+                "legend": {
+                  "position": "bottom"
+                }
+              }
+            },
+            "note": "Los datos muestran una tendencia hacia un valor cercano a 2 cuando la entrada se acerca a 1.",
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s2-practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: interpretar una tendencia",
+            "statement": "Estudia el comportamiento de una función cerca de un punto usando valores laterales.",
+            "steps": [
+              {
+                "title": "Elegir valores cercanos",
+                "body": "Toma tres valores menores y tres valores mayores que el punto de interés.",
+                "final": false
+              },
+              {
+                "title": "Calcular salidas",
+                "body": "Evalúa la función en esos valores cercanos y organiza los resultados en una tabla.",
+                "final": false
+              },
+              {
+                "title": "Comparar lados",
+                "body": "Observa si ambos lados se aproximan al mismo número. Si no coinciden, explica la diferencia.",
+                "final": false
+              },
+              {
+                "title": "Redactar conclusión",
+                "body": "Escribe la conclusión usando lenguaje verbal y notación de límite.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s2-validacion": {
+            "type": "multi-select",
+            "title": "Selecciona las ideas correctas",
+            "prompt": "¿Qué afirmaciones describen adecuadamente un límite?",
+            "options": [
+              {
+                "text": "Analiza valores de la función cuando la entrada se aproxima a un punto.",
+                "correct": true
+              },
+              {
+                "text": "Puede existir aunque la función no esté definida exactamente en el punto.",
+                "correct": true
+              },
+              {
+                "text": "Siempre se obtiene reemplazando directamente el valor en la función.",
+                "correct": false
+              },
+              {
+                "text": "Requiere comparar aproximaciones laterales cuando hay sospecha de salto.",
+                "correct": true
+              }
+            ],
+            "feedbackCorrect": "Correcto: reconoces el límite como tendencia local y no como simple sustitución.",
+            "feedbackIncomplete": "Revisa la diferencia entre evaluar una función y analizar su comportamiento cercano al punto.",
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s2-cierre": {
+            "type": "summary",
+            "title": "Síntesis de límites",
+            "items": [
+              "Un límite describe tendencia.",
+              "Los lados izquierdo y derecho importan.",
+              "La existencia del límite no depende siempre de que la función esté definida en el punto.",
+              "La continuidad se apoya en la idea de límite."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-3": {
+        "kind": "theory",
+        "theme": "Continuidad",
+        "badge": "Sección 3",
+        "navLabel": "Continuidad",
+        "title": "Continuidad y comportamiento sin rupturas",
+        "intro": [
+          "La continuidad permite decidir si una función conserva un comportamiento coherente en un punto."
+        ],
+        "estimatedTime": "55 minutos",
+        "studentAction": "Reconocer condiciones de continuidad, revisar una figura conceptual y resolver una práctica de clasificación.",
+        "evidence": "Clasificación justificada de casos continuos y discontinuos.",
+        "feedbackRoute": "Retroalimentación automática en el chequeo y revisión de justificación.",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "s3-teoria",
+          "s3-formula",
+          "s3-imagen",
+          "s3-tabla",
+          "s3-practica",
+          "s3-validacion"
+        ],
+        "components": {
+          "s3-teoria": {
+            "type": "theory-block",
+            "title": "Tres condiciones para la continuidad",
+            "eyebrow": "Criterio matemático",
+            "body": [
+              "Una función es continua en un punto cuando su valor existe, su límite existe y ambos coinciden. Esta definición une evaluación y tendencia: no basta con que haya un punto dibujado, ni basta con que la curva parezca acercarse a un número.",
+              "La continuidad es útil porque permite confiar en el comportamiento local de un modelo. En aplicaciones, una discontinuidad puede representar un cambio abrupto de régimen, un error de medición, una restricción de dominio o una decisión de modelado por tramos.",
+              "Identificar continuidad exige leer la gráfica con cuidado. Un hueco, un salto o una asíntota pueden cambiar completamente la interpretación del fenómeno, incluso si una parte de la curva parece suave."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "check_circle",
+                "text": "Debe existir el valor de la función en el punto."
+              },
+              {
+                "icon": "sync_alt",
+                "text": "Debe existir el límite bilateral."
+              },
+              {
+                "icon": "join_inner",
+                "text": "El valor y la tendencia deben coincidir."
+              },
+              {
+                "icon": "error_outline",
+                "text": "Huecos, saltos y asíntotas rompen la continuidad."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Continuidad como coherencia local",
+                "body": [
+                  "Cuando una función es continua, los valores cercanos de entrada producen salidas cercanas. Esa coherencia permite aproximar, interpolar y razonar con estabilidad."
+                ]
+              },
+              {
+                "title": "Discontinuidad como señal",
+                "body": [
+                  "Una discontinuidad no es solo un error gráfico. Puede indicar que el modelo cambia de regla, que una medición falla o que el fenómeno tiene una ruptura real."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Una tarifa por consumo puede tener saltos cuando cambia de rango. La función describe una regla válida, pero no es continua en los puntos donde la tarifa cambia abruptamente."
+              ]
+            },
+            "closing": [
+              "Antes de derivar una función, revisa si el punto de análisis pertenece al dominio y si la tendencia coincide con el valor."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s3-formula": {
+            "type": "formula",
+            "title": "Criterio de continuidad en un punto",
+            "context": [
+              "La expresión resume la condición central: la tendencia de la función debe coincidir con el valor de la función."
+            ],
+            "latex": "\\lim_{x \\to a} f(x)=f(a)",
+            "variables": [
+              {
+                "symbol": "a",
+                "description": "punto donde se analiza continuidad."
+              },
+              {
+                "symbol": "f(a)",
+                "description": "valor de la función en el punto."
+              }
+            ],
+            "explanation": [
+              "Si el valor no existe, si el límite no existe o si ambos son distintos, la función no es continua en ese punto."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s3-imagen": {
+            "type": "image",
+            "title": "Tipos de discontinuidad",
+            "assetId": "calculo-continuidad-discontinuidades",
+            "src": "",
+            "alt": "Tres gráficas comparan una discontinuidad removible, una discontinuidad de salto y una discontinuidad infinita.",
+            "caption": "La figura ayuda a distinguir si la ruptura ocurre por hueco, salto o crecimiento sin límite.",
+            "prompt": "Crear una figura didáctica en español con tres paneles: discontinuidad removible con hueco, discontinuidad de salto con límites laterales diferentes y discontinuidad infinita con asíntota vertical. Usar ejes claros, etiquetas x, y, punto a y notas breves sobre el criterio de continuidad.",
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s3-tabla": {
+            "type": "table",
+            "title": "Clasificación de discontinuidades",
+            "columns": [
+              "Tipo",
+              "Señal visual",
+              "Pregunta de verificación"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Removible",
+                  "Hay un hueco o valor aislado.",
+                  "¿El límite existe pero no coincide con el valor?"
+                ]
+              },
+              {
+                "cells": [
+                  "Salto",
+                  "Los lados llegan a valores diferentes.",
+                  "¿Los límites laterales son distintos?"
+                ]
+              },
+              {
+                "cells": [
+                  "Infinita",
+                  "La curva crece o decrece sin acotarse.",
+                  "¿Existe una asíntota vertical?"
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s3-practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: decidir continuidad",
+            "statement": "Analiza una gráfica con un posible problema en un punto señalado.",
+            "steps": [
+              {
+                "title": "Revisar existencia del valor",
+                "body": "Identifica si la función tiene un punto definido en el valor señalado.",
+                "final": false
+              },
+              {
+                "title": "Comparar tendencia lateral",
+                "body": "Observa si la curva se aproxima al mismo valor desde izquierda y derecha.",
+                "final": false
+              },
+              {
+                "title": "Contrastar valor y límite",
+                "body": "Si el límite existe, compáralo con el valor de la función.",
+                "final": false
+              },
+              {
+                "title": "Justificar",
+                "body": "Clasifica el caso y explica cuál condición de continuidad se cumple o falla.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "s3-validacion": {
+            "type": "quiz",
+            "title": "Chequeo de continuidad",
+            "questions": [
+              {
+                "prompt": "¿Cuándo una función es continua en un punto?",
+                "options": [
+                  {
+                    "text": "Cuando el valor de la función existe, el límite existe y ambos coinciden.",
+                    "correct": true,
+                    "feedback": "Correcto: esas son las tres condiciones que articulan valor y tendencia."
+                  },
+                  {
+                    "text": "Cuando la gráfica tiene algún punto dibujado, aunque la tendencia lateral sea distinta.",
+                    "correct": false,
+                    "feedback": "Revisa el criterio: un punto dibujado no basta si el límite no coincide con ese valor."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "seccion-4": {
+        "kind": "theory",
+        "theme": "Derivada",
+        "badge": "Sección 4",
+        "navLabel": "Derivada",
+        "title": "La derivada como razón de cambio instantánea",
+        "intro": [
+          "La derivada mide cómo cambia una función en un punto."
+        ],
+        "estimatedTime": "65 minutos",
+        "studentAction": "Interpretar la derivada desde la pendiente, revisar la definición y resolver un cálculo guiado.",
+        "evidence": "Procedimiento comentado para derivar una función elemental desde la definición.",
+        "feedbackRoute": "Retroalimentación automática en el chequeo y revisión de pasos algebraicos.",
+        "learningOutcomeIds": [
+          "RA2"
+        ],
+        "componentOrder": [
+          "s4-teoria",
+          "s4-formula",
+          "s4-grafico",
+          "s4-practica",
+          "s4-validacion",
+          "s4-cierre"
+        ],
+        "components": {
+          "s4-teoria": {
+            "type": "theory-block",
+            "title": "Del cambio promedio a la pendiente en un punto",
+            "eyebrow": "Interpretación de la derivada",
+            "body": [
+              "La derivada surge al comparar cambios de salida con cambios de entrada en intervalos cada vez más pequeños. Cuando el intervalo se aproxima a cero, la razón de cambio describe el comportamiento instantáneo de la función.",
+              "Geométricamente, la derivada corresponde a la pendiente de la recta tangente a la curva en un punto. Una pendiente positiva indica crecimiento local; una pendiente negativa indica disminución local; una pendiente cercana a cero puede señalar estabilidad o un punto crítico.",
+              "En aplicaciones, la derivada traduce preguntas como velocidad instantánea, costo marginal, tasa de crecimiento o sensibilidad de un sistema. Por eso el resultado debe interpretarse con unidades y contexto."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "speed",
+                "text": "La derivada mide cambio instantáneo."
+              },
+              {
+                "icon": "ssid_chart",
+                "text": "La pendiente de la tangente representa la lectura geométrica."
+              },
+              {
+                "icon": "straighten",
+                "text": "Las unidades de la derivada son salida por unidad de entrada."
+              },
+              {
+                "icon": "fact_check",
+                "text": "El signo de la derivada orienta la interpretación del comportamiento local."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Razón de cambio promedio",
+                "body": [
+                  "Entre dos puntos, la razón de cambio promedio mide cuánto varía la salida por cada unidad de entrada. Es una lectura de intervalo."
+                ]
+              },
+              {
+                "title": "Razón de cambio instantánea",
+                "body": [
+                  "En un punto, la razón de cambio instantánea se obtiene como límite de razones de cambio promedio. Es una lectura local."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Si la posición de un móvil depende del tiempo, la derivada de la posición respecto al tiempo representa velocidad instantánea."
+              ]
+            },
+            "closing": [
+              "Después de calcular una derivada, escribe siempre qué cambia, respecto a qué cambia y con qué unidades."
+            ],
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          },
+          "s4-formula": {
+            "type": "formula",
+            "title": "Definición de derivada",
+            "context": [
+              "La derivada se define como el límite de una razón de cambio promedio cuando el incremento de la entrada se hace cada vez más pequeño."
+            ],
+            "latex": "f'(a)=\\lim_{h \\to 0}\\frac{f(a+h)-f(a)}{h}",
+            "variables": [
+              {
+                "symbol": "a",
+                "description": "punto donde se calcula la derivada."
+              },
+              {
+                "symbol": "h",
+                "description": "incremento de la entrada."
+              },
+              {
+                "symbol": "f'(a)",
+                "description": "razón de cambio instantánea en el punto."
+              }
+            ],
+            "explanation": [
+              "El cociente compara cambios de salida y entrada; el límite convierte esa comparación en una lectura local."
+            ],
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          },
+          "s4-grafico": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Curva y recta tangente en un punto",
+            "height": "300px",
+            "labels": [
+              "1.0",
+              "1.5",
+              "2.0",
+              "2.5",
+              "3.0"
+            ],
+            "datasets": [
+              {
+                "label": "Curva",
+                "data": [
+                  1,
+                  2.25,
+                  4,
+                  6.25,
+                  9
+                ],
+                "borderColor": "#00a6b2",
+                "backgroundColor": "rgba(0, 166, 178, 0.12)",
+                "tension": 0.25
+              },
+              {
+                "label": "Tangente aproximada",
+                "data": [
+                  0,
+                  2,
+                  4,
+                  6,
+                  8
+                ],
+                "borderColor": "#ff7a00",
+                "backgroundColor": "rgba(255, 122, 0, 0.1)",
+                "borderDash": [
+                  5,
+                  5
+                ],
+                "tension": 0
+              }
+            ],
+            "options": {
+              "responsive": true,
+              "plugins": {
+                "legend": {
+                  "position": "bottom"
+                }
+              }
+            },
+            "note": "La recta tangente aproxima el comportamiento local de la curva cerca del punto central.",
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          },
+          "s4-practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: derivar desde la definición",
+            "statement": "Calcula la derivada de una función cuadrática básica en un punto usando la definición.",
+            "steps": [
+              {
+                "title": "Escribir la definición",
+                "body": "Sustituye la función en el cociente de diferencia antes de simplificar.",
+                "formula": "f'(a)=\\lim_{h \\to 0}\\frac{f(a+h)-f(a)}{h}",
+                "final": false
+              },
+              {
+                "title": "Expandir y cancelar",
+                "body": "Desarrolla la expresión del numerador y cancela los términos que hacen posible dividir por el incremento.",
+                "final": false
+              },
+              {
+                "title": "Aplicar el límite",
+                "body": "Después de simplificar, evalúa el comportamiento cuando el incremento se aproxima a cero.",
+                "final": false
+              },
+              {
+                "title": "Interpretar",
+                "body": "Explica si la pendiente obtenida indica crecimiento, disminución o estabilidad local.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          },
+          "s4-validacion": {
+            "type": "quiz",
+            "title": "Chequeo de derivada",
+            "questions": [
+              {
+                "prompt": "¿Qué representa la derivada de una función en un punto?",
+                "options": [
+                  {
+                    "text": "La razón de cambio instantánea y la pendiente de la recta tangente en ese punto.",
+                    "correct": true,
+                    "feedback": "Correcto: conectas la interpretación analítica y geométrica."
+                  },
+                  {
+                    "text": "El valor máximo de la función en todo su dominio.",
+                    "correct": false,
+                    "feedback": "Revisa el concepto: la derivada describe comportamiento local, no necesariamente un máximo global."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          },
+          "s4-cierre": {
+            "type": "callout",
+            "title": "Cierre formativo",
+            "tone": "light",
+            "icon": "tips_and_updates",
+            "body": [
+              "La derivada no es solo un resultado algebraico. Es una lectura del cambio local que debe explicarse con signo, magnitud, unidades y contexto."
+            ],
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          }
+        }
+      },
+      "seccion-5": {
+        "kind": "theory",
+        "theme": "Aplicación",
+        "badge": "Sección 5",
+        "navLabel": "Reglas y aplicación",
+        "title": "Reglas básicas de derivación y uso aplicado",
+        "intro": [
+          "Las reglas de derivación permiten calcular derivadas con eficiencia cuando ya se comprende su significado."
+        ],
+        "estimatedTime": "70 minutos",
+        "studentAction": "Relacionar reglas, ejecutar una verificación computacional opcional y resolver una actividad integradora.",
+        "evidence": "Solución argumentada de un problema con derivada e interpretación.",
+        "feedbackRoute": "Retroalimentación automática en el chequeo y valoración cualitativa de la actividad integradora.",
+        "learningOutcomeIds": [
+          "RA2",
+          "RA3"
+        ],
+        "componentOrder": [
+          "s5-teoria",
+          "s5-tabla",
+          "s5-formulas",
+          "s5-codigo",
+          "s5-practica",
+          "s5-validacion",
+          "s5-evaluacion"
+        ],
+        "components": {
+          "s5-teoria": {
+            "type": "theory-block",
+            "title": "Calcular con reglas sin perder interpretación",
+            "eyebrow": "Procedimiento y sentido",
+            "body": [
+              "Las reglas de derivación son atajos justificados por la definición de derivada. Permiten trabajar con funciones frecuentes sin repetir todo el proceso de límite en cada ejercicio.",
+              "Usar reglas no significa abandonar la interpretación. Después de derivar, el resultado debe leerse como una razón de cambio: qué aumenta o disminuye, respecto a qué variable, en qué punto y con qué unidades.",
+              "La selección de una regla depende de la estructura de la función. Antes de operar, conviene identificar si hay suma, potencia, constante multiplicativa o composición. Esta lectura evita aplicar reglas de manera mecánica."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "rule",
+                "text": "Las reglas aceleran cálculos ya fundamentados."
+              },
+              {
+                "icon": "functions",
+                "text": "La estructura de la función determina la regla."
+              },
+              {
+                "icon": "calculate",
+                "text": "El resultado debe simplificarse y verificarse."
+              },
+              {
+                "icon": "psychology",
+                "text": "La interpretación contextual completa la solución."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Potencias y constantes",
+                "body": [
+                  "Las funciones polinómicas son un primer escenario para practicar reglas porque permiten ver con claridad cómo cambia el exponente y cómo se conserva el factor constante."
+                ]
+              },
+              {
+                "title": "Aplicaciones básicas",
+                "body": [
+                  "En problemas de velocidad, costo marginal o crecimiento, la derivada se usa para estimar cambio local y apoyar decisiones."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo aplicado",
+              "body": [
+                "Si una función modela el costo total, su derivada permite aproximar el costo de producir una unidad adicional cerca de cierta cantidad."
+              ]
+            },
+            "closing": [
+              "Toda solución con derivadas debe terminar con una frase interpretativa, no solo con una expresión simbólica."
+            ],
+            "learningOutcomeIds": [
+              "RA2",
+              "RA3"
+            ]
+          },
+          "s5-tabla": {
+            "type": "table",
+            "title": "Reglas básicas de derivación",
+            "columns": [
+              "Regla",
+              "Idea operativa",
+              "Cómo leerla"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Constante",
+                  "Cambio nulo",
+                  "Una cantidad constante no cambia respecto a la variable."
+                ]
+              },
+              {
+                "cells": [
+                  "Potencia",
+                  "El exponente baja como factor",
+                  "El exponente baja como factor y disminuye en una unidad."
+                ]
+              },
+              {
+                "cells": [
+                  "Suma",
+                  "Derivación término a término",
+                  "La derivada se distribuye sobre la suma."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA2",
+              "RA3"
+            ]
+          },
+          "s5-formulas": {
+            "type": "formula",
+            "title": "Reglas básicas en notación",
+            "context": [
+              "Estas expresiones resumen reglas frecuentes. Se usan después de identificar la estructura de la función."
+            ],
+            "latex": "\\frac{d}{dx}(c)=0,\\quad \\frac{d}{dx}(x^n)=nx^{n-1},\\quad \\frac{d}{dx}(f(x)+g(x))=f'(x)+g'(x)",
+            "variables": [
+              {
+                "symbol": "c",
+                "description": "constante."
+              },
+              {
+                "symbol": "n",
+                "description": "exponente real en la regla de potencia."
+              },
+              {
+                "symbol": "f(x), g(x)",
+                "description": "funciones derivables."
+              }
+            ],
+            "explanation": [
+              "Las reglas permiten simplificar el cálculo, pero la respuesta final debe interpretarse como razón de cambio."
+            ],
+            "learningOutcomeIds": [
+              "RA2",
+              "RA3"
+            ]
+          },
+          "s5-codigo": {
+            "type": "code",
+            "title": "Aproximación numérica de una derivada",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "derivada_numerica.py",
+            "instructions": [
+              "Usa este fragmento como apoyo para comparar la idea de razón de cambio promedio con una aproximación de la derivada.",
+              "Guarda el archivo como derivada_numerica.py.",
+              "Ábrelo en un editor de código. Desde una terminal ubicada en la carpeta del archivo ejecuta: python derivada_numerica.py.",
+              "No requiere entrada por teclado. Modifica el valor de h y observa cómo cambia la aproximación.",
+              "Si la salida cambia mucho al disminuir h, revisa redondeo numérico o errores al escribir la función."
+            ],
+            "code": "def f(x):\n    return x ** 2\n\nx = 2\nh = 0.001\naproximacion = (f(x + h) - f(x)) / h\nprint(round(aproximacion, 4))",
+            "expectedOutput": [
+              "La salida debe ser cercana a 4.0.",
+              "El valor aproxima la pendiente de la función cuadrática cerca de x = 2."
+            ],
+            "learningOutcomeIds": [
+              "RA2",
+              "RA3"
+            ]
+          },
+          "s5-practica": {
+            "type": "stepper",
+            "title": "Práctica guiada: resolver e interpretar",
+            "statement": "Una magnitud se modela con una función polinómica. Calcula su razón de cambio local y explica el resultado.",
+            "steps": [
+              {
+                "title": "Leer el contexto",
+                "body": "Identifica qué representa la variable de entrada y qué representa la salida.",
+                "final": false
+              },
+              {
+                "title": "Elegir reglas",
+                "body": "Reconoce si la función usa constantes, potencias o sumas. Aplica las reglas correspondientes.",
+                "final": false
+              },
+              {
+                "title": "Evaluar si se pide un punto",
+                "body": "Si el problema solicita una lectura local, sustituye el valor indicado después de derivar.",
+                "final": false
+              },
+              {
+                "title": "Interpretar con unidades",
+                "body": "Escribe qué significa el resultado como cambio de la salida por unidad de entrada.",
+                "final": true
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA2",
+              "RA3"
+            ]
+          },
+          "s5-validacion": {
+            "type": "quiz",
+            "title": "Chequeo de aplicación",
+            "questions": [
+              {
+                "prompt": "Después de calcular una derivada en un problema contextualizado, ¿qué debe incluir una respuesta completa?",
+                "options": [
+                  {
+                    "text": "La expresión derivada, la evaluación solicitada y una interpretación con unidades.",
+                    "correct": true,
+                    "feedback": "Correcto: cálculo e interpretación deben aparecer juntos."
+                  },
+                  {
+                    "text": "Solo el resultado algebraico, sin explicar qué representa.",
+                    "correct": false,
+                    "feedback": "Revisa el propósito de la derivada: el valor debe conectarse con una razón de cambio contextual."
+                  }
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA2",
+              "RA3"
+            ]
+          },
+          "s5-evaluacion": {
+            "type": "evaluation-activity",
+            "title": "Actividad integradora",
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ],
+            "criterion": "Analiza una función elemental mediante dominio, límite, continuidad y derivada, justificando cada decisión con lenguaje matemático y contextual.",
+            "evidence": "Solución escrita con gráfica o tabla de apoyo, cálculo de derivada e interpretación final.",
+            "technique": "Resolución de problema aplicado",
+            "instrument": "Rúbrica analítica cualitativa",
+            "weight": "Formativo",
+            "evaluationMoment": "final",
+            "participationType": "individual",
+            "feedback": {
+              "strengths": "Reconocimiento claro de variables, procedimiento ordenado e interpretación coherente.",
+              "improvement": "Profundizar en la justificación de límites, continuidad o unidades cuando falten.",
+              "reinforcement": "Revisar las secciones donde el procedimiento no se conectó con el concepto.",
+              "nextStep": "Resolver un problema similar con otra función y comparar conclusiones."
+            },
+            "rubric": {
+              "type": "analitica",
+              "levels": [
+                "No acreditable",
+                "Deficiente",
+                "Insuficiente",
+                "Aceptable",
+                "Bueno",
+                "Muy bueno",
+                "Sobresaliente"
+              ],
+              "criteria": [
+                {
+                  "name": "Comprensión conceptual",
+                  "descriptors": {
+                    "Aceptable": "Reconoce los conceptos principales con algunas conexiones.",
+                    "Bueno": "Relaciona función, límite, continuidad y derivada con coherencia.",
+                    "Sobresaliente": "Explica los conceptos con rigor, contexto y transferencia."
+                  }
+                },
+                {
+                  "name": "Procedimiento matemático",
+                  "descriptors": {
+                    "Aceptable": "Aplica procedimientos básicos con errores menores.",
+                    "Bueno": "Desarrolla cálculos ordenados y verificables.",
+                    "Sobresaliente": "Justifica cada paso y anticipa errores comunes."
+                  }
+                },
+                {
+                  "name": "Interpretación",
+                  "descriptors": {
+                    "Aceptable": "Incluye una conclusión general.",
+                    "Bueno": "Interpreta el resultado con variables y unidades.",
+                    "Sobresaliente": "Conecta el resultado con una decisión o lectura contextual precisa."
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "pdf": {
+    "guideLabel": "GUÍA DE ESTUDIO VIRTUAL",
+    "kicker": "Aprendizaje guiado · Práctica aplicada · Autoevaluación",
+    "institution": "Universidad de América",
+    "logo": {
+      "cover": "assets/logo-negro.png",
+      "footer": "assets/logo-negro.png"
+    },
+    "year": "2026",
+    "title": "Funciones, límites y derivada como razón de cambio",
+    "subtitle": "Unidad introductoria de Cálculo Diferencial",
+    "purpose": "Comprender el cálculo diferencial como herramienta para analizar variación, tendencia, continuidad y cambio instantáneo en funciones elementales.",
+    "structure": "Presentación · teoría · ejemplos · práctica guiada · ejercicios · evaluación cualitativa · referencias.",
+    "minimumPages": 8,
+    "sectionOrder": [
+      "pdf-intro",
+      "pdf-seccion-1",
+      "pdf-seccion-2",
+      "pdf-seccion-3",
+      "pdf-seccion-4",
+      "pdf-seccion-5"
+    ],
+    "sections": {
+      "pdf-intro": {
+        "title": "Presentación de la unidad",
+        "intro": [
+          "Esta guía orienta el estudio inicial del cálculo diferencial desde la idea de variación hasta la interpretación de la derivada."
+        ],
+        "componentOrder": [
+          "pdf-intro-teoria",
+          "pdf-intro-objetivos",
+          "pdf-intro-ruta",
+          "pdf-intro-evaluacion"
+        ],
+        "components": {
+          "pdf-intro-teoria": {
+            "type": "theory-block",
+            "title": "Sentido formativo del cálculo diferencial",
+            "eyebrow": "Propósito",
+            "body": [
+              "El cálculo diferencial estudia cómo cambian las cantidades. En lugar de limitarse a procedimientos algebraicos, permite interpretar fenómenos donde una variable depende de otra y donde interesa saber qué ocurre cerca de un punto.",
+              "La unidad inicia con funciones porque toda derivada necesita una relación entre entrada y salida. Luego se introducen límites como lectura de tendencia, continuidad como coherencia del comportamiento y derivada como razón de cambio instantánea.",
+              "El trabajo esperado combina explicación conceptual, lectura gráfica, uso de notación matemática y resolución de problemas. El objetivo no es memorizar reglas aisladas, sino comprender cuándo se usan y qué significa el resultado obtenido."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "functions",
+                "text": "La función organiza la relación entre variables."
+              },
+              {
+                "icon": "compare_arrows",
+                "text": "El límite permite estudiar tendencia local."
+              },
+              {
+                "icon": "show_chart",
+                "text": "La derivada mide cambio instantáneo."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Metodología de estudio",
+                "body": [
+                  "Cada sección presenta teoría, ejemplo, recurso visual o tabla y ejercicios. La secuencia debe resolverse en orden para que la derivada no aparezca como una fórmula desconectada."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Caso inicial",
+              "body": [
+                "Si una función describe el costo de producir unidades, el cálculo diferencial ayuda a estimar cómo cambia el costo cuando la producción aumenta ligeramente."
+              ]
+            },
+            "closing": [
+              "Al finalizar la unidad, cada resultado debe poder explicarse en palabras y no solo mediante símbolos."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ]
+          },
+          "pdf-intro-objetivos": {
+            "type": "objectives",
+            "title": "Resultados esperados",
+            "items": [
+              {
+                "icon": "track_changes",
+                "text": "Reconocer funciones, límites y continuidad como base para analizar cambio."
+              },
+              {
+                "icon": "show_chart",
+                "text": "Interpretar la derivada como pendiente y razón de cambio instantánea."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Aplicar reglas básicas de derivación en ejercicios contextualizados."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ]
+          },
+          "pdf-intro-ruta": {
+            "type": "table",
+            "title": "Organización del aprendizaje",
+            "columns": [
+              "Fase",
+              "Propósito",
+              "Producto de estudio"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Fase 1",
+                  "Activar saberes sobre funciones y gráficas.",
+                  "Mapa de variables y dominio."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 2",
+                  "Construir significado de límite y continuidad.",
+                  "Ejercicios con tabla, gráfica y notación."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 3",
+                  "Interpretar y calcular derivadas básicas.",
+                  "Problemas con razón de cambio."
+                ]
+              },
+              {
+                "cells": [
+                  "Fase 4",
+                  "Integrar conceptos en una solución argumentada.",
+                  "Actividad integradora."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ]
+          },
+          "pdf-intro-evaluacion": {
+            "type": "callout",
+            "title": "Evaluación formativa",
+            "tone": "light",
+            "icon": "fact_check",
+            "body": [
+              "La evaluación se centra en explicación conceptual, procedimiento matemático, interpretación de resultados y comunicación clara.",
+              "Los errores deben usarse como evidencia para volver al concepto correspondiente y mejorar la solución."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-1": {
+        "title": "Funciones y variación",
+        "intro": [
+          "Una función permite describir cómo una cantidad depende de otra."
+        ],
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "pdf-s1-teoria",
+          "pdf-s1-chart",
+          "pdf-s1-tabla",
+          "pdf-s1-ejercicios"
+        ],
+        "components": {
+          "pdf-s1-teoria": {
+            "type": "theory-block",
+            "title": "Función, dominio y lectura gráfica",
+            "eyebrow": "Concepto",
+            "body": [
+              "Una función asigna a cada entrada permitida una única salida. El dominio reúne los valores de entrada que tienen sentido matemático y contextual.",
+              "La gráfica de una función permite observar crecimiento, disminución, simetría, curvatura y posibles restricciones. Sin embargo, una gráfica debe leerse junto con el contexto para evitar conclusiones erradas.",
+              "En cálculo diferencial, las funciones se estudian por su comportamiento local. Esto significa observar qué ocurre cerca de valores específicos, no solamente calcular puntos aislados."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "input",
+                "text": "Entrada y salida deben tener significado."
+              },
+              {
+                "icon": "grid_on",
+                "text": "El dominio limita los valores válidos."
+              },
+              {
+                "icon": "monitoring",
+                "text": "La gráfica muestra patrones de variación."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Error frecuente",
+                "body": [
+                  "Calcular varios valores no garantiza comprender la función. Es necesario explicar qué patrón muestran esos valores y si el dominio es coherente."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo",
+              "body": [
+                "Una función de costo no debería evaluarse en una cantidad negativa de productos. Aunque la expresión algebraica lo permita, el contexto lo descarta."
+              ]
+            },
+            "closing": [
+              "Toda lectura de función debe responder: qué cambia, respecto a qué cambia y en qué rango tiene sentido."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s1-chart": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Comportamiento de una función cuadrática",
+            "align": "center",
+            "height": "300px",
+            "labels": [
+              "-2",
+              "-1",
+              "0",
+              "1",
+              "2"
+            ],
+            "datasets": [
+              {
+                "label": "Valor de la función",
+                "data": [
+                  4,
+                  1,
+                  0,
+                  1,
+                  4
+                ],
+                "borderColor": "#00a6b2",
+                "backgroundColor": "rgba(0, 166, 178, 0.15)",
+                "tension": 0.25
+              }
+            ],
+            "note": "Nota. La curva disminuye hasta el centro y luego aumenta; esta lectura prepara el análisis local.",
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s1-tabla": {
+            "type": "table",
+            "title": "Preguntas para leer una función",
+            "columns": [
+              "Pregunta",
+              "Utilidad"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "¿Qué representa la entrada?",
+                  "Evita interpretar la variable como un número sin contexto."
+                ]
+              },
+              {
+                "cells": [
+                  "¿Qué representa la salida?",
+                  "Permite dar sentido a unidades y magnitud."
+                ]
+              },
+              {
+                "cells": [
+                  "¿Qué valores son válidos?",
+                  "Define el dominio razonable."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s1-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de funciones",
+            "items": [
+              {
+                "prompt": "Describe una situación real que pueda modelarse con una función. Identifica entrada, salida y dominio razonable."
+              },
+              {
+                "prompt": "A partir de una tabla de valores, indica si la salida parece aumentar, disminuir o cambiar de tendencia."
+              },
+              {
+                "prompt": "Explica por qué el dominio contextual puede ser distinto del dominio algebraico."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-2": {
+        "title": "Límites como tendencia",
+        "intro": [
+          "El límite permite estudiar el comportamiento de una función cerca de un punto."
+        ],
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "pdf-s2-teoria",
+          "pdf-s2-formula",
+          "pdf-s2-chart",
+          "pdf-s2-ejemplo",
+          "pdf-s2-ejercicios"
+        ],
+        "components": {
+          "pdf-s2-teoria": {
+            "type": "text",
+            "title": "Evaluar y aproximarse",
+            "body": [
+              "Evaluar una función consiste en calcular su salida para una entrada específica. Analizar un límite consiste en observar qué valor parece tomar la función cuando la entrada se aproxima a un punto.",
+              "Esta diferencia es fundamental porque una función puede no estar definida en el punto de interés y aun así acercarse claramente a un valor. Por eso se usan tablas, gráficas y transformaciones algebraicas para justificar la tendencia.",
+              "Cuando las tendencias laterales no coinciden, el límite bilateral no existe. En ese caso la respuesta debe explicar la diferencia entre acercarse por la izquierda y por la derecha."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s2-formula": {
+            "type": "formula",
+            "title": "Notación de límite",
+            "context": [
+              "La notación expresa que la función se aproxima a un valor cuando la entrada se acerca a un punto."
+            ],
+            "latex": "\\lim_{x \\to a} f(x)=L",
+            "variables": [
+              {
+                "symbol": "x",
+                "description": "entrada variable."
+              },
+              {
+                "symbol": "a",
+                "description": "punto de aproximación."
+              },
+              {
+                "symbol": "L",
+                "description": "valor de tendencia."
+              }
+            ],
+            "explanation": [
+              "La expresión se interpreta como tendencia local y no necesariamente como valor exacto en el punto."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s2-chart": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Aproximación lateral hacia un valor",
+            "align": "center",
+            "height": "300px",
+            "labels": [
+              "0.50",
+              "0.90",
+              "0.99",
+              "1.01",
+              "1.10",
+              "1.50"
+            ],
+            "datasets": [
+              {
+                "label": "Valor observado",
+                "data": [
+                  1.5,
+                  1.9,
+                  1.99,
+                  2.01,
+                  2.1,
+                  2.5
+                ],
+                "borderColor": "#b6f000",
+                "backgroundColor": "rgba(182, 240, 0, 0.2)",
+                "tension": 0.2
+              }
+            ],
+            "note": "Nota. Los valores cercanos al punto de aproximación sugieren una tendencia alrededor de 2.",
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s2-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo de lectura de límite",
+            "context": [
+              "Se observa una función alrededor de un punto donde la expresión original no puede evaluarse directamente."
+            ],
+            "formula": "\\lim_{x \\to 1}\\frac{x^2-1}{x-1}",
+            "solution": [
+              "La expresión se transforma factorizando el numerador.",
+              "Después de simplificar, la tendencia puede leerse sin usar el valor que hacía imposible la sustitución directa.",
+              "La conclusión debe indicar el valor de tendencia y aclarar que se trata del comportamiento cercano al punto."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s2-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de límites",
+            "items": [
+              {
+                "prompt": "Construye una tabla con valores cercanos a un punto y describe la tendencia observada."
+              },
+              {
+                "prompt": "Explica con tus palabras por qué evaluar directamente no siempre resuelve un límite."
+              },
+              {
+                "prompt": "Propón una gráfica con límites laterales diferentes y justifica por qué no existe el límite bilateral."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-3": {
+        "title": "Continuidad",
+        "intro": [
+          "La continuidad relaciona valor de la función y tendencia local."
+        ],
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "componentOrder": [
+          "pdf-s3-teoria",
+          "pdf-s3-formula",
+          "pdf-s3-imagen",
+          "pdf-s3-tabla",
+          "pdf-s3-ejercicios"
+        ],
+        "components": {
+          "pdf-s3-teoria": {
+            "type": "text",
+            "title": "Criterio de continuidad",
+            "body": [
+              "Una función es continua en un punto cuando el valor de la función existe, el límite existe y ambos coinciden. La continuidad expresa coherencia entre lo que la función vale y lo que su entorno sugiere.",
+              "En problemas aplicados, una discontinuidad puede representar un cambio brusco, una condición por tramos, una restricción o un dato que debe revisarse. Por ello no debe tratarse como un detalle gráfico menor.",
+              "Para justificar continuidad se recomienda escribir las tres verificaciones de manera explícita: existencia del valor, existencia del límite y comparación entre ambos."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s3-formula": {
+            "type": "formula",
+            "title": "Condición de continuidad",
+            "context": [
+              "La igualdad conecta tendencia y valor en el punto analizado."
+            ],
+            "latex": "\\lim_{x \\to a} f(x)=f(a)",
+            "variables": [
+              {
+                "symbol": "a",
+                "description": "punto donde se evalúa continuidad."
+              },
+              {
+                "symbol": "f(a)",
+                "description": "valor de la función en el punto."
+              }
+            ],
+            "explanation": [
+              "Si el límite no existe o no coincide con el valor, la función no es continua en ese punto."
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s3-imagen": {
+            "type": "image",
+            "title": "Discontinuidades frecuentes",
+            "assetId": "calculo-continuidad-discontinuidades",
+            "src": "",
+            "alt": "Comparación visual de discontinuidad removible, de salto e infinita.",
+            "caption": "La misma figura se usa en SCORM y PDF para reconocer rupturas del comportamiento local.",
+            "prompt": "Crear una figura didáctica en español con tres paneles: discontinuidad removible con hueco, discontinuidad de salto con límites laterales diferentes y discontinuidad infinita con asíntota vertical. Usar ejes claros, etiquetas x, y, punto a y notas breves sobre el criterio de continuidad.",
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s3-tabla": {
+            "type": "table",
+            "title": "Guía de clasificación",
+            "columns": [
+              "Caso",
+              "Qué revisar",
+              "Conclusión posible"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Valor no definido",
+                  "Dominio de la función.",
+                  "Puede fallar continuidad aunque exista tendencia."
+                ]
+              },
+              {
+                "cells": [
+                  "Lados distintos",
+                  "Límites laterales.",
+                  "No existe límite bilateral."
+                ]
+              },
+              {
+                "cells": [
+                  "Valor y tendencia distintos",
+                  "Comparación entre límite y valor.",
+                  "Discontinuidad removible o valor mal asignado."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          },
+          "pdf-s3-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de continuidad",
+            "items": [
+              {
+                "prompt": "Describe las tres condiciones que deben cumplirse para que una función sea continua en un punto."
+              },
+              {
+                "prompt": "Dibuja una discontinuidad de salto y explica qué ocurre con los límites laterales."
+              },
+              {
+                "prompt": "Propón un ejemplo contextual donde una discontinuidad pueda tener sentido práctico."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-4": {
+        "title": "Derivada como razón de cambio",
+        "intro": [
+          "La derivada transforma la idea de límite en una medición local del cambio."
+        ],
+        "learningOutcomeIds": [
+          "RA2"
+        ],
+        "componentOrder": [
+          "pdf-s4-teoria",
+          "pdf-s4-formula",
+          "pdf-s4-chart",
+          "pdf-s4-ejemplo",
+          "pdf-s4-ejercicios"
+        ],
+        "components": {
+          "pdf-s4-teoria": {
+            "type": "text",
+            "title": "Pendiente, cambio y contexto",
+            "body": [
+              "La derivada se interpreta como razón de cambio instantánea. En la gráfica, corresponde a la pendiente de la recta tangente a una curva en un punto.",
+              "El signo de la derivada indica si la función crece o disminuye localmente. La magnitud indica qué tan rápido ocurre ese cambio. Las unidades muestran cómo se relacionan las magnitudes del problema.",
+              "En una solución bien comunicada, el cálculo de la derivada debe ir acompañado de una explicación: qué variable cambia, respecto a qué variable cambia y qué implica el valor obtenido."
+            ],
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          },
+          "pdf-s4-formula": {
+            "type": "formula",
+            "title": "Definición formal de derivada",
+            "context": [
+              "La expresión permite pasar de una razón de cambio promedio a una razón de cambio instantánea."
+            ],
+            "latex": "f'(a)=\\lim_{h \\to 0}\\frac{f(a+h)-f(a)}{h}",
+            "variables": [
+              {
+                "symbol": "h",
+                "description": "incremento de entrada que se aproxima a cero."
+              },
+              {
+                "symbol": "f'(a)",
+                "description": "pendiente o razón de cambio instantánea."
+              }
+            ],
+            "explanation": [
+              "El límite hace que el intervalo de comparación se vuelva local alrededor del punto analizado."
+            ],
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          },
+          "pdf-s4-chart": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Curva y tangente",
+            "align": "center",
+            "height": "300px",
+            "labels": [
+              "1.0",
+              "1.5",
+              "2.0",
+              "2.5",
+              "3.0"
+            ],
+            "datasets": [
+              {
+                "label": "Curva",
+                "data": [
+                  1,
+                  2.25,
+                  4,
+                  6.25,
+                  9
+                ],
+                "borderColor": "#00a6b2",
+                "backgroundColor": "rgba(0, 166, 178, 0.12)",
+                "tension": 0.25
+              },
+              {
+                "label": "Tangente aproximada",
+                "data": [
+                  0,
+                  2,
+                  4,
+                  6,
+                  8
+                ],
+                "borderColor": "#ff7a00",
+                "backgroundColor": "rgba(255, 122, 0, 0.1)",
+                "borderDash": [
+                  5,
+                  5
+                ]
+              }
+            ],
+            "note": "Nota. La tangente resume la dirección local de la curva cerca del punto de análisis.",
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          },
+          "pdf-s4-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo de interpretación",
+            "context": [
+              "Una función modela la posición de un objeto respecto al tiempo."
+            ],
+            "formula": "v(t)=s'(t)",
+            "solution": [
+              "La derivada de la posición respecto al tiempo representa velocidad instantánea.",
+              "Si el valor es positivo, la posición aumenta localmente respecto al tiempo.",
+              "La conclusión debe expresar unidades, por ejemplo distancia por unidad de tiempo."
+            ],
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          },
+          "pdf-s4-ejercicios": {
+            "type": "exercise-set",
+            "title": "Ejercicios de derivada",
+            "items": [
+              {
+                "prompt": "Explica la diferencia entre cambio promedio y cambio instantáneo."
+              },
+              {
+                "prompt": "Interpreta una derivada positiva, negativa y cercana a cero en una gráfica."
+              },
+              {
+                "prompt": "Usa la definición de derivada para describir los pasos necesarios antes de simplificar una expresión."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA2"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-5": {
+        "title": "Reglas, aplicación y cierre",
+        "intro": [
+          "Las reglas básicas de derivación permiten resolver problemas con mayor eficiencia cuando se conserva la interpretación."
+        ],
+        "learningOutcomeIds": [
+          "RA2",
+          "RA3"
+        ],
+        "componentOrder": [
+          "pdf-s5-teoria",
+          "pdf-s5-tabla",
+          "pdf-s5-formulas",
+          "pdf-s5-codigo",
+          "pdf-s5-ejercicios",
+          "pdf-s5-evaluacion",
+          "pdf-s5-referencias"
+        ],
+        "components": {
+          "pdf-s5-teoria": {
+            "type": "text",
+            "title": "Reglas con significado",
+            "body": [
+              "Las reglas de derivación son procedimientos abreviados que se apoyan en la definición de derivada. Su uso es adecuado cuando se reconoce la estructura de la función y se interpreta el resultado.",
+              "En funciones polinómicas, las reglas de constante, potencia y suma permiten calcular rápidamente razones de cambio. Sin embargo, el cierre de la solución debe explicar qué significa el valor obtenido en el problema.",
+              "Una buena práctica consiste en verificar la respuesta con una lectura gráfica, una estimación numérica o una revisión de unidades."
+            ],
+            "learningOutcomeIds": [
+              "RA2",
+              "RA3"
+            ]
+          },
+          "pdf-s5-tabla": {
+            "type": "table",
+            "title": "Reglas esenciales",
+            "columns": [
+              "Regla",
+              "Idea operativa",
+              "Uso"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Constante",
+                  "Cambio nulo",
+                  "Modela ausencia de cambio respecto a la variable."
+                ]
+              },
+              {
+                "cells": [
+                  "Potencia",
+                  "El exponente baja como factor",
+                  "Se aplica a potencias de la variable."
+                ]
+              },
+              {
+                "cells": [
+                  "Suma",
+                  "Derivación término a término",
+                  "Permite derivar término a término."
+                ]
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA2",
+              "RA3"
+            ]
+          },
+          "pdf-s5-formulas": {
+            "type": "formula",
+            "title": "Reglas básicas en notación",
+            "context": [
+              "Las reglas siguientes condensan procedimientos frecuentes para funciones elementales."
+            ],
+            "latex": "\\frac{d}{dx}(c)=0,\\quad \\frac{d}{dx}(x^n)=nx^{n-1},\\quad \\frac{d}{dx}(f(x)+g(x))=f'(x)+g'(x)",
+            "variables": [
+              {
+                "symbol": "c",
+                "description": "constante."
+              },
+              {
+                "symbol": "n",
+                "description": "exponente real."
+              },
+              {
+                "symbol": "f(x), g(x)",
+                "description": "funciones derivables."
+              }
+            ],
+            "explanation": [
+              "Cada regla debe aplicarse después de reconocer la estructura de la función y antes de interpretar el resultado."
+            ],
+            "learningOutcomeIds": [
+              "RA2",
+              "RA3"
+            ]
+          },
+          "pdf-s5-codigo": {
+            "type": "code",
+            "title": "Verificación numérica opcional",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "derivada_numerica.py",
+            "instructions": [
+              "Guarda el archivo como derivada_numerica.py.",
+              "Ejecuta en una terminal con python derivada_numerica.py.",
+              "Compara el resultado numérico con la derivada calculada por reglas."
+            ],
+            "code": "def f(x):\n    return x ** 2\n\nx = 2\nh = 0.001\naproximacion = (f(x + h) - f(x)) / h\nprint(round(aproximacion, 4))",
+            "expectedOutput": [
+              "La salida debe ser cercana a 4.0."
+            ],
+            "learningOutcomeIds": [
+              "RA2",
+              "RA3"
+            ]
+          },
+          "pdf-s5-ejercicios": {
+            "type": "exercise-set",
+            "title": "Banco de ejercicios integradores",
+            "items": [
+              {
+                "prompt": "Dada una función polinómica, identifica dominio, comportamiento general y derivada. Explica el significado de la derivada en un punto."
+              },
+              {
+                "prompt": "Construye un ejemplo donde una función tenga límite en un punto pero no sea continua allí. Justifica con notación."
+              },
+              {
+                "prompt": "Resuelve un problema de costo marginal o velocidad instantánea. Incluye cálculo, unidades e interpretación."
+              },
+              {
+                "prompt": "Elabora una tabla que compare función, límite, continuidad y derivada con una pregunta que cada concepto permite responder."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ]
+          },
+          "pdf-s5-evaluacion": {
+            "type": "evaluation-activity",
+            "title": "Actividad evaluativa cualitativa",
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ],
+            "criterion": "Integra funciones, límites, continuidad y derivada para analizar un problema de variación con justificación conceptual y matemática.",
+            "evidence": "Documento breve con representación gráfica o tabular, procedimientos, interpretación y reflexión final.",
+            "technique": "Resolución argumentada de problema",
+            "instrument": "Rúbrica analítica",
+            "weight": "Formativo",
+            "evaluationMoment": "final",
+            "participationType": "individual",
+            "feedback": {
+              "strengths": "Claridad conceptual, orden del procedimiento y conexión con el contexto.",
+              "improvement": "Revisar justificación de límites, continuidad o interpretación de unidades cuando sea necesario.",
+              "reinforcement": "Resolver un ejercicio adicional del concepto con mayor dificultad.",
+              "nextStep": "Preparar el estudio de aplicaciones de la derivada."
+            },
+            "rubric": {
+              "type": "analitica",
+              "levels": [
+                "No acreditable",
+                "Deficiente",
+                "Insuficiente",
+                "Aceptable",
+                "Bueno",
+                "Muy bueno",
+                "Sobresaliente"
+              ],
+              "criteria": [
+                {
+                  "name": "Conceptualización",
+                  "descriptors": {
+                    "Aceptable": "Reconoce conceptos básicos con apoyo.",
+                    "Bueno": "Relaciona conceptos y procedimientos con claridad.",
+                    "Sobresaliente": "Integra conceptos con precisión y transferencia."
+                  }
+                },
+                {
+                  "name": "Procedimiento",
+                  "descriptors": {
+                    "Aceptable": "Presenta pasos principales con algunos vacíos.",
+                    "Bueno": "Desarrolla procedimientos completos y verificables.",
+                    "Sobresaliente": "Justifica cada paso y controla errores comunes."
+                  }
+                },
+                {
+                  "name": "Interpretación",
+                  "descriptors": {
+                    "Aceptable": "Incluye conclusión general.",
+                    "Bueno": "Interpreta resultados con variables y unidades.",
+                    "Sobresaliente": "Conecta resultados con una decisión o lectura contextual profunda."
+                  }
+                }
+              ]
+            }
+          },
+          "pdf-s5-referencias": {
+            "type": "references",
+            "title": "Referencias",
+            "items": [
+              "Apostol, T. M. (2001). Calculus, Volume 1. Wiley.",
+              "Larson, R., & Edwards, B. H. (2018). Cálculo. Cengage Learning.",
+              "Spivak, M. (2008). Calculus. Publish or Perish.",
+              "Stewart, J. (2016). Cálculo de una variable: Trascendentes tempranas. Cengage Learning.",
+              "Thomas, G. B., Weir, M. D., Hass, J., & Giordano, F. R. (2010). Cálculo: Una variable. Pearson."
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
