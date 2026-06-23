@@ -25,11 +25,11 @@
                 flex flex-col fixed lg:sticky top-0 h-screen z-40 -translate-x-full lg:translate-x-0
                 transition-transform duration-300">
 
-    <div class="sidebar-brand min-h-banner shrink-0 bg-primary-container text-on-primary px-md py-sm border-b-4 border-secondary-fixed flex items-center">
+    <div class="sidebar-brand h-banner shrink-0 bg-primary-container text-on-primary px-md py-sm border-b-4 border-secondary-fixed flex items-center overflow-hidden">
       <div class="min-w-0">
-        <p id="sidebar-subject-label" class="font-label-caps text-label-caps text-secondary-fixed uppercase leading-none">Asignatura</p>
-        <h1 id="sidebar-subject-title" class="sidebar-subject-title font-h3 text-[20px] font-bold text-on-primary leading-tight">Plantilla JSON SCORM/PDF</h1>
-        <p class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest leading-none">
+        <p id="sidebar-subject-label" class="font-label-caps text-[10px] text-secondary-fixed uppercase leading-none">Asignatura</p>
+        <h1 id="sidebar-subject-title" class="sidebar-subject-title font-h3 text-[15px] font-bold text-on-primary leading-tight">Plantilla JSON SCORM/PDF</h1>
+        <p class="font-label-caps text-[10px] text-on-primary-container uppercase tracking-widest leading-none">
           Contenido <span id="sidebar-content-number" class="text-secondary-fixed">01</span>
         </p>
       </div>
@@ -43,7 +43,7 @@
         <ul id="theory-nav" class="space-y-1"></ul>
       </div>
 
-      <div>
+      <div id="material-nav-group" class="hidden">
         <p id="material-nav-label" class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-sm px-base">
           Material Complementario
         </p>

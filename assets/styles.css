@@ -56,13 +56,18 @@
 }
 
 .sidebar-brand {
-  overflow: visible;
+  overflow: hidden;
 }
 .sidebar-subject-title {
   white-space: normal;
   overflow-wrap: anywhere;
   word-break: normal;
   max-width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
 
 .sidebar-footer {

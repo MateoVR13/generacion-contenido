@@ -344,17 +344,30 @@ For central concepts, prefer developed blocks with multiple paragraphs, key idea
 
 ### accordion (SCORM or PDF static)
 
-Use accordions for organization, comparison, common errors, or frequently confused ideas after the main concept has been explained. Avoid using accordion items as shallow one-line theory.
+Use accordions for organization, comparison, common errors, or frequently confused ideas after the main concept has been explained. **Mandatory in every thematic SCORM section.** Each item must be relatively extensive: `body` should hold **two to three paragraphs** (an array of two or three strings) that complement and extend the theory already shown — nuances, comparisons, misconceptions, applied implications, or edge cases. Do not use shallow one-line accordion theory and do not use the accordion as the primary explanation.
 
 ```json
 {
   "type": "accordion",
   "title": "Conceptos",
-  "items": [{"icon": "lightbulb", "title": "Concepto", "open": true, "body": ["Explicación."]}]
+  "items": [
+    {
+      "icon": "lightbulb",
+      "title": "Concepto",
+      "open": true,
+      "body": [
+        "Primer párrafo que retoma la teoría previa y la profundiza con un matiz o una distinción relevante.",
+        "Segundo párrafo que conecta el concepto con un ejemplo, una implicación práctica o un error frecuente.",
+        "Tercer párrafo opcional que cierra con una comparación, una condición límite o una transferencia al contexto disciplinar."
+      ]
+    }
+  ]
 }
 ```
 
 ### flashcards (SCORM only)
+
+**Mandatory in every thematic SCORM section.** Each `definition` must give a real, section-specific explanation or relationship, not a single word.
 
 ```json
 {
@@ -366,7 +379,7 @@ Use accordions for organization, comparison, common errors, or frequently confus
 
 ### carousel (SCORM only)
 
-Slides can contain text, image, or formula.
+Slides can contain text, image, or formula. **Mandatory in every thematic SCORM section.** Give each slide developed `title` plus `body`/`description` content, not bare labels.
 
 ```json
 {
@@ -411,6 +424,8 @@ Formula strings must be raw KaTeX-compatible LaTeX without `$...$` delimiters an
 
 Use steppers for guided practice and procedures. Do not use them as a decorative list: include a task statement, intermediate reasoning, and a final check or conclusion.
 
+In mathematics sections this is the required component for worked exercises/examples: each thematic SCORM section must include **between two and four resolved exercises** rendered as steppers, with LaTeX in `statement` and `steps[].formula` and a closing `final: true` result step.
+
 ```json
 {
   "type": "stepper",
@@ -429,12 +444,20 @@ Use steppers for guided practice and procedures. Do not use them as a decorative
 Use Chart.js-compatible data only.
 Use charts when they add analytical value: trends, comparisons, distributions, correlations, confusion/error matrices, performance curves, uncertainty, or decision evidence. Do not use a generic chart as filler.
 
+Every chart must carry two distinct text fields, both required in SCORM and PDF:
+
+- `description` (hilo conductor): connects the chart to the theory shown earlier in the same section and explains why it appears now. Renders **above** the chart.
+- `note` (lectura del gráfico): describes and interprets the graphic itself — axes, series, the trend/pattern/comparison, and the disciplinary conclusion. Renders **below** the chart, under a "Lectura del gráfico" label.
+
+Do not swap these roles or merge them. `description` connects to prior theory; `note` describes the graphic.
+
 ```json
 {
   "type": "chart",
   "chartType": "bar",
   "title": "Gráfico",
-  "note": "Nota descriptiva del gráfico para PDF.",
+  "description": ["Hilo conductor: cómo se relaciona este gráfico con la teoría anterior y por qué lo observamos ahora."],
+  "note": "Lectura del gráfico: descripción de los ejes y series, el patrón/comparación que muestra y la conclusión disciplinar que debe extraer el estudiante.",
   "height": "300px",
   "labels": ["A", "B"],
   "datasets": [{"label": "Serie", "data": [1, 2]}],
@@ -442,7 +465,7 @@ Use charts when they add analytical value: trends, comparisons, distributions, c
 }
 ```
 
-For PDF charts, include `note`, `caption`, or `description`. The PDF renderer centers the chart and prints the note below it.
+The SCORM renderer prints `description` above the chart and `note` below it under a "Lectura del gráfico" label. The PDF renderer prints `description` above the chart and centers `note` (or `descriptiveNote`/`caption`) below it.
 
 ### image / figure
 

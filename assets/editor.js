@@ -678,7 +678,7 @@
     if (interactiveTypes.indexOf(type) !== -1) return "";
 
     const title = component.title ? '<h3 class="pdf-h3">' + escapeHtml(component.title) + "</h3>" : "";
-    const description = component.description && type !== "chart" ? '<div class="pdf-muted">' + pdfText(component.description) + "</div>" : "";
+    const description = component.description ? '<div class="pdf-muted">' + pdfText(component.description) + "</div>" : "";
     let body = "";
 
     if (type === "text" || type === "theory") {
@@ -803,10 +803,10 @@
         }).join("") + "</ol>";
     } else if (type === "chart") {
       const config = { type: component.chartType || component.kind || "bar", data: { labels: component.labels || [], datasets: component.datasets || [] }, options: component.options || {} };
-      const note = component.note || component.caption || component.descriptiveNote || component.description;
+      const note = component.note || component.descriptiveNote || component.caption;
       body = '<figure class="pdf-chart-figure">' +
         '<div class="pdf-chart-wrap"><canvas data-pdf-chart="' + attr(JSON.stringify(config)) + '"></canvas></div>' +
-        (note ? '<figcaption class="pdf-chart-note">' + pdfText(note) + "</figcaption>" : "") +
+        (note ? '<figcaption class="pdf-chart-note"><span class="pdf-chart-note-label">Lectura del gráfico</span>' + pdfText(note) + "</figcaption>" : "") +
         "</figure>";
     } else if (type === "image" || type === "figure" || type === "visual-prompt") {
       const src = component.src || (component.image && component.image.src) || "";
@@ -1222,6 +1222,15 @@
       }
       .pdf-chart-note p {
         margin: 0;
+      }
+      .pdf-chart-note-label {
+        display: block;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 7.6pt;
+        color: #3f4a37;
+        margin-bottom: 1mm;
       }
       .pdf-image-figure {
         width: 100%;

@@ -45,6 +45,7 @@ Generate the section only after the component choices make disciplinary sense.
 - Do not use images as decoration. Use `image`/`figure` when spatial, visual, process, artifact, matrix, diagram, scene, or comparison understanding matters.
 - Do not use code only because the asignatura is technical. Use `code` when executing, tracing, modifying, or debugging the snippet advances the RA.
 - Do not use accordions/tabs as the main explanation. Use them to compare, organize, or correct misconceptions after theory is established.
+- Although components are a menu, three of them are obligatory in every thematic SCORM section regardless of discipline: `carousel`, `flashcards`, and `accordion`. Choose strong, section-specific content for each so they reinforce (never replace) the theory. The accordion in particular must be relatively extensive: each item holds two to three paragraphs that complement the theoretical content already shown.
 
 ## Component Fit By Knowledge Type
 
@@ -69,6 +70,8 @@ These are starting points only. Override them when the section concept demands i
 Prefer `theory-block`, `formula`, `stepper`, `example`, `chart`, `table`, `exercise-set`.
 
 Use charts for graphs of functions, geometric interpretation, convergence, error behavior, or comparison of solution methods. Use formulas only when they are explained and used. Use steppers for derivations and worked exercises.
+
+**Mandatory for mathematics sections:** every thematic SCORM section (`seccion-1` through `seccion-5`) must contain **between two and four worked exercises/examples ("ejercicios/ejemplos resueltos") presented with the `stepper` component**. Each stepper shows the full resolution as ordered steps with intermediate reasoning, LaTeX in `statement` and `steps[].formula`, and a closing `final: true` verification/result step. These solved-exercise steppers are required even when the section also uses standalone `formula` or `chart` components, and they coexist with the section's mandatory `carousel`, `flashcards`, and `accordion`. Mirror the resolved exercises in the PDF branch with `stepper`, `example`, or `exercise-set`.
 
 ### Programming, Algoritmia, And Software
 
@@ -117,6 +120,13 @@ Before selecting `chart`, answer yes to at least one:
 
 If not, use `image`, `table`, `stepper`, `callout`, `summary`, or `code` instead.
 
+When a chart passes the gate, it must carry two distinct text fields, both required in SCORM and PDF:
+
+- `description` (hilo conductor): connects the chart to the theory shown earlier in the same section and explains why this chart appears now. Renders above the chart.
+- `note` (lectura del gráfico): describes and interprets the graphic itself — axes, series, the trend/pattern/comparison, and the conclusion the learner should reach. Renders below the chart.
+
+Do not swap these roles and do not omit either one. The thread connects to prior theory; the note describes the graphic.
+
 ## Formula Gate
 
 Before selecting `formula`, answer yes to all:
@@ -153,12 +163,15 @@ If yes, include language, language label, file name, instructions, exact termina
 
 Before writing files, audit each `seccion-1` through `seccion-5`:
 
-- It has at least three theory/concept blocks.
+- It has three theory/concept blocks, and each is immediately followed by a cluster of two or three complementary components.
+- It includes at least one `carousel`, at least one `flashcards`, and at least one `accordion`, distributed across its three component clusters.
+- Every `accordion` item is relatively extensive (two to three complementary paragraphs that extend the theory), never one-line labels, and the accordion is not used as the primary theoretical explanation.
+- If the asignatura is mathematics (or the section RA is procedural-mathematical), it includes between two and four worked exercises/examples rendered with `stepper`.
 - It is conceptually and textually unique within the full seven-file package; no paragraph, bullet, prompt, example, feedback, visual prompt, practice step, or code scaffold is reused as a shell.
 - Each theory block prepares the components that follow.
 - Every formula passes the Formula Gate.
 - Every formula also passes `math-latex-validation.md`: raw LaTeX only, JSON-escaped backslashes, no `$...$` delimiters, balanced syntax, and KaTeX-compatible commands.
-- Every chart passes the Chart Gate.
+- Every chart passes the Chart Gate and carries both a `description` (hilo conductor to prior theory) and a `note` (descriptive reading of the graphic).
 - Every image/figure passes the Image/Figure Gate.
 - Every code block passes the Code Gate.
 - Interactive activities test meaningful decisions or misconceptions.

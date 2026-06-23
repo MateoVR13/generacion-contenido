@@ -75,41 +75,18 @@
     return !!(content && content.pdf && content.pdf.sections && Object.keys(content.pdf.sections).length);
   }
 
-  function pdfGuideSection(content) {
-    const subject = (content && content.subject) || {};
-    const pdf = (content && content.pdf) || {};
-    const contentNumber = subject.contentNumber ? "Contenido " + subject.contentNumber : "Contenido";
+  function pdfNavButton() {
     const runtime = isScormRuntime();
-    return {
-      _generated: true,
-      kind: "material",
-      icon: "picture_as_pdf",
-      navLabel: "Guía PDF",
-      title: "Guía de estudio PDF",
-      intro: [
-        "Consulta la versión imprimible del contenido con teoría, ejemplos, ejercicios, evaluación y referencias."
-      ],
-      componentOrder: ["material-pdf-download"],
-      components: {
-        "material-pdf-download": {
-          type: "downloads",
-          title: "Material complementario",
-          description: "La guía PDF acompaña este recurso SCORM como material de estudio imprimible.",
-          items: [
-            {
-              title: pdf.title || subject.contentTitle || subject.title || "Guía de estudio",
-              meta: contentNumber + " · PDF",
-              description: pdf.subtitle || pdf.purpose || "Versión imprimible del contenido.",
-              href: runtime ? "guia-estudio.html" : "#",
-              download: false,
-              action: runtime ? "" : "pdf-preview",
-              buttonLabel: runtime ? "Abrir PDF" : "Abrir vista PDF",
-              icon: "picture_as_pdf"
-            }
-          ]
-        }
-      }
-    };
+    const label = runtime ? "Abrir guía PDF" : "Abrir vista PDF";
+    const trigger = runtime
+      ? 'href="guia-estudio.html" target="_blank" rel="noopener noreferrer"'
+      : 'type="button" data-open-pdf-preview';
+    const tag = runtime ? "a" : "button";
+    return '<' + tag + ' ' + trigger + ' class="material-pdf-button flex w-full items-center gap-sm px-base py-sm rounded border border-outline-variant bg-surface-container-high text-on-surface hover:bg-secondary-fixed hover:text-primary transition-colors font-label-caps text-label-caps uppercase tracking-widest">' +
+      icon("picture_as_pdf", "text-secondary text-xl") +
+      '<span>' + escapeHtml(label) + "</span>" +
+      icon("open_in_new", "text-base ml-auto") +
+      "</" + tag + ">";
   }
 
   function paragraphList(items, className, field) {
@@ -430,8 +407,17 @@
       return '<span class="inline-flex items-center gap-xs"><span class="w-3 h-3 rounded-full" style="background:' + attr(item.color || "#060b00") + '"></span>' + editableText("legend." + index + ".label", item.label) + "</span>";
     }).join("");
     const headerLegend = legend ? '<div class="flex items-center gap-md text-sm mb-md">' + legend + "</div>" : "";
+    const note = component.note || component.descriptiveNote || component.caption;
+    const noteField = component.note ? "note" : component.descriptiveNote ? "descriptiveNote" : "caption";
+    const chartNote = note ? '<figcaption class="chart-note mt-md rounded-lg border-l-4 border-secondary-fixed bg-surface-container-low p-md">' +
+      '<p class="font-label-caps text-label-caps text-primary uppercase mb-sm">Lectura del gráfico</p>' +
+      paragraphList(note, "text-sm text-on-surface-variant", noteField) +
+      "</figcaption>" : "";
     const body = headerLegend +
-      '<div class="relative" style="height:' + attr(component.height || "320px") + '"><canvas data-chart="' + attr(config.type) + '" data-chart-config="' + attr(JSON.stringify(config)) + '" aria-label="' + attr(component.ariaLabel || component.title || "Grafico") + '"></canvas></div>';
+      '<figure class="chart-figure m-0">' +
+      '<div class="relative" style="height:' + attr(component.height || "320px") + '"><canvas data-chart="' + attr(config.type) + '" data-chart-config="' + attr(JSON.stringify(config)) + '" aria-label="' + attr(component.ariaLabel || component.title || "Grafico") + '"></canvas></div>' +
+      chartNote +
+      "</figure>";
     return componentShell(id, component, body, "", basePath);
   }
 
@@ -946,16 +932,13 @@
 
   function orderedScormSections(content) {
     const source = scormContent(content);
-    const entries = orderedSections(source);
-    if (hasPdfGuide(content) && !(source.sections || {})["material-pdf"]) {
-      entries.push(["material-pdf", pdfGuideSection(content)]);
-    }
-    return entries;
+    return orderedSections(source);
   }
 
   function renderNavigation(content) {
     const theoryNav = byId("theory-nav");
     const materialNav = byId("material-nav");
+    const materialGroup = byId("material-nav-group");
     const entries = orderedScormSections(content);
     const theory = entries.filter(function (entry) { return (entry[1].kind || "theory") !== "material"; });
     const material = entries.filter(function (entry) { return (entry[1].kind || "theory") === "material"; });
@@ -969,9 +952,15 @@
       }).join("");
     }
     if (materialNav) {
-      materialNav.innerHTML = material.map(function (entry) {
+      const sectionItems = material.map(function (entry) {
         return renderMaterialNav(entry[0], entry[1]);
       }).join("");
+      const pdfButton = hasPdfGuide(content) ? '<li>' + pdfNavButton() + "</li>" : "";
+      materialNav.innerHTML = sectionItems + pdfButton;
+    }
+    if (materialGroup) {
+      const hasMaterial = material.length || hasPdfGuide(content);
+      materialGroup.classList.toggle("hidden", !hasMaterial);
     }
   }
 
