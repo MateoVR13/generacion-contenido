@@ -47,6 +47,31 @@
     return escapeHtml(value);
   }
 
+  // Convert inline LaTeX delimited by $...$ ($$...$$ for display math) in prose into KaTeX
+  // placeholders rendered by the PDF load script. LaTeX travels in an attribute; prose is escaped.
+  // Use this instead of escapeHtml for any learner-facing PDF text that may contain math.
+  function mathText(value) {
+    let raw = String(value == null ? "" : value);
+    if (raw.indexOf("$") === -1) return escapeHtml(raw);
+    // Protect a literal escaped \$ (e.g. prices) so it is never treated as a delimiter.
+    const sentinel = " ESCD ";
+    raw = raw.replace(/\\\$/g, sentinel);
+    const pattern = /\$\$([\s\S]+?)\$\$|\$([^$]+?)\$/g;
+    let out = "";
+    let last = 0;
+    let match;
+    while ((match = pattern.exec(raw)) !== null) {
+      out += escapeHtml(raw.slice(last, match.index));
+      const display = match[1] != null;
+      const latex = (display ? match[1] : match[2]).split(sentinel).join("$");
+      const flag = display ? "data-math-block" : "data-math-inline";
+      out += '<span class="inline-math" ' + flag + '="' + attr(latex) + '"></span>';
+      last = pattern.lastIndex;
+    }
+    out += escapeHtml(raw.slice(last));
+    return out.split(sentinel).join("$");
+  }
+
   function asArray(value) {
     if (Array.isArray(value)) return value;
     if (value == null || value === "") return [];
@@ -432,6 +457,54 @@
     });
   }
 
+  // Downscale + compress an uploaded image before embedding it as a data URL in the JSON.
+  // Large originals embedded raw (multi-MB base64, duplicated across assetId matches and clones)
+  // are what saturate the page. We cap the longest side and re-encode. PNGs with transparency
+  // stay PNG; everything else becomes JPEG to keep the data URL small.
+  const MAX_IMAGE_DIMENSION = 1600;
+  const JPEG_QUALITY = 0.85;
+  function loadImageElement(dataUrl) {
+    return new Promise(function (resolve, reject) {
+      const img = new Image();
+      img.onload = function () { resolve(img); };
+      img.onerror = function () { reject(new Error("No se pudo decodificar la imagen.")); };
+      img.src = dataUrl;
+    });
+  }
+  async function compressImageFile(file) {
+    const original = await readImageFile(file);
+    const isPng = /^image\/png$/i.test(file.type || "");
+    // Animated GIFs and SVGs lose meaning if rasterized; keep them as-is.
+    if (/^image\/(gif|svg\+xml)$/i.test(file.type || "")) return original;
+    let img;
+    try {
+      img = await loadImageElement(original);
+    } catch (err) {
+      return original; // if it cannot be decoded, fall back to the raw data URL
+    }
+    const w = img.naturalWidth || img.width;
+    const h = img.naturalHeight || img.height;
+    if (!w || !h) return original;
+    const scale = Math.min(1, MAX_IMAGE_DIMENSION / Math.max(w, h));
+    const targetW = Math.max(1, Math.round(w * scale));
+    const targetH = Math.max(1, Math.round(h * scale));
+    const canvas = document.createElement("canvas");
+    canvas.width = targetW;
+    canvas.height = targetH;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return original;
+    if (!isPng) { ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, targetW, targetH); }
+    ctx.drawImage(img, 0, 0, targetW, targetH);
+    let out;
+    try {
+      out = canvas.toDataURL(isPng ? "image/png" : "image/jpeg", isPng ? undefined : JPEG_QUALITY);
+    } catch (err) {
+      return original;
+    }
+    // Use whichever is smaller (re-encoding tiny images can grow them).
+    return out && out.length < original.length ? out : original;
+  }
+
   function normalizeInlineText(value) {
     return String(value == null ? "" : value)
       .replace(/\u00a0/g, " ")
@@ -515,6 +588,54 @@
     if (editable.closest("a,button,summary,label")) event.preventDefault();
   }
 
+  // Collect the SCORM-branch image component paths that share an assetId (these have DOM nodes
+  // in the main view and need a partial re-render). PDF components are updated in the content
+  // snapshot but are not rendered in the main view, so they need no DOM update.
+  function scormImagePathsForAsset(content, assetId, fallbackPath) {
+    const paths = [];
+    const sections = content && content.scorm && content.scorm.sections;
+    if (assetId && sections) {
+      Object.keys(sections).forEach(function (sectionId) {
+        const components = sections[sectionId] && sections[sectionId].components;
+        if (!components) return;
+        Object.keys(components).forEach(function (componentId) {
+          const component = components[componentId];
+          if (isImageComponent(component) && component.assetId === assetId) {
+            paths.push("scorm.sections." + sectionId + ".components." + componentId);
+          }
+        });
+      });
+    }
+    if (!paths.length && fallbackPath && /^scorm\./.test(fallbackPath)) paths.push(fallbackPath);
+    return paths;
+  }
+
+  // Apply an image change (set or clear src) without re-cloning/re-rendering the whole document.
+  // Mutates the renderer's snapshot + the editor's copy, then re-renders only the affected nodes.
+  function applyImageChange(path, assetId, src, fileName, message) {
+    const content = window.getSubjectContent();
+    if (!content || !getValueAtPath(content, path)) {
+      setStatus("No se encontró el componente de imagen.", false);
+      return;
+    }
+    setValueAtPath(content, path + ".src", src);
+    setValueAtPath(content, path + ".fileName", fileName);
+    const synced = syncImageAsset(content, assetId, src, fileName);
+    if (!synced) {
+      const component = getValueAtPath(content, path);
+      if (component) { component.src = src; component.fileName = fileName; }
+    }
+    // Keep both snapshots in sync without a full re-render.
+    state.content = content;
+    if (window.setSubjectContentSnapshot) window.setSubjectContentSnapshot(content);
+    // Partial DOM update for the affected SCORM image nodes.
+    const paths = scormImagePathsForAsset(content, assetId, path);
+    if (window.updateSubjectImage) window.updateSubjectImage(paths, { src: src, fileName: fileName });
+    // Refresh only the selected-component editor view (cheap); skip dumping the whole document.
+    renderSelectedComponent();
+    setStatus(message + (synced > 1 ? " (sincronizada con PDF/SCORM)" : ""), true);
+  }
+
   async function handleImageUploadChange(event) {
     const input = event.target.closest("[data-image-upload]");
     if (!input) return;
@@ -526,21 +647,10 @@
       return;
     }
     try {
-      state.content = state.content || window.getSubjectContent();
       const path = input.getAttribute("data-image-path");
       const assetId = input.getAttribute("data-image-asset-id") || "";
-      const dataUrl = await readImageFile(file);
-      if (!path || !getValueAtPath(state.content, path)) throw new Error("No se encontró el componente de imagen.");
-      setValueAtPath(state.content, path + ".src", dataUrl);
-      setValueAtPath(state.content, path + ".fileName", file.name);
-      const synced = syncImageAsset(state.content, assetId, dataUrl, file.name);
-      if (!synced) {
-        const component = getValueAtPath(state.content, path);
-        if (component) component.src = dataUrl;
-      }
-      applyContent(state.content, synced > 1 ? "Imagen cargada y sincronizada con PDF/SCORM." : "Imagen cargada en el componente.");
-      updateFullEditor();
-      renderSelectedComponent();
+      const dataUrl = await compressImageFile(file);
+      applyImageChange(path, assetId, dataUrl, file.name, "Imagen cargada.");
     } catch (err) {
       setStatus(err.message || "No se pudo cargar la imagen.", false);
     } finally {
@@ -552,16 +662,9 @@
     const button = event.target.closest("[data-image-clear]");
     if (!button) return;
     event.preventDefault();
-    state.content = state.content || window.getSubjectContent();
     const path = button.getAttribute("data-image-path");
     const assetId = button.getAttribute("data-image-asset-id") || "";
-    if (!path || !getValueAtPath(state.content, path)) return;
-    setValueAtPath(state.content, path + ".src", "");
-    setValueAtPath(state.content, path + ".fileName", "");
-    const synced = syncImageAsset(state.content, assetId, "", "");
-    applyContent(state.content, synced > 1 ? "Imagen quitada en PDF/SCORM." : "Imagen quitada.");
-    updateFullEditor();
-    renderSelectedComponent();
+    applyImageChange(path, assetId, "", "", "Imagen quitada.");
   }
 
   function handleStructureClick(event) {
@@ -636,7 +739,7 @@
 
   function pdfText(items) {
     return asArray(items).map(function (item) {
-      return "<p>" + escapeHtml(item) + "</p>";
+      return "<p>" + mathText(item) + "</p>";
     }).join("");
   }
 
@@ -677,7 +780,7 @@
     ];
     if (interactiveTypes.indexOf(type) !== -1) return "";
 
-    const title = component.title ? '<h3 class="pdf-h3">' + escapeHtml(component.title) + "</h3>" : "";
+    const title = component.title ? '<h3 class="pdf-h3">' + mathText(component.title) + "</h3>" : "";
     const description = component.description ? '<div class="pdf-muted">' + pdfText(component.description) + "</div>" : "";
     let body = "";
 
@@ -685,16 +788,16 @@
       body = pdfText(component.body || component.content || component.paragraphs);
     } else if (type === "theory-block" || type === "concept-block") {
       const keyIdeas = asArray(component.keyIdeas || component.highlights).map(function (item) {
-        return "<li>" + escapeHtml(item.text || item.label || item.title || item) + "</li>";
+        return "<li>" + mathText(item.text || item.label || item.title || item) + "</li>";
       }).join("");
       const sections = asArray(component.sections).map(function (section) {
-        return '<div class="pdf-box"><h4>' + escapeHtml(section.title || section.label || "Idea") + "</h4>" +
+        return '<div class="pdf-box"><h4>' + mathText(section.title || section.label || "Idea") + "</h4>" +
           pdfText(section.body || section.content) +
           (section.formula ? '<div class="pdf-formula small" data-formula="' + attr(section.formula) + '"></div>' : "") +
-          (section.formulaNote ? '<p class="pdf-muted">' + escapeHtml(section.formulaNote) + "</p>" : "") +
+          (section.formulaNote ? '<p class="pdf-muted">' + mathText(section.formulaNote) + "</p>" : "") +
           "</div>";
       }).join("");
-      const example = component.example ? '<div class="pdf-example"><h4>' + escapeHtml(component.example.title || component.example.label || "Ejemplo") + "</h4>" + pdfText(component.example.body || component.example.content) + "</div>" : "";
+      const example = component.example ? '<div class="pdf-example"><h4>' + mathText(component.example.title || component.example.label || "Ejemplo") + "</h4>" + pdfText(component.example.body || component.example.content) + "</div>" : "";
       body = pdfText(component.body || component.content || component.paragraphs) +
         (keyIdeas ? '<ul class="pdf-bullets">' + keyIdeas + "</ul>" : "") +
         sections +
@@ -704,7 +807,7 @@
       const ordered = component.ordered ? "ol" : "ul";
       const cls = component.ordered ? "pdf-numbered" : "pdf-bullets";
       body = "<" + ordered + ' class="' + cls + '">' + asArray(component.items).map(function (item) {
-        return "<li>" + escapeHtml(item.text || item.label || item.title || item) + "</li>";
+        return "<li>" + mathText(item.text || item.label || item.title || item) + "</li>";
       }).join("") + "</" + ordered + ">";
     } else if (type === "example") {
       body = '<div class="pdf-example">' + pdfText(component.context || component.body || component.content) +
@@ -718,7 +821,7 @@
         return '<div class="pdf-practice"><h4>Ejercicio ' + (index + 1) + "</h4>" +
           pdfText(item.prompt || item.statement || item.body) +
           (item.formula ? '<div class="pdf-formula small" data-formula="' + attr(item.formula) + '"></div>' : "") +
-          (item.answer ? '<p class="pdf-muted"><strong>Respuesta esperada:</strong> ' + escapeHtml(item.answer) + "</p>" : "") +
+          (item.answer ? '<p class="pdf-muted"><strong>Respuesta esperada:</strong> ' + mathText(item.answer) + "</p>" : "") +
           "</div>";
       }).join("");
     } else if (type === "evaluation-activity" || type === "evaluation") {
@@ -745,64 +848,68 @@
       const rubricCriteria = asArray(rubric.criteria).map(function (criterion) {
         const descriptors = criterion.descriptors && typeof criterion.descriptors === "object"
           ? Object.keys(criterion.descriptors).map(function (level) {
-            return "<li><strong>" + escapeHtml(level) + ":</strong> " + escapeHtml(criterion.descriptors[level]) + "</li>";
+            return "<li><strong>" + mathText(level) + ":</strong> " + mathText(criterion.descriptors[level]) + "</li>";
           }).join("")
-          : "<li>" + escapeHtml(criterion.description || criterion.descriptors || "") + "</li>";
-        return '<div class="pdf-box"><h4>' + escapeHtml(criterion.name || criterion.title || "Criterio") + '</h4><ul class="pdf-bullets">' + descriptors + "</ul></div>";
+          : "<li>" + mathText(criterion.description || criterion.descriptors || "") + "</li>";
+        return '<div class="pdf-box"><h4>' + mathText(criterion.name || criterion.title || "Criterio") + '</h4><ul class="pdf-bullets">' + descriptors + "</ul></div>";
       }).join("");
       body = '<div class="pdf-box">' +
         (meta ? '<ul class="pdf-bullets">' + meta + "</ul>" : "") +
-        (component.criterion ? "<p><strong>Criterio:</strong> " + escapeHtml(component.criterion) + "</p>" : "") +
-        (component.evidence ? "<p><strong>Evidencia:</strong> " + escapeHtml(component.evidence) + "</p>" : "") +
+        (component.criterion ? "<p><strong>Criterio:</strong> " + mathText(component.criterion) + "</p>" : "") +
+        (component.evidence ? "<p><strong>Evidencia:</strong> " + mathText(component.evidence) + "</p>" : "") +
         (feedbackList ? '<h4>Ruta de retroalimentacion</h4><ul class="pdf-bullets">' + feedbackList + "</ul>" : "") +
-        (rubric.levels ? '<p class="pdf-muted"><strong>Niveles:</strong> ' + escapeHtml(asArray(rubric.levels).join(", ")) + "</p>" : "") +
+        (rubric.levels ? '<p class="pdf-muted"><strong>Niveles:</strong> ' + mathText(asArray(rubric.levels).join(", ")) + "</p>" : "") +
         "</div>" + rubricCriteria;
     } else if (type === "objectives" || type === "summary") {
       body = '<ul class="pdf-bullets">' + asArray(component.items).map(function (item) {
-        return "<li>" + escapeHtml(item.text || item.label || item.title || item) + "</li>";
+        return "<li>" + mathText(item.text || item.label || item.title || item) + "</li>";
       }).join("") + "</ul>";
     } else if (type === "prior-knowledge" || type === "reflection") {
       body = '<ol class="pdf-numbered">' + asArray(component.prompts || component.items).map(function (item) {
-        return "<li>" + escapeHtml(item.text || item.label || item.title || item) + "</li>";
+        return "<li>" + mathText(item.text || item.label || item.title || item) + "</li>";
       }).join("") + "</ol>";
     } else if (type === "accordion") {
       body = asArray(component.items).map(function (item) {
-        return '<div class="pdf-box"><h4>' + escapeHtml(item.title || item.label) + "</h4>" + pdfText(item.body || item.content) + "</div>";
+        return '<div class="pdf-box"><h4>' + mathText(item.title || item.label) + "</h4>" + pdfText(item.body || item.content) + "</div>";
       }).join("");
     } else if (type === "flashcards") {
       body = '<div class="pdf-grid">' + asArray(component.cards || component.items).map(function (card) {
-        return '<div class="pdf-box"><h4>' + escapeHtml(card.term || card.front || card.title) + '</h4><p>' + escapeHtml(card.definition || card.back || card.body) + "</p></div>";
+        return '<div class="pdf-box"><h4>' + mathText(card.term || card.front || card.title) + '</h4><p>' + mathText(card.definition || card.back || card.body) + "</p></div>";
       }).join("") + "</div>";
     } else if (type === "carousel") {
       body = asArray(component.slides).map(function (slide, index) {
-        return '<div class="pdf-box"><h4>Slide ' + (index + 1) + " · " + escapeHtml(slide.title || slide.label || "") + "</h4>" +
+        return '<div class="pdf-box"><h4>Slide ' + (index + 1) + " · " + mathText(slide.title || slide.label || "") + "</h4>" +
           (slide.formula ? '<div class="pdf-formula" data-formula="' + attr(slide.formula) + '"></div>' : pdfText(slide.body || slide.description)) +
-          (slide.description && slide.formula ? '<p>' + escapeHtml(slide.description) + "</p>" : "") +
+          (slide.description && slide.formula ? '<p>' + mathText(slide.description) + "</p>" : "") +
           "</div>";
       }).join("");
     } else if (type === "formula") {
       body = (component.context ? '<div class="pdf-muted">' + pdfText(component.context) + "</div>" : "") +
         '<div class="pdf-formula" data-formula="' + attr(component.latex || component.formula || "") + '"></div>' +
         '<ul class="pdf-bullets">' + asArray(component.variables).map(function (item) {
-          return '<li><span data-formula-inline="' + attr(item.symbol || "") + '"></span>: ' + escapeHtml(item.description || "") + "</li>";
+          return '<li><span data-formula-inline="' + attr(item.symbol || "") + '"></span>: ' + mathText(item.description || "") + "</li>";
         }).join("") + "</ul>" +
         (component.explanation ? '<div class="pdf-box"><h4>Cómo leerla</h4>' + pdfText(component.explanation) + "</div>" : "");
     } else if (type === "table") {
       body = '<table class="pdf-table"><thead><tr>' + asArray(component.columns).map(function (column) {
-        return "<th>" + escapeHtml(column.label || column) + "</th>";
+        return "<th>" + mathText(column.label || column) + "</th>";
       }).join("") + "</tr></thead><tbody>" + asArray(component.rows).map(function (row) {
         return "<tr>" + asArray(row.cells || row).map(function (cell) {
-          return "<td>" + escapeHtml(cell.badge || cell.text || cell.value || cell) + "</td>";
+          return "<td>" + mathText(cell.badge || cell.text || cell.value || cell) + "</td>";
         }).join("") + "</tr>";
       }).join("") + "</tbody></table>";
     } else if (type === "stepper") {
-      body = (component.statement ? '<p class="pdf-muted">' + escapeHtml(component.statement) + "</p>" : "") +
+      body = (component.statement ? '<p class="pdf-muted">' + mathText(component.statement) + "</p>" : "") +
         '<ol class="pdf-numbered">' + asArray(component.steps).map(function (step) {
-          return '<li><strong>' + escapeHtml(step.title) + "</strong>" + pdfText(step.body || step.description) +
+          return '<li><strong>' + mathText(step.title) + "</strong>" + pdfText(step.body || step.description) +
             (step.formula ? '<div class="pdf-formula small" data-formula="' + attr(step.formula) + '"></div>' : "") + "</li>";
         }).join("") + "</ol>";
     } else if (type === "chart") {
-      const config = { type: component.chartType || component.kind || "bar", data: { labels: component.labels || [], datasets: component.datasets || [] }, options: component.options || {} };
+      // Force the canvas to fill the (now larger) .pdf-chart-wrap: with maintainAspectRatio:true
+      // Chart.js derives height from a fixed ratio and ignores the wrapper height, so the chart
+      // stayed small inside the wider box. responsive + maintainAspectRatio:false makes it fill it.
+      const chartOptions = Object.assign({}, component.options || {}, { responsive: true, maintainAspectRatio: false });
+      const config = { type: component.chartType || component.kind || "bar", data: { labels: component.labels || [], datasets: component.datasets || [] }, options: chartOptions };
       const note = component.note || component.descriptiveNote || component.caption;
       body = '<figure class="pdf-chart-figure">' +
         '<div class="pdf-chart-wrap"><canvas data-pdf-chart="' + attr(JSON.stringify(config)) + '"></canvas></div>' +
@@ -846,12 +953,35 @@
     return '<section class="pdf-component">' + title + description + body + "</section>";
   }
 
-  function buildPdfHtml(content) {
+  let logoDataUrlCache = null;
+  async function loadLogoDataUrl() {
+    if (logoDataUrlCache) return logoDataUrlCache;
+    try {
+      const response = await fetch(new URL("assets/logo-negro.png", window.location.href).href);
+      if (!response.ok) return "";
+      const blob = await response.blob();
+      logoDataUrlCache = await new Promise(function (resolve) {
+        const reader = new FileReader();
+        reader.onload = function () { resolve(String(reader.result || "")); };
+        reader.onerror = function () { resolve(""); };
+        reader.readAsDataURL(blob);
+      });
+      return logoDataUrlCache;
+    } catch (err) {
+      return "";
+    }
+  }
+
+  function buildPdfHtml(content, logoSrc) {
     const subject = content.subject || {};
     const pdf = content.pdf || {};
     const pdfSource = pdfContent(content);
     const institution = pdf.institution || "[Institución]";
-    const logoBlack = new URL("assets/logo-negro.png", window.location.href).href;
+    // logoSrc: explicit logo reference chosen by the caller.
+    // - blob preview -> embedded base64 data URL (relative paths do not resolve from a blob: document)
+    // - SCORM zip     -> relative "assets/logo-negro.png" (the file is bundled next to guia-estudio.html)
+    // Fallback to the relative path when no logoSrc is provided.
+    const logoBlack = logoSrc || "assets/logo-negro.png";
     const sections = orderedSections(pdfSource).map(function (sectionId, index) {
       const section = pdfSource.sections[sectionId];
       const components = componentOrder(section).map(function (componentId) {
@@ -884,7 +1014,7 @@
       '</main></section>' +
       '<section class="pdf-toc" id="contenido"><img src="' + attr(logoBlack) + '" alt=""><h1>Contenido</h1><ol>' + toc + '</ol></section>' +
       sections +
-      '<script>window.addEventListener("load",function(){document.querySelectorAll("[data-formula]").forEach(function(el){try{katex.render(el.getAttribute("data-formula"),el,{displayMode:true,throwOnError:false})}catch(e){el.textContent=el.getAttribute("data-formula")}});document.querySelectorAll("[data-formula-inline]").forEach(function(el){try{katex.render(el.getAttribute("data-formula-inline"),el,{displayMode:false,throwOnError:false})}catch(e){el.textContent=el.getAttribute("data-formula-inline")}});document.querySelectorAll("[data-pdf-chart]").forEach(function(canvas){try{new Chart(canvas.getContext("2d"),JSON.parse(canvas.getAttribute("data-pdf-chart")))}catch(e){}});if(window.hljs){document.querySelectorAll("pre code").forEach(function(code){hljs.highlightElement(code)})}});<\/script>' +
+      '<script>window.addEventListener("load",function(){document.querySelectorAll("[data-formula]").forEach(function(el){try{katex.render(el.getAttribute("data-formula"),el,{displayMode:true,throwOnError:false})}catch(e){el.textContent=el.getAttribute("data-formula")}});document.querySelectorAll("[data-formula-inline]").forEach(function(el){try{katex.render(el.getAttribute("data-formula-inline"),el,{displayMode:false,throwOnError:false})}catch(e){el.textContent=el.getAttribute("data-formula-inline")}});document.querySelectorAll("[data-math-inline]").forEach(function(el){try{katex.render(el.getAttribute("data-math-inline"),el,{displayMode:false,throwOnError:false})}catch(e){el.textContent=el.getAttribute("data-math-inline")}});document.querySelectorAll("[data-math-block]").forEach(function(el){try{katex.render(el.getAttribute("data-math-block"),el,{displayMode:true,throwOnError:false})}catch(e){el.textContent=el.getAttribute("data-math-block")}});document.querySelectorAll("[data-pdf-chart]").forEach(function(canvas){try{new Chart(canvas.getContext("2d"),JSON.parse(canvas.getAttribute("data-pdf-chart")))}catch(e){}});if(window.hljs){document.querySelectorAll("pre code").forEach(function(code){hljs.highlightElement(code)})}});<\/script>' +
       "</body></html>";
   }
 
@@ -1202,8 +1332,8 @@
         text-align: center;
       }
       .pdf-chart-wrap {
-        width: min(100%, 132mm);
-        height: 58mm;
+        width: min(100%, 165mm);
+        height: 72.5mm;
         margin: 3mm auto 2mm;
         break-inside: avoid;
         page-break-inside: avoid;
@@ -1211,9 +1341,11 @@
       .pdf-chart-wrap canvas {
         display: block;
         margin: 0 auto;
+        width: 100% !important;
+        height: 100% !important;
       }
       .pdf-chart-note {
-        width: min(100%, 132mm);
+        width: min(100%, 165mm);
         margin: 0 auto;
         color: #5f655b;
         font-size: 8.8pt;
@@ -1241,15 +1373,15 @@
       }
       .pdf-image-figure img {
         display: block;
-        max-width: min(100%, 138mm);
-        max-height: 78mm;
+        max-width: min(100%, 172.5mm);
+        max-height: 97.5mm;
         object-fit: contain;
         margin: 0 auto 2mm;
         border: 1px solid #dfe4d9;
         background: #fff;
       }
       .pdf-image-figure figcaption {
-        width: min(100%, 138mm);
+        width: min(100%, 172.5mm);
         margin: 0 auto;
         color: #5f655b;
         font-size: 8.8pt;
@@ -1259,8 +1391,8 @@
         margin: 0;
       }
       .pdf-image-placeholder {
-        width: min(100%, 138mm);
-        min-height: 44mm;
+        width: min(100%, 172.5mm);
+        min-height: 55mm;
         margin: 0 auto 2mm;
         border: 1px dashed #aeb4a8;
         border-left: 2.5mm solid #c0f500;
@@ -1356,11 +1488,24 @@
     `;
   }
 
-  function openPdfPreview() {
+  async function openPdfPreview() {
     const content = state.content || (window.getSubjectContent && window.getSubjectContent());
     if (!content) return;
     state.content = clone(content);
-    const html = buildPdfHtml(content);
+    // Open the tab synchronously to preserve the user-gesture context (avoids popup blocking
+    // after the await below). Omit "noopener" so we keep a handle to write the document into;
+    // we null out the opener afterwards to avoid reverse-tabnabbing.
+    const tab = window.open("", "_blank");
+    if (tab) { try { tab.opener = null; } catch (err) {} }
+    const logoDataUrl = await loadLogoDataUrl();
+    const html = buildPdfHtml(content, logoDataUrl);
+    if (tab && !tab.closed) {
+      tab.document.open();
+      tab.document.write(html);
+      tab.document.close();
+      return;
+    }
+    // Popup was blocked or unavailable: fall back to a blob URL.
     const url = URL.createObjectURL(new Blob(["\ufeff", html], { type: "text/html;charset=utf-8" }));
     window.open(url, "_blank", "noopener,noreferrer");
     window.setTimeout(function () { URL.revokeObjectURL(url); }, 60000);

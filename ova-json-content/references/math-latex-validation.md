@@ -16,14 +16,15 @@ Collect every expression from:
 - `exercises[].formula`
 - Short inline math-like fragments inside explanatory text, examples, captions, feedback, or code comments when they are meant to render as notation.
 
-If a math expression appears in prose and should render visually, move it into a formula-capable field or rewrite it as plain language.
+If a math expression appears in prose, it must still render as notation. Either move it into a formula-capable field, or keep it in the prose string wrapped in `$...$` (inline) / `$$...$$` (display). Do not leave it as plain text such as `2^b` or `G_x`.
 
 ## JSON Escaping Rules
 
 - In JSON files, LaTeX commands need escaped backslashes: write `\\frac{a}{b}`, `\\sum_{i=1}^{n}`, `\\sqrt{x}`, `\\hat{y}`, `\\begin{bmatrix}1 & 0 \\\\ 0 & 1\\end{bmatrix}`.
 - Do not use single backslashes such as `\frac` or `\sum` inside JSON strings. They can become invalid JSON escapes or render incorrectly.
-- Do not wrap math fields in `$...$`, `$$...$$`, `\\(...\\)`, or `\\[...\\]`.
-- Keep raw LaTeX only in formula fields. The app renders the expression with KaTeX.
+- **Dedicated formula fields** (`latex`, `formula`, `variables[].symbol`, `sections[].formula`, `slides[].formula`, `steps[].formula`): raw LaTeX only, NO delimiters (`$`, `$$`, `\\(`, `\\[`).
+- **Math embedded in prose strings** (titles, body, description, note, intro, keyIdeas, table cells, captions, quiz/feedback, list items, etc.): wrap each expression in `$...$` (inline) or `$$...$$` (display). The app converts these to KaTeX in SCORM and PDF. Escape a literal dollar sign in prose as `\\$`.
+- The same escaping rules for backslashes apply inside `$...$` (e.g. `"...$\\sqrt{x}$..."`).
 
 ## Syntax Checklist
 

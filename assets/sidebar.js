@@ -241,6 +241,29 @@
         el.textContent = source;
       }
     });
+    // Inline math embedded in prose via $...$ ($$...$$ for display) -> see withInlineMath().
+    qsa("[data-math-inline]").forEach(function (el) {
+      if (el.getAttribute("data-math-done")) return;
+      const source = el.getAttribute("data-math-inline");
+      if (!source) return;
+      try {
+        katex.render(source, el, { displayMode: false, throwOnError: false });
+        el.setAttribute("data-math-done", "1");
+      } catch (err) {
+        el.textContent = source;
+      }
+    });
+    qsa("[data-math-block]").forEach(function (el) {
+      if (el.getAttribute("data-math-done")) return;
+      const source = el.getAttribute("data-math-block");
+      if (!source) return;
+      try {
+        katex.render(source, el, { displayMode: true, throwOnError: false });
+        el.setAttribute("data-math-done", "1");
+      } catch (err) {
+        el.textContent = source;
+      }
+    });
   }
 
   function highlightCode() {

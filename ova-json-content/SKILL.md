@@ -72,8 +72,11 @@ description: Generate validated `subject`-based JSON packages for virtual asigna
 - For complete academic content, include purpose, student action, estimated time, evidence/reflection, and feedback/evaluation route when applicable.
 - Keep evaluation qualitative, formative, continuous, collaborative, and centered on RA. Do not reduce evaluation to numeric grades or accumulated percentages.
 - If percentages appear in the syllabus or prompt, keep them as transparent activity/deliverable weights tied to criteria, evidence, rubrics, and feedback.
-- Put every mathematical expression in LaTeX fields: `latex`, `formula`, `variables[].symbol`, or formula-capable components.
-- Do not wrap JSON math fields with `$...$`, `$$...$$`, `\(...\)`, or `\[...\]`. The renderer supplies the math container; fields should contain the raw LaTeX expression only.
+- Put every mathematical expression in LaTeX. There are two cases:
+  - **Dedicated formula fields** (`latex`, `formula`, `variables[].symbol`, `sections[].formula`, `slides[].formula`, `steps[].formula`): raw LaTeX only, with NO delimiters. The renderer supplies the math container.
+  - **Math embedded inside prose text** (any other learner-facing string: `title`, `body`, `description`, `note`, `intro`, `keyIdeas[].text`, table `columns`/`cells`, `closing`, `caption`, accordion/flashcard/carousel text, quiz prompts/options/feedback, stepper `statement`/`steps[].title`, list items, etc.): wrap each expression in `$...$` for inline math, or `$$...$$` for display math. The renderer (SCORM and PDF) converts `$...$` to KaTeX. Examples: `"Niveles disponibles: $L = 2^b$."`, `"La magnitud $G=\\sqrt{G_x^2+G_y^2}$ resume el gradiente."`, `"Con $\\gamma<1$ se aclaran las sombras."`
+- Never leave math as plain text inside prose (e.g. `2^b`, `G_x`, `x_i`, `\gamma`); always delimit it with `$...$` so it renders as notation. To write a literal dollar sign in prose (e.g. a price), escape it as `\\$`.
+- Do not wrap the DEDICATED formula fields with `$...$`, `$$...$$`, `\(...\)`, or `\[...\]`; delimiters are only for math embedded in prose strings.
 - Escape LaTeX backslashes correctly inside JSON strings. JSON content must contain `\\frac`, `\\sum`, `\\sqrt`, `\\hat`, `\\begin{bmatrix}`, etc., not single-backslash sequences that JSON can corrupt.
 - Validate every expression against KaTeX-compatible syntax: balanced braces, paired `\\left`/`\\right`, correct fraction/sum/integral/subscript/superscript structure, and no unsupported or decorative commands.
 - Use `\\text{...}` for words, units, or labels inside formulas. Do not leave Spanish or English prose directly inside mathematical mode.

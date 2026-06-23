@@ -396,7 +396,8 @@ Slides can contain text, image, or formula. **Mandatory in every thematic SCORM 
 
 All math must be LaTeX.
 Formula components should include `context`, `variables`, and `explanation` unless the same formula is already fully explained inside a preceding `theory-block`.
-Formula strings must be raw KaTeX-compatible LaTeX without `$...$` delimiters and with JSON-escaped backslashes, for example `\\frac{a}{b}`.
+Dedicated formula fields (`latex`, `formula`, `variables[].symbol`, `sections[].formula`, `slides[].formula`, `steps[].formula`) must be raw KaTeX-compatible LaTeX WITHOUT `$...$` delimiters, with JSON-escaped backslashes, for example `\\frac{a}{b}`.
+Math embedded inside any prose string (titles, body, description, note, intro, key ideas, table cells, captions, quiz/feedback, list items, etc.) MUST be wrapped in `$...$` for inline math or `$$...$$` for display math; the SCORM and PDF renderers convert these to KaTeX. Example: `"body": ["La profundidad de bits fija los niveles con $L = 2^b$."]`. Never leave prose math as plain text like `2^b`. Escape a literal dollar sign in prose as `\\$`.
 
 ```json
 {
