@@ -159,6 +159,20 @@
   color: #060b00;                  /* primary */
 }
 
+/* Math en prosa via $...$ ($$...$$). El span hereda color del texto y la fórmula
+   se ajusta al tamaño de la línea para no romper el flujo del párrafo. */
+.inline-math {
+  display: inline;
+}
+.inline-math .katex {
+  font-size: 1em;
+}
+.inline-math .katex-display {
+  display: inline-block;
+  margin: 0;
+  text-align: left;
+}
+
 /* Pestañas: el JS alterna .hidden en los paneles; estilos del botón activo
    se gestionan por clases utilitarias desde el script. */
 

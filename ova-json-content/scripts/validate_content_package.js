@@ -24,6 +24,8 @@ const ignoredPathParts = [
   ".methodology.",
   ".syllabus.",
   ".references",
+  "-referencias",
+  ".referencias",
   ".rubric.",
   ".levels",
   ".bibliography",
@@ -34,7 +36,25 @@ const ignoredPathParts = [
   ".institution",
   ".year",
   ".contentNumber",
-  ".contentTotal"
+  ".contentTotal",
+  "-ruta-ag",
+  "-trabajo",
+  ".latex",
+  ".formula",
+  ".studentAction",
+  ".feedbackRoute",
+  ".evidence",
+  ".methodologyMoment",
+  ".instructions",
+  "-ruta-ag",
+  "-trabajo",
+  "intro-tema",
+  "intro-presentacion",
+  "intro-estructura",
+  "intro-uso",
+  "pdf-intro.components.pdf-callout",
+  "sections.intro.intro",
+  "sections.pdf-intro.intro"
 ];
 
 const ignoredShortValues = new Set([
