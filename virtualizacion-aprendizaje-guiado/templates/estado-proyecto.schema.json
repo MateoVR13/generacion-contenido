@@ -62,6 +62,7 @@
           "id": { "type": "string", "description": "M1, M2, …" },
           "apa": { "type": "string", "description": "Referencia APA 7 (rich, <em> para títulos). No inventar fuentes." },
           "tipo": { "type": "string", "description": "Capítulo de libro base, libro complementario, recurso abierto, etc." },
+          "idioma": { "type": "string", "enum": ["es", "en"], "description": "Idioma del recurso. ≥30% del total debe ser 'en' (internacionalización syllabus UA)." },
           "temas": { "type": "array", "items": { "type": "integer" }, "description": "Tema(s) que cubre este material." },
           "justificacion": { "type": "string" },
           "href": { "type": "string" },

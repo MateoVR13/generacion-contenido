@@ -84,14 +84,17 @@ Para cada tema, indique las actividades que debe realizar el estudiante (individ
 > los escenarios de aprendizaje hasta que usted lo valide aquí. Se incluirá lo propuesto **salvo lo que
 > marque "Quitar"**.
 
-| # | Referencia (APA 7) | Tipo | Tema(s) | Justificación | ¿Aprobado? |
-|---|---|---|---|---|---|
-| M1 | {{MAT_1_APA}} | {{MAT_1_TIPO}} | {{MAT_1_TEMAS}} | {{MAT_1_JUST}} | [ ] Aprobar [ ] Quitar [ ] Ajustar |
-| M2 | {{MAT_2_APA}} | {{MAT_2_TIPO}} | {{MAT_2_TEMAS}} | {{MAT_2_JUST}} | [ ] Aprobar [ ] Quitar [ ] Ajustar |
-| … | … | … | … | … | … |
-| (nuevo) | | | | | [ ] Agregar |
+| # | Referencia (APA 7) | Tipo | Idioma | Tema(s) | Justificación | ¿Aprobado? |
+|---|---|---|---|---|---|---|
+| M1 | {{MAT_1_APA}} | {{MAT_1_TIPO}} | {{MAT_1_IDIOMA}} | {{MAT_1_TEMAS}} | {{MAT_1_JUST}} | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| M2 | {{MAT_2_APA}} | {{MAT_2_TIPO}} | {{MAT_2_IDIOMA}} | {{MAT_2_TEMAS}} | {{MAT_2_JUST}} | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| … | … | … | … | … | … | … |
+| (nuevo) | | | | | | [ ] Agregar |
 
 **Cobertura por tema (propuesta):** {{COBERTURA_POR_TEMA}}
+
+> **Bibliografía en inglés:** {{PCT_INGLES}} del material está en inglés. Por internacionalización (syllabus
+> UA), **al menos el 30% del total debe estar en inglés**. {{ALERTA_INGLES}}
 
 - Ajustes / material adicional que recomienda (fuentes reales en APA 7):
   > Respuesta:

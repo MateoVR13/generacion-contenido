@@ -118,6 +118,21 @@ if (st.pipeline === 1 && fase >= 2) {
     warnings.push("Fase 2+: aún no hay material complementario propuesto en el estado; debe proponerse para que el docente lo revise en el instrumento.");
 }
 
+// Bibliografía en inglés ≥ 30% (internacionalización syllabus UA). Aplica desde Fase 2.
+if (fase >= 2) {
+  const mat = (Array.isArray(st.materialComplementario) ? st.materialComplementario : [])
+    .filter((m) => !m.estado || m.estado !== "rechazado"); // los que entran al curso
+  if (mat.length) {
+    const conIdioma = mat.filter((m) => m.idioma);
+    if (conIdioma.length < mat.length)
+      warnings.push(`Material sin campo 'idioma': ${mat.filter((m) => !m.idioma).map((m) => m.id || "?").join(", ")} (necesario para verificar el 30% en inglés).`);
+    const en = mat.filter((m) => m.idioma === "en").length;
+    const pct = Math.round((en / mat.length) * 100);
+    if (en < Math.ceil(mat.length * 0.3))
+      errors.push(`Bibliografía en inglés ${pct}% (${en}/${mat.length}); el syllabus UA exige ≥30%. Agrega/sustituye fuentes en inglés (mínimo ${Math.ceil(mat.length * 0.3)} de ${mat.length}).`);
+  }
+}
+
 // Reporte.
 if (warnings.length) {
   console.error(`Advertencias (${warnings.length}):`);

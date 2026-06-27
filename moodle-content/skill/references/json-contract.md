@@ -354,7 +354,7 @@ CTA al contenido teórico SCORM en Moodle.
 `button.href`: `""` + `todo` si no se conoce. **No inventes URLs de SCORM.**
 
 ### `workshop` (taller detallado del escenario) — página `moment`
-Taller **completo e instruccional**, listo para pegar en Moodle (no es solo un botón). Una página `moment`
+Taller **completo**, listo para pegar en Moodle (no es solo un botón). Una página `moment`
 debe llevar el `workshop` del tema con su contenido redactado; el `practice-link` queda como CTA opcional.
 
 ```json

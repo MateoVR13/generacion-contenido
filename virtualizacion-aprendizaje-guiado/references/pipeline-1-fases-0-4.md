@@ -32,9 +32,16 @@ Diseño inverso: RA → evidencias de evaluación → metodología → actividad
 - **PROPONER EL MATERIAL COMPLEMENTARIO** (cantidad por créditos: 3/5/7) como una **matriz revisable**:
   cada material con `id` (M1, M2…), referencia **APA** (partiendo de la bibliografía del syllabus; marcar
   como brecha/`todo` lo que no esté en el syllabus, **sin inventar fuentes**), `tipo` (capítulo de libro
-  base, libro complementario, recurso abierto, etc.), `tema(s) asociado(s)` y `justificacion`. Define la
-  **cobertura por tema** (qué materiales cubren cada tema). Esta propuesta va al instrumento docente para su
-  **revisión y aprobación** (no se incluye en los escenarios hasta que el profesor la valide).
+  base, libro complementario, recurso abierto, etc.), `idioma` (`es`/`en`), `tema(s) asociado(s)` y
+  `justificacion`. Define la **cobertura por tema** (qué materiales cubren cada tema). Esta propuesta va al
+  instrumento docente para su **revisión y aprobación** (no se incluye en los escenarios hasta que el
+  profesor la valide).
+- **REGLA DE BIBLIOGRAFÍA EN INGLÉS (≥ 30%):** del total de recursos bibliográficos/material complementario
+  de la asignatura, **al menos el 30% debe estar en inglés** (requisito de internacionalización del syllabus
+  UA). Para las cuotas por créditos esto es: 2 cr → ≥1 de 3; 3 cr → ≥2 de 5; 4 cr → ≥3 de 7. Marca el
+  `idioma` de cada material y reporta el % en inglés. Si el syllabus no aporta fuentes en inglés suficientes,
+  decláralo como brecha y propón fuentes en inglés reconocidas (con `todo` de verificación), sin inventar
+  datos. El validador comprueba este umbral.
 - **Entregables (`fase-2-planeacion-didactica.md`):** configuración didáctica; justificación AG; RA eje; ruta
   del estudiante; tabla de N temas AG (PROPUESTA, a validar); distribución de horas; recursos proyectados;
   **matriz de material complementario propuesto + cobertura por tema (PROPUESTA, a validar)**.

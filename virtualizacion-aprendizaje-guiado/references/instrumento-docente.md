@@ -40,11 +40,14 @@ asignatura, y aportar lo que solo el experto disciplinar sabe.
    - ¿Qué recursos didácticos sugiere (infografía, video, podcast, mapa, OVA, juego…) y para qué tema?
    - **MATERIAL COMPLEMENTARIO PROPUESTO (requiere aprobación del profesor).** Presenta la matriz propuesta
      en la Fase 2 como una TABLA revisable, una fila por material: `#` (M1, M2…), referencia APA, tipo,
-     tema(s) asociado(s), justificación, y una columna **¿Aprobado?** con casillas `[ ] Aprobar [ ] Quitar
-     [ ] Ajustar`. Incluye filas en blanco para que el profesor **agregue** material. Indica la cobertura por
-     tema. Regla: el material se incluirá en los escenarios **salvo que el profesor lo marque "Quitar"**; lo
-     que marque "Ajustar" se corrige antes de incluirlo. **El material complementario NO entra en ningún
-     escenario de aprendizaje hasta pasar por esta revisión docente.**
+     **idioma (ES/EN)**, tema(s) asociado(s), justificación, y una columna **¿Aprobado?** con casillas
+     `[ ] Aprobar [ ] Quitar [ ] Ajustar`. Incluye filas en blanco para que el profesor **agregue** material.
+     Indica la cobertura por tema. Regla: el material se incluirá en los escenarios **salvo que el profesor lo
+     marque "Quitar"**; lo que marque "Ajustar" se corrige antes de incluirlo. **El material complementario
+     NO entra en ningún escenario de aprendizaje hasta pasar por esta revisión docente.**
+   - **Bibliografía en inglés (≥ 30%).** Indica bajo la tabla el porcentaje de material en inglés y declara
+     que, por internacionalización (syllabus UA), **al menos el 30% del total debe estar en inglés**. Si la
+     propuesta no llega al 30%, señálalo para que el profesor agregue/sustituya fuentes en inglés.
 
 6. **Evaluación** (propuesta en F3, el docente valida):
    - Diagnóstica (10/15), formativas de seguimiento, sumativa integradora, foro debate, wiki, coevaluación.
