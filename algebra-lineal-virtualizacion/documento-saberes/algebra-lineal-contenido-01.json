@@ -1,0 +1,1314 @@
+{
+  "subject": {
+    "id": "algebra-lineal-ag-tema-01",
+    "title": "Álgebra Lineal",
+    "program": "Ingeniería (transversal)",
+    "contentNumber": "01",
+    "contentTotal": "05",
+    "unitLabel": "Tema",
+    "contentTitle": "Sistemas de ecuaciones lineales y método de Gauss-Jordan",
+    "description": "Primer tema del documento de saberes de Álgebra Lineal. El estudiante traduce situaciones de ingeniería a sistemas de ecuaciones lineales, los representa en forma matricial $A\\mathbf{x}=\\mathbf{b}$ y los resuelve con el método de Gauss-Jordan, interpretando si la solución es única, infinita o inexistente y qué significa cada caso en el problema modelado.",
+    "syllabus": {
+      "source": {"type": "text", "fileName": "esquema-contenido.md"},
+      "extractedFields": {
+        "asignatura": "Álgebra Lineal",
+        "creditos": "3",
+        "modalidad": "100% virtual",
+        "metodologia": "Aprendizaje Guiado (AG)",
+        "nivel": "Pregrado, segundo semestre, fundamentación matemática",
+        "tema": "01 de 05 — Sistemas de ecuaciones lineales y método de Gauss-Jordan"
+      },
+      "learningOutcomes": [
+        "RA1: Modela situaciones de las ingenierías como sistemas de ecuaciones lineales y los representa en forma escalar y matricial.",
+        "RA2: Resuelve sistemas de ecuaciones lineales con el método de Gauss-Jordan e interpreta el tipo de solución (única, infinita o inexistente) según el rango."
+      ],
+      "priorKnowledge": [
+        "Operaciones con números reales y fracciones.",
+        "Despeje de ecuaciones lineales de una variable.",
+        "Lectura de tablas de datos y proporciones."
+      ],
+      "competencies": [
+        "Traducir un problema verbal de ingeniería a un modelo algebraico lineal.",
+        "Operar con matrices aumentadas mediante operaciones elementales de fila.",
+        "Interpretar el resultado matemático en términos del fenómeno modelado."
+      ],
+      "evaluationCriteria": [
+        "CE1: Plantea correctamente el sistema lineal y su matriz aumentada a partir de un enunciado de ingeniería.",
+        "CE2: Aplica Gauss-Jordan hasta la forma escalonada reducida y clasifica el tipo de solución con base en el rango."
+      ],
+      "topics": [
+        "Ecuación lineal y sistema de ecuaciones lineales.",
+        "Representación matricial y matriz aumentada.",
+        "Operaciones elementales de fila y forma escalonada reducida (RREF).",
+        "Existencia y unicidad: rango y teorema de Rouché-Frobenius."
+      ],
+      "methodologyNotes": [
+        "Ruta de Aprendizaje Guiado con teoría contextualizada, práctica resuelta paso a paso y transferencia a varias ingenierías."
+      ],
+      "evaluationPlan": [
+        "Diagnóstica de saberes previos sobre ecuaciones lineales.",
+        "Formativa: clasificación de sistemas por tipo de solución con retroalimentación por opción.",
+        "Evidencia: modelado y resolución de un sistema aplicado a un proceso de ingeniería."
+      ],
+      "bibliography": {
+        "basic": [
+          "Larson, R. (2010). Fundamentos de álgebra lineal (6.ª ed.). Cengage Learning.",
+          "Grossman, S. I. (2008). Álgebra lineal (6.ª ed.). McGraw-Hill."
+        ],
+        "complementary": []
+      },
+      "missingFields": [
+        "Código institucional de la asignatura.",
+        "Nombre del docente y periodo académico.",
+        "Ponderaciones numéricas (la evaluación es cualitativa, sin porcentajes)."
+      ]
+    },
+    "methodology": {
+      "code": "AG",
+      "name": "Aprendizaje Guiado",
+      "rationale": "Ruta guiada para aprendizaje virtual autónomo con acompañamiento, práctica y retroalimentación: la teoría se desarrolla antes de cada práctica y los ejercicios resueltos modelan el procedimiento que el estudiante reproduce y transfiere a su disciplina.",
+      "moments": ["Fase 1", "Fase 2", "Fase 3", "Fase 4"]
+    }
+  },
+  "scorm": {
+    "labels": {
+      "theoryNav": "Contenido Teórico",
+      "materialNav": "Material Complementario"
+    },
+    "sectionOrder": ["intro", "seccion-1", "seccion-2", "seccion-3", "seccion-4", "seccion-5"],
+    "sections": {
+      "intro": {
+        "kind": "theory",
+        "theme": "Intro",
+        "badge": "Tema 01 de 05",
+        "navLabel": "Introducción",
+        "title": "Sistemas de ecuaciones lineales y método de Gauss-Jordan",
+        "intro": [
+          "El álgebra lineal es el lenguaje con el que la ingeniería describe sistemas en los que muchas variables se relacionan al mismo tiempo: balances de materia, equilibrios de fuerzas, mezclas de corrientes, mallas de un circuito o planes de producción. Este primer tema enseña a traducir esas situaciones a un sistema de ecuaciones lineales, a escribirlo de forma compacta como $A\\mathbf{x}=\\mathbf{b}$ y a resolverlo con un procedimiento sistemático: el método de Gauss-Jordan.",
+          "Más allá del cálculo, el objetivo es interpretar: un mismo sistema puede tener una única solución, infinitas soluciones o ninguna, y cada caso tiene un significado físico distinto (un plan factible, grados de libertad en el diseño o restricciones incompatibles). Aprenderás a leer ese significado a partir del rango de la matriz.",
+          "Los ejemplos y ejercicios son transversales a varias ingenierías —industrial, mecánica, mecatrónica, química, ambiental, energías y petróleos— para que reconozcas el mismo modelo lineal detrás de problemas aparentemente diferentes."
+        ],
+        "componentOrder": ["intro-objetivos", "intro-saberes", "intro-orientadoras", "intro-ruta"],
+        "components": {
+          "intro-objetivos": {
+            "type": "objectives",
+            "title": "Propósito del tema",
+            "description": "Lo que serás capaz de hacer al terminar este Tema 01.",
+            "items": [
+              {"icon": "track_changes", "text": "Traducir una situación de ingeniería a un sistema de ecuaciones lineales y a su matriz aumentada $[A\\,|\\,\\mathbf{b}]$."},
+              {"icon": "function", "text": "Aplicar las operaciones elementales de fila para llevar la matriz a su forma escalonada reducida (RREF) con el método de Gauss-Jordan."},
+              {"icon": "rule", "text": "Clasificar el sistema como de solución única, infinita o inexistente comparando $\\operatorname{rango}(A)$, $\\operatorname{rango}([A|\\mathbf{b}])$ y el número de incógnitas $n$."},
+              {"icon": "engineering", "text": "Interpretar el tipo de solución en el contexto del problema modelado (plan factible, grados de libertad, restricciones incompatibles)."}
+            ]
+          },
+          "intro-saberes": {
+            "type": "prior-knowledge",
+            "title": "Saberes previos",
+            "eyebrow": "Antes de empezar",
+            "prompts": [
+              "Si tienes la ecuación $2x+3=11$, ¿cómo despejas $x$? Esa misma idea de \"hacer lo mismo a ambos lados\" sostiene el método que aprenderás aquí.",
+              "¿Qué significa que dos ecuaciones se cumplan al mismo tiempo? Piensa en dos condiciones que deben satisfacerse simultáneamente en un problema cotidiano.",
+              "Cuando mezclas dos ingredientes para obtener una proporción objetivo, ¿qué cantidades estás buscando? Ese es exactamente el tipo de incógnita que modelaremos."
+            ]
+          },
+          "intro-orientadoras": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Preguntas orientadoras",
+            "body": [
+              "¿Cómo se traduce un problema de ingeniería a un sistema de ecuaciones lineales?",
+              "¿Cuándo un sistema tiene solución única, infinitas soluciones o ninguna, y qué significa cada caso en el problema real?"
+            ]
+          },
+          "intro-ruta": {
+            "type": "list",
+            "title": "Ruta del tema",
+            "ordered": true,
+            "items": [
+              "Escenario 1: del problema verbal al sistema lineal y a la matriz aumentada $[A\\,|\\,\\mathbf{b}]$.",
+              "Escenario 2: operaciones elementales de fila y forma escalonada reducida (Gauss-Jordan).",
+              "Escenario 3: existencia y unicidad de la solución a partir del rango.",
+              "Escenario 4: ejercicios resueltos paso a paso (solución única, infinita e inconsistente).",
+              "Escenario 5: modelado transversal en industrial, mecánica y química/ambiental, y síntesis del tema."
+            ]
+          }
+        }
+      },
+      "seccion-1": {
+        "kind": "theory",
+        "theme": "De la situación al sistema lineal",
+        "badge": "Tema 01 · Escenario 1",
+        "navLabel": "Del problema al sistema",
+        "title": "De la situación de ingeniería al sistema de ecuaciones lineales",
+        "learningOutcomeIds": ["RA1"],
+        "methodologyMoment": "Fase 1",
+        "estimatedTime": "55 minutos",
+        "intro": [
+          "Antes de resolver, hay que plantear. En este escenario aprenderás a reconocer cuándo un problema es lineal, a nombrar las incógnitas y los coeficientes, y a comprimir varias ecuaciones en una sola expresión matricial $A\\mathbf{x}=\\mathbf{b}$."
+        ],
+        "componentOrder": [
+          "s1-teoria-1",
+          "s1-figura",
+          "s1-flashcards",
+          "s1-teoria-2",
+          "s1-formula",
+          "s1-carousel",
+          "s1-teoria-3",
+          "s1-stepper",
+          "s1-accordion"
+        ],
+        "components": {
+          "s1-teoria-1": {
+            "type": "theory-block",
+            "title": "Qué es una ecuación lineal y qué es un sistema",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una ecuación lineal en las incógnitas $x_1, x_2, \\dots, x_n$ tiene la forma $a_1x_1 + a_2x_2 + \\dots + a_nx_n = b$. La palabra clave es lineal: cada incógnita aparece elevada a la potencia uno, multiplicada por un coeficiente constante, y nunca multiplicada por otra incógnita. No hay términos como $x_1^2$, $\\sqrt{x_2}$ ni $x_1x_3$.",
+              "Los coeficientes $a_i$ son datos del problema (consumos por unidad, resistencias, concentraciones), mientras que las incógnitas $x_i$ son las cantidades que buscamos (caudales, corrientes, número de lotes). El término independiente $b$ es la meta o el recurso disponible. Distinguir coeficiente de incógnita es el primer paso para modelar sin equivocarse.",
+              "Un sistema de ecuaciones lineales reúne $m$ ecuaciones con $n$ incógnitas que deben cumplirse simultáneamente. Cada ecuación es una restricción del problema; resolver el sistema significa encontrar los valores de las incógnitas que satisfacen todas las restricciones a la vez."
+            ],
+            "keyIdeas": [
+              {"icon": "linear_scale", "text": "Linealidad: incógnitas a la potencia uno, sin productos ni potencias entre ellas."},
+              {"icon": "tune", "text": "Coeficientes = datos del problema; incógnitas = lo que se busca."},
+              {"icon": "all_inclusive", "text": "Un sistema impone varias restricciones que deben cumplirse al mismo tiempo."}
+            ],
+            "sections": [
+              {
+                "title": "Reconocer la linealidad",
+                "body": ["La ecuación $3x_1 - 2x_2 + x_3 = 7$ es lineal; la ecuación $3x_1^2 - 2x_2 = 7$ no lo es porque la primera incógnita está al cuadrado."],
+                "formula": "a_1x_1 + a_2x_2 + \\dots + a_nx_n = b",
+                "formulaNote": "Forma general de una ecuación lineal con $n$ incógnitas."
+              }
+            ],
+            "example": {
+              "title": "Ejemplo de modelado",
+              "body": ["Un taller arma dos productos con un mismo insumo: cada unidad del producto A usa 2 kg y cada unidad del producto B usa 3 kg, y se dispone de 60 kg. La restricción es $2x_A + 3x_B = 60$, una ecuación lineal en las cantidades $x_A$ y $x_B$."]
+            },
+            "closing": ["Antes de calcular, escribe en palabras cada restricción del problema; recién después tradúcela a una ecuación lineal."]
+          },
+          "s1-figura": {
+            "type": "image",
+            "title": "Del problema a la matriz aumentada",
+            "assetId": "fig-1-1-problema-a-matriz",
+            "src": "",
+            "alt": "Esquema de tres etapas: enunciado verbal, sistema de ecuaciones y matriz aumentada con la barra que separa los coeficientes del término independiente.",
+            "caption": "Figura 1.1. La misma información viaja del lenguaje natural al sistema de ecuaciones y, de ahí, a la matriz aumentada $[A\\,|\\,\\mathbf{b}]$.",
+            "prompt": "Crear una figura didáctica en español con tres paneles conectados por flechas: (1) un enunciado verbal corto de un problema de mezcla; (2) el sistema de ecuaciones lineales correspondiente con dos o tres ecuaciones alineadas; (3) la matriz aumentada con una barra vertical separando la matriz de coeficientes A del vector de términos independientes b. Etiquetar 'problema', 'sistema', 'matriz aumentada [A|b]', e indicar con colores qué números son coeficientes y cuál es el término independiente. Estilo limpio, paleta sobria, tipografía legible."
+          },
+          "s1-flashcards": {
+            "type": "flashcards",
+            "title": "Vocabulario inicial del modelado",
+            "description": "Repasa los términos básicos antes de comprimir el sistema en forma matricial.",
+            "cards": [
+              {"term": "Ecuación lineal", "definition": "Igualdad de la forma $a_1x_1+\\dots+a_nx_n=b$ donde cada incógnita aparece a la potencia uno y no se multiplican incógnitas entre sí.", "icon": "function"},
+              {"term": "Incógnita", "definition": "Cantidad desconocida que el modelo busca determinar; en ingeniería suele ser un caudal, una corriente, un número de lotes o una concentración.", "icon": "help"},
+              {"term": "Coeficiente", "definition": "Número constante que multiplica a una incógnita y proviene de los datos del problema (consumo por unidad, resistencia, proporción).", "icon": "tune"},
+              {"term": "Término independiente", "definition": "Valor $b$ del lado derecho de la ecuación; representa la meta, el recurso disponible o la condición impuesta.", "icon": "flag"},
+              {"term": "Sistema de ecuaciones lineales", "definition": "Conjunto de $m$ ecuaciones lineales con $n$ incógnitas que deben satisfacerse de manera simultánea.", "icon": "list_alt"}
+            ]
+          },
+          "s1-teoria-2": {
+            "type": "theory-block",
+            "title": "Forma matricial: comprimir el sistema en $A\\mathbf{x}=\\mathbf{b}$",
+            "eyebrow": "Representación compacta",
+            "body": [
+              "Escribir muchas ecuaciones ocupa espacio y oculta la estructura. La forma matricial agrupa todos los coeficientes en una matriz $A$ de orden $m\\times n$, las incógnitas en un vector columna $\\mathbf{x}$ y los términos independientes en un vector $\\mathbf{b}$, de modo que todo el sistema se escribe como $A\\mathbf{x}=\\mathbf{b}$.",
+              "Esta compresión no es solo estética: separa con claridad la información estructural del problema (la matriz $A$, que recoge cómo se relacionan las variables) de los datos de demanda o recurso (el vector $\\mathbf{b}$). Cambiar la meta del problema solo cambia $\\mathbf{b}$; la estructura $A$ permanece.",
+              "Para resolver, conviene una representación aún más operativa: la matriz aumentada $[A\\,|\\,\\mathbf{b}]$, que pega el vector $\\mathbf{b}$ como una columna extra separada por una barra. Sobre ella aplicaremos el método de Gauss-Jordan sin tener que reescribir las incógnitas en cada paso."
+            ],
+            "keyIdeas": [
+              {"icon": "grid_on", "text": "$A$ guarda la estructura; $\\mathbf{x}$ las incógnitas; $\\mathbf{b}$ las metas o recursos."},
+              {"icon": "view_column", "text": "La matriz aumentada $[A\\,|\\,\\mathbf{b}]$ junta todo para operar de forma compacta."},
+              {"icon": "swap_horiz", "text": "La forma escalar y la forma matricial son equivalentes: contienen la misma información."}
+            ],
+            "sections": [
+              {
+                "title": "Equivalencia escalar-matricial",
+                "body": ["El sistema $\\{x+y=6,\\; 2x-y=0\\}$ equivale a $A\\mathbf{x}=\\mathbf{b}$ con la matriz de coeficientes y el vector de términos que se muestran a continuación."],
+                "formula": "A=\\begin{bmatrix} 1 & 1 \\\\ 2 & -1 \\end{bmatrix},\\quad \\mathbf{x}=\\begin{bmatrix} x \\\\ y \\end{bmatrix},\\quad \\mathbf{b}=\\begin{bmatrix} 6 \\\\ 0 \\end{bmatrix}",
+                "formulaNote": "Cada fila de $A$ corresponde a una ecuación; cada columna, a una incógnita."
+              }
+            ],
+            "closing": ["Identifica siempre las dimensiones $m\\times n$ de $A$: $m$ ecuaciones (restricciones) y $n$ incógnitas (decisiones)."]
+          },
+          "s1-formula": {
+            "type": "formula",
+            "title": "Representación matricial del sistema",
+            "context": ["Cuando un sistema tiene varias ecuaciones, escribirlo como $A\\mathbf{x}=\\mathbf{b}$ permite operar con toda la información a la vez y preparar la matriz aumentada para Gauss-Jordan."],
+            "latex": "A\\mathbf{x}=\\mathbf{b} \\quad\\Longleftrightarrow\\quad [A\\,|\\,\\mathbf{b}]=\\left[\\begin{array}{ccc|c} a_{11} & \\cdots & a_{1n} & b_1 \\\\ \\vdots & \\ddots & \\vdots & \\vdots \\\\ a_{m1} & \\cdots & a_{mn} & b_m \\end{array}\\right]",
+            "variables": [
+              {"symbol": "A", "description": "matriz de coeficientes de orden $m\\times n$ que recoge la estructura del problema."},
+              {"symbol": "\\mathbf{x}", "description": "vector columna de incógnitas que se desea determinar."},
+              {"symbol": "\\mathbf{b}", "description": "vector columna de términos independientes (metas o recursos)."},
+              {"symbol": "[A\\,|\\,\\mathbf{b}]", "description": "matriz aumentada: coeficientes y términos independientes separados por una barra."}
+            ],
+            "explanation": ["La barra vertical recuerda que la última columna no es un coeficiente más, sino el lado derecho de cada ecuación; al operar filas hay que actualizarla igual que al resto."]
+          },
+          "s1-carousel": {
+            "type": "carousel",
+            "title": "Pasos para construir la matriz aumentada",
+            "description": "Recorrido guiado desde el enunciado hasta la matriz lista para operar.",
+            "slides": [
+              {"label": "Paso 1", "title": "Nombrar las incógnitas", "body": ["Asigna una letra a cada cantidad desconocida y escribe qué representa con sus unidades, por ejemplo $x_1$ = caudal de la corriente 1 en L/min."], "icon": "edit"},
+              {"label": "Paso 2", "title": "Escribir cada restricción", "body": ["Convierte cada condición del problema (balance total, balance por componente, capacidad) en una ecuación lineal independiente."], "icon": "rule"},
+              {"label": "Paso 3", "title": "Ordenar las columnas", "body": ["Alinea las incógnitas en el mismo orden en todas las ecuaciones; usa coeficiente cero cuando una incógnita no aparece."], "icon": "view_column"},
+              {"label": "Paso 4", "title": "Separar coeficientes y términos", "body": ["Forma la matriz $A$ con los coeficientes y el vector $\\mathbf{b}$ con los términos independientes."], "icon": "call_split"},
+              {"label": "Paso 5", "formula": "[A\\,|\\,\\mathbf{b}]", "description": "Pega $\\mathbf{b}$ como columna extra tras la barra: la matriz aumentada queda lista para Gauss-Jordan."}
+            ]
+          },
+          "s1-teoria-3": {
+            "type": "theory-block",
+            "title": "Modelar un problema de ingeniería paso a paso",
+            "eyebrow": "Del enunciado al modelo",
+            "body": [
+              "Modelar es decidir qué se mide, qué se busca y qué condiciones se imponen. En ingeniería, las restricciones suelen ser balances (lo que entra es igual a lo que sale), capacidades (no superar un recurso) o metas (alcanzar una proporción objetivo).",
+              "El número de ecuaciones independientes que logres escribir es decisivo: si tienes tantas restricciones independientes como incógnitas, es probable que el sistema tenga una solución única; si tienes menos, aparecerán grados de libertad. Esa relación la formalizaremos con el rango en el Escenario 3.",
+              "Un buen modelo también revisa la factibilidad física: un caudal o una corriente pueden resultar negativos en el papel, y eso obliga a reinterpretar el problema. Modelar incluye juzgar si la solución tiene sentido."
+            ],
+            "keyIdeas": [
+              {"icon": "balance", "text": "Las restricciones típicas son balances, capacidades y metas."},
+              {"icon": "rule", "text": "Cuenta cuántas restricciones independientes tienes frente al número de incógnitas."},
+              {"icon": "verified", "text": "Verifica la factibilidad física del resultado, no solo la corrección algebraica."}
+            ],
+            "example": {
+              "title": "Ejemplo guiado de planteamiento",
+              "body": ["Para mezclar dos soluciones y obtener 100 L al 30 %, una restricción es el volumen total $x_1+x_2=100$ y otra el balance del soluto $0{,}2x_1+0{,}5x_2=0{,}3\\cdot100$. Dos restricciones independientes y dos incógnitas anticipan una solución única."]
+            },
+            "closing": ["Plantea siempre el modelo antes de operar: una matriz aumentada bien construida es la mitad de la solución."]
+          },
+          "s1-stepper": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1.1 · Del enunciado a la matriz aumentada y primera reducción",
+            "statement": "Una mezcla debe alcanzar 100 L al 30 % de soluto combinando una solución al 20 % ($x_1$) y otra al 50 % ($x_2$). Plantea el sistema, escribe la matriz aumentada y obtén la primera fila reducida.",
+            "steps": [
+              {"title": "Nombrar incógnitas y restricciones", "body": "$x_1$ y $x_2$ son los litros de cada solución. El balance de volumen y el balance de soluto dan dos ecuaciones lineales.", "formula": "\\begin{cases} x_1 + x_2 = 100 \\\\ 0.2\\,x_1 + 0.5\\,x_2 = 30 \\end{cases}", "final": false},
+              {"title": "Construir la matriz aumentada", "body": "Coeficientes a la izquierda de la barra, términos independientes a la derecha.", "formula": "\\left[\\begin{array}{cc|c} 1 & 1 & 100 \\\\ 0.2 & 0.5 & 30 \\end{array}\\right]", "final": false},
+              {"title": "Eliminar el primer coeficiente de la fila 2", "body": "Aplicamos $R_2 \\to R_2 - 0.2\\,R_1$ para anular el pivote inferior de la primera columna.", "formula": "\\left[\\begin{array}{cc|c} 1 & 1 & 100 \\\\ 0 & 0.3 & 10 \\end{array}\\right]", "final": false},
+              {"title": "Despejar y verificar", "body": "De la fila 2, $0.3\\,x_2 = 10 \\Rightarrow x_2 = \\tfrac{100}{3}$ L; sustituyendo, $x_1 = 100 - x_2 = \\tfrac{200}{3}$ L. Se comprueba que ambos volúmenes son positivos (factibilidad física) y que su mezcla da el 30 %.", "formula": "x_1=\\tfrac{200}{3}\\ \\text{L},\\quad x_2=\\tfrac{100}{3}\\ \\text{L}", "final": true}
+            ]
+          },
+          "s1-accordion": {
+            "type": "accordion",
+            "title": "Matices del planteamiento",
+            "items": [
+              {
+                "icon": "psychology",
+                "title": "¿Por qué la matriz aumentada y no solo $A$?",
+                "open": true,
+                "body": [
+                  "La matriz de coeficientes $A$ describe la estructura del problema, pero por sí sola no contiene la meta: dos problemas con la misma $A$ y distinto $\\mathbf{b}$ pueden tener soluciones completamente diferentes. Por eso, para resolver, necesitamos arrastrar el término independiente en cada operación.",
+                  "La matriz aumentada $[A\\,|\\,\\mathbf{b}]$ resuelve esto pegando $\\mathbf{b}$ como una columna extra. Al operar filas, esa columna se transforma junto con las demás, de modo que cuando $A$ llega a su forma reducida, la última columna ya muestra los valores de las incógnitas.",
+                  "La barra vertical es un recordatorio visual: no es un coeficiente, es el lado derecho. Confundirla y tratarla como una variable más es uno de los errores más frecuentes al empezar."
+                ]
+              },
+              {
+                "icon": "warning",
+                "title": "El orden de las columnas debe ser coherente",
+                "body": [
+                  "Cada columna de $A$ representa siempre la misma incógnita. Si en la primera ecuación la columna 1 es $x$ y en la segunda es $y$, el sistema se desarma. Antes de escribir la matriz, fija un orden de incógnitas y respétalo en todas las ecuaciones.",
+                  "Cuando una incógnita no aparece en una ecuación, su coeficiente no se omite: se escribe explícitamente como cero. Esos ceros mantienen alineadas las columnas y son imprescindibles para que el método funcione.",
+                  "Un buen hábito es escribir un encabezado mental con el orden de las variables; así detectas de inmediato si una columna quedó descolocada."
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "seccion-2": {
+        "kind": "theory",
+        "theme": "Operaciones de fila y forma escalonada reducida",
+        "badge": "Tema 01 · Escenario 2",
+        "navLabel": "Operaciones y RREF",
+        "title": "Operaciones elementales de fila y forma escalonada reducida",
+        "learningOutcomeIds": ["RA2"],
+        "methodologyMoment": "Fase 2",
+        "estimatedTime": "60 minutos",
+        "intro": [
+          "Con el sistema ya escrito como matriz aumentada, el método de Gauss-Jordan lo transforma —sin cambiar su solución— hasta una forma donde las incógnitas se leen directamente. La herramienta son las tres operaciones elementales de fila."
+        ],
+        "componentOrder": [
+          "s2-teoria-1",
+          "s2-formula",
+          "s2-flashcards",
+          "s2-teoria-2",
+          "s2-carousel",
+          "s2-stepper",
+          "s2-teoria-3",
+          "s2-accordion",
+          "s2-quiz"
+        ],
+        "components": {
+          "s2-teoria-1": {
+            "type": "theory-block",
+            "title": "Las tres operaciones elementales de fila",
+            "eyebrow": "Herramientas del método",
+            "body": [
+              "El método de Gauss-Jordan se apoya en tres operaciones que se pueden aplicar a las filas de la matriz aumentada sin alterar el conjunto de soluciones del sistema. Producen sistemas equivalentes: distintos en apariencia, idénticos en solución.",
+              "La primera es el intercambio de dos filas, $R_i \\leftrightarrow R_j$, útil para colocar un pivote conveniente arriba. La segunda es el escalamiento, $R_i \\to kR_i$ con $k\\neq0$, que multiplica toda una fila por una constante no nula (multiplicar por cero borraría la ecuación). La tercera es la combinación, $R_i \\to R_i + kR_j$, que suma a una fila un múltiplo de otra para crear ceros.",
+              "Estas operaciones reflejan exactamente lo que hacemos al despejar ecuaciones a mano: reordenar, multiplicar por una constante o sumar una ecuación a otra. La ventaja es que ahora lo hacemos de forma sistemática y sobre números, sin arrastrar las letras."
+            ],
+            "keyIdeas": [
+              {"icon": "swap_vert", "text": "Intercambio $R_i \\leftrightarrow R_j$: reordena filas."},
+              {"icon": "close", "text": "Escalamiento $R_i \\to kR_i$ con $k\\neq0$: nunca multiplicar por cero."},
+              {"icon": "add", "text": "Combinación $R_i \\to R_i + kR_j$: crea los ceros que necesitamos."},
+              {"icon": "sync", "text": "Las tres preservan la solución: generan sistemas equivalentes."}
+            ],
+            "sections": [
+              {
+                "title": "Por qué no cambian la solución",
+                "body": ["Reordenar ecuaciones, multiplicar una ecuación entera por una constante no nula o sumar una ecuación a otra son pasos reversibles; ninguno añade ni elimina soluciones."],
+                "formula": "R_i \\leftrightarrow R_j,\\quad R_i \\to kR_i\\ (k\\neq0),\\quad R_i \\to R_i + kR_j",
+                "formulaNote": "Las tres operaciones elementales de fila."
+              }
+            ],
+            "closing": ["Cada vez que operes una fila, recuerda actualizar también su término independiente: la operación afecta a toda la fila, barra incluida."]
+          },
+          "s2-formula": {
+            "type": "formula",
+            "title": "Forma escalonada reducida por filas (RREF)",
+            "context": ["El objetivo de Gauss-Jordan no es solo crear ceros, sino llegar a una forma canónica única: la forma escalonada reducida, donde cada incógnita básica queda despejada."],
+            "latex": "\\left[\\begin{array}{ccc|c} 1 & 0 & 0 & d_1 \\\\ 0 & 1 & 0 & d_2 \\\\ 0 & 0 & 1 & d_3 \\end{array}\\right]",
+            "variables": [
+              {"symbol": "1", "description": "pivote: primer elemento no nulo de su fila, normalizado a uno."},
+              {"symbol": "0", "description": "ceros por encima y por debajo de cada pivote, característicos de la RREF."},
+              {"symbol": "d_i", "description": "valor de la incógnita asociada al pivote de la fila $i$."}
+            ],
+            "explanation": ["Una matriz está en RREF cuando: cada pivote es 1, está más a la derecha que el de la fila anterior, es el único valor no nulo de su columna, y las filas nulas quedan al final. En ese estado, la solución se lee directamente en la última columna."]
+          },
+          "s2-flashcards": {
+            "type": "flashcards",
+            "title": "Términos del método de Gauss-Jordan",
+            "description": "Vocabulario operativo para describir cada paso de la reducción.",
+            "cards": [
+              {"term": "Operación elemental de fila", "definition": "Intercambio, escalamiento por constante no nula o combinación lineal de filas; transforma la matriz sin cambiar la solución del sistema.", "icon": "build"},
+              {"term": "Sistemas equivalentes", "definition": "Dos sistemas que tienen exactamente el mismo conjunto de soluciones; las operaciones de fila siempre producen sistemas equivalentes.", "icon": "sync"},
+              {"term": "Pivote", "definition": "Primer elemento no nulo de una fila después de reducir; en RREF se normaliza a 1 y es el único no nulo de su columna.", "icon": "center_focus_strong"},
+              {"term": "Columna pivote", "definition": "Columna que contiene un pivote; corresponde a una incógnita básica (no libre) del sistema.", "icon": "view_column"},
+              {"term": "Forma escalonada reducida (RREF)", "definition": "Forma canónica con pivotes 1, ceros encima y debajo de cada pivote y filas nulas al final; permite leer la solución directamente.", "icon": "checklist"}
+            ]
+          },
+          "s2-teoria-2": {
+            "type": "theory-block",
+            "title": "Eliminación de Gauss vs. Gauss-Jordan",
+            "eyebrow": "Dos niveles de reducción",
+            "body": [
+              "La eliminación gaussiana lleva la matriz a forma escalonada (triangular superior): genera ceros solo por debajo de cada pivote y luego resuelve por sustitución hacia atrás. Es eficiente, pero exige ese paso final de despeje.",
+              "El método de Gauss-Jordan va un paso más allá: además de los ceros por debajo, crea ceros por encima de cada pivote y normaliza los pivotes a 1, alcanzando la forma escalonada reducida (RREF). El resultado es que ya no hace falta sustituir: la solución aparece en la última columna.",
+              "Ambos métodos son correctos y comparten las mismas operaciones de fila; la diferencia está en hasta dónde se reduce. Gauss-Jordan es especialmente cómodo cuando se quiere leer todas las incógnitas a la vez o cuando se calcula una matriz inversa, tema de un escenario posterior."
+            ],
+            "keyIdeas": [
+              {"icon": "stairs", "text": "Gauss: forma escalonada (ceros debajo) + sustitución hacia atrás."},
+              {"icon": "done_all", "text": "Gauss-Jordan: RREF (ceros arriba y abajo, pivotes 1) sin sustitución."},
+              {"icon": "compare_arrows", "text": "Mismas operaciones; cambia la profundidad de la reducción."}
+            ],
+            "sections": [
+              {
+                "title": "Forma escalonada vs. reducida",
+                "body": ["La forma escalonada deja números encima de los pivotes; la RREF los elimina. Solo la segunda permite leer la solución sin más cálculos."],
+                "formula": "\\underbrace{\\begin{bmatrix} 1 & * & * \\\\ 0 & 1 & * \\\\ 0 & 0 & 1 \\end{bmatrix}}_{\\text{escalonada}} \\;\\longrightarrow\\; \\underbrace{\\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}}_{\\text{reducida (RREF)}}",
+                "formulaNote": "Los asteriscos representan valores cualesquiera que Gauss-Jordan termina de anular."
+              }
+            ],
+            "closing": ["Decide hasta dónde reducir según lo que necesites: escalonada si vas a sustituir, RREF si quieres leer todo de inmediato."]
+          },
+          "s2-carousel": {
+            "type": "carousel",
+            "title": "Ruta Gauss-Jordan",
+            "description": "Los cinco movimientos que llevan la matriz aumentada hasta la solución.",
+            "slides": [
+              {"label": "Paso 1", "title": "Matriz aumentada", "body": ["Parte de $[A\\,|\\,\\mathbf{b}]$ con las columnas de incógnitas ordenadas y los ceros explícitos."], "icon": "grid_on"},
+              {"label": "Paso 2", "title": "Hacer el pivote", "body": ["Lleva un 1 a la posición pivote con un intercambio o un escalamiento $R_i \\to \\tfrac{1}{a}R_i$."], "icon": "center_focus_strong"},
+              {"label": "Paso 3", "title": "Anular la columna", "body": ["Usa combinaciones $R_j \\to R_j + kR_i$ para poner ceros encima y debajo del pivote."], "icon": "exposure_zero"},
+              {"label": "Paso 4", "title": "Repetir hasta RREF", "body": ["Avanza a la siguiente columna pivote y repite hasta que cada pivote sea 1 y único en su columna."], "icon": "repeat"},
+              {"label": "Paso 5", "formula": "[\\,I\\,|\\,\\mathbf{d}\\,]", "description": "Cuando el bloque izquierdo es la identidad, la última columna $\\mathbf{d}$ contiene la solución del sistema."}
+            ]
+          },
+          "s2-stepper": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1.2 · Sistema 3×3 con solución única (Gauss-Jordan completo)",
+            "statement": "Resolver por Gauss-Jordan el sistema $\\begin{cases} x+y+z=6 \\\\ 2x-y+z=3 \\\\ x+2y-z=2 \\end{cases}$ hasta la forma escalonada reducida.",
+            "steps": [
+              {"title": "Matriz aumentada", "body": "Se escriben los coeficientes y los términos independientes en $[A\\,|\\,\\mathbf{b}]$.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\\\ 2 & -1 & 1 & 3 \\\\ 1 & 2 & -1 & 2 \\end{array}\\right]", "final": false},
+              {"title": "Anular la primera columna", "body": "Con $R_2 \\to R_2 - 2R_1$ y $R_3 \\to R_3 - R_1$ se crean ceros bajo el primer pivote.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\\\ 0 & -3 & -1 & -9 \\\\ 0 & 1 & -2 & -4 \\end{array}\\right]", "final": false},
+              {"title": "Normalizar el segundo pivote", "body": "Aplicamos $R_2 \\to -\\tfrac{1}{3}R_2$ para llevar el pivote de la columna 2 a 1.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\\\ 0 & 1 & \\tfrac{1}{3} & 3 \\\\ 0 & 1 & -2 & -4 \\end{array}\\right]", "final": false},
+              {"title": "Anular el resto de la segunda columna", "body": "Con $R_1 \\to R_1 - R_2$ y $R_3 \\to R_3 - R_2$ dejamos el pivote 2 como único no nulo de su columna.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 0 & \\tfrac{2}{3} & 3 \\\\ 0 & 1 & \\tfrac{1}{3} & 3 \\\\ 0 & 0 & -\\tfrac{7}{3} & -7 \\end{array}\\right]", "final": false},
+              {"title": "Reducir la tercera columna", "body": "Normalizamos con $R_3 \\to -\\tfrac{3}{7}R_3$ y anulamos arriba con $R_1 \\to R_1 - \\tfrac{2}{3}R_3$ y $R_2 \\to R_2 - \\tfrac{1}{3}R_3$.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 0 & 0 & 1 \\\\ 0 & 1 & 0 & 2 \\\\ 0 & 0 & 1 & 3 \\end{array}\\right]", "final": false},
+              {"title": "Leer y verificar la solución", "body": "La RREF entrega $x=1,\\;y=2,\\;z=3$. Verificación en las tres ecuaciones: $1+2+3=6$, $2-2+3=3$, $1+4-3=2$. Todas se cumplen.", "formula": "x=1,\\quad y=2,\\quad z=3", "final": true}
+            ]
+          },
+          "s2-teoria-3": {
+            "type": "theory-block",
+            "title": "Estrategia de pivoteo y control de errores",
+            "eyebrow": "Buenas prácticas",
+            "body": [
+              "Reducir bien es tanto técnica como orden. Conviene avanzar columna por columna, de izquierda a derecha, fijando el pivote de cada columna antes de pasar a la siguiente; así no se deshace lo ya logrado.",
+              "Elegir como pivote una entrada que sea 1 (o llevarla a 1) simplifica las cuentas y reduce la aparición de fracciones difíciles. Cuando el candidato a pivote es cero, un intercambio de filas resuelve el bloqueo.",
+              "Cada operación de fila debe registrarse y aplicarse a la fila completa, incluida la columna del término independiente. Un control eficaz es sustituir la solución final en el sistema original: si las ecuaciones se cumplen, la reducción fue correcta."
+            ],
+            "keyIdeas": [
+              {"icon": "arrow_forward", "text": "Avanza columna por columna sin volver atrás."},
+              {"icon": "looks_one", "text": "Prefiere pivotes iguales a 1 para evitar fracciones."},
+              {"icon": "fact_check", "text": "Verifica sustituyendo la solución en el sistema original."}
+            ],
+            "closing": ["La verificación final no es opcional: convierte un cálculo en una respuesta confiable."]
+          },
+          "s2-accordion": {
+            "type": "accordion",
+            "title": "Errores frecuentes al reducir",
+            "items": [
+              {
+                "icon": "report",
+                "title": "Confundir eliminación gaussiana con Gauss-Jordan",
+                "open": true,
+                "body": [
+                  "Es habitual detenerse en la forma escalonada (triangular) y creer que ya se tiene la respuesta. Esa forma deja números por encima de los pivotes y aún exige sustitución hacia atrás; no es la RREF.",
+                  "Gauss-Jordan continúa hasta normalizar cada pivote a 1 y anular también los valores que quedan por encima. Solo entonces la última columna muestra directamente las incógnitas.",
+                  "Saber en qué forma estás evita dar por terminado un ejercicio a medias o, al contrario, seguir operando cuando la estrategia ya pedía sustituir."
+                ]
+              },
+              {
+                "icon": "error",
+                "title": "Olvidar actualizar el término independiente",
+                "body": [
+                  "Cuando se aplica una operación como $R_2 \\to R_2 - 2R_1$, mucha gente la realiza sobre los coeficientes pero olvida hacer la misma cuenta en la columna de la derecha. El resultado es un sistema distinto del original.",
+                  "La regla es simple: la operación afecta a la fila completa, barra incluida. Cada vez que sumas, restas o escalas, repite la cuenta en el término independiente.",
+                  "Una señal de alarma es obtener una solución que no satisface el sistema original: casi siempre el error está en una columna de términos mal actualizada."
+                ]
+              },
+              {
+                "icon": "rule_folder",
+                "title": "Multiplicar una fila por cero",
+                "body": [
+                  "El escalamiento exige una constante distinta de cero, $R_i \\to kR_i$ con $k\\neq0$. Multiplicar una fila por cero la convierte en una fila nula y borra una ecuación real del sistema.",
+                  "Esto altera el conjunto de soluciones: se pierde una restricción que sí existía, y el sistema parece tener más libertad de la que realmente tiene.",
+                  "Si necesitas un cero en una posición concreta, no escales por cero: usa una combinación $R_i \\to R_i + kR_j$ con la fila adecuada para anular esa entrada conservando la información."
+                ]
+              }
+            ]
+          },
+          "s2-quiz": {
+            "type": "quiz",
+            "title": "Chequeo rápido: operaciones de fila",
+            "questions": [
+              {
+                "prompt": "Al aplicar $R_2 \\to R_2 - 3R_1$ sobre una matriz aumentada, ¿qué debes hacer con la columna del término independiente de $R_2$?",
+                "options": [
+                  {"text": "Aplicar la misma operación también al término independiente de $R_2$.", "correct": true, "feedback": "Correcto: la operación de fila afecta a la fila completa, incluida la columna a la derecha de la barra."},
+                  {"text": "Dejar el término independiente sin cambios, porque la barra lo protege.", "correct": false, "feedback": "Revisa la regla: la barra es solo un separador visual; el término independiente se opera igual que los coeficientes."},
+                  {"text": "Reemplazar el término independiente por cero.", "correct": false, "feedback": "No: solo se anula lo que la combinación dé como resultado; forzar un cero cambia el sistema."}
+                ]
+              },
+              {
+                "prompt": "¿Cuál es la diferencia esencial entre la forma escalonada y la forma escalonada reducida (RREF)?",
+                "options": [
+                  {"text": "La RREF tiene pivotes 1 y ceros también por encima de cada pivote, no solo por debajo.", "correct": true, "feedback": "Correcto: por eso en la RREF la solución se lee directamente, sin sustitución hacia atrás."},
+                  {"text": "La escalonada usa fracciones y la RREF solo enteros.", "correct": false, "feedback": "No es una cuestión de fracciones: la diferencia está en anular también por encima de los pivotes y normalizarlos a 1."},
+                  {"text": "La RREF se obtiene sin operaciones de fila.", "correct": false, "feedback": "Ambas se obtienen con operaciones de fila; la RREF simplemente lleva la reducción más lejos."}
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "seccion-3": {
+        "kind": "theory",
+        "theme": "Existencia y unicidad de la solución",
+        "badge": "Tema 01 · Escenario 3",
+        "navLabel": "Rango y tipo de solución",
+        "title": "Existencia y unicidad: el rango decide el tipo de solución",
+        "learningOutcomeIds": ["RA2"],
+        "methodologyMoment": "Fase 2",
+        "estimatedTime": "60 minutos",
+        "intro": [
+          "Resolver no siempre termina en un valor por incógnita. Un sistema puede tener solución única, infinitas soluciones o ninguna. Este escenario te da el criterio para anticipar y clasificar cada caso a partir del rango, y para leer su significado en el problema modelado."
+        ],
+        "componentOrder": [
+          "s3-teoria-1",
+          "s3-flashcards",
+          "s3-formula",
+          "s3-teoria-2",
+          "s3-stepper-inf",
+          "s3-stepper-inc",
+          "s3-chart",
+          "s3-teoria-3",
+          "s3-figura",
+          "s3-carousel",
+          "s3-accordion"
+        ],
+        "components": {
+          "s3-teoria-1": {
+            "type": "theory-block",
+            "title": "Rango: cuántas restricciones realmente independientes hay",
+            "eyebrow": "Idea central",
+            "body": [
+              "El rango de una matriz es el número de pivotes que aparecen al llevarla a la forma escalonada reducida; equivale al número de filas (ecuaciones) realmente independientes. Una fila que se vuelve nula al reducir indica una ecuación que era combinación de las otras y, por tanto, no aporta información nueva.",
+              "Comparar el rango de la matriz de coeficientes $A$ con el rango de la matriz aumentada $[A\\,|\\,\\mathbf{b}]$ revela si el sistema es compatible. Si al reducir aparece una fila de la forma $[\\,0\\ 0\\ \\cdots\\ 0\\,|\\,k\\,]$ con $k\\neq0$, esa fila afirma que $0=k$, una contradicción: el sistema es incompatible.",
+              "Cuando el sistema es compatible, comparar el rango con el número de incógnitas $n$ distingue entre solución única (tantos pivotes como incógnitas) e infinitas soluciones (menos pivotes que incógnitas, lo que deja variables libres)."
+            ],
+            "keyIdeas": [
+              {"icon": "tag", "text": "Rango = número de pivotes = ecuaciones independientes."},
+              {"icon": "balance", "text": "Comparar $\\operatorname{rango}(A)$ con $\\operatorname{rango}([A|\\mathbf{b}])$ decide la compatibilidad."},
+              {"icon": "open_in_full", "text": "Comparar el rango con $n$ distingue única de infinita."}
+            ],
+            "sections": [
+              {
+                "title": "Una fila imposible",
+                "body": ["Una fila reducida $[\\,0\\ 0\\ |\\ k\\,]$ con $k\\neq0$ se lee como $0=k$: no existe ningún valor de las incógnitas que la cumpla."],
+                "formula": "[\\,0\\ \\ 0\\ \\ \\cdots\\ \\ 0\\ |\\ k\\,],\\quad k\\neq0 \\;\\Rightarrow\\; \\text{incompatible}",
+                "formulaNote": "Señal inequívoca de un sistema sin solución."
+              }
+            ],
+            "closing": ["Antes de declarar una solución, cuenta pivotes: el rango te dice qué esperar."]
+          },
+          "s3-flashcards": {
+            "type": "flashcards",
+            "title": "Conceptos de existencia y unicidad",
+            "description": "Distingue con precisión los términos que clasifican la solución.",
+            "cards": [
+              {"term": "Rango", "definition": "Número de pivotes (filas no nulas) en la forma escalonada reducida; mide cuántas ecuaciones son realmente independientes.", "icon": "tag"},
+              {"term": "Variable libre", "definition": "Incógnita asociada a una columna sin pivote; puede tomar cualquier valor y se usa como parámetro para describir el conjunto solución.", "icon": "lock_open"},
+              {"term": "Sistema consistente", "definition": "Sistema que tiene al menos una solución; ocurre cuando $\\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])$.", "icon": "check_circle"},
+              {"term": "Sistema inconsistente", "definition": "Sistema sin solución; aparece cuando $\\operatorname{rango}(A)<\\operatorname{rango}([A|\\mathbf{b}])$, es decir, una fila $0=k$ con $k\\neq0$.", "icon": "cancel"},
+              {"term": "Sistema homogéneo", "definition": "Sistema $A\\mathbf{x}=\\mathbf{0}$; siempre es consistente porque $\\mathbf{x}=\\mathbf{0}$ es solución, y tiene infinitas si hay variables libres.", "icon": "exposure_zero"}
+            ]
+          },
+          "s3-formula": {
+            "type": "formula",
+            "title": "Teorema de Rouché-Frobenius",
+            "context": ["Este criterio resume, en una sola comparación de rangos, los tres desenlaces posibles de un sistema lineal de $n$ incógnitas."],
+            "latex": "\\begin{cases} \\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])=n & \\Rightarrow\\ \\text{solución única} \\\\ \\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])<n & \\Rightarrow\\ \\text{infinitas soluciones} \\\\ \\operatorname{rango}(A)<\\operatorname{rango}([A|\\mathbf{b}]) & \\Rightarrow\\ \\text{sin solución} \\end{cases}",
+            "variables": [
+              {"symbol": "\\operatorname{rango}(A)", "description": "número de pivotes de la matriz de coeficientes."},
+              {"symbol": "\\operatorname{rango}([A|\\mathbf{b}])", "description": "número de pivotes de la matriz aumentada."},
+              {"symbol": "n", "description": "número de incógnitas del sistema."}
+            ],
+            "explanation": ["Primero se compara $\\operatorname{rango}(A)$ con $\\operatorname{rango}([A|\\mathbf{b}])$ para decidir si hay solución; si la hay, se compara el rango con $n$ para distinguir única de infinita. La diferencia $n-\\operatorname{rango}$ cuenta las variables libres (grados de libertad)."]
+          },
+          "s3-teoria-2": {
+            "type": "theory-block",
+            "title": "Infinitas soluciones: variables libres y parametrización",
+            "eyebrow": "Cuando el rango es menor que $n$",
+            "body": [
+              "Si el sistema es consistente pero el rango es menor que el número de incógnitas, algunas columnas no tienen pivote. Las incógnitas de esas columnas son variables libres: pueden tomar cualquier valor.",
+              "Para describir el conjunto solución se asigna un parámetro a cada variable libre (por ejemplo $z=t$, $y=s$) y se despejan las incógnitas básicas en función de esos parámetros. El resultado no es un punto, sino una familia infinita de soluciones.",
+              "El número de variables libres, $n-\\operatorname{rango}$, es el número de grados de libertad del problema. En ingeniería esto se interpreta como margen de diseño: hay más de una combinación que satisface las restricciones, y se elige según un criterio adicional (costo, seguridad, disponibilidad)."
+            ],
+            "keyIdeas": [
+              {"icon": "lock_open", "text": "Columna sin pivote = variable libre."},
+              {"icon": "functions", "text": "Cada variable libre se vuelve un parámetro de la solución."},
+              {"icon": "tune", "text": "Grados de libertad $=n-\\operatorname{rango}$ = margen de diseño."}
+            ],
+            "closing": ["Infinitas soluciones no significa indeterminación caótica: significa una familia ordenada que se recorre con parámetros."]
+          },
+          "s3-stepper-inf": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1.3 · Sistema con infinitas soluciones (parametrización)",
+            "statement": "Resolver $\\begin{cases} x+2y-z=3 \\\\ 2x+4y-2z=6 \\end{cases}$ y describir el conjunto solución.",
+            "steps": [
+              {"title": "Matriz aumentada", "body": "Se forma $[A\\,|\\,\\mathbf{b}]$ con las dos ecuaciones.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 2 & -1 & 3 \\\\ 2 & 4 & -2 & 6 \\end{array}\\right]", "final": false},
+              {"title": "Reducir la segunda fila", "body": "Con $R_2 \\to R_2 - 2R_1$ la segunda fila se vuelve nula: la segunda ecuación era el doble de la primera.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 2 & -1 & 3 \\\\ 0 & 0 & 0 & 0 \\end{array}\\right]", "final": false},
+              {"title": "Contar pivotes e identificar variables libres", "body": "Hay un pivote (rango 1) y tres incógnitas, así que $n-\\operatorname{rango}=2$ variables libres. Tomamos $y=s$ y $z=t$ como parámetros.", "formula": "\\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])=1<3", "final": false},
+              {"title": "Despejar la incógnita básica", "body": "De la fila pivote $x+2y-z=3$ se obtiene $x=3-2s+t$.", "formula": "x = 3 - 2s + t", "final": false},
+              {"title": "Escribir el conjunto solución", "body": "El sistema es consistente con 2 grados de libertad: hay una familia infinita de soluciones, una por cada par $(s,t)$.", "formula": "\\{(3-2s+t,\\; s,\\; t) : s,t\\in\\mathbb{R}\\}", "final": true}
+            ]
+          },
+          "s3-stepper-inc": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1.4 · Sistema inconsistente (detección de incompatibilidad)",
+            "statement": "Analizar el sistema $\\begin{cases} x+y=2 \\\\ 2x+2y=5 \\end{cases}$.",
+            "steps": [
+              {"title": "Matriz aumentada", "body": "Se escribe $[A\\,|\\,\\mathbf{b}]$ con las dos ecuaciones.", "formula": "\\left[\\begin{array}{cc|c} 1 & 1 & 2 \\\\ 2 & 2 & 5 \\end{array}\\right]", "final": false},
+              {"title": "Reducir la segunda fila", "body": "Con $R_2 \\to R_2 - 2R_1$ los coeficientes se anulan pero el término independiente no.", "formula": "\\left[\\begin{array}{cc|c} 1 & 1 & 2 \\\\ 0 & 0 & 1 \\end{array}\\right]", "final": false},
+              {"title": "Interpretar la fila imposible", "body": "La fila $[\\,0\\ 0\\ |\\ 1\\,]$ afirma $0=1$, una contradicción: $\\operatorname{rango}(A)=1<\\operatorname{rango}([A|\\mathbf{b}])=2$.", "formula": "0=1 \\;\\Rightarrow\\; \\text{contradicción}", "final": false},
+              {"title": "Concluir", "body": "El sistema no tiene solución. Geométricamente, las rectas $x+y=2$ y $2x+2y=5$ son paralelas: representan restricciones incompatibles que nunca coinciden.", "formula": "\\text{sistema inconsistente: sin solución}", "final": true}
+            ]
+          },
+          "s3-chart": {
+            "type": "chart",
+            "chartType": "bar",
+            "title": "Número de soluciones según la relación de rangos",
+            "description": ["Tras el teorema de Rouché-Frobenius y los dos ejercicios anteriores, este gráfico resume cualitativamente cuántas soluciones produce cada relación entre el rango de $A$, el rango de $[A|\\mathbf{b}]$ y el número de incógnitas $n$."],
+            "note": "Lectura del gráfico: el eje horizontal muestra los tres casos del teorema; el eje vertical representa de forma cualitativa el número de soluciones (1 para única, un valor alto que simboliza infinitas, y 0 para inconsistente). Se observa que solo cuando los dos rangos coinciden hay solución, y que igualar el rango con $n$ es lo que fuerza la unicidad; cuando el rango queda por debajo de $n$ aparecen los grados de libertad que producen infinitas soluciones.",
+            "height": "320px",
+            "labels": ["rango(A)=rango([A|b])=n", "rango(A)=rango([A|b])<n", "rango(A)<rango([A|b])"],
+            "datasets": [
+              {"label": "Número de soluciones (cualitativo)", "data": [1, 100, 0]}
+            ],
+            "options": {
+              "scales": {
+                "y": {"title": {"display": true, "text": "Soluciones (1 = única, alto = infinitas, 0 = ninguna)"}},
+                "x": {"title": {"display": true, "text": "Relación entre rangos e incógnitas"}}
+              },
+              "plugins": {"legend": {"display": true}}
+            }
+          },
+          "s3-teoria-3": {
+            "type": "theory-block",
+            "title": "Lectura física de cada caso",
+            "eyebrow": "Del álgebra al fenómeno",
+            "body": [
+              "La solución única corresponde a un problema bien determinado: tantas restricciones independientes como variables. En ingeniería es el plan factible exacto, la mezcla con composición fijada, las corrientes que cierran todos los balances.",
+              "Las infinitas soluciones aparecen cuando faltan restricciones independientes: el modelo deja grados de libertad. No es un error; señala margen de diseño que se cierra con un criterio adicional, como minimizar costo o respetar una capacidad.",
+              "La ausencia de solución revela restricciones incompatibles: metas que no pueden cumplirse simultáneamente con los recursos planteados. Es información valiosa: indica que el problema, tal como está formulado, debe replantearse. El caso homogéneo $A\\mathbf{x}=\\mathbf{0}$ nunca cae aquí, pues siempre admite al menos la solución trivial."
+            ],
+            "keyIdeas": [
+              {"icon": "check_circle", "text": "Única: problema bien determinado, plan factible exacto."},
+              {"icon": "open_in_full", "text": "Infinitas: margen de diseño que se cierra con un criterio extra."},
+              {"icon": "cancel", "text": "Ninguna: restricciones incompatibles, hay que replantear."}
+            ],
+            "example": {
+              "title": "Caso homogéneo",
+              "body": ["El sistema $A\\mathbf{x}=\\mathbf{0}$ siempre tiene la solución trivial $\\mathbf{x}=\\mathbf{0}$; si además hay variables libres, posee infinitas soluciones no triviales, útiles para describir direcciones de equilibrio."]
+            },
+            "closing": ["Interpreta siempre el tipo de solución en términos del fenómeno: un cálculo sin lectura física queda a medias."]
+          },
+          "s3-figura": {
+            "type": "image",
+            "title": "Interpretación geométrica en el plano",
+            "assetId": "fig-1-2-rectas-r2",
+            "src": "",
+            "alt": "Tres pares de rectas en el plano: secantes que se cortan en un punto, coincidentes que se superponen y paralelas que no se tocan.",
+            "caption": "Figura 1.2. En $\\mathbb{R}^2$, dos ecuaciones son dos rectas: secantes (solución única), coincidentes (infinitas) y paralelas (ninguna).",
+            "prompt": "Crear una figura didáctica en español con tres mini-planos cartesianos en fila: (1) dos rectas secantes que se cruzan en un punto, rotuladas 'solución única'; (2) dos rectas coincidentes superpuestas, rotuladas 'infinitas soluciones'; (3) dos rectas paralelas que no se tocan, rotuladas 'sin solución'. Bajo cada caso, indicar la relación de rangos correspondiente. Ejes x e y simples, líneas de colores distinguibles, estilo limpio y legible."
+          },
+          "s3-carousel": {
+            "type": "carousel",
+            "title": "Clasificar un sistema en cuatro chequeos",
+            "description": "Una secuencia para decidir el tipo de solución a partir de la matriz reducida.",
+            "slides": [
+              {"label": "Chequeo 1", "title": "¿Hay una fila imposible?", "body": ["Busca una fila $[\\,0\\ \\cdots\\ 0\\ |\\ k\\,]$ con $k\\neq0$. Si existe, el sistema es inconsistente y no hace falta seguir."], "icon": "search"},
+              {"label": "Chequeo 2", "title": "Contar pivotes", "body": ["El número de pivotes es el rango. Cuéntalos en la matriz reducida."], "icon": "tag"},
+              {"label": "Chequeo 3", "title": "Comparar con $n$", "body": ["Si el rango es igual a $n$, la solución es única; si es menor, hay variables libres e infinitas soluciones."], "icon": "balance"},
+              {"label": "Chequeo 4", "title": "Parametrizar si hace falta", "body": ["Para infinitas soluciones, asigna un parámetro a cada variable libre y despeja las básicas."], "icon": "functions"},
+              {"label": "Cierre", "formula": "n-\\operatorname{rango}", "description": "Esta diferencia cuenta los grados de libertad: cero para solución única, mayor que cero para infinitas."}
+            ]
+          },
+          "s3-accordion": {
+            "type": "accordion",
+            "title": "Matices sobre rango y tipo de solución",
+            "items": [
+              {
+                "icon": "compare",
+                "title": "Fila nula vs. fila $0=k$: no son lo mismo",
+                "open": true,
+                "body": [
+                  "Una fila que queda toda en ceros, incluido el término independiente, $[\\,0\\ 0\\ |\\ 0\\,]$, es una ecuación redundante: estaba implícita en las demás y simplemente desaparece. No causa ningún problema; solo baja el rango.",
+                  "En cambio, una fila $[\\,0\\ 0\\ |\\ k\\,]$ con $k\\neq0$ afirma $0=k$, una imposibilidad que vuelve inconsistente todo el sistema. La diferencia está únicamente en el término independiente.",
+                  "Confundir ambas es un error clásico: una baja el rango y abre la puerta a infinitas soluciones; la otra cierra la puerta a cualquier solución. Mira siempre la columna de la derecha antes de concluir."
+                ]
+              },
+              {
+                "icon": "all_inclusive",
+                "title": "Por qué el sistema homogéneo siempre es consistente",
+                "body": [
+                  "En un sistema homogéneo $A\\mathbf{x}=\\mathbf{0}$, todos los términos independientes son cero. Por eso $\\mathbf{x}=\\mathbf{0}$ siempre lo satisface: la solución trivial existe sin excepción.",
+                  "La pregunta interesante no es si hay solución, sino si hay soluciones distintas de la trivial. Eso ocurre cuando el rango es menor que el número de incógnitas, es decir, cuando hay variables libres.",
+                  "En aplicaciones, esas soluciones no triviales describen direcciones de equilibrio o modos en los que el sistema puede variar sin romper las restricciones; por eso el caso homogéneo es central en muchos análisis de ingeniería."
+                ]
+              },
+              {
+                "icon": "tips_and_updates",
+                "title": "El rango no depende del método con que reduzcas",
+                "body": [
+                  "Aunque dos personas usen secuencias distintas de operaciones de fila, llegarán al mismo número de pivotes: el rango es una propiedad de la matriz, no del camino elegido.",
+                  "Esto da robustez al criterio de clasificación: la conclusión sobre el tipo de solución no cambia por el orden en que hagas las operaciones, siempre que reduzcas correctamente.",
+                  "La forma escalonada reducida, además, es única para cada matriz; por eso es una referencia confiable para comparar resultados y verificar el trabajo propio o ajeno."
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "seccion-4": {
+        "kind": "theory",
+        "theme": "Práctica guiada de Gauss-Jordan",
+        "badge": "Tema 01 · Escenario 4",
+        "navLabel": "Práctica guiada",
+        "title": "Práctica guiada: resolver y clasificar sistemas paso a paso",
+        "learningOutcomeIds": ["RA1", "RA2"],
+        "methodologyMoment": "Fase 3",
+        "estimatedTime": "65 minutos",
+        "intro": [
+          "Aquí consolidas el procedimiento. Repasas la mecánica de reducción, resuelves un sistema homogéneo y otro de tres incógnitas distinto del visto, y compruebas si dominas la clasificación antes de pasar a la transferencia."
+        ],
+        "componentOrder": [
+          "s4-teoria-1",
+          "s4-flashcards",
+          "s4-stepper-homog",
+          "s4-teoria-2",
+          "s4-carousel",
+          "s4-stepper-3x3",
+          "s4-teoria-3",
+          "s4-matching",
+          "s4-accordion"
+        ],
+        "components": {
+          "s4-teoria-1": {
+            "type": "theory-block",
+            "title": "Anatomía de una reducción completa",
+            "eyebrow": "Consolidación procedimental",
+            "body": [
+              "Una reducción de Gauss-Jordan bien ejecutada se reconoce por su orden: se fija el pivote de la primera columna, se anulan las demás entradas de esa columna, se pasa a la segunda columna pivote, y así sucesivamente hasta agotar las columnas con pivote.",
+              "Cada decisión persigue un fin: el intercambio coloca un pivote utilizable; el escalamiento lo normaliza a 1; la combinación crea los ceros. Anticipar qué operación toca evita ensayo y error y reduce las fracciones.",
+              "El cierre siempre es la verificación: sustituir la solución obtenida en el sistema original. Si todas las ecuaciones se cumplen, el proceso fue correcto; si alguna falla, el error suele estar en una operación que no se aplicó a la fila completa."
+            ],
+            "keyIdeas": [
+              {"icon": "format_list_numbered", "text": "Reduce columna por columna, fijando un pivote a la vez."},
+              {"icon": "psychology_alt", "text": "Anticipa la operación adecuada en lugar de tantear."},
+              {"icon": "fact_check", "text": "Cierra siempre verificando en el sistema original."}
+            ],
+            "closing": ["La práctica convierte el algoritmo en intuición: con cada ejercicio eliges mejor el siguiente paso."]
+          },
+          "s4-flashcards": {
+            "type": "flashcards",
+            "title": "Repaso operativo antes de practicar",
+            "description": "Tarjetas para activar lo aprendido en los escenarios previos.",
+            "cards": [
+              {"term": "Solución trivial", "definition": "La solución $\\mathbf{x}=\\mathbf{0}$ de un sistema homogéneo $A\\mathbf{x}=\\mathbf{0}$; existe siempre, sea o no la única.", "icon": "exposure_zero"},
+              {"term": "Solución no trivial", "definition": "Solución distinta de cero de un sistema homogéneo; aparece cuando hay variables libres, es decir, cuando el rango es menor que el número de incógnitas.", "icon": "open_in_new"},
+              {"term": "Sustitución de verificación", "definition": "Reemplazar la solución hallada en las ecuaciones originales para comprobar que todas se cumplen; cierre obligatorio de cualquier resolución.", "icon": "fact_check"},
+              {"term": "Pivote normalizado", "definition": "Pivote llevado al valor 1 mediante escalamiento, paso previo a anular el resto de su columna en Gauss-Jordan.", "icon": "looks_one"},
+              {"term": "Factibilidad física", "definition": "Comprobación de que la solución matemática tiene sentido en el problema (por ejemplo, caudales o corrientes no negativos).", "icon": "verified"}
+            ]
+          },
+          "s4-stepper-homog": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1.5 · Sistema homogéneo con soluciones no triviales",
+            "statement": "Resolver el sistema homogéneo $\\begin{cases} x+2y+z=0 \\\\ 2x+4y+3z=0 \\end{cases}$ y describir todas sus soluciones.",
+            "steps": [
+              {"title": "Matriz aumentada", "body": "Por ser homogéneo, la última columna es de ceros.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 0 \\\\ 2 & 4 & 3 & 0 \\end{array}\\right]", "final": false},
+              {"title": "Anular bajo el primer pivote", "body": "Con $R_2 \\to R_2 - 2R_1$ se reduce la primera columna.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 2 & 1 & 0 \\\\ 0 & 0 & 1 & 0 \\end{array}\\right]", "final": false},
+              {"title": "Llegar a RREF", "body": "Con $R_1 \\to R_1 - R_2$ el segundo pivote queda como único no nulo en su columna.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 2 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\end{array}\\right]", "final": false},
+              {"title": "Identificar la variable libre", "body": "Pivotes en las columnas 1 y 3; la columna 2 no tiene pivote, así que $y=t$ es libre. De las filas: $x=-2t$ y $z=0$.", "formula": "x=-2t,\\quad y=t,\\quad z=0", "final": false},
+              {"title": "Conjunto solución", "body": "Además de la solución trivial ($t=0$), existen infinitas soluciones no triviales sobre una recta de direcciones.", "formula": "\\{(-2t,\\; t,\\; 0) : t\\in\\mathbb{R}\\}", "final": true}
+            ]
+          },
+          "s4-teoria-2": {
+            "type": "theory-block",
+            "title": "Elegir el orden de las operaciones",
+            "eyebrow": "Estrategia",
+            "body": [
+              "No todas las secuencias de operaciones cuestan lo mismo. Empezar por una fila que ya tenga un 1 en la columna de trabajo, o intercambiar para conseguirlo, evita arrastrar fracciones desde el primer paso.",
+              "Cuando una columna ya tiene ceros donde se necesitan, conviene aprovecharla como pivote temprano: cada cero existente es trabajo ahorrado. Mirar la matriz completa antes de operar suele revelar el camino más corto.",
+              "La meta no cambia —llegar a la RREF— pero un buen orden hace la diferencia entre una reducción limpia y una llena de denominadores. Esta planificación es la que distingue la práctica experta de la mecánica ciega."
+            ],
+            "keyIdeas": [
+              {"icon": "alt_route", "text": "Distintas secuencias llevan a la misma RREF con distinto esfuerzo."},
+              {"icon": "looks_one", "text": "Buscar un 1 como pivote reduce las fracciones."},
+              {"icon": "visibility", "text": "Aprovecha los ceros ya presentes en la matriz."}
+            ],
+            "closing": ["Antes de operar, observa: la matriz suele sugerir cuál es el primer movimiento más económico."]
+          },
+          "s4-carousel": {
+            "type": "carousel",
+            "title": "Lista de control de la resolución",
+            "description": "Cinco verificaciones para no dejar cabos sueltos en un ejercicio.",
+            "slides": [
+              {"label": "Control 1", "title": "Modelo correcto", "body": ["Confirma que cada ecuación traduce fielmente una restricción del enunciado y que las columnas están ordenadas."], "icon": "rule"},
+              {"label": "Control 2", "title": "Operaciones completas", "body": ["Comprueba que cada operación de fila se aplicó también al término independiente."], "icon": "checklist"},
+              {"label": "Control 3", "title": "RREF alcanzada", "body": ["Verifica que cada pivote es 1 y único en su columna, y que las filas nulas quedaron al final."], "icon": "done_all"},
+              {"label": "Control 4", "title": "Tipo de solución", "body": ["Clasifica con el rango: única, infinita o inconsistente, y nombra las variables libres si las hay."], "icon": "category"},
+              {"label": "Control 5", "formula": "A\\mathbf{x}=\\mathbf{b}", "description": "Sustituye la solución en el sistema original y confirma que todas las ecuaciones se cumplen."}
+            ]
+          },
+          "s4-stepper-3x3": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1.6 · Sistema 3×3 con solución única (nuevo caso)",
+            "statement": "Resolver por Gauss-Jordan $\\begin{cases} 2x+y-z=3 \\\\ x-y+2z=1 \\\\ 3x+2y+z=10 \\end{cases}$.",
+            "steps": [
+              {"title": "Matriz aumentada e intercambio", "body": "Intercambiamos $R_1 \\leftrightarrow R_2$ para tener un 1 como primer pivote y evitar fracciones.", "formula": "\\left[\\begin{array}{ccc|c} 1 & -1 & 2 & 1 \\\\ 2 & 1 & -1 & 3 \\\\ 3 & 2 & 1 & 10 \\end{array}\\right]", "final": false},
+              {"title": "Anular la primera columna", "body": "Con $R_2 \\to R_2 - 2R_1$ y $R_3 \\to R_3 - 3R_1$.", "formula": "\\left[\\begin{array}{ccc|c} 1 & -1 & 2 & 1 \\\\ 0 & 3 & -5 & 1 \\\\ 0 & 5 & -5 & 7 \\end{array}\\right]", "final": false},
+              {"title": "Normalizar el segundo pivote", "body": "Con $R_2 \\to \\tfrac{1}{3}R_2$ y luego $R_3 \\to R_3 - 5R_2$.", "formula": "\\left[\\begin{array}{ccc|c} 1 & -1 & 2 & 1 \\\\ 0 & 1 & -\\tfrac{5}{3} & \\tfrac{1}{3} \\\\ 0 & 0 & \\tfrac{10}{3} & \\tfrac{16}{3} \\end{array}\\right]", "final": false},
+              {"title": "Resolver la tercera columna", "body": "Con $R_3 \\to \\tfrac{3}{10}R_3$ obtenemos el pivote 1 en la columna 3, es decir $z=\\tfrac{8}{5}$.", "formula": "z=\\tfrac{8}{5}", "final": false},
+              {"title": "Sustituir hacia arriba (RREF)", "body": "De $R_2$, $y-\\tfrac{5}{3}z=\\tfrac{1}{3}\\Rightarrow y=3$; de $R_1$, $x-y+2z=1\\Rightarrow x=1+3-\\tfrac{16}{5}=\\tfrac{4}{5}$.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 0 & 0 & \\tfrac{4}{5} \\\\ 0 & 1 & 0 & 3 \\\\ 0 & 0 & 1 & \\tfrac{8}{5} \\end{array}\\right]", "final": false},
+              {"title": "Leer y verificar", "body": "La solución única es $x=\\tfrac{4}{5},\\;y=3,\\;z=\\tfrac{8}{5}$. Verificación en la primera ecuación: $2\\cdot\\tfrac{4}{5}+3-\\tfrac{8}{5}=\\tfrac{8}{5}-\\tfrac{8}{5}+3=3$, que coincide con el término independiente.", "formula": "x=\\tfrac{4}{5},\\quad y=3,\\quad z=\\tfrac{8}{5}", "final": true}
+            ]
+          },
+          "s4-teoria-3": {
+            "type": "theory-block",
+            "title": "Interpretar antes de entregar",
+            "eyebrow": "Cierre crítico",
+            "body": [
+              "Un resultado numérico no es todavía una respuesta de ingeniería. Hay que preguntarse qué significan los valores: si representan cantidades físicas, deben ser coherentes con el problema (positivos cuando corresponde, dentro de capacidades, con unidades correctas).",
+              "Cuando la solución es única, conviene confirmar que satisface todas las restricciones, no solo una. Cuando es infinita, hay que comunicar los grados de libertad y, si el problema lo exige, elegir una solución particular con un criterio explícito.",
+              "Y cuando no hay solución, la conclusión no es 'no se puede', sino 'con estas restricciones no se puede': eso orienta a revisar datos, relajar una condición o reformular el modelo. Interpretar es parte del trabajo, no un añadido opcional."
+            ],
+            "keyIdeas": [
+              {"icon": "engineering", "text": "Traduce los números a magnitudes con unidades y rango válido."},
+              {"icon": "checklist", "text": "Confirma todas las restricciones, no una sola."},
+              {"icon": "report_problem", "text": "Sin solución = el modelo, no la realidad, debe revisarse."}
+            ],
+            "closing": ["Cada resolución termina con una frase en lenguaje del problema, no solo con una terna de números."]
+          },
+          "s4-matching": {
+            "type": "matching",
+            "title": "Relaciona cada situación con su tipo de solución",
+            "pairs": [
+              {"word": "RREF con un pivote por incógnita y sin fila imposible", "meaning": "Solución única"},
+              {"word": "RREF consistente con una columna sin pivote", "meaning": "Infinitas soluciones (una variable libre)"},
+              {"word": "Aparece una fila [0 0 0 | k] con k distinto de cero", "meaning": "Sistema inconsistente (sin solución)"},
+              {"word": "Sistema homogéneo con más incógnitas que pivotes", "meaning": "Infinitas soluciones, incluida la trivial"}
+            ],
+            "options": ["Solución única", "Infinitas soluciones (una variable libre)", "Sistema inconsistente (sin solución)", "Infinitas soluciones, incluida la trivial"],
+            "feedbackCorrect": "Correcto: relacionaste la estructura de la matriz reducida con el tipo de solución que predice el rango.",
+            "feedbackIncomplete": "Revisa el criterio de rango: compara primero los rangos de $A$ y $[A|\\mathbf{b}]$ y luego el rango con el número de incógnitas."
+          },
+          "s4-accordion": {
+            "type": "accordion",
+            "title": "Dudas frecuentes en la práctica",
+            "items": [
+              {
+                "icon": "help_center",
+                "title": "¿Puedo intercambiar filas en cualquier momento?",
+                "open": true,
+                "body": [
+                  "Sí: el intercambio de filas es una operación elemental válida en cualquier etapa de la reducción y no altera la solución del sistema. Reordenar las ecuaciones no cambia el conjunto que las cumple.",
+                  "Su uso típico es estratégico: llevar arriba una fila con un 1 en la columna de trabajo, o evitar dividir por un número incómodo. También resuelve el bloqueo de un pivote que vale cero.",
+                  "Lo único que debes recordar es mover la fila completa, término independiente incluido; un intercambio parcial sí rompería el sistema."
+                ]
+              },
+              {
+                "icon": "calculate",
+                "title": "Aparecen muchas fracciones, ¿hice algo mal?",
+                "body": [
+                  "No necesariamente. Las fracciones son normales en Gauss-Jordan, sobre todo si los pivotes no son 1 de entrada. No indican error por sí mismas.",
+                  "Sin embargo, suelen reducirse eligiendo mejor el orden: buscar o construir un pivote igual a 1 antes de anular su columna evita propagar denominadores grandes.",
+                  "Si las fracciones se vuelven inmanejables, conviene revisar si un intercambio inicial habría simplificado todo. La verificación final, en cualquier caso, confirma si el resultado es correcto pese a las fracciones."
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "seccion-5": {
+        "kind": "theory",
+        "theme": "Transferencia a las ingenierías",
+        "badge": "Tema 01 · Escenario 5",
+        "navLabel": "Aplicación transversal",
+        "title": "Modelado transversal y síntesis del tema",
+        "learningOutcomeIds": ["RA1", "RA2"],
+        "methodologyMoment": "Fase 4",
+        "estimatedTime": "70 minutos",
+        "intro": [
+          "El mismo modelo lineal aparece en problemas muy distintos. En este escenario de transferencia verás cómo industrial, mecánica/mecatrónica y química/ambiental usan sistemas lineales y Gauss-Jordan, resolverás un balance de proceso completo y cerrarás el tema con una síntesis y una evidencia evaluable."
+        ],
+        "componentOrder": [
+          "s5-teoria-1",
+          "s5-carousel",
+          "s5-stepper-proceso",
+          "s5-teoria-2",
+          "s5-table",
+          "s5-flashcards",
+          "s5-teoria-3",
+          "s5-accordion",
+          "s5-evaluacion",
+          "s5-reflexion"
+        ],
+        "components": {
+          "s5-teoria-1": {
+            "type": "theory-block",
+            "title": "Un mismo modelo, tres ingenierías",
+            "eyebrow": "Transferencia disciplinar",
+            "body": [
+              "En ingeniería industrial, un plan de producción que debe agotar exactamente los inventarios de varios insumos se modela como $A\\mathbf{x}=\\mathbf{b}$: la matriz $A$ recoge cuánto consume cada producto de cada insumo y $\\mathbf{b}$ los inventarios disponibles. Una solución única es un plan factible exacto.",
+              "En ingeniería mecánica y mecatrónica, el equilibrio estático de una estructura simple impone que la suma de fuerzas y de momentos sea cero. Esas condiciones forman un sistema lineal en las tensiones de las barras; resolverlo da el valor y el signo de cada tensión, donde el signo distingue tracción de compresión.",
+              "En ingeniería química y ambiental, mezclar soluciones a distinta concentración para alcanzar una meta produce balances de masa lineales. Según las restricciones, el sistema puede tener solución única (volumen total fijo) o infinitas (familia de mezclas equivalentes), lo que conecta directamente con la interpretación de grados de libertad."
+            ],
+            "keyIdeas": [
+              {"icon": "factory", "text": "Industrial: plan que agota inventarios, $A\\mathbf{x}=\\mathbf{b}$."},
+              {"icon": "engineering", "text": "Mecánica/Mecatrónica: equilibrio estático y signo de las tensiones."},
+              {"icon": "science", "text": "Química/Ambiental: balances de masa con única o infinitas soluciones."}
+            ],
+            "example": {
+              "title": "Industrial en cifras",
+              "body": ["Con $A=\\begin{bmatrix}2&1&1\\\\1&3&2\\\\1&1&4\\end{bmatrix}$ (consumos) y $\\mathbf{b}=\\begin{bmatrix}40\\\\50\\\\60\\end{bmatrix}$ (inventarios), resolver $A\\mathbf{x}=\\mathbf{b}$ da el plan $\\mathbf{x}$ que usa cada insumo sin sobrante; una solución única significa un plan factible exacto."]
+            },
+            "closing": ["Reconocer el modelo lineal compartido te permite reutilizar el mismo método en problemas de toda tu carrera."]
+          },
+          "s5-carousel": {
+            "type": "carousel",
+            "title": "El modelo lineal en cada disciplina",
+            "description": "Cómo se traduce un problema típico de cada ingeniería al sistema $A\\mathbf{x}=\\mathbf{b}$.",
+            "slides": [
+              {"label": "Industrial", "title": "Plan de producción", "body": ["Las incógnitas son las cantidades a producir; cada fila es el consumo de un insumo; $\\mathbf{b}$ son los inventarios. La solución única es el plan que los agota."], "icon": "factory"},
+              {"label": "Mecánica", "title": "Equilibrio de fuerzas", "body": ["Las incógnitas son las tensiones de las barras; las filas son las sumas de fuerzas y momentos igualadas a cero; el signo indica tracción o compresión."], "icon": "engineering"},
+              {"label": "Química", "title": "Balance de masa", "body": ["Las incógnitas son los volúmenes a mezclar; las filas son el balance total y por componente; la meta es la concentración objetivo."], "icon": "science"},
+              {"label": "Energías", "title": "Red de flujos", "body": ["Las incógnitas son los caudales o corrientes en los tramos; cada nodo aporta una ecuación de conservación que forma el sistema lineal."], "icon": "bolt"},
+              {"label": "Síntesis", "formula": "A\\mathbf{x}=\\mathbf{b}", "description": "Cambian las unidades y el significado, pero la estructura matemática y el método de Gauss-Jordan son los mismos."}
+            ]
+          },
+          "s5-stepper-proceso": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1.7 · Balance transversal de un proceso de tres corrientes",
+            "statement": "Un tanque mezcla tres corrientes de caudales $x_1,x_2,x_3$ (L/min). El balance de masa total exige $x_1+x_2+x_3=100$; el balance de un componente A exige $0.1x_1+0.3x_2+0.5x_3=30$; una restricción de operación fija $x_1=2x_3$. Hallar los caudales y verificar su factibilidad.",
+            "steps": [
+              {"title": "Plantear el sistema", "body": "Las tres restricciones (masa total, componente A y operación) dan tres ecuaciones lineales en los caudales.", "formula": "\\begin{cases} x_1 + x_2 + x_3 = 100 \\\\ 0.1\\,x_1 + 0.3\\,x_2 + 0.5\\,x_3 = 30 \\\\ x_1 - 2x_3 = 0 \\end{cases}", "final": false},
+              {"title": "Matriz aumentada", "body": "Se ordenan las incógnitas $x_1,x_2,x_3$ y se escribe $[A\\,|\\,\\mathbf{b}]$.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 1 & 1 & 100 \\\\ 0.1 & 0.3 & 0.5 & 30 \\\\ 1 & 0 & -2 & 0 \\end{array}\\right]", "final": false},
+              {"title": "Anular la primera columna", "body": "Con $R_2 \\to R_2 - 0.1R_1$ y $R_3 \\to R_3 - R_1$.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 1 & 1 & 100 \\\\ 0 & 0.2 & 0.4 & 20 \\\\ 0 & -1 & -3 & -100 \\end{array}\\right]", "final": false},
+              {"title": "Normalizar y reducir la segunda columna", "body": "Con $R_2 \\to 5R_2$ (pivote 1) y luego $R_3 \\to R_3 + R_2$ y $R_1 \\to R_1 - R_2$.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 0 & -1 & 0 \\\\ 0 & 1 & 2 & 100 \\\\ 0 & 0 & -1 & 0 \\end{array}\\right]", "final": false},
+              {"title": "Resolver la tercera columna", "body": "De la fila 3, $-x_3=0 \\Rightarrow x_3=0$; sustituyendo hacia arriba, $x_2=100$ y $x_1=0$.", "formula": "x_3=0,\\quad x_2=100,\\quad x_1=0", "final": false},
+              {"title": "Verificar factibilidad e interpretar", "body": "La solución es única y no negativa: caudales $x_1=0$, $x_2=100$, $x_3=0$ L/min. Cumple los tres balances ($0+100+0=100$; $0+30+0=30$; $0=2\\cdot0$). El proceso es factible usando solo la corriente 2, que ya aporta la concentración objetivo.", "formula": "(x_1,x_2,x_3)=(0,\\;100,\\;0)\\ \\text{L/min}", "final": true}
+            ]
+          },
+          "s5-teoria-2": {
+            "type": "theory-block",
+            "title": "Elegir el método según el problema",
+            "eyebrow": "Criterio práctico",
+            "body": [
+              "Gauss-Jordan es un método general: resuelve cualquier sistema lineal y, de paso, revela el rango y el tipo de solución. Por eso es la herramienta de referencia cuando no se conoce de antemano si el sistema tiene solución única, infinita o ninguna.",
+              "Para sistemas pequeños y bien determinados existen alternativas (la inversa o la regla de Cramer, que verás en temas posteriores), pero Gauss-Jordan sigue siendo el más informativo cuando interesa diagnosticar la consistencia y los grados de libertad.",
+              "En la práctica de ingeniería, además, el método se implementa en software; entender el procedimiento a mano permite interpretar y validar lo que el computador entrega, detectar sistemas mal condicionados y dar sentido físico a soluciones únicas, infinitas o inexistentes."
+            ],
+            "keyIdeas": [
+              {"icon": "auto_fix_high", "text": "Gauss-Jordan es general y diagnostica el tipo de solución."},
+              {"icon": "memory", "text": "Entender el método a mano permite validar resultados de software."},
+              {"icon": "insights", "text": "El rango aporta información que un simple 'resolver' no muestra."}
+            ],
+            "closing": ["Elige el método por lo que necesitas saber: para diagnosticar consistencia, Gauss-Jordan es difícil de superar."]
+          },
+          "s5-table": {
+            "type": "table",
+            "title": "Tres ingenierías, un mismo sistema lineal",
+            "description": "Comparación del significado de $A$, $\\mathbf{x}$, $\\mathbf{b}$ y del tipo de solución en cada disciplina.",
+            "columns": ["Disciplina", "Qué modela $A\\mathbf{x}=\\mathbf{b}$", "Incógnitas $\\mathbf{x}$", "Lectura del tipo de solución"],
+            "rows": [
+              {"cells": ["Industrial", "Consumo de insumos por producto frente a inventarios", "Cantidades a producir", "Única = plan que agota inventarios; sin solución = metas incompatibles con el stock"]},
+              {"cells": ["Mecánica / Mecatrónica", "Equilibrio de fuerzas y momentos en una estructura", "Tensiones de las barras", {"badge": "Signo = tracción/compresión", "tone": "info"}]},
+              {"cells": ["Química / Ambiental", "Balances de masa total y por componente", "Volúmenes o caudales a mezclar", "Infinitas = familia de mezclas equivalentes; única = volumen total fijo"]},
+              {"cells": ["Energías", "Conservación en los nodos de una red", "Caudales o corrientes por tramo", "Única = operación determinada; libre = margen de despacho"]}
+            ]
+          },
+          "s5-flashcards": {
+            "type": "flashcards",
+            "title": "Transferencia: términos aplicados",
+            "description": "Vocabulario que conecta el modelo lineal con las aplicaciones de ingeniería.",
+            "cards": [
+              {"term": "Balance de masa", "definition": "Restricción que iguala la masa o el volumen que entra con el que sale; en forma lineal genera una ecuación del sistema $A\\mathbf{x}=\\mathbf{b}$.", "icon": "science"},
+              {"term": "Plan factible", "definition": "Solución del sistema que además respeta las condiciones físicas del problema (cantidades no negativas, dentro de capacidades).", "icon": "verified"},
+              {"term": "Grados de libertad", "definition": "Número de variables libres $n-\\operatorname{rango}$; en diseño representan el margen para elegir entre soluciones equivalentes.", "icon": "tune"},
+              {"term": "Equilibrio estático", "definition": "Condición de fuerzas y momentos nulos que, escrita en forma lineal, determina las tensiones de una estructura.", "icon": "engineering"},
+              {"term": "Restricción de operación", "definition": "Condición adicional impuesta por el proceso (una relación fija entre caudales, una capacidad), que se incorpora como una ecuación más del sistema.", "icon": "settings"}
+            ]
+          },
+          "s5-teoria-3": {
+            "type": "theory-block",
+            "title": "Síntesis del Tema 01",
+            "eyebrow": "Cierre integrador",
+            "body": [
+              "El recorrido fue de lo concreto a lo general: partimos de traducir un problema de ingeniería a un sistema lineal y a su matriz aumentada, aprendimos a transformarlo con operaciones de fila hasta la forma escalonada reducida, y cerramos clasificando la solución mediante el rango.",
+              "La idea unificadora es que un sistema lineal codifica restricciones simultáneas y que su solución —única, infinita o inexistente— tiene siempre una lectura en el problema modelado. Gauss-Jordan es el procedimiento que materializa esa lectura de forma sistemática y verificable.",
+              "Con esta base, los temas siguientes (matrices y sus operaciones, determinantes e inversa, vectores, rectas y planos) ampliarán el mismo lenguaje. Todo lo que sigue se apoya en saber plantear, reducir e interpretar un sistema lineal."
+            ],
+            "keyIdeas": [
+              {"icon": "route", "text": "Plantear, reducir, clasificar: el ciclo completo del tema."},
+              {"icon": "hub", "text": "El rango unifica los tres tipos de solución."},
+              {"icon": "trending_up", "text": "Esta base sostiene los temas siguientes del curso."}
+            ],
+            "closing": ["Si puedes modelar, reducir y leer el tipo de solución de un sistema, dominas el corazón de este tema."]
+          },
+          "s5-accordion": {
+            "type": "accordion",
+            "title": "Profundizaciones para la transferencia",
+            "items": [
+              {
+                "icon": "engineering",
+                "title": "Por qué el signo importa en estructuras",
+                "open": true,
+                "body": [
+                  "Al resolver el equilibrio de una armadura, las tensiones se obtienen como las incógnitas de un sistema lineal. El valor absoluto indica la magnitud del esfuerzo, pero es el signo el que comunica el comportamiento físico de la barra.",
+                  "Un signo positivo, según la convención adoptada, suele indicar tracción (la barra se estira) y uno negativo, compresión (la barra se acorta). Interpretar mal el signo puede llevar a dimensionar una pieza para el esfuerzo equivocado.",
+                  "Por eso, en mecánica y mecatrónica, resolver el sistema es solo la mitad del trabajo: la otra mitad es leer correctamente cada signo dentro de la convención del problema."
+                ]
+              },
+              {
+                "icon": "science",
+                "title": "Cuándo un balance químico tiene infinitas soluciones",
+                "body": [
+                  "Si las restricciones de un balance de masa no fijan por completo la mezcla —por ejemplo, cuando no se impone el volumen total—, el sistema puede quedar con menos ecuaciones independientes que incógnitas y, por tanto, con variables libres.",
+                  "Eso se traduce en una familia infinita de mezclas que cumplen la concentración objetivo. Lejos de ser un fallo, es información: existe un margen para elegir, que suele cerrarse con un criterio de costo, disponibilidad o seguridad.",
+                  "Reconocer estos grados de libertad ayuda a no sobre-restringir el modelo y a aprovechar la flexibilidad real del proceso."
+                ]
+              },
+              {
+                "icon": "report_problem",
+                "title": "Qué hacer cuando el modelo es inconsistente",
+                "body": [
+                  "Un sistema sin solución no significa que el problema físico sea imposible; significa que, tal como se formularon, las restricciones no pueden cumplirse a la vez con los datos dados.",
+                  "La respuesta de ingeniería es revisar el modelo: verificar los datos de entrada, comprobar si alguna restricción está mal planteada o si dos condiciones se contradicen, y considerar relajar una meta o ampliar un recurso.",
+                  "Detectar la inconsistencia a tiempo, gracias a la fila imposible $0=k$, evita perseguir una solución que no existe y reorienta el esfuerzo hacia una formulación viable."
+                ]
+              }
+            ]
+          },
+          "s5-evaluacion": {
+            "type": "evaluation-activity",
+            "title": "Evidencia evaluable: modelar y resolver un sistema aplicado",
+            "learningOutcomeIds": ["RA1", "RA2"],
+            "criterion": "CE1: plantea correctamente el sistema lineal y su matriz aumentada a partir de un enunciado de su disciplina. CE2: aplica Gauss-Jordan, clasifica el tipo de solución por el rango e interpreta el resultado en el contexto.",
+            "evidence": "Documento con el planteamiento del sistema, la matriz aumentada, la reducción paso a paso hasta la RREF, la clasificación del tipo de solución y una interpretación física del resultado.",
+            "technique": "Estudio de caso disciplinar",
+            "instrument": "Rúbrica analítica",
+            "evaluationMoment": "cierre",
+            "participationType": "individual",
+            "feedback": {
+              "strengths": "Modelado fiel del enunciado y reducción correcta con verificación.",
+              "improvement": "Cuidar la actualización del término independiente y la justificación del tipo de solución.",
+              "reinforcement": "Repetir un ejercicio de cada tipo (única, infinita, inconsistente) usando la lista de control del Escenario 4.",
+              "nextStep": "Conectar la solución con la elección de un plan o diseño cuando existan grados de libertad."
+            },
+            "rubric": {
+              "type": "analitica",
+              "levels": ["No acreditable", "Deficiente", "Insuficiente", "Aceptable", "Bueno", "Muy bueno", "Sobresaliente"],
+              "criteria": [
+                {"name": "Modelado (CE1)", "descriptors": {"Aceptable": "Plantea el sistema con errores menores en coeficientes o términos.", "Sobresaliente": "Traduce el enunciado a un sistema y matriz aumentada correctos, con incógnitas y unidades bien definidas."}},
+                {"name": "Resolución y clasificación (CE2)", "descriptors": {"Aceptable": "Reduce con algún descuido y clasifica con ayuda.", "Sobresaliente": "Reduce a RREF sin errores, clasifica por el rango y verifica la solución."}},
+                {"name": "Interpretación", "descriptors": {"Aceptable": "Da el resultado numérico con interpretación parcial.", "Sobresaliente": "Interpreta el tipo de solución en términos físicos del problema y discute la factibilidad."}}
+              ]
+            }
+          },
+          "s5-reflexion": {
+            "type": "reflection",
+            "title": "Reflexión de cierre",
+            "prompts": [
+              "Piensa en un problema de tu propia carrera que pueda escribirse como $A\\mathbf{x}=\\mathbf{b}$: ¿qué representarían las incógnitas, los coeficientes y los términos independientes?",
+              "Si ese sistema tuviera infinitas soluciones, ¿qué criterio adicional usarías para elegir una? Si no tuviera ninguna, ¿qué restricción revisarías primero?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "pdf": {
+    "guideLabel": "GUÍA DE ESTUDIO VIRTUAL",
+    "kicker": "Aprendizaje guiado · Práctica aplicada · Autoevaluación",
+    "institution": "Universidad de América",
+    "year": "2026",
+    "title": "Álgebra Lineal · Tema 01",
+    "subtitle": "Escenario de aprendizaje 01 de 05 — Sistemas de ecuaciones lineales y método de Gauss-Jordan",
+    "purpose": "Guiar al estudiante para que modele situaciones de las ingenierías como sistemas de ecuaciones lineales, los resuelva con el método de Gauss-Jordan e interprete el tipo de solución según el rango.",
+    "structure": "Teoría · ejemplos resueltos · interpretación · banco de ejercicios · referencias.",
+    "sectionOrder": ["pdf-intro", "pdf-seccion-1", "pdf-seccion-2", "pdf-seccion-3", "pdf-seccion-4", "pdf-seccion-5"],
+    "sections": {
+      "pdf-intro": {
+        "title": "Presentación del tema",
+        "intro": [
+          "Esta guía imprimible acompaña el Escenario de aprendizaje 01 del curso de Álgebra Lineal. Reúne la teoría, los ejemplos resueltos y un banco de ejercicios para estudiar de forma autónoma el modelado y la resolución de sistemas de ecuaciones lineales con el método de Gauss-Jordan."
+        ],
+        "componentOrder": ["pdf-intro-objetivos", "pdf-intro-mapa", "pdf-intro-saberes"],
+        "components": {
+          "pdf-intro-objetivos": {
+            "type": "objectives",
+            "title": "Resultados de aprendizaje del tema",
+            "items": [
+              {"icon": "track_changes", "text": "RA1: modelar situaciones de ingeniería como sistemas de ecuaciones lineales en forma escalar y matricial."},
+              {"icon": "track_changes", "text": "RA2: resolver sistemas con Gauss-Jordan e interpretar el tipo de solución según el rango."}
+            ]
+          },
+          "pdf-intro-mapa": {
+            "type": "list",
+            "title": "Mapa de la guía",
+            "ordered": true,
+            "items": [
+              "Del problema de ingeniería al sistema lineal y la matriz aumentada.",
+              "Operaciones elementales de fila y forma escalonada reducida.",
+              "Existencia y unicidad: el rango y el teorema de Rouché-Frobenius.",
+              "Ejemplos resueltos paso a paso y aplicaciones transversales.",
+              "Banco de ejercicios y referencias."
+            ]
+          },
+          "pdf-intro-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Preguntas orientadoras",
+            "body": [
+              "¿Cómo se traduce un problema de ingeniería a un sistema de ecuaciones lineales?",
+              "¿Cuándo un sistema tiene solución única, infinitas soluciones o ninguna?"
+            ]
+          }
+        }
+      },
+      "pdf-seccion-1": {
+        "title": "1. Del problema de ingeniería al sistema lineal",
+        "intro": [
+          "Toda resolución empieza por un buen planteamiento. Esta sección define la ecuación lineal, el sistema y su representación matricial, y muestra cómo construir la matriz aumentada $[A\\,|\\,\\mathbf{b}]$ sobre la que actúa el método."
+        ],
+        "componentOrder": ["pdf-s1-teoria", "pdf-s1-formula", "pdf-s1-ejemplo"],
+        "components": {
+          "pdf-s1-teoria": {
+            "type": "theory-block",
+            "title": "Ecuación lineal, sistema y forma matricial",
+            "body": [
+              "Una ecuación lineal $a_1x_1+a_2x_2+\\dots+a_nx_n=b$ relaciona incógnitas a la potencia uno mediante coeficientes constantes. Un sistema reúne $m$ de estas ecuaciones con $n$ incógnitas que deben cumplirse de forma simultánea; cada ecuación es una restricción del problema.",
+              "Los coeficientes provienen de los datos (consumos, resistencias, concentraciones), las incógnitas son las cantidades buscadas y los términos independientes representan metas o recursos. Al agrupar todo se obtiene la forma matricial $A\\mathbf{x}=\\mathbf{b}$ y, para operar, la matriz aumentada $[A\\,|\\,\\mathbf{b}]$."
+            ],
+            "keyIdeas": [
+              {"icon": "linear_scale", "text": "Linealidad: sin productos ni potencias de incógnitas."},
+              {"icon": "grid_on", "text": "$A$ guarda la estructura; $\\mathbf{b}$ las metas; $\\mathbf{x}$ lo buscado."}
+            ]
+          },
+          "pdf-s1-formula": {
+            "type": "formula",
+            "title": "Forma matricial y matriz aumentada",
+            "context": ["La representación compacta separa la estructura del problema de sus metas y prepara la matriz para la reducción."],
+            "latex": "A\\mathbf{x}=\\mathbf{b}\\ \\Longleftrightarrow\\ [A\\,|\\,\\mathbf{b}]=\\left[\\begin{array}{ccc|c} a_{11} & \\cdots & a_{1n} & b_1 \\\\ \\vdots & \\ddots & \\vdots & \\vdots \\\\ a_{m1} & \\cdots & a_{mn} & b_m \\end{array}\\right]",
+            "variables": [
+              {"symbol": "A", "description": "matriz de coeficientes de orden $m\\times n$."},
+              {"symbol": "\\mathbf{x}", "description": "vector de incógnitas."},
+              {"symbol": "\\mathbf{b}", "description": "vector de términos independientes."}
+            ],
+            "explanation": ["La barra distingue los coeficientes del término independiente; al operar filas, ambas partes se transforman juntas."]
+          },
+          "pdf-s1-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo 1.1 · Del enunciado a la matriz aumentada",
+            "context": ["Mezclar una solución al 20 % ($x_1$) y otra al 50 % ($x_2$) para obtener 100 L al 30 %."],
+            "formula": "\\begin{cases} x_1+x_2=100 \\\\ 0.2x_1+0.5x_2=30 \\end{cases}\\ \\Rightarrow\\ \\left[\\begin{array}{cc|c} 1 & 1 & 100 \\\\ 0.2 & 0.5 & 30 \\end{array}\\right]",
+            "solution": ["Reduciendo, $x_2=\\tfrac{100}{3}$ L y $x_1=\\tfrac{200}{3}$ L; ambos volúmenes son positivos, por lo que la mezcla es físicamente factible."]
+          }
+        }
+      },
+      "pdf-seccion-2": {
+        "title": "2. Operaciones de fila y forma escalonada reducida",
+        "intro": [
+          "El método de Gauss-Jordan transforma la matriz aumentada sin alterar la solución hasta una forma donde las incógnitas se leen directamente. Esta sección presenta las operaciones elementales, la RREF y un ejemplo 3×3 completo."
+        ],
+        "componentOrder": ["pdf-s2-teoria", "pdf-s2-ejemplo"],
+        "components": {
+          "pdf-s2-teoria": {
+            "type": "theory-block",
+            "title": "Operaciones elementales y forma escalonada reducida",
+            "body": [
+              "Tres operaciones generan sistemas equivalentes: el intercambio $R_i \\leftrightarrow R_j$, el escalamiento $R_i \\to kR_i$ con $k\\neq0$ y la combinación $R_i \\to R_i+kR_j$. Ninguna añade ni elimina soluciones.",
+              "La eliminación gaussiana llega a la forma escalonada (ceros bajo los pivotes) y resuelve por sustitución; Gauss-Jordan continúa hasta la forma escalonada reducida (RREF), con pivotes 1 y ceros encima y debajo, donde la solución se lee sin sustituir."
+            ],
+            "keyIdeas": [
+              {"icon": "build", "text": "Tres operaciones de fila que preservan la solución."},
+              {"icon": "done_all", "text": "RREF: pivotes 1, ceros arriba y abajo, filas nulas al final."}
+            ]
+          },
+          "pdf-s2-ejemplo": {
+            "type": "stepper",
+            "title": "Ejemplo 1.2 · Sistema 3×3 con solución única",
+            "statement": "Resolver $\\begin{cases} x+y+z=6 \\\\ 2x-y+z=3 \\\\ x+2y-z=2 \\end{cases}$ por Gauss-Jordan.",
+            "steps": [
+              {"title": "Matriz aumentada", "body": "Se escriben coeficientes y términos.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\\\ 2 & -1 & 1 & 3 \\\\ 1 & 2 & -1 & 2 \\end{array}\\right]", "final": false},
+              {"title": "Anular la primera columna", "body": "$R_2 \\to R_2-2R_1$, $R_3 \\to R_3-R_1$.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\\\ 0 & -3 & -1 & -9 \\\\ 0 & 1 & -2 & -4 \\end{array}\\right]", "final": false},
+              {"title": "Reducir hasta RREF", "body": "Normalizando pivotes y anulando columnas se llega a la identidad.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 0 & 0 & 1 \\\\ 0 & 1 & 0 & 2 \\\\ 0 & 0 & 1 & 3 \\end{array}\\right]", "final": false},
+              {"title": "Leer y verificar", "body": "Solución $x=1,\\;y=2,\\;z=3$; verificación: $1+2+3=6$, $2-2+3=3$, $1+4-3=2$.", "formula": "x=1,\\quad y=2,\\quad z=3", "final": true}
+            ]
+          }
+        }
+      },
+      "pdf-seccion-3": {
+        "title": "3. Existencia y unicidad: el rango",
+        "intro": [
+          "El número de pivotes (el rango) decide cuántas soluciones tiene un sistema. Esta sección formaliza el teorema de Rouché-Frobenius, lo ilustra con un gráfico cualitativo y desarrolla los casos de infinitas soluciones e inconsistencia."
+        ],
+        "componentOrder": ["pdf-s3-teoria", "pdf-s3-chart", "pdf-s3-ejemplo-inf", "pdf-s3-ejemplo-inc"],
+        "components": {
+          "pdf-s3-teoria": {
+            "type": "theory-block",
+            "title": "Rango y teorema de Rouché-Frobenius",
+            "body": [
+              "El rango es el número de pivotes en la RREF: las ecuaciones realmente independientes. Comparar $\\operatorname{rango}(A)$ con $\\operatorname{rango}([A|\\mathbf{b}])$ decide la compatibilidad, y comparar el rango con el número de incógnitas $n$ distingue solución única de infinitas.",
+              "Si $\\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])=n$, la solución es única; si la igualdad de rangos se cumple pero es menor que $n$, hay infinitas soluciones con $n-\\operatorname{rango}$ variables libres; si $\\operatorname{rango}(A)<\\operatorname{rango}([A|\\mathbf{b}])$, el sistema es inconsistente."
+            ],
+            "formula": "\\begin{cases} \\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])=n & \\text{única} \\\\ \\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])<n & \\text{infinitas} \\\\ \\operatorname{rango}(A)<\\operatorname{rango}([A|\\mathbf{b}]) & \\text{ninguna} \\end{cases}"
+          },
+          "pdf-s3-chart": {
+            "type": "chart",
+            "chartType": "bar",
+            "title": "Número de soluciones según la relación de rangos",
+            "description": ["El gráfico resume el teorema anterior: traduce cada relación de rangos al número de soluciones que produce."],
+            "note": "El eje horizontal muestra los tres casos del teorema y el vertical el número de soluciones de forma cualitativa (1 = única, valor alto = infinitas, 0 = ninguna). Solo cuando los dos rangos coinciden hay solución; igualar el rango con $n$ fuerza la unicidad, y un rango menor que $n$ produce los grados de libertad de las infinitas soluciones.",
+            "height": "300px",
+            "labels": ["rango(A)=rango([A|b])=n", "rango(A)=rango([A|b])<n", "rango(A)<rango([A|b])"],
+            "datasets": [{"label": "Número de soluciones (cualitativo)", "data": [1, 100, 0]}],
+            "caption": "Solo la igualdad de rangos con el número de incógnitas garantiza una solución única.",
+            "options": {"scales": {"y": {"title": {"display": true, "text": "Soluciones (1 = única, alto = infinitas, 0 = ninguna)"}}}}
+          },
+          "pdf-s3-ejemplo-inf": {
+            "type": "example",
+            "title": "Ejemplo 1.3 · Infinitas soluciones",
+            "context": ["Resolver $\\{x+2y-z=3,\\ 2x+4y-2z=6\\}$."],
+            "formula": "\\left[\\begin{array}{ccc|c} 1 & 2 & -1 & 3 \\\\ 2 & 4 & -2 & 6 \\end{array}\\right]\\ \\xrightarrow{R_2\\to R_2-2R_1}\\ \\left[\\begin{array}{ccc|c} 1 & 2 & -1 & 3 \\\\ 0 & 0 & 0 & 0 \\end{array}\\right]",
+            "solution": ["Rango 1 con tres incógnitas: dos variables libres ($y=s$, $z=t$) y $x=3-2s+t$. Conjunto solución $\\{(3-2s+t,\\,s,\\,t):s,t\\in\\mathbb{R}\\}$; el sistema tiene dos grados de libertad."]
+          },
+          "pdf-s3-ejemplo-inc": {
+            "type": "example",
+            "title": "Ejemplo 1.4 · Sistema inconsistente",
+            "context": ["Analizar $\\{x+y=2,\\ 2x+2y=5\\}$."],
+            "formula": "\\left[\\begin{array}{cc|c} 1 & 1 & 2 \\\\ 2 & 2 & 5 \\end{array}\\right]\\ \\xrightarrow{R_2\\to R_2-2R_1}\\ \\left[\\begin{array}{cc|c} 1 & 1 & 2 \\\\ 0 & 0 & 1 \\end{array}\\right]",
+            "solution": ["La fila $[\\,0\\ 0\\ |\\ 1\\,]$ afirma $0=1$: $\\operatorname{rango}(A)=1<\\operatorname{rango}([A|\\mathbf{b}])=2$. El sistema no tiene solución; las rectas son paralelas."]
+          }
+        }
+      },
+      "pdf-seccion-4": {
+        "title": "4. Aplicaciones transversales en ingeniería",
+        "intro": [
+          "El mismo modelo lineal aparece en distintas disciplinas. Esta sección muestra cómo industrial, mecánica/mecatrónica y química/ambiental usan sistemas lineales, con un balance de proceso resuelto y una tabla comparativa."
+        ],
+        "componentOrder": ["pdf-s4-teoria", "pdf-s4-tabla", "pdf-s4-ejemplo"],
+        "components": {
+          "pdf-s4-teoria": {
+            "type": "theory-block",
+            "title": "Un modelo lineal en tres ingenierías",
+            "body": [
+              "En ingeniería industrial, un plan de producción que agota inventarios se escribe como $A\\mathbf{x}=\\mathbf{b}$, con $A$ los consumos y $\\mathbf{b}$ los inventarios; la solución única es el plan factible exacto.",
+              "En ingeniería mecánica y mecatrónica, el equilibrio estático de una estructura produce un sistema lineal en las tensiones de las barras, donde el signo distingue tracción de compresión. En ingeniería química y ambiental, los balances de masa dan lugar a sistemas cuyo desenlace depende de las restricciones: con el volumen total fijado aparece una única mezcla, y sin esa condición surge un conjunto infinito de combinaciones que cumplen la misma meta."
+            ]
+          },
+          "pdf-s4-tabla": {
+            "type": "table",
+            "title": "Tres ingenierías, un mismo sistema lineal",
+            "columns": ["Disciplina", "Qué modela $A\\mathbf{x}=\\mathbf{b}$", "Incógnitas", "Lectura del tipo de solución"],
+            "rows": [
+              {"cells": ["Industrial", "Consumo de insumos frente a inventarios", "Cantidades a producir", "Única = plan que agota inventarios"]},
+              {"cells": ["Mecánica / Mecatrónica", "Equilibrio de fuerzas y momentos", "Tensiones de las barras", "El signo indica tracción o compresión"]},
+              {"cells": ["Química / Ambiental", "Balances de masa total y por componente", "Volúmenes o caudales a mezclar", "Infinitas = familia de mezclas; única = volumen fijo"]}
+            ]
+          },
+          "pdf-s4-ejemplo": {
+            "type": "stepper",
+            "title": "Ejemplo 1.7 · Balance de un proceso de tres corrientes",
+            "statement": "Caudales $x_1,x_2,x_3$ (L/min) con $x_1+x_2+x_3=100$, $0.1x_1+0.3x_2+0.5x_3=30$ y $x_1=2x_3$.",
+            "steps": [
+              {"title": "Matriz aumentada", "body": "Se ordenan las incógnitas y se escribe el sistema.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 1 & 1 & 100 \\\\ 0.1 & 0.3 & 0.5 & 30 \\\\ 1 & 0 & -2 & 0 \\end{array}\\right]", "final": false},
+              {"title": "Reducir a RREF", "body": "Las operaciones de fila llevan el bloque izquierdo a la identidad.", "formula": "\\left[\\begin{array}{ccc|c} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 100 \\\\ 0 & 0 & 1 & 0 \\end{array}\\right]", "final": false},
+              {"title": "Leer y verificar", "body": "Solución única y no negativa $x_1=0$, $x_2=100$, $x_3=0$ L/min; cumple los tres balances, así que el proceso es factible.", "formula": "(x_1,x_2,x_3)=(0,\\;100,\\;0)\\ \\text{L/min}", "final": true}
+            ]
+          }
+        }
+      },
+      "pdf-seccion-5": {
+        "title": "5. Banco de ejercicios y referencias",
+        "intro": [
+          "Resuelve los siguientes ejercicios aplicando el ciclo completo: plantear, reducir con Gauss-Jordan, clasificar por el rango e interpretar el resultado. Al final encontrarás las referencias del tema."
+        ],
+        "componentOrder": ["pdf-s5-banco", "pdf-s5-referencias"],
+        "components": {
+          "pdf-s5-banco": {
+            "type": "exercise-set",
+            "title": "Banco de ejercicios del Tema 01",
+            "items": [
+              {"prompt": "Resuelve por Gauss-Jordan y verifica la solución.", "formula": "\\begin{cases} x+y+z=4 \\\\ 2x+3y-z=5 \\\\ x-y+2z=3 \\end{cases}", "answer": "Solución única; reduce a RREF y comprueba en las tres ecuaciones."},
+              {"prompt": "Clasifica el sistema y, si tiene infinitas soluciones, parametrízalas.", "formula": "\\begin{cases} x-2y+z=1 \\\\ 2x-4y+2z=2 \\end{cases}", "answer": "Infinitas soluciones (rango 1, dos variables libres); $\\{(1+2s-t,\\,s,\\,t)\\}$."},
+              {"prompt": "Determina si el sistema es consistente.", "formula": "\\begin{cases} 3x+y=4 \\\\ 6x+2y=9 \\end{cases}", "answer": "Inconsistente: aparece la fila $0=1$; rectas paralelas."},
+              {"prompt": "Halla todas las soluciones del sistema homogéneo.", "formula": "\\begin{cases} x+y-z=0 \\\\ 2x-y+z=0 \\end{cases}", "answer": "Infinitas soluciones con una variable libre; incluye la trivial $(0,0,0)$."},
+              {"prompt": "Modela y resuelve: tres líneas consumen insumos según $A=\\begin{bmatrix}2&1&1\\\\1&3&2\\\\1&1&4\\end{bmatrix}$ para agotar $\\mathbf{b}=\\begin{bmatrix}40\\\\50\\\\60\\end{bmatrix}$.", "formula": "A\\mathbf{x}=\\mathbf{b}", "answer": "Resuelve con Gauss-Jordan; verifica que el plan sea no negativo (factible)."}
+            ]
+          },
+          "pdf-s5-referencias": {
+            "type": "references",
+            "title": "Referencias",
+            "items": [
+              "Grossman, S. I. (2008). Álgebra lineal (6.ª ed.). McGraw-Hill.",
+              "Larson, R. (2010). Fundamentos de álgebra lineal (6.ª ed.). Cengage Learning.",
+              "Recursos didácticos (figuras y gráfico del tema): Elaboración propia."
+            ]
+          }
+        }
+      }
+    }
+  }
+}

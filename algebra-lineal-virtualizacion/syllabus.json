@@ -1,0 +1,670 @@
+{
+  "source": "FO-GAP-003_Syllabus  v5_Algebra LIneal.xlsx",
+  "format": "xlsx",
+  "cells": {
+    "SYLLABUS": [
+      [
+        "Código: FO-GAP-003",
+        "Fecha: 30 enero de 2025",
+        "Versión: 05"
+      ],
+      [
+        "Proceso: Gestión de Aprendizaje",
+        "Formato: Syllabus desde el enfoque de resultados de aprendizaje para pregrado y posgrado"
+      ],
+      [
+        "1. ASPECTOS DEL SYLLABUS"
+      ],
+      [
+        "|||   SELECCIONAR PROGRAMA  - CÓDIGO CINE 2013   |||"
+      ],
+      [
+        "NIVEL DE FORMACIÓN",
+        "PROFESIONAL",
+        "FACULTAD",
+        "FACULTAD DE INGENIERÍA"
+      ],
+      [
+        "PROGRAMA ACADÉMICO",
+        "INGENIERIA DE PETRÓLEOS No. Registro SNIES: 1335",
+        "NOMBRE DE LA ASIGNATURA",
+        "ÁLGEBRA LINEAL"
+      ],
+      [
+        "CÓDIGO DE LA ASIGNATURA",
+        "131",
+        "TIPO DE ASIGNATURA",
+        "TEÓRICO"
+      ],
+      [
+        "CAMPO DE FORMACIÓN INSTITUCIONAL",
+        "BÁSICO DE FUNDAMENTACIÓN",
+        "ÁREA",
+        "MATEMÁTICAS"
+      ],
+      [
+        "MODALIDAD",
+        "PRESENCIAL",
+        "SEMESTRE",
+        "2"
+      ],
+      [
+        "CRÉDITOS",
+        "3",
+        "HORAS TOTALES",
+        "144"
+      ],
+      [
+        "HORAS DE TRABAJO AUTÓNOMO",
+        "96",
+        "HORAS DE DOCENCIA DIRECTA",
+        "48"
+      ],
+      [
+        "OBJETIVO DE DESARROLLO SOSTENIBLE - UNO",
+        "11. Ciudades y comunidades sostenibles",
+        "META ODS -",
+        "11.6"
+      ],
+      [
+        "OBJETIVO DE DESARROLLO SOSTENIBLE – DOS (Disciplinar)",
+        "12. Producción y consumo responsables",
+        "META ODS -",
+        "12.4 , 12.5"
+      ],
+      [
+        "COMPETENCIA GLOBAL 1",
+        "Pensamiento Sistemico y complejo",
+        "COMPETENCIA GLOBAL 2",
+        "Desarrollo Sostenible"
+      ],
+      [
+        "FECHA DE ACTUALIZACIÓN DEL SYLLABUS",
+        "2025-03-31 00:00:00",
+        "NÚMERO DE VERSIÓN DE ACTUALIZACIÓN",
+        "0.3V"
+      ],
+      [
+        "2. PRESENTACIÓN DE LA ASIGNATURA"
+      ],
+      [
+        "PERFIL GLOBAL DE EGRESO DEL PROGRAMA ACADÉMICO"
+      ],
+      [
+        "El Ingeniero de Petróleos y Recursos del Subsuelo de la Fundación Universidad de América es un profesional capacitado para integrar los fundamentos básicos en ingeniería para la compresión y modelado del recurso del subsuelo y su aprovechamiento en superficie. Planea proyectos de investigación con un enfoque global e interdisciplinario que promuevan el desarrollo sostenible de los recursos del subsuelo. Aplica tecnologías innovadoras y sustentables para la perforación de pozos de hidrocarburos, geotermia e hidrogeno, cumpliendo con la normativa vigente, garantizando la protección del ambiente, con el propósito de responder al cumplimiento de los Objetivos de Desarrollo Sostenibles. Implementa soluciones para el aumento de la eficiencia de los sistemas productivos, garantizando la seguridad energética y mediante el uso de tecnología de avanzada minimizando el impacto ambiental. Gestiona proyectos energéticos dentro de las fases de la cadena de valor de la industria de hidrocarburos, hidrógeno y energía geotérmica, para el aprovechamiento sostenible de los recursos del subsuelo. Lidera equipos multidisciplinarios e interculturales con responsabilidad social, inmersos en un mercado global, con dominio de otras lenguas, pensamiento crítico, adaptabilidad, gestión del tiempo, comunicación asertiva, influencia y negociación, resolución estratégica de problemas, toma de decisiones efectivas, compromiso con la ética profesional el desarrollo sostenible."
+      ],
+      [
+        "Descripción de la asignatura desde el enfoque de resultados de aprendizaje",
+        "La asignatura de Álgebra Lineal proporciona a los estudiantes los fundamentos teóricos y aplicados del análisis de estructuras algebraicas sus aplicaciones en diversas áreas de la ciencia y la ingeniería. A través del estudio de espacios vectoriales,matrices, transformaciones lineales y sistemas de ecuaciones, se fomenta el desarrollo del pensamiento lógico, la modelación matemática y la resolución de problemas complejos."
+      ],
+      [
+        "Resultados de aprendizaje previos o conocimientos previos",
+        "Pensamiento numérico y los sistemas numéricos:\nOperaciones de números reales.\n\nPensamiento espacial y los sistemas geométricos:\nConceptos básicos de geometría, coordenadas cartesianas en dos y tres dimensiones, áreas, volúmenes.\n\nEl pensamiento variacional y los sistemas algebraicos y analíticos:\nOperaciones algebraicas, solución de ecuaciones lineales de primer y segundo orden, sistemas de ecuaciones de 2x2, función lineal."
+      ],
+      [
+        "Internacionalización de la asignatura\nSelecciones las opciones que aplican para la asignatura",
+        "Obligatorias"
+      ],
+      [
+        "Acción de interculturalidad"
+      ],
+      [
+        "Inclusión de bibliografía en inglés en los syllabus"
+      ],
+      [
+        "A seleccionar (al menos una)"
+      ],
+      [
+        "Clase espejo"
+      ],
+      [
+        "COIL"
+      ],
+      [
+        "Actividades de Interacción con invitados externos (Distintas a COIL y Clases espejo)"
+      ],
+      [
+        "Salidas de campo"
+      ],
+      [
+        "Participación en competencias nacionales o internacionales, en el marco de la asignatura"
+      ],
+      [
+        "Actividades de aula enfocadas a ODS"
+      ],
+      [
+        "Desarrollo de proyectos de cooperacion naciona e internacional en el marco de la asignatura, para el desarrollo de competencias globales"
+      ],
+      [
+        "3. RESULTADOS DE APRENDIZAJE DE LA ASIGNATURA"
+      ],
+      [
+        "UC 1 - Unidad de Competencia"
+      ],
+      [
+        "del programa a la que le aporta la asignatura"
+      ],
+      [
+        "El estudiante de la Universidad de América tiene la capacidad de crear modelos matemáticos para representar situaciones y formular pronósticos y predicciones."
+      ],
+      [
+        "Al finalizar la Asignatura los resultados de aprendizaje son:"
+      ],
+      [
+        "Dominio del aprendizaje Sombree la casilla respectiva teniendo en cuenta la taxonomía integrada de la Institución"
+      ],
+      [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      [
+        "RA 1 - Resultado de aprendizaje",
+        "Saberes",
+        "Instrumento",
+        "Aspectos",
+        "CE 1 – Criterio de Evaluación"
+      ],
+      [
+        "RA - 1 : Modelo problemas de ingeniería utilizando matrices y vectores, aplicando métodos algebraicos para su resolución e interpretación.",
+        "S4-\tVectores en el plano y el espacio. Producto punto. Ángulo entre vectores. Producto cruz.. (RA 1, RA 2)\nS5-\tRectas y planos en el espacio. Aplicaciones del álgebra lineal: Rotaciones y traslaciones en el plano y el espacio. Campos vectoriales lineales. Criptografía. Circuitos eléctricos",
+        "Talleres -Actividad momento 1",
+        "Identifica correctamente las variables y relaciones que componen el problema de ingeniería.\n\nPlantea el modelo matemático adecuado utilizando matrices y/o vectores.\n\nSelecciona el método algebraico adecuado para resolver el sistema",
+        "El estudiante modela y resuelve situaciones problemáticas mediante sistemas de ecuaciones lineales y operaciones con vectores, seleccionando el método adecuado y justificando su elección en contextos de aplicación."
+      ],
+      [
+        "Al finalizar la Asignatura los resultados de aprendizaje son:"
+      ],
+      [
+        "Dominio del aprendizaje Sombree la casilla respectiva teniendo en cuenta la taxonomía integrada de la Institución"
+      ],
+      [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      [
+        "RA 2 - Resultado de aprendizaje",
+        "Saberes",
+        "Instrumento",
+        "Aspectos",
+        "CE 2 – Criterio de Evaluación"
+      ],
+      [
+        "Aplico diferentes métodos de solución de sistemas de ecuaciones lineales para modelar y resolver problemas propios del campo de la ingeniería, interpretando los resultados en su contexto.",
+        "S1-\tSistemas de ecuaciones lineales. Método de Gauss-Jordan. Representación de problemas por medio de sistemas de ecuaciones lineales (RA 1, RA 2)\nS2-\tMatrices y operaciones entre matrices. Aplicaciones. (RA 1) \nS3-\tDeterminantes. Inversa de una matriz cuadrada. Regla de Cramer (RA 2).",
+        "Talleres -Actividad momento 2",
+        "Representacion adecuada de  problemas de ingeniería mediante un sistema de ecuaciones lineales.\n Correspondencia clara entre el lenguaje del problema y su expresión matemática.\n\nInterpretación de resultados obtenidos con relación al contexto de ingeniería planteado.",
+        "El estudiante selecciona y aplica correctamente los métodos de solución de sistemas de ecuaciones lineales para modelar y resolver problemas de ingeniería, justificando su elección y analizando la pertinencia de los resultados."
+      ],
+      [
+        "Al finalizar la Asignatura los resultados de aprendizaje son:"
+      ],
+      [
+        "Dominio del aprendizaje Sombree la casilla respectiva teniendo en cuenta la taxonomía integrada de la Institución"
+      ],
+      [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      [
+        "RA 3 - Resultado de aprendizaje",
+        "Saberes",
+        "Instrumento",
+        "Aspectos",
+        "CE 3 – Criterio de Evaluación"
+      ],
+      [
+        "Evalúo la aplicación de los conceptos y procesos de la teoría de matrices en la representación y solución de sistemas de ecuaciones lineales, analizando su pertinencia en distintos campos del conocimiento.",
+        "S1-\tSistemas de ecuaciones lineales. Método de Gauss-Jordan. Representación de problemas por medio de sistemas de ecuaciones lineales (RA 1, RA 2)\nS2-\tMatrices y operaciones entre matrices. Aplicaciones. (RA 1) \nS3-\tDeterminantes. Inversa de una matriz cuadrada. Regla de Cramer (RA 2).",
+        "Talleres -Actividad momento 3",
+        "Aplicación de métodos basados en matrices (inversa, regla de Cramer, reducción de Gauss-Jordan, etc.) para resolver sistemas de ecuaciones lineales.\n\nAnalisis de pertinencia y aplicabilidad de los resultados en distintos campos del conocimiento (ingeniería, economía, ciencias naturales, etc.).",
+        "El estudiante analiza y valora la aplicación de los conceptos y procesos de la teoría de matrices en la representación y solución de sistemas de ecuaciones lineales, justificando su pertinencia en distintos campos del conocimiento."
+      ],
+      [
+        "4.1 RÚBRICAS DE EVALUACIÓN DISCIPLINAR"
+      ],
+      [
+        "CE 1 – Criterio de Evaluación",
+        "No Acreditable",
+        "Deficiente",
+        "Insuficiente",
+        "Aceptable",
+        "Bueno",
+        "Muy Bueno",
+        "Sobresaliente"
+      ],
+      [
+        "El estudiante modela y resuelve situaciones problemáticas mediante sistemas de ecuaciones lineales y operaciones con vectores, seleccionando el método adecuado y justificando su elección en contextos de aplicación.",
+        "No identifica el problema ni aplica ningún método para resolverlo. No hay evidencia de comprensión del tema.",
+        "Intenta identificar el problema, pero no modela correctamente ni aplica un método válido. No justifica su elección.",
+        "Modela el problema parcialmente, pero usa un método incorrecto o con errores graves. Justificación ausente o incorrecta.",
+        "Modela el problema adecuadamente, aplica un método funcional aunque con errores menores. Justifica su elección de forma limitada.",
+        "Modela correctamente el problema, aplica un método adecuado y funcional. Justifica con claridad, aunque no profundiza.",
+        "Modela y resuelve correctamente, aplicando el mejor método posible en el contexto. Justifica con argumentos pertinentes.",
+        "Modela, resuelve y selecciona el método óptimo con precisión. Justifica con profundidad, incluyendo análisis crítico del contexto y posibles alternativas."
+      ],
+      [
+        "CE 2 – Criterio de Evaluación",
+        "No Acreditable",
+        "Deficiente",
+        "Insuficiente",
+        "Aceptable",
+        "Bueno",
+        "Muy Bueno",
+        "Sobresaliente"
+      ],
+      [
+        "El estudiante selecciona y aplica correctamente los métodos de solución de sistemas de ecuaciones lineales para modelar y resolver problemas de ingeniería, justificando su elección y analizando la pertinencia de los resultados.",
+        "No aplica ningún método correctamente ni relaciona el problema con un contexto de ingeniería.",
+        "Aplica un método incorrecto sin justificarlo ni relacionarlo con el contexto. Resultados irrelevantes.",
+        "Aplica métodos parcialmente correctos pero con errores significativos. Justificación y análisis poco claros.",
+        "Aplica un método adecuado con algunos errores menores. Justifica de forma general. Relación básica con la ingeniería.",
+        "Aplica correctamente el método, justifica su elección y vincula adecuadamente el problema con su contexto ingenieril.",
+        "Aplica el mejor método según el problema, con resultados válidos y justificación clara. Analiza la pertinencia de los resultados.",
+        "Aplica métodos óptimos con precisión, justifica de forma exhaustiva y crítica, y evalúa el impacto y relevancia de los resultados en un contexto ingenieril real."
+      ],
+      [
+        "4.2 RÚBRICAS DE EVALUACIÓN ACTITUD Y COMPROMISO"
+      ],
+      [
+        "LA ACTITUD Y EL COMPROMISO CON EL APRENDIZAJE",
+        "Criterio mayor y menor",
+        "Resultado",
+        "Comentarios"
+      ],
+      [
+        "Perseverancia",
+        "El estudiante demuestra a lo largo de su proceso de formación perseverancia para alcanzar los objetivos trazados.",
+        "+"
+      ],
+      [
+        "El estudiante abandona los objetivos fácilmente y carece de un enfoque metódico para superarlos.",
+        "-"
+      ],
+      [
+        "Puntualidad y cumplimiento",
+        "El estudiante cumple con los plazos establecidos y entrega sus compromisos según lo pactado.",
+        "+"
+      ],
+      [
+        "El estudiante no cumple con los plazos ni sigue las directrices acordadas para las entregas.",
+        "-"
+      ],
+      [
+        "Estrategias de aprendizaje activo",
+        "El estudiante asume un papel activo en su proceso de aprendizaje, y participa con ideas en el contexto del proceso formativo.",
+        "+"
+      ],
+      [
+        "El estudiante muestra poca participación activa y no se involucra en su proceso de aprendizaje.",
+        "-"
+      ],
+      [
+        "Uso responsable de las herramientas tecnológicas",
+        "El estudiante usa la tecnología de manera ética y reflexiva, complementando con su creatividad y pensamiento crítico sin depender de ella.",
+        "+"
+      ],
+      [
+        "El estudiante hace un uso irresponsable de la tecnología, recurriendo a prácticas inapropiadas para obtener resultados.",
+        "-"
+      ],
+      [
+        "TRABAJO COLABORATIVO",
+        "Criterio mayor y menor",
+        "Resultado"
+      ],
+      [
+        "Aprendizaje en equipo",
+        "El estudiante valora el aprendizaje colectivo, colaborando con otros para enriquecer el conocimiento compartido.",
+        "+"
+      ],
+      [
+        "El estudiante no reconoce la importancia de la colaboración, ni la necesidad de empatía, confianza y solidaridad en el trabajo en equipo o con otras personas..",
+        "-"
+      ],
+      [
+        "Comunicación asertiva",
+        "El estudiante se expresa de manera clara, respetuosa y escucha activamente, promoviendo un ambiente de diálogo positivo.",
+        "+"
+      ],
+      [
+        "El estudiante tiene dificultades para expresar sus ideas de manera clara y respetuosa, no escucha a los demás  y le quita importancia a sus opiniones",
+        "-"
+      ],
+      [
+        "Relacionamiento en el espacio de trabajo",
+        "El estudiante interactúa de manera respetuosa, colaborativa y constructiva con sus compañeros, contribuyendo a un ambiente positivo.",
+        "+"
+      ],
+      [
+        "El estudiante muestra actitudes negativas que dificultan la cooperación y el respeto, conductas que afectan negativamente el ambiente de trabajo y la estabilidad en general.",
+        "-"
+      ],
+      [
+        "5. REPRESENTACIÓN GRÁFICA DE LA ASIGNATURA"
+      ],
+      [
+        "6. BIBLIOGRAFÍA BÁSICA"
+      ],
+      [
+        "Recursos Bibliográficos",
+        "Ubicación"
+      ],
+      [
+        "Larson, R. (2010). Fundamentos de álgebra lineal. (6\" Ed.). México: CENGAGE Learning.",
+        "Biblioteca institucional-físico"
+      ],
+      [
+        "Grossman, S. I. (2008). Álgebra lineal. McGraw Hill Educación.",
+        "Biblioteca institucional-físico"
+      ]
+    ],
+    "ControlCambiosContenido": [
+      [
+        "Control de cambios - Contenido del Syllabus -"
+      ],
+      [
+        "Fecha",
+        "Versión",
+        "Motivo del Cambio"
+      ]
+    ],
+    "ControlCambiosFormato": [
+      [
+        "Control de cambios"
+      ],
+      [
+        "Fecha",
+        "Versión",
+        "Motivo del Cambio"
+      ],
+      [
+        "11 junio de 2020",
+        "1",
+        "Creación del documento"
+      ],
+      [
+        "04 agosto de 2020",
+        "2",
+        "Actualización del documento"
+      ],
+      [
+        "04 febrero de 2021",
+        "3",
+        "Actualización del listado de programas académicos.\nEliminamos asesor temático y metodológico porque eso no aplica para la educación presencial.\nUna nota adicional en C1.\nCambio en el texto que inicia \"al finalizar\" porque estaba como actividad, pero es al finalizar el RA.En CE1 se cambió la nota porque la anterior no correspondía.\nEn bibliografía se simplificó ya que había una columna 3 que era confusa.\nCambiamos el orden de algunos campos de la sección 1 dándole más visibilidad."
+      ],
+      [
+        "18 abril de 2022",
+        "4",
+        "Actualización de campo \"Resultados de aprendizaje previos o conocimientos previos\"\nCambo de la sección 3 a \"Resultados de aprendizaje de la asignatura\" de \"\n\"Perfil de egreso del programa académico\" pasa a ser una sub sección de la 3.\nEn la sección 3 se incluye \"Dominio del aprendizaje\" y casillas para su marcación.\nCambio de sección 4 a \"Saberes\"\nSe incluye sección 5 con \"Representación gráfica de la asignatura\" la cual en la anterior versión era la sección 4.\nSe incluye ubicación en la sección 6 de bibliografía básica."
+      ],
+      [
+        "30 enero de 2024",
+        "5",
+        "Se incluye apartado de Internacionalización de la asignatura en presentación de la asignatura.\nSe suprime apartado 4. Saberes.\nSe incluye apartado 4.1 rúbricas de evaluación disciplinar.\nSe incluye apartado 4.2 rúbricas de evaluación actitud y compromiso.\nSe ajusta formato a Excel, antes Word."
+      ]
+    ],
+    "Desplegables": [
+      [
+        "PROFESIONAL"
+      ],
+      [
+        "ESPECIALIZACIÓN"
+      ],
+      [
+        "MAESTRIA"
+      ],
+      [
+        "Elija un elemento"
+      ],
+      [
+        "INGENIERIA AMBIENTAL No. Registro SNIES 108509"
+      ],
+      [
+        "ESTADISTICA Y CIENCIAS ACTUARIALES No. Registro SNIES 107649"
+      ],
+      [
+        "ADMINISTRACIÓN DE EMPRESAS No. Registro SNIES 107675"
+      ],
+      [
+        "NEGOCIOS INTERNACIONALES No. Registro SNIES 107674"
+      ],
+      [
+        "ECONOMIA No. Registro SNIES: 12797"
+      ],
+      [
+        "ARQUITECTURA No. Registro SNIES: 1339"
+      ],
+      [
+        "INGENIERİA INDUSTRIAL No. Registro SNIES: 1336"
+      ],
+      [
+        "INGENIERİA MECÂNICA No. Registro SNIES: 1337"
+      ],
+      [
+        "INGENIERİA QUIMICA No. Registro SNIES: 1338"
+      ],
+      [
+        "INGENIERIA DE PETRÓLEOS No. Registro SNIES: 1335"
+      ],
+      [
+        "INGENIERİA DE ENERGİAS No. Registro SNIES: 109473"
+      ],
+      [
+        "INGENIERİA MECATRÓNICA No. Registro SNIES: 109545"
+      ],
+      [
+        "I SELECCIONAR PROGRAMA ESPECIALIZACIÓN ||"
+      ],
+      [
+        "GERENCIA DE PROYECTOS No., Registro SNIES: 108688"
+      ],
+      [
+        "GERENCIA DE EMPRESAS No. Registro SNIES: 103244"
+      ],
+      [
+        "GERENCIA DE LA CALIDAD No. Registro SNIES: 15354"
+      ],
+      [
+        "GERENCIA DE EMPRESAS CONSTRUCTORAS No. Registro SNIES: 11024"
+      ],
+      [
+        "GERENCIA DEL TALENTO HUMANO No. Registro SNIES: 54821"
+      ],
+      [
+        "GESTIÓN AMBIENTAL No. Registro SNIES: 13793"
+      ],
+      [
+        "NEGOCIOS INTERNACIONALÈS E INTEGRACIÓN ECÓNOMICA No. Registro SNIES: 104957"
+      ],
+      [
+        "PLANEACIÓN TERRITORIAL No. Registro SNIES: 90960"
+      ],
+      [
+        "GESTIÓN DE LA SEGURIDAD Y SALUD EN EL TRABAJO No. Registro SNIES: 109475"
+      ],
+      [
+        "| SELECCIONAR PROGRAMA MAESTRiA |"
+      ],
+      [
+        "MAESTRÍA EN INGENIERÍA DE YACIMIENTOS No. Registro SNIES: 109103"
+      ],
+      [
+        "MAESTRiA EN PLANEACIÓN TERRITORIAL No. Registro SNIES: 107409"
+      ],
+      [
+        "MAESTRİA EN GERENCIA INTEGRAL DE LA CALIDAD Y PRODUCTIVIDAD No. Registro SNIES: 105861"
+      ],
+      [
+        "MAESTRiA EN GESTIÓN AMBIENTAL PARA LA COMPETITIVIDAD No. Registro SNIES: 105744"
+      ],
+      [
+        "MAESTRİA GERENCIA DEL TALENTO HUMANO No. Registro SNIES: 105654"
+      ],
+      [
+        "MAESTRİA EN ADMINISTRACIÓN - MBA No. Registro SNIES: 105224"
+      ],
+      [
+        "MAESTRÍA EN RECUPERACIÓN AVANZADA DE HIDROCARBUROS No. Registro SNIES: 109474"
+      ],
+      [
+        "FACULTAD DE ARQUITECTURA"
+      ],
+      [
+        "FACULTAD DE CIENCIAS ECONÓMICAS Y ADMINISTRATIVAS"
+      ],
+      [
+        "FACULTAD DE INGENIERÍA"
+      ],
+      [
+        "TEÓRICO"
+      ],
+      [
+        "TEÓRICO PRÁCTICO"
+      ],
+      [
+        "PRÁCTICO"
+      ],
+      [
+        "BÁSICO DE FUNDAMENTACIÓN"
+      ],
+      [
+        "DISCIPLINAR Y PROFESIONAL"
+      ],
+      [
+        "SOCIO HUMANISTA"
+      ],
+      [
+        "FORMACIÓN GLOBAL"
+      ],
+      [
+        "DISTANCIA"
+      ],
+      [
+        "DUAL"
+      ],
+      [
+        "MIXTO (Intregra o combina otros)"
+      ],
+      [
+        "PRESENCIAL"
+      ],
+      [
+        "VIRTUAL"
+      ],
+      [
+        "1"
+      ],
+      [
+        "2"
+      ],
+      [
+        "3"
+      ],
+      [
+        "4"
+      ],
+      [
+        "5"
+      ],
+      [
+        "6"
+      ],
+      [
+        "7"
+      ],
+      [
+        "8"
+      ],
+      [
+        "9"
+      ],
+      [
+        "10"
+      ],
+      [
+        "NIVELACION"
+      ],
+      [
+        "Ciudadania Global"
+      ],
+      [
+        "Desarrollo Sostenible"
+      ],
+      [
+        "Multiculturalidad"
+      ],
+      [
+        "Pensamiento Sistemico y complejo"
+      ],
+      [
+        "Redes Conectivas"
+      ],
+      [
+        "Ninguna"
+      ],
+      [
+        "1. Fin de la pobreza"
+      ],
+      [
+        "2. Hambre cero"
+      ],
+      [
+        "3. Salud y bienestar"
+      ],
+      [
+        "4. Educación de calidad"
+      ],
+      [
+        "5. Igualdad de género"
+      ],
+      [
+        "6. Agua limpia y saneamiento"
+      ],
+      [
+        "7. Energía asequible y no contaminante"
+      ],
+      [
+        "8. Trabajo decente y crecimiento económico"
+      ],
+      [
+        "9. Industria, innovación e infraestructura"
+      ],
+      [
+        "10. Reducción de las desigualdades"
+      ],
+      [
+        "11. Ciudades y comunidades sostenibles"
+      ],
+      [
+        "12. Producción y consumo responsables"
+      ],
+      [
+        "13. Acción por el clima"
+      ],
+      [
+        "14. Vida submarina"
+      ],
+      [
+        "15. Vida de ecosistemas terrestres"
+      ],
+      [
+        "16. Paz, justicia e instituciones sólidas"
+      ],
+      [
+        "17. Alianzas para lograr los objetivos"
+      ]
+    ]
+  }
+}

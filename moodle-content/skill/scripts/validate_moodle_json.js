@@ -13,7 +13,7 @@
  *  - every page.type is one of welcome | moment | closing
  *  - exactly one welcome page and one closing page
  *  - number of `moment` pages == number of moments of the declared methodology
- *    (AG=7, ABPr=3, ABI=ABR=ABC=4)
+ *    (AG=N variable según temas del docente, ABPr=3, ABI=ABR=ABC=4)
  *  - each component.type is valid AND allowed on its page type
  *  - no learner-facing/style field contains <script>, <style>, on*= handlers,
  *    javascript: URLs, or external CSS/JS (the renderer emits inline-only HTML)
@@ -38,8 +38,11 @@ const path = require("path");
 const VALID_PAGE_TYPES = new Set(["welcome", "moment", "closing"]);
 
 // Number of `moment` pages required per methodology code.
+// Número de momentos por metodología. AG es VARIABLE (N temas que el docente
+// considere necesarios, según el documento de saberes oficial UA): se valida
+// como "al menos 1", no un número fijo. Las demás tienen momentos fijos.
 const MOMENTS_BY_METHODOLOGY = {
-  AG: 7,
+  AG: null,
   ABPr: 3,
   ABI: 4,
   ABR: 4,
@@ -294,6 +297,11 @@ function validateFile(file) {
   if (expectedMoments !== null && momentCount !== expectedMoments) {
     errors.push(
       `methodology "${code}" requires ${expectedMoments} moment pages, found ${momentCount}`
+    );
+  } else if (expectedMoments === null && code && momentCount < 1) {
+    // AG: número de temas variable, pero debe haber al menos 1 página de momento.
+    errors.push(
+      `methodology "${code}" (temas variables) requires at least 1 moment page, found ${momentCount}`
     );
   }
 

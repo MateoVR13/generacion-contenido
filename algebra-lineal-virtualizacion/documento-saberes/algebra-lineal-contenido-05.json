@@ -1,0 +1,1428 @@
+{
+  "subject": {
+    "id": "algebra-lineal-tema-05",
+    "title": "Álgebra Lineal",
+    "program": "Ingeniería (transversal)",
+    "contentNumber": "05",
+    "contentTotal": "05",
+    "unitLabel": "Tema",
+    "contentTitle": "Rectas, planos y aplicaciones del álgebra lineal",
+    "description": "Tema integrador del curso: determinación de ecuaciones de rectas y planos en el espacio, su representación gráfica, el cálculo de intersecciones plano-recta y recta-recta como sistemas lineales, y la valoración de aplicaciones del álgebra lineal (rotaciones y traslaciones, criptografía con matrices y circuitos eléctricos) en distintos campos de la ingeniería.",
+    "syllabus": {
+      "source": {"type": "text", "fileName": "esquema-contenido.md"},
+      "extractedFields": {
+        "asignatura": "Álgebra Lineal",
+        "creditos": "3",
+        "modalidad": "100% virtual",
+        "metodologia": "Aprendizaje Guiado (AG)",
+        "tema": "Tema 5 de 5",
+        "saber": "S5",
+        "nivel": "Pregrado, segundo semestre, fundamentación matemática"
+      },
+      "learningOutcomes": [
+        "RA1: Representar y operar objetos del álgebra lineal (vectores, rectas y planos) en $\\mathbb{R}^2$ y $\\mathbb{R}^3$ para modelar situaciones de ingeniería.",
+        "RA2: Resolver sistemas lineales derivados de problemas geométricos (intersecciones) e interpretar el tipo de solución.",
+        "RA3: Valorar la pertinencia de las aplicaciones del álgebra lineal (rotaciones, criptografía, circuitos) en distintos campos de la ingeniería, integrando los saberes de los temas previos."
+      ],
+      "priorKnowledge": [
+        "Operaciones con vectores en $\\mathbb{R}^2$ y $\\mathbb{R}^3$: suma, escalar y magnitud (Tema 4).",
+        "Producto punto y producto cruz, incluyendo el vector normal a un plano (Tema 4).",
+        "Resolución de sistemas lineales por Gauss-Jordan (Tema 1) y por Cramer (Tema 3).",
+        "Determinante e inversa de una matriz cuadrada (Tema 3)."
+      ],
+      "competencies": [
+        "Modela situaciones geométricas y físicas de ingeniería mediante rectas y planos en el espacio.",
+        "Integra los métodos de resolución de sistemas lineales para hallar intersecciones e interpretar su significado.",
+        "Argumenta la pertinencia de las aplicaciones del álgebra lineal en su campo disciplinar."
+      ],
+      "evaluationCriteria": [
+        "CE1: Determina ecuaciones de rectas y planos en sus distintas formas y las grafica correctamente.",
+        "CE2: Halla intersecciones plano-recta y recta-recta resolviendo el sistema lineal asociado e interpreta el tipo de solución.",
+        "CE3: Relaciona una aplicación del álgebra lineal con un problema de ingeniería y justifica su pertinencia."
+      ],
+      "topics": [
+        "Ecuación de la recta en el espacio: formas vectorial, paramétrica y simétrica.",
+        "Ecuación del plano y posiciones relativas (paralelismo, perpendicularidad, ángulo entre planos).",
+        "Intersecciones plano-recta y recta-recta como sistemas lineales.",
+        "Aplicaciones: rotaciones y traslaciones, criptografía (cifrado de Hill) y circuitos eléctricos."
+      ],
+      "methodologyNotes": [
+        "Tema integrador (RA3): articula los saberes de los Temas 1 a 4 en un cierre aplicado.",
+        "Actividad ajustada por el docente: taller de ecuaciones de recta y plano, gráfica y puntos de intersección plano-recta y recta-recta."
+      ],
+      "evaluationPlan": [
+        "Diagnóstica: activación de saberes previos sobre vectores, normal y resolución de sistemas.",
+        "Formativa: steppers de ecuaciones e intersecciones con retroalimentación inmediata.",
+        "Sumativa integradora: taller del tema 5 con rúbrica analítica (CE1-CE3) y holística, evaluación cualitativa sin ponderaciones."
+      ],
+      "bibliography": {
+        "basic": [
+          "Larson, R. (2010). Fundamentos de álgebra lineal (6.ª ed.). Cengage Learning.",
+          "Grossman, S. I. (2008). Álgebra lineal (6.ª ed.). McGraw-Hill."
+        ],
+        "complementary": []
+      },
+      "missingFields": [
+        "Código institucional de la asignatura.",
+        "Fechas del calendario académico.",
+        "Ponderaciones numéricas (la evaluación es cualitativa, sin porcentajes)."
+      ]
+    },
+    "methodology": {
+      "code": "AG",
+      "name": "Aprendizaje Guiado",
+      "rationale": "Ruta guiada para aprendizaje virtual autónomo con acompañamiento, práctica y retroalimentación, apropiada para el cierre integrador del curso de Álgebra Lineal.",
+      "moments": ["Fase 1", "Fase 2", "Fase 3", "Fase 4"]
+    }
+  },
+  "scorm": {
+    "labels": {
+      "theoryNav": "Contenido Teórico",
+      "materialNav": "Material Complementario"
+    },
+    "sectionOrder": ["intro", "seccion-1", "seccion-2", "seccion-3", "seccion-4", "seccion-5"],
+    "sections": {
+      "intro": {
+        "kind": "theory",
+        "theme": "Intro",
+        "badge": "Tema 05 de 05",
+        "navLabel": "Introducción",
+        "title": "Rectas, planos y aplicaciones del álgebra lineal",
+        "intro": [
+          "Este es el quinto y último tema del curso de Álgebra Lineal y tiene un carácter integrador: aquí los vectores, las matrices, los determinantes y los sistemas lineales estudiados en los temas anteriores se ponen al servicio de la geometría del espacio y de aplicaciones reales de la ingeniería.",
+          "Aprenderás a describir rectas y planos en $\\mathbb{R}^3$, a graficarlos, a hallar dónde se cortan (plano-recta y recta-recta) reduciendo el problema geométrico a un sistema lineal, y a valorar por qué herramientas como las rotaciones, la criptografía con matrices y el análisis de circuitos son pertinentes en distintos campos de la ingeniería."
+        ],
+        "componentOrder": ["intro-presentacion", "intro-objetivos", "intro-saberes-previos", "intro-ruta"],
+        "components": {
+          "intro-presentacion": {
+            "type": "theory-block",
+            "title": "Presentación del tema integrador",
+            "eyebrow": "Escenario de aprendizaje 05 de 05",
+            "body": [
+              "El álgebra lineal no termina en la manipulación de matrices y vectores: su poder se revela cuando esos objetos describen el mundo. Una recta en el espacio modela la trayectoria de un brazo robótico; un plano modela una superficie de corte o un frente de avance; la intersección de ambos indica dónde una herramienta toca una pieza. En este tema cerramos el curso conectando el lenguaje algebraico con la geometría tridimensional.",
+              "El propósito es que determines ecuaciones de rectas y planos en el espacio, los grafiques, halles intersecciones (plano-recta y recta-recta) y evalúes aplicaciones del álgebra lineal —rotaciones y traslaciones, criptografía con matrices y circuitos eléctricos—, integrando lo aprendido y valorando su pertinencia en campos como la ingeniería industrial, mecánica, mecatrónica, de petróleos, química, ambiental y de energías.",
+              "Lo central del tema es una idea que recorre todo el curso: un problema geométrico de intersección se resuelve resolviendo un sistema lineal. Por eso este escenario reúne, en una sola ruta, los métodos de Gauss-Jordan, la inversa y la regla de Cramer que ya dominas."
+            ],
+            "keyIdeas": [
+              {"icon": "timeline", "text": "Una recta queda definida por un punto y un vector director $\\mathbf{d}$."},
+              {"icon": "crop_square", "text": "Un plano queda definido por un punto y un vector normal $\\mathbf{n}$."},
+              {"icon": "call_merge", "text": "Hallar una intersección equivale a resolver un sistema lineal e interpretar su solución."},
+              {"icon": "engineering", "text": "Las aplicaciones (rotaciones, criptografía, circuitos) integran los saberes de los temas 1 a 4 (RA3)."}
+            ],
+            "closing": ["Mientras avanzas, pregúntate siempre qué objeto geométrico estás describiendo y qué sistema lineal aparece detrás de cada intersección."]
+          },
+          "intro-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos del tema",
+            "items": [
+              {"icon": "track_changes", "text": "Determinar la ecuación de una recta en el espacio en forma vectorial, paramétrica y simétrica."},
+              {"icon": "track_changes", "text": "Determinar la ecuación de un plano a partir de un punto y un vector normal, incluido el normal obtenido con producto cruz."},
+              {"icon": "track_changes", "text": "Hallar intersecciones plano-recta y recta-recta resolviendo el sistema lineal asociado e interpretar el tipo de solución."},
+              {"icon": "track_changes", "text": "Valorar la pertinencia de aplicaciones del álgebra lineal (rotaciones, criptografía, circuitos) en distintos campos de la ingeniería."}
+            ]
+          },
+          "intro-saberes-previos": {
+            "type": "prior-knowledge",
+            "title": "Saberes previos",
+            "eyebrow": "Antes de empezar",
+            "prompts": [
+              "¿Cómo se calcula el vector que va de un punto $A$ a un punto $B$ en el espacio, y qué representa geométricamente?",
+              "Dado un sistema lineal, ¿cómo distingues si tiene solución única, infinitas soluciones o ninguna?",
+              "¿Cómo obtienes un vector perpendicular (normal) a dos vectores dados usando el producto cruz?"
+            ]
+          },
+          "intro-ruta": {
+            "type": "theory-block",
+            "title": "Cómo recorrer este escenario",
+            "eyebrow": "Ruta de aprendizaje",
+            "body": [
+              "El escenario se organiza en cinco secciones. La primera presenta la ecuación de la recta en el espacio y sus tres formas; la segunda, la ecuación del plano y las posiciones relativas; la tercera, el corazón del tema: las intersecciones plano-recta y recta-recta resueltas como sistemas lineales. La cuarta sección abre las aplicaciones (rotaciones, criptografía y circuitos) y la quinta integra todo en un taller transversal con cierre evaluativo.",
+              "Cada sección sigue el mismo ritmo: bloques de teoría seguidos de ejemplos resueltos paso a paso, recursos visuales, tarjetas de repaso y comprobaciones. Dedica tiempo a reproducir cada paso de los ejercicios: el taller del tema espera que sepas plantear y resolver tú mismo las ecuaciones e intersecciones."
+            ],
+            "closing": ["Al terminar deberías poder, ante una recta y un plano cualesquiera, escribir sus ecuaciones, graficarlos y decir exactamente dónde se cortan y por qué."]
+          }
+        }
+      },
+      "seccion-1": {
+        "kind": "theory",
+        "theme": "Recta en el espacio",
+        "badge": "Sección 1",
+        "navLabel": "La recta en el espacio",
+        "title": "Ecuación de la recta en el espacio",
+        "learningOutcomeIds": ["RA1"],
+        "intro": [
+          "Una recta en el espacio no se describe con una sola ecuación como en el plano: necesita un punto de apoyo y una dirección. En esta sección verás cómo un punto $P_0$ y un vector director $\\mathbf{d}$ bastan para generar todas las formas de la recta y cómo convertir unas en otras."
+        ],
+        "componentOrder": [
+          "s1-teoria-1", "s1-figura-recta", "s1-formula-formas", "s1-carrusel",
+          "s1-teoria-2", "s1-flashcards", "s1-stepper-dospuntos",
+          "s1-teoria-3", "s1-acordion", "s1-stepper-pertenencia", "s1-quiz"
+        ],
+        "components": {
+          "s1-teoria-1": {
+            "type": "theory-block",
+            "title": "Punto base y vector director",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Imagina un punto fijo en el espacio y una flecha que indica hacia dónde \"avanza\" la recta. Ese punto es $P_0=(x_0,y_0,z_0)$ y esa flecha es el vector director $\\mathbf{d}=(a,b,c)$. Cualquier punto de la recta se alcanza partiendo de $P_0$ y desplazándose un múltiplo del vector director.",
+              "Formalmente, la forma vectorial de la recta es $\\mathbf{r}(t)=P_0+t\\,\\mathbf{d}$, donde el parámetro $t$ recorre todos los números reales. Cuando $t=0$ estamos en $P_0$; valores positivos avanzan en el sentido de $\\mathbf{d}$ y negativos en sentido contrario. Variar $t$ genera todos los puntos de la recta, uno a uno.",
+              "El vector director captura la dirección, no la posición: dos vectores directores proporcionales describen rectas paralelas (o la misma recta si comparten un punto). Esta separación entre \"dónde apoya\" y \"hacia dónde va\" es lo que distingue la recta del espacio de la recta del plano."
+            ],
+            "keyIdeas": [
+              {"icon": "place", "text": "$P_0$ ancla la recta a una posición."},
+              {"icon": "navigation", "text": "$\\mathbf{d}$ fija la dirección; su longitud no importa, solo su sentido."},
+              {"icon": "functions", "text": "El parámetro $t$ recorre la recta: $\\mathbf{r}(t)=P_0+t\\,\\mathbf{d}$."}
+            ],
+            "example": {
+              "title": "Lectura del vector director",
+              "body": ["Si $\\mathbf{d}=(2,0,0)$, la recta es horizontal en la dirección del eje $x$; si $\\mathbf{d}=(1,1,1)$, avanza en diagonal subiendo por igual en las tres coordenadas."]
+            },
+            "closing": ["Antes de escribir cualquier forma de la recta, identifica primero su punto base y su vector director."]
+          },
+          "s1-figura-recta": {
+            "type": "image",
+            "title": "Recta con punto base y vector director",
+            "assetId": "fig-5-1-recta-director",
+            "src": "",
+            "alt": "Recta en el espacio tridimensional con un punto base P0 marcado y un vector director d señalando su dirección, con ejes x, y, z.",
+            "caption": "La recta se genera apoyándose en $P_0$ y avanzando en múltiplos del vector director $\\mathbf{d}$.",
+            "prompt": "Crear una figura didáctica en español con ejes coordenados x, y, z en perspectiva 3D. Dibujar una recta que cruce el espacio; marcar sobre ella un punto base etiquetado P0=(x0, y0, z0) y, partiendo de ese punto, un vector director d=(a, b, c) representado como flecha. Mostrar un segundo punto sobre la recta obtenido como P0 + t·d, con la etiqueta del parámetro t. Estilo limpio, líneas claras, etiquetas legibles."
+          },
+          "s1-formula-formas": {
+            "type": "formula",
+            "title": "Las tres formas de la recta",
+            "context": ["A partir del mismo punto base $P_0$ y el mismo vector director $\\mathbf{d}=(a,b,c)$, la recta se escribe de tres maneras equivalentes. Elegir la forma adecuada facilita cada tarea: la vectorial para componer trayectorias, la paramétrica para sustituir en otra ecuación y la simétrica para comparar pendientes."],
+            "latex": "\\frac{x-x_0}{a}=\\frac{y-y_0}{b}=\\frac{z-z_0}{c}",
+            "variables": [
+              {"symbol": "x_0, y_0, z_0", "description": "coordenadas del punto base $P_0$."},
+              {"symbol": "a, b, c", "description": "componentes del vector director $\\mathbf{d}$."}
+            ],
+            "explanation": [
+              "Forma vectorial: $\\mathbf{r}(t)=(x_0,y_0,z_0)+t\\,(a,b,c)$.",
+              "Forma paramétrica: $x=x_0+at,\\; y=y_0+bt,\\; z=z_0+ct$.",
+              "Forma simétrica (la de la fórmula): se obtiene despejando $t$ de cada paramétrica e igualando; solo es válida cuando ninguna componente de $\\mathbf{d}$ es cero."
+            ]
+          },
+          "s1-carrusel": {
+            "type": "carousel",
+            "title": "De la geometría al sistema lineal",
+            "slides": [
+              {"label": "Recta", "title": "Recta: punto + director", "body": ["Una recta nace de un punto $P_0$ y un vector director $\\mathbf{d}$. Con ellos se escribe $\\mathbf{r}(t)=P_0+t\\,\\mathbf{d}$ y se generan todos sus puntos al variar $t$."], "icon": "timeline"},
+              {"label": "Plano", "title": "Plano: punto + normal", "body": ["Un plano nace de un punto y un vector normal $\\mathbf{n}$ perpendicular a él. Su ecuación general $Ax+By+Cz=D$ usa las componentes de $\\mathbf{n}$ como coeficientes."], "icon": "crop_square"},
+              {"label": "Plano ∩ recta", "title": "Intersección plano-recta", "body": ["Sustituir las paramétricas de la recta en la ecuación del plano produce una ecuación en $t$; ese valor da el punto de corte."], "icon": "call_merge"},
+              {"label": "Recta ∩ recta", "title": "Intersección recta-recta", "body": ["Igualar las paramétricas de dos rectas produce un sistema en los parámetros $t$ y $s$; su tipo de solución dice si se cortan, son paralelas o se cruzan."], "icon": "merge_type"},
+              {"label": "Aplicaciones", "title": "Hacia las aplicaciones", "body": ["Rotaciones, criptografía y circuitos son, en el fondo, operaciones con matrices y sistemas lineales: la misma maquinaria de los temas previos."], "icon": "engineering"}
+            ]
+          },
+          "s1-teoria-2": {
+            "type": "theory-block",
+            "title": "Construir la recta a partir de datos",
+            "eyebrow": "Procedimiento",
+            "body": [
+              "En la práctica casi nunca te dan el vector director directamente: te dan dos puntos, o un punto y una dirección física (la velocidad de un móvil, el eje de una pieza). Cuando tienes dos puntos $A$ y $B$ de la recta, el vector director se obtiene restando: $\\mathbf{d}=B-A$. Cualquiera de los dos puntos sirve como $P_0$.",
+              "Una vez fijados $P_0$ y $\\mathbf{d}$, las tres formas son intercambiables. La forma paramétrica es la más útil para hallar intersecciones, porque permite sustituir $x$, $y$, $z$ en función de $t$ dentro de otra ecuación. La forma simétrica es cómoda para comprobar si un punto pertenece a la recta o para comparar direcciones.",
+              "Conviene recordar que la representación no es única: cambiar el punto base por otro punto de la recta, o reescalar el vector director, produce ecuaciones distintas que describen exactamente la misma recta. Verificar siempre con un punto conocido evita confundir rectas equivalentes con rectas diferentes."
+            ],
+            "keyIdeas": [
+              {"icon": "linear_scale", "text": "Con dos puntos: $\\mathbf{d}=B-A$."},
+              {"icon": "swap_horiz", "text": "Las tres formas describen la misma recta; se eligen por conveniencia."},
+              {"icon": "fact_check", "text": "La representación no es única: verifica con un punto conocido."}
+            ],
+            "closing": ["En el siguiente ejercicio construirás una recta a partir de dos puntos y la escribirás en las tres formas."]
+          },
+          "s1-flashcards": {
+            "type": "flashcards",
+            "title": "Términos clave de la recta",
+            "cards": [
+              {"term": "Vector director", "definition": "Vector $\\mathbf{d}=(a,b,c)$ que indica la dirección de la recta; cualquier múltiplo no nulo de $\\mathbf{d}$ sirve igual.", "icon": "navigation"},
+              {"term": "Forma vectorial", "definition": "Expresión $\\mathbf{r}(t)=P_0+t\\,\\mathbf{d}$ que genera cada punto de la recta al variar el parámetro $t$.", "icon": "functions"},
+              {"term": "Forma paramétrica", "definition": "Conjunto $x=x_0+at,\\; y=y_0+bt,\\; z=z_0+ct$; ideal para sustituir en la ecuación de un plano.", "icon": "tune"},
+              {"term": "Forma simétrica", "definition": "Igualdad $\\frac{x-x_0}{a}=\\frac{y-y_0}{b}=\\frac{z-z_0}{c}$, obtenida al despejar $t$; requiere $a,b,c$ no nulos.", "icon": "balance"},
+              {"term": "Rectas paralelas", "definition": "Rectas cuyos vectores directores son proporcionales; nunca se cortan a menos que coincidan.", "icon": "drag_handle"}
+            ]
+          },
+          "s1-stepper-dospuntos": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto: recta por dos puntos y conversión de formas",
+            "statement": "Hallar la recta que pasa por $A=(1,0,2)$ y $B=(3,4,6)$ en forma vectorial, paramétrica y simétrica, y verificar que ambos puntos la satisfacen.",
+            "steps": [
+              {"title": "Hallar el vector director", "body": "Se resta punto final menos punto inicial para obtener la dirección.", "formula": "\\mathbf{d}=B-A=(3-1,\\,4-0,\\,6-2)=(2,4,4)", "final": false},
+              {"title": "Escribir la forma vectorial", "body": "Se toma $A$ como punto base y se multiplica el director por el parámetro $t$.", "formula": "\\mathbf{r}(t)=(1,0,2)+t\\,(2,4,4)", "final": false},
+              {"title": "Escribir la forma paramétrica", "body": "Se iguala cada coordenada por separado en función de $t$.", "formula": "x=1+2t,\\quad y=4t,\\quad z=2+4t", "final": false},
+              {"title": "Escribir la forma simétrica", "body": "Se despeja $t$ de cada paramétrica y se igualan las tres expresiones.", "formula": "\\frac{x-1}{2}=\\frac{y}{4}=\\frac{z-2}{4}", "final": false},
+              {"title": "Verificar y concluir", "body": "Con $t=0$ se obtiene $A=(1,0,2)$ y con $t=1$ se obtiene $B=(3,4,6)$; ambos satisfacen las ecuaciones, por lo que la recta es correcta.", "formula": "t=0\\Rightarrow(1,0,2)=A,\\qquad t=1\\Rightarrow(3,4,6)=B", "final": true}
+            ]
+          },
+          "s1-teoria-3": {
+            "type": "theory-block",
+            "title": "Posiciones relativas entre rectas",
+            "eyebrow": "Profundización",
+            "body": [
+              "Dos rectas en el espacio pueden relacionarse de tres maneras, y distinguirlas es esencial para el taller del tema. Si sus vectores directores son proporcionales, las rectas son paralelas: o bien no se tocan nunca, o bien coinciden por completo si además comparten un punto.",
+              "Si los directores no son proporcionales, las rectas pueden cortarse en un único punto (secantes) o no cortarse pese a no ser paralelas: en ese caso se llaman alabeadas o cruzadas, una situación que solo existe en el espacio tridimensional y no tiene análogo en el plano.",
+              "La pregunta \"¿se cortan estas dos rectas?\" no se responde mirando el dibujo, sino resolviendo el sistema que surge al igualar sus formas paramétricas. Esa es la idea que conecta esta sección con el núcleo del tema: la geometría se decide con álgebra lineal."
+            ],
+            "keyIdeas": [
+              {"icon": "drag_handle", "text": "Directores proporcionales ⇒ paralelas o coincidentes."},
+              {"icon": "close", "text": "Directores no proporcionales ⇒ secantes o alabeadas."},
+              {"icon": "all_inclusive", "text": "Las rectas alabeadas solo existen en $\\mathbb{R}^3$."}
+            ],
+            "closing": ["La clasificación definitiva se obtiene del sistema lineal, no del dibujo; eso se desarrolla en la Sección 3."]
+          },
+          "s1-acordion": {
+            "type": "accordion",
+            "title": "Matices y errores frecuentes con rectas",
+            "items": [
+              {
+                "icon": "warning",
+                "title": "La forma simétrica falla cuando una componente del director es cero",
+                "open": true,
+                "body": [
+                  "La forma simétrica $\\frac{x-x_0}{a}=\\frac{y-y_0}{b}=\\frac{z-z_0}{c}$ se obtiene despejando $t$ de cada ecuación paramétrica, lo que exige dividir entre $a$, $b$ y $c$. Si alguna de esas componentes es cero, esa división no está definida y la fórmula completa deja de ser válida tal cual.",
+                  "En ese caso la coordenada correspondiente queda constante. Por ejemplo, si $\\mathbf{d}=(2,0,3)$, entonces $y=y_0$ siempre, y la recta se describe como $\\frac{x-x_0}{2}=\\frac{z-z_0}{3}$ junto con la condición $y=y_0$. Forzar la forma simétrica completa en este caso es un error común que produce expresiones sin sentido como dividir entre cero."
+                ]
+              },
+              {
+                "icon": "compare_arrows",
+                "title": "Misma recta, ecuaciones distintas",
+                "body": [
+                  "Como el punto base y la escala del vector director se pueden elegir, dos estudiantes pueden llegar a ecuaciones que se ven diferentes y, sin embargo, describir la misma recta. No hay que asumir que están equivocados solo porque sus expresiones no coinciden letra por letra.",
+                  "Para comprobar si dos formas representan la misma recta basta con verificar dos cosas: que sus vectores directores sean proporcionales y que un punto de una pertenezca también a la otra. Si ambas condiciones se cumplen, las rectas son idénticas aunque sus ecuaciones difieran."
+                ]
+              },
+              {
+                "icon": "report",
+                "title": "Confundir paralelas con alabeadas",
+                "body": [
+                  "Un error típico es declarar dos rectas \"paralelas\" simplemente porque no se cortan. En el espacio, no cortarse no implica ser paralelas: las rectas alabeadas tampoco se cortan y, sin embargo, sus direcciones son distintas.",
+                  "La distinción es operativa: dos rectas son paralelas solo si sus vectores directores son proporcionales. Si los directores no son proporcionales y el sistema de intersección no tiene solución, entonces son alabeadas. Saltarse esta verificación lleva a clasificaciones equivocadas en el taller del tema."
+                ]
+              }
+            ]
+          },
+          "s1-stepper-pertenencia": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto: ¿pertenece un punto a la recta y son paralelas?",
+            "statement": "Dada la recta $\\mathbf{r}(t)=(2,1,3)+t\\,(1,-1,2)$, decidir si el punto $P=(4,-1,7)$ pertenece a ella y si la recta $\\mathbf{s}(u)=(0,5,1)+u\\,(2,-2,4)$ es paralela a $\\mathbf{r}$.",
+            "steps": [
+              {"title": "Plantear la pertenencia del punto", "body": "El punto pertenece a la recta si existe un único $t$ que reproduce sus tres coordenadas a la vez.", "formula": "(4,-1,7)=(2+t,\\;1-t,\\;3+2t)", "final": false},
+              {"title": "Despejar y comparar el parámetro", "body": "Se despeja $t$ de cada coordenada y se exige que coincida en las tres.", "formula": "2+t=4\\Rightarrow t=2,\\quad 1-t=-1\\Rightarrow t=2,\\quad 3+2t=7\\Rightarrow t=2", "final": false},
+              {"title": "Comparar los vectores directores", "body": "Para el paralelismo se verifica si los directores de $\\mathbf{r}$ y $\\mathbf{s}$ son proporcionales.", "formula": "(2,-2,4)=2\\,(1,-1,2)", "final": false},
+              {"title": "Concluir y verificar", "body": "El valor $t=2$ es el mismo en las tres coordenadas, así que $P$ sí pertenece a la recta. Además, el director de $\\mathbf{s}$ es el doble del de $\\mathbf{r}$, luego ambas rectas son paralelas.", "formula": "P\\in\\mathbf{r}\\;(t=2);\\qquad \\mathbf{d}_{\\mathbf{s}}=2\\,\\mathbf{d}_{\\mathbf{r}}\\;\\Rightarrow\\;\\mathbf{r}\\parallel\\mathbf{s}", "final": true}
+            ]
+          },
+          "s1-quiz": {
+            "type": "quiz",
+            "title": "Chequeo: identificar la recta",
+            "questions": [
+              {
+                "prompt": "¿Cuál es un vector director de la recta que pasa por $A=(2,1,0)$ y $B=(2,4,3)$?",
+                "options": [
+                  {"text": "$(0,3,3)$", "correct": true, "feedback": "Correcto: el director es $B-A=(2-2,\\,4-1,\\,3-0)=(0,3,3)$; la primera componente nula indica que $x$ permanece constante."},
+                  {"text": "$(4,5,3)$", "correct": false, "feedback": "Revisa el procedimiento: el director se obtiene restando coordenadas $B-A$, no sumándolas."},
+                  {"text": "$(2,1,0)$", "correct": false, "feedback": "Eso es el punto $A$, no una dirección. El vector director es la diferencia entre los dos puntos."}
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "seccion-2": {
+        "kind": "theory",
+        "theme": "El plano",
+        "badge": "Sección 2",
+        "navLabel": "El plano y sus posiciones",
+        "title": "Ecuación del plano y posiciones relativas",
+        "learningOutcomeIds": ["RA1", "RA2"],
+        "intro": [
+          "Si la recta se define por una dirección, el plano se define por lo que le es perpendicular: su vector normal. En esta sección verás cómo el normal determina por completo la orientación de un plano y cómo, con un punto del plano, se obtiene su ecuación general."
+        ],
+        "componentOrder": [
+          "s2-teoria-1", "s2-figura-plano", "s2-formula-plano", "s2-carrusel",
+          "s2-teoria-2", "s2-stepper-trespuntos", "s2-flashcards",
+          "s2-teoria-3", "s2-formula-distancia", "s2-stepper-distancia", "s2-acordion", "s2-multiselect"
+        ],
+        "components": {
+          "s2-teoria-1": {
+            "type": "theory-block",
+            "title": "El vector normal define el plano",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Un plano es una superficie infinita y plana. Lo que fija su orientación no es una dirección dentro de él, sino una dirección perpendicular a él: el vector normal $\\mathbf{n}=(A,B,C)$. Dos planos con el mismo normal son paralelos; cambiar el normal inclina el plano.",
+              "Para escribir su ecuación basta un punto del plano $P_0=(x_0,y_0,z_0)$ y el normal $\\mathbf{n}$. La condición de que un punto $(x,y,z)$ pertenezca al plano es que el vector que va de $P_0$ a ese punto sea perpendicular al normal, es decir, que su producto punto con $\\mathbf{n}$ sea cero: $A(x-x_0)+B(y-y_0)+C(z-z_0)=0$.",
+              "Desarrollando esa expresión se llega a la ecuación general $Ax+By+Cz=D$, donde $D=Ax_0+By_0+Cz_0$. Lo notable es que los coeficientes $A$, $B$, $C$ que acompañan a las variables son exactamente las componentes del vector normal: leer una ecuación de plano es leer su normal."
+            ],
+            "keyIdeas": [
+              {"icon": "straighten", "text": "El normal $\\mathbf{n}=(A,B,C)$ es perpendicular a todo el plano."},
+              {"icon": "data_object", "text": "En $Ax+By+Cz=D$, los coeficientes $A,B,C$ son las componentes del normal."},
+              {"icon": "join_inner", "text": "La pertenencia al plano es una condición de perpendicularidad: producto punto cero."}
+            ],
+            "example": {
+              "title": "Leer el normal en la ecuación",
+              "body": ["El plano $2x-y+3z=7$ tiene normal $\\mathbf{n}=(2,-1,3)$; cualquier plano paralelo a él comparte ese mismo vector normal y solo difiere en el valor de $D$."]
+            },
+            "closing": ["Identifica siempre el normal: es la clave para escribir, comparar y orientar planos."]
+          },
+          "s2-figura-plano": {
+            "type": "image",
+            "title": "Plano definido por punto y vector normal",
+            "assetId": "fig-5-2-plano-normal",
+            "src": "",
+            "alt": "Plano inclinado en el espacio 3D con un punto P0 sobre él y un vector normal n perpendicular saliendo del plano, con ejes x, y, z.",
+            "caption": "El vector normal $\\mathbf{n}$, perpendicular al plano, determina su orientación a partir del punto $P_0$.",
+            "prompt": "Crear una figura didáctica en español con ejes x, y, z en perspectiva 3D. Dibujar un plano inclinado (un paralelogramo semitransparente) y, sobre él, un punto P0. Desde P0 dibujar un vector normal n perpendicular a la superficie, con flecha y etiqueta n=(A, B, C). Incluir un punto genérico (x, y, z) sobre el plano y el vector de P0 a ese punto para ilustrar la condición de perpendicularidad. Estilo limpio y etiquetas legibles."
+          },
+          "s2-formula-plano": {
+            "type": "formula",
+            "title": "Ecuación general del plano",
+            "context": ["Esta es la forma en que casi siempre se manipula un plano. Se parte de la condición de perpendicularidad entre el normal y cualquier vector contenido en el plano, y se desarrolla hasta una ecuación lineal en $x$, $y$, $z$."],
+            "latex": "A(x-x_0)+B(y-y_0)+C(z-z_0)=0 \\;\\Longleftrightarrow\\; Ax+By+Cz=D",
+            "variables": [
+              {"symbol": "A, B, C", "description": "componentes del vector normal $\\mathbf{n}$."},
+              {"symbol": "x_0, y_0, z_0", "description": "coordenadas de un punto conocido del plano."},
+              {"symbol": "D", "description": "constante $D=Ax_0+By_0+Cz_0$."}
+            ],
+            "explanation": [
+              "La forma de la izquierda muestra el origen geométrico: perpendicularidad entre $\\mathbf{n}$ y el vector $(x-x_0,\\,y-y_0,\\,z-z_0)$.",
+              "La forma de la derecha es la ecuación general, cómoda para sustituir y comparar; el valor de $D$ traslada el plano sin cambiar su orientación."
+            ]
+          },
+          "s2-carrusel": {
+            "type": "carousel",
+            "title": "Cómo nace la ecuación del plano",
+            "slides": [
+              {"label": "Datos", "title": "Punto y normal", "body": ["Todo parte de un punto del plano $P_0$ y un vector normal $\\mathbf{n}=(A,B,C)$ perpendicular a la superficie."], "icon": "place"},
+              {"label": "Condición", "title": "Perpendicularidad", "body": ["Un punto pertenece al plano si el vector de $P_0$ a él es perpendicular a $\\mathbf{n}$, es decir, si su producto punto es cero."], "icon": "join_inner"},
+              {"label": "Fórmula", "formula": "A(x-x_0)+B(y-y_0)+C(z-z_0)=0", "description": "La condición de producto punto cero, escrita en coordenadas."},
+              {"label": "General", "title": "Ecuación general", "body": ["Desarrollando se obtiene $Ax+By+Cz=D$, con $D=Ax_0+By_0+Cz_0$; los coeficientes son el normal."], "icon": "data_object"},
+              {"label": "Normal", "title": "Normal con producto cruz", "body": ["Si solo tienes puntos del plano, el normal se obtiene como producto cruz de dos vectores contenidos en él."], "icon": "close_fullscreen"}
+            ]
+          },
+          "s2-teoria-2": {
+            "type": "theory-block",
+            "title": "Obtener el normal con producto cruz",
+            "eyebrow": "Conexión con el Tema 4",
+            "body": [
+              "Muchas veces el plano se conoce por tres de sus puntos, no por su normal. Aquí entra en juego el producto cruz del Tema 4: si $P$, $Q$ y $R$ pertenecen al plano, los vectores $\\overrightarrow{PQ}$ y $\\overrightarrow{PR}$ están contenidos en él, y su producto cruz $\\mathbf{n}=\\overrightarrow{PQ}\\times\\overrightarrow{PR}$ es perpendicular a ambos, es decir, perpendicular al plano.",
+              "Esa es justamente la propiedad que define al normal. Una vez calculado $\\mathbf{n}=(A,B,C)$, se elige cualquiera de los tres puntos como $P_0$ y se escribe la ecuación general. El procedimiento integra el producto cruz, la ecuación del plano y la verificación con sistemas, todos saberes del curso.",
+              "Conviene comprobar que los tres puntos no sean colineales: si lo fueran, $\\overrightarrow{PQ}$ y $\\overrightarrow{PR}$ serían paralelos, su producto cruz sería el vector cero y no definirían un plano único. Un normal nulo es la señal de que los datos no determinan un plano."
+            ],
+            "keyIdeas": [
+              {"icon": "close_fullscreen", "text": "$\\mathbf{n}=\\overrightarrow{PQ}\\times\\overrightarrow{PR}$ es perpendicular al plano."},
+              {"icon": "warning", "text": "Si los tres puntos son colineales, el producto cruz es $\\mathbf{0}$ y no hay plano único."},
+              {"icon": "link", "text": "El procedimiento reúne producto cruz (Tema 4) y ecuación del plano."}
+            ],
+            "closing": ["En el siguiente ejercicio hallarás el normal con producto cruz y escribirás la ecuación del plano."]
+          },
+          "s2-stepper-trespuntos": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto: plano por tres puntos",
+            "statement": "Hallar la ecuación del plano que pasa por $P=(1,0,0)$, $Q=(0,2,0)$ y $R=(0,0,3)$.",
+            "steps": [
+              {"title": "Construir dos vectores del plano", "body": "Se forman dos vectores contenidos en el plano restando $P$ a los otros dos puntos.", "formula": "\\overrightarrow{PQ}=Q-P=(-1,2,0),\\qquad \\overrightarrow{PR}=R-P=(-1,0,3)", "final": false},
+              {"title": "Calcular el normal con producto cruz", "body": "El producto cruz de los dos vectores es perpendicular al plano.", "formula": "\\mathbf{n}=\\overrightarrow{PQ}\\times\\overrightarrow{PR}=\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\-1&2&0\\\\-1&0&3\\end{vmatrix}=(6,3,2)", "final": false},
+              {"title": "Plantear la ecuación con un punto", "body": "Se usa $\\mathbf{n}=(6,3,2)$ y el punto $P=(1,0,0)$ en la forma punto-normal.", "formula": "6(x-1)+3(y-0)+2(z-0)=0", "final": false},
+              {"title": "Escribir la ecuación general", "body": "Se desarrolla para obtener la forma $Ax+By+Cz=D$.", "formula": "6x+3y+2z=6", "final": false},
+              {"title": "Verificar con los tres puntos", "body": "Cada punto debe satisfacer la ecuación: $P,Q,R$ dan los valores $6$, $6$ y $6$, iguales a $D$. La ecuación del plano es correcta.", "formula": "P:6(1)=6,\\quad Q:3(2)=6,\\quad R:2(3)=6", "final": true}
+            ]
+          },
+          "s2-flashcards": {
+            "type": "flashcards",
+            "title": "Términos clave del plano",
+            "cards": [
+              {"term": "Vector normal", "definition": "Vector $\\mathbf{n}=(A,B,C)$ perpendicular al plano; sus componentes son los coeficientes de la ecuación general.", "icon": "straighten"},
+              {"term": "Ecuación general", "definition": "Forma $Ax+By+Cz=D$ del plano, donde $D=Ax_0+By_0+Cz_0$ para un punto conocido $P_0$.", "icon": "data_object"},
+              {"term": "Forma punto-normal", "definition": "Expresión $A(x-x_0)+B(y-y_0)+C(z-z_0)=0$ que traduce la perpendicularidad entre el normal y un vector del plano.", "icon": "join_inner"},
+              {"term": "Planos paralelos", "definition": "Planos cuyos vectores normales son proporcionales; difieren solo en el valor de $D$.", "icon": "layers"},
+              {"term": "Ángulo entre planos", "definition": "Ángulo determinado por el ángulo entre sus vectores normales mediante el producto punto.", "icon": "architecture"}
+            ]
+          },
+          "s2-teoria-3": {
+            "type": "theory-block",
+            "title": "Posiciones relativas entre planos",
+            "eyebrow": "Profundización",
+            "body": [
+              "Como la orientación de un plano vive en su normal, las relaciones entre dos planos se leen comparando sus normales. Si los normales $\\mathbf{n}_1$ y $\\mathbf{n}_2$ son proporcionales, los planos son paralelos: no se cortan, salvo que sean el mismo plano. Si los normales son perpendiculares ($\\mathbf{n}_1\\cdot\\mathbf{n}_2=0$), los planos son perpendiculares.",
+              "En general, el ángulo entre dos planos coincide con el ángulo entre sus normales, calculado con el producto punto: $\\cos\\theta=\\dfrac{|\\mathbf{n}_1\\cdot\\mathbf{n}_2|}{\\|\\mathbf{n}_1\\|\\,\\|\\mathbf{n}_2\\|}$. Tomamos el valor absoluto para obtener el ángulo agudo entre las superficies.",
+              "Dos planos no paralelos siempre se cortan, y su intersección es una recta. Esto anticipa la Sección 3: las intersecciones entre objetos del espacio son, una vez más, soluciones de sistemas lineales, y el tipo de solución revela la posición relativa."
+            ],
+            "keyIdeas": [
+              {"icon": "layers", "text": "Normales proporcionales ⇒ planos paralelos."},
+              {"icon": "architecture", "text": "Normales perpendiculares ⇒ planos perpendiculares."},
+              {"icon": "show_chart", "text": "Dos planos no paralelos se cortan en una recta."}
+            ],
+            "closing": ["La distancia de un punto a un plano, que verás a continuación, también se apoya en el vector normal."]
+          },
+          "s2-formula-distancia": {
+            "type": "formula",
+            "title": "Distancia de un punto a un plano",
+            "context": ["Cuando se necesita saber qué tan lejos está un punto $P_1=(x_0,y_0,z_0)$ de un plano $Ax+By+Cz=D$ —por ejemplo, la holgura entre una herramienta y una superficie—, se proyecta el desplazamiento sobre el vector normal. El resultado es una distancia perpendicular."],
+            "latex": "d=\\frac{|Ax_0+By_0+Cz_0-D|}{\\sqrt{A^2+B^2+C^2}}",
+            "variables": [
+              {"symbol": "A, B, C", "description": "componentes del normal del plano."},
+              {"symbol": "D", "description": "término independiente de la ecuación general."},
+              {"symbol": "x_0, y_0, z_0", "description": "coordenadas del punto cuya distancia se mide."}
+            ],
+            "explanation": [
+              "El numerador mide cuánto se aparta el punto de la ecuación del plano; el valor absoluto garantiza una distancia no negativa.",
+              "El denominador $\\sqrt{A^2+B^2+C^2}=\\|\\mathbf{n}\\|$ normaliza el resultado para que sea una distancia real perpendicular, independiente de la escala del normal."
+            ]
+          },
+          "s2-stepper-distancia": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto: distancia de un punto a un plano",
+            "statement": "Calcular la distancia del punto $P_1=(3,1,-2)$ al plano $2x-2y+z=5$.",
+            "steps": [
+              {"title": "Identificar normal y término independiente", "body": "Se leen los coeficientes de la ecuación general como componentes del normal y el valor de $D$.", "formula": "\\mathbf{n}=(2,-2,1),\\qquad D=5", "final": false},
+              {"title": "Evaluar el numerador", "body": "Se sustituyen las coordenadas del punto en $Ax_0+By_0+Cz_0-D$ y se toma el valor absoluto.", "formula": "|2(3)-2(1)+1(-2)-5|=|6-2-2-5|=|-3|=3", "final": false},
+              {"title": "Evaluar el denominador", "body": "Se calcula la norma del vector normal.", "formula": "\\sqrt{2^2+(-2)^2+1^2}=\\sqrt{9}=3", "final": false},
+              {"title": "Concluir la distancia", "body": "El cociente da la distancia perpendicular: $d=3/3=1$. El punto está a una unidad del plano, medido en la dirección del normal.", "formula": "d=\\frac{3}{3}=1", "final": true}
+            ]
+          },
+          "s2-acordion": {
+            "type": "accordion",
+            "title": "Matices sobre planos",
+            "items": [
+              {
+                "icon": "lightbulb",
+                "title": "El signo de D mueve el plano, no lo gira",
+                "open": true,
+                "body": [
+                  "En la ecuación $Ax+By+Cz=D$, los coeficientes $A$, $B$ y $C$ controlan la orientación porque son el vector normal, mientras que $D$ controla únicamente la posición. Cambiar $D$ desplaza el plano paralelamente a sí mismo, acercándolo o alejándolo del origen sin alterar su inclinación.",
+                  "Por eso una familia de planos paralelos comparte $A$, $B$, $C$ y solo varía en $D$. Reconocer esto evita el error de pensar que dos ecuaciones con distinto $D$ describen planos con orientaciones diferentes: en realidad son planos gemelos en posiciones distintas."
+                ]
+              },
+              {
+                "icon": "swap_calls",
+                "title": "El normal no es único en escala ni en sentido",
+                "body": [
+                  "Multiplicar toda la ecuación del plano por una constante no nula produce la misma superficie: $6x+3y+2z=6$ y $12x+6y+4z=12$ describen el mismo plano. Igualmente, el normal puede apuntar hacia un lado o hacia el opuesto; ambos sentidos son perpendiculares al plano.",
+                  "Esto importa al comparar planos o calcular ángulos: conviene comparar direcciones de normales (proporcionalidad) más que sus valores exactos, y usar valor absoluto en el coseno para quedarse con el ángulo agudo, que es el que tiene sentido geométrico entre dos superficies."
+                ]
+              },
+              {
+                "icon": "report",
+                "title": "Tres puntos colineales no definen un plano",
+                "body": [
+                  "El método del producto cruz para hallar el normal supone que los tres puntos dados no están alineados. Si lo están, los vectores $\\overrightarrow{PQ}$ y $\\overrightarrow{PR}$ resultan paralelos y su producto cruz es el vector cero, que no sirve como normal.",
+                  "Geométricamente, por una recta pasan infinitos planos, de modo que tres puntos colineales no determinan uno solo. Cuando al calcular el producto cruz obtengas el vector nulo, esa es la señal de que los datos son insuficientes o están mal tomados, no de que el plano sea \"horizontal\" ni nada parecido."
+                ]
+              }
+            ]
+          },
+          "s2-multiselect": {
+            "type": "multi-select",
+            "title": "Selección múltiple: propiedades del plano",
+            "prompt": "Selecciona todas las afirmaciones correctas sobre el plano $2x-y+3z=7$.",
+            "options": [
+              {"text": "Su vector normal es $\\mathbf{n}=(2,-1,3)$.", "correct": true},
+              {"text": "El plano $2x-y+3z=10$ es paralelo a él.", "correct": true},
+              {"text": "El punto $(2,0,1)$ pertenece al plano.", "correct": true},
+              {"text": "Su vector normal es $\\mathbf{n}=(7,7,7)$.", "correct": false},
+              {"text": "El plano $x+2y+z=7$ es paralelo a él.", "correct": false}
+            ]
+          }
+        }
+      },
+      "seccion-3": {
+        "kind": "theory",
+        "theme": "Intersecciones",
+        "badge": "Sección 3",
+        "navLabel": "Intersecciones",
+        "title": "Intersecciones plano-recta y recta-recta como sistemas lineales",
+        "learningOutcomeIds": ["RA1", "RA2"],
+        "intro": [
+          "Esta es la sección central del tema y el núcleo del taller ajustado por el docente. Aquí verás que hallar dónde se cortan objetos del espacio no es un asunto de dibujo, sino de resolver un sistema lineal e interpretar su tipo de solución."
+        ],
+        "componentOrder": [
+          "s3-teoria-1", "s3-formula-sustitucion", "s3-stepper-plano-recta", "s3-carrusel",
+          "s3-teoria-2", "s3-stepper-recta-recta", "s3-figura-intersecciones", "s3-flashcards",
+          "s3-teoria-3", "s3-chart", "s3-acordion", "s3-matching"
+        ],
+        "components": {
+          "s3-teoria-1": {
+            "type": "theory-block",
+            "title": "Intersección plano-recta",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una recta y un plano en el espacio pueden cortarse en un punto, ser paralelos (no cortarse) o que la recta esté contenida en el plano (cortarse en infinitos puntos). Decidir cuál de los tres casos ocurre se hace por sustitución, no por inspección visual.",
+              "El procedimiento es directo: se toma la recta en forma paramétrica, $x=x_0+at$, $y=y_0+bt$, $z=z_0+ct$, y se sustituye en la ecuación del plano $Ax+By+Cz=D$. Como $x$, $y$, $z$ quedan expresados en función de $t$, la sustitución produce una sola ecuación lineal en $t$.",
+              "Si esa ecuación tiene solución única $t^*$, la recta corta el plano en el punto $\\mathbf{r}(t^*)$; si la ecuación es del tipo $0=k$ con $k\\neq0$, no hay solución y la recta es paralela al plano; si es del tipo $0=0$, todo $t$ sirve y la recta está contenida en el plano. El tipo de solución de la ecuación es el que dicta la geometría."
+            ],
+            "keyIdeas": [
+              {"icon": "input", "text": "Se sustituyen las paramétricas de la recta en la ecuación del plano."},
+              {"icon": "looks_one", "text": "Solución única en $t$ ⇒ un punto de corte."},
+              {"icon": "block", "text": "$0=k$ (con $k\\neq0$) ⇒ recta paralela; $0=0$ ⇒ recta contenida en el plano."}
+            ],
+            "closing": ["A continuación verás el procedimiento aplicado paso a paso a un caso concreto."]
+          },
+          "s3-formula-sustitucion": {
+            "type": "formula",
+            "title": "Ecuación en t de la intersección plano-recta",
+            "context": ["Esta expresión es el resultado de sustituir la recta paramétrica en el plano. Es la ecuación que hay que resolver para hallar el parámetro del punto de corte; su forma determina si hay uno, ninguno o infinitos puntos comunes."],
+            "latex": "A(x_0+at)+B(y_0+bt)+C(z_0+ct)=D",
+            "variables": [
+              {"symbol": "a, b, c", "description": "componentes del vector director de la recta."},
+              {"symbol": "x_0, y_0, z_0", "description": "punto base de la recta."},
+              {"symbol": "A, B, C, D", "description": "coeficientes del plano $Ax+By+Cz=D$."},
+              {"symbol": "t", "description": "parámetro a despejar; su valor localiza el punto de corte."}
+            ],
+            "explanation": [
+              "Al agrupar términos, la ecuación toma la forma $(\\mathbf{n}\\cdot\\mathbf{d})\\,t = D-\\mathbf{n}\\cdot P_0$.",
+              "Si $\\mathbf{n}\\cdot\\mathbf{d}\\neq0$ hay un único $t$ (la recta atraviesa el plano); si $\\mathbf{n}\\cdot\\mathbf{d}=0$ la recta es paralela al plano y, según el lado derecho, está fuera o contenida en él."
+            ]
+          },
+          "s3-stepper-plano-recta": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto: intersección plano-recta",
+            "statement": "Hallar el punto donde la recta $\\mathbf{r}(t)=(1,1,0)+t\\,(1,0,2)$ corta al plano $2x+y-z=5$.",
+            "steps": [
+              {"title": "Escribir la recta en paramétricas", "body": "Se separan las coordenadas en función de $t$ a partir de la forma vectorial.", "formula": "x=1+t,\\quad y=1,\\quad z=2t", "final": false},
+              {"title": "Sustituir en la ecuación del plano", "body": "Se reemplazan $x$, $y$, $z$ en $2x+y-z=5$.", "formula": "2(1+t)+1-(2t)=5", "final": false},
+              {"title": "Resolver la ecuación en t", "body": "Se simplifica: los términos en $t$ se cancelan, lo que obliga a revisar el caso.", "formula": "2+2t+1-2t=5\\;\\Rightarrow\\;3=5", "final": false},
+              {"title": "Interpretar el resultado", "body": "La igualdad $3=5$ es falsa: no existe ningún $t$ que satisfaga la ecuación, porque $\\mathbf{n}\\cdot\\mathbf{d}=(2,1,-1)\\cdot(1,0,2)=0$. La recta es paralela al plano y no lo corta.", "formula": "\\mathbf{n}\\cdot\\mathbf{d}=2(1)+1(0)+(-1)(2)=0", "final": true}
+            ]
+          },
+          "s3-carrusel": {
+            "type": "carousel",
+            "title": "Tres casos de la intersección plano-recta",
+            "slides": [
+              {"label": "Caso 1", "title": "La recta atraviesa el plano", "body": ["Cuando $\\mathbf{n}\\cdot\\mathbf{d}\\neq0$, la ecuación en $t$ tiene solución única y la recta corta el plano en un punto."], "icon": "looks_one"},
+              {"label": "Caso 2", "title": "La recta es paralela al plano", "body": ["Cuando $\\mathbf{n}\\cdot\\mathbf{d}=0$ y la igualdad resulta falsa (como $3=5$), no hay corte: la recta es paralela al plano."], "icon": "block"},
+              {"label": "Caso 3", "title": "La recta está en el plano", "body": ["Cuando $\\mathbf{n}\\cdot\\mathbf{d}=0$ y la igualdad es $0=0$, todo punto de la recta cumple la ecuación: la recta está contenida en el plano."], "icon": "all_inclusive"},
+              {"label": "Criterio", "formula": "(\\mathbf{n}\\cdot\\mathbf{d})\\,t=D-\\mathbf{n}\\cdot P_0", "description": "El producto $\\mathbf{n}\\cdot\\mathbf{d}$ decide el caso; el lado derecho distingue paralela de contenida."}
+            ]
+          },
+          "s3-teoria-2": {
+            "type": "theory-block",
+            "title": "Intersección recta-recta",
+            "eyebrow": "Sistema en dos parámetros",
+            "body": [
+              "Para saber si dos rectas se cortan se igualan sus formas paramétricas. Si la primera es $\\mathbf{r}_1(t)=P_1+t\\,\\mathbf{d}_1$ y la segunda $\\mathbf{r}_2(s)=P_2+s\\,\\mathbf{d}_2$, exigir $\\mathbf{r}_1(t)=\\mathbf{r}_2(s)$ produce tres ecuaciones (una por coordenada) con dos incógnitas, $t$ y $s$.",
+              "Ese sistema de $3\\times2$ tiene tres desenlaces. Si existe un par $(t,s)$ que satisface las tres ecuaciones, las rectas se cortan en el punto correspondiente. Si las dos primeras ecuaciones dan un par $(t,s)$ que no cumple la tercera, el sistema es inconsistente: las rectas no se cortan.",
+              "Cuando no se cortan hay que distinguir dos situaciones con el criterio de la Sección 1: si los directores $\\mathbf{d}_1$ y $\\mathbf{d}_2$ son proporcionales, las rectas son paralelas; si no lo son, son alabeadas (se cruzan en el espacio sin tocarse). Así, un mismo sistema lineal clasifica por completo la relación entre las dos rectas."
+            ],
+            "keyIdeas": [
+              {"icon": "merge_type", "text": "Igualar $\\mathbf{r}_1(t)=\\mathbf{r}_2(s)$ da un sistema $3\\times2$ en $t$ y $s$."},
+              {"icon": "check_circle", "text": "Sistema consistente ⇒ las rectas se cortan en un punto."},
+              {"icon": "call_split", "text": "Sin solución: paralelas si los directores son proporcionales; alabeadas si no."}
+            ],
+            "closing": ["El siguiente ejercicio resuelve el sistema y clasifica el par de rectas."]
+          },
+          "s3-stepper-recta-recta": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto: ¿se cortan estas dos rectas?",
+            "statement": "Determinar si las rectas $\\mathbf{r}_1(t)=(0,0,0)+t\\,(1,1,1)$ y $\\mathbf{r}_2(s)=(1,0,0)+s\\,(0,1,1)$ se cortan y, si no, clasificarlas.",
+            "steps": [
+              {"title": "Igualar las paramétricas", "body": "Se iguala coordenada a coordenada $\\mathbf{r}_1(t)=\\mathbf{r}_2(s)$, generando un sistema de tres ecuaciones en $t$ y $s$.", "formula": "\\begin{cases} t=1 \\\\ t=s \\\\ t=s \\end{cases}", "final": false},
+              {"title": "Resolver con las dos primeras", "body": "De la primera ecuación $t=1$; al llevarlo a la segunda, $s=t=1$.", "formula": "t=1,\\quad s=1", "final": false},
+              {"title": "Comprobar en la tercera ecuación", "body": "La tercera ecuación es $t=s$, que con $t=1$ y $s=1$ se cumple: $1=1$. El sistema es consistente.", "formula": "t=s\\;\\Rightarrow\\;1=1\\;\\checkmark", "final": false},
+              {"title": "Hallar el punto y clasificar", "body": "Con $t=1$, $\\mathbf{r}_1(1)=(1,1,1)$, y con $s=1$, $\\mathbf{r}_2(1)=(1,1,1)$: coinciden. Las rectas son secantes y se cortan en $(1,1,1)$; sus directores $(1,1,1)$ y $(0,1,1)$ no son proporcionales, confirmando que no son paralelas.", "formula": "\\mathbf{r}_1(1)=\\mathbf{r}_2(1)=(1,1,1)", "final": true}
+            ]
+          },
+          "s3-figura-intersecciones": {
+            "type": "image",
+            "title": "Intersecciones en el espacio",
+            "assetId": "fig-5-3-intersecciones",
+            "src": "",
+            "alt": "Composición con dos paneles: a la izquierda un plano atravesado por una recta marcando el punto de corte; a la derecha dos rectas que se cruzan en el espacio sin tocarse.",
+            "caption": "Izquierda: recta que atraviesa un plano en un punto. Derecha: rectas alabeadas que se cruzan sin cortarse.",
+            "prompt": "Crear una figura didáctica en español con dos paneles y ejes x, y, z. Panel izquierdo: un plano semitransparente atravesado por una recta, con un punto de corte resaltado y etiquetado como punto de intersección. Panel derecho: dos rectas en el espacio que se cruzan visualmente pero a distinta altura (alabeadas), con una nota indicando que no se tocan. Estilo limpio, etiquetas legibles, leyenda breve."
+          },
+          "s3-flashcards": {
+            "type": "flashcards",
+            "title": "Términos clave de intersecciones",
+            "cards": [
+              {"term": "Intersección plano-recta", "definition": "Punto (o conjunto) común a una recta y un plano, hallado al sustituir las paramétricas de la recta en la ecuación del plano.", "icon": "input"},
+              {"term": "Sistema 3×2", "definition": "Sistema de tres ecuaciones en dos incógnitas $t,s$ que surge al igualar las paramétricas de dos rectas.", "icon": "grid_on"},
+              {"term": "Rectas secantes", "definition": "Rectas que se cortan en un punto; el sistema $\\mathbf{r}_1(t)=\\mathbf{r}_2(s)$ es consistente.", "icon": "merge_type"},
+              {"term": "Rectas alabeadas", "definition": "Rectas no paralelas que no se cortan; el sistema es inconsistente y los directores no son proporcionales.", "icon": "all_inclusive"},
+              {"term": "Recta contenida en un plano", "definition": "Caso en que la sustitución da $0=0$: todo punto de la recta satisface la ecuación del plano.", "icon": "layers"}
+            ]
+          },
+          "s3-teoria-3": {
+            "type": "theory-block",
+            "title": "La geometría se decide con álgebra lineal",
+            "eyebrow": "Síntesis del tema",
+            "body": [
+              "Las dos situaciones de esta sección comparten una misma lógica: un problema geométrico se traduce en un sistema lineal y el tipo de solución del sistema clasifica la geometría. Solución única significa un punto de corte; sin solución significa que los objetos no se tocan; infinitas soluciones significan contención.",
+              "Esto cierra el arco del curso. Los criterios de existencia y unicidad del Tema 1 (rango y consistencia), los métodos de resolución de Gauss-Jordan, la inversa y Cramer de los Temas 1 y 3, y los vectores del Tema 4 confluyen aquí para responder preguntas sobre rectas y planos.",
+              "Por eso el taller del tema no pide memorizar fórmulas nuevas, sino reconocer qué sistema aparece detrás de cada pregunta geométrica y resolverlo con las herramientas que ya dominas. El gráfico siguiente resume cómo el tipo de solución determina la relación entre dos rectas."
+            ],
+            "keyIdeas": [
+              {"icon": "hub", "text": "Geometría de intersección = sistema lineal + interpretación."},
+              {"icon": "rule", "text": "Única, ninguna o infinitas soluciones ⇒ corte, separación o contención."},
+              {"icon": "school", "text": "Se integran los criterios y métodos de los Temas 1, 3 y 4 (RA3)."}
+            ],
+            "closing": ["Observa en el gráfico cómo cada tipo de solución se asocia con una relación geométrica entre rectas."]
+          },
+          "s3-chart": {
+            "type": "chart",
+            "chartType": "bar",
+            "title": "Relación entre dos rectas según la solución del sistema",
+            "description": ["Hilo conductor: en los bloques anteriores establecimos que igualar las paramétricas de dos rectas produce un sistema lineal cuyo tipo de solución clasifica la relación geométrica. Este gráfico resume esa correspondencia para fijar el criterio antes del taller."],
+            "note": "Lectura del gráfico: el eje horizontal muestra los tres desenlaces posibles del sistema y el eje vertical, el número de puntos comunes entre las rectas (representado de forma cualitativa: 1 punto cuando hay solución única, 0 cuando no hay solución, y un valor alto que simboliza \"infinitos\" cuando las rectas coinciden). La barra de solución única corresponde a rectas secantes; la barra de \"sin solución\" agrupa los casos sin corte —paralelas si los directores son proporcionales y alabeadas si no lo son—; la barra de \"infinitas soluciones\" corresponde a rectas coincidentes. La conclusión disciplinar es que basta resolver el sistema y leer su tipo de solución para clasificar geométricamente el par de rectas, sin recurrir al dibujo.",
+            "height": "300px",
+            "labels": ["Solución única (secantes)", "Sin solución (paralelas/alabeadas)", "Infinitas soluciones (coincidentes)"],
+            "datasets": [
+              {"label": "Puntos comunes entre las rectas", "data": [1, 0, 12]}
+            ],
+            "options": {
+              "scales": {
+                "y": {"title": {"display": true, "text": "Número de puntos comunes (cualitativo)"}},
+                "x": {"title": {"display": true, "text": "Tipo de solución del sistema"}}
+              }
+            }
+          },
+          "s3-acordion": {
+            "type": "accordion",
+            "title": "Casos límite y errores en intersecciones",
+            "items": [
+              {
+                "icon": "rule",
+                "title": "Distinguir paralela de contenida en plano-recta",
+                "open": true,
+                "body": [
+                  "Cuando al sustituir la recta en el plano los términos en $t$ se cancelan, el caso queda definido por la igualdad numérica restante. Si esa igualdad es falsa, como $3=5$, la recta es paralela al plano y no lo toca en ningún punto.",
+                  "Si, en cambio, la igualdad es verdadera, como $0=0$, entonces cualquier valor de $t$ satisface la ecuación, lo que significa que toda la recta está dentro del plano. Confundir estos dos subcasos es un error frecuente: ambos provienen de $\\mathbf{n}\\cdot\\mathbf{d}=0$, pero describen geometrías opuestas, separación total frente a contención total."
+                ]
+              },
+              {
+                "icon": "warning",
+                "title": "Por qué se usan dos parámetros distintos en recta-recta",
+                "body": [
+                  "Al intersecar dos rectas es indispensable nombrar sus parámetros con letras diferentes, $t$ para una y $s$ para la otra. Cada recta avanza a su propio ritmo, y el punto de corte ocurre cuando cada una llega a la posición común con su propio valor de parámetro, que en general no es el mismo.",
+                  "Usar el mismo símbolo para ambas es un error que fuerza una relación inexistente entre las rectas y puede llevar a concluir erróneamente que no se cortan. El sistema correcto tiene dos incógnitas independientes, $t$ y $s$, y tres ecuaciones; resolver con dos de ellas y verificar en la tercera es el procedimiento seguro."
+                ]
+              },
+              {
+                "icon": "report",
+                "title": "Sistema sobredeterminado: verificar siempre la tercera ecuación",
+                "body": [
+                  "El sistema de recta-recta tiene más ecuaciones (tres) que incógnitas (dos): está sobredeterminado. Eso significa que un par $(t,s)$ obtenido de dos ecuaciones no garantiza la solución del sistema completo; falta comprobarlo en la ecuación restante.",
+                  "Omitir esa verificación es la causa más común de clasificar mal un par de rectas. Si el par cumple las tres ecuaciones, las rectas se cortan; si falla la tercera, no se cortan y entonces se decide entre paralelas y alabeadas comparando los vectores directores."
+                ]
+              }
+            ]
+          },
+          "s3-matching": {
+            "type": "matching",
+            "title": "Relaciona el resultado del sistema con la geometría",
+            "pairs": [
+              {"word": "Solución única en $(t,s)$", "meaning": "Rectas secantes: se cortan en un punto"},
+              {"word": "Sin solución y directores proporcionales", "meaning": "Rectas paralelas"},
+              {"word": "Sin solución y directores no proporcionales", "meaning": "Rectas alabeadas"},
+              {"word": "Sustitución que da $0=0$", "meaning": "Recta contenida en el plano"}
+            ],
+            "options": [
+              "Rectas secantes: se cortan en un punto",
+              "Rectas paralelas",
+              "Rectas alabeadas",
+              "Recta contenida en el plano"
+            ]
+          }
+        }
+      },
+      "seccion-4": {
+        "kind": "theory",
+        "theme": "Aplicaciones",
+        "badge": "Sección 4",
+        "navLabel": "Aplicaciones",
+        "title": "Aplicaciones del álgebra lineal en la ingeniería",
+        "learningOutcomeIds": ["RA3"],
+        "intro": [
+          "El tramo final del tema responde a la pregunta orientadora \"¿en qué campos se aplica el álgebra lineal y por qué es pertinente?\". Verás tres aplicaciones —rotaciones y traslaciones, criptografía con matrices y circuitos eléctricos— que reutilizan todo lo aprendido en el curso."
+        ],
+        "componentOrder": [
+          "s4-teoria-1", "s4-formula-rotacion", "s4-carrusel", "s4-stepper-hill",
+          "s4-teoria-2", "s4-flashcards", "s4-tabla-aplicaciones",
+          "s4-teoria-3", "s4-stepper-rotacion", "s4-acordion", "s4-quiz"
+        ],
+        "components": {
+          "s4-teoria-1": {
+            "type": "theory-block",
+            "title": "Rotaciones y traslaciones con matrices",
+            "eyebrow": "Geometría que se mueve",
+            "body": [
+              "Mover un objeto en el espacio —girarlo o desplazarlo— es una operación que el álgebra lineal expresa con matrices. Una rotación en el plano por un ángulo $\\theta$ se aplica multiplicando el vector de posición por la matriz de rotación $R(\\theta)$; la nueva posición es $R(\\theta)\\,\\mathbf{v}$.",
+              "Componer varias rotaciones equivale a multiplicar sus matrices, y aquí vuelve a manifestarse una propiedad clave del Tema 2: la falta de conmutatividad del producto. Aplicar primero una traslación y después un giro arroja una posición final distinta a la que se obtiene invirtiendo esa secuencia; alterar el orden de las operaciones modifica el resultado, algo crítico al programar el movimiento de un brazo robótico o una pieza en CAD.",
+              "Una trayectoria, por su parte, es una recta paramétrica $\\mathbf{r}(t)$ del tipo estudiado en la Sección 1, y el punto donde esa trayectoria toca una superficie es una intersección recta-plano como las de la Sección 3. Así, posicionar, mover y detectar contacto son, en conjunto, álgebra lineal en acción."
+            ],
+            "keyIdeas": [
+              {"icon": "360", "text": "Una rotación se aplica como $R(\\theta)\\,\\mathbf{v}$."},
+              {"icon": "swap_horiz", "text": "El orden importa: el producto de matrices no es conmutativo."},
+              {"icon": "precision_manufacturing", "text": "Trayectoria (recta) e impacto (intersección) integran las secciones previas."}
+            ],
+            "example": {
+              "title": "Por qué el orden importa",
+              "body": ["En robótica, girar la base y luego extender el brazo coloca la herramienta en un lugar distinto que extenderlo primero y girar después; las matrices correspondientes no conmutan."]
+            },
+            "closing": ["La matriz de rotación que sigue es la herramienta básica para todo esto."]
+          },
+          "s4-formula-rotacion": {
+            "type": "formula",
+            "title": "Matriz de rotación en el plano",
+            "context": ["Para girar un vector de posición un ángulo $\\theta$ alrededor del origen, se lo multiplica por esta matriz. Es la pieza elemental de las transformaciones geométricas en robótica, gráficos y diseño mecánico."],
+            "latex": "R(\\theta)=\\begin{bmatrix}\\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta\\end{bmatrix}",
+            "variables": [
+              {"symbol": "\\theta", "description": "ángulo de rotación, positivo en sentido antihorario."}
+            ],
+            "explanation": [
+              "Aplicar la rotación es calcular $R(\\theta)\\,\\mathbf{v}$; el resultado es el vector girado, con la misma magnitud.",
+              "Componer dos rotaciones equivale a multiplicar sus matrices: $R(\\alpha)R(\\beta)=R(\\alpha+\\beta)$, y como el producto matricial en general no conmuta, el orden de transformaciones distintas (rotación frente a traslación) sí altera el resultado."
+            ]
+          },
+          "s4-carrusel": {
+            "type": "carousel",
+            "title": "Tres aplicaciones, una misma álgebra",
+            "slides": [
+              {"label": "Rotación", "title": "Rotaciones y traslaciones", "body": ["Posicionar y mover objetos se reduce a multiplicar por matrices de rotación y sumar vectores de traslación; el orden importa porque el producto no conmuta."], "icon": "360"},
+              {"label": "Criptografía", "title": "Cifrado de Hill", "body": ["Un bloque de texto se cifra como $\\mathbf{c}=A\\mathbf{m}\\ (\\mathrm{mod}\\ 26)$ con una matriz invertible; descifrar usa $A^{-1}$."], "icon": "lock"},
+              {"label": "Circuitos", "title": "Circuitos eléctricos", "body": ["Las leyes de Kirchhoff convierten una red en un sistema lineal cuyas incógnitas son corrientes y voltajes."], "icon": "bolt"},
+              {"label": "Integración", "title": "Saberes que confluyen", "body": ["Producto matricial (Tema 2), inversa y determinante (Tema 3) y resolución de sistemas (Temas 1 y 3) se aplican aquí."], "icon": "hub"}
+            ]
+          },
+          "s4-stepper-hill": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto: cifrado de Hill (criptografía)",
+            "statement": "Cifrar el bloque $\\mathbf{m}=\\begin{bmatrix}0\\\\2\\end{bmatrix}$ (las letras A=0, C=2) con la matriz clave $A=\\begin{bmatrix}3&3\\\\2&5\\end{bmatrix}$ mediante $\\mathbf{c}=A\\mathbf{m}\\ (\\mathrm{mod}\\ 26)$, y verificar que la clave es invertible módulo 26.",
+            "steps": [
+              {"title": "Verificar que la clave sea utilizable", "body": "El cifrado de Hill requiere que el determinante de $A$ sea invertible módulo 26, es decir, coprimo con 26.", "formula": "\\det(A)=3\\cdot5-3\\cdot2=9,\\quad \\gcd(9,26)=1", "final": false},
+              {"title": "Multiplicar la matriz por el bloque", "body": "Se calcula el producto matricial $A\\mathbf{m}$ entrada por entrada.", "formula": "A\\mathbf{m}=\\begin{bmatrix}3&3\\\\2&5\\end{bmatrix}\\begin{bmatrix}0\\\\2\\end{bmatrix}=\\begin{bmatrix}6\\\\10\\end{bmatrix}", "final": false},
+              {"title": "Reducir módulo 26", "body": "Se toma cada componente módulo 26 para obtener el bloque cifrado.", "formula": "\\mathbf{c}=\\begin{bmatrix}6\\\\10\\end{bmatrix}\\ (\\mathrm{mod}\\ 26)=\\begin{bmatrix}6\\\\10\\end{bmatrix}", "final": false},
+              {"title": "Concluir y conectar con el descifrado", "body": "El bloque cifrado es $(6,10)$, es decir, las letras G y K. Como $\\det(A)=9$ es coprimo con 26, existe $A^{-1}\\ (\\mathrm{mod}\\ 26)$ y el descifrado se obtiene con $\\mathbf{m}=A^{-1}\\mathbf{c}\\ (\\mathrm{mod}\\ 26)$, integrando inversa, determinante y producto matricial.", "formula": "\\mathbf{c}=\\begin{bmatrix}6\\\\10\\end{bmatrix}\\;\\longrightarrow\\;\\text{G, K};\\qquad \\mathbf{m}=A^{-1}\\mathbf{c}\\ (\\mathrm{mod}\\ 26)", "final": true}
+            ]
+          },
+          "s4-teoria-2": {
+            "type": "theory-block",
+            "title": "Criptografía: el cifrado de Hill",
+            "eyebrow": "Álgebra lineal aplicada a la seguridad",
+            "body": [
+              "El cifrado de Hill es un método clásico que usa álgebra lineal para ocultar información. Cada letra se convierte en un número (A=0, B=1, …, Z=25) y el mensaje se agrupa en bloques que se tratan como vectores. El cifrado multiplica cada bloque por una matriz clave invertible y reduce el resultado módulo 26.",
+              "La condición esencial es que la matriz clave sea invertible módulo 26, lo que exige que su determinante sea coprimo con 26. Esa condición conecta directamente con el Tema 3: sin determinante adecuado no existe la inversa, y sin inversa no es posible descifrar. El descifrado aplica $A^{-1}$ al bloque cifrado para recuperar el mensaje original.",
+              "Esta aplicación es pertinente en ingeniería de sistemas e ingeniería industrial, donde proteger datos y comunicaciones es habitual. Ilustra de forma tangible por qué la invertibilidad de una matriz —un concepto que pudo parecer abstracto— tiene consecuencias prácticas: una clave con determinante no invertible simplemente no permite recuperar el mensaje."
+            ],
+            "keyIdeas": [
+              {"icon": "translate", "text": "Cada letra se vuelve número y los bloques, vectores."},
+              {"icon": "lock", "text": "Cifrar: $\\mathbf{c}=A\\mathbf{m}\\ (\\mathrm{mod}\\ 26)$; descifrar: $\\mathbf{m}=A^{-1}\\mathbf{c}\\ (\\mathrm{mod}\\ 26)$."},
+              {"icon": "key", "text": "La clave debe ser invertible módulo 26: $\\det(A)$ coprimo con 26."}
+            ],
+            "closing": ["La tabla siguiente compara las tres aplicaciones y los saberes que cada una integra."]
+          },
+          "s4-flashcards": {
+            "type": "flashcards",
+            "title": "Términos clave de las aplicaciones",
+            "cards": [
+              {"term": "Matriz de rotación", "definition": "Matriz $R(\\theta)$ que gira un vector un ángulo $\\theta$; componer rotaciones equivale a multiplicar matrices.", "icon": "360"},
+              {"term": "Traslación", "definition": "Desplazamiento de un objeto sumando un vector constante a su posición; combinada con rotación, el orden de aplicación importa.", "icon": "open_with"},
+              {"term": "Cifrado de Hill", "definition": "Método criptográfico que cifra bloques de texto con $\\mathbf{c}=A\\mathbf{m}\\ (\\mathrm{mod}\\ 26)$ usando una matriz invertible módulo 26.", "icon": "lock"},
+              {"term": "Invertibilidad módulo 26", "definition": "Condición que requiere que $\\det(A)$ sea coprimo con 26 para que exista $A^{-1}$ y se pueda descifrar.", "icon": "key"},
+              {"term": "Corrientes de malla", "definition": "Incógnitas de un circuito que, mediante las leyes de Kirchhoff, forman un sistema lineal resoluble por Gauss-Jordan o Cramer.", "icon": "bolt"}
+            ]
+          },
+          "s4-tabla-aplicaciones": {
+            "type": "table",
+            "title": "Tres aplicaciones y los saberes que integran",
+            "columns": ["Aplicación", "Herramienta de álgebra lineal", "Campo de ingeniería", "Saberes integrados"],
+            "rows": [
+              {"cells": ["Rotaciones y traslaciones", "Producto por matriz $R(\\theta)$ y suma de vectores", "Mecatrónica, mecánica (robótica, CAD)", "Producto matricial (Tema 2), vectores (Tema 4)"]},
+              {"cells": ["Cifrado de Hill", "Producto matricial módulo 26 e inversa $A^{-1}$", "Sistemas, industrial (seguridad de datos)", "Determinante e inversa (Tema 3), producto (Tema 2)"]},
+              {"cells": ["Circuitos eléctricos", "Sistema lineal de las leyes de Kirchhoff", "Eléctrica, energías", "Sistemas lineales (Tema 1), Cramer (Tema 3)"]}
+            ]
+          },
+          "s4-teoria-3": {
+            "type": "theory-block",
+            "title": "Circuitos eléctricos como sistemas lineales",
+            "eyebrow": "De la red al sistema",
+            "body": [
+              "Un circuito eléctrico con varias mallas es, desde el punto de vista matemático, un sistema lineal. Las leyes de Kirchhoff —la de corrientes en los nodos y la de voltajes en las mallas— imponen una ecuación lineal por cada restricción, con las corrientes de malla como incógnitas.",
+              "Resolver ese sistema con Gauss-Jordan o con la regla de Cramer entrega las corrientes; los signos indican el sentido real de la circulación y los voltajes se obtienen luego por la ley de Ohm. Cuando solo interesa una corriente concreta, Cramer permite despejarla sin resolver todo el sistema, como se vio en el Tema 3.",
+              "Geométricamente, cada ecuación del sistema es un plano en el espacio de las corrientes, y la solución del circuito es la intersección de esos planos: el mismo principio de la Sección 3, ahora en un contexto físico. Esta aplicación es central en ingeniería eléctrica y de energías, y muestra que el determinante no nulo garantiza una red bien planteada con solución única."
+            ],
+            "keyIdeas": [
+              {"icon": "bolt", "text": "Las leyes de Kirchhoff producen una ecuación lineal por malla/nodo."},
+              {"icon": "calculate", "text": "Gauss-Jordan o Cramer resuelven las corrientes; el signo da el sentido."},
+              {"icon": "show_chart", "text": "La solución del circuito es la intersección de planos en el espacio de corrientes."}
+            ],
+            "closing": ["Has cerrado el recorrido: rectas, planos, intersecciones y aplicaciones forman una sola estructura coherente."]
+          },
+          "s4-stepper-rotacion": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto: rotar un vector 90°",
+            "statement": "Rotar el vector de posición $\\mathbf{v}=(2,0)$ un ángulo $\\theta=90^\\circ$ alrededor del origen usando la matriz de rotación, y verificar que se conserva la magnitud.",
+            "steps": [
+              {"title": "Escribir la matriz de rotación", "body": "Se evalúa $R(\\theta)$ en $\\theta=90^\\circ$, con $\\cos 90^\\circ=0$ y $\\sin 90^\\circ=1$.", "formula": "R(90^\\circ)=\\begin{bmatrix}0 & -1 \\\\ 1 & 0\\end{bmatrix}", "final": false},
+              {"title": "Aplicar la rotación al vector", "body": "Se multiplica la matriz por el vector de posición.", "formula": "R(90^\\circ)\\,\\mathbf{v}=\\begin{bmatrix}0 & -1 \\\\ 1 & 0\\end{bmatrix}\\begin{bmatrix}2\\\\0\\end{bmatrix}=\\begin{bmatrix}0\\\\2\\end{bmatrix}", "final": false},
+              {"title": "Verificar la conservación de la magnitud", "body": "Una rotación no cambia la longitud del vector; se comprueba calculando ambas magnitudes.", "formula": "\\|\\mathbf{v}\\|=\\sqrt{2^2+0^2}=2,\\quad \\|R\\mathbf{v}\\|=\\sqrt{0^2+2^2}=2", "final": false},
+              {"title": "Interpretar el resultado", "body": "El vector $(2,0)$, que apuntaba sobre el eje $x$, quedó en $(0,2)$, apuntando sobre el eje $y$: girado exactamente 90° en sentido antihorario y con la misma magnitud. Así posiciona un controlador la orientación de una pieza o un efector.", "formula": "(2,0)\\;\\xrightarrow{\\;R(90^\\circ)\\;}\\;(0,2)", "final": true}
+            ]
+          },
+          "s4-acordion": {
+            "type": "accordion",
+            "title": "Aplicaciones y su pertinencia (RA3)",
+            "items": [
+              {
+                "icon": "precision_manufacturing",
+                "title": "Rotaciones y traslaciones: por qué el orden importa",
+                "open": true,
+                "body": [
+                  "En robótica y diseño asistido por computador, colocar una pieza implica encadenar rotaciones y traslaciones. Cada una se representa con una operación matricial, y componerlas equivale a multiplicar matrices. Como el producto matricial no es conmutativo, aplicar primero una rotación y luego una traslación lleva a una posición distinta que el orden inverso.",
+                  "Esta no conmutatividad, que en el Tema 2 era una propiedad algebraica abstracta, se vuelve aquí una restricción de ingeniería con consecuencias físicas: un mismo conjunto de movimientos ejecutado en distinto orden puede provocar una colisión o un posicionamiento erróneo. Por eso los controladores de robots respetan estrictamente el orden de las transformaciones."
+                ]
+              },
+              {
+                "icon": "vpn_key",
+                "title": "Criptografía: la invertibilidad como condición de seguridad",
+                "body": [
+                  "El cifrado de Hill solo funciona si la matriz clave es invertible módulo 26, lo que requiere que su determinante sea coprimo con 26. Esta condición enlaza directamente con el Tema 3: la existencia de $A^{-1}$ depende de que el determinante sea adecuado, y sin inversa el mensaje cifrado no puede recuperarse.",
+                  "La pertinencia es clara en ingeniería de sistemas e industrial, donde la protección de información es cotidiana. El ejemplo muestra que un concepto aparentemente teórico —cuándo una matriz tiene inversa— determina si un esquema de cifrado es utilizable. Elegir mal la clave, con determinante no invertible, hace imposible el descifrado y arruina el sistema completo."
+                ]
+              },
+              {
+                "icon": "electrical_services",
+                "title": "Circuitos: por qué Kirchhoff produce sistemas lineales",
+                "body": [
+                  "Las leyes de Kirchhoff son lineales por naturaleza: la suma de corrientes en un nodo es cero y la suma de caídas de voltaje en una malla es cero. Al escribir estas relaciones en términos de las corrientes desconocidas se obtiene un sistema de ecuaciones lineales, exactamente del tipo que se resuelve con los métodos de los temas anteriores.",
+                  "En ingeniería eléctrica y de energías esto es fundamental: analizar una red consiste en plantear y resolver ese sistema. Un determinante no nulo de la matriz de coeficientes garantiza que la red tiene una única solución de corrientes; un determinante nulo señala una red mal planteada o con ecuaciones dependientes. Así, el álgebra lineal no solo resuelve el circuito, también diagnostica si está bien especificado."
+                ]
+              }
+            ]
+          },
+          "s4-quiz": {
+            "type": "quiz",
+            "title": "Chequeo: aplicaciones del álgebra lineal",
+            "questions": [
+              {
+                "prompt": "¿Qué condición debe cumplir la matriz clave $A$ para que el cifrado de Hill sea descifrable?",
+                "options": [
+                  {"text": "Que $\\det(A)$ sea coprimo con 26, para que exista $A^{-1}\\ (\\mathrm{mod}\\ 26)$.", "correct": true, "feedback": "Correcto: sin inversa módulo 26 no se puede deshacer el cifrado; esto enlaza con la invertibilidad del Tema 3."},
+                  {"text": "Que $A$ sea simétrica.", "correct": false, "feedback": "La simetría no garantiza invertibilidad. Lo que se requiere es que el determinante sea coprimo con 26."},
+                  {"text": "Que todas las entradas de $A$ sean menores que 26.", "correct": false, "feedback": "El tamaño de las entradas no es el criterio; lo decisivo es la invertibilidad módulo 26, ligada al determinante."}
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "seccion-5": {
+        "kind": "theory",
+        "theme": "Taller integrador",
+        "badge": "Sección 5",
+        "navLabel": "Taller integrador",
+        "title": "Taller integrador y cierre transversal",
+        "learningOutcomeIds": ["RA1", "RA2", "RA3"],
+        "intro": [
+          "En esta sección de transferencia pondrás todo junto: un mismo problema geométrico —recta, plano e intersección— aplicado a tres ingenierías distintas, seguido de la actividad evaluativa del tema con su rúbrica cualitativa."
+        ],
+        "componentOrder": [
+          "s5-teoria-1", "s5-carrusel", "s5-stepper-transversal",
+          "s5-teoria-2", "s5-flashcards", "s5-reflexion",
+          "s5-teoria-3", "s5-stepper-circuito", "s5-acordion", "s5-evaluacion", "s5-referencias"
+        ],
+        "components": {
+          "s5-teoria-1": {
+            "type": "theory-block",
+            "title": "Un mismo modelo, tres ingenierías",
+            "eyebrow": "Transferencia transversal",
+            "body": [
+              "El verdadero valor de este tema se ve cuando un único esquema matemático —una recta que es trayectoria, un plano que es superficie y su intersección que es contacto— sirve para problemas de campos muy diferentes. El modelo es el mismo; cambia solo la interpretación física de cada elemento.",
+              "En mecatrónica y mecánica, la recta $\\mathbf{r}(t)$ es la trayectoria de la herramienta de un brazo robótico o de una fresa de CAD, el plano es la superficie de una pieza y la intersección es el punto de contacto o de posible colisión que el sistema debe anticipar.",
+              "En ingeniería de sistemas e industrial, las mismas matrices que rotan trayectorias cifran información (cifrado de Hill); y en ingeniería eléctrica y de energías, el sistema lineal que decide una intersección es el que resuelve un circuito por las leyes de Kirchhoff. La transferencia muestra por qué el álgebra lineal es una herramienta común a toda la ingeniería (RA3)."
+            ],
+            "keyIdeas": [
+              {"icon": "swap_horizontal_circle", "text": "Un mismo modelo geométrico cambia de significado según la disciplina."},
+              {"icon": "precision_manufacturing", "text": "Trayectoria-superficie-contacto en robótica y CAD."},
+              {"icon": "diversity_3", "text": "El álgebra lineal es transversal a las ingenierías (RA3)."}
+            ],
+            "closing": ["El carrusel siguiente recorre las tres lecturas disciplinares de un mismo problema."]
+          },
+          "s5-carrusel": {
+            "type": "carousel",
+            "title": "Un problema, tres lecturas disciplinares",
+            "slides": [
+              {"label": "Mecatrónica", "title": "Trayectoria e impacto", "body": ["La trayectoria de un efector es una recta $\\mathbf{r}(t)$; la superficie de trabajo es un plano; su intersección es el punto de contacto que evita colisiones."], "icon": "precision_manufacturing"},
+              {"label": "Sistemas", "title": "Información protegida", "body": ["Las matrices que transforman geometría también cifran datos con el método de Hill, usando invertibilidad módulo 26."], "icon": "lock"},
+              {"label": "Energías", "title": "Red eléctrica", "body": ["Las mallas de un circuito forman un sistema lineal; resolverlo da corrientes y voltajes, y cada ecuación es un plano en el espacio de corrientes."], "icon": "bolt"},
+              {"label": "Cierre", "title": "Misma estructura", "body": ["Detrás de las tres lecturas hay rectas, planos, intersecciones y sistemas lineales: la estructura común del álgebra lineal."], "icon": "hub"}
+            ]
+          },
+          "s5-stepper-transversal": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto transversal: contacto herramienta-superficie",
+            "statement": "En un brazo robótico, la herramienta sigue la trayectoria $\\mathbf{r}(t)=(0,1,4)+t\\,(1,1,-1)$ y la superficie de la pieza es el plano $x+y+z=6$. Hallar el punto de contacto y verificar el resultado.",
+            "steps": [
+              {"title": "Modelar la trayectoria en paramétricas", "body": "Se escribe la recta coordenada a coordenada en función de $t$.", "formula": "x=t,\\quad y=1+t,\\quad z=4-t", "final": false},
+              {"title": "Sustituir en la superficie (plano)", "body": "Se reemplazan las paramétricas en la ecuación del plano $x+y+z=6$.", "formula": "t+(1+t)+(4-t)=6", "final": false},
+              {"title": "Resolver para el parámetro de contacto", "body": "Se agrupan términos y se despeja $t$.", "formula": "t+5=6\\;\\Rightarrow\\;t=1", "final": false},
+              {"title": "Calcular el punto de contacto", "body": "Se evalúa la trayectoria en $t=1$ para obtener las coordenadas del contacto.", "formula": "\\mathbf{r}(1)=(1,\\,2,\\,3)", "final": false},
+              {"title": "Verificar e interpretar", "body": "El punto $(1,2,3)$ satisface el plano ($1+2+3=6$), confirmando el contacto. En términos de ingeniería, ese es el instante y la posición en que la herramienta toca la pieza; el control debe detenerse o ajustar la fuerza justo allí.", "formula": "1+2+3=6\\;\\checkmark", "final": true}
+            ]
+          },
+          "s5-teoria-2": {
+            "type": "theory-block",
+            "title": "Qué evidencia tu desempeño en este tema",
+            "eyebrow": "Hacia la evaluación",
+            "body": [
+              "El cierre del curso evalúa de forma integradora. No se trata de recordar definiciones aisladas, sino de demostrar que puedes recorrer todo el camino: ante una situación, plantear las ecuaciones de las rectas y planos involucrados, graficarlos, hallar sus intersecciones resolviendo el sistema correspondiente e interpretar el resultado en el contexto disciplinar.",
+              "La evidencia esperada combina los tres resultados de aprendizaje del tema: representar correctamente los objetos del espacio (RA1), resolver e interpretar el sistema lineal de la intersección (RA2) y argumentar por qué la herramienta usada es pertinente en un campo concreto de la ingeniería (RA3).",
+              "La evaluación es cualitativa y formativa: interesa el razonamiento y la coherencia entre el modelo, el procedimiento y la interpretación, más que un número. La retroalimentación señala fortalezas y aspectos por mejorar para consolidar el aprendizaje del curso completo."
+            ],
+            "keyIdeas": [
+              {"icon": "draw", "text": "Plantear y graficar rectas y planos (RA1)."},
+              {"icon": "calculate", "text": "Resolver e interpretar el sistema de la intersección (RA2)."},
+              {"icon": "forum", "text": "Argumentar la pertinencia disciplinar de la aplicación (RA3)."}
+            ],
+            "closing": ["Antes de la actividad, repasa con las tarjetas y la reflexión qué saberes integras en cada paso."]
+          },
+          "s5-flashcards": {
+            "type": "flashcards",
+            "title": "Repaso integrador del tema",
+            "cards": [
+              {"term": "Modelo recta-plano-intersección", "definition": "Esquema común que representa trayectoria, superficie y contacto, y que cambia de significado según la ingeniería.", "icon": "hub"},
+              {"term": "RA1 en el tema", "definition": "Representar rectas y planos del espacio en sus distintas formas y graficarlos correctamente.", "icon": "draw"},
+              {"term": "RA2 en el tema", "definition": "Resolver el sistema lineal de una intersección e interpretar si hay corte, paralelismo o contención.", "icon": "calculate"},
+              {"term": "RA3 en el tema", "definition": "Valorar la pertinencia de una aplicación del álgebra lineal en un campo específico de la ingeniería.", "icon": "diversity_3"},
+              {"term": "Evaluación cualitativa", "definition": "Valoración formativa centrada en el razonamiento y la coherencia del modelo, sin reducirse a un número.", "icon": "rate_review"}
+            ]
+          },
+          "s5-reflexion": {
+            "type": "reflection",
+            "title": "Reflexión de cierre del curso",
+            "prompts": [
+              "De los cinco temas del curso, ¿cuál resultó más decisivo para entender que una intersección geométrica es un sistema lineal? ¿Por qué?",
+              "Elige la aplicación (rotaciones, criptografía o circuitos) más cercana a tu programa de ingeniería y explica con tus palabras qué saberes de los temas anteriores integra.",
+              "¿Qué parte del taller —plantear ecuaciones, resolver el sistema o interpretar el resultado— sientes que debes reforzar antes de la evaluación integradora?"
+            ]
+          },
+          "s5-teoria-3": {
+            "type": "theory-block",
+            "title": "Síntesis del curso de Álgebra Lineal",
+            "eyebrow": "Mirada de conjunto",
+            "body": [
+              "Al cerrar este quinto tema conviene mirar el curso como un todo. Comenzamos resolviendo sistemas lineales con Gauss-Jordan y aprendiendo a leer su tipo de solución; pasamos al álgebra de matrices y sus operaciones; estudiamos los determinantes, la inversa y la regla de Cramer; trabajamos los vectores y sus productos en el espacio; y ahora hemos descrito rectas y planos y resuelto sus intersecciones.",
+              "El hilo que une todo es que cada tema aportó una pieza que reaparece en este cierre: las rectas y los planos se construyen con vectores y productos cruz, sus intersecciones se resuelven como sistemas lineales, y las aplicaciones finales reutilizan matrices, determinantes e inversas. El álgebra lineal se revela así no como una colección de técnicas sueltas, sino como un lenguaje articulado.",
+              "Ese lenguaje es transversal: sirve por igual a la ingeniería industrial, mecánica, mecatrónica, de petróleos, química, ambiental y de energías. Dominarlo te da una herramienta de modelado que acompañará toda tu formación y tu ejercicio profesional."
+            ],
+            "keyIdeas": [
+              {"icon": "account_tree", "text": "Los cinco temas forman una estructura articulada, no técnicas sueltas."},
+              {"icon": "construction", "text": "Vectores, matrices, determinantes y sistemas confluyen en rectas, planos y aplicaciones."},
+              {"icon": "diversity_3", "text": "El álgebra lineal es un lenguaje transversal a toda la ingeniería."}
+            ],
+            "closing": ["Con esta visión de conjunto, aborda la actividad evaluativa integradora que cierra el curso."]
+          },
+          "s5-stepper-circuito": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto transversal: corrientes de malla por Cramer",
+            "statement": "En una red eléctrica, las leyes de Kirchhoff producen el sistema $\\begin{cases} 3I_1+I_2=9 \\\\ I_1+2I_2=8 \\end{cases}$ en las corrientes de malla $I_1,I_2$. Hallar $I_2$ con la regla de Cramer e interpretar el signo.",
+            "steps": [
+              {"title": "Identificar la matriz del sistema", "body": "Se escribe la matriz de coeficientes y el vector de términos independientes de las ecuaciones de Kirchhoff.", "formula": "A=\\begin{bmatrix}3&1\\\\1&2\\end{bmatrix},\\qquad \\mathbf{b}=\\begin{bmatrix}9\\\\8\\end{bmatrix}", "final": false},
+              {"title": "Calcular el determinante principal", "body": "Cramer requiere $\\det(A)\\neq0$ para garantizar una red con solución única.", "formula": "\\det(A)=3\\cdot2-1\\cdot1=5\\neq0", "final": false},
+              {"title": "Construir y evaluar el determinante de I2", "body": "Se reemplaza la segunda columna de $A$ por $\\mathbf{b}$ y se calcula su determinante.", "formula": "\\det(A_2)=\\begin{vmatrix}3&9\\\\1&8\\end{vmatrix}=3\\cdot8-9\\cdot1=15", "final": false},
+              {"title": "Despejar la corriente y concluir", "body": "Se aplica la regla de Cramer: $I_2=\\det(A_2)/\\det(A)=3$. El signo positivo indica que la corriente circula en el sentido supuesto en la malla; un determinante no nulo confirma que la red está bien planteada.", "formula": "I_2=\\frac{\\det(A_2)}{\\det(A)}=\\frac{15}{5}=3", "final": true}
+            ]
+          },
+          "s5-acordion": {
+            "type": "accordion",
+            "title": "Cómo integrar los saberes en el taller",
+            "items": [
+              {
+                "icon": "checklist",
+                "title": "Del enunciado al modelo geométrico",
+                "open": true,
+                "body": [
+                  "El primer paso del taller es traducir la situación a objetos del espacio. Conviene preguntarse qué es recta y qué es plano en el problema: una trayectoria, un eje o el borde de una pieza suelen ser rectas; una superficie, una pared o una restricción suelen ser planos. Identificar bien cada objeto evita errores que se arrastran hasta el final.",
+                  "Una vez identificados, se escriben sus ecuaciones con las herramientas de las Secciones 1 y 2: punto y director para la recta, punto y normal (o producto cruz de tres puntos) para el plano. Verificar cada ecuación con un punto conocido antes de continuar ahorra retrabajo en los pasos siguientes."
+                ]
+              },
+              {
+                "icon": "functions",
+                "title": "Del modelo al sistema y su interpretación",
+                "body": [
+                  "Con las ecuaciones listas, la intersección se obtiene montando el sistema lineal correspondiente: sustitución para plano-recta, igualación de paramétricas para recta-recta. Aquí se aplican los métodos de los Temas 1 y 3, eligiendo Gauss-Jordan o Cramer según convenga.",
+                  "La parte que más distingue un buen trabajo es la interpretación. No basta con un número: hay que decir si las rectas se cortan, son paralelas o alabeadas, o si la recta atraviesa el plano, es paralela a él o está contenida, y traducir ese resultado al contexto de ingeniería del enunciado. Esa lectura es la evidencia central de RA2 y RA3."
+                ]
+              },
+              {
+                "icon": "verified",
+                "title": "Verificación y argumentación de pertinencia",
+                "body": [
+                  "Todo resultado debe verificarse sustituyendo el punto hallado en las ecuaciones originales; una verificación que cuadra da confianza, y una que falla revela un error a tiempo. Esta disciplina de comprobación es un hábito profesional, no un trámite escolar.",
+                  "Finalmente, la actividad pide argumentar la pertinencia disciplinar (RA3): explicar por qué la herramienta usada —intersección, rotación, cifrado o sistema de circuito— es la adecuada para el campo de ingeniería del problema. Una buena argumentación conecta el procedimiento matemático con una decisión o consecuencia real en la disciplina."
+                ]
+              }
+            ]
+          },
+          "s5-evaluacion": {
+            "type": "evaluation-activity",
+            "title": "Actividad evaluativa integradora del tema",
+            "learningOutcomeIds": ["RA1", "RA2", "RA3"],
+            "criterion": "Determina ecuaciones de recta y plano, las grafica, halla intersecciones plano-recta y recta-recta resolviendo el sistema asociado e interpreta el resultado argumentando su pertinencia en un campo de la ingeniería.",
+            "evidence": "Taller resuelto que incluya las ecuaciones de una recta y un plano en sus formas, una gráfica, el cálculo de las intersecciones plano-recta y recta-recta con su sistema lineal, y un párrafo argumentativo sobre la aplicación disciplinar elegida.",
+            "technique": "Taller integrador (estudio de caso transversal)",
+            "instrument": "Rúbrica analítica (CE1-CE3) y rúbrica holística",
+            "evaluationMoment": "cierre",
+            "participationType": "individual",
+            "feedback": {
+              "strengths": "Modelado geométrico correcto, sistema lineal bien planteado y resuelto, e interpretación coherente con el contexto de ingeniería.",
+              "improvement": "Precisión en la forma simétrica cuando hay componentes nulas, verificación de la tercera ecuación en recta-recta y claridad en la argumentación de pertinencia.",
+              "reinforcement": "Repetir los steppers de las Secciones 3 y 5 variando los datos y comparar el tipo de solución obtenido.",
+              "nextStep": "Aplicar el modelo recta-plano-intersección a un caso propio del programa de ingeniería del estudiante."
+            },
+            "rubric": {
+              "type": "analitica",
+              "levels": ["No acreditable", "Deficiente", "Insuficiente", "Aceptable", "Bueno", "Muy bueno", "Sobresaliente"],
+              "criteria": [
+                {"name": "CE1 · Ecuaciones y gráfica de recta y plano", "descriptors": {"Aceptable": "Escribe las ecuaciones en al menos una forma con errores menores y grafica de manera aproximada.", "Sobresaliente": "Escribe las ecuaciones en las formas pertinentes, las verifica y grafica recta y plano con precisión."}},
+                {"name": "CE2 · Intersección y tipo de solución", "descriptors": {"Aceptable": "Plantea el sistema de la intersección y obtiene un resultado, con interpretación parcial del tipo de solución.", "Sobresaliente": "Resuelve el sistema, halla la intersección y clasifica con rigor el tipo de solución (corte, paralelismo, contención o cruce)."}},
+                {"name": "CE3 · Pertinencia disciplinar", "descriptors": {"Aceptable": "Menciona una aplicación de ingeniería sin justificar plenamente su pertinencia.", "Sobresaliente": "Argumenta con solidez por qué la herramienta del álgebra lineal es pertinente en el campo de ingeniería elegido."}}
+              ]
+            }
+          },
+          "s5-referencias": {
+            "type": "references",
+            "title": "Referencias del tema (APA 7)",
+            "items": [
+              "Larson, R. (2010). Fundamentos de álgebra lineal (6.ª ed.). Cengage Learning. [Rectas y planos en el espacio; aplicaciones del álgebra lineal: rotaciones y criptografía].",
+              "Grossman, S. I. (2008). Álgebra lineal (6.ª ed.). McGraw-Hill. [Geometría en $\\mathbb{R}^3$ y aplicaciones].",
+              "Recursos visuales y ejercicios del tema: Elaboración propia."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "pdf": {
+    "guideLabel": "GUÍA DE ESTUDIO VIRTUAL",
+    "kicker": "Aprendizaje guiado · Práctica aplicada · Autoevaluación",
+    "institution": "Universidad de América",
+    "year": "2026",
+    "title": "Álgebra Lineal · Tema 5: Rectas, planos y aplicaciones del álgebra lineal",
+    "subtitle": "Escenario de aprendizaje 05 de 05 · Cierre integrador del curso",
+    "purpose": "Que el estudiante determine ecuaciones de rectas y planos en el espacio, los grafique, halle intersecciones plano-recta y recta-recta resolviendo el sistema asociado, y valore aplicaciones del álgebra lineal en distintos campos de la ingeniería.",
+    "structure": "Teoría · ejemplos resueltos · intersecciones · aplicaciones · ejercicios · referencias.",
+    "sectionOrder": ["pdf-intro", "pdf-seccion-1", "pdf-seccion-2", "pdf-seccion-3", "pdf-seccion-4", "pdf-seccion-5"],
+    "sections": {
+      "pdf-intro": {
+        "title": "Presentación del tema integrador",
+        "intro": [
+          "Esta guía imprimible corresponde al quinto y último tema del curso de Álgebra Lineal, de carácter integrador. Reúne la teoría de rectas y planos en el espacio, las intersecciones resueltas como sistemas lineales y las aplicaciones del álgebra lineal en la ingeniería."
+        ],
+        "componentOrder": ["pdf-intro-texto", "pdf-intro-objetivos", "pdf-intro-mapa"],
+        "components": {
+          "pdf-intro-texto": {
+            "type": "text",
+            "title": "Propósito y alcance",
+            "body": [
+              "El tema cierra el curso integrando los saberes previos: los vectores y el producto cruz construyen rectas y planos; los métodos de resolución de sistemas (Gauss-Jordan, inversa y Cramer) deciden sus intersecciones; y las aplicaciones finales —rotaciones, criptografía y circuitos— muestran la pertinencia del álgebra lineal en la ingeniería.",
+              "Su propósito es que determines ecuaciones de rectas y planos, los grafiques, halles intersecciones plano-recta y recta-recta, y valores aplicaciones del álgebra lineal en programas tan diversos como mecatrónica, mecánica, industrial, eléctrica, de energías, química, ambiental y de petróleos. El enfoque es transversal: el mismo modelo sirve a disciplinas distintas."
+            ]
+          },
+          "pdf-intro-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos de aprendizaje",
+            "items": [
+              {"icon": "track_changes", "text": "Determinar la ecuación de una recta en el espacio en forma vectorial, paramétrica y simétrica."},
+              {"icon": "track_changes", "text": "Determinar la ecuación de un plano a partir de un punto y un vector normal."},
+              {"icon": "track_changes", "text": "Hallar intersecciones plano-recta y recta-recta resolviendo el sistema lineal asociado."},
+              {"icon": "track_changes", "text": "Valorar aplicaciones del álgebra lineal (rotaciones, criptografía, circuitos) en la ingeniería."}
+            ]
+          },
+          "pdf-intro-mapa": {
+            "type": "list",
+            "title": "Mapa de la guía",
+            "ordered": true,
+            "items": [
+              "Ecuación de la recta en el espacio y sus tres formas.",
+              "Ecuación del plano, posiciones relativas y distancia punto-plano.",
+              "Intersecciones plano-recta y recta-recta como sistemas lineales.",
+              "Aplicaciones: rotaciones y traslaciones, criptografía y circuitos.",
+              "Taller integrador, ejercicios y referencias."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-1": {
+        "title": "La recta en el espacio",
+        "intro": [
+          "Una recta del espacio se genera con un punto base $P_0$ y un vector director $\\mathbf{d}$. A partir de ellos se obtienen las formas vectorial, paramétrica y simétrica, equivalentes entre sí."
+        ],
+        "componentOrder": ["pdf-s1-teoria", "pdf-s1-formula", "pdf-s1-ejemplo", "pdf-s1-callout"],
+        "components": {
+          "pdf-s1-teoria": {
+            "type": "theory-block",
+            "title": "Punto base, vector director y formas de la recta",
+            "body": [
+              "Una recta en $\\mathbb{R}^3$ queda definida por un punto $P_0=(x_0,y_0,z_0)$ y un vector director $\\mathbf{d}=(a,b,c)$ que marca su dirección. La forma vectorial $\\mathbf{r}(t)=P_0+t\\,\\mathbf{d}$ recorre todos sus puntos al variar el parámetro $t$.",
+              "De ella se derivan la forma paramétrica $x=x_0+at,\\; y=y_0+bt,\\; z=z_0+ct$ y la forma simétrica, esta última válida solo cuando ninguna componente del director es cero. Dos rectas con directores proporcionales son paralelas; si no son proporcionales, pueden ser secantes (se cortan) o alabeadas (se cruzan sin tocarse), situación exclusiva del espacio."
+            ],
+            "keyIdeas": [
+              {"icon": "place", "text": "La recta necesita un punto y una dirección."},
+              {"icon": "swap_horiz", "text": "Las tres formas son equivalentes y se eligen por conveniencia."}
+            ]
+          },
+          "pdf-s1-formula": {
+            "type": "formula",
+            "title": "Formas de la recta",
+            "context": ["A partir del punto base y el vector director se obtienen las tres representaciones equivalentes de la recta."],
+            "latex": "\\mathbf{r}(t)=P_0+t\\,\\mathbf{d}\\quad\\Longrightarrow\\quad \\frac{x-x_0}{a}=\\frac{y-y_0}{b}=\\frac{z-z_0}{c}",
+            "variables": [
+              {"symbol": "x_0, y_0, z_0", "description": "punto base $P_0$."},
+              {"symbol": "a, b, c", "description": "componentes del vector director $\\mathbf{d}$."}
+            ],
+            "explanation": ["La forma simétrica se obtiene despejando $t$ de cada paramétrica; exige $a,b,c$ no nulos."]
+          },
+          "pdf-s1-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: recta por dos puntos",
+            "context": ["Hallar la recta por $A=(1,0,2)$ y $B=(3,4,6)$ en sus tres formas."],
+            "formula": "\\mathbf{d}=B-A=(2,4,4)",
+            "solution": [
+              "Vector director: $\\mathbf{d}=(2,4,4)$.",
+              "Forma vectorial: $\\mathbf{r}(t)=(1,0,2)+t\\,(2,4,4)$.",
+              "Forma paramétrica: $x=1+2t,\\; y=4t,\\; z=2+4t$.",
+              "Forma simétrica: $\\frac{x-1}{2}=\\frac{y}{4}=\\frac{z-2}{4}$.",
+              "Verificación: $t=0$ da $A$ y $t=1$ da $B$."
+            ]
+          },
+          "pdf-s1-callout": {
+            "type": "callout",
+            "title": "Cuidado con la forma simétrica",
+            "body": ["Si alguna componente del director es cero, la forma simétrica completa no aplica: la coordenada correspondiente queda constante y se escribe aparte."]
+          }
+        }
+      },
+      "pdf-seccion-2": {
+        "title": "El plano y sus posiciones relativas",
+        "intro": [
+          "Un plano queda definido por un punto y un vector normal $\\mathbf{n}=(A,B,C)$ perpendicular a él. Su ecuación general $Ax+By+Cz=D$ tiene como coeficientes las componentes del normal."
+        ],
+        "componentOrder": ["pdf-s2-teoria", "pdf-s2-formula", "pdf-s2-ejemplo", "pdf-s2-tabla"],
+        "components": {
+          "pdf-s2-teoria": {
+            "type": "theory-block",
+            "title": "Ecuación del plano y comparación de planos",
+            "body": [
+              "La pertenencia de un punto al plano es una condición de perpendicularidad con el normal: $A(x-x_0)+B(y-y_0)+C(z-z_0)=0$, que se desarrolla en $Ax+By+Cz=D$. Cuando el plano se conoce por tres puntos no colineales, el normal se obtiene como producto cruz de dos vectores contenidos en él.",
+              "Las posiciones relativas se leen comparando normales: proporcionales indican planos paralelos, y producto punto cero indica planos perpendiculares. Dos planos no paralelos siempre se cortan en una recta. La distancia de un punto al plano se mide proyectando sobre el normal."
+            ],
+            "keyIdeas": [
+              {"icon": "straighten", "text": "El normal define la orientación del plano."},
+              {"icon": "layers", "text": "Normales proporcionales ⇒ planos paralelos."}
+            ]
+          },
+          "pdf-s2-formula": {
+            "type": "formula",
+            "title": "Plano y distancia punto-plano",
+            "context": ["La ecuación general del plano y la distancia de un punto $P_1$ a él, ambas apoyadas en el vector normal."],
+            "latex": "Ax+By+Cz=D,\\qquad d=\\frac{|Ax_0+By_0+Cz_0-D|}{\\sqrt{A^2+B^2+C^2}}",
+            "variables": [
+              {"symbol": "A, B, C", "description": "componentes del normal $\\mathbf{n}$."},
+              {"symbol": "D", "description": "$D=Ax_0+By_0+Cz_0$ para un punto del plano."}
+            ],
+            "explanation": ["La distancia proyecta el desplazamiento del punto sobre el normal y lo normaliza con $\\|\\mathbf{n}\\|$."]
+          },
+          "pdf-s2-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: plano por tres puntos",
+            "context": ["Hallar el plano por $P=(1,0,0)$, $Q=(0,2,0)$ y $R=(0,0,3)$."],
+            "formula": "\\mathbf{n}=\\overrightarrow{PQ}\\times\\overrightarrow{PR}=(6,3,2)",
+            "solution": [
+              "Vectores del plano: $\\overrightarrow{PQ}=(-1,2,0)$, $\\overrightarrow{PR}=(-1,0,3)$.",
+              "Normal: $\\mathbf{n}=(6,3,2)$.",
+              "Ecuación: $6(x-1)+3y+2z=0$, es decir $6x+3y+2z=6$.",
+              "Verificación: $P,Q,R$ dan $6$ en cada caso, igual a $D$."
+            ]
+          },
+          "pdf-s2-tabla": {
+            "type": "table",
+            "title": "Posiciones relativas entre dos planos",
+            "columns": ["Relación de normales", "Posición de los planos", "Intersección"],
+            "rows": [
+              {"cells": ["Proporcionales", "Paralelos (o coincidentes)", "Ninguna (o todo el plano)"]},
+              {"cells": ["Producto punto cero", "Perpendiculares", "Una recta"]},
+              {"cells": ["Ni proporcionales ni perpendiculares", "Oblicuos", "Una recta"]}
+            ]
+          }
+        }
+      },
+      "pdf-seccion-3": {
+        "title": "Intersecciones como sistemas lineales",
+        "intro": [
+          "El núcleo del tema y del taller: hallar dónde se cortan objetos del espacio equivale a resolver un sistema lineal y a leer su tipo de solución."
+        ],
+        "componentOrder": ["pdf-s3-teoria", "pdf-s3-ejemplo-pr", "pdf-s3-ejemplo-rr", "pdf-s3-chart"],
+        "components": {
+          "pdf-s3-teoria": {
+            "type": "theory-block",
+            "title": "Plano-recta y recta-recta",
+            "body": [
+              "La intersección plano-recta se obtiene sustituyendo las paramétricas de la recta en la ecuación del plano, lo que produce una ecuación en $t$: solución única significa un punto de corte; una igualdad falsa, recta paralela; una identidad $0=0$, recta contenida en el plano.",
+              "La intersección recta-recta se obtiene igualando las paramétricas de ambas rectas, lo que genera un sistema $3\\times2$ en los parámetros $t$ y $s$. Si el sistema es consistente, las rectas se cortan; si es inconsistente, son paralelas (directores proporcionales) o alabeadas (directores no proporcionales). En ambos casos, el tipo de solución del sistema clasifica la geometría."
+            ],
+            "keyIdeas": [
+              {"icon": "input", "text": "Plano-recta: sustitución y ecuación en $t$."},
+              {"icon": "merge_type", "text": "Recta-recta: sistema $3\\times2$ en $t$ y $s$."}
+            ]
+          },
+          "pdf-s3-ejemplo-pr": {
+            "type": "example",
+            "title": "Ejemplo resuelto: intersección plano-recta",
+            "context": ["Intersección de $\\mathbf{r}(t)=(1,1,0)+t\\,(1,0,2)$ con el plano $2x+y-z=5$."],
+            "formula": "2(1+t)+1-(2t)=5\\;\\Rightarrow\\;3=5",
+            "solution": [
+              "Paramétricas: $x=1+t$, $y=1$, $z=2t$.",
+              "Al sustituir, los términos en $t$ se cancelan y queda $3=5$, igualdad falsa.",
+              "Como $\\mathbf{n}\\cdot\\mathbf{d}=(2,1,-1)\\cdot(1,0,2)=0$ y no hay solución, la recta es paralela al plano: no lo corta."
+            ]
+          },
+          "pdf-s3-ejemplo-rr": {
+            "type": "example",
+            "title": "Ejemplo resuelto: intersección recta-recta",
+            "context": ["¿Se cortan $\\mathbf{r}_1(t)=(0,0,0)+t\\,(1,1,1)$ y $\\mathbf{r}_2(s)=(1,0,0)+s\\,(0,1,1)$?"],
+            "formula": "\\begin{cases} t=1 \\\\ t=s \\\\ t=s \\end{cases}",
+            "solution": [
+              "Igualando coordenadas: $t=1$, $t=s$, $t=s$.",
+              "De las dos primeras: $t=1$, $s=1$; la tercera se cumple ($1=1$).",
+              "Sistema consistente: las rectas son secantes y se cortan en $(1,1,1)$; sus directores no son proporcionales, así que no son paralelas."
+            ]
+          },
+          "pdf-s3-chart": {
+            "type": "chart",
+            "chartType": "bar",
+            "title": "Relación entre dos rectas según la solución del sistema",
+            "description": ["Tras establecer que el sistema de intersección clasifica la geometría, este gráfico resume la correspondencia entre el tipo de solución y la relación entre las dos rectas."],
+            "note": "El eje horizontal muestra los tres desenlaces del sistema y el vertical el número (cualitativo) de puntos comunes: 1 para rectas secantes, 0 cuando no hay corte (paralelas o alabeadas) y un valor alto que simboliza infinitos para rectas coincidentes. La lectura confirma que resolver el sistema basta para clasificar el par de rectas sin recurrir al dibujo.",
+            "height": "300px",
+            "labels": ["Solución única (secantes)", "Sin solución (paralelas/alabeadas)", "Infinitas soluciones (coincidentes)"],
+            "datasets": [
+              {"label": "Puntos comunes entre las rectas", "data": [1, 0, 12]}
+            ],
+            "options": {
+              "scales": {
+                "y": {"title": {"display": true, "text": "Número de puntos comunes (cualitativo)"}},
+                "x": {"title": {"display": true, "text": "Tipo de solución del sistema"}}
+              }
+            }
+          }
+        }
+      },
+      "pdf-seccion-4": {
+        "title": "Aplicaciones del álgebra lineal",
+        "intro": [
+          "Tres aplicaciones muestran la pertinencia del álgebra lineal en la ingeniería: rotaciones y traslaciones, criptografía con matrices y circuitos eléctricos."
+        ],
+        "componentOrder": ["pdf-s4-teoria", "pdf-s4-formula", "pdf-s4-ejemplo", "pdf-s4-tabla"],
+        "components": {
+          "pdf-s4-teoria": {
+            "type": "theory-block",
+            "title": "Rotaciones, criptografía y circuitos",
+            "body": [
+              "Las rotaciones y traslaciones de objetos se expresan con matrices: girar un vector es multiplicarlo por la matriz de rotación $R(\\theta)$, y componer transformaciones es multiplicar matrices, operación no conmutativa, por lo que el orden importa. Esto es central en robótica y diseño asistido por computador.",
+              "El cifrado de Hill cifra bloques de texto con $\\mathbf{c}=A\\mathbf{m}\\ (\\mathrm{mod}\\ 26)$ usando una matriz invertible módulo 26 (su determinante debe ser coprimo con 26); el descifrado usa $A^{-1}$. Los circuitos eléctricos, por su parte, generan sistemas lineales mediante las leyes de Kirchhoff, resolubles por Gauss-Jordan o Cramer; un determinante no nulo asegura una red bien planteada."
+            ],
+            "keyIdeas": [
+              {"icon": "360", "text": "Rotaciones: producto por $R(\\theta)$, no conmutativo."},
+              {"icon": "lock", "text": "Hill: clave invertible módulo 26."},
+              {"icon": "bolt", "text": "Circuitos: sistema lineal de Kirchhoff."}
+            ]
+          },
+          "pdf-s4-formula": {
+            "type": "formula",
+            "title": "Matriz de rotación y cifrado de Hill",
+            "context": ["Dos herramientas centrales de las aplicaciones: la rotación en el plano y el cifrado por matrices."],
+            "latex": "R(\\theta)=\\begin{bmatrix}\\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta\\end{bmatrix},\\qquad \\mathbf{c}=A\\mathbf{m}\\ (\\mathrm{mod}\\ 26)",
+            "variables": [
+              {"symbol": "\\theta", "description": "ángulo de rotación."},
+              {"symbol": "A", "description": "matriz clave invertible módulo 26."},
+              {"symbol": "\\mathbf{m}", "description": "bloque de mensaje (vector de números de letras)."}
+            ],
+            "explanation": ["Rotar es aplicar $R(\\theta)\\,\\mathbf{v}$; cifrar es aplicar $A\\mathbf{m}$ y reducir módulo 26; descifrar requiere $A^{-1}\\ (\\mathrm{mod}\\ 26)$."]
+          },
+          "pdf-s4-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: cifrado de Hill",
+            "context": ["Cifrar $\\mathbf{m}=(0,2)$ (letras A, C) con $A=\\begin{bmatrix}3&3\\\\2&5\\end{bmatrix}$."],
+            "formula": "A\\mathbf{m}=\\begin{bmatrix}6\\\\10\\end{bmatrix}\\ (\\mathrm{mod}\\ 26)",
+            "solution": [
+              "Determinante: $\\det(A)=9$, coprimo con 26: la clave es válida.",
+              "Producto: $A\\mathbf{m}=(6,10)$; módulo 26 sigue siendo $(6,10)$.",
+              "Bloque cifrado: letras G y K. El descifrado usaría $A^{-1}\\ (\\mathrm{mod}\\ 26)$."
+            ]
+          },
+          "pdf-s4-tabla": {
+            "type": "table",
+            "title": "Aplicaciones y saberes integrados",
+            "columns": ["Aplicación", "Herramienta", "Campo de ingeniería", "Saberes integrados"],
+            "rows": [
+              {"cells": ["Rotaciones y traslaciones", "Matriz $R(\\theta)$ y vectores", "Mecatrónica, mecánica", "Producto matricial, vectores"]},
+              {"cells": ["Cifrado de Hill", "Producto e inversa módulo 26", "Sistemas, industrial", "Determinante e inversa"]},
+              {"cells": ["Circuitos eléctricos", "Sistema lineal de Kirchhoff", "Eléctrica, energías", "Sistemas lineales, Cramer"]}
+            ]
+          }
+        }
+      },
+      "pdf-seccion-5": {
+        "title": "Taller, ejercicios y referencias",
+        "intro": [
+          "Cierre del tema y del curso: un ejemplo transversal resuelto, el banco de ejercicios del taller y las referencias del tema."
+        ],
+        "componentOrder": ["pdf-s5-ejemplo", "pdf-s5-evaluacion", "pdf-s5-ejercicios", "pdf-s5-referencias"],
+        "components": {
+          "pdf-s5-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo transversal: contacto herramienta-superficie",
+            "context": ["Una herramienta sigue $\\mathbf{r}(t)=(0,1,4)+t\\,(1,1,-1)$ sobre la pieza modelada por el plano $x+y+z=6$. Hallar el punto de contacto."],
+            "formula": "t+(1+t)+(4-t)=6\\;\\Rightarrow\\;t=1",
+            "solution": [
+              "Paramétricas: $x=t$, $y=1+t$, $z=4-t$.",
+              "Sustituyendo en el plano: $t+5=6$, de donde $t=1$.",
+              "Punto de contacto: $\\mathbf{r}(1)=(1,2,3)$, que verifica $1+2+3=6$.",
+              "Interpretación: ese es el punto donde la herramienta toca la pieza; el control debe actuar allí."
+            ]
+          },
+          "pdf-s5-evaluacion": {
+            "type": "evaluation-activity",
+            "title": "Actividad evaluativa integradora",
+            "learningOutcomeIds": ["RA1", "RA2", "RA3"],
+            "criterion": "Determina ecuaciones de recta y plano, las grafica, halla intersecciones plano-recta y recta-recta, y argumenta la pertinencia disciplinar de una aplicación.",
+            "evidence": "Taller resuelto con ecuaciones, gráfica, intersecciones con su sistema lineal y argumentación de la aplicación elegida.",
+            "technique": "Taller integrador (estudio de caso transversal)",
+            "instrument": "Rúbrica analítica (CE1-CE3) y holística",
+            "evaluationMoment": "cierre",
+            "participationType": "individual",
+            "rubric": {
+              "type": "analitica",
+              "levels": ["No acreditable", "Deficiente", "Insuficiente", "Aceptable", "Bueno", "Muy bueno", "Sobresaliente"],
+              "criteria": [
+                {"name": "CE1 · Ecuaciones y gráfica", "descriptors": {"Aceptable": "Ecuaciones con errores menores y gráfica aproximada.", "Sobresaliente": "Ecuaciones verificadas y gráfica precisa de recta y plano."}},
+                {"name": "CE2 · Intersección y tipo de solución", "descriptors": {"Aceptable": "Plantea el sistema con interpretación parcial.", "Sobresaliente": "Resuelve y clasifica con rigor el tipo de solución."}},
+                {"name": "CE3 · Pertinencia disciplinar", "descriptors": {"Aceptable": "Menciona una aplicación sin justificarla del todo.", "Sobresaliente": "Argumenta con solidez la pertinencia en el campo elegido."}}
+              ]
+            }
+          },
+          "pdf-s5-ejercicios": {
+            "type": "exercise-set",
+            "title": "Banco de ejercicios del taller",
+            "items": [
+              {"prompt": "Hallar la recta que pasa por $A=(2,-1,3)$ y $B=(4,1,-1)$ en forma vectorial, paramétrica y simétrica.", "answer": "Director $\\mathbf{d}=(2,2,-4)$; $\\mathbf{r}(t)=(2,-1,3)+t(2,2,-4)$; simétrica $\\frac{x-2}{2}=\\frac{y+1}{2}=\\frac{z-3}{-4}$."},
+              {"prompt": "Hallar la ecuación del plano que pasa por $P=(2,0,1)$, $Q=(1,1,0)$ y $R=(0,2,3)$.", "formula": "\\mathbf{n}=\\overrightarrow{PQ}\\times\\overrightarrow{PR}", "answer": "$\\overrightarrow{PQ}=(-1,1,-1)$, $\\overrightarrow{PR}=(-2,2,2)$; $\\mathbf{n}=(4,4,0)$; plano $x+y=2$."},
+              {"prompt": "Hallar la intersección de la recta $\\mathbf{r}(t)=(0,0,1)+t(1,2,1)$ con el plano $x+y+z=10$.", "answer": "Sustituir: $t+2t+(1+t)=10\\Rightarrow 4t=9\\Rightarrow t=\\tfrac{9}{4}$; punto $\\left(\\tfrac{9}{4},\\tfrac{9}{2},\\tfrac{13}{4}\\right)$."},
+              {"prompt": "Determinar si las rectas $\\mathbf{r}_1(t)=(1,0,0)+t(1,1,0)$ y $\\mathbf{r}_2(s)=(0,1,2)+s(2,2,0)$ son secantes, paralelas o alabeadas.", "answer": "Directores $(1,1,0)$ y $(2,2,0)$ son proporcionales: rectas paralelas (no coincidentes, pues $(0,1,2)$ no está en $\\mathbf{r}_1$)."},
+              {"prompt": "Calcular la distancia del punto $(1,1,1)$ al plano $2x-y+2z=9$.", "formula": "d=\\frac{|Ax_0+By_0+Cz_0-D|}{\\sqrt{A^2+B^2+C^2}}", "answer": "$d=\\frac{|2-1+2-9|}{\\sqrt{4+1+4}}=\\frac{6}{3}=2$."},
+              {"prompt": "Cifrar el bloque $\\mathbf{m}=(1,0)$ (letras B, A) con la clave $A=\\begin{bmatrix}3&3\\\\2&5\\end{bmatrix}$ mediante $\\mathbf{c}=A\\mathbf{m}\\ (\\mathrm{mod}\\ 26)$.", "answer": "$A\\mathbf{m}=(3,2)$; módulo 26 es $(3,2)$: letras D y C. Clave válida pues $\\det(A)=9$ es coprimo con 26."}
+            ]
+          },
+          "pdf-s5-referencias": {
+            "type": "references",
+            "title": "Referencias (APA 7)",
+            "items": [
+              "Larson, R. (2010). Fundamentos de álgebra lineal (6.ª ed.). Cengage Learning.",
+              "Grossman, S. I. (2008). Álgebra lineal (6.ª ed.). McGraw-Hill.",
+              "Recursos visuales y ejercicios del tema: Elaboración propia."
+            ]
+          }
+        }
+      }
+    }
+  }
+}

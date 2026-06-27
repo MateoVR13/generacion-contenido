@@ -81,6 +81,28 @@ if (fase >= 3 && st.evaluacion && st.evaluacion.diagnostica) {
 if (fase >= 1 && (!Array.isArray(st.ra) || st.ra.length === 0))
   errors.push("ra vacío (Fase 1 debe identificar al menos un RA del syllabus)");
 
+// Condición de cierre del Pipeline 2 (modelo de 2 pasos): deben existir los DOS JSON finales.
+// Documento de Saberes (N archivos, uno por tema) + JSON de Moodle. Verifica en disco junto al estado.
+if (st.pipeline2Completo === true) {
+  const dir = require("path").dirname(require("path").resolve(file));
+  const n = st.nTemasFinal ?? st.nTemasPropuesto;
+  // (a) Documento de Saberes: N archivos <slug>-contenido-NN.json en documento-saberes/
+  let dsCount = 0;
+  const dsDir = require("path").join(dir, "documento-saberes");
+  if (fs.existsSync(dsDir)) {
+    dsCount = fs.readdirSync(dsDir).filter((f) => /-contenido-\d\d\.json$/i.test(f)).length;
+  }
+  if (dsCount === 0)
+    errors.push("Pipeline 2 marcado completo pero NO hay JSON del Documento de Saberes (documento-saberes/<slug>-contenido-NN.json). El Paso 2 debe generarlos, no dejar solo el esquema.");
+  else if (n != null && dsCount !== n)
+    warnings.push(`Documento de Saberes: ${dsCount} JSON encontrados, se esperaban ${n} (uno por tema).`);
+  // (b) JSON de Moodle en fase-7-montaje-lms/
+  const lmsDir = require("path").join(dir, "fase-7-montaje-lms");
+  const hasMoodle = fs.existsSync(lmsDir) && fs.readdirSync(lmsDir).some((f) => /\.moodle\.json$/i.test(f));
+  if (!hasMoodle)
+    errors.push("Pipeline 2 marcado completo pero NO hay JSON de Moodle (fase-7-montaje-lms/<slug>-<MET>.moodle.json).");
+}
+
 // Reporte.
 if (warnings.length) {
   console.error(`Advertencias (${warnings.length}):`);

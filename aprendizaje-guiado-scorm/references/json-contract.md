@@ -54,6 +54,7 @@ Do not use `course`.
   "program": "Programa Académico",
   "contentNumber": "01",
   "contentTotal": "07",
+  "unitLabel": "Tema",
   "description": "Descripción breve",
   "syllabus": {
     "source": {"type": "pdf", "fileName": "syllabus.pdf"},
@@ -78,6 +79,8 @@ Do not use `course`.
 ```
 
 `subject.syllabus` is required when a syllabus PDF or syllabus text was provided. Keep `missingFields` explicit instead of inventing data.
+
+`subject.unitLabel` (opcional) es el rótulo con que la plantilla nombra cada unidad numerada en la sidebar y el banner: la plantilla muestra `"<unitLabel> <contentNumber>"` (p. ej. `"Tema 01"`). Para AG, cuya unidad oficial es el **tema**, usar `"Tema"`. Si se omite, la plantilla usa el rótulo histórico `"Escenario de aprendizaje"`. (Otras metodologías usan `"Momento"`.)
 
 `subject.methodology` is required for full asignatura package generation. For virtual asignaturas, always use AG - Aprendizaje Guiado:
 

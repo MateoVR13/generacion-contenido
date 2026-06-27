@@ -11,17 +11,25 @@ feedback. A partir de aquí todo se genera con los valores VALIDADOS.
 ---
 
 ## Fase 5 — Diseño tecnopedagógico y disciplinar (Documento de Saberes)
-- **Hacer:** producir el Documento de Saberes AG (N temas validados, extensión por créditos) y el esquema
-  tecnopedagógico del aula.
-- **Reutiliza la skill `aprendizaje-guiado-scorm`**: invócala pasándole los parámetros validados (N temas,
-  título/propósito/preguntas orientadoras por tema, RA, extensión por créditos, decisiones del docente).
-  Esa skill produce el JSON del documento de saberes (plantilla SCORM/PDF). No dupliques su lógica.
-- Subfases DS (del prompt maestro): alistamiento, arquitectura académica, marco conceptual base, desarrollo
-  por tema, integración/síntesis/transferencia, revisión APA/rigor, ensamble final. Profundidad por concepto
-  central: definición, contexto teórico, principios, relevancia, aplicación en AG, ejemplos por 3
-  facultades/áreas, errores frecuentes, preguntas de reflexión, relación con evidencia, APA.
-- **Entregables:** JSON(s) del documento de saberes + `fase-5-documento-saberes.md` (mapa de coherencia,
-  distribución de páginas por tema, checklist de rigor).
+- **Hacer:** producir el Documento de Saberes AG (N temas validados, extensión por créditos).
+- **Salida OBLIGATORIA: los N archivos JSON finales** `<slug>-contenido-NN.json` (uno por tema, modelo AG
+  = N temas = N archivos), conformes al contrato de la plantilla SCORM/PDF
+  (`../../aprendizaje-guiado-scorm/references/json-contract.md`). Estos JSON son cargables directamente en
+  la plantilla; **no basta con dejar un esquema en Markdown**. El esquema de contenido es solo un paso
+  intermedio interno: la Fase 5 NO se considera cerrada hasta que existan los N JSON parseables y válidos.
+- **Reutiliza la skill `aprendizaje-guiado-scorm`** para el contrato y las reglas de componentes (3 bloques
+  teóricos por sección, carrusel/flashcards/acordión, steppers en LaTeX, charts con description+note).
+  Pásale los parámetros validados (N temas, propósito/preguntas orientadoras por tema, RA, extensión por
+  créditos, decisiones del docente) y `unitLabel: "Tema"`, `contentTotal` = N.
+- Cada concepto central: definición, contexto teórico, principios, relevancia, aplicación en AG, ejemplos
+  transversales (varias ingenierías/áreas), errores frecuentes, preguntas de reflexión, relación con
+  evidencia, APA. Toda la matemática en LaTeX.
+- **Entregables (todos obligatorios):**
+  - `documento-saberes/<slug>-contenido-01.json … -NN.json` (los JSON de la plantilla SCORM/PDF).
+  - `fase-5-documento-saberes.md` (mapa de coherencia, distribución de páginas, checklist de rigor).
+  - (intermedio) `documento-saberes/esquema-contenido.md`.
+- **Validar:** `node ../../aprendizaje-guiado-scorm/scripts/validate_content_package.js documento-saberes/<slug>-contenido-*.json`
+  (unicidad) + parseabilidad + estructura. Corregir antes de cerrar.
 - **Estado:** `documentoSaberes{archivos[], paginasPorTema{}}`.
 
 ## Fase 6 — Diseño gráfico y recursos e-learning → GENERA LOS PROMPTS

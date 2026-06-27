@@ -61,9 +61,12 @@ CONTENIDO COMPLETO + plan de aula + indicadores
    hasta que el docente valide. Indícalo claramente al usuario.
 7. **Pipeline 2 arranca** con el instrumento docente respondido como entrada. Aplica las decisiones/feedback
    del docente (N temas final, actividades, recursos de simulación si es práctica, sugerencias).
-8. **Fase 5** invoca la skill `aprendizaje-guiado-scorm` pasándole los parámetros validados; **Fase 7**
-   invoca `moodle-content`. No dupliques la lógica de esas skills.
-9. **Valida cada fase** con `scripts/validate_phase.js` (cumplimiento de lineamientos). Corrige antes de avanzar.
+8. **Fase 5** produce **los N archivos JSON del Documento de Saberes** (`<slug>-contenido-NN.json`, uno por
+   tema), usando el contrato y las reglas de `aprendizaje-guiado-scorm`. NO se queda en el esquema Markdown.
+   Paraleliza por tema si es grande (sigue siendo parte del Paso 2). **Fase 7** produce el **JSON de Moodle**
+   con `moodle-content`. Ambos JSON son condición de cierre del Pipeline 2.
+9. **Valida cada fase** con `scripts/validate_phase.js` (cumplimiento de lineamientos) y, al cerrar el
+   Pipeline 2, confirma que existen y validan los DOS JSON (Documento de Saberes + Moodle). Corrige antes de avanzar.
 10. **Genera solo JSON/artefactos**; no cargues nada automáticamente en la app ni en Moodle.
 
 ## Reglas no negociables (alineadas a los lineamientos UA)
@@ -105,9 +108,25 @@ CONTENIDO COMPLETO + plan de aula + indicadores
 **Pipeline 1** → `instrumento-validacion-docente.md` (+ `.docx` vía `scripts/build_instrumento_docx.py` si se
 pide, + `.json` espejo) y `fase-0-*.md … fase-4-*.md`, `estado-proyecto.json`.
 
-**Pipeline 2** → Documento de Saberes (JSON de `aprendizaje-guiado-scorm`), recursos e-learning + sus prompts
-(`fase-6-prompts/`), JSON de `moodle-content` (Fase 7), checklists de QA (Fase 8), guía de implementación
-(Fase 9), tablero de indicadores (Fase 10).
+**Pipeline 2** → genera TODO de forma automática a partir del instrumento diligenciado. Entregables:
+- **Los N JSON del Documento de Saberes** `documento-saberes/<slug>-contenido-01.json … -NN.json`
+  (cargables en la plantilla SCORM/PDF). **No quedarse en el esquema Markdown** (ver Fase 5).
+- Recursos e-learning + sus prompts (`fase-6-recursos.md`, `fase-6-prompts/`).
+- **El JSON de Moodle** `fase-7-montaje-lms/<slug>-<MET>.moodle.json` (cargable en el renderer moodle-content).
+- Checklists de QA (Fase 8), guía de implementación (Fase 9), tablero de indicadores (Fase 10).
+
+## Modelo de 2 pasos (regla rectora)
+
+Todo el proceso se ejecuta en **exactamente 2 pasos**, sin pasos manuales intermedios:
+
+1. **Paso 1 — Pipeline 1** (Fases 0–4): syllabus → `instrumento-validacion-docente` (.md/.docx/.json). FIN.
+2. **Paso 2 — Pipeline 2** (Fases 5–10): instrumento diligenciado → **TODOS los entregables, incluidos los
+   DOS JSON finales** (Documento de Saberes para la plantilla SCORM/PDF **y** componentes Moodle). FIN.
+
+**Condición de cierre del Pipeline 2 (obligatoria):** no se considera terminado hasta que existan, validados
+y parseables: (a) los N JSON `<slug>-contenido-NN.json`, y (b) el JSON `<slug>-<MET>.moodle.json`. Si la
+generación de contenido es grande, paralelízala (un sub-paso por tema) DENTRO del Pipeline 2 — sigue siendo
+un solo paso para el usuario. Nunca dejar el Documento de Saberes como esquema pendiente de un tercer paso.
 
 ## Quality Checklist
 

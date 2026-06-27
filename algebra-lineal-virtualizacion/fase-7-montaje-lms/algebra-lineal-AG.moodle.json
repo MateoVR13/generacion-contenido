@@ -1,0 +1,713 @@
+{
+  "moodle": {
+    "branding": {
+      "logoUrl": "https://i.postimg.cc/c1tGwQnF/Logo-UA.png",
+      "institution": "Universidad de América",
+      "faculty": "Facultad de Ingeniería",
+      "year": "2026"
+    },
+    "course": {
+      "title": "Álgebra Lineal",
+      "program": "Ingeniería (asignatura transversal)",
+      "description": "Te damos la bienvenida a Álgebra Lineal, una asignatura teórica 100% virtual y transversal a los programas de ingeniería. A lo largo de cinco temas, organizados como una ruta guiada de aprendizaje, modelarás y resolverás problemas de ingeniería con sistemas de ecuaciones lineales, matrices, determinantes y vectores, y evaluarás su pertinencia en distintos campos. Los ejemplos y ejercicios están generalizados a varias ingenierías (industrial, mecánica, mecatrónica, petróleos, química, ambiental y energías) para que reconozcas el álgebra lineal como una herramienta común de modelamiento.",
+      "methodology": {
+        "code": "AG",
+        "name": "Aprendizaje Guiado",
+        "moments": [
+          "Sistemas de ecuaciones lineales y método de Gauss-Jordan",
+          "Matrices y operaciones",
+          "Determinantes, inversa y regla de Cramer",
+          "Vectores en el plano y el espacio",
+          "Rectas, planos y aplicaciones del álgebra lineal"
+        ]
+      },
+      "momentLabelSingular": "Contenido",
+      "momentCountLabel": "5 Contenidos"
+    },
+    "pageOrder": [
+      "bienvenida",
+      "momento-1",
+      "momento-2",
+      "momento-3",
+      "momento-4",
+      "momento-5",
+      "cierre"
+    ],
+    "pages": {
+      "bienvenida": {
+        "type": "welcome",
+        "components": [
+          {
+            "type": "hero",
+            "eyebrow": "Ingeniería · Asignatura transversal",
+            "faculty": "Facultad de Ingeniería",
+            "title": "Álgebra Lineal",
+            "description": "Asignatura teórica, 100% virtual y transversal a las ingenierías. En cinco temas modelarás y resolverás problemas mediante sistemas de ecuaciones lineales, matrices, determinantes y vectores, con ejemplos aplicados a distintos campos de la ingeniería.",
+            "chips": [
+              {
+                "icon": "🎓",
+                "label": "Ingeniería (transversal)"
+              },
+              {
+                "icon": "📖",
+                "label": "Aprendizaje Guiado"
+              },
+              {
+                "icon": "🏅",
+                "label": "5 Contenidos"
+              },
+              {
+                "icon": "💻",
+                "label": "100% Virtual · 3 créditos"
+              }
+            ],
+            "videoLabel": "Video de presentación",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video de presentación del curso (Synthesia/YouTube)"
+          },
+          {
+            "type": "learning-outcomes",
+            "icon": "🎯",
+            "title": "Resultados de Aprendizaje",
+            "subtitle": "Al finalizar el curso estarás en capacidad de modelar, resolver y evaluar problemas de ingeniería con las herramientas del álgebra lineal.",
+            "outcomes": [
+              {
+                "number": "1",
+                "label": "Modelo",
+                "text": "<strong>Modelo</strong> problemas de ingeniería utilizando matrices y vectores, aplicando métodos algebraicos para su resolución e interpretación."
+              },
+              {
+                "number": "2",
+                "label": "Aplico",
+                "text": "<strong>Aplico</strong> diferentes métodos de solución de sistemas de ecuaciones lineales para modelar y resolver problemas propios del campo de la ingeniería, interpretando los resultados en su contexto."
+              },
+              {
+                "number": "3",
+                "label": "Evalúo",
+                "text": "<strong>Evalúo</strong> la aplicación de los conceptos y procesos de la teoría de matrices en la representación y solución de sistemas de ecuaciones lineales, analizando su pertinencia en distintos campos del conocimiento."
+              }
+            ]
+          },
+          {
+            "type": "activities",
+            "icon": "🚀",
+            "title": "Actividades de Inicio",
+            "subtitle": "Antes de comenzar, completa estas actividades que activan tus conocimientos previos y abren el espacio de encuentro del curso.",
+            "items": [
+              {
+                "icon": "🧭",
+                "step": "Paso 1",
+                "title": "Evaluación diagnóstica",
+                "description": "Resuelve un cuestionario breve sobre operaciones algebraicas, ecuaciones 2×2 y geometría básica para identificar tu punto de partida.",
+                "details": {
+                  "summary": "▸ Descripción y orientaciones",
+                  "text": "Diagnóstico de carácter formativo, no incide en la nota final. Se contestan 10 preguntas seleccionadas de un banco de 15, con retroalimentación por pregunta. Sus resultados son el insumo del Balance inicial y te orientan sobre lo que conviene repasar antes del Contenido 1."
+                },
+                "opensAt": "",
+                "closesAt": "",
+                "button": {
+                  "href": "",
+                  "label": "Iniciar diagnóstico →"
+                },
+                "todo": "Crear cuestionario diagnóstico en Moodle (10 contestadas / banco 15, retro por pregunta) y pegar su URL; definir fechas de apertura y cierre."
+              },
+              {
+                "icon": "💬",
+                "step": "Paso 2",
+                "title": "Foro de presentación",
+                "description": "Preséntate ante tus compañeros y comparte una situación de tu programa de ingeniería que creas que podría modelarse con sistemas de ecuaciones, matrices o vectores.",
+                "details": {
+                  "summary": "▸ Descripción y orientaciones",
+                  "text": "Publica una intervención inicial (mínimo 80 palabras) y responde al menos a dos compañeros. Se valoran la pertinencia del ejemplo de ingeniería propuesto y la calidad del intercambio."
+                },
+                "opensAt": "",
+                "closesAt": "",
+                "button": {
+                  "href": "",
+                  "label": "Ir al foro →"
+                },
+                "todo": "Crear foro de presentación en Moodle y pegar su URL; definir fechas."
+              },
+              {
+                "icon": "📓",
+                "step": "Paso 3",
+                "title": "Balance inicial",
+                "description": "Registra, a partir de los resultados del diagnóstico, qué temas dominas y cuáles repasarás durante el curso.",
+                "details": {
+                  "summary": "▸ Descripción y orientaciones",
+                  "text": "Actividad breve de autoevaluación inicial (momento inicial). Te ayuda a planificar tu estudio autónomo a lo largo de las cuatro semanas del curso."
+                },
+                "opensAt": "",
+                "closesAt": "",
+                "button": {
+                  "href": "",
+                  "label": "Abrir balance inicial →"
+                },
+                "todo": "Crear tarea/cuestionario de Balance inicial en Moodle y pegar su URL; definir fechas."
+              }
+            ]
+          },
+          {
+            "type": "course-glance",
+            "icon": "🔎",
+            "title": "Tu Curso de un Vistazo",
+            "subtitle": "Conoce a tu docente y accede a los documentos guía del curso.",
+            "cards": [
+              {
+                "kind": "teacher",
+                "photoUrl": "",
+                "name": "",
+                "role": "Docente del curso",
+                "bio": "",
+                "tags": [
+                  "Álgebra lineal",
+                  "Modelamiento matemático",
+                  "Ingeniería"
+                ],
+                "todo": "Completar nombre, foto, título y bio del docente (no inventar datos personales)."
+              },
+              {
+                "kind": "syllabus",
+                "title": "Syllabus del curso",
+                "description": "Consulta competencia, resultados de aprendizaje, saberes, criterios de evaluación y bibliografía oficial.",
+                "previewUrl": "",
+                "button": {
+                  "href": "",
+                  "label": "Abrir Syllabus"
+                },
+                "todo": "Subir el PDF del syllabus a Moodle y pegar su URL."
+              },
+              {
+                "kind": "schedule",
+                "title": "Cronograma",
+                "description": "Revisa fechas de apertura y cierre de cada contenido, actividades y evaluaciones a lo largo de las cuatro semanas.",
+                "previewUrl": "",
+                "button": {
+                  "href": "",
+                  "label": "Abrir Cronograma"
+                },
+                "todo": "Subir el PDF del cronograma a Moodle y pegar su URL."
+              }
+            ]
+          },
+          {
+            "type": "resources",
+            "icon": "📚",
+            "title": "Recursos de Apoyo",
+            "subtitle": "Material seleccionado para acompañar tu estudio a lo largo del curso.",
+            "cards": [
+              {
+                "resourceType": "e-book",
+                "level": "Fundamental",
+                "icon": "📘",
+                "title": "Larson — Fundamentos de álgebra lineal (texto base)",
+                "description": "Texto base del curso: teoría, ejemplos resueltos y ejercicios sobre sistemas, matrices, determinantes y vectores.",
+                "href": "",
+                "todo": "Pegar URL del e-book o de la ficha del recurso en Moodle (Larson, 2010)."
+              },
+              {
+                "resourceType": "e-book",
+                "level": "Intermedio",
+                "icon": "📗",
+                "title": "Grossman — Álgebra lineal",
+                "description": "Texto de consulta complementario con desarrollos teóricos y problemas adicionales.",
+                "href": "",
+                "todo": "Pegar URL del e-book o de la ficha del recurso en Moodle (Grossman, 2008)."
+              },
+              {
+                "resourceType": "video",
+                "level": "Introductorio",
+                "icon": "🎬",
+                "title": "Serie de video: Álgebra lineal aplicada a la ingeniería",
+                "description": "Visualizaciones de sistemas, matrices y vectores con ejemplos de distintas ingenierías.",
+                "href": "",
+                "todo": "Pegar URL de la serie de video del curso (recurso creado: \"Elaboración propia\")."
+              },
+              {
+                "resourceType": "software",
+                "level": "Práctico",
+                "icon": "💻",
+                "title": "Software: GeoGebra / calculadora matricial en línea",
+                "description": "Herramientas para resolver sistemas, operar matrices, calcular determinantes e inversas y validar resultados.",
+                "href": "",
+                "todo": "Pegar URL del recurso o guía de uso del software en Moodle."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Álgebra Lineal",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Material de apoyo del aula. Álgebra Lineal · Asignatura transversal de Ingeniería."
+          }
+        ]
+      },
+      "momento-1": {
+        "type": "moment",
+        "momentNumber": "1",
+        "momentName": "Sistemas de ecuaciones lineales y método de Gauss-Jordan",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🧮",
+            "eyebrow": "Álgebra Lineal · Contenido 1",
+            "title": "Contenido 1",
+            "subtitle": "Sistemas de ecuaciones lineales y método de Gauss-Jordan (RA1, RA2)."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 1",
+            "text": "En este primer contenido aprenderás a traducir problemas de ingeniería a sistemas de ecuaciones lineales y a resolverlos con el método de Gauss-Jordan. Comprenderás cuándo un sistema tiene solución única, infinitas soluciones o ninguna, e interpretarás el resultado en el contexto del problema. Pregúntate: ¿cómo se traduce un problema de ingeniería a un sistema de ecuaciones? y ¿cuándo un sistema tiene solución única, infinitas o ninguna?",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Contenido 1 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Estudia el documento de saberes interactivo del Contenido 1: representación de problemas como sistemas lineales, matriz aumentada, operaciones elementales y eliminación de Gauss-Jordan, con ejemplos de varias ingenierías.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Pegar URL del paquete SCORM del Contenido 1 en Moodle."
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Taller del Contenido 1",
+            "description": "Taller formativo: modela y resuelve un sistema de ecuaciones a partir de un caso de ingeniería, usando Gauss-Jordan, e interpreta el tipo de solución obtenido.",
+            "button": {
+              "href": "",
+              "label": "Ir al taller →"
+            },
+            "todo": "Crear la tarea/taller del Contenido 1 en Moodle y pegar su URL."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Sistemas de ecuaciones lineales",
+                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). CENGAGE Learning.",
+                "href": "",
+                "todo": "Pegar URL del recurso/lectura en Moodle."
+              },
+              {
+                "resourceName": "Lectura de apoyo — Gauss-Jordan",
+                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw Hill Educación.",
+                "href": "",
+                "todo": "Pegar URL del recurso/lectura en Moodle."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Álgebra Lineal · Contenido 1",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Álgebra Lineal · Contenido 1: Sistemas de ecuaciones lineales y Gauss-Jordan."
+          }
+        ]
+      },
+      "momento-2": {
+        "type": "moment",
+        "momentNumber": "2",
+        "momentName": "Matrices y operaciones",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🔢",
+            "eyebrow": "Álgebra Lineal · Contenido 2",
+            "title": "Contenido 2",
+            "subtitle": "Matrices y operaciones entre matrices. Aplicaciones (RA1)."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 2",
+            "text": "En este contenido representarás información mediante matrices y operarás con ellas (suma, producto por escalar, producto de matrices, transpuesta) para modelar y transformar datos de problemas de ingeniería. Pregúntate: ¿qué representa una matriz en un problema real? y ¿cómo se combinan operaciones matriciales para modelar un proceso?",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Contenido 2 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Estudia el documento de saberes interactivo del Contenido 2: definición de matriz, tipos de matrices, operaciones y sus propiedades, con aplicaciones en distintas ingenierías.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Pegar URL del paquete SCORM del Contenido 2 en Moodle."
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Taller del Contenido 2",
+            "description": "Taller formativo: resuelve operaciones matriciales aplicadas a un contexto de ingeniería e interpreta el significado de los resultados.",
+            "button": {
+              "href": "",
+              "label": "Ir al taller →"
+            },
+            "todo": "Crear la tarea/taller del Contenido 2 en Moodle y pegar su URL."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Matrices y operaciones",
+                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). CENGAGE Learning.",
+                "href": "",
+                "todo": "Pegar URL del recurso/lectura en Moodle."
+              },
+              {
+                "resourceName": "Lectura de apoyo — Álgebra de matrices",
+                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw Hill Educación.",
+                "href": "",
+                "todo": "Pegar URL del recurso/lectura en Moodle."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Álgebra Lineal · Contenido 2",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Álgebra Lineal · Contenido 2: Matrices y operaciones."
+          }
+        ]
+      },
+      "momento-3": {
+        "type": "moment",
+        "momentNumber": "3",
+        "momentName": "Determinantes, inversa y regla de Cramer",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🧾",
+            "eyebrow": "Álgebra Lineal · Contenido 3",
+            "title": "Contenido 3",
+            "subtitle": "Determinantes, inversa de una matriz cuadrada y regla de Cramer (RA2)."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 3",
+            "text": "En este contenido calcularás determinantes y la inversa de una matriz cuadrada, y resolverás sistemas de ecuaciones mediante la regla de Cramer. Aprenderás a leer qué información aporta el determinante sobre un sistema y a decidir cuándo conviene Cramer frente a Gauss-Jordan. Pregúntate: ¿qué información aporta el determinante sobre un sistema? y ¿cuándo conviene Cramer frente a Gauss-Jordan?",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Contenido 3 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Estudia el documento de saberes interactivo del Contenido 3: determinantes y sus propiedades, cálculo de la inversa y regla de Cramer, con ejemplos comparativos entre métodos.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Pegar URL del paquete SCORM del Contenido 3 en Moodle."
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Taller del Contenido 3",
+            "description": "Taller formativo: resuelve un sistema por la regla de Cramer y por la inversa, y compara ambos métodos justificando cuál resulta más conveniente.",
+            "button": {
+              "href": "",
+              "label": "Ir al taller →"
+            },
+            "todo": "Crear la tarea/taller del Contenido 3 en Moodle y pegar su URL."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Determinantes e inversa",
+                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). CENGAGE Learning.",
+                "href": "",
+                "todo": "Pegar URL del recurso/lectura en Moodle."
+              },
+              {
+                "resourceName": "Lectura de apoyo — Regla de Cramer",
+                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw Hill Educación.",
+                "href": "",
+                "todo": "Pegar URL del recurso/lectura en Moodle."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Álgebra Lineal · Contenido 3",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Álgebra Lineal · Contenido 3: Determinantes, inversa y regla de Cramer."
+          }
+        ]
+      },
+      "momento-4": {
+        "type": "moment",
+        "momentNumber": "4",
+        "momentName": "Vectores en el plano y el espacio",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "➗",
+            "eyebrow": "Álgebra Lineal · Contenido 4",
+            "title": "Contenido 4",
+            "subtitle": "Vectores en el plano y el espacio: producto punto, ángulo y producto cruz (RA1, RA2)."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 4",
+            "text": "En este contenido operarás e interpretarás vectores en el plano y el espacio: suma, producto por escalar, producto punto, ángulo entre vectores y producto cruz. Aprenderás qué miden estas operaciones y cómo se usan para modelar magnitudes de ingeniería (por ejemplo, fuerzas y relaciones geométricas). Pregúntate: ¿qué miden el producto punto y el producto cruz? y ¿cómo se usan los vectores para modelar magnitudes en ingeniería?",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Contenido 4 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Estudia el documento de saberes interactivo del Contenido 4: vectores en R² y R³, producto punto, ángulo entre vectores y producto cruz, con interpretación geométrica y aplicaciones de ingeniería.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Pegar URL del paquete SCORM del Contenido 4 en Moodle."
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Taller y foro del Contenido 4",
+            "description": "Taller formativo de vectores aplicados (fuerzas, geometría) y foro de debate para discutir interpretaciones y aplicaciones del producto punto y el producto cruz en distintas ingenierías.",
+            "button": {
+              "href": "",
+              "label": "Ir al taller y foro →"
+            },
+            "todo": "Crear la tarea/taller y el foro de debate del Contenido 4 en Moodle y pegar sus URLs."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Vectores",
+                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). CENGAGE Learning.",
+                "href": "",
+                "todo": "Pegar URL del recurso/lectura en Moodle."
+              },
+              {
+                "resourceName": "Lectura de apoyo — Producto punto y producto cruz",
+                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw Hill Educación.",
+                "href": "",
+                "todo": "Pegar URL del recurso/lectura en Moodle."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Álgebra Lineal · Contenido 4",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Álgebra Lineal · Contenido 4: Vectores en el plano y el espacio."
+          }
+        ]
+      },
+      "momento-5": {
+        "type": "moment",
+        "momentNumber": "5",
+        "momentName": "Rectas, planos y aplicaciones del álgebra lineal",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "📐",
+            "eyebrow": "Álgebra Lineal · Contenido 5",
+            "title": "Contenido 5",
+            "subtitle": "Rectas y planos en el espacio y aplicaciones del álgebra lineal (RA1, RA2, RA3)."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 5",
+            "text": "En este contenido de integración describirás rectas y planos en el espacio y evaluarás aplicaciones del álgebra lineal (rotaciones y traslaciones, campos vectoriales lineales, criptografía, circuitos eléctricos), integrando todo lo aprendido. Pregúntate: ¿cómo se describen rectas y planos en el espacio? y ¿en qué campos se aplican y por qué son pertinentes?",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Contenido 5 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Estudia el documento de saberes interactivo del Contenido 5: ecuaciones de rectas y planos en el espacio, intersecciones y aplicaciones del álgebra lineal en distintos campos de la ingeniería.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Pegar URL del paquete SCORM del Contenido 5 en Moodle."
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Taller del Contenido 5",
+            "description": "Taller integrador (ajustado por el docente): halla las ecuaciones de una recta y de un plano, grafícalos y determina los puntos de intersección entre planos y rectas, y entre rectas y rectas.",
+            "button": {
+              "href": "",
+              "label": "Ir al taller →"
+            },
+            "todo": "Crear la tarea/taller del Contenido 5 en Moodle y pegar su URL."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Rectas y planos en el espacio",
+                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). CENGAGE Learning.",
+                "href": "",
+                "todo": "Pegar URL del recurso/lectura en Moodle."
+              },
+              {
+                "resourceName": "Lectura de apoyo — Aplicaciones del álgebra lineal",
+                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw Hill Educación.",
+                "href": "",
+                "todo": "Pegar URL del recurso/lectura en Moodle."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Álgebra Lineal · Contenido 5",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Álgebra Lineal · Contenido 5: Rectas, planos y aplicaciones."
+          }
+        ]
+      },
+      "cierre": {
+        "type": "closing",
+        "components": [
+          {
+            "type": "closing-hero",
+            "eyebrow": "Álgebra Lineal · Cierre del curso",
+            "faculty": "Facultad de Ingeniería",
+            "title": "¡Has completado el recorrido!",
+            "description": "Felicitaciones. A lo largo de los cinco contenidos modelaste problemas de ingeniería con sistemas de ecuaciones, matrices y vectores; aplicaste distintos métodos de solución e interpretaste sus resultados; y evaluaste la pertinencia del álgebra lineal en distintos campos. Este cierre sintetiza lo aprendido y te conduce a la evaluación integradora final.",
+            "chips": [
+              {
+                "icon": "✅",
+                "label": "5 Contenidos completados"
+              },
+              {
+                "icon": "🏅",
+                "label": "Álgebra Lineal"
+              }
+            ]
+          },
+          {
+            "type": "summary",
+            "icon": "🧠",
+            "title": "Lo que lograste",
+            "subtitle": "Síntesis de los resultados de aprendizaje alcanzados durante el curso.",
+            "items": [
+              {
+                "number": "1",
+                "label": "Modelo",
+                "text": "Modelas problemas de ingeniería utilizando matrices y vectores, aplicando métodos algebraicos para su resolución e interpretación."
+              },
+              {
+                "number": "2",
+                "label": "Aplico",
+                "text": "Aplicas diferentes métodos de solución de sistemas de ecuaciones lineales para modelar y resolver problemas de ingeniería, interpretando los resultados en su contexto."
+              },
+              {
+                "number": "3",
+                "label": "Evalúo",
+                "text": "Evalúas la aplicación de los conceptos y procesos de la teoría de matrices en la representación y solución de sistemas de ecuaciones lineales, analizando su pertinencia en distintos campos."
+              }
+            ]
+          },
+          {
+            "type": "next-steps",
+            "icon": "🧭",
+            "title": "Próximos pasos",
+            "subtitle": "Recomendaciones para consolidar y proyectar lo aprendido.",
+            "items": [
+              {
+                "icon": "📝",
+                "title": "Taller integrador final",
+                "description": "Presenta la actividad sumativa de la última semana, que integra los cinco contenidos: modela, resuelve y evalúa la pertinencia de la solución (RA1–RA3).",
+                "button": {
+                  "href": "",
+                  "label": "Ir al taller integrador →"
+                },
+                "todo": "Crear la tarea del taller integrador final en Moodle y pegar su URL."
+              },
+              {
+                "icon": "🔁",
+                "title": "Auto, co y heteroevaluación",
+                "description": "Completa la autoevaluación y la coevaluación del cierre con las rúbricas analítica (CE1–CE3) y holística disponibles en el aula.",
+                "button": {
+                  "href": "",
+                  "label": "Abrir instrumentos de cierre →"
+                },
+                "todo": "Crear los instrumentos de auto/coevaluación y adjuntar rúbricas en Moodle; pegar URL."
+              },
+              {
+                "icon": "🚀",
+                "title": "Profundiza",
+                "description": "Continúa con asignaturas que aplican el álgebra lineal: cálculo en varias variables, métodos numéricos o ecuaciones diferenciales, según tu programa de ingeniería.",
+                "button": {
+                  "href": "",
+                  "label": "Ver rutas de continuidad →"
+                },
+                "todo": "Pegar URL de la ruta de continuidad o información del programa (opcional)."
+              }
+            ]
+          },
+          {
+            "type": "final-evaluation",
+            "icon": "🎯",
+            "eyebrow": "Evaluación sumativa",
+            "title": "Taller integrador final",
+            "description": "Demuestra el logro integral de los resultados de aprendizaje resolviendo el taller integrador final de Álgebra Lineal, evaluado con las rúbricas analítica (CE1–CE3) y holística.",
+            "button": {
+              "href": "",
+              "label": "Abrir evaluación final →"
+            },
+            "todo": "Pegar URL de la tarea del taller integrador final en Moodle."
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Álgebra Lineal · Cierre",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Álgebra Lineal · Asignatura transversal de Ingeniería · Cierre del curso."
+          }
+        ]
+      }
+    }
+  }
+}
