@@ -152,9 +152,11 @@
           "s1-flashcards",
           "s1-teoria-2",
           "s1-formula",
+          "s1-figura-dimensiones",
           "s1-carousel",
           "s1-teoria-3",
           "s1-stepper",
+          "s1-conexion-saberes",
           "s1-accordion"
         ],
         "components": {
@@ -244,6 +246,15 @@
             ],
             "explanation": ["La barra vertical recuerda que la última columna no es un coeficiente más, sino el lado derecho de cada ecuación; al operar filas hay que actualizarla igual que al resto."]
           },
+          "s1-figura-dimensiones": {
+            "type": "figure",
+            "title": "Dimensiones de la matriz aumentada",
+            "assetId": "fig-1-4-dimensiones-matriz",
+            "src": "",
+            "alt": "Matriz aumentada con filas etiquetadas como ecuaciones (m) y columnas etiquetadas como incógnitas (n), más una columna extra para el término independiente separada por una barra vertical.",
+            "caption": "Figura 1.4. En $[A\\,|\\,\\mathbf{b}]$ cada fila es una ecuación ($m$ restricciones), cada columna de $A$ es una incógnita ($n$ decisiones) y la columna tras la barra es el vector $\\mathbf{b}$.",
+            "prompt": "Crear una figura didáctica en español de una matriz aumentada genérica de orden 3x3 con una columna adicional separada por una barra vertical. Etiquetar con una llave horizontal a la izquierda las filas como 'm ecuaciones (restricciones)', con una llave superior las primeras columnas como 'n incógnitas (decisiones)' y la última columna como 'términos independientes b (metas/recursos)'. Marcar visualmente la barra vertical como separador. Incluir un recuadro que diga 'orden de A: m x n'. Estilo limpio, colores sobrios diferenciando coeficientes y término independiente, tipografía legible."
+          },
           "s1-carousel": {
             "type": "carousel",
             "title": "Pasos para construir la matriz aumentada",
@@ -286,6 +297,13 @@
               {"title": "Eliminar el primer coeficiente de la fila 2", "body": "Aplicamos $R_2 \\to R_2 - 0.2\\,R_1$ para anular el pivote inferior de la primera columna.", "formula": "\\left[\\begin{array}{cc|c} 1 & 1 & 100 \\\\ 0 & 0.3 & 10 \\end{array}\\right]", "final": false},
               {"title": "Despejar y verificar", "body": "De la fila 2, $0.3\\,x_2 = 10 \\Rightarrow x_2 = \\tfrac{100}{3}$ L; sustituyendo, $x_1 = 100 - x_2 = \\tfrac{200}{3}$ L. Se comprueba que ambos volúmenes son positivos (factibilidad física) y que su mezcla da el 30 %.", "formula": "x_1=\\tfrac{200}{3}\\ \\text{L},\\quad x_2=\\tfrac{100}{3}\\ \\text{L}", "final": true}
             ]
+          },
+          "s1-conexion-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": ["El desarrollo ampliado del modelado de situaciones de ingeniería como sistemas lineales y su matriz aumentada está en el Documento de Saberes (PDF) de la asignatura."]
           },
           "s1-accordion": {
             "type": "accordion",
@@ -524,15 +542,17 @@
         ],
         "componentOrder": [
           "s3-teoria-1",
+          "s3-figura-rango",
           "s3-flashcards",
           "s3-formula",
           "s3-teoria-2",
           "s3-stepper-inf",
           "s3-stepper-inc",
-          "s3-chart",
+          "s3-tabla-rangos",
           "s3-teoria-3",
           "s3-figura",
           "s3-carousel",
+          "s3-conexion-saberes",
           "s3-accordion"
         ],
         "components": {
@@ -559,6 +579,15 @@
               }
             ],
             "closing": ["Antes de declarar una solución, cuenta pivotes: el rango te dice qué esperar."]
+          },
+          "s3-figura-rango": {
+            "type": "figure",
+            "title": "El rango como número de pivotes",
+            "assetId": "fig-1-3-rango-pivotes",
+            "src": "",
+            "alt": "Matriz aumentada reducida con dos pivotes marcados en color y una tercera fila convertida en ceros, etiquetada como ecuación redundante; al lado, el conteo rango = 2.",
+            "caption": "Figura 1.3. El rango es el número de pivotes que sobreviven en la RREF; una fila que se anula señala una ecuación que era combinación de las otras.",
+            "prompt": "Crear una figura didáctica en español que muestre una matriz aumentada 3x4 ya reducida por filas. Resaltar con un color los dos pivotes (1 en la columna 1 y 1 en la columna 2) y mostrar la tercera fila completamente en ceros [0 0 0 | 0] etiquetada con una llave que diga 'ecuación redundante: combinación de las anteriores'. A la derecha, un recuadro que indique 'número de pivotes = rango = 2'. Bajo la matriz, una pequeña leyenda que contraste columna con pivote (incógnita básica) y columna sin pivote (variable libre). Estilo limpio, paleta sobria, tipografía legible, sin decoración superflua."
           },
           "s3-flashcards": {
             "type": "flashcards",
@@ -623,24 +652,16 @@
               {"title": "Concluir", "body": "El sistema no tiene solución. Geométricamente, las rectas $x+y=2$ y $2x+2y=5$ son paralelas: representan restricciones incompatibles que nunca coinciden.", "formula": "\\text{sistema inconsistente: sin solución}", "final": true}
             ]
           },
-          "s3-chart": {
-            "type": "chart",
-            "chartType": "bar",
-            "title": "Número de soluciones según la relación de rangos",
-            "description": ["Tras el teorema de Rouché-Frobenius y los dos ejercicios anteriores, este gráfico resume cualitativamente cuántas soluciones produce cada relación entre el rango de $A$, el rango de $[A|\\mathbf{b}]$ y el número de incógnitas $n$."],
-            "note": "Lectura del gráfico: el eje horizontal muestra los tres casos del teorema; el eje vertical representa de forma cualitativa el número de soluciones (1 para única, un valor alto que simboliza infinitas, y 0 para inconsistente). Se observa que solo cuando los dos rangos coinciden hay solución, y que igualar el rango con $n$ es lo que fuerza la unicidad; cuando el rango queda por debajo de $n$ aparecen los grados de libertad que producen infinitas soluciones.",
-            "height": "320px",
-            "labels": ["rango(A)=rango([A|b])=n", "rango(A)=rango([A|b])<n", "rango(A)<rango([A|b])"],
-            "datasets": [
-              {"label": "Número de soluciones (cualitativo)", "data": [1, 100, 0]}
-            ],
-            "options": {
-              "scales": {
-                "y": {"title": {"display": true, "text": "Soluciones (1 = única, alto = infinitas, 0 = ninguna)"}},
-                "x": {"title": {"display": true, "text": "Relación entre rangos e incógnitas"}}
-              },
-              "plugins": {"legend": {"display": true}}
-            }
+          "s3-tabla-rangos": {
+            "type": "table",
+            "title": "Relación de rangos y tipo de solución",
+            "description": "Síntesis operativa del teorema de Rouché-Frobenius: cada combinación de rangos frente al número de incógnitas $n$ determina un único desenlace y un número exacto de grados de libertad.",
+            "columns": ["Relación de rangos", "Condición frente a $n$", "Tipo de solución", "Variables libres $n-\\operatorname{rango}$", "Lectura en el problema"],
+            "rows": [
+              {"cells": ["$\\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])$", "$=n$", {"badge": "Única", "tone": "success"}, "$0$", "Problema bien determinado: un solo plan o estado factible."]},
+              {"cells": ["$\\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])$", "$<n$", {"badge": "Infinitas", "tone": "info"}, "$n-\\operatorname{rango}>0$", "Grados de libertad: familia de soluciones que se cierra con un criterio extra."]},
+              {"cells": ["$\\operatorname{rango}(A)<\\operatorname{rango}([A|\\mathbf{b}])$", "no aplica", {"badge": "Ninguna", "tone": "danger"}, "—", "Restricciones incompatibles: fila $0=k$ con $k\\neq0$, hay que replantear."]}
+            ]
           },
           "s3-teoria-3": {
             "type": "theory-block",
@@ -682,6 +703,13 @@
               {"label": "Chequeo 4", "title": "Parametrizar si hace falta", "body": ["Para infinitas soluciones, asigna un parámetro a cada variable libre y despeja las básicas."], "icon": "functions"},
               {"label": "Cierre", "formula": "n-\\operatorname{rango}", "description": "Esta diferencia cuenta los grados de libertad: cero para solución única, mayor que cero para infinitas."}
             ]
+          },
+          "s3-conexion-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": ["El desarrollo ampliado de la existencia y unicidad de soluciones y del teorema de Rouché-Frobenius está en el Documento de Saberes (PDF) de la asignatura."]
           },
           "s3-accordion": {
             "type": "accordion",

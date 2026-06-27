@@ -909,12 +909,12 @@
       },
       "seccion-5": {
         "kind": "theory",
-        "theme": "Síntesis, práctica y evaluación",
+        "theme": "El determinante como criterio de decisión de método",
         "badge": "Escenario de aprendizaje 03",
-        "navLabel": "Síntesis y evaluación",
-        "title": "Síntesis, práctica integradora y evaluación",
+        "navLabel": "Del determinante a la decisión",
+        "title": "Síntesis: del determinante a la decisión de método",
         "intro": [
-          "Cerramos el tema integrando los tres métodos y poniéndolos a prueba. Esta sección consolida lo aprendido, ofrece una práctica resuelta que combina determinante, inversa y Cramer, y plantea la evaluación formativa del escenario."
+          "Este tema articula los tres métodos del escenario alrededor de una idea unificadora: el determinante no solo diagnostica la invertibilidad, sino que orienta la elección entre inversa, regla de Cramer y Gauss-Jordan. Estudiaremos cómo un mismo sistema admite varios caminos equivalentes y bajo qué criterio cada uno resulta más conveniente."
         ],
         "learningOutcomeIds": ["RA2"],
         "methodologyMoment": "Fase 4",
@@ -966,8 +966,8 @@
           },
           "s5-teoria-2": {
             "type": "theory-block",
-            "title": "Práctica integradora guiada",
-            "eyebrow": "Aplicación combinada",
+            "title": "Equivalencia de los métodos sobre una misma matriz",
+            "eyebrow": "Coherencia entre vías",
             "body": [
               "La mejor forma de consolidar el tema es resolver un sistema usando los tres enfoques sobre la misma matriz y comprobar que coinciden. Esto demuestra que no son métodos rivales sino caminos equivalentes hacia la misma solución cuando $\\det(A)\\neq 0$.",
               "En el ejercicio siguiente partimos de un sistema $2\\times 2$, calculamos su determinante para asegurar invertibilidad, obtenemos la inversa, resolvemos con $\\mathbf{x}=A^{-1}\\mathbf{b}$ y contrastamos el mismo resultado con la regla de Cramer. La coherencia entre métodos es la mejor verificación.",

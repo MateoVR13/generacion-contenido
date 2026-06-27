@@ -634,6 +634,23 @@ Use for terminology, grammar, formula parts, process steps, or short reasoning c
 
 Use their existing field names from the template project.
 
+### `callout` — aviso de conexión con el Documento de Saberes (obligatorio por tema)
+
+Cada sección temática SCORM incluye un `callout` informativo que articula el SCORM con el Documento de
+Saberes (PDF). Es **solo informativo** (no enlaza ni redirige):
+
+```json
+{
+  "type": "callout",
+  "tone": "info",
+  "icon": "menu_book",
+  "title": "Puedes profundizar este tema en el Documento de Saberes",
+  "body": [
+    "El desarrollo ampliado de este tema —con más ejemplos, demostraciones y referencias— está en el Documento de Saberes (PDF) de la asignatura."
+  ]
+}
+```
+
 ## PDF-Specific Components
 
 ### text / theory

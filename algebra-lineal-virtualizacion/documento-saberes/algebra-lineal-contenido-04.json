@@ -9,7 +9,10 @@
     "contentTitle": "Vectores en el plano y el espacio",
     "description": "Tema 4 del documento de saberes de Álgebra Lineal: representación y operaciones de vectores en $\\mathbb{R}^2$ y $\\mathbb{R}^3$ (suma, escalar, magnitud), producto punto (ángulo, proyección, ortogonalidad) y producto cruz (vector normal, área), aplicados de forma transversal a varias ingenierías para modelar fuerzas, trabajo, torque, alineación y flujo.",
     "syllabus": {
-      "source": {"type": "text", "fileName": "esquema-contenido.md"},
+      "source": {
+        "type": "text",
+        "fileName": "esquema-contenido.md"
+      },
       "extractedFields": {
         "asignatura": "Álgebra Lineal",
         "creditos": "3",
@@ -65,7 +68,12 @@
       "code": "AG",
       "name": "Aprendizaje Guiado",
       "rationale": "Ruta guiada para aprendizaje virtual autónomo con acompañamiento, práctica y retroalimentación.",
-      "moments": ["Fase 1", "Fase 2", "Fase 3", "Fase 4"]
+      "moments": [
+        "Fase 1",
+        "Fase 2",
+        "Fase 3",
+        "Fase 4"
+      ]
     }
   },
   "scorm": {
@@ -73,7 +81,14 @@
       "theoryNav": "Contenido Teórico",
       "materialNav": "Material Complementario"
     },
-    "sectionOrder": ["intro", "seccion-1", "seccion-2", "seccion-3", "seccion-4", "seccion-5"],
+    "sectionOrder": [
+      "intro",
+      "seccion-1",
+      "seccion-2",
+      "seccion-3",
+      "seccion-4",
+      "seccion-5"
+    ],
     "sections": {
       "intro": {
         "kind": "theory",
@@ -86,16 +101,33 @@
           "El propósito es que representes y operes vectores en $\\mathbb{R}^2$ y $\\mathbb{R}^3$ (suma, producto por escalar y magnitud), y que apliques el producto punto (ángulo, proyección y ortogonalidad) y el producto cruz (vector normal y área) para modelar e interpretar magnitudes físicas y geométricas en distintos campos de la ingeniería.",
           "El enfoque es transversal: una fuerza en mecánica, la alineación de un robot en mecatrónica o el flujo a través de una superficie en ingeniería ambiental son, todos, problemas vectoriales que comparten las mismas operaciones."
         ],
-        "componentOrder": ["intro-objetivos", "intro-saberes", "intro-orientadoras", "intro-ruta"],
+        "componentOrder": [
+          "intro-objetivos",
+          "intro-saberes",
+          "intro-orientadoras",
+          "intro-ruta"
+        ],
         "components": {
           "intro-objetivos": {
             "type": "objectives",
             "title": "Propósito del tema",
             "items": [
-              {"icon": "track_changes", "text": "Representar vectores en $\\mathbb{R}^2$ y $\\mathbb{R}^3$ y operarlos: suma, producto por escalar y cálculo de magnitud."},
-              {"icon": "track_changes", "text": "Aplicar el producto punto para hallar el ángulo entre vectores, la proyección de uno sobre otro y decidir ortogonalidad."},
-              {"icon": "track_changes", "text": "Aplicar el producto cruz para obtener un vector normal y el área del paralelogramo, e interpretarlos físicamente (torque, flujo)."},
-              {"icon": "track_changes", "text": "Modelar magnitudes de ingeniería (fuerza, trabajo, alineación, flujo) eligiendo la operación vectorial pertinente."}
+              {
+                "icon": "track_changes",
+                "text": "Representar vectores en $\\mathbb{R}^2$ y $\\mathbb{R}^3$ y operarlos: suma, producto por escalar y cálculo de magnitud."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Aplicar el producto punto para hallar el ángulo entre vectores, la proyección de uno sobre otro y decidir ortogonalidad."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Aplicar el producto cruz para obtener un vector normal y el área del paralelogramo, e interpretarlos físicamente (torque, flujo)."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Modelar magnitudes de ingeniería (fuerza, trabajo, alineación, flujo) eligiendo la operación vectorial pertinente."
+              }
             ]
           },
           "intro-saberes": {
@@ -132,7 +164,9 @@
         "badge": "Tema 04 · Sección 1",
         "navLabel": "Vectores y magnitud",
         "title": "El vector: representación, operaciones básicas y magnitud",
-        "learningOutcomeIds": ["RA1"],
+        "learningOutcomeIds": [
+          "RA1"
+        ],
         "methodologyMoment": "Fase 1",
         "estimatedTime": "45 minutos",
         "intro": [
@@ -148,7 +182,9 @@
           "s1-teoria-3",
           "s1-stepper-magnitud",
           "s1-stepper-distancia",
+          "s1-figura-suma",
           "s1-acordion",
+          "s1-callout-saberes",
           "s1-reflexion"
         ],
         "components": {
@@ -162,23 +198,38 @@
               "Cualquier vector del espacio se expresa como combinación de los vectores base $\\mathbf{i}=(1,0,0)$, $\\mathbf{j}=(0,1,0)$ y $\\mathbf{k}=(0,0,1)$, de modo que $\\mathbf{v}=v_1\\mathbf{i}+v_2\\mathbf{j}+v_3\\mathbf{k}$. Esta doble lectura, flecha y componentes, es la que permite pasar del dibujo al cálculo."
             ],
             "keyIdeas": [
-              {"icon": "navigation", "text": "Un vector reúne magnitud, dirección y sentido en una sola entidad."},
-              {"icon": "view_in_ar", "text": "En $\\mathbb{R}^2$ tiene dos componentes; en $\\mathbb{R}^3$, tres."},
-              {"icon": "open_with", "text": "Las componentes son las proyecciones sobre los ejes con base $\\mathbf{i},\\mathbf{j},\\mathbf{k}$."}
+              {
+                "icon": "navigation",
+                "text": "Un vector reúne magnitud, dirección y sentido en una sola entidad."
+              },
+              {
+                "icon": "view_in_ar",
+                "text": "En $\\mathbb{R}^2$ tiene dos componentes; en $\\mathbb{R}^3$, tres."
+              },
+              {
+                "icon": "open_with",
+                "text": "Las componentes son las proyecciones sobre los ejes con base $\\mathbf{i},\\mathbf{j},\\mathbf{k}$."
+              }
             ],
             "sections": [
               {
                 "title": "Suma y producto por escalar",
-                "body": ["La suma se hace componente a componente y, geométricamente, sigue la regla del paralelogramo: el vector suma es la diagonal. Multiplicar por un escalar $k$ reescala la flecha sin cambiar su recta de acción (la invierte si $k<0$)."],
+                "body": [
+                  "La suma se hace componente a componente y, geométricamente, sigue la regla del paralelogramo: el vector suma es la diagonal. Multiplicar por un escalar $k$ reescala la flecha sin cambiar su recta de acción (la invierte si $k<0$)."
+                ],
                 "formula": "\\mathbf{u}+\\mathbf{v}=(u_1+v_1,\\;u_2+v_2,\\;u_3+v_3),\\qquad k\\mathbf{v}=(kv_1,\\;kv_2,\\;kv_3)",
                 "formulaNote": "La suma exige misma dimensión; el escalar solo cambia tamaño y, si es negativo, el sentido."
               }
             ],
             "example": {
               "title": "Lectura geométrica",
-              "body": ["Si $\\mathbf{u}=(2,1)$ representa un desplazamiento de 2 hacia el este y 1 al norte, entonces $2\\mathbf{u}=(4,2)$ es el mismo rumbo recorrido al doble de distancia."]
+              "body": [
+                "Si $\\mathbf{u}=(2,1)$ representa un desplazamiento de 2 hacia el este y 1 al norte, entonces $2\\mathbf{u}=(4,2)$ es el mismo rumbo recorrido al doble de distancia."
+              ]
             },
-            "closing": ["Antes de operar, decide siempre si trabajas en el plano o en el espacio: el número de componentes fija toda la aritmética posterior."]
+            "closing": [
+              "Antes de operar, decide siempre si trabajas en el plano o en el espacio: el número de componentes fija toda la aritmética posterior."
+            ]
           },
           "s1-figura-vector": {
             "type": "image",
@@ -193,11 +244,31 @@
             "type": "flashcards",
             "title": "Flashcards · Vocabulario del vector",
             "cards": [
-              {"term": "Vector", "definition": "Cantidad con magnitud, dirección y sentido, representada por una flecha o por sus componentes ordenadas.", "icon": "navigation"},
-              {"term": "Componentes", "definition": "Los valores $(v_1,v_2,v_3)$ que indican el avance del vector en la dirección de cada eje coordenado.", "icon": "tag"},
-              {"term": "Magnitud (norma)", "definition": "La longitud del vector, $\\|\\mathbf{v}\\|=\\sqrt{v_1^2+v_2^2+v_3^2}$; siempre es un número no negativo.", "icon": "straighten"},
-              {"term": "Vector unitario", "definition": "Vector de magnitud 1 que conserva solo la dirección; se obtiene dividiendo un vector por su norma, $\\hat{\\mathbf{v}}=\\mathbf{v}/\\|\\mathbf{v}\\|$.", "icon": "explore"},
-              {"term": "Vectores base", "definition": "Los unitarios $\\mathbf{i},\\mathbf{j},\\mathbf{k}$ alineados con los ejes; cualquier vector es combinación de ellos.", "icon": "view_in_ar"}
+              {
+                "term": "Vector",
+                "definition": "Cantidad con magnitud, dirección y sentido, representada por una flecha o por sus componentes ordenadas.",
+                "icon": "navigation"
+              },
+              {
+                "term": "Componentes",
+                "definition": "Los valores $(v_1,v_2,v_3)$ que indican el avance del vector en la dirección de cada eje coordenado.",
+                "icon": "tag"
+              },
+              {
+                "term": "Magnitud (norma)",
+                "definition": "La longitud del vector, $\\|\\mathbf{v}\\|=\\sqrt{v_1^2+v_2^2+v_3^2}$; siempre es un número no negativo.",
+                "icon": "straighten"
+              },
+              {
+                "term": "Vector unitario",
+                "definition": "Vector de magnitud 1 que conserva solo la dirección; se obtiene dividiendo un vector por su norma, $\\hat{\\mathbf{v}}=\\mathbf{v}/\\|\\mathbf{v}\\|$.",
+                "icon": "explore"
+              },
+              {
+                "term": "Vectores base",
+                "definition": "Los unitarios $\\mathbf{i},\\mathbf{j},\\mathbf{k}$ alineados con los ejes; cualquier vector es combinación de ellos.",
+                "icon": "view_in_ar"
+              }
             ]
           },
           "s1-teoria-2": {
@@ -210,33 +281,96 @@
               "En ingeniería la norma es el puente con la física: la norma de un vector velocidad es la rapidez, la de un vector fuerza es su intensidad en newtons, y un vector unitario describe una orientación pura, sin escala."
             ],
             "keyIdeas": [
-              {"icon": "straighten", "text": "La norma es una longitud: número real no negativo."},
-              {"icon": "explore", "text": "Normalizar conserva la dirección y fija la magnitud en 1."},
-              {"icon": "speed", "text": "Norma de la velocidad = rapidez; norma de la fuerza = intensidad."}
+              {
+                "icon": "straighten",
+                "text": "La norma es una longitud: número real no negativo."
+              },
+              {
+                "icon": "explore",
+                "text": "Normalizar conserva la dirección y fija la magnitud en 1."
+              },
+              {
+                "icon": "speed",
+                "text": "Norma de la velocidad = rapidez; norma de la fuerza = intensidad."
+              }
             ],
-            "closing": ["Comprobar que $\\|\\hat{\\mathbf{v}}\\|=1$ es la verificación natural de toda normalización."]
+            "closing": [
+              "Comprobar que $\\|\\hat{\\mathbf{v}}\\|=1$ es la verificación natural de toda normalización."
+            ]
           },
           "s1-formula-magnitud": {
             "type": "formula",
             "title": "Norma y vector unitario",
-            "context": ["Se usa siempre que necesitas el tamaño de un vector o una dirección pura sin escala."],
+            "context": [
+              "Se usa siempre que necesitas el tamaño de un vector o una dirección pura sin escala."
+            ],
             "latex": "\\|\\mathbf{v}\\|=\\sqrt{v_1^2+v_2^2+v_3^2},\\qquad \\hat{\\mathbf{v}}=\\frac{1}{\\|\\mathbf{v}\\|}\\,\\mathbf{v}",
             "variables": [
-              {"symbol": "\\mathbf{v}", "description": "vector original con componentes $v_1,v_2,v_3$."},
-              {"symbol": "\\|\\mathbf{v}\\|", "description": "magnitud o longitud del vector."},
-              {"symbol": "\\hat{\\mathbf{v}}", "description": "vector unitario en la dirección de $\\mathbf{v}$."}
+              {
+                "symbol": "\\mathbf{v}",
+                "description": "vector original con componentes $v_1,v_2,v_3$."
+              },
+              {
+                "symbol": "\\|\\mathbf{v}\\|",
+                "description": "magnitud o longitud del vector."
+              },
+              {
+                "symbol": "\\hat{\\mathbf{v}}",
+                "description": "vector unitario en la dirección de $\\mathbf{v}$."
+              }
             ],
-            "explanation": ["Primero se calcula la norma; luego se divide cada componente por ella. El resultado apunta igual que $\\mathbf{v}$ pero mide exactamente 1."]
+            "explanation": [
+              "Primero se calcula la norma; luego se divide cada componente por ella. El resultado apunta igual que $\\mathbf{v}$ pero mide exactamente 1."
+            ]
           },
           "s1-carrusel": {
             "type": "carousel",
             "title": "Carrusel · De la flecha al número",
             "slides": [
-              {"label": "Paso 1", "title": "Identificar componentes", "body": ["Escribe el vector como terna ordenada. Cada componente es cuánto avanza en x, y, z. Por ejemplo, $\\mathbf{v}=(3,-4,12)$ avanza 3 en x, retrocede 4 en y y avanza 12 en z."], "icon": "tag"},
-              {"label": "Paso 2", "title": "Elevar al cuadrado y sumar", "body": ["Suma los cuadrados de las componentes; los signos desaparecen porque toda longitud es positiva."], "formula": "v_1^2+v_2^2+v_3^2", "icon": "exposure"},
-              {"label": "Paso 3", "title": "Sacar la raíz", "body": ["La raíz de esa suma es la magnitud. Para $\\mathbf{v}=(3,-4,12)$ resulta $\\|\\mathbf{v}\\|=13$."], "formula": "\\|\\mathbf{v}\\|=\\sqrt{v_1^2+v_2^2+v_3^2}", "icon": "straighten"},
-              {"label": "Paso 4", "title": "Normalizar", "body": ["Divide cada componente por la magnitud para obtener el unitario que conserva la dirección."], "formula": "\\hat{\\mathbf{v}}=\\tfrac{1}{13}(3,-4,12)", "icon": "explore"},
-              {"label": "Paso 5", "title": "Verificar", "body": ["Comprueba que la norma del unitario sea 1: es la señal de que la normalización está bien hecha."], "formula": "\\|\\hat{\\mathbf{v}}\\|=1", "icon": "check_circle"}
+              {
+                "label": "Paso 1",
+                "title": "Identificar componentes",
+                "body": [
+                  "Escribe el vector como terna ordenada. Cada componente es cuánto avanza en x, y, z. Por ejemplo, $\\mathbf{v}=(3,-4,12)$ avanza 3 en x, retrocede 4 en y y avanza 12 en z."
+                ],
+                "icon": "tag"
+              },
+              {
+                "label": "Paso 2",
+                "title": "Elevar al cuadrado y sumar",
+                "body": [
+                  "Suma los cuadrados de las componentes; los signos desaparecen porque toda longitud es positiva."
+                ],
+                "formula": "v_1^2+v_2^2+v_3^2",
+                "icon": "exposure"
+              },
+              {
+                "label": "Paso 3",
+                "title": "Sacar la raíz",
+                "body": [
+                  "La raíz de esa suma es la magnitud. Para $\\mathbf{v}=(3,-4,12)$ resulta $\\|\\mathbf{v}\\|=13$."
+                ],
+                "formula": "\\|\\mathbf{v}\\|=\\sqrt{v_1^2+v_2^2+v_3^2}",
+                "icon": "straighten"
+              },
+              {
+                "label": "Paso 4",
+                "title": "Normalizar",
+                "body": [
+                  "Divide cada componente por la magnitud para obtener el unitario que conserva la dirección."
+                ],
+                "formula": "\\hat{\\mathbf{v}}=\\tfrac{1}{13}(3,-4,12)",
+                "icon": "explore"
+              },
+              {
+                "label": "Paso 5",
+                "title": "Verificar",
+                "body": [
+                  "Comprueba que la norma del unitario sea 1: es la señal de que la normalización está bien hecha."
+                ],
+                "formula": "\\|\\hat{\\mathbf{v}}\\|=1",
+                "icon": "check_circle"
+              }
             ]
           },
           "s1-teoria-3": {
@@ -249,21 +383,52 @@
               "Tener clara la combinación lineal prepara el terreno para las dos operaciones centrales del tema: el producto punto y el producto cruz, que actúan sobre estos vectores ya construidos."
             ],
             "keyIdeas": [
-              {"icon": "add", "text": "Una combinación lineal escala cada vector y luego suma."},
-              {"icon": "swap_horiz", "text": "La suma es conmutativa y asociativa."},
-              {"icon": "merge", "text": "La resultante de varias fuerzas es una combinación lineal."}
+              {
+                "icon": "add",
+                "text": "Una combinación lineal escala cada vector y luego suma."
+              },
+              {
+                "icon": "swap_horiz",
+                "text": "La suma es conmutativa y asociativa."
+              },
+              {
+                "icon": "merge",
+                "text": "La resultante de varias fuerzas es una combinación lineal."
+              }
             ],
-            "closing": ["Con la combinación lineal dominada, ya puedes construir cualquier resultante antes de medir ángulos o áreas."]
+            "closing": [
+              "Con la combinación lineal dominada, ya puedes construir cualquier resultante antes de medir ángulos o áreas."
+            ]
           },
           "s1-stepper-magnitud": {
             "type": "stepper",
             "title": "Ejercicio resuelto 4.1 · Magnitud, vector unitario y suma",
             "statement": "Dados $\\mathbf{u}=(3,-4,12)$ y $\\mathbf{v}=(1,2,2)$, hallar $\\|\\mathbf{u}\\|$, el vector unitario $\\hat{\\mathbf{u}}$ y la combinación $\\mathbf{u}+2\\mathbf{v}$.",
             "steps": [
-              {"title": "Calcular la magnitud de u", "body": "Eleva al cuadrado cada componente, suma y saca la raíz.", "formula": "\\|\\mathbf{u}\\|=\\sqrt{3^2+(-4)^2+12^2}=\\sqrt{9+16+144}=\\sqrt{169}=13", "final": false},
-              {"title": "Obtener el vector unitario", "body": "Divide cada componente de u entre su magnitud 13.", "formula": "\\hat{\\mathbf{u}}=\\frac{1}{13}(3,-4,12)=\\left(\\tfrac{3}{13},-\\tfrac{4}{13},\\tfrac{12}{13}\\right)", "final": false},
-              {"title": "Escalar v y sumar", "body": "Multiplica v por 2 y suma componente a componente con u.", "formula": "\\mathbf{u}+2\\mathbf{v}=(3,-4,12)+(2,4,4)=(5,0,16)", "final": false},
-              {"title": "Verificar", "body": "Confirma que el unitario tiene norma 1, lo que valida la normalización.", "formula": "\\|\\hat{\\mathbf{u}}\\|=\\frac{1}{13}\\sqrt{3^2+(-4)^2+12^2}=\\frac{13}{13}=1", "final": true}
+              {
+                "title": "Calcular la magnitud de u",
+                "body": "Eleva al cuadrado cada componente, suma y saca la raíz.",
+                "formula": "\\|\\mathbf{u}\\|=\\sqrt{3^2+(-4)^2+12^2}=\\sqrt{9+16+144}=\\sqrt{169}=13",
+                "final": false
+              },
+              {
+                "title": "Obtener el vector unitario",
+                "body": "Divide cada componente de u entre su magnitud 13.",
+                "formula": "\\hat{\\mathbf{u}}=\\frac{1}{13}(3,-4,12)=\\left(\\tfrac{3}{13},-\\tfrac{4}{13},\\tfrac{12}{13}\\right)",
+                "final": false
+              },
+              {
+                "title": "Escalar v y sumar",
+                "body": "Multiplica v por 2 y suma componente a componente con u.",
+                "formula": "\\mathbf{u}+2\\mathbf{v}=(3,-4,12)+(2,4,4)=(5,0,16)",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Confirma que el unitario tiene norma 1, lo que valida la normalización.",
+                "formula": "\\|\\hat{\\mathbf{u}}\\|=\\frac{1}{13}\\sqrt{3^2+(-4)^2+12^2}=\\frac{13}{13}=1",
+                "final": true
+              }
             ]
           },
           "s1-stepper-distancia": {
@@ -271,9 +436,24 @@
             "title": "Ejercicio resuelto 4.1b · Distancia entre dos puntos del espacio",
             "statement": "Hallar la distancia entre los puntos $A=(2,1,5)$ y $B=(6,4,1)$ usando el vector que los une.",
             "steps": [
-              {"title": "Construir el vector AB", "body": "Resta las coordenadas del punto inicial a las del final, componente a componente.", "formula": "\\overrightarrow{AB}=B-A=(6-2,\\;4-1,\\;1-5)=(4,3,-4)", "final": false},
-              {"title": "Calcular la magnitud del vector", "body": "La distancia entre los puntos es la norma del vector que los une.", "formula": "d=\\|\\overrightarrow{AB}\\|=\\sqrt{4^2+3^2+(-4)^2}=\\sqrt{16+9+16}", "final": false},
-              {"title": "Obtener el resultado y verificar", "body": "Simplifica la raíz; el resultado debe ser positivo por ser una distancia.", "formula": "d=\\sqrt{41}\\approx 6.40>0", "final": true}
+              {
+                "title": "Construir el vector AB",
+                "body": "Resta las coordenadas del punto inicial a las del final, componente a componente.",
+                "formula": "\\overrightarrow{AB}=B-A=(6-2,\\;4-1,\\;1-5)=(4,3,-4)",
+                "final": false
+              },
+              {
+                "title": "Calcular la magnitud del vector",
+                "body": "La distancia entre los puntos es la norma del vector que los une.",
+                "formula": "d=\\|\\overrightarrow{AB}\\|=\\sqrt{4^2+3^2+(-4)^2}=\\sqrt{16+9+16}",
+                "final": false
+              },
+              {
+                "title": "Obtener el resultado y verificar",
+                "body": "Simplifica la raíz; el resultado debe ser positivo por ser una distancia.",
+                "formula": "d=\\sqrt{41}\\approx 6.40>0",
+                "final": true
+              }
             ]
           },
           "s1-acordion": {
@@ -313,6 +493,24 @@
             "body": [
               "Piensa en una magnitud de tu campo que no quede bien descrita solo con un número (por ejemplo, el viento o una corriente). ¿Cuántas componentes necesitarías para representarla y qué te diría su magnitud frente a su dirección?"
             ]
+          },
+          "s1-figura-suma": {
+            "type": "figure",
+            "title": "Suma de vectores: regla del paralelogramo",
+            "assetId": "al04-fig-suma-paralelogramo",
+            "src": "",
+            "alt": "Dos vectores u y v partiendo de un origen común en el plano; se completa el paralelogramo con trazos punteados y se dibuja la diagonal desde el origen como el vector suma u+v.",
+            "caption": "La suma u+v es la diagonal del paralelogramo que forman u y v desde un origen común. Elaboración propia.",
+            "prompt": "Crear una figura didactica en espanol en el plano cartesiano: dos vectores u y v saliendo del mismo origen; completar el paralelogramo con dos lados punteados paralelos a u y a v; trazar en color destacado la diagonal desde el origen hasta el vertice opuesto y etiquetarla como u+v; rotular tambien u y v sobre sus flechas. Estilo limpio, fondo claro, ejes x e y visibles, etiquetas legibles."
+          },
+          "s1-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado de la representación de vectores, sus operaciones básicas y el cálculo de la magnitud está en el Documento de Saberes (PDF) de la asignatura."
+            ]
           }
         }
       },
@@ -322,7 +520,9 @@
         "badge": "Tema 04 · Sección 2",
         "navLabel": "Producto punto y ángulo",
         "title": "Producto punto: ángulo entre vectores y ortogonalidad",
-        "learningOutcomeIds": ["RA2"],
+        "learningOutcomeIds": [
+          "RA2"
+        ],
         "methodologyMoment": "Fase 2",
         "estimatedTime": "45 minutos",
         "intro": [
@@ -330,6 +530,7 @@
         ],
         "componentOrder": [
           "s2-teoria-1",
+          "s2-figura-angulo",
           "s2-formula-punto",
           "s2-flashcards",
           "s2-teoria-2",
@@ -338,7 +539,9 @@
           "s2-carrusel",
           "s2-teoria-3",
           "s2-chart-coseno",
+          "s2-figura-ortogonal",
           "s2-acordion",
+          "s2-callout-saberes",
           "s2-quiz"
         ],
         "components": {
@@ -352,41 +555,87 @@
               "Igualar ambas caras es lo que permite despejar el ángulo. El producto punto es, entonces, un medidor de alineación: cuánto comparte de dirección un vector con otro."
             ],
             "keyIdeas": [
-              {"icon": "functions", "text": "El producto punto entrega un escalar, no un vector."},
-              {"icon": "architecture", "text": "Conecta álgebra ($\\sum u_iv_i$) y geometría ($\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\cos\\theta$)."},
-              {"icon": "straighten", "text": "Mide cuánto se alinean dos vectores."}
+              {
+                "icon": "functions",
+                "text": "El producto punto entrega un escalar, no un vector."
+              },
+              {
+                "icon": "architecture",
+                "text": "Conecta álgebra ($\\sum u_iv_i$) y geometría ($\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\cos\\theta$)."
+              },
+              {
+                "icon": "straighten",
+                "text": "Mide cuánto se alinean dos vectores."
+              }
             ],
             "sections": [
               {
                 "title": "Las dos formas equivalentes",
-                "body": ["La forma algebraica sirve para calcular; la geométrica, para interpretar. Igualarlas despeja el coseno del ángulo."],
+                "body": [
+                  "La forma algebraica sirve para calcular; la geométrica, para interpretar. Igualarlas despeja el coseno del ángulo."
+                ],
                 "formula": "\\mathbf{u}\\cdot\\mathbf{v}=u_1v_1+u_2v_2+u_3v_3=\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|\\cos\\theta",
                 "formulaNote": "El lado izquierdo se calcula con componentes; el derecho explica qué significa el número obtenido."
               }
             ],
-            "closing": ["Recuerda: si el resultado es un vector, no era un producto punto; el punto siempre colapsa dos vectores en un número."]
+            "closing": [
+              "Recuerda: si el resultado es un vector, no era un producto punto; el punto siempre colapsa dos vectores en un número."
+            ]
           },
           "s2-formula-punto": {
             "type": "formula",
             "title": "Ángulo entre vectores",
-            "context": ["Se aplica cuando conoces las componentes de dos vectores y necesitas el ángulo que forman."],
+            "context": [
+              "Se aplica cuando conoces las componentes de dos vectores y necesitas el ángulo que forman."
+            ],
             "latex": "\\cos\\theta=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}",
             "variables": [
-              {"symbol": "\\mathbf{u}\\cdot\\mathbf{v}", "description": "producto punto, un escalar."},
-              {"symbol": "\\|\\mathbf{u}\\|,\\ \\|\\mathbf{v}\\|", "description": "magnitudes de cada vector."},
-              {"symbol": "\\theta", "description": "ángulo entre los vectores, con $0^\\circ\\le\\theta\\le 180^\\circ$."}
+              {
+                "symbol": "\\mathbf{u}\\cdot\\mathbf{v}",
+                "description": "producto punto, un escalar."
+              },
+              {
+                "symbol": "\\|\\mathbf{u}\\|,\\ \\|\\mathbf{v}\\|",
+                "description": "magnitudes de cada vector."
+              },
+              {
+                "symbol": "\\theta",
+                "description": "ángulo entre los vectores, con $0^\\circ\\le\\theta\\le 180^\\circ$."
+              }
             ],
-            "explanation": ["Se obtiene el coseno y luego se aplica el arcocoseno: $\\theta=\\arccos\\!\\left(\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}\\right)$."]
+            "explanation": [
+              "Se obtiene el coseno y luego se aplica el arcocoseno: $\\theta=\\arccos\\!\\left(\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}\\right)$."
+            ]
           },
           "s2-flashcards": {
             "type": "flashcards",
             "title": "Flashcards · Lenguaje del producto punto",
             "cards": [
-              {"term": "Producto punto", "definition": "Operación que asocia a dos vectores el escalar $u_1v_1+u_2v_2+u_3v_3$; mide su alineación.", "icon": "functions"},
-              {"term": "Ángulo entre vectores", "definition": "El ángulo $\\theta$ entre $0^\\circ$ y $180^\\circ$ que cumple $\\cos\\theta=\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|}$.", "icon": "architecture"},
-              {"term": "Ortogonalidad", "definition": "Dos vectores son ortogonales (perpendiculares) cuando su producto punto es cero: $\\mathbf{u}\\cdot\\mathbf{v}=0$.", "icon": "square_foot"},
-              {"term": "Ángulo agudo / obtuso", "definition": "Si $\\mathbf{u}\\cdot\\mathbf{v}>0$ el ángulo es agudo (apuntan parecido); si es $<0$, obtuso (apuntan opuesto).", "icon": "change_history"},
-              {"term": "Desigualdad de Cauchy-Schwarz", "definition": "Acota el producto punto: $|\\mathbf{u}\\cdot\\mathbf{v}|\\le\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|$, lo que garantiza que el coseno quede en $[-1,1]$.", "icon": "fact_check"}
+              {
+                "term": "Producto punto",
+                "definition": "Operación que asocia a dos vectores el escalar $u_1v_1+u_2v_2+u_3v_3$; mide su alineación.",
+                "icon": "functions"
+              },
+              {
+                "term": "Ángulo entre vectores",
+                "definition": "El ángulo $\\theta$ entre $0^\\circ$ y $180^\\circ$ que cumple $\\cos\\theta=\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|}$.",
+                "icon": "architecture"
+              },
+              {
+                "term": "Ortogonalidad",
+                "definition": "Dos vectores son ortogonales (perpendiculares) cuando su producto punto es cero: $\\mathbf{u}\\cdot\\mathbf{v}=0$.",
+                "icon": "square_foot"
+              },
+              {
+                "term": "Ángulo agudo / obtuso",
+                "definition": "Si $\\mathbf{u}\\cdot\\mathbf{v}>0$ el ángulo es agudo (apuntan parecido); si es $<0$, obtuso (apuntan opuesto).",
+                "icon": "change_history"
+              },
+              {
+                "term": "Desigualdad de Cauchy-Schwarz",
+                "definition": "Acota el producto punto: $|\\mathbf{u}\\cdot\\mathbf{v}|\\le\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|$, lo que garantiza que el coseno quede en $[-1,1]$.",
+                "icon": "fact_check"
+              }
             ]
           },
           "s2-teoria-2": {
@@ -399,21 +648,52 @@
               "Esa última lectura, $\\mathbf{u}\\cdot\\mathbf{v}=0$ como criterio de ortogonalidad, es uno de los resultados más útiles del álgebra lineal: permite verificar perpendicularidad sin dibujar ni medir ángulos, solo con una suma de productos."
             ],
             "keyIdeas": [
-              {"icon": "add", "text": "Producto punto positivo: ángulo agudo."},
-              {"icon": "remove", "text": "Producto punto negativo: ángulo obtuso."},
-              {"icon": "square_foot", "text": "Producto punto cero: vectores perpendiculares."}
+              {
+                "icon": "add",
+                "text": "Producto punto positivo: ángulo agudo."
+              },
+              {
+                "icon": "remove",
+                "text": "Producto punto negativo: ángulo obtuso."
+              },
+              {
+                "icon": "square_foot",
+                "text": "Producto punto cero: vectores perpendiculares."
+              }
             ],
-            "closing": ["El signo del producto punto te anticipa el tipo de ángulo antes de aplicar el arcocoseno."]
+            "closing": [
+              "El signo del producto punto te anticipa el tipo de ángulo antes de aplicar el arcocoseno."
+            ]
           },
           "s2-stepper-angulo": {
             "type": "stepper",
             "title": "Ejercicio resuelto 4.2 · Ángulo entre dos vectores",
             "statement": "Hallar el ángulo entre $\\mathbf{u}=(1,2,2)$ y $\\mathbf{v}=(2,0,1)$.",
             "steps": [
-              {"title": "Calcular el producto punto", "body": "Multiplica componentes correspondientes y suma.", "formula": "\\mathbf{u}\\cdot\\mathbf{v}=(1)(2)+(2)(0)+(2)(1)=4", "final": false},
-              {"title": "Calcular las magnitudes", "body": "Aplica la norma a cada vector.", "formula": "\\|\\mathbf{u}\\|=\\sqrt{1+4+4}=3,\\qquad \\|\\mathbf{v}\\|=\\sqrt{4+0+1}=\\sqrt{5}", "final": false},
-              {"title": "Despejar el coseno", "body": "Divide el producto punto entre el producto de las magnitudes.", "formula": "\\cos\\theta=\\frac{4}{3\\sqrt{5}}\\approx 0.596", "final": false},
-              {"title": "Obtener el ángulo y verificar", "body": "Aplica el arcocoseno; como el producto punto es positivo, el ángulo debe ser agudo, lo que confirma el resultado.", "formula": "\\theta=\\arccos\\!\\left(\\frac{4}{3\\sqrt{5}}\\right)\\approx 53.4^\\circ", "final": true}
+              {
+                "title": "Calcular el producto punto",
+                "body": "Multiplica componentes correspondientes y suma.",
+                "formula": "\\mathbf{u}\\cdot\\mathbf{v}=(1)(2)+(2)(0)+(2)(1)=4",
+                "final": false
+              },
+              {
+                "title": "Calcular las magnitudes",
+                "body": "Aplica la norma a cada vector.",
+                "formula": "\\|\\mathbf{u}\\|=\\sqrt{1+4+4}=3,\\qquad \\|\\mathbf{v}\\|=\\sqrt{4+0+1}=\\sqrt{5}",
+                "final": false
+              },
+              {
+                "title": "Despejar el coseno",
+                "body": "Divide el producto punto entre el producto de las magnitudes.",
+                "formula": "\\cos\\theta=\\frac{4}{3\\sqrt{5}}\\approx 0.596",
+                "final": false
+              },
+              {
+                "title": "Obtener el ángulo y verificar",
+                "body": "Aplica el arcocoseno; como el producto punto es positivo, el ángulo debe ser agudo, lo que confirma el resultado.",
+                "formula": "\\theta=\\arccos\\!\\left(\\frac{4}{3\\sqrt{5}}\\right)\\approx 53.4^\\circ",
+                "final": true
+              }
             ]
           },
           "s2-stepper-ortogonal": {
@@ -421,20 +701,74 @@
             "title": "Ejercicio resuelto 4.2b · Valor que hace ortogonales dos vectores",
             "statement": "Determinar el valor de $k$ para que $\\mathbf{u}=(3,k,-2)$ y $\\mathbf{v}=(1,4,2)$ sean ortogonales.",
             "steps": [
-              {"title": "Aplicar el criterio de ortogonalidad", "body": "Dos vectores son ortogonales si su producto punto es cero; plantea la ecuación.", "formula": "\\mathbf{u}\\cdot\\mathbf{v}=(3)(1)+(k)(4)+(-2)(2)=0", "final": false},
-              {"title": "Simplificar la ecuación", "body": "Reúne los términos para despejar $k$.", "formula": "3+4k-4=0\\;\\Rightarrow\\;4k-1=0", "final": false},
-              {"title": "Despejar y verificar", "body": "Resuelve para $k$ y comprueba sustituyendo que el producto punto se anula.", "formula": "k=\\tfrac{1}{4};\\quad (3)(1)+\\left(\\tfrac{1}{4}\\right)(4)+(-2)(2)=3+1-4=0", "final": true}
+              {
+                "title": "Aplicar el criterio de ortogonalidad",
+                "body": "Dos vectores son ortogonales si su producto punto es cero; plantea la ecuación.",
+                "formula": "\\mathbf{u}\\cdot\\mathbf{v}=(3)(1)+(k)(4)+(-2)(2)=0",
+                "final": false
+              },
+              {
+                "title": "Simplificar la ecuación",
+                "body": "Reúne los términos para despejar $k$.",
+                "formula": "3+4k-4=0\\;\\Rightarrow\\;4k-1=0",
+                "final": false
+              },
+              {
+                "title": "Despejar y verificar",
+                "body": "Resuelve para $k$ y comprueba sustituyendo que el producto punto se anula.",
+                "formula": "k=\\tfrac{1}{4};\\quad (3)(1)+\\left(\\tfrac{1}{4}\\right)(4)+(-2)(2)=3+1-4=0",
+                "final": true
+              }
             ]
           },
           "s2-carrusel": {
             "type": "carousel",
             "title": "Carrusel · Ruta para hallar un ángulo",
             "slides": [
-              {"label": "Paso 1", "title": "Producto punto", "body": ["Suma los productos de componentes correspondientes; obtienes un escalar."], "formula": "\\mathbf{u}\\cdot\\mathbf{v}=u_1v_1+u_2v_2+u_3v_3", "icon": "functions"},
-              {"label": "Paso 2", "title": "Magnitudes", "body": ["Calcula la norma de cada vector por separado."], "formula": "\\|\\mathbf{u}\\|,\\ \\|\\mathbf{v}\\|", "icon": "straighten"},
-              {"label": "Paso 3", "title": "Coseno", "body": ["Divide el producto punto entre el producto de las magnitudes."], "formula": "\\cos\\theta=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}", "icon": "percent"},
-              {"label": "Paso 4", "title": "Arcocoseno", "body": ["Aplica $\\arccos$ para recuperar el ángulo en grados."], "formula": "\\theta=\\arccos(\\cos\\theta)", "icon": "rotate_right"},
-              {"label": "Paso 5", "title": "Coherencia del signo", "body": ["Verifica que un producto punto positivo dé un ángulo agudo y uno negativo, un ángulo obtuso."], "icon": "check_circle"}
+              {
+                "label": "Paso 1",
+                "title": "Producto punto",
+                "body": [
+                  "Suma los productos de componentes correspondientes; obtienes un escalar."
+                ],
+                "formula": "\\mathbf{u}\\cdot\\mathbf{v}=u_1v_1+u_2v_2+u_3v_3",
+                "icon": "functions"
+              },
+              {
+                "label": "Paso 2",
+                "title": "Magnitudes",
+                "body": [
+                  "Calcula la norma de cada vector por separado."
+                ],
+                "formula": "\\|\\mathbf{u}\\|,\\ \\|\\mathbf{v}\\|",
+                "icon": "straighten"
+              },
+              {
+                "label": "Paso 3",
+                "title": "Coseno",
+                "body": [
+                  "Divide el producto punto entre el producto de las magnitudes."
+                ],
+                "formula": "\\cos\\theta=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}",
+                "icon": "percent"
+              },
+              {
+                "label": "Paso 4",
+                "title": "Arcocoseno",
+                "body": [
+                  "Aplica $\\arccos$ para recuperar el ángulo en grados."
+                ],
+                "formula": "\\theta=\\arccos(\\cos\\theta)",
+                "icon": "rotate_right"
+              },
+              {
+                "label": "Paso 5",
+                "title": "Coherencia del signo",
+                "body": [
+                  "Verifica que un producto punto positivo dé un ángulo agudo y uno negativo, un ángulo obtuso."
+                ],
+                "icon": "check_circle"
+              }
             ]
           },
           "s2-teoria-3": {
@@ -447,11 +781,22 @@
               "Esta interpretación convierte una fórmula de trigonometría en una herramienta de decisión: a mayor coseno, mayor coincidencia de dirección, y por tanto mayor alineación o parecido entre las magnitudes comparadas."
             ],
             "keyIdeas": [
-              {"icon": "compare", "text": "El coseno mide similitud de dirección, independiente del tamaño."},
-              {"icon": "smart_toy", "text": "Coseno cercano a 1: direcciones muy alineadas."},
-              {"icon": "insights", "text": "Coseno cercano a 0: direcciones independientes (perpendiculares)."}
+              {
+                "icon": "compare",
+                "text": "El coseno mide similitud de dirección, independiente del tamaño."
+              },
+              {
+                "icon": "smart_toy",
+                "text": "Coseno cercano a 1: direcciones muy alineadas."
+              },
+              {
+                "icon": "insights",
+                "text": "Coseno cercano a 0: direcciones independientes (perpendiculares)."
+              }
             ],
-            "closing": ["El siguiente gráfico muestra cómo cambia el coseno al variar el ángulo, base de esta medida de alineación."]
+            "closing": [
+              "El siguiente gráfico muestra cómo cambia el coseno al variar el ángulo, base de esta medida de alineación."
+            ]
           },
           "s2-chart-coseno": {
             "type": "chart",
@@ -462,14 +807,45 @@
             ],
             "note": "Lectura del gráfico: el eje horizontal son ángulos de 0° a 180° y el vertical es el valor de cos θ (el producto punto de dos vectores unitarios). La curva parte en 1 cuando los vectores coinciden (0°), cae a 0 en 90° (ortogonalidad, donde el producto punto se anula) y llega a -1 en 180° (vectores opuestos). El cambio de signo en 90° es la frontera entre ángulos agudos (producto punto positivo) y obtusos (negativo).",
             "height": "300px",
-            "labels": ["0°", "30°", "60°", "90°", "120°", "150°", "180°"],
+            "labels": [
+              "0°",
+              "30°",
+              "60°",
+              "90°",
+              "120°",
+              "150°",
+              "180°"
+            ],
             "datasets": [
-              {"label": "cos θ", "data": [1, 0.866, 0.5, 0, -0.5, -0.866, -1]}
+              {
+                "label": "cos θ",
+                "data": [
+                  1,
+                  0.866,
+                  0.5,
+                  0,
+                  -0.5,
+                  -0.866,
+                  -1
+                ]
+              }
             ],
             "options": {
               "scales": {
-                "y": {"title": {"display": true, "text": "cos θ (producto punto unitario)"}, "suggestedMin": -1, "suggestedMax": 1},
-                "x": {"title": {"display": true, "text": "Ángulo θ entre los vectores"}}
+                "y": {
+                  "title": {
+                    "display": true,
+                    "text": "cos θ (producto punto unitario)"
+                  },
+                  "suggestedMin": -1,
+                  "suggestedMax": 1
+                },
+                "x": {
+                  "title": {
+                    "display": true,
+                    "text": "Ángulo θ entre los vectores"
+                  }
+                }
               }
             }
           },
@@ -511,12 +887,55 @@
               {
                 "prompt": "Para dos vectores no nulos se obtiene $\\mathbf{u}\\cdot\\mathbf{v}=0$. ¿Qué se concluye?",
                 "options": [
-                  {"text": "Los vectores son perpendiculares (ortogonales).", "correct": true, "feedback": "Correcto: con magnitudes no nulas, el producto punto solo se anula cuando $\\cos\\theta=0$, es decir $\\theta=90^\\circ$."},
-                  {"text": "Los vectores son paralelos.", "correct": false, "feedback": "Revisa el criterio: vectores paralelos maximizan el producto punto, no lo anulan; la anulación indica perpendicularidad."},
-                  {"text": "Uno de los dos vectores es el vector nulo.", "correct": false, "feedback": "El enunciado dice que ambos son no nulos; la anulación se debe al ángulo recto, no a un vector cero."},
-                  {"text": "Los vectores tienen la misma magnitud.", "correct": false, "feedback": "El producto punto no compara magnitudes entre sí; su anulación informa sobre el ángulo, que aquí es de $90^\\circ$."}
+                  {
+                    "text": "Los vectores son perpendiculares (ortogonales).",
+                    "correct": true,
+                    "feedback": "Correcto: con magnitudes no nulas, el producto punto solo se anula cuando $\\cos\\theta=0$, es decir $\\theta=90^\\circ$."
+                  },
+                  {
+                    "text": "Los vectores son paralelos.",
+                    "correct": false,
+                    "feedback": "Revisa el criterio: vectores paralelos maximizan el producto punto, no lo anulan; la anulación indica perpendicularidad."
+                  },
+                  {
+                    "text": "Uno de los dos vectores es el vector nulo.",
+                    "correct": false,
+                    "feedback": "El enunciado dice que ambos son no nulos; la anulación se debe al ángulo recto, no a un vector cero."
+                  },
+                  {
+                    "text": "Los vectores tienen la misma magnitud.",
+                    "correct": false,
+                    "feedback": "El producto punto no compara magnitudes entre sí; su anulación informa sobre el ángulo, que aquí es de $90^\\circ$."
+                  }
                 ]
               }
+            ]
+          },
+          "s2-figura-angulo": {
+            "type": "figure",
+            "title": "Ángulo entre dos vectores",
+            "assetId": "al04-fig-angulo-vectores",
+            "src": "",
+            "alt": "Dos vectores u y v partiendo de un origen común y el arco que marca el ángulo theta entre ellos, con la fórmula del coseno asociada.",
+            "caption": "El ángulo θ entre u y v se obtiene del coseno de su producto punto dividido por el producto de sus magnitudes. Elaboración propia.",
+            "prompt": "Crear una figura didactica en espanol en el plano: dos vectores u y v desde un origen comun formando un angulo agudo; dibujar un pequeno arco entre ambos rotulado con la letra griega theta; etiquetar cada flecha como u y v; incluir junto a la figura, en recuadro discreto, la relacion cos(theta) = (u . v)/(||u|| ||v||). Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s2-figura-ortogonal": {
+            "type": "figure",
+            "title": "Vectores ortogonales: producto punto nulo",
+            "assetId": "al04-fig-ortogonalidad",
+            "src": "",
+            "alt": "Dos vectores perpendiculares partiendo de un origen común, con un símbolo de ángulo recto entre ellos y la anotación u·v = 0.",
+            "caption": "Cuando dos vectores forman un ángulo recto, su producto punto es cero: criterio de ortogonalidad. Elaboración propia.",
+            "prompt": "Crear una figura didactica en espanol en el plano: dos vectores u y v desde un origen comun formando exactamente un angulo de 90 grados; marcar el angulo recto con el simbolo cuadrado pequeno; etiquetar las flechas como u y v; anotar de forma destacada la condicion u . v = 0 (ortogonalidad). Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s2-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado del producto punto, el ángulo entre vectores y el criterio de ortogonalidad está en el Documento de Saberes (PDF) de la asignatura."
             ]
           }
         }
@@ -527,7 +946,10 @@
         "badge": "Tema 04 · Sección 3",
         "navLabel": "Proyección",
         "title": "Proyección de un vector sobre otro",
-        "learningOutcomeIds": ["RA1", "RA2"],
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
         "methodologyMoment": "Fase 2",
         "estimatedTime": "45 minutos",
         "intro": [
@@ -543,7 +965,9 @@
           "s3-stepper-descomposicion",
           "s3-teoria-3",
           "s3-flashcards",
+          "s3-figura-descomposicion",
           "s3-acordion",
+          "s3-callout-saberes",
           "s3-fillblank"
         ],
         "components": {
@@ -557,11 +981,22 @@
               "La proyección se construye con el producto punto, lo que enlaza directamente esta sección con la anterior: primero se mide la alineación con $\\mathbf{u}\\cdot\\mathbf{v}$ y luego se reparte sobre la dirección de $\\mathbf{v}$."
             ],
             "keyIdeas": [
-              {"icon": "wb_sunny", "text": "La proyección es la sombra de $\\mathbf{u}$ sobre la recta de $\\mathbf{v}$."},
-              {"icon": "navigation", "text": "La proyección vectorial es paralela a $\\mathbf{v}$."},
-              {"icon": "functions", "text": "Se calcula con el producto punto $\\mathbf{u}\\cdot\\mathbf{v}$."}
+              {
+                "icon": "wb_sunny",
+                "text": "La proyección es la sombra de $\\mathbf{u}$ sobre la recta de $\\mathbf{v}$."
+              },
+              {
+                "icon": "navigation",
+                "text": "La proyección vectorial es paralela a $\\mathbf{v}$."
+              },
+              {
+                "icon": "functions",
+                "text": "Se calcula con el producto punto $\\mathbf{u}\\cdot\\mathbf{v}$."
+              }
             ],
-            "closing": ["Si entiendes la proyección como una sombra, su fórmula deja de ser un truco memorístico."]
+            "closing": [
+              "Si entiendes la proyección como una sombra, su fórmula deja de ser un truco memorístico."
+            ]
           },
           "s3-figura-proyeccion": {
             "type": "image",
@@ -576,11 +1011,49 @@
             "type": "carousel",
             "title": "Carrusel · Construir una proyección",
             "slides": [
-              {"label": "Idea", "title": "Qué buscamos", "body": ["La parte de $\\mathbf{u}$ que va en la dirección de $\\mathbf{v}$: su sombra sobre la recta de $\\mathbf{v}$."], "icon": "wb_sunny"},
-              {"label": "Paso 1", "title": "Producto punto", "body": ["Mide la alineación con $\\mathbf{u}\\cdot\\mathbf{v}$; su signo dice si la sombra va a favor o en contra de $\\mathbf{v}$."], "formula": "\\mathbf{u}\\cdot\\mathbf{v}", "icon": "functions"},
-              {"label": "Paso 2", "title": "Norma de v al cuadrado", "body": ["Divide entre $\\|\\mathbf{v}\\|^2$ para escalar correctamente sobre la dirección de $\\mathbf{v}$."], "formula": "\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}", "icon": "straighten"},
-              {"label": "Paso 3", "title": "Multiplicar por v", "body": ["Multiplica ese factor por $\\mathbf{v}$ para obtener el vector proyección, paralelo a $\\mathbf{v}$."], "formula": "\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}\\mathbf{v}", "icon": "navigation"},
-              {"label": "Lectura", "title": "Interpretar", "body": ["Si $\\mathbf{v}$ es unitario, la fórmula se reduce a $(\\mathbf{u}\\cdot\\mathbf{v})\\mathbf{v}$, porque $\\|\\mathbf{v}\\|^2=1$."], "icon": "lightbulb"}
+              {
+                "label": "Idea",
+                "title": "Qué buscamos",
+                "body": [
+                  "La parte de $\\mathbf{u}$ que va en la dirección de $\\mathbf{v}$: su sombra sobre la recta de $\\mathbf{v}$."
+                ],
+                "icon": "wb_sunny"
+              },
+              {
+                "label": "Paso 1",
+                "title": "Producto punto",
+                "body": [
+                  "Mide la alineación con $\\mathbf{u}\\cdot\\mathbf{v}$; su signo dice si la sombra va a favor o en contra de $\\mathbf{v}$."
+                ],
+                "formula": "\\mathbf{u}\\cdot\\mathbf{v}",
+                "icon": "functions"
+              },
+              {
+                "label": "Paso 2",
+                "title": "Norma de v al cuadrado",
+                "body": [
+                  "Divide entre $\\|\\mathbf{v}\\|^2$ para escalar correctamente sobre la dirección de $\\mathbf{v}$."
+                ],
+                "formula": "\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}",
+                "icon": "straighten"
+              },
+              {
+                "label": "Paso 3",
+                "title": "Multiplicar por v",
+                "body": [
+                  "Multiplica ese factor por $\\mathbf{v}$ para obtener el vector proyección, paralelo a $\\mathbf{v}$."
+                ],
+                "formula": "\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}\\mathbf{v}",
+                "icon": "navigation"
+              },
+              {
+                "label": "Lectura",
+                "title": "Interpretar",
+                "body": [
+                  "Si $\\mathbf{v}$ es unitario, la fórmula se reduce a $(\\mathbf{u}\\cdot\\mathbf{v})\\mathbf{v}$, porque $\\|\\mathbf{v}\\|^2=1$."
+                ],
+                "icon": "lightbulb"
+              }
             ]
           },
           "s3-teoria-2": {
@@ -593,33 +1066,77 @@
               "Conviene separar las dos lecturas: la proyección vectorial es un vector (tiene dirección), mientras que la componente escalar es solo su longitud orientada. Ambas se derivan del mismo producto punto."
             ],
             "keyIdeas": [
-              {"icon": "navigation", "text": "Proyección vectorial: vector paralelo a $\\mathbf{v}$."},
-              {"icon": "straighten", "text": "Componente escalar: longitud con signo de la sombra."},
-              {"icon": "swap_vert", "text": "El signo indica si la sombra va a favor o en contra de $\\mathbf{v}$."}
+              {
+                "icon": "navigation",
+                "text": "Proyección vectorial: vector paralelo a $\\mathbf{v}$."
+              },
+              {
+                "icon": "straighten",
+                "text": "Componente escalar: longitud con signo de la sombra."
+              },
+              {
+                "icon": "swap_vert",
+                "text": "El signo indica si la sombra va a favor o en contra de $\\mathbf{v}$."
+              }
             ],
-            "closing": ["Distinguir el vector proyección de su componente escalar evita la confusión más común de esta sección."]
+            "closing": [
+              "Distinguir el vector proyección de su componente escalar evita la confusión más común de esta sección."
+            ]
           },
           "s3-formula-proyeccion": {
             "type": "formula",
             "title": "Proyección vectorial",
-            "context": ["Se usa para descomponer un vector en la dirección de otro, por ejemplo al separar una fuerza en componentes."],
+            "context": [
+              "Se usa para descomponer un vector en la dirección de otro, por ejemplo al separar una fuerza en componentes."
+            ],
             "latex": "\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}\\,\\mathbf{v}",
             "variables": [
-              {"symbol": "\\mathbf{u}", "description": "vector que se proyecta (el que arroja la sombra)."},
-              {"symbol": "\\mathbf{v}", "description": "vector sobre cuya dirección se proyecta."},
-              {"symbol": "\\mathbf{u}\\cdot\\mathbf{v}", "description": "producto punto que mide la alineación."}
+              {
+                "symbol": "\\mathbf{u}",
+                "description": "vector que se proyecta (el que arroja la sombra)."
+              },
+              {
+                "symbol": "\\mathbf{v}",
+                "description": "vector sobre cuya dirección se proyecta."
+              },
+              {
+                "symbol": "\\mathbf{u}\\cdot\\mathbf{v}",
+                "description": "producto punto que mide la alineación."
+              }
             ],
-            "explanation": ["El cociente es un escalar; al multiplicarlo por $\\mathbf{v}$ se obtiene un vector paralelo a $\\mathbf{v}$ cuya longitud es la de la sombra de $\\mathbf{u}$."]
+            "explanation": [
+              "El cociente es un escalar; al multiplicarlo por $\\mathbf{v}$ se obtiene un vector paralelo a $\\mathbf{v}$ cuya longitud es la de la sombra de $\\mathbf{u}$."
+            ]
           },
           "s3-stepper-proyeccion": {
             "type": "stepper",
             "title": "Ejercicio resuelto 4.3 · Proyección sobre dos direcciones",
             "statement": "Proyectar $\\mathbf{u}=(4,3)$ sobre $\\mathbf{v}_1=(1,0)$ y sobre $\\mathbf{v}_2=(3,4)$, e interpretar cada resultado.",
             "steps": [
-              {"title": "Proyección sobre v₁=(1,0)", "body": "Calcula el producto punto y divide entre la norma al cuadrado; aquí $\\|\\mathbf{v}_1\\|^2=1$.", "formula": "\\operatorname{proy}_{\\mathbf{v}_1}\\mathbf{u}=\\frac{(4)(1)+(3)(0)}{1^2}(1,0)=(4,0)", "final": false},
-              {"title": "Interpretar la primera proyección", "body": "Como $\\mathbf{v}_1$ es el eje x, la proyección recupera la componente horizontal de $\\mathbf{u}$.", "formula": "\\operatorname{proy}_{\\mathbf{v}_1}\\mathbf{u}=(4,0)", "final": false},
-              {"title": "Proyección sobre v₂=(3,4)", "body": "Ahora $\\mathbf{u}\\cdot\\mathbf{v}_2=12+12=24$ y $\\|\\mathbf{v}_2\\|^2=9+16=25$.", "formula": "\\operatorname{proy}_{\\mathbf{v}_2}\\mathbf{u}=\\frac{24}{25}(3,4)=\\left(\\tfrac{72}{25},\\tfrac{96}{25}\\right)", "final": false},
-              {"title": "Verificar la dirección", "body": "Confirma que la segunda proyección es paralela a $\\mathbf{v}_2$: sus componentes mantienen la proporción 3 a 4.", "formula": "\\left(\\tfrac{72}{25},\\tfrac{96}{25}\\right)=\\tfrac{24}{25}(3,4)\\ \\parallel\\ \\mathbf{v}_2", "final": true}
+              {
+                "title": "Proyección sobre v₁=(1,0)",
+                "body": "Calcula el producto punto y divide entre la norma al cuadrado; aquí $\\|\\mathbf{v}_1\\|^2=1$.",
+                "formula": "\\operatorname{proy}_{\\mathbf{v}_1}\\mathbf{u}=\\frac{(4)(1)+(3)(0)}{1^2}(1,0)=(4,0)",
+                "final": false
+              },
+              {
+                "title": "Interpretar la primera proyección",
+                "body": "Como $\\mathbf{v}_1$ es el eje x, la proyección recupera la componente horizontal de $\\mathbf{u}$.",
+                "formula": "\\operatorname{proy}_{\\mathbf{v}_1}\\mathbf{u}=(4,0)",
+                "final": false
+              },
+              {
+                "title": "Proyección sobre v₂=(3,4)",
+                "body": "Ahora $\\mathbf{u}\\cdot\\mathbf{v}_2=12+12=24$ y $\\|\\mathbf{v}_2\\|^2=9+16=25$.",
+                "formula": "\\operatorname{proy}_{\\mathbf{v}_2}\\mathbf{u}=\\frac{24}{25}(3,4)=\\left(\\tfrac{72}{25},\\tfrac{96}{25}\\right)",
+                "final": false
+              },
+              {
+                "title": "Verificar la dirección",
+                "body": "Confirma que la segunda proyección es paralela a $\\mathbf{v}_2$: sus componentes mantienen la proporción 3 a 4.",
+                "formula": "\\left(\\tfrac{72}{25},\\tfrac{96}{25}\\right)=\\tfrac{24}{25}(3,4)\\ \\parallel\\ \\mathbf{v}_2",
+                "final": true
+              }
             ]
           },
           "s3-stepper-descomposicion": {
@@ -627,9 +1144,24 @@
             "title": "Ejercicio resuelto 4.3b · Descomposición en paralela y perpendicular",
             "statement": "Descomponer $\\mathbf{u}=(3,5)$ en una componente paralela y otra perpendicular a $\\mathbf{v}=(1,1)$.",
             "steps": [
-              {"title": "Calcular la componente paralela", "body": "Es la proyección de u sobre v; aquí $\\mathbf{u}\\cdot\\mathbf{v}=8$ y $\\|\\mathbf{v}\\|^2=2$.", "formula": "\\mathbf{u}_{\\parallel}=\\frac{8}{2}(1,1)=(4,4)", "final": false},
-              {"title": "Calcular la componente perpendicular", "body": "Resta la componente paralela al vector original.", "formula": "\\mathbf{u}_{\\perp}=\\mathbf{u}-\\mathbf{u}_{\\parallel}=(3,5)-(4,4)=(-1,1)", "final": false},
-              {"title": "Verificar la perpendicularidad", "body": "Comprueba que la componente perpendicular es ortogonal a v (producto punto cero) y que ambas suman u.", "formula": "\\mathbf{u}_{\\perp}\\cdot\\mathbf{v}=(-1)(1)+(1)(1)=0;\\quad (4,4)+(-1,1)=(3,5)", "final": true}
+              {
+                "title": "Calcular la componente paralela",
+                "body": "Es la proyección de u sobre v; aquí $\\mathbf{u}\\cdot\\mathbf{v}=8$ y $\\|\\mathbf{v}\\|^2=2$.",
+                "formula": "\\mathbf{u}_{\\parallel}=\\frac{8}{2}(1,1)=(4,4)",
+                "final": false
+              },
+              {
+                "title": "Calcular la componente perpendicular",
+                "body": "Resta la componente paralela al vector original.",
+                "formula": "\\mathbf{u}_{\\perp}=\\mathbf{u}-\\mathbf{u}_{\\parallel}=(3,5)-(4,4)=(-1,1)",
+                "final": false
+              },
+              {
+                "title": "Verificar la perpendicularidad",
+                "body": "Comprueba que la componente perpendicular es ortogonal a v (producto punto cero) y que ambas suman u.",
+                "formula": "\\mathbf{u}_{\\perp}\\cdot\\mathbf{v}=(-1)(1)+(1)(1)=0;\\quad (4,4)+(-1,1)=(3,5)",
+                "final": true
+              }
             ]
           },
           "s3-teoria-3": {
@@ -642,20 +1174,47 @@
               "Esta separación entre componente paralela (útil) y componente perpendicular (no aprovechada en esa dirección) es la base del análisis de fuerzas en estática y dinámica, y reaparece al estudiar flujo y carga en estructuras."
             ],
             "keyIdeas": [
-              {"icon": "call_split", "text": "Una fuerza se descompone en componente paralela y perpendicular."},
-              {"icon": "engineering", "text": "La componente paralela al movimiento realiza trabajo."},
-              {"icon": "square_foot", "text": "La componente perpendicular se obtiene restando la proyección: $\\mathbf{u}-\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}$."}
+              {
+                "icon": "call_split",
+                "text": "Una fuerza se descompone en componente paralela y perpendicular."
+              },
+              {
+                "icon": "engineering",
+                "text": "La componente paralela al movimiento realiza trabajo."
+              },
+              {
+                "icon": "square_foot",
+                "text": "La componente perpendicular se obtiene restando la proyección: $\\mathbf{u}-\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}$."
+              }
             ],
-            "closing": ["Descomponer en proyecciones convierte un problema de fuerzas oblicuas en sumas de componentes manejables."]
+            "closing": [
+              "Descomponer en proyecciones convierte un problema de fuerzas oblicuas en sumas de componentes manejables."
+            ]
           },
           "s3-flashcards": {
             "type": "flashcards",
             "title": "Flashcards · Proyección y descomposición",
             "cards": [
-              {"term": "Proyección vectorial", "definition": "Vector $\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}\\mathbf{v}$, paralelo a $\\mathbf{v}$, que representa la sombra de $\\mathbf{u}$.", "icon": "navigation"},
-              {"term": "Componente escalar", "definition": "Longitud con signo de la proyección, $\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|}$; positiva si va a favor de $\\mathbf{v}$.", "icon": "straighten"},
-              {"term": "Componente perpendicular", "definition": "Parte de $\\mathbf{u}$ que no apunta hacia $\\mathbf{v}$: $\\mathbf{u}-\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}$; es ortogonal a $\\mathbf{v}$.", "icon": "square_foot"},
-              {"term": "Descomposición de fuerzas", "definition": "Separar una fuerza en componente paralela y perpendicular a una dirección dada usando proyecciones.", "icon": "call_split"}
+              {
+                "term": "Proyección vectorial",
+                "definition": "Vector $\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}\\mathbf{v}$, paralelo a $\\mathbf{v}$, que representa la sombra de $\\mathbf{u}$.",
+                "icon": "navigation"
+              },
+              {
+                "term": "Componente escalar",
+                "definition": "Longitud con signo de la proyección, $\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|}$; positiva si va a favor de $\\mathbf{v}$.",
+                "icon": "straighten"
+              },
+              {
+                "term": "Componente perpendicular",
+                "definition": "Parte de $\\mathbf{u}$ que no apunta hacia $\\mathbf{v}$: $\\mathbf{u}-\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}$; es ortogonal a $\\mathbf{v}$.",
+                "icon": "square_foot"
+              },
+              {
+                "term": "Descomposición de fuerzas",
+                "definition": "Separar una fuerza en componente paralela y perpendicular a una dirección dada usando proyecciones.",
+                "icon": "call_split"
+              }
             ]
           },
           "s3-acordion": {
@@ -695,10 +1254,42 @@
             "prompt": "Completa la proyección de $\\mathbf{u}$ sobre $\\mathbf{v}$ y su naturaleza.",
             "parts": [
               "La proyección vectorial divide el producto punto entre ",
-              {"placeholder": "denominador", "answers": ["la norma al cuadrado", "||v||^2", "la norma de v al cuadrado", "\\|\\mathbf{v}\\|^2"]},
+              {
+                "placeholder": "denominador",
+                "answers": [
+                  "la norma al cuadrado",
+                  "||v||^2",
+                  "la norma de v al cuadrado",
+                  "\\|\\mathbf{v}\\|^2"
+                ]
+              },
               " y multiplica por v; el resultado es un ",
-              {"placeholder": "tipo", "answers": ["vector", "vector paralelo a v"]},
+              {
+                "placeholder": "tipo",
+                "answers": [
+                  "vector",
+                  "vector paralelo a v"
+                ]
+              },
               " paralelo a v."
+            ]
+          },
+          "s3-figura-descomposicion": {
+            "type": "figure",
+            "title": "Descomposición en componentes paralela y perpendicular",
+            "assetId": "al04-fig-descomposicion",
+            "src": "",
+            "alt": "Vector u descompuesto en una componente paralela a v (sobre la recta de v) y una componente perpendicular a v, mostrando que ambas suman u.",
+            "caption": "Todo vector u se separa en una componente paralela a v y una perpendicular a v cuya suma reconstruye u. Elaboración propia.",
+            "prompt": "Crear una figura didactica en espanol en el plano: un vector u y un vector v desde un origen comun; sobre la recta de v dibujar la componente paralela u_paralela (la proyeccion); desde el extremo de esa proyeccion hasta el extremo de u dibujar la componente perpendicular u_perp, formando un angulo recto con v; mostrar con un pequeno triangulo que u_paralela mas u_perp reconstruye u. Etiquetar u, v, u_paralela y u_perp. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s3-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado de la proyección de un vector sobre otro y la descomposición en componentes paralela y perpendicular está en el Documento de Saberes (PDF) de la asignatura."
             ]
           }
         }
@@ -709,7 +1300,9 @@
         "badge": "Tema 04 · Sección 4",
         "navLabel": "Producto cruz",
         "title": "Producto cruz: vector normal y área",
-        "learningOutcomeIds": ["RA2"],
+        "learningOutcomeIds": [
+          "RA2"
+        ],
         "methodologyMoment": "Fase 3",
         "estimatedTime": "45 minutos",
         "intro": [
@@ -725,7 +1318,9 @@
           "s4-stepper-triangulo",
           "s4-teoria-3",
           "s4-flashcards",
+          "s4-figura-mano-derecha",
           "s4-acordion",
+          "s4-callout-saberes",
           "s4-multiselect"
         ],
         "components": {
@@ -739,41 +1334,107 @@
               "La dirección del vector resultante la fija la regla de la mano derecha: si los dedos giran de $\\mathbf{u}$ hacia $\\mathbf{v}$, el pulgar apunta en el sentido de $\\mathbf{u}\\times\\mathbf{v}$. Cambiar el orden invierte el sentido."
             ],
             "keyIdeas": [
-              {"icon": "view_in_ar", "text": "El producto cruz solo existe en el espacio $\\mathbb{R}^3$."},
-              {"icon": "square_foot", "text": "El resultado es perpendicular a los dos vectores de origen."},
-              {"icon": "back_hand", "text": "La regla de la mano derecha fija el sentido del vector."}
+              {
+                "icon": "view_in_ar",
+                "text": "El producto cruz solo existe en el espacio $\\mathbb{R}^3$."
+              },
+              {
+                "icon": "square_foot",
+                "text": "El resultado es perpendicular a los dos vectores de origen."
+              },
+              {
+                "icon": "back_hand",
+                "text": "La regla de la mano derecha fija el sentido del vector."
+              }
             ],
             "sections": [
               {
                 "title": "El determinante simbólico",
-                "body": ["Expandiendo por la primera fila se obtienen las tres componentes del producto cruz."],
+                "body": [
+                  "Expandiendo por la primera fila se obtienen las tres componentes del producto cruz."
+                ],
                 "formula": "\\mathbf{u}\\times\\mathbf{v}=\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\u_1&u_2&u_3\\\\v_1&v_2&v_3\\end{vmatrix}",
                 "formulaNote": "Cada componente es un determinante $2\\times 2$; recuerda el signo negativo de la componente $\\mathbf{j}$."
               }
             ],
-            "closing": ["Si necesitas una dirección perpendicular a dos vectores, el producto cruz te la entrega directamente."]
+            "closing": [
+              "Si necesitas una dirección perpendicular a dos vectores, el producto cruz te la entrega directamente."
+            ]
           },
           "s4-formula-cruz": {
             "type": "formula",
             "title": "Componentes del producto cruz y magnitud",
-            "context": ["Se usa para obtener un vector normal a un plano y para calcular el área del paralelogramo formado por dos vectores."],
+            "context": [
+              "Se usa para obtener un vector normal a un plano y para calcular el área del paralelogramo formado por dos vectores."
+            ],
             "latex": "\\mathbf{u}\\times\\mathbf{v}=(u_2v_3-u_3v_2,\\;u_3v_1-u_1v_3,\\;u_1v_2-u_2v_1),\\qquad \\|\\mathbf{u}\\times\\mathbf{v}\\|=\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|\\sin\\theta",
             "variables": [
-              {"symbol": "u_i,\\ v_i", "description": "componentes de $\\mathbf{u}$ y $\\mathbf{v}$."},
-              {"symbol": "\\theta", "description": "ángulo entre los vectores."},
-              {"symbol": "\\|\\mathbf{u}\\times\\mathbf{v}\\|", "description": "magnitud del producto cruz, igual al área del paralelogramo."}
+              {
+                "symbol": "u_i,\\ v_i",
+                "description": "componentes de $\\mathbf{u}$ y $\\mathbf{v}$."
+              },
+              {
+                "symbol": "\\theta",
+                "description": "ángulo entre los vectores."
+              },
+              {
+                "symbol": "\\|\\mathbf{u}\\times\\mathbf{v}\\|",
+                "description": "magnitud del producto cruz, igual al área del paralelogramo."
+              }
             ],
-            "explanation": ["Las tres componentes salen de expandir el determinante simbólico; la magnitud, con el seno del ángulo, da el área del paralelogramo de lados $\\mathbf{u}$ y $\\mathbf{v}$."]
+            "explanation": [
+              "Las tres componentes salen de expandir el determinante simbólico; la magnitud, con el seno del ángulo, da el área del paralelogramo de lados $\\mathbf{u}$ y $\\mathbf{v}$."
+            ]
           },
           "s4-carrusel": {
             "type": "carousel",
             "title": "Carrusel · Calcular el producto cruz",
             "slides": [
-              {"label": "Paso 1", "title": "Armar el determinante", "body": ["Coloca $\\mathbf{i},\\mathbf{j},\\mathbf{k}$ en la primera fila y las componentes de $\\mathbf{u}$ y $\\mathbf{v}$ debajo."], "formula": "\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\u_1&u_2&u_3\\\\v_1&v_2&v_3\\end{vmatrix}", "icon": "grid_on"},
-              {"label": "Paso 2", "title": "Componente i", "body": ["Es el menor de la primera columna inferior: $u_2v_3-u_3v_2$."], "formula": "u_2v_3-u_3v_2", "icon": "looks_one"},
-              {"label": "Paso 3", "title": "Componente j (con signo)", "body": ["Lleva signo negativo por la regla de cofactores: $-(u_1v_3-u_3v_1)=u_3v_1-u_1v_3$."], "formula": "u_3v_1-u_1v_3", "icon": "looks_two"},
-              {"label": "Paso 4", "title": "Componente k", "body": ["El último menor: $u_1v_2-u_2v_1$."], "formula": "u_1v_2-u_2v_1", "icon": "looks_3"},
-              {"label": "Paso 5", "title": "Magnitud = área", "body": ["La norma del vector obtenido es el área del paralelogramo de lados $\\mathbf{u}$ y $\\mathbf{v}$."], "formula": "\\text{Área}=\\|\\mathbf{u}\\times\\mathbf{v}\\|", "icon": "crop_square"}
+              {
+                "label": "Paso 1",
+                "title": "Armar el determinante",
+                "body": [
+                  "Coloca $\\mathbf{i},\\mathbf{j},\\mathbf{k}$ en la primera fila y las componentes de $\\mathbf{u}$ y $\\mathbf{v}$ debajo."
+                ],
+                "formula": "\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\u_1&u_2&u_3\\\\v_1&v_2&v_3\\end{vmatrix}",
+                "icon": "grid_on"
+              },
+              {
+                "label": "Paso 2",
+                "title": "Componente i",
+                "body": [
+                  "Es el menor de la primera columna inferior: $u_2v_3-u_3v_2$."
+                ],
+                "formula": "u_2v_3-u_3v_2",
+                "icon": "looks_one"
+              },
+              {
+                "label": "Paso 3",
+                "title": "Componente j (con signo)",
+                "body": [
+                  "Lleva signo negativo por la regla de cofactores: $-(u_1v_3-u_3v_1)=u_3v_1-u_1v_3$."
+                ],
+                "formula": "u_3v_1-u_1v_3",
+                "icon": "looks_two"
+              },
+              {
+                "label": "Paso 4",
+                "title": "Componente k",
+                "body": [
+                  "El último menor: $u_1v_2-u_2v_1$."
+                ],
+                "formula": "u_1v_2-u_2v_1",
+                "icon": "looks_3"
+              },
+              {
+                "label": "Paso 5",
+                "title": "Magnitud = área",
+                "body": [
+                  "La norma del vector obtenido es el área del paralelogramo de lados $\\mathbf{u}$ y $\\mathbf{v}$."
+                ],
+                "formula": "\\text{Área}=\\|\\mathbf{u}\\times\\mathbf{v}\\|",
+                "icon": "crop_square"
+              }
             ]
           },
           "s4-teoria-2": {
@@ -786,11 +1447,22 @@
               "El uso del seno explica además por qué dos vectores paralelos tienen producto cruz nulo: si $\\theta=0^\\circ$, entonces $\\sin\\theta=0$ y el paralelogramo se aplana, sin área. El producto cruz se anula justo cuando los vectores son paralelos, el caso opuesto a la anulación del producto punto."
             ],
             "keyIdeas": [
-              {"icon": "crop_square", "text": "La magnitud del cruz es el área del paralelogramo."},
-              {"icon": "change_history", "text": "El área del triángulo es la mitad: $\\tfrac{1}{2}\\|\\mathbf{u}\\times\\mathbf{v}\\|$."},
-              {"icon": "block", "text": "Vectores paralelos: producto cruz nulo (sin área)."}
+              {
+                "icon": "crop_square",
+                "text": "La magnitud del cruz es el área del paralelogramo."
+              },
+              {
+                "icon": "change_history",
+                "text": "El área del triángulo es la mitad: $\\tfrac{1}{2}\\|\\mathbf{u}\\times\\mathbf{v}\\|$."
+              },
+              {
+                "icon": "block",
+                "text": "Vectores paralelos: producto cruz nulo (sin área)."
+              }
             ],
-            "closing": ["El producto punto se anula en perpendicularidad; el producto cruz, en paralelismo: son lecturas complementarias."]
+            "closing": [
+              "El producto punto se anula en perpendicularidad; el producto cruz, en paralelismo: son lecturas complementarias."
+            ]
           },
           "s4-figura-cruz": {
             "type": "image",
@@ -806,10 +1478,30 @@
             "title": "Ejercicio resuelto 4.4 · Producto cruz, área y normal unitario",
             "statement": "Dados $\\mathbf{u}=(1,0,2)$ y $\\mathbf{v}=(0,3,1)$, hallar $\\mathbf{u}\\times\\mathbf{v}$, el área del paralelogramo y un vector normal unitario al plano de $\\mathbf{u}$ y $\\mathbf{v}$.",
             "steps": [
-              {"title": "Plantear el determinante", "body": "Coloca las bases en la primera fila y las componentes debajo.", "formula": "\\mathbf{u}\\times\\mathbf{v}=\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\1&0&2\\\\0&3&1\\end{vmatrix}", "final": false},
-              {"title": "Calcular las componentes", "body": "Expande por la primera fila, cuidando el signo negativo de la componente j.", "formula": "\\mathbf{u}\\times\\mathbf{v}=(0\\cdot 1-2\\cdot 3,\\;2\\cdot 0-1\\cdot 1,\\;1\\cdot 3-0\\cdot 0)=(-6,-1,3)", "final": false},
-              {"title": "Calcular el área", "body": "El área del paralelogramo es la magnitud del producto cruz.", "formula": "\\|\\mathbf{u}\\times\\mathbf{v}\\|=\\sqrt{(-6)^2+(-1)^2+3^2}=\\sqrt{46}\\approx 6.78", "final": false},
-              {"title": "Normalizar y verificar", "body": "Divide el producto cruz entre su magnitud para obtener el normal unitario; comprueba que es perpendicular a u (producto punto cero).", "formula": "\\hat{\\mathbf{n}}=\\frac{1}{\\sqrt{46}}(-6,-1,3),\\qquad \\mathbf{u}\\cdot(\\mathbf{u}\\times\\mathbf{v})=-6+0+6=0", "final": true}
+              {
+                "title": "Plantear el determinante",
+                "body": "Coloca las bases en la primera fila y las componentes debajo.",
+                "formula": "\\mathbf{u}\\times\\mathbf{v}=\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\1&0&2\\\\0&3&1\\end{vmatrix}",
+                "final": false
+              },
+              {
+                "title": "Calcular las componentes",
+                "body": "Expande por la primera fila, cuidando el signo negativo de la componente j.",
+                "formula": "\\mathbf{u}\\times\\mathbf{v}=(0\\cdot 1-2\\cdot 3,\\;2\\cdot 0-1\\cdot 1,\\;1\\cdot 3-0\\cdot 0)=(-6,-1,3)",
+                "final": false
+              },
+              {
+                "title": "Calcular el área",
+                "body": "El área del paralelogramo es la magnitud del producto cruz.",
+                "formula": "\\|\\mathbf{u}\\times\\mathbf{v}\\|=\\sqrt{(-6)^2+(-1)^2+3^2}=\\sqrt{46}\\approx 6.78",
+                "final": false
+              },
+              {
+                "title": "Normalizar y verificar",
+                "body": "Divide el producto cruz entre su magnitud para obtener el normal unitario; comprueba que es perpendicular a u (producto punto cero).",
+                "formula": "\\hat{\\mathbf{n}}=\\frac{1}{\\sqrt{46}}(-6,-1,3),\\qquad \\mathbf{u}\\cdot(\\mathbf{u}\\times\\mathbf{v})=-6+0+6=0",
+                "final": true
+              }
             ]
           },
           "s4-stepper-triangulo": {
@@ -817,10 +1509,30 @@
             "title": "Ejercicio resuelto 4.4b · Área de un triángulo por sus vértices",
             "statement": "Hallar el área del triángulo de vértices $A=(1,1,1)$, $B=(3,1,2)$ y $C=(1,4,1)$.",
             "steps": [
-              {"title": "Construir dos vectores de lados", "body": "Toma A como vértice base y forma los vectores hacia B y hacia C.", "formula": "\\overrightarrow{AB}=(2,0,1),\\qquad \\overrightarrow{AC}=(0,3,0)", "final": false},
-              {"title": "Calcular el producto cruz", "body": "El producto cruz de los dos lados da un vector normal al plano del triángulo.", "formula": "\\overrightarrow{AB}\\times\\overrightarrow{AC}=(0\\cdot 0-1\\cdot 3,\\;1\\cdot 0-2\\cdot 0,\\;2\\cdot 3-0\\cdot 0)=(-3,0,6)", "final": false},
-              {"title": "Magnitud del producto cruz", "body": "Su norma es el área del paralelogramo de lados AB y AC.", "formula": "\\|\\overrightarrow{AB}\\times\\overrightarrow{AC}\\|=\\sqrt{(-3)^2+0^2+6^2}=\\sqrt{45}=3\\sqrt{5}", "final": false},
-              {"title": "Área del triángulo y verificación", "body": "El triángulo es la mitad del paralelogramo, así que se divide entre 2.", "formula": "\\text{Área}=\\tfrac{1}{2}\\,(3\\sqrt{5})=\\tfrac{3\\sqrt{5}}{2}\\approx 3.35", "final": true}
+              {
+                "title": "Construir dos vectores de lados",
+                "body": "Toma A como vértice base y forma los vectores hacia B y hacia C.",
+                "formula": "\\overrightarrow{AB}=(2,0,1),\\qquad \\overrightarrow{AC}=(0,3,0)",
+                "final": false
+              },
+              {
+                "title": "Calcular el producto cruz",
+                "body": "El producto cruz de los dos lados da un vector normal al plano del triángulo.",
+                "formula": "\\overrightarrow{AB}\\times\\overrightarrow{AC}=(0\\cdot 0-1\\cdot 3,\\;1\\cdot 0-2\\cdot 0,\\;2\\cdot 3-0\\cdot 0)=(-3,0,6)",
+                "final": false
+              },
+              {
+                "title": "Magnitud del producto cruz",
+                "body": "Su norma es el área del paralelogramo de lados AB y AC.",
+                "formula": "\\|\\overrightarrow{AB}\\times\\overrightarrow{AC}\\|=\\sqrt{(-3)^2+0^2+6^2}=\\sqrt{45}=3\\sqrt{5}",
+                "final": false
+              },
+              {
+                "title": "Área del triángulo y verificación",
+                "body": "El triángulo es la mitad del paralelogramo, así que se divide entre 2.",
+                "formula": "\\text{Área}=\\tfrac{1}{2}\\,(3\\sqrt{5})=\\tfrac{3\\sqrt{5}}{2}\\approx 3.35",
+                "final": true
+              }
             ]
           },
           "s4-teoria-3": {
@@ -833,21 +1545,52 @@
               "La idea de área orientada (un área que además tiene una dirección, la de su normal) es central en cálculo vectorial e ingeniería ambiental y de energías, donde el flujo depende tanto del tamaño de la superficie como de su orientación frente al campo."
             ],
             "keyIdeas": [
-              {"icon": "sync", "text": "Torque: $\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}$, eje y efecto de giro."},
-              {"icon": "layers", "text": "El producto cruz da el normal para describir planos."},
-              {"icon": "air", "text": "El flujo usa el área orientada por su vector normal."}
+              {
+                "icon": "sync",
+                "text": "Torque: $\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}$, eje y efecto de giro."
+              },
+              {
+                "icon": "layers",
+                "text": "El producto cruz da el normal para describir planos."
+              },
+              {
+                "icon": "air",
+                "text": "El flujo usa el área orientada por su vector normal."
+              }
             ],
-            "closing": ["Con la normal y el área ya tienes los ingredientes que el Tema 5 usará para rectas y planos."]
+            "closing": [
+              "Con la normal y el área ya tienes los ingredientes que el Tema 5 usará para rectas y planos."
+            ]
           },
           "s4-flashcards": {
             "type": "flashcards",
             "title": "Flashcards · Producto cruz",
             "cards": [
-              {"term": "Producto cruz", "definition": "Operación en $\\mathbb{R}^3$ que asocia a dos vectores un tercero perpendicular a ambos; se calcula con un determinante simbólico.", "icon": "close"},
-              {"term": "Vector normal", "definition": "Vector perpendicular a un plano; $\\mathbf{u}\\times\\mathbf{v}$ es normal al plano que contiene a $\\mathbf{u}$ y $\\mathbf{v}$.", "icon": "square_foot"},
-              {"term": "Regla de la mano derecha", "definition": "Convención que fija el sentido de $\\mathbf{u}\\times\\mathbf{v}$: dedos de $\\mathbf{u}$ a $\\mathbf{v}$, pulgar hacia el resultado.", "icon": "back_hand"},
-              {"term": "Anticonmutatividad", "definition": "Propiedad $\\mathbf{u}\\times\\mathbf{v}=-\\mathbf{v}\\times\\mathbf{u}$: cambiar el orden invierte el sentido del vector.", "icon": "swap_horiz"},
-              {"term": "Torque", "definition": "Momento de una fuerza, $\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}$; su magnitud es el efecto de giro y su dirección, el eje.", "icon": "sync"}
+              {
+                "term": "Producto cruz",
+                "definition": "Operación en $\\mathbb{R}^3$ que asocia a dos vectores un tercero perpendicular a ambos; se calcula con un determinante simbólico.",
+                "icon": "close"
+              },
+              {
+                "term": "Vector normal",
+                "definition": "Vector perpendicular a un plano; $\\mathbf{u}\\times\\mathbf{v}$ es normal al plano que contiene a $\\mathbf{u}$ y $\\mathbf{v}$.",
+                "icon": "square_foot"
+              },
+              {
+                "term": "Regla de la mano derecha",
+                "definition": "Convención que fija el sentido de $\\mathbf{u}\\times\\mathbf{v}$: dedos de $\\mathbf{u}$ a $\\mathbf{v}$, pulgar hacia el resultado.",
+                "icon": "back_hand"
+              },
+              {
+                "term": "Anticonmutatividad",
+                "definition": "Propiedad $\\mathbf{u}\\times\\mathbf{v}=-\\mathbf{v}\\times\\mathbf{u}$: cambiar el orden invierte el sentido del vector.",
+                "icon": "swap_horiz"
+              },
+              {
+                "term": "Torque",
+                "definition": "Momento de una fuerza, $\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}$; su magnitud es el efecto de giro y su dirección, el eje.",
+                "icon": "sync"
+              }
             ]
           },
           "s4-acordion": {
@@ -886,11 +1629,44 @@
             "title": "Selección múltiple · Propiedades del producto cruz",
             "prompt": "Selecciona todas las afirmaciones correctas sobre el producto cruz $\\mathbf{u}\\times\\mathbf{v}$.",
             "options": [
-              {"text": "Su resultado es un vector perpendicular a $\\mathbf{u}$ y a $\\mathbf{v}$.", "correct": true},
-              {"text": "Su magnitud es igual al área del paralelogramo de lados $\\mathbf{u}$ y $\\mathbf{v}$.", "correct": true},
-              {"text": "Se anula cuando $\\mathbf{u}$ y $\\mathbf{v}$ son paralelos.", "correct": true},
-              {"text": "Es conmutativo: $\\mathbf{u}\\times\\mathbf{v}=\\mathbf{v}\\times\\mathbf{u}$.", "correct": false},
-              {"text": "Su resultado es un escalar.", "correct": false}
+              {
+                "text": "Su resultado es un vector perpendicular a $\\mathbf{u}$ y a $\\mathbf{v}$.",
+                "correct": true
+              },
+              {
+                "text": "Su magnitud es igual al área del paralelogramo de lados $\\mathbf{u}$ y $\\mathbf{v}$.",
+                "correct": true
+              },
+              {
+                "text": "Se anula cuando $\\mathbf{u}$ y $\\mathbf{v}$ son paralelos.",
+                "correct": true
+              },
+              {
+                "text": "Es conmutativo: $\\mathbf{u}\\times\\mathbf{v}=\\mathbf{v}\\times\\mathbf{u}$.",
+                "correct": false
+              },
+              {
+                "text": "Su resultado es un escalar.",
+                "correct": false
+              }
+            ]
+          },
+          "s4-figura-mano-derecha": {
+            "type": "figure",
+            "title": "Regla de la mano derecha y anticonmutatividad",
+            "assetId": "al04-fig-mano-derecha",
+            "src": "",
+            "alt": "Una mano derecha con los dedos girando de u hacia v y el pulgar señalando u×v hacia arriba; al lado, el caso invertido v×u con el resultado apuntando hacia abajo.",
+            "caption": "La regla de la mano derecha fija el sentido de u×v; invertir el orden a v×u invierte el sentido del vector. Elaboración propia.",
+            "prompt": "Crear una figura didactica en espanol en 3D: a la izquierda, una mano derecha con los dedos curvandose de u hacia v y el pulgar apuntando hacia arriba etiquetado u x v; a la derecha, el caso simetrico donde los dedos van de v hacia u y el pulgar apunta hacia abajo etiquetado v x u; resaltar que u x v = -(v x u) (anticonmutatividad). Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s4-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado del producto cruz, el vector normal y el área del paralelogramo está en el Documento de Saberes (PDF) de la asignatura."
             ]
           }
         }
@@ -901,7 +1677,10 @@
         "badge": "Tema 04 · Sección 5",
         "navLabel": "Aplicaciones transversales",
         "title": "Vectores en acción: tres ingenierías",
-        "learningOutcomeIds": ["RA1", "RA2"],
+        "learningOutcomeIds": [
+          "RA1",
+          "RA2"
+        ],
         "methodologyMoment": "Fase 4",
         "estimatedTime": "45 minutos",
         "intro": [
@@ -916,7 +1695,10 @@
           "s5-flashcards",
           "s5-table-operaciones",
           "s5-teoria-3",
+          "s5-figura-torque",
+          "s5-figura-flujo",
           "s5-acordion",
+          "s5-callout-saberes",
           "s5-evaluacion",
           "s5-referencias"
         ],
@@ -931,20 +1713,62 @@
               "El torque, en cambio, es un producto cruz: $\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}$. Aquí interesa un vector, porque el giro tiene eje y sentido. Un mismo conjunto de vectores resuelve fuerza (suma), energía (punto) y giro (cruz) según la pregunta del problema."
             ],
             "keyIdeas": [
-              {"icon": "merge", "text": "Resultante de fuerzas: suma vectorial."},
-              {"icon": "bolt", "text": "Trabajo: producto punto $W=\\mathbf{F}\\cdot\\mathbf{d}$ (escalar)."},
-              {"icon": "sync", "text": "Torque: producto cruz $\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}$ (vector)."}
+              {
+                "icon": "merge",
+                "text": "Resultante de fuerzas: suma vectorial."
+              },
+              {
+                "icon": "bolt",
+                "text": "Trabajo: producto punto $W=\\mathbf{F}\\cdot\\mathbf{d}$ (escalar)."
+              },
+              {
+                "icon": "sync",
+                "text": "Torque: producto cruz $\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}$ (vector)."
+              }
             ],
-            "closing": ["La pregunta del problema (intensidad, energía o giro) decide si usas suma, punto o cruz."]
+            "closing": [
+              "La pregunta del problema (intensidad, energía o giro) decide si usas suma, punto o cruz."
+            ]
           },
           "s5-carrusel": {
             "type": "carousel",
             "title": "Carrusel · Una operación por ingeniería",
             "slides": [
-              {"label": "Mecánica", "title": "Trabajo y torque", "body": ["El trabajo de una fuerza usa el producto punto; el torque, el producto cruz. Escalar para energía, vector para giro."], "formula": "W=\\mathbf{F}\\cdot\\mathbf{d},\\quad \\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}", "icon": "engineering"},
-              {"label": "Mecatrónica", "title": "Alineación por coseno", "body": ["El coseno del ángulo entre la dirección deseada y la real mide qué tan alineado está un robot o un sensor."], "formula": "\\cos\\theta=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}", "icon": "smart_toy"},
-              {"label": "Ambiental", "title": "Flujo por superficie", "body": ["El flujo de un campo a través de una superficie usa el producto punto con su normal $\\hat{\\mathbf{n}}$, obtenida con el producto cruz."], "formula": "\\Phi=\\mathbf{F}\\cdot\\hat{\\mathbf{n}}\\,A", "icon": "air"},
-              {"label": "Síntesis", "title": "Elegir la operación", "body": ["Si buscas un número, casi siempre es producto punto; si buscas una dirección perpendicular o un área, es producto cruz."], "icon": "checklist"}
+              {
+                "label": "Mecánica",
+                "title": "Trabajo y torque",
+                "body": [
+                  "El trabajo de una fuerza usa el producto punto; el torque, el producto cruz. Escalar para energía, vector para giro."
+                ],
+                "formula": "W=\\mathbf{F}\\cdot\\mathbf{d},\\quad \\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}",
+                "icon": "engineering"
+              },
+              {
+                "label": "Mecatrónica",
+                "title": "Alineación por coseno",
+                "body": [
+                  "El coseno del ángulo entre la dirección deseada y la real mide qué tan alineado está un robot o un sensor."
+                ],
+                "formula": "\\cos\\theta=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}",
+                "icon": "smart_toy"
+              },
+              {
+                "label": "Ambiental",
+                "title": "Flujo por superficie",
+                "body": [
+                  "El flujo de un campo a través de una superficie usa el producto punto con su normal $\\hat{\\mathbf{n}}$, obtenida con el producto cruz."
+                ],
+                "formula": "\\Phi=\\mathbf{F}\\cdot\\hat{\\mathbf{n}}\\,A",
+                "icon": "air"
+              },
+              {
+                "label": "Síntesis",
+                "title": "Elegir la operación",
+                "body": [
+                  "Si buscas un número, casi siempre es producto punto; si buscas una dirección perpendicular o un área, es producto cruz."
+                ],
+                "icon": "checklist"
+              }
             ]
           },
           "s5-stepper-trabajo": {
@@ -952,10 +1776,30 @@
             "title": "Ejercicio resuelto 4.5 · Trabajo de una fuerza (transversal)",
             "statement": "Una fuerza $\\mathbf{F}=(6,2,3)$ N actúa sobre un cuerpo que se desplaza $\\mathbf{d}=(4,0,0)$ m. Calcular el trabajo realizado y el ángulo entre la fuerza y el desplazamiento.",
             "steps": [
-              {"title": "Plantear el trabajo como producto punto", "body": "El trabajo es el producto punto de la fuerza por el desplazamiento.", "formula": "W=\\mathbf{F}\\cdot\\mathbf{d}=(6)(4)+(2)(0)+(3)(0)=24\\ \\text{J}", "final": false},
-              {"title": "Calcular las magnitudes", "body": "Halla la norma de cada vector para obtener el ángulo.", "formula": "\\|\\mathbf{F}\\|=\\sqrt{36+4+9}=7,\\qquad \\|\\mathbf{d}\\|=4", "final": false},
-              {"title": "Despejar el ángulo", "body": "Aplica la fórmula del coseno y luego el arcocoseno.", "formula": "\\cos\\theta=\\frac{24}{(7)(4)}=\\frac{24}{28}\\approx 0.857\\;\\Rightarrow\\;\\theta\\approx 31^\\circ", "final": false},
-              {"title": "Interpretar y verificar", "body": "El trabajo es positivo, por lo que la fuerza impulsa el movimiento; coherente con un ángulo agudo menor de $90^\\circ$.", "formula": "W=24\\ \\text{J}>0\\;\\Rightarrow\\;\\theta<90^\\circ", "final": true}
+              {
+                "title": "Plantear el trabajo como producto punto",
+                "body": "El trabajo es el producto punto de la fuerza por el desplazamiento.",
+                "formula": "W=\\mathbf{F}\\cdot\\mathbf{d}=(6)(4)+(2)(0)+(3)(0)=24\\ \\text{J}",
+                "final": false
+              },
+              {
+                "title": "Calcular las magnitudes",
+                "body": "Halla la norma de cada vector para obtener el ángulo.",
+                "formula": "\\|\\mathbf{F}\\|=\\sqrt{36+4+9}=7,\\qquad \\|\\mathbf{d}\\|=4",
+                "final": false
+              },
+              {
+                "title": "Despejar el ángulo",
+                "body": "Aplica la fórmula del coseno y luego el arcocoseno.",
+                "formula": "\\cos\\theta=\\frac{24}{(7)(4)}=\\frac{24}{28}\\approx 0.857\\;\\Rightarrow\\;\\theta\\approx 31^\\circ",
+                "final": false
+              },
+              {
+                "title": "Interpretar y verificar",
+                "body": "El trabajo es positivo, por lo que la fuerza impulsa el movimiento; coherente con un ángulo agudo menor de $90^\\circ$.",
+                "formula": "W=24\\ \\text{J}>0\\;\\Rightarrow\\;\\theta<90^\\circ",
+                "final": true
+              }
             ]
           },
           "s5-stepper-torque": {
@@ -963,9 +1807,24 @@
             "title": "Ejercicio resuelto 4.5b · Torque sobre un brazo (mecánica)",
             "statement": "Una fuerza $\\mathbf{F}=(0,8,0)$ N se aplica en el extremo de un brazo descrito por $\\mathbf{r}=(0.5,0,0)$ m. Calcular el torque respecto del eje.",
             "steps": [
-              {"title": "Plantear el torque como producto cruz", "body": "El momento de la fuerza es el producto cruz del vector posición por la fuerza.", "formula": "\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}=\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\0.5&0&0\\\\0&8&0\\end{vmatrix}", "final": false},
-              {"title": "Calcular las componentes", "body": "Expande el determinante; solo sobrevive la componente en z.", "formula": "\\boldsymbol{\\tau}=(0\\cdot 0-0\\cdot 8,\\;0\\cdot 0-0.5\\cdot 0,\\;0.5\\cdot 8-0\\cdot 0)=(0,0,4)", "final": false},
-              {"title": "Interpretar y verificar", "body": "La magnitud es el efecto de giro y el eje z indica el sentido de rotación; las unidades confirman un torque (N·m).", "formula": "\\|\\boldsymbol{\\tau}\\|=4\\ \\text{N·m}\\ \\text{(eje }z\\text{)}", "final": true}
+              {
+                "title": "Plantear el torque como producto cruz",
+                "body": "El momento de la fuerza es el producto cruz del vector posición por la fuerza.",
+                "formula": "\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}=\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\0.5&0&0\\\\0&8&0\\end{vmatrix}",
+                "final": false
+              },
+              {
+                "title": "Calcular las componentes",
+                "body": "Expande el determinante; solo sobrevive la componente en z.",
+                "formula": "\\boldsymbol{\\tau}=(0\\cdot 0-0\\cdot 8,\\;0\\cdot 0-0.5\\cdot 0,\\;0.5\\cdot 8-0\\cdot 0)=(0,0,4)",
+                "final": false
+              },
+              {
+                "title": "Interpretar y verificar",
+                "body": "La magnitud es el efecto de giro y el eje z indica el sentido de rotación; las unidades confirman un torque (N·m).",
+                "formula": "\\|\\boldsymbol{\\tau}\\|=4\\ \\text{N·m}\\ \\text{(eje }z\\text{)}",
+                "final": true
+              }
             ]
           },
           "s5-teoria-2": {
@@ -978,32 +1837,99 @@
               "El valor agregado es que una sola operación, el producto punto normalizado, sirve tanto para orientar un actuador como para comparar perfiles, mostrando la transversalidad de los vectores entre disciplinas muy distintas."
             ],
             "keyIdeas": [
-              {"icon": "smart_toy", "text": "Control de orientación: alinear dirección real y deseada."},
-              {"icon": "insights", "text": "Similitud del coseno: comparar perfiles por dirección."},
-              {"icon": "tune", "text": "El coseno ignora la magnitud y atiende solo a la dirección."}
+              {
+                "icon": "smart_toy",
+                "text": "Control de orientación: alinear dirección real y deseada."
+              },
+              {
+                "icon": "insights",
+                "text": "Similitud del coseno: comparar perfiles por dirección."
+              },
+              {
+                "icon": "tune",
+                "text": "El coseno ignora la magnitud y atiende solo a la dirección."
+              }
             ],
-            "closing": ["Una misma fórmula resuelve orientación de hardware y comparación de datos: esa es la potencia del enfoque vectorial."]
+            "closing": [
+              "Una misma fórmula resuelve orientación de hardware y comparación de datos: esa es la potencia del enfoque vectorial."
+            ]
           },
           "s5-flashcards": {
             "type": "flashcards",
             "title": "Flashcards · Aplicaciones vectoriales",
             "cards": [
-              {"term": "Trabajo mecánico", "definition": "Energía transferida por una fuerza a lo largo de un desplazamiento, $W=\\mathbf{F}\\cdot\\mathbf{d}$; es un escalar con signo.", "icon": "bolt"},
-              {"term": "Similitud del coseno", "definition": "Medida de alineación entre dos vectores de características dada por $\\cos\\theta$; vale 1 si coinciden en dirección.", "icon": "compare"},
-              {"term": "Flujo a través de una superficie", "definition": "Cantidad de campo que atraviesa un área, $\\Phi=\\mathbf{F}\\cdot\\hat{\\mathbf{n}}A$, usando la normal de la superficie.", "icon": "air"},
-              {"term": "Área orientada", "definition": "Área con una dirección asociada (su vector normal), clave para calcular flujo en ingeniería ambiental y de energías.", "icon": "layers"}
+              {
+                "term": "Trabajo mecánico",
+                "definition": "Energía transferida por una fuerza a lo largo de un desplazamiento, $W=\\mathbf{F}\\cdot\\mathbf{d}$; es un escalar con signo.",
+                "icon": "bolt"
+              },
+              {
+                "term": "Similitud del coseno",
+                "definition": "Medida de alineación entre dos vectores de características dada por $\\cos\\theta$; vale 1 si coinciden en dirección.",
+                "icon": "compare"
+              },
+              {
+                "term": "Flujo a través de una superficie",
+                "definition": "Cantidad de campo que atraviesa un área, $\\Phi=\\mathbf{F}\\cdot\\hat{\\mathbf{n}}A$, usando la normal de la superficie.",
+                "icon": "air"
+              },
+              {
+                "term": "Área orientada",
+                "definition": "Área con una dirección asociada (su vector normal), clave para calcular flujo en ingeniería ambiental y de energías.",
+                "icon": "layers"
+              }
             ]
           },
           "s5-table-operaciones": {
             "type": "table",
             "title": "Qué operación elegir según el resultado buscado",
-            "columns": ["Necesitas", "Operación", "Tipo de resultado", "Ejemplo de ingeniería"],
+            "columns": [
+              "Necesitas",
+              "Operación",
+              "Tipo de resultado",
+              "Ejemplo de ingeniería"
+            ],
             "rows": [
-              {"cells": ["La intensidad neta de varias fuerzas", "Suma vectorial", "Vector", "Resultante sobre una estructura"]},
-              {"cells": ["El tamaño de una magnitud", "Magnitud $\\|\\mathbf{v}\\|$", "Escalar", "Rapidez a partir de la velocidad"]},
-              {"cells": ["El ángulo o la alineación entre dos vectores", "Producto punto", "Escalar", "Trabajo $\\mathbf{F}\\cdot\\mathbf{d}$; similitud de perfiles"]},
-              {"cells": ["Una dirección perpendicular a dos vectores", "Producto cruz", "Vector", "Normal a un plano; torque $\\mathbf{r}\\times\\mathbf{F}$"]},
-              {"cells": ["El área del paralelogramo o triángulo", "Magnitud del producto cruz", "Escalar", "Área de una placa o superficie"]}
+              {
+                "cells": [
+                  "La intensidad neta de varias fuerzas",
+                  "Suma vectorial",
+                  "Vector",
+                  "Resultante sobre una estructura"
+                ]
+              },
+              {
+                "cells": [
+                  "El tamaño de una magnitud",
+                  "Magnitud $\\|\\mathbf{v}\\|$",
+                  "Escalar",
+                  "Rapidez a partir de la velocidad"
+                ]
+              },
+              {
+                "cells": [
+                  "El ángulo o la alineación entre dos vectores",
+                  "Producto punto",
+                  "Escalar",
+                  "Trabajo $\\mathbf{F}\\cdot\\mathbf{d}$; similitud de perfiles"
+                ]
+              },
+              {
+                "cells": [
+                  "Una dirección perpendicular a dos vectores",
+                  "Producto cruz",
+                  "Vector",
+                  "Normal a un plano; torque $\\mathbf{r}\\times\\mathbf{F}$"
+                ]
+              },
+              {
+                "cells": [
+                  "El área del paralelogramo o triángulo",
+                  "Magnitud del producto cruz",
+                  "Escalar",
+                  "Área de una placa o superficie"
+                ]
+              }
             ]
           },
           "s5-teoria-3": {
@@ -1016,11 +1942,22 @@
               "La normal $\\hat{\\mathbf{n}}$ se obtiene con el producto cruz de dos vectores que bordean la superficie, de modo que el flujo integra las dos operaciones del tema: el cruz construye la orientación del área y el punto mide cuánto campo la atraviesa."
             ],
             "keyIdeas": [
-              {"icon": "air", "text": "El flujo depende del área y de su orientación."},
-              {"icon": "functions", "text": "Se modela con $\\Phi=\\mathbf{F}\\cdot\\hat{\\mathbf{n}}A$ (producto punto)."},
-              {"icon": "layers", "text": "La normal $\\hat{\\mathbf{n}}$ se obtiene con producto cruz."}
+              {
+                "icon": "air",
+                "text": "El flujo depende del área y de su orientación."
+              },
+              {
+                "icon": "functions",
+                "text": "Se modela con $\\Phi=\\mathbf{F}\\cdot\\hat{\\mathbf{n}}A$ (producto punto)."
+              },
+              {
+                "icon": "layers",
+                "text": "La normal $\\hat{\\mathbf{n}}$ se obtiene con producto cruz."
+              }
             ],
-            "closing": ["Flujo máximo con campo perpendicular a la superficie, nulo con campo tangente: la misma lógica del producto punto."]
+            "closing": [
+              "Flujo máximo con campo perpendicular a la superficie, nulo con campo tangente: la misma lógica del producto punto."
+            ]
           },
           "s5-acordion": {
             "type": "accordion",
@@ -1056,7 +1993,10 @@
           "s5-evaluacion": {
             "type": "evaluation-activity",
             "title": "Actividad evaluativa · Modelado vectorial transversal",
-            "learningOutcomeIds": ["RA1", "RA2"],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ],
             "criterion": "CE1: traduce una situación de ingeniería a vectores y operaciones pertinentes. CE2: ejecuta y verifica magnitud, producto punto y producto cruz, interpretando el resultado.",
             "evidence": "Documento breve que modela un problema de su propia disciplina con vectores, resuelve la operación elegida (punto o cruz) paso a paso y justifica por qué esa operación es la adecuada.",
             "technique": "Estudio de caso aplicado",
@@ -1071,10 +2011,30 @@
             },
             "rubric": {
               "type": "analitica",
-              "levels": ["No acreditable", "Deficiente", "Insuficiente", "Aceptable", "Bueno", "Muy bueno", "Sobresaliente"],
+              "levels": [
+                "No acreditable",
+                "Deficiente",
+                "Insuficiente",
+                "Aceptable",
+                "Bueno",
+                "Muy bueno",
+                "Sobresaliente"
+              ],
               "criteria": [
-                {"name": "Traducción a vectores (CE1)", "descriptors": {"Aceptable": "Representa el problema con vectores pertinentes aunque con imprecisiones menores.", "Sobresaliente": "Modela el problema con vectores y operaciones óptimas, justificando cada elección con el contexto disciplinar."}},
-                {"name": "Ejecución y verificación (CE2)", "descriptors": {"Aceptable": "Calcula la operación correctamente y verifica de forma parcial.", "Sobresaliente": "Ejecuta sin errores, verifica con un criterio independiente (norma, perpendicularidad o unidades) e interpreta el resultado."}}
+                {
+                  "name": "Traducción a vectores (CE1)",
+                  "descriptors": {
+                    "Aceptable": "Representa el problema con vectores pertinentes aunque con imprecisiones menores.",
+                    "Sobresaliente": "Modela el problema con vectores y operaciones óptimas, justificando cada elección con el contexto disciplinar."
+                  }
+                },
+                {
+                  "name": "Ejecución y verificación (CE2)",
+                  "descriptors": {
+                    "Aceptable": "Calcula la operación correctamente y verifica de forma parcial.",
+                    "Sobresaliente": "Ejecuta sin errores, verifica con un criterio independiente (norma, perpendicularidad o unidades) e interpreta el resultado."
+                  }
+                }
               ]
             }
           },
@@ -1085,6 +2045,33 @@
               "Larson, R. (2010). Fundamentos de álgebra lineal (6.ª ed.). Cengage Learning. (Vectores, producto interno y producto vectorial).",
               "Grossman, S. I. (2008). Álgebra lineal (6.ª ed.). McGraw-Hill. ($\\mathbb{R}^n$, producto escalar y producto cruz).",
               "Recursos didácticos (figuras, gráfico, ejercicios y casos): Elaboración propia."
+            ]
+          },
+          "s5-figura-torque": {
+            "type": "figure",
+            "title": "Torque: momento de una fuerza sobre un brazo",
+            "assetId": "al04-fig-torque",
+            "src": "",
+            "alt": "Un brazo de palanca representado por el vector posición r desde un eje de giro, una fuerza F aplicada en su extremo y el vector torque tau = r×F saliendo perpendicular como eje de rotación.",
+            "caption": "El torque τ = r×F es perpendicular al plano del brazo r y la fuerza F; su dirección marca el eje de giro. Elaboración propia.",
+            "prompt": "Crear una figura didactica en espanol en 3D: un eje de giro en el origen; un brazo representado por el vector r horizontal; una fuerza F aplicada en el extremo del brazo formando un angulo con el; un vector tau (torque) saliendo perpendicular al plano de r y F a lo largo del eje de giro, etiquetado tau = r x F; indicar el sentido de rotacion con una flecha curva. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s5-figura-flujo": {
+            "type": "figure",
+            "title": "Flujo de un campo a través de una superficie",
+            "assetId": "al04-fig-flujo",
+            "src": "",
+            "alt": "Una superficie plana con su vector normal n; un campo F atravesándola y el ángulo entre F y la normal que determina cuánto flujo la cruza.",
+            "caption": "El flujo Φ = F·n̂ A depende del campo, del área y del ángulo entre el campo y la normal de la superficie. Elaboración propia.",
+            "prompt": "Crear una figura didactica en espanol en 3D: una superficie plana inclinada con su vector normal unitario n saliendo perpendicular al centro; varias flechas paralelas de un campo F atravesando la superficie; marcar el angulo entre F y la normal n; anotar la relacion del flujo Phi = F . n A. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s5-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado de las aplicaciones transversales de los vectores a la ingeniería (trabajo, torque, alineación y flujo) está en el Documento de Saberes (PDF) de la asignatura."
             ]
           }
         }
@@ -1100,21 +2087,38 @@
     "subtitle": "Tema 04 de 05 · Vectores en $\\mathbb{R}^2$ y $\\mathbb{R}^3$, producto punto y producto cruz",
     "purpose": "Desarrollar la representación y operación de vectores y aplicar el producto punto y el producto cruz para modelar magnitudes geométricas y físicas en ingeniería.",
     "structure": "Teoría · ejemplos resueltos · banco de ejercicios · referencias.",
-    "sectionOrder": ["pdf-intro", "pdf-seccion-1", "pdf-seccion-2", "pdf-seccion-3", "pdf-seccion-4", "pdf-seccion-5"],
+    "sectionOrder": [
+      "pdf-intro",
+      "pdf-seccion-1",
+      "pdf-seccion-2",
+      "pdf-seccion-3",
+      "pdf-seccion-4",
+      "pdf-seccion-5"
+    ],
     "sections": {
       "pdf-intro": {
         "title": "Presentación del tema",
         "intro": [
           "Esta guía imprimible acompaña el Tema 04 de Álgebra Lineal y desarrolla los vectores en el plano y el espacio como objetos que reúnen magnitud, dirección y sentido."
         ],
-        "componentOrder": ["pdf-intro-objetivos", "pdf-intro-mapa", "pdf-intro-callout"],
+        "componentOrder": [
+          "pdf-intro-objetivos",
+          "pdf-intro-mapa",
+          "pdf-intro-callout"
+        ],
         "components": {
           "pdf-intro-objetivos": {
             "type": "objectives",
             "title": "Resultados de aprendizaje del tema",
             "items": [
-              {"icon": "track_changes", "text": "RA1: modelar magnitudes de ingeniería con vectores y sus operaciones."},
-              {"icon": "track_changes", "text": "RA2: aplicar magnitud, producto punto y producto cruz para resolver y verificar problemas geométricos y físicos."}
+              {
+                "icon": "track_changes",
+                "text": "RA1: modelar magnitudes de ingeniería con vectores y sus operaciones."
+              },
+              {
+                "icon": "track_changes",
+                "text": "RA2: aplicar magnitud, producto punto y producto cruz para resolver y verificar problemas geométricos y físicos."
+              }
             ]
           },
           "pdf-intro-mapa": {
@@ -1143,7 +2147,11 @@
         "intro": [
           "Un vector reúne magnitud, dirección y sentido. Esta sección fija la representación por componentes, la suma, el producto por escalar y el cálculo de la norma y el vector unitario."
         ],
-        "componentOrder": ["pdf-s1-teoria", "pdf-s1-formula", "pdf-s1-ejemplo"],
+        "componentOrder": [
+          "pdf-s1-teoria",
+          "pdf-s1-formula",
+          "pdf-s1-ejemplo"
+        ],
         "components": {
           "pdf-s1-teoria": {
             "type": "theory-block",
@@ -1153,26 +2161,47 @@
               "La magnitud o norma $\\|\\mathbf{v}\\|=\\sqrt{v_1^2+v_2^2+v_3^2}$ es la longitud del vector, siempre no negativa. El vector unitario $\\hat{\\mathbf{v}}=\\mathbf{v}/\\|\\mathbf{v}\\|$ conserva la dirección con magnitud 1, separando la información de dirección de la de tamaño."
             ],
             "keyIdeas": [
-              {"icon": "navigation", "text": "El vector reúne magnitud, dirección y sentido."},
-              {"icon": "straighten", "text": "La norma es una longitud no negativa."},
-              {"icon": "explore", "text": "El unitario es la dirección pura."}
+              {
+                "icon": "navigation",
+                "text": "El vector reúne magnitud, dirección y sentido."
+              },
+              {
+                "icon": "straighten",
+                "text": "La norma es una longitud no negativa."
+              },
+              {
+                "icon": "explore",
+                "text": "El unitario es la dirección pura."
+              }
             ]
           },
           "pdf-s1-formula": {
             "type": "formula",
             "title": "Norma y vector unitario",
-            "context": ["Cálculo del tamaño de un vector y de su dirección normalizada."],
+            "context": [
+              "Cálculo del tamaño de un vector y de su dirección normalizada."
+            ],
             "latex": "\\|\\mathbf{v}\\|=\\sqrt{v_1^2+v_2^2+v_3^2},\\qquad \\hat{\\mathbf{v}}=\\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|}",
             "variables": [
-              {"symbol": "\\|\\mathbf{v}\\|", "description": "magnitud del vector."},
-              {"symbol": "\\hat{\\mathbf{v}}", "description": "vector unitario en la dirección de $\\mathbf{v}$."}
+              {
+                "symbol": "\\|\\mathbf{v}\\|",
+                "description": "magnitud del vector."
+              },
+              {
+                "symbol": "\\hat{\\mathbf{v}}",
+                "description": "vector unitario en la dirección de $\\mathbf{v}$."
+              }
             ],
-            "explanation": ["Se calcula la norma y se divide el vector por ella; el resultado mide 1 y apunta igual que $\\mathbf{v}$."]
+            "explanation": [
+              "Se calcula la norma y se divide el vector por ella; el resultado mide 1 y apunta igual que $\\mathbf{v}$."
+            ]
           },
           "pdf-s1-ejemplo": {
             "type": "example",
             "title": "Ejemplo 4.1 · Magnitud, unitario y suma",
-            "context": ["Dados $\\mathbf{u}=(3,-4,12)$ y $\\mathbf{v}=(1,2,2)$, hallar $\\|\\mathbf{u}\\|$, $\\hat{\\mathbf{u}}$ y $\\mathbf{u}+2\\mathbf{v}$."],
+            "context": [
+              "Dados $\\mathbf{u}=(3,-4,12)$ y $\\mathbf{v}=(1,2,2)$, hallar $\\|\\mathbf{u}\\|$, $\\hat{\\mathbf{u}}$ y $\\mathbf{u}+2\\mathbf{v}$."
+            ],
             "formula": "\\|\\mathbf{u}\\|=\\sqrt{9+16+144}=13",
             "solution": [
               "Magnitud: $\\|\\mathbf{u}\\|=\\sqrt{3^2+(-4)^2+12^2}=13$.",
@@ -1187,7 +2216,12 @@
         "intro": [
           "El producto punto entrega un escalar que mide la alineación de dos vectores. De él se obtienen el ángulo entre vectores y el criterio de perpendicularidad."
         ],
-        "componentOrder": ["pdf-s2-teoria", "pdf-s2-formula", "pdf-s2-ejemplo", "pdf-s2-chart"],
+        "componentOrder": [
+          "pdf-s2-teoria",
+          "pdf-s2-formula",
+          "pdf-s2-ejemplo",
+          "pdf-s2-chart"
+        ],
         "components": {
           "pdf-s2-teoria": {
             "type": "theory-block",
@@ -1197,25 +2231,43 @@
               "El signo del producto punto anticipa el tipo de ángulo: positivo para agudo, negativo para obtuso y cero para perpendicular. La condición $\\mathbf{u}\\cdot\\mathbf{v}=0$ es el criterio de ortogonalidad, que permite verificar perpendicularidad sin medir ángulos."
             ],
             "keyIdeas": [
-              {"icon": "functions", "text": "El producto punto entrega un escalar."},
-              {"icon": "square_foot", "text": "Producto punto cero indica perpendicularidad."}
+              {
+                "icon": "functions",
+                "text": "El producto punto entrega un escalar."
+              },
+              {
+                "icon": "square_foot",
+                "text": "Producto punto cero indica perpendicularidad."
+              }
             ]
           },
           "pdf-s2-formula": {
             "type": "formula",
             "title": "Ángulo entre vectores",
-            "context": ["Determinación del ángulo a partir de las componentes de dos vectores."],
+            "context": [
+              "Determinación del ángulo a partir de las componentes de dos vectores."
+            ],
             "latex": "\\theta=\\arccos\\!\\left(\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}\\right)",
             "variables": [
-              {"symbol": "\\mathbf{u}\\cdot\\mathbf{v}", "description": "producto punto."},
-              {"symbol": "\\theta", "description": "ángulo entre los vectores."}
+              {
+                "symbol": "\\mathbf{u}\\cdot\\mathbf{v}",
+                "description": "producto punto."
+              },
+              {
+                "symbol": "\\theta",
+                "description": "ángulo entre los vectores."
+              }
             ],
-            "explanation": ["Se calcula el coseno y se aplica el arcocoseno para recuperar el ángulo."]
+            "explanation": [
+              "Se calcula el coseno y se aplica el arcocoseno para recuperar el ángulo."
+            ]
           },
           "pdf-s2-ejemplo": {
             "type": "example",
             "title": "Ejemplo 4.2 · Ángulo entre dos vectores",
-            "context": ["Hallar el ángulo entre $\\mathbf{u}=(1,2,2)$ y $\\mathbf{v}=(2,0,1)$."],
+            "context": [
+              "Hallar el ángulo entre $\\mathbf{u}=(1,2,2)$ y $\\mathbf{v}=(2,0,1)$."
+            ],
             "formula": "\\cos\\theta=\\frac{4}{3\\sqrt{5}}",
             "solution": [
               "Producto punto: $\\mathbf{u}\\cdot\\mathbf{v}=2+0+2=4$.",
@@ -1232,15 +2284,46 @@
             ],
             "note": "Lectura del gráfico: el eje horizontal es el ángulo (0° a 180°) y el vertical es cos θ. La curva vale 1 en 0° (vectores alineados), 0 en 90° (ortogonalidad, producto punto nulo) y -1 en 180° (vectores opuestos). El cruce por cero en 90° separa ángulos agudos (producto punto positivo) de obtusos (negativo).",
             "height": "280px",
-            "labels": ["0°", "30°", "60°", "90°", "120°", "150°", "180°"],
+            "labels": [
+              "0°",
+              "30°",
+              "60°",
+              "90°",
+              "120°",
+              "150°",
+              "180°"
+            ],
             "datasets": [
-              {"label": "cos θ", "data": [1, 0.866, 0.5, 0, -0.5, -0.866, -1]}
+              {
+                "label": "cos θ",
+                "data": [
+                  1,
+                  0.866,
+                  0.5,
+                  0,
+                  -0.5,
+                  -0.866,
+                  -1
+                ]
+              }
             ],
             "caption": "Variación del producto punto de dos vectores unitarios con el ángulo. Elaboración propia.",
             "options": {
               "scales": {
-                "y": {"title": {"display": true, "text": "cos θ"}, "suggestedMin": -1, "suggestedMax": 1},
-                "x": {"title": {"display": true, "text": "Ángulo θ"}}
+                "y": {
+                  "title": {
+                    "display": true,
+                    "text": "cos θ"
+                  },
+                  "suggestedMin": -1,
+                  "suggestedMax": 1
+                },
+                "x": {
+                  "title": {
+                    "display": true,
+                    "text": "Ángulo θ"
+                  }
+                }
               }
             }
           }
@@ -1251,7 +2334,11 @@
         "intro": [
           "La proyección descompone un vector en la dirección de otro. Es la base para separar fuerzas en componentes paralela y perpendicular."
         ],
-        "componentOrder": ["pdf-s3-teoria", "pdf-s3-formula", "pdf-s3-ejemplo"],
+        "componentOrder": [
+          "pdf-s3-teoria",
+          "pdf-s3-formula",
+          "pdf-s3-ejemplo"
+        ],
         "components": {
           "pdf-s3-teoria": {
             "type": "theory-block",
@@ -1261,25 +2348,43 @@
               "La componente escalar $\\tfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|}$ es la longitud orientada de esa sombra; su signo indica si va a favor o en contra de $\\mathbf{v}$. La parte de $\\mathbf{u}$ ortogonal a $\\mathbf{v}$ se obtiene restando la proyección al vector original."
             ],
             "keyIdeas": [
-              {"icon": "navigation", "text": "La proyección vectorial es paralela a $\\mathbf{v}$."},
-              {"icon": "call_split", "text": "Permite descomponer fuerzas en componentes."}
+              {
+                "icon": "navigation",
+                "text": "La proyección vectorial es paralela a $\\mathbf{v}$."
+              },
+              {
+                "icon": "call_split",
+                "text": "Permite descomponer fuerzas en componentes."
+              }
             ]
           },
           "pdf-s3-formula": {
             "type": "formula",
             "title": "Proyección vectorial",
-            "context": ["Descomposición de un vector en la dirección de otro."],
+            "context": [
+              "Descomposición de un vector en la dirección de otro."
+            ],
             "latex": "\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}\\,\\mathbf{v}",
             "variables": [
-              {"symbol": "\\mathbf{u}", "description": "vector que se proyecta."},
-              {"symbol": "\\mathbf{v}", "description": "vector director de la proyección."}
+              {
+                "symbol": "\\mathbf{u}",
+                "description": "vector que se proyecta."
+              },
+              {
+                "symbol": "\\mathbf{v}",
+                "description": "vector director de la proyección."
+              }
             ],
-            "explanation": ["El cociente escalar multiplica a $\\mathbf{v}$ para dar un vector paralelo a $\\mathbf{v}$."]
+            "explanation": [
+              "El cociente escalar multiplica a $\\mathbf{v}$ para dar un vector paralelo a $\\mathbf{v}$."
+            ]
           },
           "pdf-s3-ejemplo": {
             "type": "example",
             "title": "Ejemplo 4.3 · Proyección sobre dos direcciones",
-            "context": ["Proyectar $\\mathbf{u}=(4,3)$ sobre $\\mathbf{v}_1=(1,0)$ y sobre $\\mathbf{v}_2=(3,4)$."],
+            "context": [
+              "Proyectar $\\mathbf{u}=(4,3)$ sobre $\\mathbf{v}_1=(1,0)$ y sobre $\\mathbf{v}_2=(3,4)$."
+            ],
             "formula": "\\operatorname{proy}_{\\mathbf{v}_2}\\mathbf{u}=\\frac{24}{25}(3,4)",
             "solution": [
               "Sobre $\\mathbf{v}_1=(1,0)$: $\\operatorname{proy}_{\\mathbf{v}_1}\\mathbf{u}=\\tfrac{4}{1}(1,0)=(4,0)$, la componente horizontal de $\\mathbf{u}$.",
@@ -1293,7 +2398,11 @@
         "intro": [
           "El producto cruz toma dos vectores del espacio y produce un tercero perpendicular a ambos. Su dirección da un vector normal y su magnitud, el área del paralelogramo."
         ],
-        "componentOrder": ["pdf-s4-teoria", "pdf-s4-formula", "pdf-s4-ejemplo"],
+        "componentOrder": [
+          "pdf-s4-teoria",
+          "pdf-s4-formula",
+          "pdf-s4-ejemplo"
+        ],
         "components": {
           "pdf-s4-teoria": {
             "type": "theory-block",
@@ -1303,25 +2412,43 @@
               "Su magnitud $\\|\\mathbf{u}\\times\\mathbf{v}\\|=\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|\\sin\\theta$ es el área del paralelogramo de lados $\\mathbf{u}$ y $\\mathbf{v}$; la del triángulo es la mitad. El producto cruz se anula cuando los vectores son paralelos, caso opuesto a la anulación del producto punto."
             ],
             "keyIdeas": [
-              {"icon": "square_foot", "text": "El resultado es perpendicular a los dos vectores."},
-              {"icon": "crop_square", "text": "Su magnitud es el área del paralelogramo."}
+              {
+                "icon": "square_foot",
+                "text": "El resultado es perpendicular a los dos vectores."
+              },
+              {
+                "icon": "crop_square",
+                "text": "Su magnitud es el área del paralelogramo."
+              }
             ]
           },
           "pdf-s4-formula": {
             "type": "formula",
             "title": "Producto cruz por determinante",
-            "context": ["Obtención de un vector normal y del área formada por dos vectores."],
+            "context": [
+              "Obtención de un vector normal y del área formada por dos vectores."
+            ],
             "latex": "\\mathbf{u}\\times\\mathbf{v}=\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\u_1&u_2&u_3\\\\v_1&v_2&v_3\\end{vmatrix}",
             "variables": [
-              {"symbol": "u_i,\\ v_i", "description": "componentes de los vectores."},
-              {"symbol": "\\mathbf{i},\\mathbf{j},\\mathbf{k}", "description": "vectores base del espacio."}
+              {
+                "symbol": "u_i,\\ v_i",
+                "description": "componentes de los vectores."
+              },
+              {
+                "symbol": "\\mathbf{i},\\mathbf{j},\\mathbf{k}",
+                "description": "vectores base del espacio."
+              }
             ],
-            "explanation": ["Al expandir por la primera fila se obtienen las tres componentes; la componente $\\mathbf{j}$ lleva signo negativo."]
+            "explanation": [
+              "Al expandir por la primera fila se obtienen las tres componentes; la componente $\\mathbf{j}$ lleva signo negativo."
+            ]
           },
           "pdf-s4-ejemplo": {
             "type": "example",
             "title": "Ejemplo 4.4 · Producto cruz, área y normal unitario",
-            "context": ["Dados $\\mathbf{u}=(1,0,2)$ y $\\mathbf{v}=(0,3,1)$, hallar $\\mathbf{u}\\times\\mathbf{v}$, el área y un normal unitario."],
+            "context": [
+              "Dados $\\mathbf{u}=(1,0,2)$ y $\\mathbf{v}=(0,3,1)$, hallar $\\mathbf{u}\\times\\mathbf{v}$, el área y un normal unitario."
+            ],
             "formula": "\\mathbf{u}\\times\\mathbf{v}=(-6,-1,3)",
             "solution": [
               "Producto cruz: $\\mathbf{u}\\times\\mathbf{v}=(0-6,\\;0-1,\\;3-0)=(-6,-1,3)$.",
@@ -1336,7 +2463,13 @@
         "intro": [
           "Esta sección reúne las aplicaciones a tres ingenierías y un banco de ejercicios para trabajo autónomo, antes de las referencias."
         ],
-        "componentOrder": ["pdf-s5-teoria", "pdf-s5-tabla", "pdf-s5-ejemplo", "pdf-s5-banco", "pdf-s5-referencias"],
+        "componentOrder": [
+          "pdf-s5-teoria",
+          "pdf-s5-tabla",
+          "pdf-s5-ejemplo",
+          "pdf-s5-banco",
+          "pdf-s5-referencias"
+        ],
         "components": {
           "pdf-s5-teoria": {
             "type": "theory-block",
@@ -1346,24 +2479,58 @@
               "En ingeniería ambiental y de energías, el flujo a través de una superficie se modela con el producto punto entre el campo y la normal, $\\Phi=\\mathbf{F}\\cdot\\hat{\\mathbf{n}}A$, donde la normal proviene de un producto cruz. La regla práctica es directa: si se busca un número se usa el producto punto, y si se busca una dirección o un área se usa el producto cruz."
             ],
             "keyIdeas": [
-              {"icon": "bolt", "text": "Trabajo: producto punto (escalar)."},
-              {"icon": "sync", "text": "Torque y normal: producto cruz (vector)."}
+              {
+                "icon": "bolt",
+                "text": "Trabajo: producto punto (escalar)."
+              },
+              {
+                "icon": "sync",
+                "text": "Torque y normal: producto cruz (vector)."
+              }
             ]
           },
           "pdf-s5-tabla": {
             "type": "table",
             "title": "Selección de la operación vectorial",
-            "columns": ["Resultado buscado", "Operación", "Tipo", "Aplicación"],
+            "columns": [
+              "Resultado buscado",
+              "Operación",
+              "Tipo",
+              "Aplicación"
+            ],
             "rows": [
-              {"cells": ["Ángulo o trabajo", "Producto punto", "Escalar", "Trabajo $\\mathbf{F}\\cdot\\mathbf{d}$; alineación"]},
-              {"cells": ["Dirección perpendicular o área", "Producto cruz", "Vector / escalar", "Normal a un plano; torque $\\mathbf{r}\\times\\mathbf{F}$"]},
-              {"cells": ["Tamaño de una magnitud", "Norma", "Escalar", "Rapidez; intensidad de fuerza"]}
+              {
+                "cells": [
+                  "Ángulo o trabajo",
+                  "Producto punto",
+                  "Escalar",
+                  "Trabajo $\\mathbf{F}\\cdot\\mathbf{d}$; alineación"
+                ]
+              },
+              {
+                "cells": [
+                  "Dirección perpendicular o área",
+                  "Producto cruz",
+                  "Vector / escalar",
+                  "Normal a un plano; torque $\\mathbf{r}\\times\\mathbf{F}$"
+                ]
+              },
+              {
+                "cells": [
+                  "Tamaño de una magnitud",
+                  "Norma",
+                  "Escalar",
+                  "Rapidez; intensidad de fuerza"
+                ]
+              }
             ]
           },
           "pdf-s5-ejemplo": {
             "type": "example",
             "title": "Ejemplo 4.5 · Trabajo de una fuerza",
-            "context": ["Una fuerza $\\mathbf{F}=(6,2,3)$ N desplaza un cuerpo $\\mathbf{d}=(4,0,0)$ m. Calcular el trabajo y el ángulo."],
+            "context": [
+              "Una fuerza $\\mathbf{F}=(6,2,3)$ N desplaza un cuerpo $\\mathbf{d}=(4,0,0)$ m. Calcular el trabajo y el ángulo."
+            ],
             "formula": "W=\\mathbf{F}\\cdot\\mathbf{d}=24\\ \\text{J}",
             "solution": [
               "Trabajo: $W=\\mathbf{F}\\cdot\\mathbf{d}=24+0+0=24$ J.",
@@ -1375,12 +2542,36 @@
             "type": "exercise-set",
             "title": "Banco de ejercicios para trabajo autónomo",
             "items": [
-              {"prompt": "Para $\\mathbf{a}=(2,-1,2)$, calcular su magnitud y el vector unitario en su dirección.", "formula": "\\|\\mathbf{a}\\|=\\sqrt{2^2+(-1)^2+2^2}", "answer": "$\\|\\mathbf{a}\\|=3$; $\\hat{\\mathbf{a}}=\\tfrac{1}{3}(2,-1,2)$."},
-              {"prompt": "Hallar el ángulo entre $\\mathbf{u}=(1,1,0)$ y $\\mathbf{v}=(0,1,1)$.", "formula": "\\cos\\theta=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}", "answer": "$\\cos\\theta=\\tfrac{1}{2}$, $\\theta=60^\\circ$."},
-              {"prompt": "Determinar si $\\mathbf{p}=(3,-2,1)$ y $\\mathbf{q}=(2,3,0)$ son ortogonales.", "formula": "\\mathbf{p}\\cdot\\mathbf{q}", "answer": "$\\mathbf{p}\\cdot\\mathbf{q}=6-6+0=0$: sí, son ortogonales."},
-              {"prompt": "Proyectar $\\mathbf{u}=(5,2)$ sobre $\\mathbf{v}=(2,1)$.", "formula": "\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}\\mathbf{v}", "answer": "$\\mathbf{u}\\cdot\\mathbf{v}=12$, $\\|\\mathbf{v}\\|^2=5$; $\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\tfrac{12}{5}(2,1)$."},
-              {"prompt": "Calcular $\\mathbf{u}\\times\\mathbf{v}$ y el área del paralelogramo para $\\mathbf{u}=(2,1,0)$ y $\\mathbf{v}=(0,1,3)$.", "formula": "\\|\\mathbf{u}\\times\\mathbf{v}\\|", "answer": "$\\mathbf{u}\\times\\mathbf{v}=(3,-6,2)$; área $=\\sqrt{9+36+4}=7$."},
-              {"prompt": "Una fuerza $\\mathbf{F}=(0,10,0)$ N actúa en el extremo de un brazo $\\mathbf{r}=(2,0,0)$ m. Calcular el torque.", "formula": "\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}", "answer": "$\\boldsymbol{\\tau}=(0,0,20)$ N·m, eje z."}
+              {
+                "prompt": "Para $\\mathbf{a}=(2,-1,2)$, calcular su magnitud y el vector unitario en su dirección.",
+                "formula": "\\|\\mathbf{a}\\|=\\sqrt{2^2+(-1)^2+2^2}",
+                "answer": "$\\|\\mathbf{a}\\|=3$; $\\hat{\\mathbf{a}}=\\tfrac{1}{3}(2,-1,2)$."
+              },
+              {
+                "prompt": "Hallar el ángulo entre $\\mathbf{u}=(1,1,0)$ y $\\mathbf{v}=(0,1,1)$.",
+                "formula": "\\cos\\theta=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}",
+                "answer": "$\\cos\\theta=\\tfrac{1}{2}$, $\\theta=60^\\circ$."
+              },
+              {
+                "prompt": "Determinar si $\\mathbf{p}=(3,-2,1)$ y $\\mathbf{q}=(2,3,0)$ son ortogonales.",
+                "formula": "\\mathbf{p}\\cdot\\mathbf{q}",
+                "answer": "$\\mathbf{p}\\cdot\\mathbf{q}=6-6+0=0$: sí, son ortogonales."
+              },
+              {
+                "prompt": "Proyectar $\\mathbf{u}=(5,2)$ sobre $\\mathbf{v}=(2,1)$.",
+                "formula": "\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}\\mathbf{v}",
+                "answer": "$\\mathbf{u}\\cdot\\mathbf{v}=12$, $\\|\\mathbf{v}\\|^2=5$; $\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\tfrac{12}{5}(2,1)$."
+              },
+              {
+                "prompt": "Calcular $\\mathbf{u}\\times\\mathbf{v}$ y el área del paralelogramo para $\\mathbf{u}=(2,1,0)$ y $\\mathbf{v}=(0,1,3)$.",
+                "formula": "\\|\\mathbf{u}\\times\\mathbf{v}\\|",
+                "answer": "$\\mathbf{u}\\times\\mathbf{v}=(3,-6,2)$; área $=\\sqrt{9+36+4}=7$."
+              },
+              {
+                "prompt": "Una fuerza $\\mathbf{F}=(0,10,0)$ N actúa en el extremo de un brazo $\\mathbf{r}=(2,0,0)$ m. Calcular el torque.",
+                "formula": "\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}",
+                "answer": "$\\boldsymbol{\\tau}=(0,0,20)$ N·m, eje z."
+              }
             ]
           },
           "pdf-s5-referencias": {

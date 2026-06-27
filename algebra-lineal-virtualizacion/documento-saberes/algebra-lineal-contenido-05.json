@@ -156,7 +156,7 @@
         "componentOrder": [
           "s1-teoria-1", "s1-figura-recta", "s1-formula-formas", "s1-carrusel",
           "s1-teoria-2", "s1-flashcards", "s1-stepper-dospuntos",
-          "s1-teoria-3", "s1-acordion", "s1-stepper-pertenencia", "s1-quiz"
+          "s1-teoria-3", "s1-figura-posiciones", "s1-acordion", "s1-stepper-pertenencia", "s1-callout-saberes", "s1-quiz"
         ],
         "components": {
           "s1-teoria-1": {
@@ -269,6 +269,15 @@
             ],
             "closing": ["La clasificación definitiva se obtiene del sistema lineal, no del dibujo; eso se desarrolla en la Sección 3."]
           },
+          "s1-figura-posiciones": {
+            "type": "figure",
+            "title": "Posiciones relativas entre dos rectas en el espacio",
+            "assetId": "fig-5-1b-posiciones-rectas",
+            "src": "",
+            "alt": "Tres paneles que muestran dos rectas paralelas, dos rectas secantes que se cortan en un punto y dos rectas alabeadas que se cruzan a distinta altura, en ejes x, y, z.",
+            "caption": "Las tres posiciones relativas posibles entre dos rectas en $\\mathbb{R}^3$: paralelas, secantes y alabeadas.",
+            "prompt": "Crear una figura didáctica en español con tres paneles y ejes x, y, z en perspectiva 3D. Panel 1 (Paralelas): dos rectas con la misma dirección que nunca se tocan, con sus vectores directores proporcionales etiquetados d1 y d2=k·d1. Panel 2 (Secantes): dos rectas con direcciones distintas que se cruzan en un punto resaltado etiquetado como punto de corte. Panel 3 (Alabeadas): dos rectas a distinta altura que se cruzan visualmente sin tocarse, con una nota que indique que no comparten ningún punto. Estilo limpio, etiquetas legibles y un título corto sobre cada panel."
+          },
           "s1-acordion": {
             "type": "accordion",
             "title": "Matices y errores frecuentes con rectas",
@@ -311,6 +320,13 @@
               {"title": "Concluir y verificar", "body": "El valor $t=2$ es el mismo en las tres coordenadas, así que $P$ sí pertenece a la recta. Además, el director de $\\mathbf{s}$ es el doble del de $\\mathbf{r}$, luego ambas rectas son paralelas.", "formula": "P\\in\\mathbf{r}\\;(t=2);\\qquad \\mathbf{d}_{\\mathbf{s}}=2\\,\\mathbf{d}_{\\mathbf{r}}\\;\\Rightarrow\\;\\mathbf{r}\\parallel\\mathbf{s}", "final": true}
             ]
           },
+          "s1-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": ["El desarrollo ampliado de la recta en el espacio —punto base, vector director y conversión entre las formas vectorial, paramétrica y simétrica— está disponible en el Documento de Saberes (PDF) de la asignatura."]
+          },
           "s1-quiz": {
             "type": "quiz",
             "title": "Chequeo: identificar la recta",
@@ -340,7 +356,7 @@
         "componentOrder": [
           "s2-teoria-1", "s2-figura-plano", "s2-formula-plano", "s2-carrusel",
           "s2-teoria-2", "s2-stepper-trespuntos", "s2-flashcards",
-          "s2-teoria-3", "s2-formula-distancia", "s2-stepper-distancia", "s2-acordion", "s2-multiselect"
+          "s2-teoria-3", "s2-figura-posiciones-planos", "s2-formula-distancia", "s2-stepper-distancia", "s2-acordion", "s2-callout-saberes", "s2-multiselect"
         ],
         "components": {
           "s2-teoria-1": {
@@ -453,6 +469,15 @@
             ],
             "closing": ["La distancia de un punto a un plano, que verás a continuación, también se apoya en el vector normal."]
           },
+          "s2-figura-posiciones-planos": {
+            "type": "figure",
+            "title": "Posiciones relativas entre dos planos y el ángulo entre normales",
+            "assetId": "fig-5-2b-posiciones-planos",
+            "src": "",
+            "alt": "Dos paneles: a la izquierda dos planos paralelos con normales paralelos; a la derecha dos planos que se cortan en una recta, con el ángulo entre sus vectores normales señalado.",
+            "caption": "Izquierda: planos paralelos (normales proporcionales). Derecha: planos secantes que se cortan en una recta; el ángulo entre planos es el ángulo entre sus normales.",
+            "prompt": "Crear una figura didáctica en español con dos paneles y ejes x, y, z en perspectiva 3D. Panel izquierdo: dos planos semitransparentes paralelos, cada uno con su vector normal n1 y n2 dibujados paralelos entre sí, con una nota 'normales proporcionales ⇒ planos paralelos'. Panel derecho: dos planos semitransparentes que se intersecan formando una recta resaltada de intersección; dibujar los vectores normales n1 y n2 partiendo de un punto común y marcar el ángulo theta entre ellos con un arco, indicando que coincide con el ángulo entre los planos. Estilo limpio y etiquetas legibles."
+          },
           "s2-formula-distancia": {
             "type": "formula",
             "title": "Distancia de un punto a un plano",
@@ -521,6 +546,13 @@
               {"text": "Su vector normal es $\\mathbf{n}=(7,7,7)$.", "correct": false},
               {"text": "El plano $x+2y+z=7$ es paralelo a él.", "correct": false}
             ]
+          },
+          "s2-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": ["El desarrollo ampliado del plano —vector normal, ecuación general, posiciones relativas y distancia punto-plano— está disponible en el Documento de Saberes (PDF) de la asignatura."]
           }
         }
       },
@@ -537,7 +569,7 @@
         "componentOrder": [
           "s3-teoria-1", "s3-formula-sustitucion", "s3-stepper-plano-recta", "s3-carrusel",
           "s3-teoria-2", "s3-stepper-recta-recta", "s3-figura-intersecciones", "s3-flashcards",
-          "s3-teoria-3", "s3-chart", "s3-acordion", "s3-matching"
+          "s3-teoria-3", "s3-figura-clasificacion", "s3-tabla-clasificacion", "s3-acordion", "s3-callout-saberes", "s3-matching"
         ],
         "components": {
           "s3-teoria-1": {

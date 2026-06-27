@@ -149,11 +149,13 @@
           "s1-carrusel-tipos",
           "s1-flashcards-tipos",
           "s1-teoria-2",
+          "s1-figura-tipos",
           "s1-tabla-tipos",
           "s1-acordion-confusiones",
           "s1-teoria-3",
           "s1-stepper-lectura",
-          "s1-stepper-simetria"
+          "s1-stepper-simetria",
+          "s1-callout-saberes"
         ],
         "components": {
           "s1-teoria-1": {
@@ -310,6 +312,22 @@
               {"title": "Analizar $C$", "body": "En $C$ la entrada $c_{12}=4$ no coincide con $c_{21}=6$, así que $C\\neq C^{T}$ y $C$ no es simétrica.", "formula": "c_{12}=4\\neq 6=c_{21}", "final": false},
               {"title": "Conclusión", "body": "$B$ es simétrica porque coincide con su transpuesta; $C$ no lo es. La simetría se verifica comparando cada entrada con su espejo respecto a la diagonal principal.", "formula": "B=B^{T}\\ \\text{(simétrica)},\\quad C\\neq C^{T}\\ \\text{(no simétrica)}", "final": true}
             ]
+          },
+          "s1-figura-tipos": {
+            "type": "figure",
+            "title": "Patrón visual de los tipos especiales de matriz",
+            "assetId": "fig-2-1b-patron-tipos",
+            "src": "",
+            "alt": "Cuadrícula con seis matrices 3x3 que muestran, mediante celdas sombreadas, el patrón de ceros y entradas no nulas de las matrices diagonal, identidad, triangular superior, triangular inferior, simétrica y nula.",
+            "caption": "Cada panel resalta dónde caen las entradas no nulas: la diagonal y la identidad solo en $a_{ii}$, las triangulares a un lado de la diagonal, la simétrica en espejo y la nula totalmente vacía.",
+            "prompt": "Crear una figura didáctica en español con seis paneles, cada uno una cuadrícula 3x3 que representa un tipo de matriz mediante el patrón de celdas no nulas: (1) diagonal: solo las tres celdas a_11, a_22, a_33 sombreadas; (2) identidad: las mismas tres celdas con el valor 1; (3) triangular superior: la diagonal y las celdas por encima sombreadas, ceros debajo; (4) triangular inferior: diagonal y celdas por debajo sombreadas; (5) simétrica: celdas sombreadas en espejo respecto a la diagonal, con flechas que unen a_12 con a_21; (6) nula: todas las celdas vacías rotuladas 0. Titular cada panel con el nombre del tipo. Estilo limpio, una paleta sobria de dos colores para distinguir celda no nula de celda cero, etiquetas legibles. El propósito es que el estudiante reconozca cada tipo por su patrón de ceros."
+          },
+          "s1-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": ["El desarrollo ampliado de la matriz como estructura de datos y de los tipos especiales (diagonal, identidad, triangular, simétrica y nula) está en el Documento de Saberes (PDF) de la asignatura."]
           }
         }
       },
@@ -327,6 +345,7 @@
         ],
         "componentOrder": [
           "s2-teoria-1",
+          "s2-figura-suma-escalar",
           "s2-tabla-suma-producto",
           "s2-flashcards-operaciones",
           "s2-stepper-producto",
@@ -335,7 +354,8 @@
           "s2-carrusel-producto",
           "s2-stepper-noconmuta",
           "s2-teoria-3",
-          "s2-acordion-dimensiones"
+          "s2-acordion-dimensiones",
+          "s2-callout-saberes"
         ],
         "components": {
           "s2-teoria-1": {
@@ -498,6 +518,22 @@
                 ]
               }
             ]
+          },
+          "s2-figura-suma-escalar": {
+            "type": "figure",
+            "title": "Suma y producto por escalar entrada a entrada",
+            "assetId": "fig-2-3-suma-escalar",
+            "src": "",
+            "alt": "Dos matrices 2x2 del mismo orden alineadas posición por posición para sumarse, con una entrada resaltada donde se indica a_ij + b_ij; debajo, una matriz multiplicada por un escalar k que reescala cada celda como k por a_ij.",
+            "caption": "La suma alinea posiciones iguales y suma cada par $a_{ij}+b_{ij}$; el producto por escalar multiplica cada entrada por $k$ sin cambiar el orden de la matriz.",
+            "prompt": "Crear una figura didáctica en español en dos franjas. Franja superior (suma): dibujar dos matrices 2x2 A y B una al lado de otra con un signo + entre ellas y una matriz resultado a la derecha; resaltar con color la posición (1,2) en las tres y etiquetar la operación a_12 + b_12 que las une mediante flechas; un rótulo aclara 'mismo orden m x n'. Franja inferior (producto por escalar): una matriz 2x2 A multiplicada por un escalar k a la izquierda y la matriz resultado a la derecha, con cada celda etiquetada k·a_ij y una de ellas resaltada. Estilo limpio, colores contrastados, etiquetas legibles. El propósito es mostrar que ambas operaciones actúan posición por posición."
+          },
+          "s2-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": ["El desarrollo ampliado de la suma, el producto por escalar y el producto matricial fila por columna, con más ejemplos de compatibilidad de dimensiones, está en el Documento de Saberes (PDF) de la asignatura."]
           }
         }
       },
@@ -517,13 +553,16 @@
           "s3-teoria-1",
           "s3-acordion-propiedades",
           "s3-formula-transpuesta",
+          "s3-figura-transpuesta",
           "s3-carrusel-propiedades",
           "s3-stepper-transpuesta",
           "s3-teoria-2",
+          "s3-figura-consumo",
           "s3-chart-costos",
           "s3-flashcards-propiedades",
           "s3-teoria-3-transversal",
-          "s3-stepper-consumo"
+          "s3-stepper-consumo",
+          "s3-callout-saberes"
         ],
         "components": {
           "s3-teoria-1": {

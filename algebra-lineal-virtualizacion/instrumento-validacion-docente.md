@@ -94,20 +94,23 @@ Para cada tema, indique las actividades del estudiante (individuales y colaborat
 
 ### Material complementario propuesto — **requiere su aprobación**
 
-> Esta es la propuesta de material complementario (5 para 3 créditos). Revísela: apruebe, quite o ajuste cada
-> material y agregue los que considere. **No se incluirá** en los escenarios hasta que usted lo valide aquí.
-> Se incluirá lo propuesto **salvo lo que marque "Quitar"**.
+> Esta es la propuesta de material complementario (5 para 3 créditos). Revísela: apruebe, quite o ajuste
+> cada material y agregue los que considere. **No se incluirá** en los escenarios hasta que usted lo valide;
+> se incluirá lo propuesto **salvo lo que marque "Quitar"**.
 
-| # | Referencia (APA 7) | Tipo | Tema(s) | Justificación | ¿Aprobado? |
-|---|---|---|---|---|---|
-| M1 | Larson, R. (2010). *Fundamentos de álgebra lineal* (6.ª ed.). Cengage Learning. Cap. sistemas lineales y Gauss-Jordan. | Capítulo de libro base | Tema 1 (y transversal) | Fuente disciplinar primaria de la etapa fundacional. | [ ] Aprobar [ ] Quitar [ ] Ajustar |
-| M2 | Grossman, S. I. (2008). *Álgebra lineal*. McGraw-Hill. Cap. matrices y operaciones; determinantes e inversa. | Capítulos de libro base | Temas 2 y 3 | Álgebra matricial y determinantes con enfoque aplicado distinto. | [ ] Aprobar [ ] Quitar [ ] Ajustar |
-| M3 | Khan Academy. (s. f.). *Álgebra lineal* [recurso abierto]. https://es.khanacademy.org/math/linear-algebra | Recurso abierto (video + ejercicios) | Temas 1–4 (refuerzo) | Ejercitación autónoma y nivelación de la diagnóstica. *(Verificar enlace.)* | [ ] Aprobar [ ] Quitar [ ] Ajustar |
-| M4 | Anton, H., & Rorres, C. (2013). *Álgebra lineal con aplicaciones* (10.ª ed.). Limusa Wiley. Caps. vectores R²/R³, producto punto/cruz. | Libro complementario | Tema 4 | Interpretación geométrica y aplicaciones de vectores, transversal. *(Verificar edición.)* | [ ] Aprobar [ ] Quitar [ ] Ajustar |
-| M5 | Lay, D. C., Lay, S. R., & McDonald, J. J. (2016). *Álgebra lineal y sus aplicaciones* (5.ª ed.). Pearson. Caps. rectas/planos, transformaciones, aplicaciones. | Libro complementario | Tema 5 (integrador) | Transformaciones y aplicaciones; sustenta el OVA y RA3. *(Verificar edición.)* | [ ] Aprobar [ ] Quitar [ ] Ajustar |
-| (nuevo) | | | | | [ ] Agregar |
+| # | Referencia (APA 7) | Tipo | Idioma | Tema(s) | Justificación | ¿Aprobado? |
+|---|---|---|---|---|---|---|
+| M1 | Larson, R. (2010). *Fundamentos de álgebra lineal* (6.ª ed.). Cengage Learning. Cap. de sistemas lineales y método de Gauss-Jordan. | Capítulo de libro base | ES | T1 | Fuente disciplinar primaria para la etapa fundacional. | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| M2 | Grossman, S. I. (2008). *Álgebra lineal*. McGraw-Hill. Cap. de matrices y operaciones; cap. de determinantes e inversa. | Capítulos de libro base | ES | T2, T3 | Álgebra matricial y determinantes con enfoque aplicado distinto. | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| M3 | Khan Academy. (s. f.). *Álgebra lineal* [curso en línea, recursos abiertos en español]. https://es.khanacademy.org/math/linear-algebra | Recurso abierto (video + ejercicios) | ES | T1, T2, T3, T4 | Ejercitación autónoma y nivelación para el estudiante 100% virtual. | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| M4 | Anton, H., &amp; Rorres, C. (2014). *Elementary linear algebra: Applications version* (11th ed.). Wiley. Chs. on vectors in R² and R³, dot product and cross product. | Libro complementario | EN | T4 | Texto fuerte en interpretación geométrica y aplicaciones de vectores; edición original en inglés (internacionalización). | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| M5 | Lay, D. C., Lay, S. R., &amp; McDonald, J. J. (2016). *Linear algebra and its applications* (5th ed.). Pearson. Chs. on lines/planes, linear transformations and applications (cryptography, circuits). | Libro complementario | EN | T5 | Referencia clave en transformaciones y aplicaciones del álgebra lineal; edición original en inglés (internacionalización). Sustenta el OVA y la etapa integradora (RA3). | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| (nuevo) | | | | | | [ ] Agregar |
 
 **Cobertura por tema (propuesta):** T1 → M1, M3 · T2 → M2, M3 · T3 → M2, M3 · T4 → M3, M4 · T5 → M5.
+
+> **Bibliografía en inglés:** 40% (2/5) del material está en inglés. Por internacionalización
+> (syllabus UA), **al menos el 30% del total debe estar en inglés**. Cumple el mínimo.
 
 - Ajustes / material adicional que recomienda (fuentes reales en APA 7):
   > Respuesta:

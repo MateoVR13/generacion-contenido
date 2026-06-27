@@ -336,18 +336,20 @@
               {
                 "resourceName": "Larson (2010) — Fundamentos de álgebra lineal",
                 "tipo": "Capítulo de libro base",
+                "idioma": "es",
                 "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). Cengage Learning. Cap. de sistemas lineales y método de Gauss-Jordan.",
-                "justificacion": "Fuente disciplinar primaria para la etapa fundacional: definiciones, teoremas y ejercicios de sistemas y eliminación.",
+                "justificacion": "Fuente disciplinar primaria para la etapa fundacional.",
                 "href": "",
-                "todo": "Pegar URL/ubicación en biblioteca institucional."
+                "todo": "Pegar URL/ubicación en biblioteca."
               },
               {
                 "resourceName": "Khan Academy — Álgebra lineal (recurso abierto)",
                 "tipo": "Recurso abierto (video + ejercicios)",
+                "idioma": "es",
                 "apa": "Khan Academy. (s. f.). <em>Álgebra lineal</em> [curso en línea, recursos abiertos en español]. https://es.khanacademy.org/math/linear-algebra",
-                "justificacion": "Ejercitación autónoma adicional y explicaciones alternativas para el estudiante 100% virtual; apoyo de nivelación de la diagnóstica.",
+                "justificacion": "Ejercitación autónoma y nivelación para el estudiante 100% virtual.",
                 "href": "https://es.khanacademy.org/math/linear-algebra",
-                "todo": "Verificar enlace y disponibilidad de subtítulos."
+                "todo": "Verificar enlace y subtítulos."
               }
             ]
           },
@@ -452,18 +454,20 @@
               {
                 "resourceName": "Grossman (2008) — Álgebra lineal",
                 "tipo": "Capítulos de libro base",
+                "idioma": "es",
                 "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw-Hill. Cap. de matrices y operaciones; cap. de determinantes e inversa.",
-                "justificacion": "Cubre el álgebra matricial y los determinantes con un enfoque aplicado distinto al de Larson; da profundidad a las etapas 2 y 3.",
+                "justificacion": "Álgebra matricial y determinantes con enfoque aplicado distinto.",
                 "href": "",
-                "todo": "Pegar URL/ubicación en biblioteca institucional."
+                "todo": "Pegar URL/ubicación en biblioteca."
               },
               {
                 "resourceName": "Khan Academy — Álgebra lineal (recurso abierto)",
                 "tipo": "Recurso abierto (video + ejercicios)",
+                "idioma": "es",
                 "apa": "Khan Academy. (s. f.). <em>Álgebra lineal</em> [curso en línea, recursos abiertos en español]. https://es.khanacademy.org/math/linear-algebra",
-                "justificacion": "Ejercitación autónoma adicional y explicaciones alternativas para el estudiante 100% virtual; apoyo de nivelación de la diagnóstica.",
+                "justificacion": "Ejercitación autónoma y nivelación para el estudiante 100% virtual.",
                 "href": "https://es.khanacademy.org/math/linear-algebra",
-                "todo": "Verificar enlace y disponibilidad de subtítulos."
+                "todo": "Verificar enlace y subtítulos."
               }
             ]
           },
@@ -572,18 +576,20 @@
               {
                 "resourceName": "Grossman (2008) — Álgebra lineal",
                 "tipo": "Capítulos de libro base",
+                "idioma": "es",
                 "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw-Hill. Cap. de matrices y operaciones; cap. de determinantes e inversa.",
-                "justificacion": "Cubre el álgebra matricial y los determinantes con un enfoque aplicado distinto al de Larson; da profundidad a las etapas 2 y 3.",
+                "justificacion": "Álgebra matricial y determinantes con enfoque aplicado distinto.",
                 "href": "",
-                "todo": "Pegar URL/ubicación en biblioteca institucional."
+                "todo": "Pegar URL/ubicación en biblioteca."
               },
               {
                 "resourceName": "Khan Academy — Álgebra lineal (recurso abierto)",
                 "tipo": "Recurso abierto (video + ejercicios)",
+                "idioma": "es",
                 "apa": "Khan Academy. (s. f.). <em>Álgebra lineal</em> [curso en línea, recursos abiertos en español]. https://es.khanacademy.org/math/linear-algebra",
-                "justificacion": "Ejercitación autónoma adicional y explicaciones alternativas para el estudiante 100% virtual; apoyo de nivelación de la diagnóstica.",
+                "justificacion": "Ejercitación autónoma y nivelación para el estudiante 100% virtual.",
                 "href": "https://es.khanacademy.org/math/linear-algebra",
-                "todo": "Verificar enlace y disponibilidad de subtítulos."
+                "todo": "Verificar enlace y subtítulos."
               }
             ]
           },
@@ -693,18 +699,20 @@
               {
                 "resourceName": "Khan Academy — Álgebra lineal (recurso abierto)",
                 "tipo": "Recurso abierto (video + ejercicios)",
+                "idioma": "es",
                 "apa": "Khan Academy. (s. f.). <em>Álgebra lineal</em> [curso en línea, recursos abiertos en español]. https://es.khanacademy.org/math/linear-algebra",
-                "justificacion": "Ejercitación autónoma adicional y explicaciones alternativas para el estudiante 100% virtual; apoyo de nivelación de la diagnóstica.",
+                "justificacion": "Ejercitación autónoma y nivelación para el estudiante 100% virtual.",
                 "href": "https://es.khanacademy.org/math/linear-algebra",
-                "todo": "Verificar enlace y disponibilidad de subtítulos."
+                "todo": "Verificar enlace y subtítulos."
               },
               {
                 "resourceName": "Anton & Rorres (2013) — Álgebra lineal con aplicaciones",
                 "tipo": "Libro complementario",
-                "apa": "Anton, H., &amp; Rorres, C. (2013). <em>Álgebra lineal con aplicaciones</em> (10.ª ed., trad.). Limusa Wiley. Caps. de vectores en R² y R³, producto punto y producto cruz.",
-                "justificacion": "Texto fuerte en interpretación geométrica y aplicaciones de vectores (fuerzas, geometría), pertinente al enfoque transversal a varias ingenierías.",
+                "idioma": "en",
+                "apa": "Anton, H., &amp; Rorres, C. (2014). <em>Elementary linear algebra: Applications version</em> (11th ed.). Wiley. Chs. on vectors in R² and R³, dot product and cross product.",
+                "justificacion": "Texto fuerte en interpretación geométrica y aplicaciones de vectores; edición original en inglés (internacionalización).",
                 "href": "",
-                "todo": "Verificar edición/año disponible en biblioteca."
+                "todo": "Verificar edición/acceso en biblioteca o base de datos."
               }
             ]
           },
@@ -815,10 +823,11 @@
               {
                 "resourceName": "Lay, Lay & McDonald (2016) — Álgebra lineal y sus aplicaciones",
                 "tipo": "Libro complementario",
-                "apa": "Lay, D. C., Lay, S. R., &amp; McDonald, J. J. (2016). <em>Álgebra lineal y sus aplicaciones</em> (5.ª ed., trad.). Pearson. Caps. de rectas/planos, transformaciones lineales y aplicaciones (criptografía, circuitos).",
-                "justificacion": "Referencia clave en transformaciones y aplicaciones del álgebra lineal; sustenta el OVA y la etapa integradora (RA3).",
+                "idioma": "en",
+                "apa": "Lay, D. C., Lay, S. R., &amp; McDonald, J. J. (2016). <em>Linear algebra and its applications</em> (5th ed.). Pearson. Chs. on lines/planes, linear transformations and applications (cryptography, circuits).",
+                "justificacion": "Referencia clave en transformaciones y aplicaciones del álgebra lineal; edición original en inglés (internacionalización). Sustenta el OVA y la etapa integradora (RA3).",
                 "href": "",
-                "todo": "Verificar edición/año disponible en biblioteca."
+                "todo": "Verificar edición/acceso en biblioteca o base de datos."
               }
             ]
           },

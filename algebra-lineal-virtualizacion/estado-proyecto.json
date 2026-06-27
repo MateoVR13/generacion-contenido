@@ -314,7 +314,8 @@
       "justificacion": "Fuente disciplinar primaria para la etapa fundacional.",
       "href": "",
       "todo": "Pegar URL/ubicación en biblioteca.",
-      "estado": "aprobado"
+      "estado": "aprobado",
+      "idioma": "es"
     },
     {
       "id": "M2",
@@ -327,7 +328,8 @@
       "justificacion": "Álgebra matricial y determinantes con enfoque aplicado distinto.",
       "href": "",
       "todo": "Pegar URL/ubicación en biblioteca.",
-      "estado": "aprobado"
+      "estado": "aprobado",
+      "idioma": "es"
     },
     {
       "id": "M3",
@@ -342,31 +344,34 @@
       "justificacion": "Ejercitación autónoma y nivelación para el estudiante 100% virtual.",
       "href": "https://es.khanacademy.org/math/linear-algebra",
       "todo": "Verificar enlace y subtítulos.",
-      "estado": "aprobado"
+      "estado": "aprobado",
+      "idioma": "es"
     },
     {
       "id": "M4",
-      "apa": "Anton, H., &amp; Rorres, C. (2013). <em>Álgebra lineal con aplicaciones</em> (10.ª ed., trad.). Limusa Wiley. Caps. de vectores en R² y R³, producto punto y producto cruz.",
+      "apa": "Anton, H., &amp; Rorres, C. (2014). <em>Elementary linear algebra: Applications version</em> (11th ed.). Wiley. Chs. on vectors in R² and R³, dot product and cross product.",
       "tipo": "Libro complementario",
       "temas": [
         4
       ],
-      "justificacion": "Interpretación geométrica y aplicaciones de vectores, transversal a ingenierías.",
+      "justificacion": "Texto fuerte en interpretación geométrica y aplicaciones de vectores; edición original en inglés (internacionalización).",
       "href": "",
-      "todo": "Verificar edición/año en biblioteca.",
-      "estado": "aprobado"
+      "todo": "Verificar edición/acceso en biblioteca o base de datos.",
+      "estado": "aprobado",
+      "idioma": "en"
     },
     {
       "id": "M5",
-      "apa": "Lay, D. C., Lay, S. R., &amp; McDonald, J. J. (2016). <em>Álgebra lineal y sus aplicaciones</em> (5.ª ed., trad.). Pearson. Caps. de rectas/planos, transformaciones y aplicaciones (criptografía, circuitos).",
+      "apa": "Lay, D. C., Lay, S. R., &amp; McDonald, J. J. (2016). <em>Linear algebra and its applications</em> (5th ed.). Pearson. Chs. on lines/planes, linear transformations and applications (cryptography, circuits).",
       "tipo": "Libro complementario",
       "temas": [
         5
       ],
-      "justificacion": "Transformaciones y aplicaciones; sustenta el OVA y la etapa integradora (RA3).",
+      "justificacion": "Referencia clave en transformaciones y aplicaciones del álgebra lineal; edición original en inglés (internacionalización). Sustenta el OVA y la etapa integradora (RA3).",
       "href": "",
-      "todo": "Verificar edición/año en biblioteca.",
-      "estado": "aprobado"
+      "todo": "Verificar edición/acceso en biblioteca o base de datos.",
+      "estado": "aprobado",
+      "idioma": "en"
     }
   ],
   "coberturaPorTema": {
