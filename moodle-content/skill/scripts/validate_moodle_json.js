@@ -66,6 +66,7 @@ const COMPONENTS_BY_PAGE = {
     "moment-intro",
     "roadmap",
     "scorm-link",
+    "workshop",
     "practice-link",
     "complementary",
     "footer"

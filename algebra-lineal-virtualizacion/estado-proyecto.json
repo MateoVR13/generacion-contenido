@@ -144,7 +144,9 @@
       "banco": 15,
       "tipo": "revisión automática, conocimientos previos (operaciones algebraicas, ecuaciones 2x2, geometría básica)",
       "retroalimentacion": "por pregunta",
-      "insumo": "Balance inicial"
+      "insumo": "Balance inicial",
+      "estado": "aprobado",
+      "archivo": "evaluacion/diagnostica-algebra-lineal.json"
     },
     "formativas": [
       {
@@ -182,6 +184,38 @@
       "autoevaluación",
       "coevaluación",
       "heteroevaluación"
+    ],
+    "talleresPorTema": [
+      {
+        "tema": 1,
+        "enunciado": "Taller: modelar y resolver un sistema de un caso de ingeniería",
+        "ra": "RA1,RA2",
+        "estado": "aprobado"
+      },
+      {
+        "tema": 2,
+        "enunciado": "Taller: operaciones matriciales aplicadas",
+        "ra": "RA1",
+        "estado": "aprobado"
+      },
+      {
+        "tema": 3,
+        "enunciado": "Taller: resolver sistema por Cramer e inversa; comparar métodos",
+        "ra": "RA2",
+        "estado": "aprobado"
+      },
+      {
+        "tema": 4,
+        "enunciado": "Taller: vectores aplicados (fuerzas, geometría)",
+        "ra": "RA1,RA2",
+        "estado": "aprobado"
+      },
+      {
+        "tema": 5,
+        "enunciado": "Taller: hallar ecuaciones de recta y plano, gráfica, y puntos de intersección entre planos y rectas, y entre rectas y rectas",
+        "ra": "RA1,RA2,RA3",
+        "estado": "aprobado"
+      }
     ]
   },
   "brechas": [
@@ -268,5 +302,92 @@
       "promptFile": "fase-6-prompts/03-ova-interactivo.md"
     }
   ],
-  "pipeline2Completo": true
+  "pipeline2Completo": true,
+  "materialComplementario": [
+    {
+      "id": "M1",
+      "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). Cengage Learning. Cap. de sistemas lineales y método de Gauss-Jordan.",
+      "tipo": "Capítulo de libro base",
+      "temas": [
+        1
+      ],
+      "justificacion": "Fuente disciplinar primaria para la etapa fundacional.",
+      "href": "",
+      "todo": "Pegar URL/ubicación en biblioteca.",
+      "estado": "aprobado"
+    },
+    {
+      "id": "M2",
+      "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw-Hill. Cap. de matrices y operaciones; cap. de determinantes e inversa.",
+      "tipo": "Capítulos de libro base",
+      "temas": [
+        2,
+        3
+      ],
+      "justificacion": "Álgebra matricial y determinantes con enfoque aplicado distinto.",
+      "href": "",
+      "todo": "Pegar URL/ubicación en biblioteca.",
+      "estado": "aprobado"
+    },
+    {
+      "id": "M3",
+      "apa": "Khan Academy. (s. f.). <em>Álgebra lineal</em> [curso en línea, recursos abiertos en español]. https://es.khanacademy.org/math/linear-algebra",
+      "tipo": "Recurso abierto (video + ejercicios)",
+      "temas": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "justificacion": "Ejercitación autónoma y nivelación para el estudiante 100% virtual.",
+      "href": "https://es.khanacademy.org/math/linear-algebra",
+      "todo": "Verificar enlace y subtítulos.",
+      "estado": "aprobado"
+    },
+    {
+      "id": "M4",
+      "apa": "Anton, H., &amp; Rorres, C. (2013). <em>Álgebra lineal con aplicaciones</em> (10.ª ed., trad.). Limusa Wiley. Caps. de vectores en R² y R³, producto punto y producto cruz.",
+      "tipo": "Libro complementario",
+      "temas": [
+        4
+      ],
+      "justificacion": "Interpretación geométrica y aplicaciones de vectores, transversal a ingenierías.",
+      "href": "",
+      "todo": "Verificar edición/año en biblioteca.",
+      "estado": "aprobado"
+    },
+    {
+      "id": "M5",
+      "apa": "Lay, D. C., Lay, S. R., &amp; McDonald, J. J. (2016). <em>Álgebra lineal y sus aplicaciones</em> (5.ª ed., trad.). Pearson. Caps. de rectas/planos, transformaciones y aplicaciones (criptografía, circuitos).",
+      "tipo": "Libro complementario",
+      "temas": [
+        5
+      ],
+      "justificacion": "Transformaciones y aplicaciones; sustenta el OVA y la etapa integradora (RA3).",
+      "href": "",
+      "todo": "Verificar edición/año en biblioteca.",
+      "estado": "aprobado"
+    }
+  ],
+  "coberturaPorTema": {
+    "1": [
+      "M1",
+      "M3"
+    ],
+    "2": [
+      "M2",
+      "M3"
+    ],
+    "3": [
+      "M2",
+      "M3"
+    ],
+    "4": [
+      "M3",
+      "M4"
+    ],
+    "5": [
+      "M5"
+    ]
+  }
 }

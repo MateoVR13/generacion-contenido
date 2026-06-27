@@ -46,6 +46,7 @@ description: Generate validated `subject`-based JSON packages for virtual asigna
 ## Non-Negotiable Content Rules
 
 - Use syllabus learning outcomes as the backbone for sections, activities, exercises, and evaluation.
+- **Resultados de aprendizaje en PRIMERA PERSONA del singular.** Redacta y conserva todo RA conjugado en primera persona del presente ("Modelo...", "Resuelvo...", "Opero...", "Aplico...", "Represento...", "Valoro...", "Evalúo...", "Desarrollo..."), nunca en infinitivo ("Modelar/Resolver") ni en tercera persona ("Modela/Resuelve"). Conserva el verbo del RA del syllabus; solo conjúgalo a primera persona si viniera en otra forma. Aplica en `subject.syllabus.learningOutcomes`, en cualquier texto que enuncie el RA y en las tablas de diseño.
 - Every major component should declare or clearly evidence the RA/learning outcome it supports.
 - Design SCORM as an active Moodle learning experience, not as a file repository.
 - Treat every asignatura as 100% virtual and generated as four content JSON files, one per Aprendizaje Basado en Retos learning moment. Do not generate a single all-course JSON for a new asignatura.

@@ -19,8 +19,8 @@
         "tema": "01 de 05 — Sistemas de ecuaciones lineales y método de Gauss-Jordan"
       },
       "learningOutcomes": [
-        "RA1: Modela situaciones de las ingenierías como sistemas de ecuaciones lineales y los representa en forma escalar y matricial.",
-        "RA2: Resuelve sistemas de ecuaciones lineales con el método de Gauss-Jordan e interpreta el tipo de solución (única, infinita o inexistente) según el rango."
+        "RA1: Modelo situaciones de las ingenierías como sistemas de ecuaciones lineales y los represento en forma escalar y matricial.",
+        "RA2: Resuelvo sistemas de ecuaciones lineales con el método de Gauss-Jordan e interpreto el tipo de solución (única, infinita o inexistente) según el rango."
       ],
       "priorKnowledge": [
         "Operaciones con números reales y fracciones.",

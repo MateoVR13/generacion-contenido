@@ -1,0 +1,4 @@
+interface:
+  display_name: "Selección de metodología (Paso 0 · UA)"
+  short_description: "Recomienda la metodología de aprendizaje óptima desde el syllabus"
+  default_prompt: "Use $seleccion-metodologia-ua as Step 0 of the Universidad de América virtualization process. Acting as the Adecuador pedagógico (PL-VIR-001), analyze the syllabus and recommend the most suitable learning methodology among the five official ones (AG, ABPr, ABI, ABR, ABC), with a syllabus-grounded justification, a comparison of all five, and a teacher validation checkbox. Output a recommendation document that precedes the Pipeline 1 instrument and routes to the corresponding virtualizacion-<methodology> skill. Recommend only; the teacher validates."

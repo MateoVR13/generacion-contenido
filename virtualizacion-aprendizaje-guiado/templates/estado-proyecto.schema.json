@@ -53,6 +53,24 @@
     },
     "recursosSimulacion": { "type": "array", "items": { "type": "string" }, "description": "si la asignatura es práctica" },
     "recursos": { "type": "array", "items": { "type": "object" } },
+    "materialComplementario": {
+      "type": "array",
+      "description": "Material complementario PROPUESTO en Fase 2, revisado/aprobado por el profesor en el instrumento, e incluido en los escenarios en Fase 6/7. La cantidad respeta la cuota por créditos (3/5/7).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "M1, M2, …" },
+          "apa": { "type": "string", "description": "Referencia APA 7 (rich, <em> para títulos). No inventar fuentes." },
+          "tipo": { "type": "string", "description": "Capítulo de libro base, libro complementario, recurso abierto, etc." },
+          "temas": { "type": "array", "items": { "type": "integer" }, "description": "Tema(s) que cubre este material." },
+          "justificacion": { "type": "string" },
+          "href": { "type": "string" },
+          "todo": { "type": "string", "description": "verificar edición/URL si no estaba en el syllabus" },
+          "estado": { "type": "string", "enum": ["propuesto", "aprobado", "rechazado", "ajustado"], "description": "propuesto (Fase 2) → aprobado/rechazado/ajustado (tras instrumento docente). Solo lo no rechazado entra en los escenarios." }
+        }
+      }
+    },
+    "coberturaPorTema": { "type": "object", "description": "{ '1': ['M1','M3'], '2': ['M2','M3'], ... } qué materiales cubren cada tema." },
     "feedbackDocente": { "type": "object", "description": "respuestas del instrumento validado" },
     "brechas": { "type": "array", "items": { "type": "object", "properties": { "tema": { "type": "string" }, "descripcion": { "type": "string" }, "estado": { "type": "string" } } } },
     "artefactos": { "type": "array", "items": { "type": "string" }, "description": "rutas de fase-N-*.md generados" }

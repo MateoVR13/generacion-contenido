@@ -60,6 +60,10 @@ F10 Seguimiento y mejora continua.
 - Roles: programa académico, gestor de contenido, adecuador pedagógico, diseñador gráfico e-learning,
   administrador LMS, tutor, consejero, Coordinación de Virtualidad, Dirección de Tecnología/Soporte MARI.
 
+## Resultados de aprendizaje (redacción)
+
+Todo RA va en **primera persona del singular, presente** ("Modelo...", "Resuelvo...", "Opero...", "Aplico...", "Represento...", "Valoro...", "Evalúo...", "Desarrollo..."), nunca en infinitivo ni en tercera persona. Conserva el verbo del RA del syllabus y solo conjúgalo a primera persona si viniera en otra forma. Aplica en el instrumento docente, en la tabla de diseño AG, en `subject.syllabus.learningOutcomes` de los JSON y en el JSON de Moodle (componente learning-outcomes).
+
 ## Regla de oro
 
 No inventar RA, competencias, criterios de evaluación, saberes, objetivos, políticas institucionales ni

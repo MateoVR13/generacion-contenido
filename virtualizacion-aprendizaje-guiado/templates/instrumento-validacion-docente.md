@@ -48,7 +48,7 @@
 - Ajustes a propósitos o preguntas orientadoras:
   > Respuesta:
 
-## 4. Actividades del estudiante por tema
+## 4. Actividades y talleres del estudiante por tema
 
 Para cada tema, indique las actividades que debe realizar el estudiante (individuales y colaborativas):
 
@@ -57,7 +57,17 @@ Para cada tema, indique las actividades que debe realizar el estudiante (individ
 | 1 | {{ACT_1}} | [ ] Sí [ ] Cambiar | |
 | … | … | … | |
 
-> Observaciones generales sobre actividades:
+### Talleres por escenario — **requiere su aprobación**
+
+> Taller propuesto por cada tema/escenario. Apruebe, quite o ajuste cada uno. El taller **no se incluye** en
+> el escenario hasta que usted lo valide; se incluye **salvo lo que marque "Quitar"**.
+
+| Tema | Taller propuesto (enunciado) | Evidencia esperada | RA / Criterio | ¿Aprobado? |
+|---|---|---|---|---|
+| 1 | {{TALLER_1}} | {{TALLER_1_EVID}} | {{TALLER_1_RA}} | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| … | … | … | … | … |
+
+> Observaciones generales sobre actividades y talleres:
 
 ## 5. Recursos didácticos y material complementario
 
@@ -66,7 +76,24 @@ Para cada tema, indique las actividades que debe realizar el estudiante (individ
 
 - Recursos didácticos sugeridos (infografía, video, podcast, mapa conceptual/mental, OVA, juego…) y tema:
   > Respuesta:
-- Bibliografía / material complementario recomendado (fuentes reales, formato APA):
+
+### Material complementario propuesto — **requiere su aprobación**
+
+> Esta es la propuesta de material complementario ({{N_MATERIAL}} para {{CREDITOS}} créditos). Revísela:
+> apruebe, quite o ajuste cada material y **agregue** los que considere. El material **NO se incluirá** en
+> los escenarios de aprendizaje hasta que usted lo valide aquí. Se incluirá lo propuesto **salvo lo que
+> marque "Quitar"**.
+
+| # | Referencia (APA 7) | Tipo | Tema(s) | Justificación | ¿Aprobado? |
+|---|---|---|---|---|---|
+| M1 | {{MAT_1_APA}} | {{MAT_1_TIPO}} | {{MAT_1_TEMAS}} | {{MAT_1_JUST}} | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| M2 | {{MAT_2_APA}} | {{MAT_2_TIPO}} | {{MAT_2_TEMAS}} | {{MAT_2_JUST}} | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| … | … | … | … | … | … |
+| (nuevo) | | | | | [ ] Agregar |
+
+**Cobertura por tema (propuesta):** {{COBERTURA_POR_TEMA}}
+
+- Ajustes / material adicional que recomienda (fuentes reales en APA 7):
   > Respuesta:
 
 ## 6. Evaluación (valide la propuesta)
@@ -79,6 +106,22 @@ Para cada tema, indique las actividades que debe realizar el estudiante (individ
 | Foro debate / Wiki / Coevaluación | {{COMPLEMENTARIOS}} | [ ] Sí [ ] Ajustar |
 
 > Ajustes a evidencias, rúbricas o ponderaciones:
+
+### Banco de preguntas diagnósticas — **requiere su aprobación**
+
+> Banco propuesto de **15 preguntas de selección múltiple** sobre conocimientos previos/prerrequisitos. El
+> estudiante contestará 10 (aleatorias). Revise cada pregunta: apruebe, quite o ajuste, y agregue las que
+> considere. Cada pregunta lleva **retroalimentación positiva** (al acertar) y **negativa** (al fallar:
+> concepto a reforzar + referencia). Ninguna pregunta se publica sin su validación.
+
+| # | Prerrequisito | Pregunta (selección múltiple) | Opciones | Resp. correcta | Retro. positiva | Retro. negativa | ¿Aprobado? |
+|---|---|---|---|---|---|---|---|
+| 1 | {{D1_PRE}} | {{D1_ENUN}} | A) {{D1_A}} · B) {{D1_B}} · C) {{D1_C}} · D) {{D1_D}} | {{D1_OK}} | {{D1_RETRO_POS}} | {{D1_RETRO_NEG}} | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| 2 | … | … | … | … | … | … | [ ] Aprobar [ ] Quitar [ ] Ajustar |
+| … hasta 15 … | | | | | | | |
+| (nueva) | | | | | | | [ ] Agregar |
+
+> Ajustes al banco diagnóstico:
 
 ## 7. Sugerencias y feedback del docente
 

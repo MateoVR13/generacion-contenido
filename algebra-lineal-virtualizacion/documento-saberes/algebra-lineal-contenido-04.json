@@ -19,8 +19,8 @@
         "tema": "Vectores en el plano y el espacio"
       },
       "learningOutcomes": [
-        "RA1: Modelar situaciones de ingeniería con objetos del álgebra lineal (vectores y sus operaciones) traduciendo magnitudes físicas y geométricas a la forma vectorial adecuada.",
-        "RA2: Aplicar procedimientos del álgebra lineal (magnitud, producto punto y producto cruz) para resolver y verificar problemas de ángulo, proyección, ortogonalidad, área y vector normal."
+        "RA1: Modelo situaciones de ingeniería con objetos del álgebra lineal (vectores y sus operaciones) traduciendo magnitudes físicas y geométricas a la forma vectorial adecuada.",
+        "RA2: Aplico procedimientos del álgebra lineal (magnitud, producto punto y producto cruz) para resolver y verificar problemas de ángulo, proyección, ortogonalidad, área y vector normal."
       ],
       "priorKnowledge": [
         "Operaciones aritméticas con números reales y radicales.",

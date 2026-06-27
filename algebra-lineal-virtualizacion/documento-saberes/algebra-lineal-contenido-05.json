@@ -20,9 +20,9 @@
         "nivel": "Pregrado, segundo semestre, fundamentación matemática"
       },
       "learningOutcomes": [
-        "RA1: Representar y operar objetos del álgebra lineal (vectores, rectas y planos) en $\\mathbb{R}^2$ y $\\mathbb{R}^3$ para modelar situaciones de ingeniería.",
-        "RA2: Resolver sistemas lineales derivados de problemas geométricos (intersecciones) e interpretar el tipo de solución.",
-        "RA3: Valorar la pertinencia de las aplicaciones del álgebra lineal (rotaciones, criptografía, circuitos) en distintos campos de la ingeniería, integrando los saberes de los temas previos."
+        "RA1: Represento y opero objetos del álgebra lineal (vectores, rectas y planos) en $\\mathbb{R}^2$ y $\\mathbb{R}^3$ para modelar situaciones de ingeniería.",
+        "RA2: Resuelvo sistemas lineales derivados de problemas geométricos (intersecciones) e interpreto el tipo de solución.",
+        "RA3: Valoro la pertinencia de las aplicaciones del álgebra lineal (rotaciones, criptografía, circuitos) en distintos campos de la ingeniería, integrando los saberes de los temas previos."
       ],
       "priorKnowledge": [
         "Operaciones con vectores en $\\mathbb{R}^2$ y $\\mathbb{R}^3$: suma, escalar y magnitud (Tema 4).",
@@ -882,7 +882,7 @@
                 "icon": "electrical_services",
                 "title": "Circuitos: por qué Kirchhoff produce sistemas lineales",
                 "body": [
-                  "Las leyes de Kirchhoff son lineales por naturaleza: la suma de corrientes en un nodo es cero y la suma de caídas de voltaje en una malla es cero. Al escribir estas relaciones en términos de las corrientes desconocidas se obtiene un sistema de ecuaciones lineales, exactamente del tipo que se resuelve con los métodos de los temas anteriores.",
+                  "Las leyes de Kirchhoff son lineales por naturaleza: en cada nodo las corrientes entrantes y salientes deben equilibrarse, mientras que a lo largo de cualquier malla cerrada las caídas de voltaje se compensan hasta anularse en total. Al escribir estas relaciones en términos de las corrientes desconocidas se obtiene un sistema de ecuaciones lineales, exactamente del tipo que se resuelve con los métodos de los temas anteriores.",
                   "En ingeniería eléctrica y de energías esto es fundamental: analizar una red consiste en plantear y resolver ese sistema. Un determinante no nulo de la matriz de coeficientes garantiza que la red tiene una única solución de corrientes; un determinante nulo señala una red mal planteada o con ecuaciones dependientes. Así, el álgebra lineal no solo resuelve el circuito, también diagnostica si está bien especificado."
                 ]
               }

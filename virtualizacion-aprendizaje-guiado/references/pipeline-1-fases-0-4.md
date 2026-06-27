@@ -29,18 +29,39 @@ Diseño inverso: RA → evidencias de evaluación → metodología → actividad
   **Proponer el N de temas AG** (derivado de RA/saberes/unidades) con su tabla de diseño (Tema | RA |
   propósito por etapa | preguntas orientadoras). Definir ruta de navegación, actividades
   sincrónicas/asincrónicas, distribución de horas, documento y recursos proyectados, secuencia evaluativa.
+- **PROPONER EL MATERIAL COMPLEMENTARIO** (cantidad por créditos: 3/5/7) como una **matriz revisable**:
+  cada material con `id` (M1, M2…), referencia **APA** (partiendo de la bibliografía del syllabus; marcar
+  como brecha/`todo` lo que no esté en el syllabus, **sin inventar fuentes**), `tipo` (capítulo de libro
+  base, libro complementario, recurso abierto, etc.), `tema(s) asociado(s)` y `justificacion`. Define la
+  **cobertura por tema** (qué materiales cubren cada tema). Esta propuesta va al instrumento docente para su
+  **revisión y aprobación** (no se incluye en los escenarios hasta que el profesor la valide).
 - **Entregables (`fase-2-planeacion-didactica.md`):** configuración didáctica; justificación AG; RA eje; ruta
-  del estudiante; tabla de N temas AG (PROPUESTA, a validar); distribución de horas; recursos proyectados.
+  del estudiante; tabla de N temas AG (PROPUESTA, a validar); distribución de horas; recursos proyectados;
+  **matriz de material complementario propuesto + cobertura por tema (PROPUESTA, a validar)**.
 - **Estado:** `nTemasPropuesto`, `temas[]{titulo, ra, propositoEtapa, preguntasOrientadoras[]}`,
-  `rutaNavegacion`, `recursosProyectados`.
+  `rutaNavegacion`, `recursosProyectados`,
+  `materialComplementario[]{id, apa, tipo, temas[], justificacion, estado:"propuesto", href, todo}`,
+  `coberturaPorTema{temaN:[ids]}`.
 
 ## Fase 3 — Diseño de evaluación
 - **Hacer:** estrategia evaluativa alineada al RA y AG, cualitativa (`lineamientos-ua.md`). Mapa de
-  evaluación; diagnóstica (10/15); formativas de seguimiento; sumativa integradora (última semana); rúbricas
-  analítica/holística; foro debate, wiki, coevaluación-taller. Ponderación como brecha+propuesta si falta.
-- **Entregables (`fase-3-diseno-evaluacion.md`):** mapa general de evaluación; diagnóstica; formativas;
-  sumativa; rúbricas; instrumentos complementarios; momentos inicial/avance/final; auto/co/hetero.
-- **Estado:** `evaluacion{diagnostica, formativas[], sumativa, rubricas[], momentos[]}`.
+  evaluación; diagnóstica (10/15); formativas de seguimiento (**taller por escenario/tema**); sumativa
+  integradora (última semana); rúbricas analítica/holística; foro debate, wiki, coevaluación-taller.
+  Ponderación como brecha+propuesta si falta.
+- **DIAGNÓSTICA — REDACTAR el banco propuesto (va al instrumento).** Genera ya en el Pipeline 1 las
+  **15 preguntas** de prerrequisitos (de los "conocimientos/RA previos" del syllabus): enunciado, 4 opciones,
+  respuesta correcta y retroalimentación por pregunta. Se entregan EN el instrumento (o como anexo adjunto)
+  para que el docente las **apruebe/ajuste/quite**. Estado inicial `"propuesto"`. NO se publica nada sin
+  revisión docente. Archivo propuesto: `evaluacion/diagnostica-<slug>.json` (con `estado:"propuesto"`).
+- **TALLERES por escenario — REDACTAR el propuesto por tema (va al instrumento).** Para cada tema, propón el
+  taller (enunciado, evidencia, RA, criterio, instrucciones) en la tabla de la sección 4; el docente lo
+  valida. Estado inicial `"propuesto"`.
+- **Entregables (`fase-3-diseno-evaluacion.md`):** mapa general de evaluación; **banco diagnóstico propuesto
+  (15 preguntas)**; **talleres por escenario propuestos**; formativas; sumativa; rúbricas; instrumentos
+  complementarios; momentos inicial/avance/final; auto/co/hetero.
+- **Estado:** `evaluacion{diagnostica{contestadas:10, banco:15, archivo, estado:"propuesto"},
+  formativas[], talleresPorTema[]{tema, enunciado, evidencia, ra, estado:"propuesto"}, sumativa,
+  rubricas[], momentos[]}`.
 
 ## Fase 4 — Validación académica → INSTRUMENTO DOCENTE
 - **Hacer:** consolidar F0–F4 en el **instrumento de validación docente** (ver `instrumento-docente.md` y la

@@ -16,7 +16,7 @@ trabajo es orientar, contextualizar y enlazar.
 | Página | Componentes (orden típico) |
 |---|---|
 | `welcome` | `hero` → `learning-outcomes` → `activities` → `roadmap` → `course-glance` → `resources` → `footer` |
-| `moment` | `moment-banner` → `moment-intro` → `roadmap`(opc) → `scorm-link` → `practice-link` → `complementary` → `footer` |
+| `moment` | `moment-banner` → `moment-intro` → `roadmap`(opc) → `scorm-link` → `workshop` → `practice-link`(opc) → `complementary` → `footer` |
 | `closing` | `closing-hero` → `summary` → `next-steps` → `final-evaluation`(opc) → `footer` |
 
 Reutilizables entre páginas: `roadmap`, `footer`, y los banners CTA (`scorm-link`,

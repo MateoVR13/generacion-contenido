@@ -32,14 +32,40 @@ feedback. A partir de aquí todo se genera con los valores VALIDADOS.
   (unicidad) + parseabilidad + estructura. Corregir antes de cerrar.
 - **Estado:** `documentoSaberes{archivos[], paginasPorTema{}}`.
 
+### Fase 5b — Evaluaciones APROBADAS (banco diagnóstico + talleres por escenario)
+El banco diagnóstico y los talleres se **redactaron y propusieron en el Pipeline 1** (van en el instrumento).
+El Pipeline 2 **NO los crea de cero**: toma los **aprobados/ajustados por el profesor** y los finaliza:
+- **Banco diagnóstico (nivel asignatura):** parte de `evaluacion/diagnostica-<slug>.json` (propuesto en P1).
+  Aplica los "Ajustar" del docente, **descarta los marcados "Quitar"**, agrega los que el profesor añadió.
+  Son **preguntas de selección múltiple** (4 opciones) con **retroalimentación positiva** (refuerza por qué
+  es correcta) y **negativa** (concepto a reforzar + referencia). El estudiante contesta 10 de las aprobadas.
+  Marca `estado:"aprobado"`. Es nivel asignatura: se enlaza desde la página de bienvenida del JSON de Moodle.
+- **Talleres por escenario:** cada tema lleva su taller (aprobado en P1) redactado completo dentro de su JSON
+  (`quiz`/`evaluation-activity`/`exercise-set` con enunciado, evidencia, RA, criterio y retroalimentación).
+  La **sumativa integradora** (todos los temas/RA, última semana) en el último escenario o
+  `evaluacion/sumativa-<slug>.json`.
+- **Regla de gobernanza:** ni la diagnóstica ni los talleres se publican sin haber pasado por la revisión del
+  profesor en el instrumento (igual que el material complementario).
+- **Estado:** `evaluacion.diagnostica.estado: "aprobado"`, `evaluacion.diagnostica.archivo`,
+  `evaluacion.talleresPorTema[].estado: "aprobado"`.
+
 ## Fase 6 — Diseño gráfico y recursos e-learning → GENERA LOS PROMPTS
-- **Hacer:** desarrollar los recursos didácticos (2/3/4 según créditos) y material complementario (3/5/7).
-- Por cada recurso: tipo, título, objetivo pedagógico, público, **copy/guion completo**, jerarquía,
+- **Hacer:** desarrollar los recursos didácticos (2/3/4 según créditos) y el material complementario (3/5/7).
+- **MATERIAL COMPLEMENTARIO = SOLO EL APROBADO POR EL PROFESOR.** No se propone aquí de nuevo: se toma de
+  `estado.materialComplementario` (propuesto en Fase 2 y revisado en el instrumento). Incluye los materiales
+  con `estado` distinto de `"rechazado"` (regla: se incluye lo propuesto salvo lo que el profesor marcó
+  "Quitar"); aplica los "Ajustar" del docente; agrega los materiales nuevos que el profesor añadió. **No
+  inventes material nuevo ni incluyas material sin revisión docente.** Respeta la `coberturaPorTema`.
+- Por cada recurso didáctico: tipo, título, objetivo pedagógico, público, **copy/guion completo**, jerarquía,
   indicaciones visuales, texto alternativo (accesibilidad), brief de diseño, relación con evaluación.
 - **GENERAR LOS PROMPTS de generación de contenido** por recurso/componente didáctico oficial — ver
   `fase-6-prompts.md`. Un prompt por recurso, listo para ejecutar en la herramienta correspondiente.
-- **Entregables:** `fase-6-recursos.md` + carpeta `fase-6-prompts/` con un archivo de prompt por recurso.
-- **Estado:** `recursos[]{tipo, titulo, promptFile}`.
+- **Entregables:** `fase-6-recursos.md` (incluye la tabla de material complementario aprobado + cobertura por
+  tema) + carpeta `fase-6-prompts/` con un archivo de prompt por recurso.
+- **Estado:** `recursos[]{tipo, titulo, promptFile}`; `materialComplementario[].estado` actualizado a
+  `"aprobado"`/`"rechazado"`/`"ajustado"` según el instrumento.
+- **El material complementario aprobado se inserta en el componente `complementary` de CADA escenario/tema
+  según la cobertura** (Fase 7 / JSON de Moodle) y, cuando aplique, en `references` del Documento de Saberes.
 
 ## Fase 7 — Montaje en LMS (Moodle)
 - **Hacer:** plan de montaje del aula: estructura, secciones, orden de navegación, actividades, foros, tareas,

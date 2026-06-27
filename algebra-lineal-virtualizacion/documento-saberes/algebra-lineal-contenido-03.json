@@ -17,7 +17,7 @@
         "field": "Fundamentación matemática"
       },
       "learningOutcomes": [
-        "RA2: Resolver problemas de ingeniería mediante el cálculo de determinantes, la inversión de matrices y la regla de Cramer, interpretando la información que el determinante aporta sobre la existencia y unicidad de la solución."
+        "RA2: Resuelvo problemas de ingeniería mediante el cálculo de determinantes, la inversión de matrices y la regla de Cramer, interpretando la información que el determinante aporta sobre la existencia y unicidad de la solución."
       ],
       "priorKnowledge": [
         "Operaciones con matrices (suma, producto por escalar, producto matricial, transpuesta) del Tema 2.",

@@ -353,9 +353,63 @@ CTA al contenido teórico SCORM en Moodle.
 
 `button.href`: `""` + `todo` si no se conoce. **No inventes URLs de SCORM.**
 
+### `workshop` (taller detallado del escenario) — página `moment`
+Taller **completo e instruccional**, listo para pegar en Moodle (no es solo un botón). Una página `moment`
+debe llevar el `workshop` del tema con su contenido redactado; el `practice-link` queda como CTA opcional.
+
+```json
+{
+  "type": "workshop",
+  "icon": "✏️",
+  "title": "Taller del Tema 1 — Modelado y solución de sistemas",
+  "subtitle": "Taller del escenario de aprendizaje",
+  "estimatedTime": "3 horas",
+  "participationType": "Individual",
+  "evaluationMoment": "Formativo (avance)",
+  "learningOutcomeIds": ["RA1", "RA2"],
+  "objective": "Que modeles un problema de tu disciplina como sistema lineal y lo resuelvas con Gauss-Jordan.",
+  "context": "A partir del caso adjunto, identifica las variables y relaciones y plantea el sistema.",
+  "steps": [
+    "Identifica las incógnitas y escribe qué representa cada una con sus unidades.",
+    "Plantea las ecuaciones y la matriz aumentada $[A\\,|\\,b]$.",
+    "Aplica Gauss-Jordan hasta la forma escalonada reducida.",
+    "Clasifica el tipo de solución por el rango e interprétala en el contexto."
+  ],
+  "deliverable": "Documento con el planteamiento, la reducción paso a paso y la interpretación del resultado.",
+  "submission": "Sube un PDF a la tarea del Tema 1 en Moodle antes del cierre de la semana.",
+  "rubric": [
+    {"criterio": "Modelado", "descriptor": "Plantea correctamente el sistema y su matriz aumentada."},
+    {"criterio": "Procedimiento", "descriptor": "Aplica Gauss-Jordan sin errores y verifica."},
+    {"criterio": "Interpretación", "descriptor": "Clasifica la solución y la explica en el contexto."}
+  ],
+  "feedback": {"strengths": "...", "improvement": "..."},
+  "href": "",
+  "buttonLabel": "Entregar el taller →",
+  "todo": "Crear la tarea del taller en Moodle y pegar su URL."
+}
+```
+
+| Campo | Tipo | Notas |
+|---|---|---|
+| `title`, `subtitle`, `icon` | string | encabezado del taller. |
+| `estimatedTime`, `participationType`, `evaluationMoment` | string | chips (tiempo, modalidad, momento). |
+| `learningOutcomeIds` | array | RA que evidencia (chip 🎯). En 1ª persona en el texto del RA. |
+| `objective` / `objetivo` | string\|array (*rich*) | objetivo del taller. |
+| `context` / `statement` / `enunciado` | string\|array (*rich*) | planteamiento. |
+| `steps` / `pasos` | array (*rich*) | pasos numerados (Paso 1, 2…). |
+| `deliverable` / `evidence` | string\|array (*rich*) | qué entregar. |
+| `submission` | string\|array (*rich*) | cómo/dónde entregar. |
+| `rubric` / `criterios` | array<{criterio, descriptor}>\|array<string> | criterios de evaluación. |
+| `feedback` | {strengths, improvement}\|string | retroalimentación. |
+| `href`, `buttonLabel`, `todo` | string | CTA de entrega; `href:""` si no se conoce (no inventes URLs). |
+
+**Gobernanza:** el taller se redacta y propone en el Pipeline 1 (instrumento docente) y solo se incluye aquí
+si el profesor lo aprobó (ver la skill de virtualización).
+
 ### `practice-link` (banner CTA reutilizable)
 CTA a ejercicios/práctica en Moodle. Mismos campos que `scorm-link`
-(`icon`, `eyebrow`, `title`, `description`, `button`, `todo`).
+(`icon`, `eyebrow`, `title`, `description`, `button`, `todo`). Úsalo como complemento del `workshop`
+(p. ej. enlace a ejercicios adicionales), no como sustituto del taller detallado.
 
 ```json
 {
@@ -376,11 +430,15 @@ CTA a ejercicios/práctica en Moodle. Mismos campos que `scorm-link`
 {
   "type": "complementary",
   "title": "Material Complementario",
+  "subtitle": "Material complementario seleccionado para este tema (cobertura por tema).",
   "items": [
     {
-      "resourceName": "Capítulo de libro",
-      "apa": "Marsden, J. E., & Tromba, A. J. (2012). <em>Cálculo vectorial</em> (6.ª ed.). Pearson.",
-      "href": ""
+      "resourceName": "Larson (2010) — Fundamentos de álgebra lineal",
+      "tipo": "Capítulo de libro base",
+      "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). Cengage Learning. Cap. de sistemas lineales y método de Gauss-Jordan.",
+      "justificacion": "Fuente disciplinar primaria para la etapa fundacional: definiciones, teoremas y ejercicios.",
+      "href": "",
+      "todo": "Pegar URL/ubicación en biblioteca institucional."
     }
   ]
 }
@@ -388,9 +446,17 @@ CTA a ejercicios/práctica en Moodle. Mismos campos que `scorm-link`
 
 | Campo de item | Tipo | Notas |
 |---|---|---|
-| `resourceName` | string | Etiqueta del recurso. |
-| `apa` | string (*rich*) | Referencia APA 7; `<em>` para títulos. Literal de la bibliografía del syllabus. |
+| `resourceName` | string | Nombre/etiqueta del recurso (autor + obra). |
+| `tipo` | string | Tipo de recurso: "Capítulo de libro base", "Libro complementario", "Recurso abierto (video + ejercicios)", etc. Se muestra como chip. |
+| `apa` | string (*rich*) | Referencia APA 7; `<em>` para títulos. Literal de la bibliografía/material complementario; **no inventes fuentes**. |
+| `justificacion` | string (*rich*) | Por qué este recurso y para qué tema (de la tabla de material complementario de la Fase 6). |
 | `href` | string | "Ver recurso"; `""` si no se conoce. **No inventes URLs.** |
+| `todo` | string | (opcional) Nota para el autor (verificar edición, pegar URL, etc.). |
+
+**Material complementario por tema (cobertura):** el componente `complementary` de cada página `moment`
+debe listar los materiales que cubren ESE tema según la matriz de cobertura definida en la Fase 6 (p. ej.
+T1 → M1, M3 · T2 → M2, M3 · …). Cada material es un item con `resourceName`, `tipo`, `apa`, `justificacion`.
+El número total de materiales del curso respeta la cuota por créditos (3/5/7).
 
 ### `footer` (reutilizable)
 Con `context` = "curso · Momento N" / "curso · Contenido N".

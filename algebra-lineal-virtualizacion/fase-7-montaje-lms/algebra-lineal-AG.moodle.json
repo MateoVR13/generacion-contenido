@@ -276,6 +276,46 @@
             "todo": "Pegar URL del paquete SCORM del Contenido 1 en Moodle."
           },
           {
+            "type": "workshop",
+            "icon": "✏️",
+            "title": "Taller instruccional: Modela y resuelve un sistema lineal de un caso de tu ingeniería con Gauss-Jordan",
+            "objective": "Modelar una situación real de ingeniería como un sistema de ecuaciones lineales en forma escalar y matricial $A\\mathbf{x}=\\mathbf{b}$, resolverlo con el método de Gauss-Jordan hasta la forma escalonada reducida (RREF), clasificar el tipo de solución (única, infinita o inexistente) a partir del rango e interpretar el resultado en el contexto físico del problema, evidenciando los resultados de aprendizaje RA1 y RA2.",
+            "context": "En ingeniería, muchísimos problemas comparten la misma estructura matemática: varias variables que se relacionan al mismo tiempo bajo restricciones simultáneas. Este taller es transversal a varias ingenierías, no exclusivo de petróleos. Elige UNO de los siguientes casos según tu programa (todos se modelan como $A\\mathbf{x}=\\mathbf{b}$):\n\nCASO A — Ingeniería Industrial (plan de producción): Un taller fabrica tres productos $x_1, x_2, x_3$ (lotes) que consumen tres insumos. La matriz de consumos por lote es $A=\\begin{bmatrix}2&1&1\\\\1&3&2\\\\1&1&4\\end{bmatrix}$ y los inventarios disponibles son $\\mathbf{b}=\\begin{bmatrix}40\\\\50\\\\60\\end{bmatrix}$. Halla el plan que agota exactamente los inventarios.\n\nCASO B — Ingeniería Mecánica/Mecatrónica (equilibrio de fuerzas): En un nodo de una estructura plana concurren tres barras con tensiones $T_1, T_2, T_3$. Las condiciones de equilibrio (suma de fuerzas en $x$, en $y$ y de momentos igualadas a cero o a una carga aplicada) dan: $\\begin{cases} T_1 + T_2 + T_3 = 6 \\\\ 2T_1 - T_2 + T_3 = 3 \\\\ T_1 + 2T_2 - T_3 = 2 \\end{cases}$. Halla cada tensión e interpreta su signo (positivo = tracción, negativo = compresión).\n\nCASO C — Ingeniería Química/Ambiental/Energías (balance de masa en un tanque): Un tanque mezcla tres corrientes de caudales $x_1, x_2, x_3$ (L/min). El balance de masa total exige $x_1+x_2+x_3=100$; el balance de un componente A exige $0.1x_1+0.3x_2+0.5x_3=30$; y una restricción de operación fija $x_1=2x_3$. Halla los caudales y verifica que son físicamente factibles (no negativos).\n\nTodos los casos se resuelven con el mismo método de Gauss-Jordan que estudiaste en los Escenarios 1 a 5 del Documento de Saberes. Cambia el significado de las variables; la matemática es la misma.",
+            "steps": [
+              "Paso 1 — Elige tu caso y nombra las incognitas. Selecciona el caso (A, B o C) afin a tu programa. Escribe en palabras que representa cada incognita con sus unidades (por ejemplo, $x_1$ = caudal de la corriente 1 en L/min, o $T_2$ = tension de la barra 2). Enuncia con tus propias palabras cada restriccion del problema (balance, capacidad, meta o condicion de operacion) antes de escribir cualquier ecuacion.",
+              "Paso 2 — Plantea el sistema en forma escalar y matricial (evidencia RA1). Traduce cada restriccion a una ecuacion lineal, cuidando que las incognitas aparezcan a la potencia uno, en el mismo orden de columnas en todas las ecuaciones y con coeficiente cero explicito cuando una incognita no aparezca. Escribe el sistema en forma escalar y luego en forma matricial $A\\mathbf{x}=\\mathbf{b}$, identificando la matriz de coeficientes $A$, el vector de incognitas $\\mathbf{x}$ y el vector de terminos independientes $\\mathbf{b}$.",
+              "Paso 3 — Construye la matriz aumentada $[A\\,|\\,\\mathbf{b}]$. Pega el vector $\\mathbf{b}$ como columna extra separada por la barra vertical. Recuerda que la barra es solo un separador visual: el termino independiente se opera igual que los coeficientes.",
+              "Paso 4 — Aplica Gauss-Jordan hasta la RREF (evidencia RA2). Reduce columna por columna: fija un pivote (intercambio $R_i \\leftrightarrow R_j$ o escalamiento $R_i \\to kR_i$ con $k\\neq0$), normalizalo a 1 y crea ceros arriba y abajo con combinaciones $R_i \\to R_i + kR_j$. Escribe TODAS las matrices intermedias e indica junto a cada flecha la operacion de fila aplicada. Llega a la forma escalonada reducida.",
+              "Paso 5 — Clasifica el tipo de solucion por el rango. Cuenta los pivotes para hallar $\\operatorname{rango}(A)$ y $\\operatorname{rango}([A|\\mathbf{b}])$, y aplica el teorema de Rouche-Frobenius: si $\\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])=n$ la solucion es unica; si $\\operatorname{rango}(A)=\\operatorname{rango}([A|\\mathbf{b}])<n$ hay infinitas soluciones (parametriza las variables libres); si $\\operatorname{rango}(A)<\\operatorname{rango}([A|\\mathbf{b}])$ no hay solucion. Si el caso da infinitas soluciones, describe el conjunto solucion con parametros.",
+              "Paso 6 — Verifica e interpreta fisicamente. Sustituye la solucion obtenida en TODAS las ecuaciones del sistema original y comprueba que se cumplen. Luego escribe una frase de interpretacion en el lenguaje del problema: el plan factible que agota inventarios (Caso A), el valor y signo de cada tension distinguiendo traccion de compresion (Caso B), o los caudales factibles no negativos del proceso (Caso C). Indica si el resultado es fisicamente coherente."
+            ],
+            "deliverable": "Un documento individual (PDF o imagen legible de tu desarrollo a mano o digital) que contenga, en este orden: (1) el caso elegido y la definicion de cada incognita con sus unidades; (2) el enunciado en palabras de cada restriccion; (3) el sistema en forma escalar y en forma matricial $A\\mathbf{x}=\\mathbf{b}$; (4) la matriz aumentada $[A\\,|\\,\\mathbf{b}]$; (5) la reduccion completa de Gauss-Jordan hasta la RREF, mostrando cada matriz intermedia con la operacion de fila indicada en cada paso; (6) la clasificacion del tipo de solucion justificada por el rango (con $\\operatorname{rango}(A)$, $\\operatorname{rango}([A|\\mathbf{b}])$ y $n$), y la parametrizacion si hay infinitas soluciones; (7) la verificacion por sustitucion en el sistema original; y (8) un parrafo breve de interpretacion fisica del resultado en el contexto de tu ingenieria.",
+            "submission": "Sube tu documento (un unico archivo PDF; si entregas a mano, escanealo o fotografialo de forma legible y conviertelo a PDF) en la tarea de Moodle titulada \"Tema 1 - Taller: modelar y resolver un sistema lineal con Gauss-Jordan\", dentro del modulo del Tema 1. Nombra el archivo como Apellido_Nombre_Tema1_Taller.pdf. Entrega individual, antes de la fecha limite indicada en el aula. Solo se admite un intento; revisa que todas las paginas sean legibles antes de enviar.",
+            "rubric": [
+              {
+                "criterio": "Modelado del sistema (RA1, CE1)",
+                "descriptor": "Aceptable: plantea el sistema y la matriz aumentada con errores menores en algunos coeficientes o terminos, e identifica las incognitas. Sobresaliente: traduce el enunciado a un sistema en forma escalar y matricial $A\\mathbf{x}=\\mathbf{b}$ completamente correcto, con todas las incognitas y unidades bien definidas y las restricciones fielmente representadas."
+              },
+              {
+                "criterio": "Resolucion por Gauss-Jordan y clasificacion (RA2, CE2)",
+                "descriptor": "Aceptable: reduce la matriz con algun descuido procedimental y clasifica el tipo de solucion con apoyo, sin justificar plenamente el rango. Sobresaliente: reduce a la RREF sin errores mostrando cada operacion de fila, clasifica correctamente el tipo de solucion comparando $\\operatorname{rango}(A)$, $\\operatorname{rango}([A|\\mathbf{b}])$ y $n$, y parametriza si corresponde."
+              },
+              {
+                "criterio": "Verificacion e interpretacion fisica",
+                "descriptor": "Aceptable: presenta el resultado numerico con una verificacion parcial y una interpretacion incompleta. Sobresaliente: verifica la solucion sustituyendo en todas las ecuaciones del sistema original e interpreta el tipo de solucion en terminos fisicos del problema, discutiendo la factibilidad (signos, no negatividad o grados de libertad segun el caso)."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ],
+            "estimatedTime": "120 minutos",
+            "participationType": "individual",
+            "evaluationMoment": "formativo de avance",
+            "href": "",
+            "todo": "Crear la tarea del taller en Moodle y pegar su URL."
+          },
+          {
             "type": "practice-link",
             "icon": "✏️",
             "eyebrow": "Práctica",
@@ -291,19 +331,23 @@
             "type": "complementary",
             "icon": "📎",
             "title": "Material Complementario",
-            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema según el diseño del curso).",
             "items": [
               {
-                "resourceName": "Texto base — Sistemas de ecuaciones lineales",
-                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). CENGAGE Learning.",
+                "resourceName": "Larson (2010) — Fundamentos de álgebra lineal",
+                "tipo": "Capítulo de libro base",
+                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). Cengage Learning. Cap. de sistemas lineales y método de Gauss-Jordan.",
+                "justificacion": "Fuente disciplinar primaria para la etapa fundacional: definiciones, teoremas y ejercicios de sistemas y eliminación.",
                 "href": "",
-                "todo": "Pegar URL del recurso/lectura en Moodle."
+                "todo": "Pegar URL/ubicación en biblioteca institucional."
               },
               {
-                "resourceName": "Lectura de apoyo — Gauss-Jordan",
-                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw Hill Educación.",
-                "href": "",
-                "todo": "Pegar URL del recurso/lectura en Moodle."
+                "resourceName": "Khan Academy — Álgebra lineal (recurso abierto)",
+                "tipo": "Recurso abierto (video + ejercicios)",
+                "apa": "Khan Academy. (s. f.). <em>Álgebra lineal</em> [curso en línea, recursos abiertos en español]. https://es.khanacademy.org/math/linear-algebra",
+                "justificacion": "Ejercitación autónoma adicional y explicaciones alternativas para el estudiante 100% virtual; apoyo de nivelación de la diagnóstica.",
+                "href": "https://es.khanacademy.org/math/linear-algebra",
+                "todo": "Verificar enlace y disponibilidad de subtítulos."
               }
             ]
           },
@@ -349,6 +393,45 @@
             "todo": "Pegar URL del paquete SCORM del Contenido 2 en Moodle."
           },
           {
+            "type": "workshop",
+            "icon": "✏️",
+            "title": "Taller formativo: Operaciones matriciales aplicadas a un proceso de ingeniería",
+            "objective": "Modelar un proceso real de tu disciplina mediante una matriz de requerimientos y operar con matrices (suma o combinación lineal, producto por escalar, producto matricial y transpuesta) respetando las condiciones de dimensión, para calcular el consumo de insumos y el costo total del proceso e interpretar el resultado en su contexto de ingeniería (RA1).",
+            "context": "Las matrices no son solo arreglos de números: organizan y transforman información en ingeniería (tablas de consumo, operadores geométricos, redes de conexión). El mismo producto matricial cambia de significado según la disciplina, y este taller pone a prueba esa transferencia con un caso transversal que tú adaptas a tu carrera.\n\nElige UNA de estas situaciones (todas usan exactamente las mismas operaciones, solo cambia qué representan las filas, las columnas y los vectores):\n\n- Ingeniería Industrial: una lista de materiales (BOM). La matriz de requerimientos $R$ relaciona insumos/componentes (filas) con productos (columnas); el plan de producción $\\mathbf{p}$ indica cuántas unidades de cada producto se fabrican.\n- Ingeniería Mecánica o Mecatrónica: una pieza/componente con varias referencias (columnas) que demandan distintos materiales o procesos (filas), o bien un punto de un mecanismo al que se le aplica una rotación $R(\\theta)=\\begin{bmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{bmatrix}$.\n- Ingeniería de Energías: una planta con corrientes/equipos (columnas) que consumen recursos como agua, combustible y electricidad (filas), o una red eléctrica descrita por una matriz de adyacencia $A$ cuya potencia $A^2$ cuenta rutas de longitud dos.\n- Ingeniería Ambiental: un proceso de tratamiento con corrientes (columnas) y componentes/reactivos por corriente (filas), donde $R\\mathbf{p}$ entrega el balance por componente.\n\nCaso base de referencia (modelo del Documento de Saberes, Ej. 2.6): con $R=\\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\\\ 0 & 2 \\end{bmatrix}$ (filas: acero, energía, agua; columnas: producto A y B), $\\mathbf{p}=\\begin{bmatrix} 10 \\\\ 20 \\end{bmatrix}$ y costos $\\mathbf{k}=\\begin{bmatrix} 5 \\\\ 3 \\\\ 2 \\end{bmatrix}$, se obtiene $\\mathbf{c}=R\\mathbf{p}=\\begin{bmatrix} 40 \\\\ 70 \\\\ 40 \\end{bmatrix}$ y costo total $\\mathbf{k}^{T}\\mathbf{c}=490$. Tú debes construir TUS PROPIOS datos, distintos de este ejemplo.",
+            "steps": [
+              "1. Elige tu disciplina y plantea el modelo. Selecciona una de las cuatro ingenierías del contexto y define con palabras qué representa cada fila y cada columna. Construye una matriz de requerimientos $R$ de orden $3\\times 2$ (3 insumos, 2 productos/corrientes) con datos propios, distintos del caso base; define un vector de plan $\\mathbf{p}$ de orden $2\\times 1$ y un vector de costos unitarios de insumo $\\mathbf{k}$ de orden $3\\times 1$. Escribe las tres matrices en LaTeX e indica el significado de cada una en una frase.",
+              "2. Verifica las condiciones de dimensión ANTES de operar. Escribe los órdenes uno al lado del otro y comprueba que el producto $R\\mathbf{p}$ esté definido: $(3\\times 2)(2\\times 1)=(3\\times 1)$. Justifica por qué las dimensiones interiores deben coincidir y cuál será el orden del resultado. Indica también por qué $\\mathbf{k}^{T}$ (orden $1\\times 3$) es el factor correcto para multiplicar por $\\mathbf{c}$ y no $\\mathbf{k}$ sin transponer.",
+              "3. Calcula el consumo de insumos $\\mathbf{c}=R\\mathbf{p}$ paso a paso. Usa la regla fila por columna $(R\\mathbf{p})_{i}=\\sum_{k} r_{ik}\\,p_{k}$, mostrando la suma de productos de cada componente y el vector $\\mathbf{c}$ final en LaTeX. No omitas pasos intermedios.",
+              "4. Calcula el costo total encadenando operaciones: $\\text{costo}=\\mathbf{k}^{T}\\mathbf{c}=\\mathbf{k}^{T}R\\mathbf{p}$. Muestra el producto $\\mathbf{k}^{T}\\mathbf{c}$ como suma de productos y obtén el escalar. Verifica el resultado de dos formas: (a) que la suma de aportes por insumo coincida con el escalar y (b) que todas las componentes de $\\mathbf{c}$ sean no negativas (factibilidad física).",
+              "5. Aplica una segunda operación del tema sobre tus datos (elige UNA): (a) propón un segundo plan $\\mathbf{p}_2$, calcula $\\mathbf{c}_2=R\\mathbf{p}_2$ y compara qué insumo se vuelve el cuello de botella en cada plan; o (b) verifica con tus matrices la propiedad de la transpuesta del producto $(R\\,\\mathbf{p})$ usando un caso $2\\times 2$ propio que confirme $(AB)^{T}=B^{T}A^{T}$ y por qué NO es $A^{T}B^{T}$; o (c) si elegiste rotaciones o redes, calcula $R(\\theta)\\mathbf{v}$ o $A^2$ y argumenta el papel del orden de los factores (no conmutatividad).",
+              "6. Interpreta y concluye en lenguaje de tu ingeniería. Redacta 4 a 6 líneas que respondan: qué significa cada componente del consumo, cuál es el insumo dominante y por qué, qué representa el costo total y sus unidades, y una decisión de ingeniería que tu modelo permitiría tomar (por ejemplo, priorizar un plan, dimensionar un recurso o reordenar transformaciones)."
+            ],
+            "deliverable": "Un documento breve (PDF o Word, 2 a 4 páginas) titulado con tu nombre y disciplina, que contenga: (1) el planteamiento del caso con el significado de filas, columnas y vectores; (2) las matrices $R$, $\\mathbf{p}$ y $\\mathbf{k}$ en notación matemática con datos propios; (3) la verificación de dimensiones; (4) el cálculo paso a paso de $\\mathbf{c}=R\\mathbf{p}$ y del costo $\\mathbf{k}^{T}R\\mathbf{p}$; (5) la segunda operación del paso 5; y (6) la interpretación disciplinar del resultado. Toda la matemática debe ir en notación clara (puedes escribirla en un editor de ecuaciones o a mano y fotografiarla con buena legibilidad). Indica al inicio qué disciplina elegiste.",
+            "submission": "Sube el documento a la tarea de Moodle \"Taller Tema 2 — Operaciones matriciales aplicadas\", ubicada en el bloque del Tema 2 del aula virtual. Adjunta un solo archivo en formato PDF (preferido) o Word, nombrado ApellidoNombre_Taller_Tema2. La entrega es individual y se realiza dentro del plazo indicado en el calendario del aula. Tras la calificación recibirás retroalimentación cualitativa por la misma tarea de Moodle, con fortalezas, aspectos por mejorar, una acción de refuerzo y el siguiente paso hacia el Tema 3.",
+            "rubric": [
+              {
+                "criterio": "Manejo de operaciones matriciales",
+                "descriptor": "Aceptable: calcula $R\\mathbf{p}$ y $\\mathbf{k}^{T}R\\mathbf{p}$ con el procedimiento visible y errores menores que no alteran la conclusión. Sobresaliente: ejecuta todas las operaciones (incluida la segunda operación del paso 5) sin errores, muestra cada suma de productos y verifica el resultado por dos vías."
+              },
+              {
+                "criterio": "Condiciones de dimensión y propiedades",
+                "descriptor": "Aceptable: reconoce que el producto es compatible y enuncia el orden del resultado, aunque no lo justifique plenamente. Sobresaliente: justifica cada compatibilidad (dimensiones interiores) y el orden $m\\times n$ antes de operar, y aplica correctamente la propiedad elegida (transpuesta del producto $(AB)^{T}=B^{T}A^{T}$, no conmutatividad o redistribución del consumo)."
+              },
+              {
+                "criterio": "Interpretación disciplinar del resultado",
+                "descriptor": "Aceptable: interpreta el resultado de forma general y verifica que el consumo sea no negativo. Sobresaliente: interpreta cada componente del consumo, identifica el insumo dominante, valida unidades y factibilidad física, y plantea una decisión de ingeniería fundamentada en su modelo."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1"
+            ],
+            "estimatedTime": "2 a 3 horas de trabajo autónomo",
+            "participationType": "individual",
+            "evaluationMoment": "formativo de avance",
+            "href": "",
+            "todo": "Crear la tarea del taller en Moodle y pegar su URL."
+          },
+          {
             "type": "practice-link",
             "icon": "✏️",
             "eyebrow": "Práctica",
@@ -364,19 +447,23 @@
             "type": "complementary",
             "icon": "📎",
             "title": "Material Complementario",
-            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema según el diseño del curso).",
             "items": [
               {
-                "resourceName": "Texto base — Matrices y operaciones",
-                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). CENGAGE Learning.",
+                "resourceName": "Grossman (2008) — Álgebra lineal",
+                "tipo": "Capítulos de libro base",
+                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw-Hill. Cap. de matrices y operaciones; cap. de determinantes e inversa.",
+                "justificacion": "Cubre el álgebra matricial y los determinantes con un enfoque aplicado distinto al de Larson; da profundidad a las etapas 2 y 3.",
                 "href": "",
-                "todo": "Pegar URL del recurso/lectura en Moodle."
+                "todo": "Pegar URL/ubicación en biblioteca institucional."
               },
               {
-                "resourceName": "Lectura de apoyo — Álgebra de matrices",
-                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw Hill Educación.",
-                "href": "",
-                "todo": "Pegar URL del recurso/lectura en Moodle."
+                "resourceName": "Khan Academy — Álgebra lineal (recurso abierto)",
+                "tipo": "Recurso abierto (video + ejercicios)",
+                "apa": "Khan Academy. (s. f.). <em>Álgebra lineal</em> [curso en línea, recursos abiertos en español]. https://es.khanacademy.org/math/linear-algebra",
+                "justificacion": "Ejercitación autónoma adicional y explicaciones alternativas para el estudiante 100% virtual; apoyo de nivelación de la diagnóstica.",
+                "href": "https://es.khanacademy.org/math/linear-algebra",
+                "todo": "Verificar enlace y disponibilidad de subtítulos."
               }
             ]
           },
@@ -422,6 +509,49 @@
             "todo": "Pegar URL del paquete SCORM del Contenido 3 en Moodle."
           },
           {
+            "type": "workshop",
+            "icon": "✏️",
+            "title": "Taller: Resolver un sistema de ingenieria por inversa y por Cramer, y comparar metodos",
+            "objective": "Resolver un mismo sistema lineal cuadrado de un contexto de ingenieria empleando la matriz inversa ($\\mathbf{x}=A^{-1}\\mathbf{b}$) y la regla de Cramer ($x_i=\\det(A_i)/\\det(A)$), interpretando el determinante como diagnostico de existencia y unicidad de la solucion y justificando con criterio cual metodo conviene segun el problema, en evidencia del RA2.",
+            "context": "Como futuro ingeniero o ingeniera te encontraras una y otra vez con la misma estructura matematica bajo problemas muy distintos: un sistema lineal cuadrado $A\\mathbf{x}=\\mathbf{b}$. El mismo trio de herramientas de este tema -determinante, inversa y regla de Cramer- resuelve y diagnostica situaciones de varias ingenierias. En ingenieria electrica y de energias, las leyes de Kirchhoff de un circuito de mallas producen un sistema en las corrientes y la regla de Cramer despeja una corriente concreta. En ingenieria mecanica y mecatronica, una transformacion geometrica de un mecanismo (rotacion, escalado, cambio de coordenadas) se modela con una matriz cuya inversa $A^{-1}$ deshace la transformacion, y su determinante indica si esta es reversible. En ingenieria de petroleos, quimica y ambiental, un balance de materia entre corrientes se modela como un sistema cuadrado donde $\\det(A)\\neq 0$ garantiza una receta de mezcla con solucion unica. En este taller elegiras UNO de estos tres escenarios transversales, lo resolveras por dos caminos distintos (inversa y Cramer) y argumentaras cual metodo habrias preferido en la practica. Escenarios sugeridos (elige uno): (A) Circuito de dos mallas con $\\begin{cases} 5I_1 - 2I_2 = 12 \\\\ -2I_1 + 4I_2 = 10 \\end{cases}$ (resistencias en ohmios, voltajes en voltios), donde solo interesa la corriente $I_2$. (B) Transformacion plana reversible de un mecanismo: dada $A=\\begin{bmatrix} 3 & 1 \\\\ 2 & 4 \\end{bmatrix}$ que lleva un punto a $\\mathbf{b}=\\begin{bmatrix} 11 \\\\ 14 \\end{bmatrix}$, recuperar las coordenadas originales $\\mathbf{x}$ mediante $A^{-1}$. (C) Balance de mezcla de dos corrientes: $\\begin{cases} x_1 + x_2 = 100 \\\\ 0.2x_1 + 0.5x_2 = 35 \\end{cases}$ donde $x_1,x_2$ son caudales (kg/h) y la segunda ecuacion es un balance por componente. Este taller es de avance: te prepara para la actividad evaluativa de cierre del escenario, en la que aplicaras los tres metodos sobre tu propia area.",
+            "steps": [
+              "Paso 1 — Elige y plantea tu escenario. Selecciona UNO de los tres escenarios transversales propuestos (A circuito, B mecanismo, C balance). Escribe el sistema en forma matricial $A\\mathbf{x}=\\mathbf{b}$, identificando con claridad la matriz de coeficientes $A$ y el vector de terminos independientes $\\mathbf{b}$, y explica en una o dos frases que representa cada variable en el contexto de ingenieria elegido.",
+              "Paso 2 — Diagnostica con el determinante. Calcula $\\det(A)$ mediante la diferencia de diagonales ($\\det\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}=ad-bc$). Interpreta el resultado en el contexto: si $\\det(A)\\neq 0$ explica que el problema tiene solucion unica (la red esta bien planteada / la transformacion es reversible / la mezcla esta bien especificada); si fuera cero, justifica que la inversa y Cramer no aplican y que habria que usar Gauss-Jordan.",
+              "Paso 3 — Resuelve por la inversa. Obten $A^{-1}$ con la formula de la adjunta para $2\\times 2$: $A^{-1}=\\dfrac{1}{\\det(A)}\\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix}$ (intercambias la diagonal principal, cambias el signo de la secundaria y divides entre el determinante). Calcula la solucion completa con $\\mathbf{x}=A^{-1}\\mathbf{b}$ y verifica que $AA^{-1}=I$.",
+              "Paso 4 — Resuelve por la regla de Cramer. Para cada incognita construye $A_i$ reemplazando la columna $i$ de $A$ por $\\mathbf{b}$, y calcula $x_i=\\dfrac{\\det(A_i)}{\\det(A)}$. Si tu escenario es el (A), aprovecha que Cramer permite despejar solo $I_2$ sin resolver todo el sistema y comentalo. Comprueba que la solucion obtenida por Cramer coincide con la del Paso 3 y sustituyela en las ecuaciones originales para confirmarla.",
+              "Paso 5 — Compara los metodos y argumenta. Redacta un parrafo (5 a 8 lineas) que responda: cual de los dos metodos te resulto mas eficiente en este caso y por que; cuando convendria la inversa frente a Cramer (recuerda que la inversa brilla al reutilizar $A$ con varios $\\mathbf{b}$ y Cramer al necesitar una sola incognita o un sistema pequeno); y a partir de cuantas incognitas convendria pasar a Gauss-Jordan, apoyandote en que el costo de Cramer por cofactores crece de forma factorial mientras Gauss-Jordan crece como $n^3$.",
+              "Paso 6 — Transfiere a tu propia ingenieria. En 3 a 5 lineas, reformula un problema sencillo de tu area de ingenieria como un sistema cuadrado $A\\mathbf{x}=\\mathbf{b}$ (no es necesario resolverlo) y anticipa que te diria su determinante sobre la factibilidad del problema."
+            ],
+            "deliverable": "Un documento (PDF o foto legible del trabajo a mano, o documento digital) que contenga: (1) el escenario elegido y el sistema escrito en forma matricial $A\\mathbf{x}=\\mathbf{b}$ con el significado de cada variable; (2) el calculo de $\\det(A)$ y su interpretacion en el contexto de ingenieria; (3) la resolucion completa por la inversa con la verificacion $AA^{-1}=I$; (4) la resolucion por la regla de Cramer mostrando cada $A_i$, sus determinantes y la sustitucion de comprobacion en las ecuaciones originales; (5) un parrafo de comparacion y justificacion de la eleccion de metodo; y (6) la reformulacion breve de un problema de tu propia ingenieria como sistema cuadrado con la lectura anticipada de su determinante. Toda la matematica debe presentarse con sus pasos visibles.",
+            "submission": "Sube tu documento a la tarea de Moodle \"Tema 3 - Taller: inversa y Cramer (comparacion de metodos)\" disponible en el aula virtual de la asignatura. Formatos admitidos: PDF, DOCX o imagen (JPG/PNG) legible si lo resolviste a mano. Nombra el archivo como Apellido_Nombre_Taller_Tema3. Entrega individual a traves del enlace de entrega de tarea de Moodle dentro del plazo indicado en el cronograma del curso.",
+            "rubric": [
+              {
+                "criterio": "Calculo y diagnostico del determinante (CE2)",
+                "descriptor": "Aceptable: calcula correctamente $\\det(A)$ e interpreta que $\\det(A)\\neq 0$ implica solucion unica e invertibilidad. Sobresaliente: calcula sin errores y lee el determinante como diagnostico de factibilidad propio del contexto de ingenieria elegido (red bien planteada, transformacion reversible o mezcla bien especificada), explicando que ocurriria si fuese cero."
+              },
+              {
+                "criterio": "Resolucion por inversa y por Cramer con verificacion (CE3)",
+                "descriptor": "Aceptable: obtiene la inversa y aplica Cramer correctamente, llega a la misma solucion por ambas vias y realiza al menos una verificacion. Sobresaliente: ejecuta ambos metodos con fluidez y orden, verifica tanto $AA^{-1}=I$ como la sustitucion en las ecuaciones, y muestra las matrices $A_i$ construidas con la columna correcta."
+              },
+              {
+                "criterio": "Justificacion de la eleccion de metodo y comparacion (CE3, RA2)",
+                "descriptor": "Aceptable: justifica de forma basica que metodo conviene y reconoce que ambos exigen $\\det(A)\\neq 0$. Sobresaliente: argumenta con criterio de eficiencia (costo factorial de Cramer frente a $n^3$ de Gauss-Jordan, reutilizacion de $A^{-1}$, despeje de una sola incognita) y senala con solidez a partir de que tamano conviene Gauss-Jordan."
+              },
+              {
+                "criterio": "Transferencia disciplinar",
+                "descriptor": "Aceptable: reformula un problema de su area como sistema cuadrado de manera comprensible. Sobresaliente: plantea un sistema pertinente y coherente con su ingenieria y anticipa correctamente la lectura del determinante sobre la factibilidad del problema."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "estimatedTime": "90 minutos",
+            "participationType": "individual",
+            "evaluationMoment": "formativo de avance",
+            "href": "",
+            "todo": "Crear la tarea del taller en Moodle y pegar su URL."
+          },
+          {
             "type": "practice-link",
             "icon": "✏️",
             "eyebrow": "Práctica",
@@ -437,19 +567,23 @@
             "type": "complementary",
             "icon": "📎",
             "title": "Material Complementario",
-            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema según el diseño del curso).",
             "items": [
               {
-                "resourceName": "Texto base — Determinantes e inversa",
-                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). CENGAGE Learning.",
+                "resourceName": "Grossman (2008) — Álgebra lineal",
+                "tipo": "Capítulos de libro base",
+                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw-Hill. Cap. de matrices y operaciones; cap. de determinantes e inversa.",
+                "justificacion": "Cubre el álgebra matricial y los determinantes con un enfoque aplicado distinto al de Larson; da profundidad a las etapas 2 y 3.",
                 "href": "",
-                "todo": "Pegar URL del recurso/lectura en Moodle."
+                "todo": "Pegar URL/ubicación en biblioteca institucional."
               },
               {
-                "resourceName": "Lectura de apoyo — Regla de Cramer",
-                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw Hill Educación.",
-                "href": "",
-                "todo": "Pegar URL del recurso/lectura en Moodle."
+                "resourceName": "Khan Academy — Álgebra lineal (recurso abierto)",
+                "tipo": "Recurso abierto (video + ejercicios)",
+                "apa": "Khan Academy. (s. f.). <em>Álgebra lineal</em> [curso en línea, recursos abiertos en español]. https://es.khanacademy.org/math/linear-algebra",
+                "justificacion": "Ejercitación autónoma adicional y explicaciones alternativas para el estudiante 100% virtual; apoyo de nivelación de la diagnóstica.",
+                "href": "https://es.khanacademy.org/math/linear-algebra",
+                "todo": "Verificar enlace y disponibilidad de subtítulos."
               }
             ]
           },
@@ -495,6 +629,50 @@
             "todo": "Pegar URL del paquete SCORM del Contenido 4 en Moodle."
           },
           {
+            "type": "workshop",
+            "icon": "✏️",
+            "title": "Taller instruccional: Modelado vectorial de un sistema de fuerzas y giro en mi ingeniería",
+            "objective": "Modelar una situacion real de ingenieria mediante vectores en $\\mathbb{R}^2$ o $\\mathbb{R}^3$ y resolver el problema aplicando magnitud, producto punto y producto cruz, eligiendo en cada caso la operacion pertinente segun el resultado buscado (escalar o vectorial) e interpretando fisicamente el resultado. Al finalizar, el estudiante sera capaz de traducir magnitudes fisicas y geometricas a forma vectorial (RA1) y de ejecutar y verificar correctamente las operaciones vectoriales del tema (RA2).",
+            "context": "En ingenieria, muchas magnitudes no se describen solo con un numero: una fuerza, una velocidad, el eje de giro de un motor o el flujo de aire a traves de un panel exigen magnitud, direccion y sentido, es decir, vectores. Este taller es transversal: aborda un mismo aparato matematico (suma, magnitud, producto punto y producto cruz) desde tres campos de ingenieria para que cada estudiante lo conecte con su disciplina.\n\nCaso base (mecanica - estructuras): sobre un nodo de una estructura actuan dos fuerzas, $\\mathbf{F}_1=(40,30,0)$ N y $\\mathbf{F}_2=(-10,50,20)$ N. Un cable sale del nodo en la direccion $\\mathbf{d}=(0,1,0)$. Interesa la fuerza resultante, su intensidad, el angulo entre la resultante y el cable, y el momento (torque) de $\\mathbf{F}_1$ respecto de un punto situado a $\\mathbf{r}=(0.5,0,0)$ m del nodo.\n\nVariantes por disciplina (elige UNA segun tu carrera):\n- Mecatronica / Industrial (alineacion): un brazo robotico debe avanzar en la direccion deseada $\\mathbf{d}=(2,1,2)$ pero el sensor reporta avance real $\\mathbf{a}=(1,1,0)$. Mide la alineacion (coseno del angulo) y decide si la desviacion es aceptable.\n- Ambiental / Energias (flujo y area): un panel plano esta bordeado por los vectores $\\mathbf{u}=(2,0,1)$ m y $\\mathbf{v}=(0,3,0)$ m. Halla el vector normal al panel, su area y el flujo $\\Phi=\\mathbf{F}\\cdot\\hat{\\mathbf{n}}\\,A$ de un campo $\\mathbf{F}=(0,0,5)$ frente al panel.\n- Civil / Mecanica (geometria): tres puntos $A=(1,1,1)$, $B=(3,1,2)$ y $C=(1,4,1)$ definen una placa triangular; calcula su area y un vector normal a su plano.\n\nEl caso retoma directamente los ejercicios resueltos 4.1 a 4.5 del contenido del tema, asi que tienes modelos paso a paso para guiarte.",
+            "steps": [
+              "Paso 1 - Traduce a vectores (RA1): elige una de las cuatro situaciones (caso base o una variante de tu disciplina), identifica las magnitudes fisicas o geometricas involucradas y escribelas como vectores en $\\mathbb{R}^2$ o $\\mathbb{R}^3$ con sus unidades. Justifica en 3-4 lineas por que cada magnitud es vectorial y no escalar, y declara en que espacio trabajas (plano o espacio).",
+              "Paso 2 - Opera magnitud y suma: calcula la combinacion/resultante que corresponda a tu caso (por ejemplo $\\mathbf{R}=\\mathbf{F}_1+\\mathbf{F}_2$) componente a componente y obtén su magnitud con $\\|\\mathbf{v}\\|=\\sqrt{v_1^2+v_2^2+v_3^2}$. Si tu caso lo requiere, normaliza para hallar el vector unitario $\\hat{\\mathbf{v}}=\\mathbf{v}/\\|\\mathbf{v}\\|$ y comprueba que $\\|\\hat{\\mathbf{v}}\\|=1$.",
+              "Paso 3 - Aplica el producto punto (RA2): segun tu caso, usa $\\mathbf{u}\\cdot\\mathbf{v}=u_1v_1+u_2v_2+u_3v_3$ para hallar el angulo $\\theta=\\arccos\\!\\left(\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\,\\|\\mathbf{v}\\|}\\right)$, decidir ortogonalidad ($\\mathbf{u}\\cdot\\mathbf{v}=0$), calcular un trabajo $W=\\mathbf{F}\\cdot\\mathbf{d}$, una proyeccion $\\operatorname{proy}_{\\mathbf{v}}\\mathbf{u}=\\frac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{v}\\|^2}\\mathbf{v}$ o un flujo. Interpreta el signo del resultado (agudo/obtuso, impulsa/frena).",
+              "Paso 4 - Aplica el producto cruz (RA2): cuando el resultado buscado sea una direccion perpendicular o un area, calcula $\\mathbf{u}\\times\\mathbf{v}$ con el determinante simbolico $\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\u_1&u_2&u_3\\\\v_1&v_2&v_3\\end{vmatrix}$ (cuida el signo de la componente $\\mathbf{j}$). Usa $\\|\\mathbf{u}\\times\\mathbf{v}\\|$ como area del paralelogramo (mitad para el triangulo) y obten el torque $\\boldsymbol{\\tau}=\\mathbf{r}\\times\\mathbf{F}$ o el normal unitario $\\hat{\\mathbf{n}}$ si tu caso lo pide.",
+              "Paso 5 - Verifica con un criterio independiente: comprueba tus resultados con al menos una verificacion distinta del calculo original: que la norma sea no negativa, que el normal cumpla $\\mathbf{u}\\cdot(\\mathbf{u}\\times\\mathbf{v})=0$, que la coherencia de signo concuerde (producto punto positivo => angulo agudo), y que las unidades del resultado sean correctas (J para trabajo, N$\\cdot$m para torque, m$^2$ para area).",
+              "Paso 6 - Interpreta y argumenta la eleccion: redacta un cierre de 5-8 lineas explicando por que elegiste el producto punto o el producto cruz en cada parte (numero vs. vector), que significa fisicamente cada resultado en el contexto de tu disciplina y como este modelo se conecta con tu campo de ingenieria."
+            ],
+            "deliverable": "Un documento (PDF o documento de texto, maximo 3 paginas) que contenga: (1) el planteamiento del caso elegido con las magnitudes traducidas a vectores y sus unidades; (2) el desarrollo paso a paso de cada operacion (magnitud/suma, producto punto y/o producto cruz) con toda la aritmetica visible en LaTeX o claramente escrita a mano y escaneada; (3) al menos una verificacion independiente por cada operacion principal; (4) la interpretacion fisica de los resultados y la justificacion de por que cada operacion es la adecuada. La matematica debe presentarse de forma legible y los pasos no pueden estar solo enunciados: deben mostrar el calculo. Se valora una figura o esquema del sistema de vectores (opcional pero recomendado).",
+            "submission": "Sube el archivo en la tarea de Moodle \"Tema 4 - Taller: Modelado vectorial\" dentro del aula virtual de Algebra Lineal, en formato PDF (o imagen legible para el desarrollo manuscrito). Formato de nombre del archivo: ApellidoNombre_Tema4_Taller.pdf. Entrega individual a traves del enlace de entrega de tarea; el sistema registra fecha y hora. Si incluyes desarrollo manuscrito, asegurate de que el escaneo sea nitido y este orientado correctamente antes de subirlo.",
+            "rubric": [
+              {
+                "criterio": "Traduccion a vectores y modelado del caso (CE1 / RA1)",
+                "descriptor": "Aceptable: representa la situacion con vectores pertinentes y unidades, con imprecisiones menores en el modelado o en la justificacion. Sobresaliente: modela el problema con los vectores y el espacio ($\\mathbb{R}^2$ o $\\mathbb{R}^3$) optimos, justifica con claridad por que cada magnitud es vectorial y vincula el modelo de forma precisa con su disciplina de ingenieria."
+              },
+              {
+                "criterio": "Ejecucion correcta de las operaciones vectoriales (CE2 / RA2)",
+                "descriptor": "Aceptable: calcula magnitud, producto punto y/o producto cruz con la tecnica correcta y resultados mayormente exactos, con algun error aritmetico menor. Sobresaliente: ejecuta todas las operaciones sin errores, cuida los detalles criticos (signo de la componente $\\mathbf{j}$, norma no negativa, orden del producto cruz) y elige la operacion pertinente segun el tipo de resultado buscado."
+              },
+              {
+                "criterio": "Verificacion e interpretacion fisica (CE2 / RA2)",
+                "descriptor": "Aceptable: incluye al menos una verificacion y una interpretacion general del resultado. Sobresaliente: verifica cada operacion con un criterio independiente (perpendicularidad, coherencia de signo o unidades) e interpreta el significado fisico de cada resultado (trabajo, torque, alineacion, flujo o area) de forma precisa en el contexto."
+              },
+              {
+                "criterio": "Claridad, orden y comunicacion matematica",
+                "descriptor": "Aceptable: el desarrollo es seguible y la notacion es en general correcta. Sobresaliente: el documento es ordenado, la notacion vectorial es rigurosa y consistente, los pasos estan justificados y la presentacion (incluida una figura del sistema de vectores) facilita la comprension."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ],
+            "estimatedTime": "2 a 3 horas de trabajo autonomo (aproximadamente 45 minutos para el modelado y planteamiento, 60-90 minutos para los calculos y verificaciones, y 30 minutos para la redaccion de la interpretacion y el armado del documento).",
+            "participationType": "Individual",
+            "evaluationMoment": "Formativo de avance",
+            "href": "",
+            "todo": "Crear la tarea del taller en Moodle y pegar su URL."
+          },
+          {
             "type": "practice-link",
             "icon": "✏️",
             "eyebrow": "Práctica",
@@ -510,19 +688,23 @@
             "type": "complementary",
             "icon": "📎",
             "title": "Material Complementario",
-            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema según el diseño del curso).",
             "items": [
               {
-                "resourceName": "Texto base — Vectores",
-                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). CENGAGE Learning.",
-                "href": "",
-                "todo": "Pegar URL del recurso/lectura en Moodle."
+                "resourceName": "Khan Academy — Álgebra lineal (recurso abierto)",
+                "tipo": "Recurso abierto (video + ejercicios)",
+                "apa": "Khan Academy. (s. f.). <em>Álgebra lineal</em> [curso en línea, recursos abiertos en español]. https://es.khanacademy.org/math/linear-algebra",
+                "justificacion": "Ejercitación autónoma adicional y explicaciones alternativas para el estudiante 100% virtual; apoyo de nivelación de la diagnóstica.",
+                "href": "https://es.khanacademy.org/math/linear-algebra",
+                "todo": "Verificar enlace y disponibilidad de subtítulos."
               },
               {
-                "resourceName": "Lectura de apoyo — Producto punto y producto cruz",
-                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw Hill Educación.",
+                "resourceName": "Anton & Rorres (2013) — Álgebra lineal con aplicaciones",
+                "tipo": "Libro complementario",
+                "apa": "Anton, H., &amp; Rorres, C. (2013). <em>Álgebra lineal con aplicaciones</em> (10.ª ed., trad.). Limusa Wiley. Caps. de vectores en R² y R³, producto punto y producto cruz.",
+                "justificacion": "Texto fuerte en interpretación geométrica y aplicaciones de vectores (fuerzas, geometría), pertinente al enfoque transversal a varias ingenierías.",
                 "href": "",
-                "todo": "Pegar URL del recurso/lectura en Moodle."
+                "todo": "Verificar edición/año disponible en biblioteca."
               }
             ]
           },
@@ -568,6 +750,51 @@
             "todo": "Pegar URL del paquete SCORM del Contenido 5 en Moodle."
           },
           {
+            "type": "workshop",
+            "icon": "✏️",
+            "title": "Taller integrador: rectas, planos e intersecciones en un caso transversal de ingeniería",
+            "objective": "Determinar las ecuaciones de una recta y de un plano en el espacio en sus distintas formas, representarlos gráficamente, hallar las intersecciones plano-recta y recta-recta resolviendo el sistema lineal asociado, e interpretar el tipo de solución argumentando su pertinencia en un campo concreto de la ingeniería. Con ello evidenciarás de forma integradora RA1 (representar y operar rectas y planos en $\\mathbb{R}^3$), RA2 (resolver e interpretar el sistema lineal de la intersección) y RA3 (valorar la pertinencia disciplinar de la aplicación).",
+            "context": "Este es el taller de cierre del curso y es transversal a las ingenierías: el mismo modelo matemático cambia de significado según tu programa. La situación es la siguiente. Un sistema automatizado guía una herramienta (efector) a lo largo de una trayectoria recta sobre una superficie de trabajo plana. La trayectoria del efector es la recta que pasa por los puntos $A=(0,1,4)$ y $B=(2,3,2)$. La superficie de la pieza es el plano que pasa por los tres puntos $P=(1,0,0)$, $Q=(0,2,0)$ y $R=(0,0,2)$. Además, una segunda herramienta sigue la trayectoria $\\mathbf{s}(u)=(1,2,1)+u\\,(1,-1,0)$, y debes determinar si ambas trayectorias se cruzan (riesgo de colisión) o no.\n\nLectura disciplinar (elige la tuya): en mecatronica/mecanica, la recta es la trayectoria de un brazo robotico o una fresa de CAD, el plano es la superficie de la pieza y la interseccion es el punto de contacto o de posible colision; en ingenieria de sistemas/industrial, las mismas matrices que mueven trayectorias cifran informacion (cifrado de Hill, invertibilidad modulo 26); en ingenieria electrica/de energias, el sistema lineal que decide una interseccion es el mismo que resuelve un circuito por las leyes de Kirchhoff. La idea central que recorre todo el curso es que un problema geometrico de interseccion se resuelve resolviendo un sistema lineal e interpretando su tipo de solucion. Trabaja la matematica con rigor y, al final, traduce cada resultado al lenguaje de TU programa de ingenieria.",
+            "steps": [
+              "Paso 1. Modela la recta (RA1, CE1). Calcula el vector director de la trayectoria del efector como $\\mathbf{d}=B-A=(2-0,\\,3-1,\\,2-4)=(2,2,-2)$. Escribe la recta en sus tres formas: vectorial $\\mathbf{r}(t)=(0,1,4)+t\\,(2,2,-2)$; parametrica $x=2t,\\; y=1+2t,\\; z=4-2t$; y simetrica $\\frac{x}{2}=\\frac{y-1}{2}=\\frac{z-4}{-2}$. Verifica con un punto conocido: comprueba que con $t=0$ obtienes $A$ y con $t=1$ obtienes $B$.",
+              "Paso 2. Modela el plano (RA1, CE1). Construye dos vectores contenidos en el plano: $\\overrightarrow{PQ}=Q-P=(-1,2,0)$ y $\\overrightarrow{PR}=R-P=(-1,0,2)$. Obten el vector normal con el producto cruz $\\mathbf{n}=\\overrightarrow{PQ}\\times\\overrightarrow{PR}$ (saber del Tema 4). Escribe la ecuacion del plano en forma punto-normal $A(x-x_0)+B(y-y_0)+C(z-z_0)=0$ usando el punto $P$, y luego en forma general $Ax+By+Cz=D$. Verifica que los tres puntos $P$, $Q$ y $R$ satisfacen la ecuacion general (todos deben dar el mismo valor $D$).",
+              "Paso 3. Grafica (RA1, CE1). Representa en un mismo sistema de ejes $x$, $y$, $z$ la recta del efector y el plano de la pieza. Marca el punto base, el vector director $\\mathbf{d}$ y el vector normal $\\mathbf{n}$. Puedes dibujarlo a mano sobre papel y fotografiarlo, o usar GeoGebra 3D, Desmos 3D u otra herramienta libre. Acompaña la grafica con una leyenda breve que identifique cada objeto.",
+              "Paso 4. Halla la interseccion plano-recta (RA2, CE2). Sustituye las parametricas de la recta del Paso 1 en la ecuacion general del plano del Paso 2. Obtendras una unica ecuacion lineal en $t$ de la forma $(\\mathbf{n}\\cdot\\mathbf{d})\\,t=D-\\mathbf{n}\\cdot P_0$. Resuelvela y determina el caso: solucion unica $t^*$ (la herramienta toca la pieza en el punto $\\mathbf{r}(t^*)$), igualdad falsa tipo $0=k$ (recta paralela al plano, no hay contacto) o igualdad $0=0$ (recta contenida en el plano). Si hay corte, calcula las coordenadas del punto de contacto y verificalo sustituyendolo en la ecuacion del plano.",
+              "Paso 5. Analiza la interseccion recta-recta (RA2, CE2). Iguala las parametricas de la recta del efector $\\mathbf{r}(t)$ con las de la segunda herramienta $\\mathbf{s}(u)=(1,2,1)+u\\,(1,-1,0)$, usando parametros distintos $t$ y $u$. Plantea el sistema $3\\times 2$ que resulta (una ecuacion por coordenada). Resuelvelo con dos ecuaciones y VERIFICA obligatoriamente la tercera: si el par $(t,u)$ cumple las tres, las trayectorias se cortan (riesgo de colision) en ese punto; si falla la tercera, no se cortan y debes clasificarlas comparando los directores: paralelas si son proporcionales, alabeadas (se cruzan sin tocarse) si no lo son.",
+              "Paso 6. Interpreta y argumenta la pertinencia disciplinar (RA3, CE3). Redacta un parrafo (8 a 12 lineas) en el que: (a) traduzcas cada resultado al lenguaje de TU programa de ingenieria (que significa fisicamente el punto de contacto y el resultado del analisis de colision), y (b) argumentes por que el algebra lineal -reducir una interseccion geometrica a un sistema lineal- es la herramienta pertinente para tu campo, conectando con al menos una de las tres aplicaciones del tema (rotaciones/traslaciones, cifrado de Hill o circuitos por Kirchhoff)."
+            ],
+            "deliverable": "Un unico documento (PDF o documento de texto exportado a PDF) titulado Taller_Tema5_NombreApellido que contenga, claramente rotulado por pasos: (1) las tres formas de la ecuacion de la recta del efector con su verificacion; (2) el calculo del vector normal por producto cruz y la ecuacion del plano en forma punto-normal y general, verificada con los tres puntos; (3) la grafica de la recta y el plano con sus vectores etiquetados (imagen incrustada); (4) el desarrollo completo de la interseccion plano-recta con la ecuacion en $t$, el caso identificado y el punto de contacto verificado; (5) el sistema $3\\times 2$ de la interseccion recta-recta resuelto, con la comprobacion de la tercera ecuacion y la clasificacion del par de trayectorias; y (6) el parrafo argumentativo de pertinencia disciplinar (RA3). Todo el procedimiento debe estar escrito a mano o digitado mostrando los pasos, no solo los resultados.",
+            "submission": "Sube el documento PDF a la actividad Tarea de Moodle titulada Taller integrador - Tema 5: Rectas, planos y aplicaciones, ubicada en el bloque del Tema 5 del aula virtual. Usa el boton Agregar entrega, adjunta un unico archivo PDF nombrado Taller_Tema5_NombreApellido.pdf (tamano maximo 20 MB) y confirma con Guardar cambios; verifica que el estado de la entrega cambie a Enviado para calificar. Si la grafica la hiciste en GeoGebra/Desmos, incrusta la imagen dentro del PDF (no envies enlaces externos como evidencia principal). La entrega es individual.",
+            "rubric": [
+              {
+                "criterio": "CE1 - Ecuaciones y grafica de la recta y el plano (RA1)",
+                "descriptor": "Sobresaliente: escribe la recta en las tres formas y el plano en forma punto-normal y general, obtiene el normal con producto cruz, verifica ambas ecuaciones con puntos conocidos y grafica recta y plano con precision, etiquetando director y normal. Aceptable: escribe las ecuaciones en al menos una forma con errores menores y grafica de manera aproximada. Insuficiente: ecuaciones incompletas o sin verificar y grafica ausente o incorrecta."
+              },
+              {
+                "criterio": "CE2 - Interseccion y tipo de solucion (RA2)",
+                "descriptor": "Sobresaliente: plantea correctamente el sistema lineal de ambas intersecciones (sustitucion para plano-recta e igualacion de parametricas para recta-recta), resuelve, verifica la tercera ecuacion en recta-recta y clasifica con rigor el tipo de solucion (corte, paralelismo, contencion o cruce), hallando el punto cuando existe. Aceptable: plantea el sistema y obtiene un resultado con interpretacion parcial del tipo de solucion. Insuficiente: no plantea el sistema o confunde los casos (p. ej. paralela frente a contenida, o no verifica la tercera ecuacion)."
+              },
+              {
+                "criterio": "CE3 - Pertinencia disciplinar y argumentacion (RA3)",
+                "descriptor": "Sobresaliente: argumenta con solidez por que reducir la interseccion a un sistema lineal es pertinente en su campo de ingenieria, conecta con al menos una aplicacion del tema y traduce los resultados al contexto fisico (contacto/colision). Aceptable: menciona una aplicacion de ingenieria sin justificar plenamente su pertinencia. Insuficiente: no relaciona el resultado con un campo de ingenieria o la argumentacion es incoherente con el procedimiento."
+              },
+              {
+                "criterio": "Rigor, verificacion y comunicacion matematica",
+                "descriptor": "Sobresaliente: muestra todos los pasos del procedimiento, usa notacion correcta, verifica cada resultado sustituyendo en las ecuaciones originales y presenta el trabajo de forma ordenada y legible. Aceptable: muestra la mayoria de los pasos con verificaciones parciales y presentacion comprensible. Insuficiente: presenta solo resultados sin procedimiento ni verificacion, o con notacion confusa."
+              }
+            ],
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2",
+              "RA3"
+            ],
+            "estimatedTime": "4 a 5 horas de trabajo autonomo (recomendado distribuirlas en dos sesiones: modelado y grafica en la primera; intersecciones, interpretacion y argumentacion en la segunda).",
+            "participationType": "individual",
+            "evaluationMoment": "integrador (cierre del curso): por tratarse del Tema 5, este taller funciona como evaluacion sumativa integradora con valoracion cualitativa (sin ponderaciones numericas) que articula los saberes de los Temas 1 a 4.",
+            "href": "",
+            "todo": "Crear la tarea del taller en Moodle y pegar su URL."
+          },
+          {
             "type": "practice-link",
             "icon": "✏️",
             "eyebrow": "Práctica",
@@ -583,19 +810,15 @@
             "type": "complementary",
             "icon": "📎",
             "title": "Material Complementario",
-            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema según el diseño del curso).",
             "items": [
               {
-                "resourceName": "Texto base — Rectas y planos en el espacio",
-                "apa": "Larson, R. (2010). <em>Fundamentos de álgebra lineal</em> (6.ª ed.). CENGAGE Learning.",
+                "resourceName": "Lay, Lay & McDonald (2016) — Álgebra lineal y sus aplicaciones",
+                "tipo": "Libro complementario",
+                "apa": "Lay, D. C., Lay, S. R., &amp; McDonald, J. J. (2016). <em>Álgebra lineal y sus aplicaciones</em> (5.ª ed., trad.). Pearson. Caps. de rectas/planos, transformaciones lineales y aplicaciones (criptografía, circuitos).",
+                "justificacion": "Referencia clave en transformaciones y aplicaciones del álgebra lineal; sustenta el OVA y la etapa integradora (RA3).",
                 "href": "",
-                "todo": "Pegar URL del recurso/lectura en Moodle."
-              },
-              {
-                "resourceName": "Lectura de apoyo — Aplicaciones del álgebra lineal",
-                "apa": "Grossman, S. I. (2008). <em>Álgebra lineal</em>. McGraw Hill Educación.",
-                "href": "",
-                "todo": "Pegar URL del recurso/lectura en Moodle."
+                "todo": "Verificar edición/año disponible en biblioteca."
               }
             ]
           },

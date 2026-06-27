@@ -1,0 +1,249 @@
+{
+  "asignatura": "Álgebra Lineal",
+  "tipo": "diagnóstica (revisión automática)",
+  "contestadas": 10,
+  "totalBanco": 15,
+  "instrucciones": "Esta evaluación diagnóstica revisa tus conocimientos PREVIOS (prerrequisitos), no el contenido de Álgebra Lineal. Del banco de 15 preguntas, el sistema te presentará 10 de forma aleatoria, de selección múltiple con única respuesta. Resuelve cada ejercicio sin calculadora cuando sea posible y elige la opción correcta (A, B, C o D). No hay penalización; el resultado y la retroalimentación por pregunta sirven como insumo de tu Balance inicial para reforzar lo necesario antes de iniciar el curso.",
+  "preguntas": [
+    {
+      "id": "DX-01",
+      "prerrequisito": "Operaciones con números reales: jerarquía de operaciones y signos",
+      "enunciado": "Evalúa la expresión $-3^2 + (-2)(5 - 8) \\div 3$.",
+      "opciones": [
+        { "clave": "A", "texto": "$11$" },
+        { "clave": "B", "texto": "$-7$" },
+        { "clave": "C", "texto": "$-11$" },
+        { "clave": "D", "texto": "$15$" }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. Por jerarquía: $-3^2=-9$ (la potencia actúa solo sobre el 3), $5-8=-3$, luego $(-2)(-3)=6$ y $6\\div 3=2$; finalmente $-9+2=-7$.",
+        "incorrecta": "Recuerda que $-3^2 = -(3^2) = -9$, no $9$, y aplica primero paréntesis, luego potencias, después multiplicación/división y por último suma/resta. Repasa jerarquía de operaciones y leyes de signos — Stewart, Precálculo (cap. de números reales)."
+      }
+    },
+    {
+      "id": "DX-02",
+      "prerrequisito": "Operaciones con números reales: fracciones",
+      "enunciado": "Calcula $\\dfrac{2}{3} + \\dfrac{3}{4} - \\dfrac{5}{6}$.",
+      "opciones": [
+        { "clave": "A", "texto": "$\\dfrac{1}{2}$" },
+        { "clave": "B", "texto": "$\\dfrac{19}{12}$" },
+        { "clave": "C", "texto": "$\\dfrac{7}{12}$" },
+        { "clave": "D", "texto": "$\\dfrac{0}{13}$" }
+      ],
+      "respuestaCorrecta": "C",
+      "retroalimentacion": {
+        "correcta": "Correcto. Con denominador común $12$: $\\frac{8}{12}+\\frac{9}{12}-\\frac{10}{12}=\\frac{7}{12}$.",
+        "incorrecta": "No se suman numeradores y denominadores por separado: hay que llevar todas las fracciones a un denominador común (mcm de $3,4,6$ es $12$). Repasa suma y resta de fracciones — Swokowski & Cole, Álgebra y trigonometría con geometría analítica."
+      }
+    },
+    {
+      "id": "DX-03",
+      "prerrequisito": "Operaciones con números reales: exponentes y radicales",
+      "enunciado": "Simplifica $\\dfrac{2^{5}\\cdot 2^{-2}}{2^{4}}$.",
+      "opciones": [
+        { "clave": "A", "texto": "$2$" },
+        { "clave": "B", "texto": "$8$" },
+        { "clave": "C", "texto": "$2^{7}$" },
+        { "clave": "D", "texto": "$\\dfrac{1}{2}$" }
+      ],
+      "respuestaCorrecta": "D",
+      "retroalimentacion": {
+        "correcta": "Correcto. Sumando exponentes en el numerador: $2^{5-2}=2^{3}$; al dividir se restan: $2^{3-4}=2^{-1}=\\tfrac{1}{2}$.",
+        "incorrecta": "Al multiplicar potencias de igual base se SUMAN los exponentes y al dividir se RESTAN (no se multiplican). $\\frac{2^{3}}{2^{4}}=2^{-1}=\\frac12$. Repasa leyes de los exponentes — Stewart, Precálculo (exponentes y radicales)."
+      }
+    },
+    {
+      "id": "DX-04",
+      "prerrequisito": "Operaciones algebraicas: productos notables",
+      "enunciado": "Desarrolla $(2x - 3)^2$.",
+      "opciones": [
+        { "clave": "A", "texto": "$4x^2 - 12x + 9$" },
+        { "clave": "B", "texto": "$4x^2 + 9$" },
+        { "clave": "C", "texto": "$2x^2 - 12x + 9$" },
+        { "clave": "D", "texto": "$4x^2 - 6x + 9$" }
+      ],
+      "respuestaCorrecta": "A",
+      "retroalimentacion": {
+        "correcta": "Correcto. Por el cuadrado de un binomio $(a-b)^2=a^2-2ab+b^2$: $(2x)^2-2(2x)(3)+3^2=4x^2-12x+9$.",
+        "incorrecta": "El cuadrado de un binomio NO es la suma de los cuadrados: $(a-b)^2=a^2-2ab+b^2$ incluye el doble producto $-2ab$. Repasa productos notables — Swokowski & Cole, Álgebra y trigonometría."
+      }
+    },
+    {
+      "id": "DX-05",
+      "prerrequisito": "Operaciones algebraicas: factorización",
+      "enunciado": "Factoriza completamente $x^2 - 5x + 6$.",
+      "opciones": [
+        { "clave": "A", "texto": "$(x + 2)(x + 3)$" },
+        { "clave": "B", "texto": "$(x - 2)(x - 3)$" },
+        { "clave": "C", "texto": "$(x - 1)(x - 6)$" },
+        { "clave": "D", "texto": "$(x - 5)(x + 6)$" }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. Buscamos dos números cuyo producto sea $+6$ y cuya suma sea $-5$: son $-2$ y $-3$, luego $(x-2)(x-3)$.",
+        "incorrecta": "Para $x^2+bx+c$ busca dos números que MULTIPLICADOS den $c$ y SUMADOS den $b$; aquí producto $+6$ y suma $-5$ obliga a signos negativos. Verifica expandiendo. Repasa factorización de trinomios — Stewart, Precálculo."
+      }
+    },
+    {
+      "id": "DX-06",
+      "prerrequisito": "Operaciones algebraicas: simplificación de fracciones algebraicas",
+      "enunciado": "Simplifica $\\dfrac{x^2 - 9}{x^2 - x - 6}$ (con $x \\neq 3,\\, x \\neq -2$).",
+      "opciones": [
+        { "clave": "A", "texto": "$\\dfrac{x - 3}{x - 2}$" },
+        { "clave": "B", "texto": "$\\dfrac{9}{x + 2}$" },
+        { "clave": "C", "texto": "$\\dfrac{x + 3}{x + 2}$" },
+        { "clave": "D", "texto": "$\\dfrac{x - 9}{-x - 6}$" }
+      ],
+      "respuestaCorrecta": "C",
+      "retroalimentacion": {
+        "correcta": "Correcto. Factorizando: numerador $=(x-3)(x+3)$ y denominador $=(x-3)(x+2)$; al cancelar el factor común $(x-3)$ queda $\\frac{x+3}{x+2}$.",
+        "incorrecta": "No se pueden cancelar términos sueltos de una suma; primero FACTORIZA numerador y denominador y cancela solo factores comunes. Repasa simplificación de expresiones racionales — Swokowski & Cole, Álgebra y trigonometría."
+      }
+    },
+    {
+      "id": "DX-07",
+      "prerrequisito": "Solución de ecuaciones lineales de primer orden",
+      "enunciado": "Resuelve para $x$: $3(x - 2) = 2x + 5$.",
+      "opciones": [
+        { "clave": "A", "texto": "$x = 1$" },
+        { "clave": "B", "texto": "$x = -1$" },
+        { "clave": "C", "texto": "$x = 11$" },
+        { "clave": "D", "texto": "$x = \\dfrac{11}{5}$" }
+      ],
+      "respuestaCorrecta": "C",
+      "retroalimentacion": {
+        "correcta": "Correcto. $3x-6=2x+5 \\Rightarrow 3x-2x=5+6 \\Rightarrow x=11$.",
+        "incorrecta": "Distribuye primero el $3$ sobre $(x-2)$ y luego agrupa las $x$ a un lado y las constantes al otro cambiando de signo al pasar de miembro. Repasa solución de ecuaciones lineales — Stewart, Precálculo (ecuaciones)."
+      }
+    },
+    {
+      "id": "DX-08",
+      "prerrequisito": "Solución de ecuaciones lineales con fracciones (despeje)",
+      "enunciado": "Resuelve para $x$: $\\dfrac{x}{2} + \\dfrac{x}{3} = 10$.",
+      "opciones": [
+        { "clave": "A", "texto": "$x = 6$" },
+        { "clave": "B", "texto": "$x = 12$" },
+        { "clave": "C", "texto": "$x = 60$" },
+        { "clave": "D", "texto": "$x = 2$" }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. Multiplicando todo por $6$ (mcm de $2$ y $3$): $3x+2x=60 \\Rightarrow 5x=60 \\Rightarrow x=12$.",
+        "incorrecta": "Multiplica ambos lados por el mínimo común denominador para eliminar las fracciones; $\\frac{x}{2}+\\frac{x}{3}=\\frac{5x}{6}$, no $\\frac{2x}{5}$. Repasa ecuaciones con fracciones — Swokowski & Cole, Álgebra y trigonometría."
+      }
+    },
+    {
+      "id": "DX-09",
+      "prerrequisito": "Solución de ecuaciones de segundo orden: fórmula cuadrática",
+      "enunciado": "Resuelve $x^2 - 4x - 5 = 0$.",
+      "opciones": [
+        { "clave": "A", "texto": "$x = -5$ o $x = 1$" },
+        { "clave": "B", "texto": "$x = 5$ o $x = 1$" },
+        { "clave": "C", "texto": "$x = 4$ o $x = -5$" },
+        { "clave": "D", "texto": "$x = 5$ o $x = -1$" }
+      ],
+      "respuestaCorrecta": "D",
+      "retroalimentacion": {
+        "correcta": "Correcto. Factorizando, $(x-5)(x+1)=0$, de donde $x=5$ o $x=-1$ (también por fórmula: $x=\\frac{4\\pm\\sqrt{16+20}}{2}=\\frac{4\\pm 6}{2}$).",
+        "incorrecta": "Para $ax^2+bx+c=0$ usa $x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}$ con $a=1,\\,b=-4,\\,c=-5$, cuidando los signos. Repasa solución de ecuaciones cuadráticas — Stewart, Precálculo (ecuaciones cuadráticas)."
+      }
+    },
+    {
+      "id": "DX-10",
+      "prerrequisito": "Solución de ecuaciones de segundo orden: factorización y raíces",
+      "enunciado": "¿Cuáles son las soluciones de $2x^2 - 8 = 0$?",
+      "opciones": [
+        { "clave": "A", "texto": "$x = 4$" },
+        { "clave": "B", "texto": "$x = 2$ o $x = -2$" },
+        { "clave": "C", "texto": "$x = 2$ únicamente" },
+        { "clave": "D", "texto": "$x = \\sqrt{8}$ únicamente" }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. $2x^2=8 \\Rightarrow x^2=4 \\Rightarrow x=\\pm 2$. Una ecuación cuadrática de este tipo tiene dos raíces.",
+        "incorrecta": "Al despejar $x^2=4$ debes tomar AMBAS raíces $x=\\pm\\sqrt{4}=\\pm 2$, no solo la positiva. Repasa raíces cuadradas y ecuaciones cuadráticas incompletas — Stewart, Precálculo."
+      }
+    },
+    {
+      "id": "DX-11",
+      "prerrequisito": "Sistemas de ecuaciones lineales 2×2",
+      "enunciado": "Resuelve el sistema $\\begin{cases} 2x + y = 7 \\\\ x - y = 2 \\end{cases}$.",
+      "opciones": [
+        { "clave": "A", "texto": "$x = 1,\\ y = 3$" },
+        { "clave": "B", "texto": "$x = 3,\\ y = 1$" },
+        { "clave": "C", "texto": "$x = 3,\\ y = -1$" },
+        { "clave": "D", "texto": "$x = 2,\\ y = 3$" }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. Sumando ambas ecuaciones se elimina $y$: $3x=9 \\Rightarrow x=3$; sustituyendo en $x-y=2$ se obtiene $y=1$.",
+        "incorrecta": "Por eliminación, suma las ecuaciones para cancelar $y$ (sus coeficientes son $+1$ y $-1$) y luego sustituye para hallar la otra incógnita; verifica en AMBAS ecuaciones. Repasa sistemas $2\\times 2$ — Grossman, Álgebra lineal (sistemas lineales)."
+      }
+    },
+    {
+      "id": "DX-12",
+      "prerrequisito": "Sistemas de ecuaciones lineales 2×2 (método de sustitución)",
+      "enunciado": "En el sistema $\\begin{cases} y = 2x - 1 \\\\ 3x + y = 14 \\end{cases}$, el valor de $x$ es:",
+      "opciones": [
+        { "clave": "A", "texto": "$x = 5$" },
+        { "clave": "B", "texto": "$x = 2$" },
+        { "clave": "C", "texto": "$x = 3$" },
+        { "clave": "D", "texto": "$x = -3$" }
+      ],
+      "respuestaCorrecta": "C",
+      "retroalimentacion": {
+        "correcta": "Correcto. Sustituyendo $y=2x-1$ en la segunda ecuación: $3x+(2x-1)=14 \\Rightarrow 5x-1=14 \\Rightarrow 5x=15 \\Rightarrow x=3$.",
+        "incorrecta": "En sustitución, reemplaza toda la expresión $y=2x-1$ (entre paréntesis) dentro de la otra ecuación y luego resuelve para $x$. Repasa método de sustitución — Stewart, Precálculo (sistemas de ecuaciones)."
+      }
+    },
+    {
+      "id": "DX-13",
+      "prerrequisito": "Función lineal: pendiente y ecuación de la recta",
+      "enunciado": "¿Cuál es la pendiente de la recta que pasa por los puntos $(1, 2)$ y $(4, 11)$?",
+      "opciones": [
+        { "clave": "A", "texto": "$m = 3$" },
+        { "clave": "B", "texto": "$m = \\dfrac{1}{3}$" },
+        { "clave": "C", "texto": "$m = 9$" },
+        { "clave": "D", "texto": "$m = -3$" }
+      ],
+      "respuestaCorrecta": "A",
+      "retroalimentacion": {
+        "correcta": "Correcto. La pendiente es $m=\\dfrac{y_2-y_1}{x_2-x_1}=\\dfrac{11-2}{4-1}=\\dfrac{9}{3}=3$.",
+        "incorrecta": "La pendiente es el cociente del cambio en $y$ sobre el cambio en $x$: $m=\\frac{\\Delta y}{\\Delta x}$, no la diferencia de $y$ sola ni su inverso. Repasa función lineal y pendiente — Stewart, Precálculo (rectas)."
+      }
+    },
+    {
+      "id": "DX-14",
+      "prerrequisito": "Geometría básica: coordenadas y distancia en 2D y 3D",
+      "enunciado": "Calcula la distancia entre los puntos $A(1, 2, 2)$ y $B(1, 6, 5)$ en el espacio.",
+      "opciones": [
+        { "clave": "A", "texto": "$7$" },
+        { "clave": "B", "texto": "$\\sqrt{7}$" },
+        { "clave": "C", "texto": "$25$" },
+        { "clave": "D", "texto": "$5$" }
+      ],
+      "respuestaCorrecta": "D",
+      "retroalimentacion": {
+        "correcta": "Correcto. $d=\\sqrt{(1-1)^2+(6-2)^2+(5-2)^2}=\\sqrt{0+16+9}=\\sqrt{25}=5$.",
+        "incorrecta": "La distancia en 3D es $d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}$: eleva cada diferencia al cuadrado, suma y saca raíz (no sumes las diferencias directamente). Repasa distancia y coordenadas cartesianas — Larson, Fundamentos de álgebra lineal / Stewart, Precálculo."
+      }
+    },
+    {
+      "id": "DX-15",
+      "prerrequisito": "Geometría básica: áreas y volúmenes",
+      "enunciado": "Una caja rectangular tiene base de $3\\,\\text{cm} \\times 4\\,\\text{cm}$ y altura de $5\\,\\text{cm}$. ¿Cuál es su volumen?",
+      "opciones": [
+        { "clave": "A", "texto": "$12\\,\\text{cm}^3$" },
+        { "clave": "B", "texto": "$60\\,\\text{cm}^3$" },
+        { "clave": "C", "texto": "$47\\,\\text{cm}^2$" },
+        { "clave": "D", "texto": "$94\\,\\text{cm}^3$" }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. El volumen de un prisma rectangular es $V=\\text{largo}\\times\\text{ancho}\\times\\text{alto}=3\\times 4\\times 5=60\\,\\text{cm}^3$, expresado en unidades cúbicas.",
+        "incorrecta": "El volumen multiplica las TRES dimensiones (no solo dos, que daría el área de la base) y se mide en unidades cúbicas ($\\text{cm}^3$). $94$ corresponde al área superficial. Repasa áreas y volúmenes — Stewart, Precálculo (geometría)."
+      }
+    }
+  ]
+}

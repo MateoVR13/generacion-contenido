@@ -26,18 +26,35 @@ asignatura, y aportar lo que solo el experto disciplinar sabe.
    - ¿El **número de temas (N)** es adecuado? ¿Fusionar, dividir, reordenar, agregar o quitar temas?
    - ¿Los propósitos y preguntas orientadoras son correctos disciplinarmente?
 
-4. **Actividades del estudiante por tema**:
+4. **Actividades y TALLERES del estudiante por tema (requiere aprobación del profesor):**
+   - Presenta, como TABLA revisable, el **taller propuesto por cada escenario/tema**: tema, enunciado del
+     taller, evidencia esperada, RA/criterio, y columna **¿Aprobado?** (`[ ] Aprobar [ ] Quitar [ ] Ajustar`).
    - Para cada tema, ¿qué **actividades** debe realizar el estudiante (individuales y colaborativas)?
-   - ¿Las actividades propuestas son pertinentes? ¿Qué agregar/cambiar?
+   - ¿Los talleres y actividades propuestos son pertinentes? ¿Qué agregar/cambiar?
+   - Regla: el taller se redacta/incluye completo en el escenario **salvo que el profesor lo marque "Quitar"**;
+     lo que marque "Ajustar" se corrige antes de generarlo. **Ningún taller entra en un escenario sin esta
+     revisión docente.**
 
 5. **Recursos didácticos y material complementario** (cantidades por créditos: componentes 2/3/4,
    material 3/5/7):
    - ¿Qué recursos didácticos sugiere (infografía, video, podcast, mapa, OVA, juego…) y para qué tema?
-   - ¿Qué **bibliografía/material complementario** específico recomienda? (fuentes reales, APA).
+   - **MATERIAL COMPLEMENTARIO PROPUESTO (requiere aprobación del profesor).** Presenta la matriz propuesta
+     en la Fase 2 como una TABLA revisable, una fila por material: `#` (M1, M2…), referencia APA, tipo,
+     tema(s) asociado(s), justificación, y una columna **¿Aprobado?** con casillas `[ ] Aprobar [ ] Quitar
+     [ ] Ajustar`. Incluye filas en blanco para que el profesor **agregue** material. Indica la cobertura por
+     tema. Regla: el material se incluirá en los escenarios **salvo que el profesor lo marque "Quitar"**; lo
+     que marque "Ajustar" se corrige antes de incluirlo. **El material complementario NO entra en ningún
+     escenario de aprendizaje hasta pasar por esta revisión docente.**
 
 6. **Evaluación** (propuesta en F3, el docente valida):
    - Diagnóstica (10/15), formativas de seguimiento, sumativa integradora, foro debate, wiki, coevaluación.
    - ¿Las evidencias y rúbricas son adecuadas? ¿Ponderaciones si aplica?
+   - **BANCO DIAGNÓSTICO PROPUESTO (requiere aprobación del profesor).** Presenta las **15 preguntas
+     propuestas** de prerrequisitos (enunciado, opciones, respuesta correcta, retroalimentación) como lista
+     revisable, cada una con `[ ] Aprobar [ ] Quitar [ ] Ajustar` y filas para que el profesor **agregue**.
+     El banco solo se finaliza con las preguntas aprobadas/ajustadas por el profesor. **Ninguna pregunta
+     diagnóstica se publica sin esta revisión docente.** (Si el banco es extenso, puede adjuntarse como anexo
+     del instrumento, pero debe ir CON el instrumento para su validación.)
 
 7. **Sugerencias y feedback libre del docente**:
    - Observaciones generales, errores a evitar, énfasis disciplinares, ejemplos/casos preferidos, fuentes

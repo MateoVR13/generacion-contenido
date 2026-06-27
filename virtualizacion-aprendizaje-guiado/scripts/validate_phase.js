@@ -101,6 +101,21 @@ if (st.pipeline2Completo === true) {
   const hasMoodle = fs.existsSync(lmsDir) && fs.readdirSync(lmsDir).some((f) => /\.moodle\.json$/i.test(f));
   if (!hasMoodle)
     errors.push("Pipeline 2 marcado completo pero NO hay JSON de Moodle (fase-7-montaje-lms/<slug>-<MET>.moodle.json).");
+  // (c) Material complementario: debe haber pasado por revisión docente (no quedar "propuesto").
+  const mat = Array.isArray(st.materialComplementario) ? st.materialComplementario : [];
+  if (mat.length === 0)
+    warnings.push("Pipeline 2 completo sin materialComplementario en el estado (debió proponerse en Fase 2 y aprobarse en el instrumento).");
+  const sinRevisar = mat.filter((m) => !m.estado || m.estado === "propuesto");
+  if (sinRevisar.length)
+    errors.push(`Material complementario sin revisión docente (estado "propuesto"): ${sinRevisar.map((m) => m.id || "?").join(", ")}. El profesor debe aprobarlo/ajustarlo/quitarlo en el instrumento antes de incluirlo en los escenarios.`);
+}
+
+// Pipeline 1: al cerrar (gate pendiente), el material complementario debe estar PROPUESTO en el estado
+// (la propuesta es parte del instrumento que el docente revisa).
+if (st.pipeline === 1 && fase >= 2) {
+  const mat = Array.isArray(st.materialComplementario) ? st.materialComplementario : [];
+  if (mat.length === 0)
+    warnings.push("Fase 2+: aún no hay material complementario propuesto en el estado; debe proponerse para que el docente lo revise en el instrumento.");
 }
 
 // Reporte.

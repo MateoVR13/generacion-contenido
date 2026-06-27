@@ -158,3 +158,7 @@ Antes de devolver el JSON:
   contenido activo (`<script>`/`<style>`/`on*=`/`javascript:`). Pasa `node --check`.
 - `../../DESIGN.md` — contrato maestro del proyecto (esquema, marca, reglas del renderer).
 - `../template/` — renderer que consume este JSON y emite el HTML inline pegable.
+
+## Resultados de aprendizaje (redacción)
+
+En el componente `learning-outcomes` (y cualquier mención de RA), redacta cada resultado en **primera persona del singular, presente** ("Modelo...", "Resuelvo...", "Aplico...", "Evalúo...", "Valoro...", "Desarrollo..."), nunca en infinitivo ("Modelar") ni en tercera persona ("Modela"). Conserva el verbo de origen; solo conjúgalo a primera persona.
