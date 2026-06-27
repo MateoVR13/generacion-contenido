@@ -1,0 +1,61 @@
+# Pipeline 1 — Fases 0–4 (análisis y planeación) → Instrumento de validación docente
+
+Objetivo del pipeline: a partir del syllabus, producir el **instrumento de validación docente** que el
+profesor responde antes de generar contenido. Cada fase escribe `fase-N-<nombre>.md` y actualiza
+`estado-proyecto.json`. Entre fases solo viaja el estado compacto.
+
+Diseño inverso: RA → evidencias de evaluación → metodología → actividades → recursos.
+
+---
+
+## Fase 0 — Alistamiento institucional
+- **Entrada:** syllabus (extraído a JSON con `scripts/extract_syllabus.mjs`).
+- **Hacer:** identificar asignatura, código, programa, nivel, modalidad, créditos, horas, RA, saberes,
+  técnica/criterios de evaluación, bibliografía. Aplicar parametrización por créditos (`lineamientos-ua.md`).
+- **Entregables (`fase-0-alistamiento.md`):** ficha de configuración inicial; tabla de
+  decisiones/brechas/recomendaciones; mapa de insumos disponibles/faltantes; roles iniciales; alertas.
+- **Estado:** `creditos`, `duracionModular`, `horas{}`, `asignatura{}`, `brechas[]`.
+- **Cierre:** créditos confirmados; si faltan → brecha crítica.
+
+## Fase 1 — Análisis del syllabus
+- **Hacer:** análisis curricular. Identificar unidad de competencia, RA, saberes, criterios y técnica de
+  evaluación, relación con perfil de egreso, coherencia RA–contenidos–evaluación.
+- **Entregables (`fase-1-analisis-syllabus.md`):** síntesis curricular; competencia/unidad; RA; saberes;
+  criterios; coherencia; créditos confirmados; inconsistencias/vacíos por validar.
+- **Estado:** `ra[]`, `saberes[]`, `competencia`, `criteriosEvaluacion[]`, `coherencia`, `vacios[]`.
+
+## Fase 2 — Planeación didáctica (diseño inverso, AG)
+- **Hacer:** diseñar la planeación virtual desde el RA y la configuración por créditos. Justificar AG.
+  **Proponer el N de temas AG** (derivado de RA/saberes/unidades) con su tabla de diseño (Tema | RA |
+  propósito por etapa | preguntas orientadoras). Definir ruta de navegación, actividades
+  sincrónicas/asincrónicas, distribución de horas, documento y recursos proyectados, secuencia evaluativa.
+- **Entregables (`fase-2-planeacion-didactica.md`):** configuración didáctica; justificación AG; RA eje; ruta
+  del estudiante; tabla de N temas AG (PROPUESTA, a validar); distribución de horas; recursos proyectados.
+- **Estado:** `nTemasPropuesto`, `temas[]{titulo, ra, propositoEtapa, preguntasOrientadoras[]}`,
+  `rutaNavegacion`, `recursosProyectados`.
+
+## Fase 3 — Diseño de evaluación
+- **Hacer:** estrategia evaluativa alineada al RA y AG, cualitativa (`lineamientos-ua.md`). Mapa de
+  evaluación; diagnóstica (10/15); formativas de seguimiento; sumativa integradora (última semana); rúbricas
+  analítica/holística; foro debate, wiki, coevaluación-taller. Ponderación como brecha+propuesta si falta.
+- **Entregables (`fase-3-diseno-evaluacion.md`):** mapa general de evaluación; diagnóstica; formativas;
+  sumativa; rúbricas; instrumentos complementarios; momentos inicial/avance/final; auto/co/hetero.
+- **Estado:** `evaluacion{diagnostica, formativas[], sumativa, rubricas[], momentos[]}`.
+
+## Fase 4 — Validación académica → INSTRUMENTO DOCENTE
+- **Hacer:** consolidar F0–F4 en el **instrumento de validación docente** (ver `instrumento-docente.md` y la
+  plantilla `templates/instrumento-validacion-docente.md`). Construir matriz de validación, matriz de brechas
+  y las preguntas que el docente debe responder.
+- **Entregables:**
+  - `fase-4-validacion-academica.md` (paquete de validación + matrices).
+  - **`instrumento-validacion-docente.md`** (+ `.docx` con `scripts/build_instrumento_docx.py` si se pide,
+    + `.json` espejo para re-ingerir respuestas).
+- **Estado:** `instrumentoGenerado: true`, `gate: "pendiente-validacion-docente"`.
+- **Cierre del Pipeline 1:** DETENER. No generar contenido hasta recibir el instrumento respondido.
+
+---
+
+## Token budget (Pipeline 1)
+- Lee el syllabus una vez (a JSON en estado). No lo recargues completo en cada fase: usa los campos del estado.
+- Cada fase produce su `.md` y actualiza el estado; la siguiente fase lee SOLO el estado (compacto).
+- El instrumento se ensambla desde el estado + la plantilla, no re-derivando F0–F3.

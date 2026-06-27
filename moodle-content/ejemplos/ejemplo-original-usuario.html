@@ -1,0 +1,68 @@
+<!-- =====================================================================
+     EJEMPLO ORIGINAL APORTADO POR EL USUARIO (referencia de componentes Moodle)
+     Branding original: verde #1a2403 + acento DORADO #e6b400. En el proyecto el
+     acento se UNIFICA a lima #c0f500 (ver DESIGN.md). Este archivo es solo
+     referencia visual/estructural; no es el output del renderer.
+     Contiene tres bloques: (A) página de Bienvenida, (B) footer, (C) página de Contenido/Momento.
+     ===================================================================== -->
+
+<!-- =====================================================================
+     HERO + DESCRIPCIÓN DEL CURSO + VIDEO DE PRESENTACIÓN
+     ===================================================================== -->
+<header style="max-width: 1100px; margin: 0 auto; padding: 32px 24px 0;">
+  <div style="background: linear-gradient(135deg,#1a2403 0%,#1a4d3a 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 12px 40px rgba(26,36,3,0.25); position: relative;">
+    <img class="img-fluid" style="position: absolute; right: -40px; top: -30px; width: 280px; opacity: 0.06; pointer-events: none;" src="https://i.postimg.cc/c1tGwQnF/Logo-UA.png" alt="" aria-hidden="true">
+    <div style="padding: 40px 36px;">
+      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 22px;">
+        <img class="img-fluid" style="height: 52px;" src="https://i.postimg.cc/c1tGwQnF/Logo-UA.png" alt="Universidad de América">
+        <div>
+          <p style="font-family: 'Montserrat'; font-size: 11px; font-weight: bold; letter-spacing: 0.18em; color: #e6b400; text-transform: uppercase;">Curso · Unidad de Bienvenida</p>
+          <p style="font-size: 13px; color: rgba(255,255,255,0.7);">Facultad de Ingeniería</p>
+        </div>
+      </div>
+      <h1 style="font-size: clamp(34px,5vw,56px); font-weight: 900; color: #ffffff; line-height: 1.05; letter-spacing: -0.02em;">Análisis Vectorial</h1>
+      <div style="height: 5px; width: 90px; background: #e6b400; border-radius: 99px; margin: 18px 0 22px;"></div>
+      <p style="font-size: clamp(16px,2.2vw,19px); color: rgba(255,255,255,0.88); max-width: 680px;">Te damos la bienvenida a este recorrido formativo. Aquí explorarás funciones de varias variables, derivadas parciales, integrales múltiples y campos vectoriales, con apoyo de representaciones geométricas y herramientas computacionales para resolver problemas reales de ingeniería.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(230,180,0,0.4); color: #fff; font-family: 'Montserrat'; font-size: 12px; font-weight: bold; letter-spacing: 0.05em; padding: 8px 14px; border-radius: 99px;"><span aria-hidden="true">🎓</span> Pregrado en Ingeniería </span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(230,180,0,0.4); color: #fff; font-family: 'Montserrat'; font-size: 12px; font-weight: bold; letter-spacing: 0.05em; padding: 8px 14px; border-radius: 99px;"><span aria-hidden="true">📖</span> Aprendizaje Guiado </span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(230,180,0,0.4); color: #fff; font-family: 'Montserrat'; font-size: 12px; font-weight: bold; letter-spacing: 0.05em; padding: 8px 14px; border-radius: 99px;"><span aria-hidden="true">🏅</span> 7 Contenidos </span>
+      </div>
+    </div>
+    <div style="padding: 0 36px 36px;">
+      <p style="font-family: 'Montserrat'; font-size: 12px; font-weight: bold; letter-spacing: 0.14em; color: #e6b400; text-transform: uppercase; margin-bottom: 12px;"><span aria-hidden="true">▶️</span> Video de presentación</p>
+      <div style="position: relative; overflow: hidden; aspect-ratio: 16/9; border-radius: 14px; border: 3px solid rgba(230,180,0,0.55); box-shadow: 0 10px 30px rgba(0,0,0,0.35);">
+        <div style="position: relative; overflow: hidden; padding-top: 56.25%;">
+          <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;" title="Synthesia video player" src="https://share.synthesia.io/embeds/videos/3a66bc8d-5fd6-4ae4-8450-e8fa0663fc63" allow="encrypted-media; fullscreen; microphone;" allowfullscreen="allowfullscreen" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- RESULTADOS DE APRENDIZAJE: section con header (icono+título+subtítulo) y grid auto-fit de cards.
+     Cada card RA: borde-izq dorado, círculo con número, etiqueta caps (verbo), texto con <strong>. -->
+<!-- ACTIVIDADES DE INICIO: cards horizontales (icono grande, paso/etiqueta chip, título, descripción,
+     opcional <details> con summary "▸ Descripción y orientaciones", fechas abre/cierra, botón). -->
+<!-- ROADMAP: section con iframe a infografía Netlify, height 760px, width calc(100% + 20px) para recortar scrollbar. -->
+<!-- TU CURSO DE UN VISTAZO: grid 3 cards: docente (foto redonda, nombre, título, bio, tags),
+     syllabus (iframe preview PDF + botón ámbar "Abrir Syllabus"), cronograma (igual). -->
+<!-- RECURSOS DE APOYO: grid auto-fill de cards (icono coloreado por tipo, badge TIPO·NIVEL, título, desc, link). -->
+<!-- FOOTER: fondo #1a2403, borde-top dorado, logo + título curso + copyright + nota. -->
+
+<!-- =====================================================================
+     (C) PÁGINA DE CONTENIDO / MOMENTO
+     ===================================================================== -->
+<!-- BANNER DEL CONTENIDO: degradado oscuro, patrón diagonal, logo marca de agua, icono cuadrado ámbar,
+     eyebrow "Curso · RA N", título "Contenido N", subtítulo (tema). -->
+<!-- INTRODUCCIÓN + VIDEO: header icono+título "Introducción al RA N", párrafo, iframe Synthesia del RA. -->
+<!-- ROADMAP reutilizado. -->
+<!-- CONTENIDO TEÓRICO → SCORM: banner CTA degradado, icono circular, eyebrow "Contenido Teórico",
+     título "Material Interactivo SCORM", desc, botón ámbar "Abrir contenido →" (href al player SCORM Moodle). -->
+<!-- PRÁCTICA → EJERCICIOS: banner CTA igual estructura, icono ✏️, botón "Ir a los ejercicios →". -->
+<!-- MATERIAL COMPLEMENTARIO: lista de cards de referencia (label "Nombre del recurso", título ámbar,
+     label "Referencia en normas APA", texto APA con <em> y <a> "Ver recurso"). -->
+<!-- FOOTER con "curso · Contenido N". -->
+
+<!-- NOTA: el HTML completo y literal del ejemplo está en el historial del chat del usuario; este archivo
+     resume su estructura y conserva el hero literal como muestra de patrón de estilos inline. -->

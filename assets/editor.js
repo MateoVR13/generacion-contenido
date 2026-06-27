@@ -6,6 +6,7 @@
 
   const state = {
     content: null,
+    editorBranch: "scorm",
     selectedSectionId: null,
     selectedComponentId: null
   };
@@ -112,6 +113,37 @@
       sectionOrder: pdf.sectionOrder || [],
       sections: pdf.sections || {}
     };
+  }
+
+  // The structure editor can edit either the SCORM or the PDF branch. branchContent() returns the
+  // currently-active branch so renderStructureEditor / selection / reorder all operate on it.
+  function branchContent(content) {
+    return state.editorBranch === "pdf" ? pdfContent(content) : scormContent(content);
+  }
+
+  function setEditorBranch(branch) {
+    if (branch !== "scorm" && branch !== "pdf") return;
+    if (state.editorBranch === branch) return;
+    state.editorBranch = branch;
+    // Reset selection to the first section/component of the newly active branch.
+    state.selectedSectionId = null;
+    state.selectedComponentId = null;
+    if (state.content) {
+      const src = branchContent(state.content);
+      state.selectedSectionId = orderedSections(src)[0] || null;
+      if (state.selectedSectionId) state.selectedComponentId = componentOrder(src.sections[state.selectedSectionId])[0] || null;
+    }
+    updateBranchTabs();
+    renderStructureEditor();
+    renderSelectedComponent();
+    updateMainView();
+  }
+
+  function updateBranchTabs() {
+    ["scorm", "pdf"].forEach(function (b) {
+      const btn = qs('[data-editor-branch="' + b + '"]');
+      if (btn) btn.classList.toggle("author-tab-active", state.editorBranch === b);
+    });
   }
 
   function componentOrder(section) {
@@ -292,17 +324,19 @@
     if (subjectProgram) subjectProgram.value = subject.program || "";
     if (subjectContent) subjectContent.value = subject.contentNumber || "";
 
-    const scorm = scormContent(state.content);
-    if (!state.selectedSectionId || !scorm.sections[state.selectedSectionId]) {
-      state.selectedSectionId = orderedSections(scorm)[0] || null;
+    const branch = branchContent(state.content);
+    if (!state.selectedSectionId || !branch.sections[state.selectedSectionId]) {
+      state.selectedSectionId = orderedSections(branch)[0] || null;
       state.selectedComponentId = null;
     }
     if (state.selectedSectionId && !state.selectedComponentId) {
-      const section = scorm.sections[state.selectedSectionId];
+      const section = branch.sections[state.selectedSectionId];
       state.selectedComponentId = componentOrder(section)[0] || null;
     }
+    updateBranchTabs();
     renderStructureEditor();
     renderSelectedComponent();
+    updateMainView();
   }
 
   function applyContent(content, message) {
@@ -325,11 +359,13 @@
   function openPanel() {
     const panel = qs("#json-editor-panel");
     if (panel) panel.classList.remove("translate-x-full");
+    updateMainView();
   }
 
   function closePanel() {
     const panel = qs("#json-editor-panel");
     if (panel) panel.classList.add("translate-x-full");
+    updateMainView();
   }
 
   function moveItem(list, id, delta) {
@@ -344,7 +380,7 @@
   function renderStructureEditor() {
     const host = qs("#structure-editor");
     if (!host || !state.content) return;
-    const scorm = scormContent(state.content);
+    const scorm = branchContent(state.content);
     host.innerHTML = orderedSections(scorm).map(function (sectionId) {
       const section = scorm.sections[sectionId];
       const components = componentOrder(section).map(function (componentId) {
@@ -384,9 +420,11 @@
       editor.value = "";
       return;
     }
-    const scorm = scormContent(state.content);
-    const component = scorm.sections[state.selectedSectionId].components[state.selectedComponentId];
-    label.textContent = state.selectedSectionId + " · " + state.selectedComponentId + " · " + (component.type || "custom");
+    const scorm = branchContent(state.content);
+    const sec = scorm.sections[state.selectedSectionId];
+    const component = sec && sec.components[state.selectedComponentId];
+    if (!component) { label.textContent = "Selecciona un componente."; editor.value = ""; return; }
+    label.textContent = state.editorBranch.toUpperCase() + " · " + state.selectedSectionId + " · " + state.selectedComponentId + " · " + (component.type || "custom");
     editor.value = pretty(component);
   }
 
@@ -551,10 +589,14 @@
     if (!setValueAtPath(state.content, path, value)) return;
     if (window.setSubjectContentSnapshot) window.setSubjectContentSnapshot(state.content);
     if (options && options.silent) return;
-    updateNavigationLabelForPath(path);
+    const isPdf = path.indexOf("pdf.") === 0;
+    if (!isPdf) updateNavigationLabelForPath(path);
     updateFullEditor();
     renderStructureEditor();
     renderSelectedComponent();
+    // Refresh the embedded PDF preview on commit so structural labels/math re-render, but only on
+    // blur (non-silent) to avoid stealing focus mid-typing.
+    if (isPdf && state.editorBranch === "pdf") renderPdfPreview();
     setStatus("Texto actualizado en el JSON.", true);
   }
 
@@ -674,9 +716,11 @@
     const sectionId = control.getAttribute("data-section-id");
     const componentId = control.getAttribute("data-component-id");
 
+    const branchKey = state.editorBranch; // "scorm" | "pdf"
+
     if (action === "select-section") {
       state.selectedSectionId = sectionId;
-      state.selectedComponentId = componentOrder(scormContent(state.content).sections[sectionId])[0] || null;
+      state.selectedComponentId = componentOrder(branchContent(state.content).sections[sectionId])[0] || null;
       renderStructureEditor();
       renderSelectedComponent();
       return;
@@ -691,15 +735,15 @@
     }
 
     if (action === "section-up" || action === "section-down") {
-      state.content.scorm = state.content.scorm || {};
-      state.content.scorm.sectionOrder = orderedSections(scormContent(state.content));
-      moveItem(state.content.scorm.sectionOrder, sectionId, action === "section-up" ? -1 : 1);
+      state.content[branchKey] = state.content[branchKey] || {};
+      state.content[branchKey].sectionOrder = orderedSections(branchContent(state.content));
+      moveItem(state.content[branchKey].sectionOrder, sectionId, action === "section-up" ? -1 : 1);
       applyContent(state.content, "Orden de secciones actualizado.");
       return;
     }
 
     if (action === "component-up" || action === "component-down") {
-      const section = scormContent(state.content).sections[sectionId];
+      const section = branchContent(state.content).sections[sectionId];
       section.componentOrder = componentOrder(section);
       moveItem(section.componentOrder, componentId, action === "component-up" ? -1 : 1);
       state.selectedSectionId = sectionId;
@@ -741,6 +785,56 @@
     return asArray(items).map(function (item) {
       return "<p>" + mathText(item) + "</p>";
     }).join("");
+  }
+
+  // Chart.js renders axis/legend/dataset/title labels as PLAIN TEXT (no KaTeX). Convert any
+  // LaTeX/$...$ in those fields to readable Unicode so charts never show raw "$\sigma$".
+  // Rich notation belongs in chart title/note, not in labels.
+  var CHART_LATEX_UNICODE = {
+    "\\alpha": "α", "\\beta": "β", "\\gamma": "γ", "\\delta": "δ", "\\epsilon": "ε", "\\varepsilon": "ε",
+    "\\zeta": "ζ", "\\eta": "η", "\\theta": "θ", "\\vartheta": "ϑ", "\\iota": "ι", "\\kappa": "κ",
+    "\\lambda": "λ", "\\mu": "μ", "\\nu": "ν", "\\xi": "ξ", "\\pi": "π", "\\rho": "ρ", "\\sigma": "σ",
+    "\\tau": "τ", "\\upsilon": "υ", "\\phi": "φ", "\\varphi": "φ", "\\chi": "χ", "\\psi": "ψ", "\\omega": "ω",
+    "\\Gamma": "Γ", "\\Delta": "Δ", "\\Theta": "Θ", "\\Lambda": "Λ", "\\Xi": "Ξ", "\\Pi": "Π",
+    "\\Sigma": "Σ", "\\Phi": "Φ", "\\Psi": "Ψ", "\\Omega": "Ω",
+    "\\nabla": "∇", "\\partial": "∂", "\\infty": "∞", "\\times": "×", "\\cdot": "·", "\\pm": "±",
+    "\\leq": "≤", "\\geq": "≥", "\\neq": "≠", "\\approx": "≈", "\\sim": "∼", "\\propto": "∝",
+    "\\rightarrow": "→", "\\to": "→", "\\leftarrow": "←", "\\Rightarrow": "⇒", "\\sum": "Σ", "\\prod": "∏",
+    "\\int": "∫", "\\sqrt": "√", "\\in": "∈", "\\forall": "∀", "\\exists": "∃", "\\circ": "∘"
+  };
+  var CHART_SUP = { "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹", "n": "ⁿ", "i": "ⁱ", "+": "⁺", "-": "⁻", "x": "ˣ", "y": "ʸ" };
+  var CHART_SUB = { "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉", "i": "ᵢ", "j": "ⱼ", "n": "ₙ", "x": "ₓ", "a": "ₐ", "+": "₊", "-": "₋", "t": "ₜ" };
+  function chartMapScript(seq, table) {
+    var out = "";
+    for (var i = 0; i < seq.length; i += 1) { if (table[seq[i]] == null) return null; out += table[seq[i]]; }
+    return out;
+  }
+  function latexToPlainText(value) {
+    if (typeof value !== "string" || (value.indexOf("$") === -1 && value.indexOf("\\") === -1 && value.indexOf("^") === -1 && value.indexOf("_") === -1)) return value;
+    var s = String(value).replace(/\\\$/g, " DOLLAR ");
+    s = s.replace(/\$\$?([^$]*)\$\$?/g, "$1");
+    s = s.replace(/\\(?:left|right|displaystyle|text|mathrm|mathbf|operatorname)\b/g, "");
+    s = s.replace(/\\frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g, "$1/$2");
+    s = s.replace(/\\sqrt\s*\{([^{}]*)\}/g, "√($1)");
+    Object.keys(CHART_LATEX_UNICODE).forEach(function (cmd) { s = s.split(cmd).join(CHART_LATEX_UNICODE[cmd]); });
+    s = s.replace(/\^\{([^{}]*)\}|\^(\S)/g, function (m, g1, g2) { var seq = g1 != null ? g1 : g2; var u = chartMapScript(seq, CHART_SUP); return u != null ? u : "^" + seq; });
+    s = s.replace(/_\{([^{}]*)\}|_(\S)/g, function (m, g1, g2) { var seq = g1 != null ? g1 : g2; var u = chartMapScript(seq, CHART_SUB); return u != null ? u : "_" + seq; });
+    s = s.replace(/[{}]/g, "").replace(/\\,|\\;|\\!|\\ /g, " ").replace(/\\/g, "");
+    s = s.replace(/ DOLLAR /g, "$").replace(/\s+/g, " ").trim();
+    return s;
+  }
+  function sanitizeChartConfigText(config) {
+    if (!config || typeof config !== "object") return config;
+    if (config.data) {
+      if (Array.isArray(config.data.labels)) config.data.labels = config.data.labels.map(latexToPlainText);
+      if (Array.isArray(config.data.datasets)) config.data.datasets.forEach(function (ds) { if (ds && typeof ds.label === "string") ds.label = latexToPlainText(ds.label); });
+    }
+    var opts = config.options;
+    if (opts) {
+      if (opts.plugins && opts.plugins.title && typeof opts.plugins.title.text === "string") opts.plugins.title.text = latexToPlainText(opts.plugins.title.text);
+      if (opts.scales) Object.keys(opts.scales).forEach(function (k) { var ax = opts.scales[k]; if (ax && ax.title && typeof ax.title.text === "string") ax.title.text = latexToPlainText(ax.title.text); });
+    }
+    return config;
   }
 
   function languageClass(language) {
@@ -909,7 +1003,7 @@
       // Chart.js derives height from a fixed ratio and ignores the wrapper height, so the chart
       // stayed small inside the wider box. responsive + maintainAspectRatio:false makes it fill it.
       const chartOptions = Object.assign({}, component.options || {}, { responsive: true, maintainAspectRatio: false });
-      const config = { type: component.chartType || component.kind || "bar", data: { labels: component.labels || [], datasets: component.datasets || [] }, options: chartOptions };
+      const config = sanitizeChartConfigText({ type: component.chartType || component.kind || "bar", data: { labels: component.labels || [], datasets: component.datasets || [] }, options: chartOptions });
       const note = component.note || component.descriptiveNote || component.caption;
       body = '<figure class="pdf-chart-figure">' +
         '<div class="pdf-chart-wrap"><canvas data-pdf-chart="' + attr(JSON.stringify(config)) + '"></canvas></div>' +
@@ -943,7 +1037,11 @@
         return '<li><strong>' + escapeHtml(item.date || item.label) + " · " + escapeHtml(item.title) + "</strong><p>" + escapeHtml(item.body || item.description) + "</p></li>";
       }).join("") + "</ol>";
     } else if (type === "references") {
-      body = '<ol class="pdf-numbered">' + asArray(component.items).map(function (ref) { return "<li>" + escapeHtml(ref.text || ref.reference) + "</li>"; }).join("") + "</ol>";
+      // References items may be plain strings or {text|reference} objects — support both.
+      body = '<ol class="pdf-numbered">' + asArray(component.items).map(function (ref) {
+        const text = ref && typeof ref === "object" ? (ref.text || ref.reference || "") : ref;
+        return "<li>" + escapeHtml(text) + "</li>";
+      }).join("") + "</ol>";
     } else if (type === "downloads") {
       body = '<ul class="pdf-bullets">' + asArray(component.items).map(function (doc) { return "<li>" + escapeHtml(doc.title) + " · " + escapeHtml(doc.meta || "") + "</li>"; }).join("") + "</ul>";
     } else {
@@ -951,6 +1049,212 @@
     }
 
     return '<section class="pdf-component">' + title + description + body + "</section>";
+  }
+
+  // ----- Embedded EDITABLE PDF preview (real-time visual editing) -----
+  // Renders the PDF branch inside the app with the same inline-edit contract as SCORM:
+  // each component is wrapped in [data-edit-scope="pdf.sections.<sid>.components.<cid>"] and each
+  // text node carries a relative [data-edit-field]. The existing input/blur listeners then commit
+  // edits to state.content via setValueAtPath — no separate plumbing needed.
+  // The export renderer (renderPdfComponent / buildPdfHtml) is left untouched.
+
+  function pdfEd(field, value, tag, className) {
+    const t = tag || "span";
+    const cls = className ? ' class="' + className + '"' : "";
+    return "<" + t + cls + ' contenteditable="plaintext-only" spellcheck="true" data-edit-field="' + attr(field) + '">' + escapeHtml(value == null ? "" : value) + "</" + t + ">";
+  }
+
+  // Editable list of paragraph strings at <field> (array). Renders one editable <p> per item.
+  function pdfEdParas(field, items, className) {
+    const arr = asArray(items);
+    if (!arr.length) return "";
+    const isArr = Array.isArray(items);
+    return arr.map(function (item, i) {
+      const f = isArr ? field + "." + i : field;
+      return pdfEd(f, item, "p", className);
+    }).join("");
+  }
+
+  // Editable <li> list (items may be strings or {text|label|title}). ordered -> <ol>.
+  function pdfEdItems(field, items, ordered, listClass) {
+    const arr = asArray(items);
+    const tag = ordered ? "ol" : "ul";
+    const lis = arr.map(function (item, i) {
+      let val, sub;
+      if (item && typeof item === "object") {
+        sub = item.text != null ? "text" : item.label != null ? "label" : item.title != null ? "title" : null;
+        val = sub ? item[sub] : "";
+      } else { val = item; }
+      const f = sub ? field + "." + i + "." + sub : field + "." + i;
+      return "<li>" + pdfEd(f, val, "span") + "</li>";
+    }).join("");
+    return "<" + tag + ' class="' + (listClass || (ordered ? "pdf-numbered" : "pdf-bullets")) + '">' + lis + "</" + tag + ">";
+  }
+
+  function renderPdfComponentEditable(sectionId, componentId, component) {
+    const type = String(component.type || "").toLowerCase();
+    const interactive = ["quiz","knowledge-check","listening","listening-true-false","matching","word-match","multi-select","multiselect","fill-blank","fill-in-the-blank","video","podcast","flashcards","carousel","tabs"];
+    if (interactive.indexOf(type) !== -1) return "";
+
+    const scope = "pdf.sections." + sectionId + ".components." + componentId;
+    const title = component.title != null ? pdfEd("title", component.title, "h3", "pdf-h3") : "";
+    const description = (component.description != null && type !== "chart") ? '<div class="pdf-muted">' + pdfEdParas("description", component.description) + "</div>" : "";
+    let body = "";
+
+    if (type === "text" || type === "theory") {
+      const key = component.body != null ? "body" : component.content != null ? "content" : "paragraphs";
+      body = pdfEdParas(key, component.body || component.content || component.paragraphs);
+    } else if (type === "theory-block" || type === "concept-block") {
+      const bodyKey = component.body != null ? "body" : component.content != null ? "content" : "paragraphs";
+      const bodyHtml = pdfEdParas(bodyKey, component.body || component.content || component.paragraphs);
+      const keyIdeas = asArray(component.keyIdeas || component.highlights).length
+        ? '<ul class="pdf-bullets">' + asArray(component.keyIdeas || component.highlights).map(function (item, i) {
+            const base = (component.keyIdeas ? "keyIdeas" : "highlights") + "." + i;
+            const sub = item && typeof item === "object" ? (item.text != null ? "text" : item.label != null ? "label" : "title") : null;
+            return "<li>" + pdfEd(sub ? base + "." + sub : base, sub ? item[sub] : item) + "</li>";
+          }).join("") + "</ul>"
+        : "";
+      const sections = asArray(component.sections).map(function (section, i) {
+        const sk = section.body != null ? "body" : "content";
+        return '<div class="pdf-box">' + pdfEd("sections." + i + "." + (section.title != null ? "title" : "label"), section.title || section.label || "Idea", "h4") +
+          pdfEdParas("sections." + i + "." + sk, section.body || section.content) +
+          (section.formula ? '<div class="pdf-formula small" data-formula="' + attr(section.formula) + '"></div>' : "") +
+          (section.formulaNote != null ? pdfEd("sections." + i + ".formulaNote", section.formulaNote, "p", "pdf-muted") : "") +
+          "</div>";
+      }).join("");
+      const example = component.example ? '<div class="pdf-example">' + pdfEd("example." + (component.example.title != null ? "title" : "label"), component.example.title || component.example.label || "Ejemplo", "h4") + pdfEdParas("example." + (component.example.body != null ? "body" : "content"), component.example.body || component.example.content) + "</div>" : "";
+      body = bodyHtml + keyIdeas + sections + example + (component.closing != null ? '<div class="pdf-callout">' + pdfEdParas("closing", component.closing) + "</div>" : "");
+    } else if (type === "list") {
+      body = pdfEdItems("items", component.items, !!component.ordered);
+    } else if (type === "example") {
+      const ck = component.context != null ? "context" : component.body != null ? "body" : "content";
+      body = '<div class="pdf-example">' + pdfEdParas(ck, component.context || component.body || component.content) +
+        (component.formula ? '<div class="pdf-formula" data-formula="' + attr(component.formula) + '"></div>' : "") +
+        (component.solution != null ? "<h4>Solución comentada</h4>" + pdfEdParas("solution", component.solution) : "") + "</div>";
+    } else if (type === "callout") {
+      const ck = component.body != null ? "body" : component.text != null ? "text" : "content";
+      body = '<div class="pdf-callout pdf-callout-' + attr(component.tone || "light") + '">' + pdfEdParas(ck, component.body || component.text || component.content) + "</div>";
+    } else if (type === "exercise" || type === "exercise-set") {
+      const coll = component.items != null ? "items" : "exercises";
+      body = asArray(component.items || component.exercises).map(function (item, i) {
+        const pk = item.prompt != null ? "prompt" : item.statement != null ? "statement" : "body";
+        return '<div class="pdf-practice"><h4>Ejercicio ' + (i + 1) + "</h4>" +
+          pdfEdParas(coll + "." + i + "." + pk, item.prompt || item.statement || item.body) +
+          (item.formula ? '<div class="pdf-formula small" data-formula="' + attr(item.formula) + '"></div>' : "") +
+          (item.answer != null ? '<p class="pdf-muted"><strong>Respuesta esperada:</strong> ' + pdfEd(coll + "." + i + ".answer", item.answer) + "</p>" : "") +
+          "</div>";
+      }).join("");
+    } else if (type === "objectives" || type === "summary") {
+      body = pdfEdItems("items", component.items, false);
+    } else if (type === "prior-knowledge" || type === "reflection") {
+      const coll = component.prompts != null ? "prompts" : "items";
+      body = pdfEdItems(coll, component.prompts || component.items, true);
+    } else if (type === "accordion") {
+      body = asArray(component.items).map(function (item, i) {
+        const bk = item.body != null ? "body" : "content";
+        return '<div class="pdf-box">' + pdfEd("items." + i + "." + (item.title != null ? "title" : "label"), item.title || item.label, "h4") + pdfEdParas("items." + i + "." + bk, item.body || item.content) + "</div>";
+      }).join("");
+    } else if (type === "table") {
+      body = '<table class="pdf-table"><thead><tr>' + asArray(component.columns).map(function (column, i) {
+        const isObj = column && typeof column === "object";
+        return "<th>" + pdfEd(isObj ? "columns." + i + ".label" : "columns." + i, isObj ? column.label : column) + "</th>";
+      }).join("") + "</tr></thead><tbody>" + asArray(component.rows).map(function (row, ri) {
+        const hasCells = row && row.cells;
+        return "<tr>" + asArray(hasCells ? row.cells : row).map(function (cell, ci) {
+          const cellBase = hasCells ? "rows." + ri + ".cells." + ci : "rows." + ri + "." + ci;
+          const isObj = cell && typeof cell === "object";
+          const sub = isObj ? (cell.badge != null ? "badge" : cell.text != null ? "text" : "value") : null;
+          return "<td>" + pdfEd(sub ? cellBase + "." + sub : cellBase, isObj ? (cell.badge || cell.text || cell.value) : cell) + "</td>";
+        }).join("") + "</tr>";
+      }).join("") + "</tbody></table>";
+    } else if (type === "stepper") {
+      body = (component.statement != null ? pdfEd("statement", component.statement, "p", "pdf-muted") : "") +
+        '<ol class="pdf-numbered">' + asArray(component.steps).map(function (step, i) {
+          const sk = step.body != null ? "body" : "description";
+          return "<li>" + pdfEd("steps." + i + ".title", step.title, "strong") + pdfEdParas("steps." + i + "." + sk, step.body || step.description) +
+            (step.formula ? '<div class="pdf-formula small" data-formula="' + attr(step.formula) + '"></div>' : "") + "</li>";
+        }).join("") + "</ol>";
+    } else if (type === "formula") {
+      body = (component.context != null ? '<div class="pdf-muted">' + pdfEdParas("context", component.context) + "</div>" : "") +
+        '<div class="pdf-formula" data-formula="' + attr(component.latex || component.formula || "") + '"></div>' +
+        '<ul class="pdf-bullets">' + asArray(component.variables).map(function (item, i) {
+          return '<li><span data-formula-inline="' + attr(item.symbol || "") + '"></span>: ' + pdfEd("variables." + i + ".description", item.description || "") + "</li>";
+        }).join("") + "</ul>" +
+        (component.explanation != null ? '<div class="pdf-box"><h4>Cómo leerla</h4>' + pdfEdParas("explanation", component.explanation) + "</div>" : "");
+    } else if (type === "references") {
+      body = '<ol class="pdf-numbered">' + asArray(component.items).map(function (ref, i) {
+        const isObj = ref && typeof ref === "object";
+        const sub = isObj ? (ref.text != null ? "text" : "reference") : null;
+        return "<li>" + pdfEd(sub ? "items." + i + "." + sub : "items." + i, isObj ? (ref.text || ref.reference) : ref) + "</li>";
+      }).join("") + "</ol>";
+    } else if (type === "chart") {
+      // Render as a SCORM-style canvas so window.subjectEnhanceWithin builds it (and the LaTeX
+      // label sanitizer in normalizeChartConfig applies). Editable description/note around it.
+      const cfg = sanitizeChartConfigText({ type: component.chartType || component.kind || "bar", data: { labels: component.labels || [], datasets: component.datasets || [] }, options: Object.assign({}, component.options || {}) });
+      const note = component.note != null ? component.note : (component.descriptiveNote != null ? component.descriptiveNote : component.caption);
+      const noteField = component.note != null ? "note" : component.descriptiveNote != null ? "descriptiveNote" : "caption";
+      body = (component.description != null ? '<div class="pdf-muted">' + pdfEdParas("description", component.description) + "</div>" : "") +
+        '<figure class="pdf-chart-figure"><div class="pdf-chart-wrap" style="height:240px"><canvas data-chart="' + attr(cfg.type) + '" data-chart-config="' + attr(JSON.stringify(cfg)) + '"></canvas></div>' +
+        (note != null ? '<figcaption class="pdf-chart-note"><span class="pdf-chart-note-label">Lectura del gráfico</span>' + pdfEd(noteField, note, "span") + "</figcaption>" : "") +
+        "</figure>";
+      return '<section class="pdf-component" data-edit-scope="' + attr(scope) + '">' + title + body + "</section>";
+    } else {
+      // Other non-text components (image, code, metrics, timeline, downloads): render read-only via
+      // the export renderer so the preview matches the final PDF; these are edited via the JSON panel.
+      return '<section class="pdf-component" data-edit-scope="' + attr(scope) + '" data-pdf-readonly="1">' + renderPdfComponent(component) + "</section>";
+    }
+
+    return '<section class="pdf-component" data-edit-scope="' + attr(scope) + '">' + title + description + body + "</section>";
+  }
+
+  function renderPdfPreview() {
+    const host = qs("#pdf-preview-root");
+    if (!host) return;
+    if (!state.content) { host.innerHTML = ""; return; }
+    const subject = state.content.subject || {};
+    const pdf = state.content.pdf || {};
+    const src = pdfContent(state.content);
+    const sections = orderedSections(src).map(function (sectionId, index) {
+      const section = src.sections[sectionId];
+      const scope = "pdf.sections." + sectionId;
+      const comps = componentOrder(section).map(function (cid) {
+        return renderPdfComponentEditable(sectionId, cid, section.components[cid]);
+      }).filter(Boolean).join("");
+      return '<article class="pdf-preview-section" data-edit-scope="' + attr(scope) + '">' +
+        '<header class="pdf-preview-sec-head"><span class="pdf-preview-sec-num">' + (index + 1) + "</span>" +
+        pdfEd("title", section.title || section.navLabel || sectionId, "h2", "pdf-preview-sec-title") + "</header>" +
+        (section.intro != null ? '<div class="pdf-preview-intro">' + pdfEdParas("intro", section.intro) + "</div>" : "") +
+        comps + "</article>";
+    }).join("");
+    host.innerHTML = '<div class="pdf-preview-doc">' +
+      '<div class="pdf-preview-banner"><span class="pdf-preview-kicker">' + escapeHtml(pdf.guideLabel || "GUÍA DE ESTUDIO VIRTUAL") + '</span>' +
+      '<strong>' + escapeHtml(pdf.title || subject.title || "Guía PDF") + "</strong>" +
+      '<span class="pdf-preview-hint">Edición visual en vivo · escribe directamente sobre el texto</span></div>' +
+      sections + "</div>";
+    // Render math + charts inside the preview (scoped enhancer; does not touch SCORM nav).
+    if (window.subjectEnhanceWithin) window.subjectEnhanceWithin(host);
+  }
+
+  // Toggle main view between SCORM content and the embedded editable PDF preview.
+  function updateMainView() {
+    const contentRoot = qs("#content-root");
+    const pdfRoot = qs("#pdf-preview-root");
+    const pager = qs("#theme-pager");
+    // Show the embedded editable PDF whenever the editor is in PDF mode — regardless of whether the
+    // side panel is open or collapsed, so closing the panel does not drop the PDF view.
+    const showPdf = state.editorBranch === "pdf";
+    if (pdfRoot) pdfRoot.classList.toggle("hidden", !showPdf);
+    if (contentRoot) contentRoot.classList.toggle("hidden", showPdf);
+    if (pager) pager.classList.toggle("hidden", showPdf);
+    // Reserve room for the side panel when it is open so the content (PDF or SCORM) is not covered.
+    const shell = document.body;
+    if (shell) shell.classList.toggle("author-panel-open", isPanelOpen());
+    if (showPdf) renderPdfPreview();
+  }
+
+  function isPanelOpen() {
+    const panel = qs("#json-editor-panel");
+    return !!(panel && !panel.classList.contains("translate-x-full"));
   }
 
   let logoDataUrlCache = null;
@@ -1615,6 +1919,10 @@
     const sync = qs("#sync-editor");
     if (sync) sync.addEventListener("click", function () { syncFromContent(window.getSubjectContent()); setStatus("Editor sincronizado.", true); });
 
+    qsa("[data-editor-branch]").forEach(function (btn) {
+      btn.addEventListener("click", function () { setEditorBranch(btn.getAttribute("data-editor-branch")); });
+    });
+
     ["#subject-title-input", "#subject-program-input", "#subject-content-input"].forEach(function (selector) {
       const input = qs(selector);
       if (input) input.addEventListener("change", updateSubjectFromFields);
@@ -1643,7 +1951,7 @@
     if (applyComponent) applyComponent.addEventListener("click", function () {
       if (!state.content || !state.selectedSectionId || !state.selectedComponentId) return;
       try {
-        scormContent(state.content).sections[state.selectedSectionId].components[state.selectedComponentId] = JSON.parse(qs("#component-editor").value);
+        branchContent(state.content).sections[state.selectedSectionId].components[state.selectedComponentId] = JSON.parse(qs("#component-editor").value);
         applyContent(state.content, "Componente actualizado.");
       } catch (err) {
         setStatus(err.message, false);

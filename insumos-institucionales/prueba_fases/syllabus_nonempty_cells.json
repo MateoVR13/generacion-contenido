@@ -1,0 +1,1268 @@
+[
+  {
+    "cell": "J2",
+    "row": 2,
+    "col": "J",
+    "value": "Código: FO-GAP-003"
+  },
+  {
+    "cell": "T2",
+    "row": 2,
+    "col": "T",
+    "value": "Fecha: 31 julio de 2025"
+  },
+  {
+    "cell": "AD2",
+    "row": 2,
+    "col": "AD",
+    "value": "Versión: 06"
+  },
+  {
+    "cell": "J3",
+    "row": 3,
+    "col": "J",
+    "value": "Proceso: Gestión de Aprendizaje"
+  },
+  {
+    "cell": "T3",
+    "row": 3,
+    "col": "T",
+    "value": "Formato: Syllabus desde el enfoque de resultados de aprendizaje para pregrado y posgrado"
+  },
+  {
+    "cell": "L45",
+    "row": 45,
+    "col": "L",
+    "value": "DEPENDENCIA"
+  },
+  {
+    "cell": "Q45",
+    "row": 45,
+    "col": "Q",
+    "value": "Centro de Emprendimiento e Innovación Sostenible - CEIS"
+  },
+  {
+    "cell": "L47",
+    "row": 47,
+    "col": "L",
+    "value": "PROGRAMA"
+  },
+  {
+    "cell": "Q47",
+    "row": 47,
+    "col": "Q",
+    "value": "Emprendimiento 1 / Fundamentos de Emprendimiento"
+  },
+  {
+    "cell": "B49",
+    "row": 49,
+    "col": "B",
+    "value": "1. ASPECTOS DEL SYLLABUS"
+  },
+  {
+    "cell": "B50",
+    "row": 50,
+    "col": "B",
+    "value": "Syllabus diligenciado para la Ruta de Emprendimiento Científico, Tecnológico, Creativo y Sostenible."
+  },
+  {
+    "cell": "B51",
+    "row": 51,
+    "col": "B",
+    "value": "NIVEL DE FORMACIÓN"
+  },
+  {
+    "cell": "L51",
+    "row": 51,
+    "col": "L",
+    "value": "PROFESIONAL"
+  },
+  {
+    "cell": "V51",
+    "row": 51,
+    "col": "V",
+    "value": "FACULTAD"
+  },
+  {
+    "cell": "AF51",
+    "row": 51,
+    "col": "AF",
+    "value": "Según programa académico, con articulación CEIS"
+  },
+  {
+    "cell": "B52",
+    "row": 52,
+    "col": "B",
+    "value": "PROGRAMA ACADÉMICO"
+  },
+  {
+    "cell": "L52",
+    "row": 52,
+    "col": "L",
+    "value": "Transversal para programas de pregrado"
+  },
+  {
+    "cell": "V52",
+    "row": 52,
+    "col": "V",
+    "value": "NOMBRE DE LA ASIGNATURA"
+  },
+  {
+    "cell": "AF52",
+    "row": 52,
+    "col": "AF",
+    "value": "Emprendimiento 1 / Fundamentos de Emprendimiento"
+  },
+  {
+    "cell": "B53",
+    "row": 53,
+    "col": "B",
+    "value": "CÓDIGO DE LA ASIGNATURA"
+  },
+  {
+    "cell": "L53",
+    "row": 53,
+    "col": "L",
+    "value": "CEIS - 01"
+  },
+  {
+    "cell": "V53",
+    "row": 53,
+    "col": "V",
+    "value": "TIPO DE ASIGNATURA"
+  },
+  {
+    "cell": "AF53",
+    "row": 53,
+    "col": "AF",
+    "value": "Teórico-práctica / taller aplicado"
+  },
+  {
+    "cell": "B54",
+    "row": 54,
+    "col": "B",
+    "value": "CAMPO DE FORMACIÓN INSTITUCIONAL"
+  },
+  {
+    "cell": "L54",
+    "row": 54,
+    "col": "L",
+    "value": "Campo institucional de emprendimiento, innovación y sostenibilidad"
+  },
+  {
+    "cell": "V54",
+    "row": 54,
+    "col": "V",
+    "value": "ÁREA"
+  },
+  {
+    "cell": "AF54",
+    "row": 54,
+    "col": "AF",
+    "value": "Emprendimiento e innovación sostenible"
+  },
+  {
+    "cell": "B55",
+    "row": 55,
+    "col": "B",
+    "value": "MODALIDAD "
+  },
+  {
+    "cell": "L55",
+    "row": 55,
+    "col": "L",
+    "value": "Virtual"
+  },
+  {
+    "cell": "V55",
+    "row": 55,
+    "col": "V",
+    "value": "SEMESTRE "
+  },
+  {
+    "cell": "AF55",
+    "row": 55,
+    "col": "AF",
+    "value": 5
+  },
+  {
+    "cell": "B56",
+    "row": 56,
+    "col": "B",
+    "value": "CRÉDITOS"
+  },
+  {
+    "cell": "L56",
+    "row": 56,
+    "col": "L",
+    "value": 3
+  },
+  {
+    "cell": "V56",
+    "row": 56,
+    "col": "V",
+    "value": "HORAS TOTALES"
+  },
+  {
+    "cell": "AF56",
+    "row": 56,
+    "col": "AF",
+    "value": 144
+  },
+  {
+    "cell": "B57",
+    "row": 57,
+    "col": "B",
+    "value": "HORAS DE TRABAJO AUTÓNOMO"
+  },
+  {
+    "cell": "L57",
+    "row": 57,
+    "col": "L",
+    "value": 96
+  },
+  {
+    "cell": "V57",
+    "row": 57,
+    "col": "V",
+    "value": "HORAS DE DOCENCIA DIRECTA"
+  },
+  {
+    "cell": "AF57",
+    "row": 57,
+    "col": "AF",
+    "value": 48
+  },
+  {
+    "cell": "B58",
+    "row": 58,
+    "col": "B",
+    "value": "OBJETIVO DE DESARROLLO SOSTENIBLE - UNO"
+  },
+  {
+    "cell": "L58",
+    "row": 58,
+    "col": "L",
+    "value": "ODS 9: Industria, innovación e infraestructura"
+  },
+  {
+    "cell": "V58",
+    "row": 58,
+    "col": "V",
+    "value": "META ODS - 1"
+  },
+  {
+    "cell": "AF58",
+    "row": 58,
+    "col": "AF",
+    "value": "Meta 9.5: fortalecer investigación científica e innovación tecnológica"
+  },
+  {
+    "cell": "B59",
+    "row": 59,
+    "col": "B",
+    "value": "OBJETIVO DE DESARROLLO SOSTENIBLE – DOS (Disciplinar)"
+  },
+  {
+    "cell": "L59",
+    "row": 59,
+    "col": "L",
+    "value": "ODS 12: Producción y consumo responsables"
+  },
+  {
+    "cell": "V59",
+    "row": 59,
+    "col": "V",
+    "value": "META ODS - 2"
+  },
+  {
+    "cell": "AF59",
+    "row": 59,
+    "col": "AF",
+    "value": "Meta 12.6: adoptar prácticas sostenibles e integrar información de sostenibilidad"
+  },
+  {
+    "cell": "B60",
+    "row": 60,
+    "col": "B",
+    "value": "COMPETENCIA GLOBAL 1"
+  },
+  {
+    "cell": "L60",
+    "row": 60,
+    "col": "L",
+    "value": "Pensamiento crítico, creatividad e innovación para resolver problemas reales"
+  },
+  {
+    "cell": "V60",
+    "row": 60,
+    "col": "V",
+    "value": "COMPETENCIA GLOBAL 2"
+  },
+  {
+    "cell": "AF60",
+    "row": 60,
+    "col": "AF",
+    "value": "Comunicación, trabajo colaborativo y toma de decisiones basada en evidencia"
+  },
+  {
+    "cell": "B61",
+    "row": 61,
+    "col": "B",
+    "value": "FECHA DE ACTUALIZACIÓN DEL SYLLABUS"
+  },
+  {
+    "cell": "L61",
+    "row": 61,
+    "col": "L",
+    "value": "06/06/2026"
+  },
+  {
+    "cell": "V61",
+    "row": 61,
+    "col": "V",
+    "value": "NÚMERO DE VERSIÓN DE ACTUALIZACIÓN"
+  },
+  {
+    "cell": "AF61",
+    "row": 61,
+    "col": "AF",
+    "value": "Versión de trabajo 1"
+  },
+  {
+    "cell": "B64",
+    "row": 64,
+    "col": "B",
+    "value": "2. PRESENTACIÓN DE LA ASIGNATURA"
+  },
+  {
+    "cell": "B65",
+    "row": 65,
+    "col": "B",
+    "value": "PERFIL GLOBAL DE EGRESO DEL PROGRAMA ACADÉMICO O ATRIBUTO DEL PERFIL GLOBAL DE EGRESO"
+  },
+  {
+    "cell": "B66",
+    "row": 66,
+    "col": "B",
+    "value": "Aporta al perfil global de egreso mediante la identificación rigurosa de problemas reales, la validación temprana con actores del contexto, la creación de prototipos de baja fidelidad y la toma de decisiones argumentadas para generar valor científico, tecnológico, creativo, social o sostenible."
+  },
+  {
+    "cell": "B67",
+    "row": 67,
+    "col": "B",
+    "value": "Descripción de la asignatura desde el enfoque de resultados de aprendizaje"
+  },
+  {
+    "cell": "L67",
+    "row": 67,
+    "col": "L",
+    "value": "La asignatura introduce al estudiante en la Ruta de Emprendimiento Científico, Tecnológico, Creativo y Sostenible. Desde un enfoque de resultados de aprendizaje, articula exploración de problemas, caracterización de usuarios, validación temprana, análisis de evidencia y prototipado de baja fidelidad para sustentar una decisión de continuidad, pivote, reformulación o cierre."
+  },
+  {
+    "cell": "B68",
+    "row": 68,
+    "col": "B",
+    "value": "Resultados de aprendizaje previos o conocimientos previos"
+  },
+  {
+    "cell": "L68",
+    "row": 68,
+    "col": "L",
+    "value": "Conocimientos previos deseables: lectura crítica, comunicación oral y escrita, trabajo colaborativo, manejo básico de herramientas digitales, observación del contexto y disposición para interactuar éticamente con usuarios, clientes, empresas o comunidades."
+  },
+  {
+    "cell": "B69",
+    "row": 69,
+    "col": "B",
+    "value": "Internacionalización de la asignatura\nSeleccione SI para las opciones que aplican para la asignatura y NO para las que no aplican. "
+  },
+  {
+    "cell": "L69",
+    "row": 69,
+    "col": "L",
+    "value": "Imperativas"
+  },
+  {
+    "cell": "L70",
+    "row": 70,
+    "col": "L",
+    "value": "SI: se promueve la comprensión de problemas situados en contextos sociales, territoriales, empresariales y comunitarios diversos."
+  },
+  {
+    "cell": "L71",
+    "row": 71,
+    "col": "L",
+    "value": "SI: se sugiere bibliografía en inglés sobre emprendimiento, lean startup, design thinking, validación de problemas e innovación sostenible."
+  },
+  {
+    "cell": "L72",
+    "row": 72,
+    "col": "L",
+    "value": "SI: actividades de aula enfocadas a ODS y posible interacción con invitados externos, empresas, comunidades o aliados del ecosistema."
+  },
+  {
+    "cell": "M73",
+    "row": 73,
+    "col": "M",
+    "value": "NO aplica como requisito inicial; puede incorporarse si el programa gestiona una clase espejo asociada a emprendimiento o innovación."
+  },
+  {
+    "cell": "M74",
+    "row": 74,
+    "col": "M",
+    "value": "NO aplica como requisito inicial; puede incorporarse si existe convenio o proyecto COIL pertinente."
+  },
+  {
+    "cell": "M75",
+    "row": 75,
+    "col": "M",
+    "value": "SI: mentorías, charlas o retroalimentación con CEIS, egresados, empresas, comunidades o aliados del ecosistema."
+  },
+  {
+    "cell": "M76",
+    "row": 76,
+    "col": "M",
+    "value": "SI: salidas o trabajo de campo para observación, entrevistas y validación temprana cuando el proyecto lo requiera."
+  },
+  {
+    "cell": "M77",
+    "row": 77,
+    "col": "M",
+    "value": "SI: participación opcional en retos, convocatorias, ferias o competencias de emprendimiento e innovación."
+  },
+  {
+    "cell": "M78",
+    "row": 78,
+    "col": "M",
+    "value": "SI: los proyectos se orientan a problemas relacionados con ODS, sostenibilidad, innovación y creación de valor."
+  },
+  {
+    "cell": "M79",
+    "row": 79,
+    "col": "M",
+    "value": "SI: posibilidad de articular proyectos con cooperación nacional o internacional cuando exista oportunidad institucional."
+  },
+  {
+    "cell": "B82",
+    "row": 82,
+    "col": "B",
+    "value": "3. RESULTADOS DE APRENDIZAJE DE LA ASIGNATURA"
+  },
+  {
+    "cell": "B83",
+    "row": 83,
+    "col": "B",
+    "value": "UC 1 - Unidad de Competencia "
+  },
+  {
+    "cell": "B84",
+    "row": 84,
+    "col": "B",
+    "value": "del programa a la que le aporta la asignatura"
+  },
+  {
+    "cell": "B85",
+    "row": 85,
+    "col": "B",
+    "value": "Validación inicial de problemas y oportunidades de emprendimiento científico, tecnológico, creativo, social o sostenible con base en evidencia de usuarios, clientes, empresas o comunidades y con orientación a decisiones dentro de la Ruta de Emprendimiento."
+  },
+  {
+    "cell": "B86",
+    "row": 86,
+    "col": "B",
+    "value": "Al finalizar la Asignatura los resultados de aprendizaje son:"
+  },
+  {
+    "cell": "B87",
+    "row": 87,
+    "col": "B",
+    "value": "Dominio del aprendizaje Sombree la casilla respectiva teniendo en cuenta la taxonomía integrada de la Institución"
+  },
+  {
+    "cell": "B88",
+    "row": 88,
+    "col": "B",
+    "value": 1
+  },
+  {
+    "cell": "H88",
+    "row": 88,
+    "col": "H",
+    "value": 2
+  },
+  {
+    "cell": "O88",
+    "row": 88,
+    "col": "O",
+    "value": 3
+  },
+  {
+    "cell": "V88",
+    "row": 88,
+    "col": "V",
+    "value": 4
+  },
+  {
+    "cell": "AC88",
+    "row": 88,
+    "col": "AC",
+    "value": 5
+  },
+  {
+    "cell": "AJ88",
+    "row": 88,
+    "col": "AJ",
+    "value": 6
+  },
+  {
+    "cell": "B89",
+    "row": 89,
+    "col": "B",
+    "value": "RA 1 - Resultado de aprendizaje "
+  },
+  {
+    "cell": "J89",
+    "row": 89,
+    "col": "J",
+    "value": "Saberes"
+  },
+  {
+    "cell": "R89",
+    "row": 89,
+    "col": "R",
+    "value": "Técnica de Evaluación "
+  },
+  {
+    "cell": "Z89",
+    "row": 89,
+    "col": "Z",
+    "value": "Aspectos"
+  },
+  {
+    "cell": "AH89",
+    "row": 89,
+    "col": "AH",
+    "value": "CE 1 – Criterio de Evaluación "
+  },
+  {
+    "cell": "B90",
+    "row": 90,
+    "col": "B",
+    "value": "Al finalizar la asignatura, valido una oportunidad inicial de emprendimiento científico, tecnológico, creativo, social o sostenible con base en un problema real, la caracterización de usuarios, clientes, empresas o comunidades, evidencia temprana y prototipo de baja fidelidad, para una decisión de continuidad, pivote, reformulación o cierre dentro de la Ruta de Emprendimiento."
+  },
+  {
+    "cell": "J90",
+    "row": 90,
+    "col": "J",
+    "value": "Problema, oportunidad y solución; usuario, cliente, empresa o comunidad; mapa de actores; supuestos e hipótesis; entrevista, observación y encuesta exploratoria; evidencia positiva y negativa; criterios de oportunidad; prototipo de baja fidelidad; bitácora y decisiones emprendedoras."
+  },
+  {
+    "cell": "R90",
+    "row": 90,
+    "col": "R",
+    "value": "Portafolio de evidencias y sustentación Gate 1: ficha de problema, mapa de actores, instrumentos y registros de validación, análisis de hallazgos, prototipo de baja fidelidad y decisión argumentada."
+  },
+  {
+    "cell": "Z90",
+    "row": 90,
+    "col": "Z",
+    "value": "Evidencia de problema real; pertinencia de usuarios, clientes, empresas o comunidades; calidad de la validación temprana; coherencia problema-oportunidad-prototipo; análisis de hallazgos; trazabilidad de decisiones; comunicación clara y ética."
+  },
+  {
+    "cell": "AH90",
+    "row": 90,
+    "col": "AH",
+    "value": "Pertinencia, suficiencia y trazabilidad de la evidencia utilizada para validar la oportunidad inicial; coherencia entre problema, usuarios o comunidades y prototipo de baja fidelidad; solidez de la decisión de continuidad, pivote, reformulación o cierre dentro de la Ruta de Emprendimiento."
+  },
+  {
+    "cell": "B91",
+    "row": 91,
+    "col": "B",
+    "value": "Al finalizar la Asignatura los resultados de aprendizaje son:"
+  },
+  {
+    "cell": "B92",
+    "row": 92,
+    "col": "B",
+    "value": "Dominio del aprendizaje Sombree la casilla respectiva teniendo en cuenta la taxonomía integrada de la Institución"
+  },
+  {
+    "cell": "B93",
+    "row": 93,
+    "col": "B",
+    "value": 1
+  },
+  {
+    "cell": "H93",
+    "row": 93,
+    "col": "H",
+    "value": 2
+  },
+  {
+    "cell": "O93",
+    "row": 93,
+    "col": "O",
+    "value": 3
+  },
+  {
+    "cell": "V93",
+    "row": 93,
+    "col": "V",
+    "value": 4
+  },
+  {
+    "cell": "AC93",
+    "row": 93,
+    "col": "AC",
+    "value": 5
+  },
+  {
+    "cell": "AJ93",
+    "row": 93,
+    "col": "AJ",
+    "value": 6
+  },
+  {
+    "cell": "B94",
+    "row": 94,
+    "col": "B",
+    "value": "RA N - Resultado de aprendizaje "
+  },
+  {
+    "cell": "J94",
+    "row": 94,
+    "col": "J",
+    "value": "Saberes"
+  },
+  {
+    "cell": "R94",
+    "row": 94,
+    "col": "R",
+    "value": "Técnica de Evaluación "
+  },
+  {
+    "cell": "Z94",
+    "row": 94,
+    "col": "Z",
+    "value": "Aspectos"
+  },
+  {
+    "cell": "AH94",
+    "row": 94,
+    "col": "AH",
+    "value": "CE N – Criterio de Evaluación "
+  },
+  {
+    "cell": "B95",
+    "row": 95,
+    "col": "B",
+    "value": "No aplica: la asignatura declara un único resultado de aprendizaje integrador para Emprendimiento 1."
+  },
+  {
+    "cell": "J95",
+    "row": 95,
+    "col": "J",
+    "value": "No aplica: los saberes del resultado integrador se concentran en RA 1."
+  },
+  {
+    "cell": "R95",
+    "row": 95,
+    "col": "R",
+    "value": "No aplica: la evaluación se integra en el portafolio y sustentación Gate 1."
+  },
+  {
+    "cell": "Z95",
+    "row": 95,
+    "col": "Z",
+    "value": "No aplica: los aspectos evaluables se detallan en RA 1."
+  },
+  {
+    "cell": "AH95",
+    "row": 95,
+    "col": "AH",
+    "value": "No aplica: se conserva un único criterio disciplinar asociado al RA 1."
+  },
+  {
+    "cell": "B98",
+    "row": 98,
+    "col": "B",
+    "value": "4.1 RÚBRICAS DE EVALUACIÓN DISCIPLINAR"
+  },
+  {
+    "cell": "B99",
+    "row": 99,
+    "col": "B",
+    "value": "CE 1 – Criterio de Evaluación "
+  },
+  {
+    "cell": "G99",
+    "row": 99,
+    "col": "G",
+    "value": "No Evidenciable "
+  },
+  {
+    "cell": "L99",
+    "row": 99,
+    "col": "L",
+    "value": "Deficiente"
+  },
+  {
+    "cell": "Q99",
+    "row": 99,
+    "col": "Q",
+    "value": "Insuficiente"
+  },
+  {
+    "cell": "V99",
+    "row": 99,
+    "col": "V",
+    "value": "Aceptable"
+  },
+  {
+    "cell": "AA99",
+    "row": 99,
+    "col": "AA",
+    "value": "Bueno"
+  },
+  {
+    "cell": "AF99",
+    "row": 99,
+    "col": "AF",
+    "value": "Muy Bueno"
+  },
+  {
+    "cell": "AK99",
+    "row": 99,
+    "col": "AK",
+    "value": "Sobresaliente"
+  },
+  {
+    "cell": "B100",
+    "row": 100,
+    "col": "B",
+    "value": "Evidencia trazable para validar la oportunidad inicial, coherencia problema-usuario-prototipo y decisión argumentada dentro de la ruta."
+  },
+  {
+    "cell": "G100",
+    "row": 100,
+    "col": "G",
+    "value": "No presenta evidencia verificable de problema real, validación con actores ni prototipo de baja fidelidad."
+  },
+  {
+    "cell": "L100",
+    "row": 100,
+    "col": "L",
+    "value": "Presenta información fragmentada o declarativa, sin evidencia suficiente de interacción con usuarios, clientes, empresas o comunidades."
+  },
+  {
+    "cell": "Q100",
+    "row": 100,
+    "col": "Q",
+    "value": "Identifica un problema y algunos actores, pero la validación, el análisis de hallazgos o el prototipo son incompletos."
+  },
+  {
+    "cell": "V100",
+    "row": 100,
+    "col": "V",
+    "value": "Formula el problema, caracteriza actores, aporta evidencia temprana y presenta un prototipo básico con decisión parcialmente argumentada."
+  },
+  {
+    "cell": "AA100",
+    "row": 100,
+    "col": "AA",
+    "value": "Integra problema, actores, evidencia y prototipo con análisis claro y una decisión coherente de continuidad, pivote, reformulación o cierre."
+  },
+  {
+    "cell": "AF100",
+    "row": 100,
+    "col": "AF",
+    "value": "Sustenta con evidencia suficiente la oportunidad inicial, conecta hallazgos con prototipo y argumenta sólidamente la decisión emprendedora."
+  },
+  {
+    "cell": "AK100",
+    "row": 100,
+    "col": "AK",
+    "value": "Valida rigurosamente la oportunidad con evidencia trazable, análisis crítico, prototipo pertinente y decisión estratégica dentro de la ruta."
+  },
+  {
+    "cell": "B101",
+    "row": 101,
+    "col": "B",
+    "value": "CE N – Criterio de Evaluación "
+  },
+  {
+    "cell": "G101",
+    "row": 101,
+    "col": "G",
+    "value": "No Evidenciable "
+  },
+  {
+    "cell": "L101",
+    "row": 101,
+    "col": "L",
+    "value": "Deficiente"
+  },
+  {
+    "cell": "Q101",
+    "row": 101,
+    "col": "Q",
+    "value": "Insuficiente"
+  },
+  {
+    "cell": "V101",
+    "row": 101,
+    "col": "V",
+    "value": "Aceptable"
+  },
+  {
+    "cell": "AA101",
+    "row": 101,
+    "col": "AA",
+    "value": "Bueno"
+  },
+  {
+    "cell": "AF101",
+    "row": 101,
+    "col": "AF",
+    "value": "Muy Bueno"
+  },
+  {
+    "cell": "AK101",
+    "row": 101,
+    "col": "AK",
+    "value": "Sobresaliente"
+  },
+  {
+    "cell": "B102",
+    "row": 102,
+    "col": "B",
+    "value": "No aplica: se conserva un único criterio disciplinar asociado al RA 1."
+  },
+  {
+    "cell": "G102",
+    "row": 102,
+    "col": "G",
+    "value": "No aplica por resultado único."
+  },
+  {
+    "cell": "L102",
+    "row": 102,
+    "col": "L",
+    "value": "No aplica por resultado único."
+  },
+  {
+    "cell": "Q102",
+    "row": 102,
+    "col": "Q",
+    "value": "No aplica por resultado único."
+  },
+  {
+    "cell": "V102",
+    "row": 102,
+    "col": "V",
+    "value": "No aplica por resultado único."
+  },
+  {
+    "cell": "AA102",
+    "row": 102,
+    "col": "AA",
+    "value": "No aplica por resultado único."
+  },
+  {
+    "cell": "AF102",
+    "row": 102,
+    "col": "AF",
+    "value": "No aplica por resultado único."
+  },
+  {
+    "cell": "AK102",
+    "row": 102,
+    "col": "AK",
+    "value": "No aplica por resultado único."
+  },
+  {
+    "cell": "B105",
+    "row": 105,
+    "col": "B",
+    "value": "4.2 RÚBRICAS DE EVALUACIÓN ACTITUD Y COMPROMISO"
+  },
+  {
+    "cell": "B106",
+    "row": 106,
+    "col": "B",
+    "value": "LA ACTITUD Y EL COMPROMISO CON EL APRENDIZAJE"
+  },
+  {
+    "cell": "L106",
+    "row": 106,
+    "col": "L",
+    "value": "Criterio mayor y menor"
+  },
+  {
+    "cell": "AG106",
+    "row": 106,
+    "col": "AG",
+    "value": "Selección el criterio que mejor describe al estudiante "
+  },
+  {
+    "cell": "AK106",
+    "row": 106,
+    "col": "AK",
+    "value": "Comentarios"
+  },
+  {
+    "cell": "B107",
+    "row": 107,
+    "col": "B",
+    "value": "Perseverancia"
+  },
+  {
+    "cell": "L107",
+    "row": 107,
+    "col": "L",
+    "value": "El estudiante demuestra a lo largo de su proceso de formación perseverancia para alcanzar los objetivos trazados. "
+  },
+  {
+    "cell": "AG107",
+    "row": 107,
+    "col": "AG",
+    "value": "SI"
+  },
+  {
+    "cell": "AK107",
+    "row": 107,
+    "col": "AK",
+    "value": "Observación: persevera en la exploración del problema y ajusta su trabajo con base en retroalimentación."
+  },
+  {
+    "cell": "L108",
+    "row": 108,
+    "col": "L",
+    "value": "El estudiante abandona los objetivos fácilmente y carece de un enfoque metódico para superarlos."
+  },
+  {
+    "cell": "AG108",
+    "row": 108,
+    "col": "AG",
+    "value": "NO"
+  },
+  {
+    "cell": "B109",
+    "row": 109,
+    "col": "B",
+    "value": "Puntualidad y cumplimiento"
+  },
+  {
+    "cell": "L109",
+    "row": 109,
+    "col": "L",
+    "value": "El estudiante cumple con los plazos establecidos y entrega sus compromisos según lo pactado."
+  },
+  {
+    "cell": "AG109",
+    "row": 109,
+    "col": "AG",
+    "value": "SI"
+  },
+  {
+    "cell": "AK109",
+    "row": 109,
+    "col": "AK",
+    "value": "Observación: cumple entregas parciales, evidencias de campo y compromisos del portafolio."
+  },
+  {
+    "cell": "L110",
+    "row": 110,
+    "col": "L",
+    "value": "El estudiante no cumple con los plazos ni sigue las directrices acordadas para las entregas."
+  },
+  {
+    "cell": "AG110",
+    "row": 110,
+    "col": "AG",
+    "value": "NO"
+  },
+  {
+    "cell": "B111",
+    "row": 111,
+    "col": "B",
+    "value": "Estrategias de aprendizaje activo"
+  },
+  {
+    "cell": "L111",
+    "row": 111,
+    "col": "L",
+    "value": "El estudiante asume un papel activo en su proceso de aprendizaje, y participa con ideas en el contexto del proceso formativo. "
+  },
+  {
+    "cell": "AG111",
+    "row": 111,
+    "col": "AG",
+    "value": "SI"
+  },
+  {
+    "cell": "AK111",
+    "row": 111,
+    "col": "AK",
+    "value": "Observación: participa activamente en talleres, validaciones, análisis de casos y socializaciones."
+  },
+  {
+    "cell": "L112",
+    "row": 112,
+    "col": "L",
+    "value": "El estudiante muestra poca participación activa y no se involucra en su proceso de aprendizaje."
+  },
+  {
+    "cell": "AG112",
+    "row": 112,
+    "col": "AG",
+    "value": "NO"
+  },
+  {
+    "cell": "B113",
+    "row": 113,
+    "col": "B",
+    "value": "Uso responsable de las herramientas tecnológicas"
+  },
+  {
+    "cell": "L113",
+    "row": 113,
+    "col": "L",
+    "value": "El estudiante usa la tecnología de manera ética y reflexiva, complementando con su creatividad y pensamiento crítico sin depender de ella."
+  },
+  {
+    "cell": "AG113",
+    "row": 113,
+    "col": "AG",
+    "value": "SI"
+  },
+  {
+    "cell": "AK113",
+    "row": 113,
+    "col": "AK",
+    "value": "Observación: usa herramientas digitales e IA con ética, citación, verificación y criterio propio."
+  },
+  {
+    "cell": "L114",
+    "row": 114,
+    "col": "L",
+    "value": "El estudiante hace un uso irresponsable de la tecnología, recurriendo a prácticas inapropiadas para obtener resultados."
+  },
+  {
+    "cell": "AG114",
+    "row": 114,
+    "col": "AG",
+    "value": "NO"
+  },
+  {
+    "cell": "B115",
+    "row": 115,
+    "col": "B",
+    "value": "TRABAJO COLABORATIVO"
+  },
+  {
+    "cell": "L115",
+    "row": 115,
+    "col": "L",
+    "value": "Criterio mayor y menor"
+  },
+  {
+    "cell": "AG115",
+    "row": 115,
+    "col": "AG",
+    "value": "Selección el criterio que mejor describe al estudiante "
+  },
+  {
+    "cell": "AK115",
+    "row": 115,
+    "col": "AK",
+    "value": "Comentarios"
+  },
+  {
+    "cell": "B116",
+    "row": 116,
+    "col": "B",
+    "value": "Aprendizaje en equipo"
+  },
+  {
+    "cell": "L116",
+    "row": 116,
+    "col": "L",
+    "value": "El estudiante valora el aprendizaje colectivo, colaborando con otros para enriquecer el conocimiento compartido."
+  },
+  {
+    "cell": "AG116",
+    "row": 116,
+    "col": "AG",
+    "value": "SI"
+  },
+  {
+    "cell": "AK116",
+    "row": 116,
+    "col": "AK",
+    "value": "Observación: colabora con el equipo, comparte evidencias y contribuye al aprendizaje colectivo."
+  },
+  {
+    "cell": "L117",
+    "row": 117,
+    "col": "L",
+    "value": "El estudiante no reconoce la importancia de la colaboración, ni la necesidad de empatía, confianza y solidaridad en el trabajo en equipo o con otras personas.."
+  },
+  {
+    "cell": "AG117",
+    "row": 117,
+    "col": "AG",
+    "value": "NO"
+  },
+  {
+    "cell": "B118",
+    "row": 118,
+    "col": "B",
+    "value": "Comunicación asertiva"
+  },
+  {
+    "cell": "L118",
+    "row": 118,
+    "col": "L",
+    "value": "El estudiante se expresa de manera clara, respetuosa y escucha activamente, promoviendo un ambiente de diálogo positivo."
+  },
+  {
+    "cell": "AG118",
+    "row": 118,
+    "col": "AG",
+    "value": "SI"
+  },
+  {
+    "cell": "AK118",
+    "row": 118,
+    "col": "AK",
+    "value": "Observación: comunica hallazgos, problemas y decisiones con claridad, respeto y escucha activa."
+  },
+  {
+    "cell": "L119",
+    "row": 119,
+    "col": "L",
+    "value": "El estudiante tiene dificultades para expresar sus ideas de manera clara y respetuosa, no escucha a los demás  y le quita importancia a sus opiniones "
+  },
+  {
+    "cell": "AG119",
+    "row": 119,
+    "col": "AG",
+    "value": "NO"
+  },
+  {
+    "cell": "B120",
+    "row": 120,
+    "col": "B",
+    "value": "Relacionamiento en el espacio de trabajo"
+  },
+  {
+    "cell": "L120",
+    "row": 120,
+    "col": "L",
+    "value": "El estudiante interactúa de manera respetuosa, colaborativa y constructiva con sus compañeros, contribuyendo a un ambiente positivo."
+  },
+  {
+    "cell": "AG120",
+    "row": 120,
+    "col": "AG",
+    "value": "SI"
+  },
+  {
+    "cell": "AK120",
+    "row": 120,
+    "col": "AK",
+    "value": "Observación: mantiene relaciones respetuosas con compañeros, usuarios, comunidades y aliados externos."
+  },
+  {
+    "cell": "L121",
+    "row": 121,
+    "col": "L",
+    "value": "El estudiante muestra actitudes negativas que dificultan la cooperación y el respeto, conductas que afectan negativamente el ambiente de trabajo y la estabilidad en general. "
+  },
+  {
+    "cell": "AG121",
+    "row": 121,
+    "col": "AG",
+    "value": "NO"
+  },
+  {
+    "cell": "B124",
+    "row": 124,
+    "col": "B",
+    "value": "5. REPRESENTACIÓN GRÁFICA DE LA ASIGNATURA"
+  },
+  {
+    "cell": "B125",
+    "row": 125,
+    "col": "B",
+    "value": "Canvas de Validación Gate 1 - Ruta de Emprendimiento\n1. Aurora: problema real -> contexto -> actores -> usuarios, clientes, empresas o comunidades.\n2. Hipótesis: problema, usuario y solución inicial -> supuestos verificables.\n3. Validación temprana: entrevistas, observación, encuestas e interacciones -> evidencia positiva y negativa.\n4. Análisis: hallazgos, criterios de oportunidad, impacto, viabilidad inicial y alineación disciplinar.\n5. Prototipo: baja fidelidad -> retroalimentación -> ajuste inicial de la solución.\n6. Gate 1: decisión argumentada de continuidad, pivote, reformulación o cierre -> transición a Emprendimiento 2."
+  },
+  {
+    "cell": "B126",
+    "row": 126,
+    "col": "B",
+    "value": "Representación sugerida: Canvas de Validación Gate 1. Flujo: Ruta institucional (Aurora) -> identificación de problema -> actores y usuarios -> hipótesis -> validación temprana -> análisis de hallazgos -> prototipo de baja fidelidad -> decisión de continuidad, pivote, reformulación o cierre -> transición a Emprendimiento 2."
+  },
+  {
+    "cell": "B128",
+    "row": 128,
+    "col": "B",
+    "value": "6. BIBLIOGRAFÍA BÁSICA"
+  },
+  {
+    "cell": "B129",
+    "row": 129,
+    "col": "B",
+    "value": "Recursos Bibliográficos"
+  },
+  {
+    "cell": "AE129",
+    "row": 129,
+    "col": "AE",
+    "value": "Ubicación"
+  },
+  {
+    "cell": "B130",
+    "row": 130,
+    "col": "B",
+    "value": "Osterwalder, A., Pigneur, Y., Bernarda, G. y Smith, A. (2014). Value Proposition Design. Wiley."
+  },
+  {
+    "cell": "AE130",
+    "row": 130,
+    "col": "AE",
+    "value": "Biblioteca / CRAI / recurso académico institucional"
+  },
+  {
+    "cell": "B131",
+    "row": 131,
+    "col": "B",
+    "value": "Ries, E. (2011). The Lean Startup. Crown Business."
+  },
+  {
+    "cell": "AE131",
+    "row": 131,
+    "col": "AE",
+    "value": "Biblioteca / CRAI / recurso académico institucional"
+  },
+  {
+    "cell": "B132",
+    "row": 132,
+    "col": "B",
+    "value": "Brown, T. (2009). Change by Design. Harper Business."
+  },
+  {
+    "cell": "AE132",
+    "row": 132,
+    "col": "AE",
+    "value": "Biblioteca / CRAI / recurso académico institucional"
+  },
+  {
+    "cell": "B133",
+    "row": 133,
+    "col": "B",
+    "value": "Blank, S. y Dorf, B. (2012). The Startup Owner's Manual. K&S Ranch. Ubicación: Biblioteca / CRAI / recurso académico institucional."
+  }
+]

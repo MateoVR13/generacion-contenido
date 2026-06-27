@@ -496,6 +496,69 @@
     });
   }
 
+  // Chart.js renders axis ticks, legend labels, dataset labels and axis/plugin titles as PLAIN
+  // TEXT — it cannot render KaTeX. So any LaTeX/$...$ in those fields would show raw (e.g. "$\sigma$").
+  // This converts such text to readable Unicode and strips delimiters. Rich notation belongs in the
+  // chart title/note (which DO render KaTeX), not in labels.
+  var LATEX_TO_UNICODE = {
+    "\\alpha": "α", "\\beta": "β", "\\gamma": "γ", "\\delta": "δ", "\\epsilon": "ε", "\\varepsilon": "ε",
+    "\\zeta": "ζ", "\\eta": "η", "\\theta": "θ", "\\vartheta": "ϑ", "\\iota": "ι", "\\kappa": "κ",
+    "\\lambda": "λ", "\\mu": "μ", "\\nu": "ν", "\\xi": "ξ", "\\pi": "π", "\\rho": "ρ", "\\sigma": "σ",
+    "\\tau": "τ", "\\upsilon": "υ", "\\phi": "φ", "\\varphi": "φ", "\\chi": "χ", "\\psi": "ψ", "\\omega": "ω",
+    "\\Gamma": "Γ", "\\Delta": "Δ", "\\Theta": "Θ", "\\Lambda": "Λ", "\\Xi": "Ξ", "\\Pi": "Π",
+    "\\Sigma": "Σ", "\\Phi": "Φ", "\\Psi": "Ψ", "\\Omega": "Ω",
+    "\\nabla": "∇", "\\partial": "∂", "\\infty": "∞", "\\times": "×", "\\cdot": "·", "\\pm": "±",
+    "\\leq": "≤", "\\geq": "≥", "\\neq": "≠", "\\approx": "≈", "\\sim": "∼", "\\propto": "∝",
+    "\\rightarrow": "→", "\\to": "→", "\\leftarrow": "←", "\\Rightarrow": "⇒", "\\sum": "Σ", "\\prod": "∏",
+    "\\int": "∫", "\\sqrt": "√", "\\in": "∈", "\\forall": "∀", "\\exists": "∃", "\\circ": "∘"
+  };
+  var SUPERSCRIPTS = { "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹", "n": "ⁿ", "i": "ⁱ", "+": "⁺", "-": "⁻", "x": "ˣ", "y": "ʸ" };
+  var SUBSCRIPTS = { "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉", "i": "ᵢ", "j": "ⱼ", "n": "ₙ", "x": "ₓ", "a": "ₐ", "+": "₊", "-": "₋", "t": "ₜ" };
+
+  function mapScript(seq, table) {
+    var out = "";
+    for (var i = 0; i < seq.length; i += 1) {
+      if (table[seq[i]] == null) return null; // unmappable -> caller keeps a plain fallback
+      out += table[seq[i]];
+    }
+    return out;
+  }
+
+  function latexToPlainText(value) {
+    if (typeof value !== "string" || value.indexOf("$") === -1 && value.indexOf("\\") === -1 && value.indexOf("^") === -1 && value.indexOf("_") === -1) return value;
+    var s = String(value).replace(/\\\$/g, " DOLLAR ");
+    s = s.replace(/\$\$?([^$]*)\$\$?/g, "$1"); // drop $...$ / $$...$$ delimiters, keep inner
+    s = s.replace(/\\(?:left|right|displaystyle|text|mathrm|mathbf|operatorname)\b/g, ""); // drop wrappers
+    s = s.replace(/\\frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g, "$1/$2"); // \frac{a}{b} -> a/b
+    s = s.replace(/\\sqrt\s*\{([^{}]*)\}/g, "√($1)"); // \sqrt{x} -> √(x)
+    Object.keys(LATEX_TO_UNICODE).forEach(function (cmd) {
+      s = s.split(cmd).join(LATEX_TO_UNICODE[cmd]);
+    });
+    // superscripts/subscripts: ^{...}, ^x, _{...}, _x
+    s = s.replace(/\^\{([^{}]*)\}|\^(\S)/g, function (m, g1, g2) { var seq = g1 != null ? g1 : g2; var u = mapScript(seq, SUPERSCRIPTS); return u != null ? u : "^" + seq; });
+    s = s.replace(/_\{([^{}]*)\}|_(\S)/g, function (m, g1, g2) { var seq = g1 != null ? g1 : g2; var u = mapScript(seq, SUBSCRIPTS); return u != null ? u : "_" + seq; });
+    s = s.replace(/[{}]/g, "").replace(/\\,|\\;|\\!|\\ /g, " ").replace(/\\/g, ""); // strip leftover braces/spacing/backslashes
+    s = s.replace(/ DOLLAR /g, "$").replace(/\s+/g, " ").trim();
+    return s;
+  }
+
+  function sanitizeChartConfigText(config) {
+    if (!config || typeof config !== "object") return config;
+    if (config.data) {
+      if (Array.isArray(config.data.labels)) config.data.labels = config.data.labels.map(latexToPlainText);
+      if (Array.isArray(config.data.datasets)) config.data.datasets.forEach(function (ds) { if (ds && typeof ds.label === "string") ds.label = latexToPlainText(ds.label); });
+    }
+    var opts = config.options;
+    if (opts) {
+      if (opts.plugins && opts.plugins.title && typeof opts.plugins.title.text === "string") opts.plugins.title.text = latexToPlainText(opts.plugins.title.text);
+      if (opts.scales) Object.keys(opts.scales).forEach(function (k) {
+        var ax = opts.scales[k];
+        if (ax && ax.title && typeof ax.title.text === "string") ax.title.text = latexToPlainText(ax.title.text);
+      });
+    }
+    return config;
+  }
+
   function normalizeChartConfig(raw) {
     let config;
     try {
@@ -535,14 +598,14 @@
       }
     };
 
-    return {
+    return sanitizeChartConfigText({
       type: type,
       data: {
         labels: (config.data && config.data.labels) || [],
         datasets: datasets
       },
       options: Object.assign({}, baseOptions, config.options || {})
-    };
+    });
   }
 
   function buildChart(canvas) {
@@ -639,6 +702,17 @@
     if (activeSectionId) initCharts(activeSectionId);
   });
 
+  // Enhance an arbitrary subtree (e.g. the embedded PDF preview): render KaTeX formulas/inline-math,
+  // build any SCORM-style charts (canvas[data-chart]) within it, and highlight code. Does NOT touch
+  // SCORM navigation, so it is safe to call on the PDF preview root.
+  function enhanceWithin(root) {
+    if (!root) return;
+    renderFormulas();
+    highlightCode();
+    qsa("canvas[data-chart]", root).forEach(buildChart);
+  }
+
   window.subjectShowSection = showSection;
   window.subjectEnhanceContent = enhanceRenderedContent;
+  window.subjectEnhanceWithin = enhanceWithin;
 })();

@@ -30,7 +30,7 @@
         <p id="sidebar-subject-label" class="font-label-caps text-[10px] text-secondary-fixed uppercase leading-none">Asignatura</p>
         <h1 id="sidebar-subject-title" class="sidebar-subject-title font-h3 text-[15px] font-bold text-on-primary leading-tight">Plantilla JSON SCORM/PDF</h1>
         <p class="font-label-caps text-[10px] text-on-primary-container uppercase tracking-widest leading-none">
-          Contenido <span id="sidebar-content-number" class="text-secondary-fixed">01</span>
+          Escenario de aprendizaje <span id="sidebar-content-number" class="text-secondary-fixed">01</span>
         </p>
       </div>
     </div>
@@ -58,7 +58,7 @@
 
   <div id="sidebar-overlay" class="hidden fixed inset-0 bg-black/40 z-30 lg:hidden"></div>
 
-  <div class="flex-1 min-w-0 flex flex-col">
+  <div id="main-column" class="flex-1 min-w-0 flex flex-col">
 
     <header class="h-banner sticky top-0 z-20 bg-primary-container border-b-4 border-secondary-fixed px-gutter
                    flex items-center gap-md">
@@ -76,7 +76,7 @@
       </div>
 
       <div class="hidden 2xl:flex items-center gap-sm shrink-0">
-        <span id="banner-content-label" class="font-label-caps text-label-caps text-secondary-fixed uppercase">Contenido 01</span>
+        <span id="banner-content-label" class="font-label-caps text-label-caps text-secondary-fixed uppercase">Escenario de aprendizaje 01</span>
         <span id="banner-content-number" class="w-9 h-9 rounded-full bg-secondary-fixed text-primary flex items-center justify-center font-bold">
           01
         </span>
@@ -119,6 +119,8 @@
 
         <div id="content-root" class="space-y-lg"></div>
 
+        <div id="pdf-preview-root" class="hidden"></div>
+
         <nav id="theme-pager" class="flex justify-between items-center gap-md pt-lg" aria-label="Navegación entre temas">
           <button id="prev-theme" class="inline-flex items-center gap-sm py-sm px-lg font-label-caps text-label-caps rounded
                          border-2 border-primary text-primary hover:bg-primary hover:text-on-primary transition-colors disabled:opacity-40 disabled:cursor-not-allowed">
@@ -153,7 +155,7 @@
       <div class="grid grid-cols-1 gap-sm">
         <label class="author-field-label">Nombre<input id="subject-title-input" class="author-field" type="text"/></label>
         <label class="author-field-label">Programa<input id="subject-program-input" class="author-field" type="text"/></label>
-        <label class="author-field-label">Contenido<input id="subject-content-input" class="author-field" type="text"/></label>
+        <label class="author-field-label">Escenario<input id="subject-content-input" class="author-field" type="text"/></label>
       </div>
     </section>
 
@@ -161,6 +163,10 @@
       <div class="flex items-center justify-between gap-sm mb-sm">
         <h3 class="author-tool-title">Estructura</h3>
         <button id="sync-editor" type="button" class="author-mini-btn">Sincronizar</button>
+      </div>
+      <div class="author-tabs flex gap-xs mb-sm" role="tablist" aria-label="Rama a editar">
+        <button type="button" data-editor-branch="scorm" class="author-tab author-tab-active" role="tab">SCORM</button>
+        <button type="button" data-editor-branch="pdf" class="author-tab" role="tab">PDF</button>
       </div>
       <div id="structure-editor" class="space-y-sm"></div>
     </section>

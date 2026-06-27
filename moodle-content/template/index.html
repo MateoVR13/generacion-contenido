@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>moodle-content — Renderer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <img src="https://i.postimg.cc/c1tGwQnF/Logo-UA.png" alt="Universidad de América">
+    <div>
+      <h1>moodle-content · Renderer</h1>
+      <span class="tag">JSON → HTML inline pegable en Moodle</span>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <label class="file">
+      <span aria-hidden="true">📂</span> Cargar JSON
+      <input type="file" id="fileInput" accept=".json,application/json">
+    </label>
+    <button class="btn ghost" id="loadExample">Cargar ejemplo</button>
+    <button class="btn secondary" id="copyAll" disabled>Copiar TODO</button>
+    <span class="meta" id="fileMeta">Ningún archivo cargado.</span>
+  </div>
+
+  <main class="layout">
+    <p class="hint">
+      Carga un JSON con root <code>"moodle"</code> (botón <em>Cargar JSON</em>) o pásalo por URL con
+      <code>?json=ejemplo-moodle.json</code>. El renderer genera <strong>un bloque HTML por página</strong>
+      con estilos 100% inline; usa <em>Copiar HTML</em> en cada página y pégalo en el editor HTML de la
+      página correspondiente de Moodle. El JS de esta herramienta NUNCA se copia al output.
+    </p>
+
+    <div class="alert hidden" id="errorBox"></div>
+
+    <div id="pages">
+      <div class="empty" id="emptyState">
+        <div class="big" aria-hidden="true">🗂️</div>
+        <p>Carga un JSON para generar el HTML de cada página.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="copied-toast" id="toast">Copiado al portapapeles ✅</div>
+
+  <!-- Lógica de render compartida con Node. NO se copia al output. -->
+  <script src="assets/renderer.js"></script>
+  <script>
+  (function () {
+    'use strict';
+    var R = window.MoodleRenderer;
+    var pagesEl = document.getElementById('pages');
+    var emptyState = document.getElementById('emptyState');
+    var errorBox = document.getElementById('errorBox');
+    var fileMeta = document.getElementById('fileMeta');
+    var copyAllBtn = document.getElementById('copyAll');
+    var toast = document.getElementById('toast');
+    var rendered = []; // [{id,type,title,html}]
+
+    function showError(msg) {
+      errorBox.textContent = msg;
+      errorBox.classList.remove('hidden');
+    }
+    function clearError() {
+      errorBox.textContent = '';
+      errorBox.classList.add('hidden');
+    }
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(function () { toast.classList.remove('show'); }, 1600);
+    }
+
+    function copyText(text, label) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          showToast(label || 'Copiado ✅');
+        }, function () { fallbackCopy(text, label); });
+      } else {
+        fallbackCopy(text, label);
+      }
+    }
+    function fallbackCopy(text, label) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); showToast(label || 'Copiado ✅'); }
+      catch (e) { showError('No se pudo copiar automáticamente. Selecciona el texto y cópialo.'); }
+      document.body.removeChild(ta);
+    }
+
+    function el(tag, attrs, children) {
+      var node = document.createElement(tag);
+      attrs = attrs || {};
+      Object.keys(attrs).forEach(function (k) {
+        if (k === 'class') node.className = attrs[k];
+        else if (k === 'text') node.textContent = attrs[k];
+        else node.setAttribute(k, attrs[k]);
+      });
+      (children || []).forEach(function (c) { node.appendChild(c); });
+      return node;
+    }
+
+    function renderPagesUI(list) {
+      rendered = list;
+      pagesEl.innerHTML = '';
+      if (!list.length) {
+        pagesEl.appendChild(emptyState);
+        copyAllBtn.disabled = true;
+        return;
+      }
+      copyAllBtn.disabled = false;
+
+      list.forEach(function (page, idx) {
+        var block = el('div', { class: 'page-block' });
+
+        // Head
+        var head = el('div', { class: 'page-head' });
+        var titleWrap = el('div');
+        titleWrap.appendChild(el('span', { class: 'page-type', text: page.type }));
+        titleWrap.appendChild(el('p', { class: 'page-title', text: page.title + '  (id: ' + page.id + ')' }));
+        var actions = el('div', { class: 'page-actions' });
+        var copyBtn = el('button', { class: 'btn', text: 'Copiar HTML' });
+        copyBtn.addEventListener('click', function () {
+          copyText(page.html, 'HTML de "' + page.title + '" copiado ✅');
+        });
+        actions.appendChild(copyBtn);
+        head.appendChild(titleWrap);
+        head.appendChild(actions);
+        block.appendChild(head);
+
+        // Tabs
+        var tabs = el('div', { class: 'tabs' });
+        var tabPrev = el('button', { class: 'tab active', text: 'Vista previa' });
+        var tabCode = el('button', { class: 'tab', text: 'HTML' });
+        tabs.appendChild(tabPrev);
+        tabs.appendChild(tabCode);
+        block.appendChild(tabs);
+
+        // Panels
+        var panelPrev = el('div', { class: 'panel' });
+        var iframe = el('iframe', { class: 'preview-frame', title: 'Vista previa ' + page.title });
+        panelPrev.appendChild(iframe);
+
+        var panelCode = el('div', { class: 'panel hidden' });
+        var ta = el('textarea', { class: 'code', readonly: 'readonly' });
+        ta.value = page.html;
+        panelCode.appendChild(ta);
+
+        block.appendChild(panelPrev);
+        block.appendChild(panelCode);
+        pagesEl.appendChild(block);
+
+        // Inyecta el HTML inline en el iframe (sin fuentes externas adicionales,
+        // pero cargamos las webfonts para que la previsualización se vea fiel).
+        var doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(
+          '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">' +
+          '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">' +
+          '<style>body{margin:0;background:#eef1e6;}</style></head><body>' +
+          page.html +
+          '</body></html>'
+        );
+        doc.close();
+
+        // Tab switching
+        tabPrev.addEventListener('click', function () {
+          tabPrev.classList.add('active'); tabCode.classList.remove('active');
+          panelPrev.classList.remove('hidden'); panelCode.classList.add('hidden');
+        });
+        tabCode.addEventListener('click', function () {
+          tabCode.classList.add('active'); tabPrev.classList.remove('active');
+          panelCode.classList.remove('hidden'); panelPrev.classList.add('hidden');
+        });
+      });
+    }
+
+    function processJson(obj, sourceLabel) {
+      clearError();
+      try {
+        var list = R.renderAll(obj);
+        renderPagesUI(list);
+        fileMeta.textContent = (sourceLabel || 'JSON') + ' · ' + list.length + ' página(s) generada(s).';
+      } catch (e) {
+        renderPagesUI([]);
+        showError('Error: ' + e.message);
+        fileMeta.textContent = 'Error al procesar el JSON.';
+      }
+    }
+
+    // Carga por archivo.
+    document.getElementById('fileInput').addEventListener('change', function (ev) {
+      var file = ev.target.files && ev.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function () {
+        try {
+          var obj = JSON.parse(reader.result);
+          processJson(obj, file.name);
+        } catch (e) {
+          showError('JSON inválido en "' + file.name + '": ' + e.message);
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    // Botón "Copiar todo": concatena los bloques separados por comentarios.
+    copyAllBtn.addEventListener('click', function () {
+      if (!rendered.length) return;
+      var all = rendered.map(function (p) {
+        return '<!-- ===== PÁGINA MOODLE: ' + p.title + ' (id: ' + p.id + ', tipo: ' + p.type + ') ===== -->\n' + p.html;
+      }).join('\n\n');
+      copyText(all, 'HTML de todas las páginas copiado ✅');
+    });
+
+    // Botón "Cargar ejemplo".
+    document.getElementById('loadExample').addEventListener('click', function () {
+      loadFromUrl('ejemplo-moodle.json');
+    });
+
+    function loadFromUrl(url) {
+      clearError();
+      fetch(url, { cache: 'no-store' }).then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      }).then(function (obj) {
+        processJson(obj, url);
+      }).catch(function (e) {
+        showError('No se pudo cargar "' + url + '": ' + e.message +
+          '. Si abriste el archivo con file://, algunos navegadores bloquean fetch; usa el botón "Cargar JSON" o sirve la carpeta con un servidor local.');
+      });
+    }
+
+    // Carga por ?json=archivo.json
+    var params = new URLSearchParams(window.location.search);
+    var jsonParam = params.get('json');
+    if (jsonParam) {
+      loadFromUrl(jsonParam);
+    }
+  })();
+  </script>
+</body>
+</html>

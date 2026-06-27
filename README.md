@@ -33,7 +33,7 @@ También puedes usar los controles superiores del aplicativo:
 
 ## Flujo de Producción
 
-1. Usar la skill `$ova-json-content` para generar los siete archivos `<slug-asignatura>-contenido-01.json` a `<slug-asignatura>-contenido-07.json` en la raíz del proyecto.
+1. Usar la skill `$aprendizaje-guiado-scorm` para generar los siete archivos `<slug-asignatura>-contenido-01.json` a `<slug-asignatura>-contenido-07.json` en la raíz del proyecto.
 2. Indicar en el prompt la extensión mínima esperada para cada PDF, por ejemplo: `mínimo 12 páginas por PDF`.
 3. Cargar manualmente cada JSON en la plantilla con el botón `JSON` o con `?content=<slug-asignatura>-contenido-01.json`.
 4. Revisar y editar manualmente textos, iconos, componentes y orden del SCORM; ajustar la guía PDF desde el JSON completo.
@@ -188,4 +188,4 @@ plantilla-scorm-pdf/
 - `window.loadSubjectContent(json)` permite cargar contenido desde otro script.
 - Todo contenido matemático debe ir en LaTeX.
 - Todo gráfico debe ser un componente `chart` con datos compatibles con Chart.js.
-- La skill del proyecto está en `ova-json-content/`.
+- La skill del proyecto está en `aprendizaje-guiado-scorm/`.

@@ -1,0 +1,838 @@
+{
+  "moodle": {
+    "branding": {
+      "logoUrl": "https://i.postimg.cc/c1tGwQnF/Logo-UA.png",
+      "institution": "Universidad de América",
+      "faculty": "Facultad de Ingeniería",
+      "year": "2026"
+    },
+    "course": {
+      "title": "Análisis Vectorial",
+      "program": "Pregrado en Ingeniería",
+      "methodology": {
+        "code": "AG",
+        "name": "Aprendizaje Guiado"
+      },
+      "momentLabelSingular": "Contenido",
+      "momentCountLabel": "7 Contenidos"
+    },
+    "pageOrder": [
+      "bienvenida",
+      "momento-1",
+      "momento-2",
+      "momento-3",
+      "momento-4",
+      "momento-5",
+      "momento-6",
+      "momento-7",
+      "cierre"
+    ],
+    "pages": {
+      "bienvenida": {
+        "type": "welcome",
+        "components": [
+          {
+            "type": "hero",
+            "eyebrow": "Curso · Unidad de Bienvenida",
+            "faculty": "Facultad de Ingeniería",
+            "title": "Análisis Vectorial",
+            "description": "Te damos la bienvenida a este recorrido formativo. Aquí explorarás funciones de varias variables, derivadas parciales, integrales múltiples y campos vectoriales, con apoyo de representaciones geométricas y herramientas computacionales para resolver problemas reales de ingeniería.",
+            "chips": [
+              {
+                "icon": "🎓",
+                "label": "Pregrado en Ingeniería"
+              },
+              {
+                "icon": "📖",
+                "label": "Aprendizaje Guiado"
+              },
+              {
+                "icon": "🏅",
+                "label": "7 Contenidos"
+              }
+            ],
+            "videoLabel": "Video de presentación",
+            "videoEmbedUrl": "https://share.synthesia.io/embeds/videos/3a66bc8d-5fd6-4ae4-8450-e8fa0663fc63"
+          },
+          {
+            "type": "learning-outcomes",
+            "icon": "🎯",
+            "title": "Resultados de Aprendizaje",
+            "subtitle": "Al finalizar el curso estarás en capacidad de modelar, analizar y resolver situaciones con herramientas del cálculo vectorial.",
+            "outcomes": [
+              {
+                "number": "1",
+                "label": "Modelo",
+                "text": "<strong>Modelo</strong> funciones de varias variables y campos vectoriales para representar fenómenos físicos y de ingeniería mediante superficies, curvas de nivel y representaciones geométricas."
+              },
+              {
+                "number": "2",
+                "label": "Analizo",
+                "text": "<strong>Analizo</strong> el comportamiento de funciones multivariables empleando derivadas parciales, gradiente, divergencia y rotacional para interpretar variaciones y flujos."
+              },
+              {
+                "number": "3",
+                "label": "Resuelvo",
+                "text": "<strong>Resuelvo</strong> problemas aplicados de ingeniería mediante integrales múltiples, integrales de línea y de superficie, apoyándome en herramientas computacionales."
+              }
+            ]
+          },
+          {
+            "type": "activities",
+            "icon": "🚀",
+            "title": "Actividades de Inicio",
+            "subtitle": "Antes de comenzar, completa estas actividades que activan tus conocimientos previos y abren el espacio de encuentro del curso.",
+            "items": [
+              {
+                "icon": "🧭",
+                "step": "Paso 1",
+                "title": "Evaluación diagnóstica",
+                "description": "Resuelve un cuestionario breve sobre cálculo de una variable, vectores y geometría analítica para identificar tu punto de partida.",
+                "details": {
+                  "summary": "▸ Descripción y orientaciones",
+                  "text": "El diagnóstico es de carácter formativo, no incide en la nota final. Tendrás un único intento y entre 20 y 30 minutos. Sus resultados te orientarán sobre los temas que conviene repasar antes del Contenido 1."
+                },
+                "opensAt": "2026-02-02 08:00",
+                "closesAt": "2026-02-08 23:59",
+                "button": {
+                  "href": "https://aula.uamerica.edu.co/mod/quiz/view.php?id=PLACEHOLDER_DIAGNOSTICO",
+                  "label": "Iniciar diagnóstico →"
+                }
+              },
+              {
+                "icon": "💬",
+                "step": "Paso 2",
+                "title": "Foro de presentación",
+                "description": "Preséntate ante tus compañeros y comparte una situación de tu entorno que creas que podría modelarse con funciones de varias variables o campos vectoriales.",
+                "details": {
+                  "summary": "▸ Descripción y orientaciones",
+                  "text": "Publica una intervención inicial (mínimo 80 palabras) y responde al menos a dos compañeros. Se valoran la pertinencia del ejemplo propuesto y la calidad del intercambio."
+                },
+                "opensAt": "2026-02-02 08:00",
+                "closesAt": "2026-02-15 23:59",
+                "button": {
+                  "href": "https://aula.uamerica.edu.co/mod/forum/view.php?id=PLACEHOLDER_FORO",
+                  "label": "Ir al foro →"
+                }
+              }
+            ]
+          },
+          {
+            "type": "roadmap",
+            "icon": "🗺️",
+            "title": "Ruta de Aprendizaje",
+            "subtitle": "Recorre la infografía interactiva para visualizar cómo se conectan los 7 contenidos del curso.",
+            "embedUrl": "https://ruta-analisis-vectorial.netlify.app/",
+            "height": 760
+          },
+          {
+            "type": "course-glance",
+            "icon": "🔎",
+            "title": "Tu Curso de un Vistazo",
+            "subtitle": "Conoce a tu docente y accede a los documentos guía del curso.",
+            "cards": [
+              {
+                "kind": "teacher",
+                "photoUrl": "https://i.postimg.cc/PLACEHOLDER/docente-castano.png",
+                "name": "Dr. Andrés Felipe Castaño, PhD",
+                "role": "Docente del curso",
+                "bio": "Doctor en Ingeniería con énfasis en métodos matemáticos aplicados. Investiga en modelamiento de campos vectoriales y métodos computacionales para la ingeniería, con amplia experiencia en la enseñanza del cálculo multivariable.",
+                "tags": [
+                  "Cálculo multivariable",
+                  "Campos vectoriales",
+                  "Modelamiento computacional"
+                ]
+              },
+              {
+                "kind": "syllabus",
+                "title": "Syllabus del curso",
+                "description": "Consulta competencias, contenidos, criterios de evaluación y bibliografía oficial.",
+                "previewUrl": "https://aula.uamerica.edu.co/pluginfile.php/PLACEHOLDER/syllabus-analisis-vectorial.pdf",
+                "button": {
+                  "href": "https://aula.uamerica.edu.co/pluginfile.php/PLACEHOLDER/syllabus-analisis-vectorial.pdf",
+                  "label": "Abrir Syllabus"
+                }
+              },
+              {
+                "kind": "schedule",
+                "title": "Cronograma",
+                "description": "Revisa fechas de apertura y cierre de cada contenido, actividades y evaluaciones.",
+                "previewUrl": "https://aula.uamerica.edu.co/pluginfile.php/PLACEHOLDER/cronograma-analisis-vectorial.pdf",
+                "button": {
+                  "href": "https://aula.uamerica.edu.co/pluginfile.php/PLACEHOLDER/cronograma-analisis-vectorial.pdf",
+                  "label": "Abrir Cronograma"
+                }
+              }
+            ]
+          },
+          {
+            "type": "resources",
+            "icon": "📚",
+            "title": "Recursos de Apoyo",
+            "subtitle": "Material seleccionado para acompañar tu estudio a lo largo del curso.",
+            "cards": [
+              {
+                "resourceType": "e-book",
+                "level": "Fundamental",
+                "icon": "📘",
+                "title": "Cálculo de varias variables (e-book)",
+                "description": "Texto base del curso con teoría, ejemplos resueltos y ejercicios sobre funciones multivariables e integrales múltiples.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_EBOOK"
+              },
+              {
+                "resourceType": "video",
+                "level": "Intermedio",
+                "icon": "🎬",
+                "title": "Serie de video: Campos vectoriales en acción",
+                "description": "Visualizaciones de gradiente, divergencia y rotacional aplicadas a problemas de ingeniería.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_VIDEO"
+              },
+              {
+                "resourceType": "artículo",
+                "level": "Avanzado",
+                "icon": "📰",
+                "title": "Artículo: Aplicaciones del teorema de la divergencia",
+                "description": "Lectura complementaria sobre el uso de integrales de superficie en problemas de flujo.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_ARTICULO"
+              },
+              {
+                "resourceType": "software",
+                "level": "Práctico",
+                "icon": "💻",
+                "title": "Software: GeoGebra 3D / Python (Matplotlib)",
+                "description": "Herramientas para graficar superficies, curvas de nivel y campos vectoriales y validar resultados numéricos.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_SOFTWARE"
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Análisis Vectorial",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Material de apoyo del aula. Análisis Vectorial · Pregrado en Ingeniería."
+          }
+        ]
+      },
+      "momento-1": {
+        "type": "moment",
+        "momentNumber": "1",
+        "momentName": "Funciones de varias variables",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "📐",
+            "eyebrow": "Análisis Vectorial · Contenido 1",
+            "title": "Contenido 1",
+            "subtitle": "Funciones de varias variables: dominio, gráficas, curvas y superficies de nivel."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 1",
+            "text": "En este primer contenido extenderás el concepto de función al caso de varias variables. Aprenderás a determinar dominios, a representar funciones mediante superficies y curvas de nivel, y a interpretar geométricamente su comportamiento. Estas bases sostienen todo el cálculo multivariable que abordarás más adelante.",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "https://share.synthesia.io/embeds/videos/PLACEHOLDER-CONTENIDO-1"
+          },
+          {
+            "type": "roadmap",
+            "icon": "🗺️",
+            "title": "Ubícate en la ruta",
+            "subtitle": "Este es el Contenido 1 dentro del recorrido completo del curso.",
+            "embedUrl": "https://ruta-analisis-vectorial.netlify.app/",
+            "height": 760
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Estudia el contenido teórico interactivo: definiciones, ejemplos animados y comprobaciones de comprensión sobre funciones de varias variables.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/scorm/view.php?id=PLACEHOLDER_SCORM_C1",
+              "label": "Abrir contenido →"
+            }
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Ejercicios del Contenido 1",
+            "description": "Pon a prueba lo aprendido resolviendo ejercicios sobre dominios, curvas y superficies de nivel.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/quiz/view.php?id=PLACEHOLDER_PRACTICA_C1",
+              "label": "Ir a los ejercicios →"
+            }
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Cálculo multivariable",
+                "apa": "Stewart, J. (2018). <em>Cálculo de varias variables: trascendentes tempranas</em> (8.ª ed.). Cengage Learning.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C1_1"
+              },
+              {
+                "resourceName": "Lectura de apoyo — Funciones multivariables",
+                "apa": "Thomas, G. B., Weir, M. D., & Hass, J. (2015). <em>Cálculo. Varias variables</em> (13.ª ed.). Pearson Educación.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C1_2"
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Análisis Vectorial · Contenido 1",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Análisis Vectorial · Contenido 1: Funciones de varias variables."
+          }
+        ]
+      },
+      "momento-2": {
+        "type": "moment",
+        "momentNumber": "2",
+        "momentName": "Derivadas parciales y gradiente",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "📈",
+            "eyebrow": "Análisis Vectorial · Contenido 2",
+            "title": "Contenido 2",
+            "subtitle": "Derivadas parciales, diferenciabilidad, regla de la cadena y vector gradiente."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 2",
+            "text": "En este contenido estudiarás cómo varía una función de varias variables respecto de cada una de sus variables mediante las derivadas parciales. Comprenderás la diferenciabilidad, la regla de la cadena en varias variables y el significado del gradiente como dirección de máximo crecimiento, herramientas clave para el análisis de campos.",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "https://share.synthesia.io/embeds/videos/PLACEHOLDER-CONTENIDO-2"
+          },
+          {
+            "type": "roadmap",
+            "icon": "🗺️",
+            "title": "Ubícate en la ruta",
+            "subtitle": "Este es el Contenido 2 dentro del recorrido completo del curso.",
+            "embedUrl": "https://ruta-analisis-vectorial.netlify.app/",
+            "height": 760
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Recorre el contenido teórico interactivo sobre derivadas parciales, plano tangente, regla de la cadena y gradiente, con ejemplos paso a paso.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/scorm/view.php?id=PLACEHOLDER_SCORM_C2",
+              "label": "Abrir contenido →"
+            }
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Ejercicios del Contenido 2",
+            "description": "Resuelve ejercicios de cálculo de derivadas parciales, gradiente y derivadas direccionales.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/quiz/view.php?id=PLACEHOLDER_PRACTICA_C2",
+              "label": "Ir a los ejercicios →"
+            }
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Derivadas parciales",
+                "apa": "Stewart, J. (2018). Derivadas parciales. En <em>Cálculo de varias variables: trascendentes tempranas</em> (8.ª ed., pp. 901–984). Cengage Learning.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C2_1"
+              },
+              {
+                "resourceName": "Lectura de apoyo — Gradiente y derivadas direccionales",
+                "apa": "Marsden, J. E., & Tromba, A. J. (2004). <em>Cálculo vectorial</em> (5.ª ed.). Pearson Addison Wesley.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C2_2"
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Análisis Vectorial · Contenido 2",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Análisis Vectorial · Contenido 2: Derivadas parciales y gradiente."
+          }
+        ]
+      },
+      "cierre": {
+        "type": "closing",
+        "components": [
+          {
+            "type": "closing-hero",
+            "eyebrow": "Análisis Vectorial · Cierre del curso",
+            "faculty": "Facultad de Ingeniería",
+            "title": "¡Has completado el recorrido!",
+            "description": "Felicitaciones. A lo largo de los 7 contenidos modelaste funciones de varias variables, analizaste su comportamiento mediante derivadas y campos, y resolviste problemas de ingeniería con integrales múltiples y herramientas computacionales. Este cierre sintetiza lo aprendido y te propone próximos pasos.",
+            "chips": [
+              {
+                "icon": "✅",
+                "label": "7 Contenidos completados"
+              },
+              {
+                "icon": "🏅",
+                "label": "Análisis Vectorial"
+              }
+            ]
+          },
+          {
+            "type": "summary",
+            "icon": "🧠",
+            "title": "Lo que lograste",
+            "subtitle": "Síntesis de los resultados de aprendizaje alcanzados durante el curso.",
+            "items": [
+              {
+                "number": "1",
+                "label": "Modelo",
+                "text": "Modelas funciones de varias variables y campos vectoriales mediante superficies, curvas de nivel y representaciones geométricas de fenómenos de ingeniería."
+              },
+              {
+                "number": "2",
+                "label": "Analizo",
+                "text": "Analizas el comportamiento de funciones multivariables con derivadas parciales, gradiente, divergencia y rotacional para interpretar variaciones y flujos."
+              },
+              {
+                "number": "3",
+                "label": "Resuelvo",
+                "text": "Resuelves problemas aplicados con integrales múltiples, de línea y de superficie, apoyándote en herramientas computacionales."
+              }
+            ]
+          },
+          {
+            "type": "next-steps",
+            "icon": "🧭",
+            "title": "Próximos pasos",
+            "subtitle": "Recomendaciones para consolidar y proyectar lo aprendido.",
+            "items": [
+              {
+                "icon": "📝",
+                "title": "Evaluación final",
+                "description": "Presenta la evaluación sumativa que integra los 7 contenidos del curso.",
+                "button": {
+                  "href": "https://aula.uamerica.edu.co/mod/quiz/view.php?id=PLACEHOLDER_EVAL_FINAL",
+                  "label": "Ir a la evaluación final →"
+                }
+              },
+              {
+                "icon": "🚀",
+                "title": "Profundiza",
+                "description": "Continúa con cursos de ecuaciones diferenciales, métodos numéricos o física matemática para aplicar el cálculo vectorial en nuevos contextos.",
+                "button": {
+                  "href": "https://aula.uamerica.edu.co/course/view.php?id=PLACEHOLDER_RUTA",
+                  "label": "Ver rutas de continuidad →"
+                }
+              }
+            ]
+          },
+          {
+            "type": "final-evaluation",
+            "icon": "🎯",
+            "eyebrow": "Evaluación sumativa",
+            "title": "Evaluación Final del Curso",
+            "description": "Demuestra el dominio integral de los resultados de aprendizaje resolviendo la evaluación final de Análisis Vectorial.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/quiz/view.php?id=PLACEHOLDER_EVAL_FINAL",
+              "label": "Abrir evaluación final →"
+            }
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Análisis Vectorial · Cierre",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Análisis Vectorial · Pregrado en Ingeniería · Cierre del curso."
+          }
+        ]
+      },
+      "momento-3": {
+        "type": "moment",
+        "momentNumber": "3",
+        "momentName": "Integrales múltiples",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "∬",
+            "eyebrow": "Análisis Vectorial · Contenido 3",
+            "title": "Contenido 3",
+            "subtitle": "Integrales dobles y triples en coordenadas cartesianas, polares, cilíndricas y esféricas."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 3",
+            "text": "En este contenido aprenderás a calcular integrales dobles y triples y a elegir el sistema de coordenadas más conveniente (cartesianas, polares, cilíndricas o esféricas) para evaluar áreas, volúmenes, masas y centros de masa de regiones del plano y del espacio.",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "https://share.synthesia.io/embeds/videos/PLACEHOLDER-CONTENIDO-3"
+          },
+          {
+            "type": "roadmap",
+            "icon": "🗺️",
+            "title": "Ubícate en la ruta",
+            "subtitle": "Este es el Contenido 3 dentro del recorrido completo del curso.",
+            "embedUrl": "https://ruta-analisis-vectorial.netlify.app/",
+            "height": 760
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Recorre el contenido teórico sobre integrales dobles y triples, cambio de orden de integración y cambio de coordenadas, con ejemplos resueltos paso a paso.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/scorm/view.php?id=PLACEHOLDER_SCORM_C3",
+              "label": "Abrir contenido →"
+            }
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Ejercicios del Contenido 3",
+            "description": "Resuelve ejercicios de integrales dobles y triples y de cálculo de volúmenes y centros de masa en distintos sistemas de coordenadas.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/quiz/view.php?id=PLACEHOLDER_PRACTICA_C3",
+              "label": "Ir a los ejercicios →"
+            }
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Integrales múltiples",
+                "apa": "Stewart, J. (2018). Integrales múltiples. En <em>Cálculo de varias variables: trascendentes tempranas</em> (8.ª ed., pp. 1041–1118). Cengage Learning.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C3_1"
+              },
+              {
+                "resourceName": "Lectura de apoyo — Cambio de variables",
+                "apa": "Marsden, J. E., &amp; Tromba, A. J. (2004). La integral doble y triple. En <em>Cálculo vectorial</em> (5.ª ed.). Pearson Addison Wesley.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C3_2"
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Análisis Vectorial · Contenido 3",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Análisis Vectorial · Contenido 3: Integrales múltiples."
+          }
+        ]
+      },
+      "momento-4": {
+        "type": "moment",
+        "momentNumber": "4",
+        "momentName": "Campos vectoriales",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🧲",
+            "eyebrow": "Análisis Vectorial · Contenido 4",
+            "title": "Contenido 4",
+            "subtitle": "Definición de campos vectoriales, líneas de flujo, campos conservativos y función potencial."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 4",
+            "text": "Aquí conocerás los campos vectoriales como funciones que asignan un vector a cada punto del espacio. Estudiarás sus líneas de flujo, los campos conservativos y la función potencial, base para los teoremas integrales del cálculo vectorial.",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "https://share.synthesia.io/embeds/videos/PLACEHOLDER-CONTENIDO-4"
+          },
+          {
+            "type": "roadmap",
+            "icon": "🗺️",
+            "title": "Ubícate en la ruta",
+            "subtitle": "Este es el Contenido 4 dentro del recorrido completo del curso.",
+            "embedUrl": "https://ruta-analisis-vectorial.netlify.app/",
+            "height": 760
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Recorre el contenido teórico sobre campos vectoriales, campos conservativos, función potencial y líneas de flujo, con visualizaciones e interpretación física.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/scorm/view.php?id=PLACEHOLDER_SCORM_C4",
+              "label": "Abrir contenido →"
+            }
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Ejercicios del Contenido 4",
+            "description": "Resuelve ejercicios de identificación de campos conservativos, cálculo de función potencial y trazado de líneas de flujo.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/quiz/view.php?id=PLACEHOLDER_PRACTICA_C4",
+              "label": "Ir a los ejercicios →"
+            }
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Cálculo vectorial",
+                "apa": "Stewart, J. (2018). Cálculo vectorial. En <em>Cálculo de varias variables: trascendentes tempranas</em> (8.ª ed., pp. 1119–1142). Cengage Learning.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C4_1"
+              },
+              {
+                "resourceName": "Recurso visual — Campos vectoriales",
+                "apa": "3Blue1Brown. (2018). <em>Divergence and curl: the language of Maxwell&#39;s equations</em> [Video]. YouTube.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C4_2"
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Análisis Vectorial · Contenido 4",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Análisis Vectorial · Contenido 4: Campos vectoriales."
+          }
+        ]
+      },
+      "momento-5": {
+        "type": "moment",
+        "momentNumber": "5",
+        "momentName": "Integrales de línea",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "➰",
+            "eyebrow": "Análisis Vectorial · Contenido 5",
+            "title": "Contenido 5",
+            "subtitle": "Integrales de línea de campos escalares y vectoriales; trabajo y el teorema fundamental."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 5",
+            "text": "En este contenido calcularás integrales de línea de campos escalares y vectoriales a lo largo de curvas, las interpretarás como trabajo realizado por un campo de fuerzas y aplicarás el teorema fundamental de las integrales de línea para campos conservativos.",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "https://share.synthesia.io/embeds/videos/PLACEHOLDER-CONTENIDO-5"
+          },
+          {
+            "type": "roadmap",
+            "icon": "🗺️",
+            "title": "Ubícate en la ruta",
+            "subtitle": "Este es el Contenido 5 dentro del recorrido completo del curso.",
+            "embedUrl": "https://ruta-analisis-vectorial.netlify.app/",
+            "height": 760
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Recorre el contenido teórico sobre integrales de línea, trabajo de un campo, independencia de la trayectoria y el teorema fundamental, con ejemplos resueltos.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/scorm/view.php?id=PLACEHOLDER_SCORM_C5",
+              "label": "Abrir contenido →"
+            }
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Ejercicios del Contenido 5",
+            "description": "Resuelve ejercicios de integrales de línea de campos escalares y vectoriales y de cálculo de trabajo sobre trayectorias.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/quiz/view.php?id=PLACEHOLDER_PRACTICA_C5",
+              "label": "Ir a los ejercicios →"
+            }
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Integrales de línea",
+                "apa": "Stewart, J. (2018). Integrales de línea. En <em>Cálculo de varias variables: trascendentes tempranas</em> (8.ª ed., pp. 1143–1170). Cengage Learning.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C5_1"
+              },
+              {
+                "resourceName": "Lectura de apoyo — Trabajo y campos",
+                "apa": "Marsden, J. E., &amp; Tromba, A. J. (2004). Integrales sobre trayectorias y superficies. En <em>Cálculo vectorial</em> (5.ª ed.). Pearson Addison Wesley.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C5_2"
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Análisis Vectorial · Contenido 5",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Análisis Vectorial · Contenido 5: Integrales de línea."
+          }
+        ]
+      },
+      "momento-6": {
+        "type": "moment",
+        "momentNumber": "6",
+        "momentName": "Teoremas de Green y Stokes",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🌀",
+            "eyebrow": "Análisis Vectorial · Contenido 6",
+            "title": "Contenido 6",
+            "subtitle": "Teorema de Green, rotacional y divergencia, y teorema de Stokes."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 6",
+            "text": "Aquí relacionarás integrales de línea con integrales dobles mediante el teorema de Green, interpretarás el rotacional y la divergencia de un campo, y generalizarás estos resultados al espacio con el teorema de Stokes.",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "https://share.synthesia.io/embeds/videos/PLACEHOLDER-CONTENIDO-6"
+          },
+          {
+            "type": "roadmap",
+            "icon": "🗺️",
+            "title": "Ubícate en la ruta",
+            "subtitle": "Este es el Contenido 6 dentro del recorrido completo del curso.",
+            "embedUrl": "https://ruta-analisis-vectorial.netlify.app/",
+            "height": 760
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Recorre el contenido teórico sobre el teorema de Green, rotacional, divergencia y el teorema de Stokes, con interpretación geométrica y física.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/scorm/view.php?id=PLACEHOLDER_SCORM_C6",
+              "label": "Abrir contenido →"
+            }
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Ejercicios del Contenido 6",
+            "description": "Resuelve ejercicios de aplicación del teorema de Green y de Stokes al cálculo de circulación y flujo.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/quiz/view.php?id=PLACEHOLDER_PRACTICA_C6",
+              "label": "Ir a los ejercicios →"
+            }
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Teorema de Green",
+                "apa": "Stewart, J. (2018). El teorema de Green. En <em>Cálculo de varias variables: trascendentes tempranas</em> (8.ª ed., pp. 1171–1196). Cengage Learning.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C6_1"
+              },
+              {
+                "resourceName": "Artículo — Green en ingeniería",
+                "apa": "Universidad de América. (2026). <em>Aplicaciones del teorema de Green a la circulación y el flujo en sistemas físicos</em> [Material de curso].",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C6_2"
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Análisis Vectorial · Contenido 6",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Análisis Vectorial · Contenido 6: Teoremas de Green y Stokes."
+          }
+        ]
+      },
+      "momento-7": {
+        "type": "moment",
+        "momentNumber": "7",
+        "momentName": "Teorema de la divergencia y síntesis",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "📦",
+            "eyebrow": "Análisis Vectorial · Contenido 7",
+            "title": "Contenido 7",
+            "subtitle": "Integrales de superficie, flujo y el teorema de la divergencia; integración de todo el curso."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Contenido 7",
+            "text": "En este contenido final calcularás integrales de superficie y el flujo de un campo a través de una superficie, aplicarás el teorema de la divergencia y conectarás todos los teoremas integrales del curso en una visión unificada del cálculo vectorial.",
+            "videoLabel": "Video del contenido",
+            "videoEmbedUrl": "https://share.synthesia.io/embeds/videos/PLACEHOLDER-CONTENIDO-7"
+          },
+          {
+            "type": "roadmap",
+            "icon": "🗺️",
+            "title": "Ubícate en la ruta",
+            "subtitle": "Este es el Contenido 7 dentro del recorrido completo del curso.",
+            "embedUrl": "https://ruta-analisis-vectorial.netlify.app/",
+            "height": 760
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🧩",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM",
+            "description": "Recorre el contenido teórico sobre integrales de superficie, flujo y el teorema de la divergencia, con una síntesis de los teoremas integrales del curso.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/scorm/view.php?id=PLACEHOLDER_SCORM_C7",
+              "label": "Abrir contenido →"
+            }
+          },
+          {
+            "type": "practice-link",
+            "icon": "✏️",
+            "eyebrow": "Práctica",
+            "title": "Ejercicios del Contenido 7",
+            "description": "Resuelve ejercicios de cálculo de flujo e integrales de superficie y de aplicación del teorema de la divergencia.",
+            "button": {
+              "href": "https://aula.uamerica.edu.co/mod/quiz/view.php?id=PLACEHOLDER_PRACTICA_C7",
+              "label": "Ir a los ejercicios →"
+            }
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Referencias para profundizar en los temas de este contenido.",
+            "items": [
+              {
+                "resourceName": "Texto base — Teorema de la divergencia",
+                "apa": "Stewart, J. (2018). El teorema de la divergencia. En <em>Cálculo de varias variables: trascendentes tempranas</em> (8.ª ed., pp. 1197–1218). Cengage Learning.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C7_1"
+              },
+              {
+                "resourceName": "Lectura de cierre — Síntesis del cálculo vectorial",
+                "apa": "Marsden, J. E., &amp; Tromba, A. J. (2004). Los teoremas integrales del análisis vectorial. En <em>Cálculo vectorial</em> (5.ª ed.). Pearson Addison Wesley.",
+                "href": "https://aula.uamerica.edu.co/mod/url/view.php?id=PLACEHOLDER_REF_C7_2"
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Análisis Vectorial · Contenido 7",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Análisis Vectorial · Contenido 7: Teorema de la divergencia y síntesis."
+          }
+        ]
+      }
+    }
+  }
+}

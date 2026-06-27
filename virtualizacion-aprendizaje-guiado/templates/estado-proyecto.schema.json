@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "estado-proyecto",
+  "description": "Estado acumulado compacto del proyecto de virtualización AG. Cada fase lee/actualiza solo sus campos. Es lo único que viaja entre fases (token-eficiencia).",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["asignatura", "metodologia", "pipeline", "fase", "gate"],
+  "properties": {
+    "metodologia": { "const": "AG", "description": "Aprendizaje Guiado" },
+    "pipeline": { "type": "integer", "enum": [1, 2] },
+    "fase": { "type": "integer", "minimum": 0, "maximum": 10 },
+    "gate": { "type": "string", "enum": ["pendiente-validacion-docente", "validado-docente", "n/a"] },
+    "asignatura": {
+      "type": "object",
+      "properties": {
+        "nombre": { "type": "string" }, "codigo": { "type": "string" },
+        "programa": { "type": "string" }, "nivel": { "type": "string" },
+        "modalidad": { "type": "string" }, "naturaleza": { "type": "string", "enum": ["teorica", "practica", "teorico-practica", ""] }
+      }
+    },
+    "creditos": { "type": ["integer", "null"] },
+    "duracionModular": { "type": "string" },
+    "horas": { "type": "object", "description": "totales, directas, indirectas, individuales, colaborativas" },
+    "extension": { "type": "object", "properties": { "minPaginas": { "type": "integer" }, "maxPaginas": { "type": "integer" } } },
+    "nComponentesDidacticos": { "type": "integer" },
+    "nMaterialComplementario": { "type": "integer" },
+    "ra": { "type": "array", "items": { "type": "object", "properties": { "id": { "type": "string" }, "texto": { "type": "string" } } } },
+    "saberes": { "type": "array", "items": { "type": "string" } },
+    "competencia": { "type": "string" },
+    "criteriosEvaluacion": { "type": "array", "items": { "type": "string" } },
+    "nTemasPropuesto": { "type": ["integer", "null"], "description": "AG: N variable, propuesto en F2" },
+    "nTemasFinal": { "type": ["integer", "null"], "description": "AG: N validado por el docente" },
+    "temas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "n": { "type": "integer" }, "titulo": { "type": "string" },
+          "ra": { "type": "string" }, "propositoEtapa": { "type": "string" },
+          "preguntasOrientadoras": { "type": "array", "items": { "type": "string" } },
+          "actividades": { "type": "array", "items": { "type": "string" } },
+          "aprobadoDocente": { "type": "boolean" }
+        }
+      }
+    },
+    "evaluacion": {
+      "type": "object",
+      "properties": {
+        "diagnostica": { "type": "object" }, "formativas": { "type": "array" },
+        "sumativa": { "type": "object" }, "rubricas": { "type": "array" },
+        "momentos": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "recursosSimulacion": { "type": "array", "items": { "type": "string" }, "description": "si la asignatura es práctica" },
+    "recursos": { "type": "array", "items": { "type": "object" } },
+    "feedbackDocente": { "type": "object", "description": "respuestas del instrumento validado" },
+    "brechas": { "type": "array", "items": { "type": "object", "properties": { "tema": { "type": "string" }, "descripcion": { "type": "string" }, "estado": { "type": "string" } } } },
+    "artefactos": { "type": "array", "items": { "type": "string" }, "description": "rutas de fase-N-*.md generados" }
+  }
+}

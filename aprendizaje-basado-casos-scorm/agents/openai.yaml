@@ -1,0 +1,4 @@
+interface:
+  display_name: "SCORM/PDF JSON Content"
+  short_description: "4 JSON virtuales únicos y validados"
+  default_prompt: "Use $aprendizaje-basado-casos-scorm to generate four validated <asignatura>-contenido-XX.json files for a 100% virtual asignatura using Aprendizaje Basado en Casos (one file per learning moment), expert discipline-based HTML component selection, a non-repetitive 4x5 thematic diversity blueprint, six sections per file, at least three theory blocks per thematic SCORM section, bundled mandatory references, validated KaTeX-compatible LaTeX math, and separate PDF/SCORM branches without auto-loading them in the app."
