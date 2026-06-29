@@ -25,6 +25,14 @@ asignatura, y aportar lo que solo el experto disciplinar sabe.
    | Tema (propuesto) | RA asociado | Propósito por etapa | Preguntas orientadoras | ¿Aprobado? / ajustes |
    - ¿El **número de temas (N)** es adecuado? ¿Fusionar, dividir, reordenar, agregar o quitar temas?
    - ¿Los propósitos y preguntas orientadoras son correctos disciplinarmente?
+   - **Subtemas relevantes por tema (solo listado, requiere validación del profesor).** Además de los temas,
+     presenta —en una TABLA aparte— **los subtemas más relevantes de cada tema, únicamente listados, sin
+     desarrollarlos**. Una fila por tema con: tema, lista de subtemas relevantes propuestos, columna
+     **¿Completos?** (`[ ] Sí [ ] Ajustar`) y una columna para que el profesor **agregue/quite** subtemas. Su
+     fin es validar la **cobertura disciplinar** antes de generar contenido. Reglas: lista solo los subtemas
+     **realmente relevantes** (3–7 por tema como referencia, no exhaustivos), derivados del syllabus/saberes;
+     no inventes subtemas que el syllabus no respalde; **no escribas explicaciones ni párrafos**, solo el
+     nombre de cada subtema separado por `·` o en viñetas cortas.
 
 4. **Actividades y TALLERES del estudiante por tema (requiere aprobación del profesor):**
    - Presenta, como TABLA revisable, el **taller propuesto por cada escenario/tema**: tema, enunciado del

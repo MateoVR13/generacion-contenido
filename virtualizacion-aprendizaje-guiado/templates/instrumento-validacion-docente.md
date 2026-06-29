@@ -48,6 +48,21 @@
 - Ajustes a propósitos o preguntas orientadoras:
   > Respuesta:
 
+### Subtemas relevantes por tema — **valide la cobertura**
+
+> Para cada tema se listan **únicamente los subtemas más relevantes** que el contenido debería cubrir (solo
+> listados, **sin desarrollarlos**). Sirven para que usted valide la cobertura disciplinar antes de generar el
+> contenido: marque si están completos, **agregue** los que falten y **quite** los que no correspondan.
+
+| Tema | Subtemas relevantes propuestos (solo listado) | ¿Completos? | Subtemas a agregar / quitar |
+|---|---|---|---|
+| 1. {{TEMA_1}} | {{SUBTEMAS_1}} | [ ] Sí [ ] Ajustar | |
+| 2. {{TEMA_2}} | {{SUBTEMAS_2}} | [ ] Sí [ ] Ajustar | |
+| … | … | … | |
+
+> Observaciones sobre los subtemas (vacíos, faltantes, secuencia):
+  > Respuesta:
+
 ## 4. Actividades y talleres del estudiante por tema
 
 Para cada tema, indique las actividades que debe realizar el estudiante (individuales y colaborativas):

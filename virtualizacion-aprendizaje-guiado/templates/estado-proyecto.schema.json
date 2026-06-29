@@ -38,6 +38,7 @@
           "n": { "type": "integer" }, "titulo": { "type": "string" },
           "ra": { "type": "string" }, "propositoEtapa": { "type": "string" },
           "preguntasOrientadoras": { "type": "array", "items": { "type": "string" } },
+          "subtemas": { "type": "array", "items": { "type": "string" }, "description": "Subtemas relevantes (solo listados, sin desarrollar) que el contenido debe cubrir; el docente valida la cobertura." },
           "actividades": { "type": "array", "items": { "type": "string" } },
           "aprobadoDocente": { "type": "boolean" }
         }

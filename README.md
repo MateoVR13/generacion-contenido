@@ -158,13 +158,16 @@ SCORM/interactivos:
 - `references`: referencias bibliográficas.
 - `downloads`: material descargable.
 
-PDF/imprimibles:
+Compartidos (se renderizan tanto en SCORM como en PDF):
 
 - `text` / `theory`: bloques teóricos.
 - `list`: listas ordenadas o no ordenadas.
 - `example`: ejemplos comentados.
-- `exercise-set`: banco de ejercicios imprimibles.
-- `formula`, `table`, `chart`, `code`, `callout`, `references`: versiones estáticas/editoriales para la guía.
+- `exercise-set`: banco de ejercicios (imprimible en PDF, también válido en SCORM).
+- `theory-block` / `concept-block`: desarrollo conceptual extenso.
+- `formula`, `table`, `chart`, `code`, `callout`, `references`, `summary`, `reflection`, `objectives`, `prior-knowledge`, `image` / `figure`, `evaluation-activity`.
+
+Nota: la guía PDF (`pdf.sections`) **no** debe usar los componentes interactivos (`video`, `podcast`, `listening`, `quiz`, `matching`, `multi-select`, `fill-blank`, `flashcards`, `carousel`, `tabs`). Esos son exclusivos del SCORM.
 
 ## Archivos
 

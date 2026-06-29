@@ -281,6 +281,15 @@ The component key must be stable, descriptive, and unique inside its section.
 
 The supported components below are a catalog, not a checklist. Select them through the expert component-selection gate in `component-selection.md`. A generated section should never include a generic chart, decorative formula, irrelevant image, or code snippet without execution value merely to vary the layout.
 
+> **Nomenclatura canónica (fuente de verdad: la plantilla SCORM/PDF).** El valor de `type` debe ser **exactamente** uno de los soportados por el motor de render de la plantilla (`assets/content-renderer.js` para SCORM y `assets/editor.js` para PDF), documentados en el `README.md` del proyecto. **No inventes** tipos de componente ni uses los nombres de recursos pedagógicos de `lineamientos_virtualidad.md` o `estrategias_didacticas_comunicativas.md` (p. ej. "infografía", "mapa conceptual", "OVA") como `type`: esos son ideas didácticas que se materializan con los componentes soportados (una infografía → `image`/`figure`; un mapa conceptual → `image`/`figure` o `accordion`; una línea de tiempo → `timeline`; etc.).
+>
+> Tipos válidos:
+> - **Compartidos (SCORM y PDF):** `objectives`, `theory-block` / `concept-block` / `theory`, `text`, `list`, `formula`, `table`, `chart`, `image` / `figure`, `code`, `callout`, `example`, `exercise-set`, `references`, `summary`, `reflection`, `prior-knowledge`, `evaluation-activity`.
+> - **Solo SCORM (interactivos / multimedia):** `accordion`, `flashcards`, `carousel`, `tabs`, `stepper`, `video`, `podcast`, `metrics`, `timeline`, `quiz`, `listening-true-false`, `matching`, `multi-select`, `fill-blank`, `downloads`, `visual-prompt`, `saberes-link`.
+> - **Solo PDF (rama imprimible):** ver "PDF Branch". No pongas componentes interactivos (`video`, `podcast`, `listening`, `quiz`, `matching`, `multi-select`, `fill-blank`, `flashcards`, `carousel`, `tabs`) en `pdf.sections`.
+>
+> Nota: `text`, `list`, `example` y `exercise-set` se renderizan tanto en SCORM como en PDF (la plantilla los soporta en ambas ramas), así que un `list` en una sección SCORM es válido y no rompe el render.
+
 ### objectives (SCORM or PDF)
 
 ```json
@@ -491,6 +500,7 @@ When the same conceptual image must appear in SCORM and PDF, assign the same `as
 
 Code components should include enough instruction for a learner to know what to do with the snippet. In SCORM, include `instructions` and usually `expectedOutput`.
 Instructions must explicitly say where and how to run, execute, or trace the fragment. For compiled/interpreted languages, include the tool or environment, file creation step, terminal commands, sample input, and expected output. For pseudocode, state whether to trace it manually or run it in a tool such as PSeInt, then give the steps.
+**Python por defecto en materias cuantitativas.** Para resolver/verificar ejercicios en matemáticas, estadística, ingeniería, ciencia de datos y similares, usa **exclusivamente Python** (`"language": "python"`, `"languageLabel": "Python"`) con librerías estándar (`numpy`, `sympy`, `pandas`, `scipy`, `matplotlib` solo si la gráfica es el objeto de estudio). Cada sección temática SCORM de una asignatura cuantitativa debe incluir **al menos un `code` en Python** que resuelva o verifique un ejercicio del tema y se vincule al stepper manual. No uses otros lenguajes ni pseudocódigo para resolver ejercicios cuantitativos (ver `component-selection.md` → Code Gate).
 
 ```json
 {
@@ -628,28 +638,45 @@ Use for terminology, grammar, formula parts, process steps, or short reasoning c
 - `reflection`
 - `summary`
 - `callout`
+- `saberes-link` (SCORM only; ver sección dedicada abajo)
 - `references`
 - `downloads`
 - `evaluation-activity`
 
 Use their existing field names from the template project.
 
-### `callout` — aviso de conexión con el Documento de Saberes (obligatorio por tema)
+### `saberes-link` — puente al Documento de Saberes (SCORM only, obligatorio por tema)
 
-Cada sección temática SCORM incluye un `callout` informativo que articula el SCORM con el Documento de
-Saberes (PDF). Es **solo informativo** (no enlaza ni redirige):
+Componente **dedicado y llamativo** que articula el SCORM con el Documento de Saberes (PDF). Reemplaza al
+`callout` que antes se usaba para este aviso. Se renderiza como un banner de marca (superficie oscura +
+acento lima, ícono `menu_book`, titular en mayúsculas) mediante `renderSaberesLink` en
+`assets/content-renderer.js`. Es **solo informativo**: no enlaza ni redirige; refuerza la articulación
+SCORM↔PDF.
+
+- Cada sección temática SCORM (`seccion-1` … `seccion-5`) debe incluir **exactamente uno**, normalmente
+  como cierre del tema (último o penúltimo componente del `componentOrder`).
+- No usar en `intro` ni en `pdf.sections` (es SCORM only).
+- Campos: `heading` (titular destacado), `body` (1–2 párrafos con qué amplía el Documento de Saberes),
+  `eyebrow` (rótulo superior, por defecto "Documento de Saberes"), `reference` (opcional: capítulo/páginas
+  sugeridas a consultar), `cta` (opcional: frase de invitación), `icon` (opcional, por defecto `menu_book`).
+- `heading`, `body`, `reference` y `cta` deben ser **específicos del tema** (no repetir el mismo texto entre
+  secciones); solo `eyebrow` e `icon` pueden ser fijos.
 
 ```json
 {
-  "type": "callout",
-  "tone": "info",
+  "type": "saberes-link",
+  "eyebrow": "Documento de Saberes",
   "icon": "menu_book",
-  "title": "Puedes profundizar este tema en el Documento de Saberes",
+  "heading": "Profundiza sobre este tema en el Documento de Saberes",
   "body": [
     "El desarrollo ampliado de este tema —con más ejemplos, demostraciones y referencias— está en el Documento de Saberes (PDF) de la asignatura."
-  ]
+  ],
+  "reference": "Capítulo 2 · Sistemas lineales · págs. 18-26",
+  "cta": "Consulta la guía PDF de la asignatura"
 }
 ```
+
+(El alias `documento-saberes` se acepta como `type` equivalente.)
 
 ## PDF-Specific Components
 
@@ -688,12 +715,17 @@ Saberes (PDF). Es **solo informativo** (no enlaza ni redirige):
 
 ### exercise-set
 
+Los bancos de ejercicios del PDF deben ser **variados, no mecánicos ni repetitivos**: mezcla tipos —mecánico/procedimiento, analítico/razonamiento, **ejecución en Python**, consulta/investigación y aplicación contextual— en lugar de clonar el mismo enunciado con números cambiados. Indica el tipo de cada ejercicio (p. ej. en `prompt` o un campo `kind`) para que el banco se vea diverso. Incluye los mecánicos, pero que no sean la mayoría. (Ver `instructional-content-requirements.md` → Exercises And Practice.)
+
 ```json
 {
   "type": "exercise-set",
   "title": "Banco de ejercicios",
   "items": [
-    {"prompt": "Ejercicio 1.", "formula": "x=1", "answer": "Respuesta opcional."}
+    {"kind": "mecánico", "prompt": "Resuelve el sistema por eliminación.", "formula": "x=1", "answer": "Respuesta opcional."},
+    {"kind": "analítico", "prompt": "Justifica si el sistema tiene solución única e identifica el error en el procedimiento mostrado."},
+    {"kind": "ejecución-python", "prompt": "Verifica la solución resolviendo el sistema con numpy.linalg.solve y compara con tu resultado manual."},
+    {"kind": "consulta-investigación", "prompt": "Investiga una aplicación real de los sistemas lineales en tu programa y cita la fuente en APA 7."}
   ]
 }
 ```

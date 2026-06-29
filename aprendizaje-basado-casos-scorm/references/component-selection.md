@@ -73,6 +73,8 @@ Use charts for graphs of functions, geometric interpretation, convergence, error
 
 **Mandatory for mathematics sections:** every thematic SCORM section (`seccion-1` through `seccion-5`) must contain **between two and four worked exercises/examples ("ejercicios/ejemplos resueltos") presented with the `stepper` component**. Each stepper shows the full resolution as ordered steps with intermediate reasoning, LaTeX in `statement` and `steps[].formula`, and a closing `final: true` verification/result step. These solved-exercise steppers are required even when the section also uses standalone `formula` or `chart` components, and they coexist with the section's mandatory `carousel`, `flashcards`, and `accordion`. Mirror the resolved exercises in the PDF branch with `stepper`, `example`, or `exercise-set`.
 
+**Resolución computacional en Python (obligatoria en materias cuantitativas).** En matemáticas, estadística, ingeniería y cualquier asignatura cuantitativa, además de la resolución manual (stepper con LaTeX), **cada sección temática SCORM debe incluir al menos un `code` que resuelva o verifique un ejercicio del tema usando exclusivamente Python** (`language: "python"`, `languageLabel: "Python"`). Usa librerías estándar del ecosistema según el tema: `numpy`/`sympy` para álgebra, cálculo simbólico y sistemas; `statistics`/`numpy`/`pandas`/`scipy` para estadística; `matplotlib` solo cuando la gráfica sea el objeto de estudio. No uses otros lenguajes (ni pseudocódigo) para resolver ejercicios cuantitativos: el lenguaje de resolución computacional es **Python**. El `code` debe pasar el Code Gate: instrucciones de ejecución, comando (`python ejercicio.py`), entrada de ejemplo y salida esperada con su interpretación; vincúlalo al ejercicio resuelto manualmente para que el estudiante contraste el resultado.
+
 ### Programming, Algoritmia, And Software
 
 Prefer `theory-block`, `code`, `stepper`, `table`, `image`/flow diagram, `quiz`, `exercise-set`.
@@ -158,6 +160,8 @@ Before selecting `code`, answer yes to at least one:
 - Can the learner modify a parameter and interpret the effect?
 
 If yes, include language, language label, file name, instructions, exact terminal commands when applicable, sample input or no-input note, expected output, and failure interpretation.
+
+**Lenguaje por defecto: Python.** Para resolver, verificar o demostrar ejercicios en asignaturas cuantitativas (matemáticas, estadística, física, ingeniería, ciencia de datos), usa **exclusivamente Python** (`language: "python"`). Es el lenguaje de resolución computacional estándar del programa; no mezcles otros lenguajes para ese fin. Reserva otros lenguajes solo cuando la asignatura los enseñe explícitamente (p. ej. un curso de C, SQL o JavaScript) o cuando el RA exija ese lenguaje concreto.
 
 ## Final Component Audit
 

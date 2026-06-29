@@ -29,6 +29,11 @@ Diseño inverso: RA → evidencias de evaluación → metodología → actividad
   **Proponer el N de temas AG** (derivado de RA/saberes/unidades) con su tabla de diseño (Tema | RA |
   propósito por etapa | preguntas orientadoras). Definir ruta de navegación, actividades
   sincrónicas/asincrónicas, distribución de horas, documento y recursos proyectados, secuencia evaluativa.
+- **PROPONER LOS SUBTEMAS RELEVANTES por tema (solo listado, a validar).** Para cada tema, deriva del
+  syllabus/saberes **los subtemas más relevantes que el contenido debería cubrir, únicamente listados, sin
+  desarrollarlos** (3–7 por tema como referencia, no exhaustivos). Sirven para que el docente valide la
+  **cobertura disciplinar** en el instrumento. No inventes subtemas que el syllabus no respalde; lo que no
+  esté soportado, decláralo como brecha. Van a la sección 3 del instrumento docente (tabla aparte de subtemas).
 - **PROPONER EL MATERIAL COMPLEMENTARIO** (cantidad por créditos: 3/5/7) como una **matriz revisable**:
   cada material con `id` (M1, M2…), referencia **APA** (partiendo de la bibliografía del syllabus; marcar
   como brecha/`todo` lo que no esté en el syllabus, **sin inventar fuentes**), `tipo` (capítulo de libro
@@ -45,7 +50,7 @@ Diseño inverso: RA → evidencias de evaluación → metodología → actividad
 - **Entregables (`fase-2-planeacion-didactica.md`):** configuración didáctica; justificación AG; RA eje; ruta
   del estudiante; tabla de N temas AG (PROPUESTA, a validar); distribución de horas; recursos proyectados;
   **matriz de material complementario propuesto + cobertura por tema (PROPUESTA, a validar)**.
-- **Estado:** `nTemasPropuesto`, `temas[]{titulo, ra, propositoEtapa, preguntasOrientadoras[]}`,
+- **Estado:** `nTemasPropuesto`, `temas[]{titulo, ra, propositoEtapa, preguntasOrientadoras[], subtemas[]}`,
   `rutaNavegacion`, `recursosProyectados`,
   `materialComplementario[]{id, apa, tipo, temas[], justificacion, estado:"propuesto", href, todo}`,
   `coberturaPorTema{temaN:[ids]}`.

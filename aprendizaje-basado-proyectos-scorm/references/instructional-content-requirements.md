@@ -243,9 +243,19 @@ For full academic content, build exercises at multiple cognitive levels:
 4. Design or creation.
 5. Real problem solving.
 
+**Variedad obligatoria de tipos de ejercicio (sobre todo en el PDF).** Los ejercicios no pueden ser todos mecánicos ni repetitivos. En el PDF, cada `exercise-set`/banco de ejercicios debe **mezclar varios tipos** y no clonar el mismo patrón con números cambiados. Combina, según la disciplina:
+
+- **Mecánicos / de procedimiento:** cálculo o aplicación directa de un método (sí se incluyen, pero no pueden ser el único tipo ni la mayoría aplastante).
+- **Analíticos / de razonamiento:** interpretar, justificar, demostrar, comparar métodos, encontrar el error en un procedimiento, decidir cuándo aplica un teorema, analizar casos límite.
+- **Ejecución en Python:** resolver, verificar o explorar el problema escribiendo/ejecutando un script en Python (p. ej. `numpy`/`sympy`/`pandas`/`scipy`); el enunciado dice qué programar, qué ejecutar y cómo interpretar la salida. Usa exclusivamente Python para estos.
+- **Consulta / investigación:** buscar y contrastar una fuente, indagar una aplicación real, definir un término con referencia, o investigar un caso/dato del dominio (con producto entregable claro).
+- **Aplicación contextual / transferencia:** modelar una situación real de la disciplina o del programa académico.
+
+Por ejemplo, en matemáticas o estadística no entregues cinco ejercicios idénticos de "calcule X"; incluye uno o dos mecánicos, uno analítico (interpretar/justificar/hallar el error), uno de ejecución en Python y uno de consulta/investigación o aplicación real. Innova en el enunciado: evita la plantilla repetitiva.
+
 Include detailed solutions in the PDF when the user asks for teacher-ready or self-study material. For student-only guides, include answers only when pedagogically appropriate.
 
-For SCORM guided practice, do not present only an exercise statement. Include steps, hints, decision points, expected observations, and a closing check. For PDF exercises, group them by difficulty or RA and include instructions, assumptions, data, expected deliverable, and rubric/checklist when relevant.
+For SCORM guided practice, do not present only an exercise statement. Include steps, hints, decision points, expected observations, and a closing check. For PDF exercises, group them by difficulty, type, or RA and include instructions, assumptions, data, expected deliverable, and rubric/checklist when relevant. Make explicit the type of each exercise (mecánico, analítico, ejecución en Python, consulta/investigación, aplicación) so the bank is visibly varied.
 
 ## Visual And Technical Rules
 

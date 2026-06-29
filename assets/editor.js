@@ -870,7 +870,9 @@
       "podcast",
       "flashcards",
       "carousel",
-      "tabs"
+      "tabs",
+      "saberes-link",
+      "documento-saberes"
     ];
     if (interactiveTypes.indexOf(type) !== -1) return "";
 
@@ -1093,7 +1095,7 @@
 
   function renderPdfComponentEditable(sectionId, componentId, component) {
     const type = String(component.type || "").toLowerCase();
-    const interactive = ["quiz","knowledge-check","listening","listening-true-false","matching","word-match","multi-select","multiselect","fill-blank","fill-in-the-blank","video","podcast","flashcards","carousel","tabs"];
+    const interactive = ["quiz","knowledge-check","listening","listening-true-false","matching","word-match","multi-select","multiselect","fill-blank","fill-in-the-blank","video","podcast","flashcards","carousel","tabs","saberes-link","documento-saberes"];
     if (interactive.indexOf(type) !== -1) return "";
 
     const scope = "pdf.sections." + sectionId + ".components." + componentId;

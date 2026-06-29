@@ -160,17 +160,27 @@
 }
 
 /* Math en prosa via $...$ ($$...$$). El span hereda color del texto y la fórmula
-   se ajusta al tamaño de la línea para no romper el flujo del párrafo. */
+   se ajusta al tamaño de la línea para no romper el flujo del párrafo.
+   KaTeX se renderiza ópticamente más pequeño que el texto que lo rodea (su altura-x
+   queda por debajo), por eso lo subimos a 1.18em para que la notación matemática se
+   lea al mismo tamaño que la prosa en todos los componentes. */
 .inline-math {
   display: inline;
 }
 .inline-math .katex {
-  font-size: 1em;
+  /* 1.18em iguala ópticamente la prosa; el piso de 0.95rem evita que la notación
+     quede diminuta cuando el contenedor usa texto pequeño (text-sm / text-xs). */
+  font-size: max(1.18em, 0.95rem);
 }
+/* $$...$$ dentro de prosa: ligeramente más grande para que destaque como expresión. */
 .inline-math .katex-display {
   display: inline-block;
   margin: 0;
   text-align: left;
+}
+.inline-math[data-math-block] .katex,
+.inline-math .katex-display .katex {
+  font-size: 1.3em;
 }
 
 /* Pestañas: el JS alterna .hidden en los paneles; estilos del botón activo
@@ -295,6 +305,58 @@
 .step-formula .katex { font-size: 1.25em; }
 .step-formula-result { border-left-color: #c0f500; } /* lima en el resultado */
 .step-formula-result .katex { font-size: 1.4em; }
+
+/* ---------------------------------------------------------------------------
+   saberes-link — Puente llamativo SCORM -> Documento de Saberes (PDF).
+   Banner informativo (no enlaza): superficie oscura de marca + acento lima,
+   con un brillo diagonal sutil y elevación al pasar el cursor.
+   --------------------------------------------------------------------------- */
+.saberes-link {
+  position: relative;
+  isolation: isolate;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.saberes-link__bar {
+  position: relative;
+  overflow: hidden;
+}
+/* Brillo diagonal decorativo, no interactivo. */
+.saberes-link__bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(192, 245, 0, 0.10) 45%, transparent 60%);
+}
+.saberes-link__badge,
+.saberes-link__content {
+  position: relative;
+  z-index: 1;
+}
+.saberes-link__badge {
+  box-shadow: 3px 3px 0 rgba(26, 36, 3, 0.18);
+}
+.saberes-link__heading {
+  letter-spacing: 0.01em;
+}
+.saberes-link:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 0 rgba(26, 36, 3, 0.14);
+}
+.saberes-link__reference,
+.saberes-link__cta {
+  position: relative;
+  z-index: 1;
+}
+/* Respeta usuarios que reducen movimiento. */
+@media (prefers-reduced-motion: reduce) {
+  .saberes-link,
+  .saberes-link:hover {
+    transition: none;
+    transform: none;
+  }
+}
 
 /* ---------------------------------------------------------------------------
    Componentes JSON
