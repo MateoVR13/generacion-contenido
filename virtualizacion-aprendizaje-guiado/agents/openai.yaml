@@ -1,4 +1,0 @@
-interface:
-  display_name: "Virtualización · Aprendizaje Guiado"
-  short_description: "Virtualiza una asignatura AG en 11 fases (instrumento docente + contenido)"
-  default_prompt: "Use $virtualizacion-aprendizaje-guiado to virtualize a Universidad de América course with the Aprendizaje Guiado methodology following the official 11-phase process (PL-VIR-001 v02). Pipeline 1 (phases 0-4) turns the syllabus into a teacher validation instrument; after the teacher validates it, Pipeline 2 (phases 5-10) generates the Documento de Saberes (via aprendizaje-guiado-scorm), the e-learning resources and their generation prompts (phase 6), the LMS assembly (via moodle-content), plus QA, implementation and monitoring deliverables. AG uses a variable number of temas (not fixed), per-credit length (30-55 pages), qualitative evaluation, similarity <=30% and APA 7. Token-efficient via a compact accumulated state and per-phase artifacts on disk."

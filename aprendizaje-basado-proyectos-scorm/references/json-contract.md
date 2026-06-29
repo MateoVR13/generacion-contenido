@@ -48,6 +48,7 @@ Do not use `course`.
   "id": "stable-id",
   "title": "Nombre de la Asignatura",
   "program": "Programa Académico",
+  "faculty": "ingenieria",
   "contentNumber": "01",
   "contentTotal": "03",
   "description": "Descripción breve",
@@ -74,6 +75,8 @@ Do not use `course`.
 ```
 
 `subject.syllabus` is required when a syllabus PDF or syllabus text was provided. Keep `missingFields` explicit instead of inventing data.
+
+`subject.faculty` define el **tema visual editorial del PDF** (libro-guía tamaño carta) según la facultad de la Universidad de América. Valores válidos: `"ingenieria"` (Ingeniería, ciencia y tecnología), `"economicas"` (Ciencias económicas, administrativas y empresariales) o `"arquitectura"` (Arquitectura, diseño, creatividad, territorio y sostenibilidad). **Derívalo del programa académico del syllabus** (`subject.program` / `extractedFields.faculty`): ingenierías, sistemas, software, industrial, civil, química, ambiental, tecnología → `ingenieria`; economía, administración, negocios, contaduría, finanzas, mercadeo → `economicas`; arquitectura, diseño, urbanismo, creatividad, territorio, sostenibilidad → `arquitectura`. Si el programa no encaja claramente, omite el campo (el PDF usa el tema verde institucional por defecto). Cada facultad aplica su paleta y sus imágenes base (portada/separador) desde `assets/pdf/<faculty>/`; los prompts de esas imágenes están en `pdf-design/`. El motor también puede inferir la facultad desde `subject.program` si `faculty` se omite, pero es preferible declararla.
 
 `subject.methodology` is required for full asignatura package generation. For virtual asignaturas, always use ABPr - Aprendizaje Basado en Proyectos:
 

@@ -1,0 +1,148 @@
+{
+  "metodologia": "AG",
+  "pipeline": 1,
+  "fase": 4,
+  "gate": "pendiente-validacion-docente",
+  "instrumentoGenerado": true,
+  "asignatura": {
+    "nombre": "Algoritmia Computacional I",
+    "codigo": "",
+    "programa": "Tecnología en Aplicaciones Digitales Inteligentes",
+    "facultad": "Facultad de Ingeniería",
+    "nivel": "Pregrado (Tecnología)",
+    "semestre": "1",
+    "modalidad": "Virtual",
+    "naturaleza": "teorico-practica",
+    "campoFormacion": "Básico de fundamentación",
+    "area": "Ingeniería aplicada"
+  },
+  "creditos": 3,
+  "duracionModular": "4 semanas",
+  "horas": { "totales": 144, "directas": 96, "autonomas": 48 },
+  "extension": { "minPaginas": 40, "maxPaginas": 45 },
+  "nComponentesDidacticos": 3,
+  "nMaterialComplementario": 5,
+  "competencia": "UC-2: Estructurar metodológicamente el desarrollo de algoritmos y la construcción de prototipos mecatrónicos, integrando la programación orientada a objetos y la inteligencia artificial, para generar soluciones tecnológicas aplicadas a procesos industriales.",
+  "ra": [
+    { "id": "RA1", "texto": "Reconozco las principales estructuras de programación para la generación de algoritmos computacionales utilizando herramientas de control." },
+    { "id": "RA2", "texto": "Evalúo la asignación dinámica de memoria en un computador para la ejecución de algoritmos, a partir de la programación estructurada." }
+  ],
+  "saberes": [
+    "Concepto de algoritmo", "Flujograma", "Pseudocódigo", "Lenguaje de programación", "Tipos de datos",
+    "Uso de librerías", "Estructuras selectivas", "Estructuras de control",
+    "Arreglos: cadenas", "Arreglos: listas, tuplas y diccionarios", "Arreglos multidimensionales",
+    "Funciones", "Proyecto final"
+  ],
+  "criteriosEvaluacion": [
+    "CE1: Fundamenta algoritmos a partir de pseudocódigos; identifica ventajas/desventajas de lenguajes máquina y ensamblador; genera algoritmos con herramientas selectivas y de control.",
+    "CE2: Entrega soluciones informáticas con estructuras vectoriales y matriciales; genera soluciones mediante programación de algoritmos de forma estructurada."
+  ],
+  "tecnicaEvaluacion": ["In1. Talleres", "In2. Proyectos de aula"],
+  "saberesPrevios": ["Fundamentos de Álgebra Lineal"],
+  "bibliografia": {
+    "basica": [
+      "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. México: McGraw-Hill Interamericana.",
+      "Molina Martínez, J. y Jiménez Buendía, M. (2012). Programación gráfica para ingenieros. México: Alfaomega.",
+      "Joyanes Aguilar, L. (2008). Fundamentos de programación. Madrid: McGraw-Hill.",
+      "Oviedo Regino, E. (2005). Lógica de programación. Santafé de Bogotá: Ecoe Ediciones."
+    ],
+    "complementaria": []
+  },
+  "internacionalizacion": {
+    "biblioInglesSyllabus": false,
+    "claseEspejo": true, "coil": true, "salidasCampo": true, "ods": true
+  },
+  "ods": ["4. Educación de calidad (meta 4.4)", "9. Industria, innovación e infraestructura (meta 9.5b)"],
+  "brechas": [
+    { "tema": "Código de asignatura", "descripcion": "El syllabus no expone el código de la asignatura.", "estado": "abierta" },
+    { "tema": "Bibliografía en inglés", "descripcion": "La bibliografía básica del syllabus está 100% en español; el lineamiento exige ≥30% en inglés. Se propondrán fuentes en inglés en F2 para validación docente.", "estado": "abierta" },
+    { "tema": "Ponderaciones de evaluación", "descripcion": "El syllabus declara técnicas (talleres, proyectos de aula) pero no ponderaciones; se propondrán como pesos cualitativos en F3.", "estado": "abierta" }
+  ],
+  "coherencia": "Coherencia RA–saberes–evaluación ALTA. RA1 (reconocer estructuras de programación) ↔ S1–S20 (algoritmo, pseudocódigo, tipos de datos, estructuras selectivas/de control, arreglos) ↔ CE1 (fundamenta algoritmos, genera con herramientas selectivas/de control) ↔ talleres. RA2 (evaluar asignación dinámica de memoria con programación estructurada) ↔ S24 funciones + S25 proyecto final ↔ CE2 (soluciones con estructuras vectoriales/matriciales) ↔ proyecto de aula. La evidencia (talleres por saber + proyecto final) corresponde a una ruta guiada por temas progresivos: confirma AG.",
+  "vacios": [
+    "El RA2 es amplio respecto a sus saberes explícitos (solo S24 funciones y S25 proyecto final): la 'asignación dinámica de memoria' y 'estructuras vectoriales/matriciales' se apoyan también en los arreglos de RA1; conviene que el docente confirme el reparto de saberes entre temas.",
+    "El syllabus no fija el lenguaje, pero los saberes (librerías, listas/tuplas/diccionarios) apuntan a Python; confirmar con el docente el lenguaje y entorno.",
+    "Numeración de saberes con saltos (no hay S17, S22); se normaliza sin perder contenido.",
+    "No hay ponderaciones ni número de talleres por tema; se propondrán en F3."
+  ],
+  "nTemasPropuesto": 6,
+  "temas": [
+    {
+      "n": 1, "titulo": "Fundamentos del algoritmo y representación", "ra": "RA1",
+      "propositoEtapa": "Comprende qué es un algoritmo y lo representa con flujogramas y pseudocódigo antes de programar.",
+      "preguntasOrientadoras": ["¿Qué hace que un procedimiento sea un algoritmo (entrada, proceso, salida)?", "¿Cómo paso de un problema a un flujograma y a pseudocódigo sin ambigüedad?"],
+      "subtemas": ["Concepto de algoritmo (entrada-proceso-salida)", "Características de un buen algoritmo", "Flujograma: símbolos y construcción", "Pseudocódigo: convenciones", "Del problema al pseudocódigo (trazado)"],
+      "aprobadoDocente": false
+    },
+    {
+      "n": 2, "titulo": "Lenguaje de programación, tipos de datos y librerías", "ra": "RA1",
+      "propositoEtapa": "Traduce algoritmos a un lenguaje (Python), usando tipos de datos y librerías.",
+      "preguntasOrientadoras": ["¿Por qué elegir un lenguaje de alto nivel frente a máquina/ensamblador?", "¿Qué tipo de dato y qué librería conviene para cada problema?"],
+      "subtemas": ["Lenguajes: máquina, ensamblador y alto nivel (ventajas/desventajas)", "Variables y tipos de datos", "Operadores y expresiones", "Entrada/salida básica", "Uso e importación de librerías"],
+      "aprobadoDocente": false
+    },
+    {
+      "n": 3, "titulo": "Estructuras selectivas y de control", "ra": "RA1",
+      "propositoEtapa": "Controla el flujo del algoritmo con decisiones y repeticiones.",
+      "preguntasOrientadoras": ["¿Cuándo usar una estructura selectiva frente a una repetitiva?", "¿Cómo evito ciclos infinitos y errores de borde?"],
+      "subtemas": ["Estructuras selectivas (if/elif/else)", "Selección múltiple", "Ciclos definidos (for)", "Ciclos indefinidos (while)", "Control de flujo (break/continue) y trazado de ciclos"],
+      "aprobadoDocente": false
+    },
+    {
+      "n": 4, "titulo": "Arreglos unidimensionales: cadenas, listas, tuplas y diccionarios", "ra": "RA1",
+      "propositoEtapa": "Organiza y manipula colecciones de datos en una dimensión.",
+      "preguntasOrientadoras": ["¿Qué estructura de datos elijo según mutabilidad y acceso?", "¿Cómo recorro y transformo una colección de forma eficiente?"],
+      "subtemas": ["Cadenas de caracteres y operaciones", "Listas: operaciones y recorrido", "Tuplas: inmutabilidad y usos", "Diccionarios: clave-valor", "Recorrido y búsqueda en colecciones"],
+      "aprobadoDocente": false
+    },
+    {
+      "n": 5, "titulo": "Arreglos multidimensionales y memoria", "ra": "RA2",
+      "propositoEtapa": "Representa estructuras vectoriales y matriciales y evalúa el uso de memoria.",
+      "preguntasOrientadoras": ["¿Cómo represento una matriz y la recorro por filas/columnas?", "¿Cómo afecta la asignación dinámica de memoria al ejecutar el algoritmo?"],
+      "subtemas": ["Matrices: representación y recorrido", "Operaciones con estructuras vectoriales/matriciales", "Asignación dinámica de memoria (concepto)", "Eficiencia y consumo de memoria", "Aplicación con NumPy (vectores/matrices)"],
+      "aprobadoDocente": false
+    },
+    {
+      "n": 6, "titulo": "Funciones y proyecto integrador", "ra": "RA2",
+      "propositoEtapa": "Modulariza con funciones y aplica todo en un proyecto estructurado.",
+      "preguntasOrientadoras": ["¿Cómo descompongo un problema en funciones reutilizables?", "¿Cómo integro estructuras, arreglos y funciones en una solución completa?"],
+      "subtemas": ["Definición y llamada de funciones", "Parámetros, retorno y alcance (scope)", "Descomposición modular de problemas", "Programación estructurada integrada", "Proyecto final: diseño y construcción"],
+      "aprobadoDocente": false
+    }
+  ],
+  "rutaNavegacion": "Bienvenida → Escenario inicial (propósito + preguntas orientadoras por RA) → Tema 1…6 (cada uno: estudio de saberes + taller + apropiación individual + socialización) → Evaluación sumativa integradora (Proyecto final) → Cierre.",
+  "recursosProyectados": ["Entorno Python (intérprete/IDE o entorno online) — confirmar con docente", "Visualizador de flujogramas/pseudocódigo (p. ej. PSeInt) — confirmar"],
+  "materialComplementario": [
+    { "id": "M1", "apa": "Joyanes Aguilar, L. (2008). Fundamentos de programación (4.ª ed.). McGraw-Hill.", "tipo": "Libro base (biblioteca institucional-digital)", "idioma": "es", "temas": [1,2,3], "justificacion": "Base conceptual de algoritmo, pseudocódigo y estructuras.", "estado": "propuesto", "href": "", "todo": "" },
+    { "id": "M2", "apa": "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones.", "tipo": "Libro complementario (biblioteca institucional-digital)", "idioma": "es", "temas": [1,3], "justificacion": "Refuerza lógica y diseño de algoritmos con estructuras de control.", "estado": "propuesto", "href": "", "todo": "" },
+    { "id": "M3", "apa": "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media.", "tipo": "Libro abierto (recurso abierto, inglés)", "idioma": "en", "temas": [2,4,6], "justificacion": "Texto abierto en inglés sobre tipos de datos, colecciones y funciones en Python; cubre la cuota de internacionalización.", "estado": "propuesto", "href": "", "todo": "Verificar edición/URL oficial (Green Tea Press / O'Reilly)." },
+    { "id": "M4", "apa": "Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array programming with NumPy. Nature, 585, 357–362.", "tipo": "Artículo / documentación (inglés)", "idioma": "en", "temas": [5], "justificacion": "Fundamento de arreglos vectoriales/matriciales y memoria con NumPy (en inglés).", "estado": "propuesto", "href": "https://doi.org/10.1038/s41586-020-2649-2", "todo": "Confirmar pertinencia del nivel para semestre 1; alternativa: documentación oficial de NumPy." },
+    { "id": "M5", "apa": "Molina Martínez, J. y Jiménez Buendía, M. (2012). Programación gráfica para ingenieros. Alfaomega.", "tipo": "Libro complementario (biblioteca institucional-físico)", "idioma": "es", "temas": [4,6], "justificacion": "Aplicación de programación a contextos de ingeniería; apoya el proyecto integrador.", "estado": "propuesto", "href": "", "todo": "" }
+  ],
+  "coberturaPorTema": { "1": ["M1","M2"], "2": ["M1","M3"], "3": ["M1","M2"], "4": ["M3","M5"], "5": ["M4"], "6": ["M3","M5"] },
+  "internacionalizacionMaterial": { "totalMateriales": 5, "enIngles": 2, "porcentajeIngles": 40, "cumple30": true },
+  "evaluacion": {
+    "diagnostica": { "contestadas": 10, "banco": 15, "archivo": "evaluacion/diagnostica-algoritmia-computacional.json", "estado": "propuesto" },
+    "momentos": ["inicial", "avance", "final"],
+    "formativas": [
+      { "tipo": "Foro debate", "momento": "inicial", "descripcion": "Apertura: '¿Qué hace que un procedimiento sea un algoritmo y por qué importa el orden?' El docente participa primero.", "estado": "propuesto" },
+      { "tipo": "Coevaluación-taller", "momento": "avance", "descripcion": "Revisión entre pares del taller del Tema 3 (estructuras de control) por fases.", "estado": "propuesto" }
+    ],
+    "talleresPorTema": [
+      { "tema": 1, "enunciado": "Diseña el flujograma y el pseudocódigo de un algoritmo que reciba tres notas y determine si el estudiante aprueba (promedio ≥ 3.0).", "evidencia": "Flujograma + pseudocódigo + traza con un caso.", "ra": "RA1", "criterio": "CE1", "tipos": ["mecánico", "analítico"], "estado": "propuesto" },
+      { "tema": 2, "enunciado": "Implementa en Python un programa que use variables de distintos tipos y una librería estándar (p. ej. math) para calcular el área y el perímetro de figuras dadas por el usuario.", "evidencia": "Script .py ejecutable + salida esperada.", "ra": "RA1", "criterio": "CE1", "tipos": ["ejecución-python"], "estado": "propuesto" },
+      { "tema": 3, "enunciado": "Escribe un algoritmo con estructuras selectivas y repetitivas que clasifique los números del 1 al N en pares/impares y múltiplos de 3, y cuente cada grupo.", "evidencia": "Pseudocódigo + implementación en Python + traza.", "ra": "RA1", "criterio": "CE1", "tipos": ["mecánico", "analítico", "ejecución-python"], "estado": "propuesto" },
+      { "tema": 4, "enunciado": "Dada una lista de palabras, construye un diccionario que cuente la frecuencia de cada una; justifica por qué elegiste lista/tupla/diccionario en cada parte.", "evidencia": "Script en Python + justificación escrita de las estructuras.", "ra": "RA1", "criterio": "CE1", "tipos": ["ejecución-python", "analítico"], "estado": "propuesto" },
+      { "tema": 5, "enunciado": "Representa una matriz 3×3, calcula su transpuesta manualmente y verifícala con NumPy; comenta el uso de memoria al crecer la matriz.", "evidencia": "Cálculo manual (stepper) + verificación en Python (NumPy) + breve reflexión de memoria.", "ra": "RA2", "criterio": "CE2", "tipos": ["analítico", "ejecución-python", "consulta-investigación"], "estado": "propuesto" },
+      { "tema": 6, "enunciado": "Refactoriza una solución previa descomponiéndola en funciones reutilizables (entrada, proceso, salida) con parámetros y retorno.", "evidencia": "Script modular en Python + diagrama de funciones.", "ra": "RA2", "criterio": "CE2", "tipos": ["ejecución-python", "diseño"], "estado": "propuesto" }
+    ],
+    "sumativa": { "tipo": "Proyecto final integrador", "momento": "final", "descripcion": "Solución de software estructurada que integre estructuras de control, arreglos y funciones para resolver un problema de contexto de ingeniería; integra todos los temas y ambos RA. Última semana.", "ra": ["RA1", "RA2"], "criterio": ["CE1", "CE2"], "estado": "propuesto" },
+    "rubricas": [
+      { "tipo": "analitica", "objeto": "CE1 (RA1)", "niveles": ["No evidenciable", "Deficiente", "Insuficiente", "Aceptable", "Bueno", "Muy bueno", "Sobresaliente"], "fuente": "syllabus" },
+      { "tipo": "analitica", "objeto": "CE2 (RA2)", "niveles": ["No evidenciable", "Deficiente", "Insuficiente", "Aceptable", "Bueno", "Muy bueno", "Sobresaliente"], "fuente": "syllabus" },
+      { "tipo": "holistica", "objeto": "Actitud y compromiso / Trabajo colaborativo", "criterios": ["Perseverancia", "Puntualidad y cumplimiento", "Aprendizaje activo", "Uso responsable de la tecnología", "Aprendizaje en equipo", "Comunicación asertiva", "Relacionamiento"], "fuente": "syllabus" }
+    ],
+    "ponderacion": { "estado": "brecha-propuesta", "nota": "El syllabus no declara porcentajes; se proponen pesos cualitativos: talleres (formativo continuo) + coevaluación (avance) + proyecto final (sumativa integradora). El docente define ponderaciones." }
+  },
+  "artefactos": ["recomendacion-metodologia.md", "fase-0-alistamiento.md", "fase-1-analisis-syllabus.md", "fase-2-planeacion-didactica.md", "fase-3-diseno-evaluacion.md", "evaluacion/diagnostica-algoritmia-computacional.json", "fase-4-validacion-academica.md", "instrumento-validacion-docente.md", "instrumento-validacion-docente.json"]
+}

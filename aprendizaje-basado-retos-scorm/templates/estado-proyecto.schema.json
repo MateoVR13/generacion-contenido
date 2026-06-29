@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "estado-proyecto",
+  "description": "Estado acumulado compacto del proyecto de virtualización ABR. Cada fase lee/actualiza solo sus campos. Es lo único que viaja entre fases (token-eficiencia). ABR usa 4 MOMENTOS FIJOS (Definición del reto, Ideación, Solución e implementación, Validación y evaluación): no hay un N variable de temas; el array 'momentos' siempre tiene 4 elementos.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["asignatura", "metodologia", "pipeline", "fase", "gate"],
+  "properties": {
+    "metodologia": { "const": "ABR", "description": "Aprendizaje Basado en Retos" },
+    "pipeline": { "type": "integer", "enum": [1, 2] },
+    "fase": { "type": "integer", "minimum": 0, "maximum": 10 },
+    "gate": { "type": "string", "enum": ["pendiente-validacion-docente", "validado-docente", "n/a"] },
+    "asignatura": {
+      "type": "object",
+      "properties": {
+        "nombre": { "type": "string" }, "codigo": { "type": "string" },
+        "programa": { "type": "string" }, "nivel": { "type": "string" },
+        "modalidad": { "type": "string" }, "naturaleza": { "type": "string", "enum": ["teorica", "practica", "teorico-practica", ""] }
+      }
+    },
+    "creditos": { "type": ["integer", "null"] },
+    "duracionModular": { "type": "string" },
+    "horas": { "type": "object", "description": "totales, directas, indirectas, individuales, colaborativas" },
+    "extension": { "type": "object", "properties": { "minPaginas": { "type": "integer" }, "maxPaginas": { "type": "integer" } } },
+    "nComponentesDidacticos": { "type": "integer" },
+    "nMaterialComplementario": { "type": "integer" },
+    "ra": { "type": "array", "items": { "type": "object", "properties": { "id": { "type": "string" }, "texto": { "type": "string" } } } },
+    "saberes": { "type": "array", "items": { "type": "string" } },
+    "competencia": { "type": "string" },
+    "criteriosEvaluacion": { "type": "array", "items": { "type": "string" } },
+    "escenarioInicial": {
+      "type": "object",
+      "description": "Escenario inicial ABR: situación-contexto + reto definido + preguntas direccionadoras.",
+      "properties": {
+        "situacion": { "type": "string", "description": "Situación-contexto realista que sitúa al estudiante." },
+        "reto": { "type": "string", "description": "Reto a resolver, enunciado explícitamente." },
+        "preguntasDireccionadoras": { "type": "array", "items": { "type": "string" }, "description": "Preguntas que guían los 4 momentos; al menos una por RA." }
+      }
+    },
+    "momentos": {
+      "type": "array",
+      "description": "ABR: 4 momentos FIJOS (no variable). Orden: 1 Definición del reto, 2 Ideación, 3 Solución e implementación, 4 Validación y evaluación. Mismo shape que los temas de AG, conservando subtemas[].",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "properties": {
+          "n": { "type": "integer" }, "titulo": { "type": "string" },
+          "ra": { "type": "string" }, "propositoEtapa": { "type": "string" },
+          "preguntasOrientadoras": { "type": "array", "items": { "type": "string" }, "description": "Preguntas direccionadoras del momento; al menos una por RA." },
+          "subtemas": { "type": "array", "items": { "type": "string" }, "description": "Subtemas relevantes (solo listados, sin desarrollar) que el contenido debe cubrir; el docente valida la cobertura." },
+          "actividades": { "type": "array", "items": { "type": "string" } },
+          "aprobadoDocente": { "type": "boolean" }
+        }
+      }
+    },
+    "evaluacion": {
+      "type": "object",
+      "properties": {
+        "diagnostica": { "type": "object" }, "formativas": { "type": "array" },
+        "sumativa": { "type": "object" }, "rubricas": { "type": "array" },
+        "momentos": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "recursosSimulacion": { "type": "array", "items": { "type": "string" }, "description": "si la asignatura es práctica" },
+    "recursos": { "type": "array", "items": { "type": "object" } },
+    "materialComplementario": {
+      "type": "array",
+      "description": "Material complementario PROPUESTO en Fase 2, revisado/aprobado por el profesor en el instrumento, e incluido en los momentos en Fase 6/7. La cantidad respeta la cuota por créditos (3/5/7).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "M1, M2, …" },
+          "apa": { "type": "string", "description": "Referencia APA 7 (rich, <em> para títulos). No inventar fuentes." },
+          "tipo": { "type": "string", "description": "Capítulo de libro base, libro complementario, recurso abierto, etc." },
+          "idioma": { "type": "string", "enum": ["es", "en"], "description": "Idioma del recurso. ≥30% del total debe ser 'en' (internacionalización syllabus UA)." },
+          "momentos": { "type": "array", "items": { "type": "integer" }, "description": "Momento(s) que cubre este material (1-4)." },
+          "justificacion": { "type": "string" },
+          "href": { "type": "string" },
+          "todo": { "type": "string", "description": "verificar edición/URL si no estaba en el syllabus" },
+          "estado": { "type": "string", "enum": ["propuesto", "aprobado", "rechazado", "ajustado"], "description": "propuesto (Fase 2) → aprobado/rechazado/ajustado (tras instrumento docente). Solo lo no rechazado entra en los momentos." }
+        }
+      }
+    },
+    "coberturaPorMomento": { "type": "object", "description": "{ '1': ['M1','M3'], '2': ['M2','M3'], ... } qué materiales cubren cada momento (1-4)." },
+    "feedbackDocente": { "type": "object", "description": "respuestas del instrumento validado" },
+    "brechas": { "type": "array", "items": { "type": "object", "properties": { "momento": { "type": "string" }, "descripcion": { "type": "string" }, "estado": { "type": "string" } } } },
+    "artefactos": { "type": "array", "items": { "type": "string" }, "description": "rutas de fase-N-*.md generados" }
+  }
+}

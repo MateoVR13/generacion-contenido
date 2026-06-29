@@ -1,9 +1,40 @@
 ---
 name: aprendizaje-basado-casos-scorm
-description: Generate validated `subject`-based JSON packages for virtual asignatura SCORM/PDF exports. Use when Codex must create, revise, expand, or validate the four reusable content JSON files required for a 100% virtual asignatura, especially from an attached syllabus PDF or mandatory content requirements, including per-PDF minimum page length, fixed Aprendizaje Basado en Casos methodology where each of the four files develops one official learning moment, six-section content structure, expert discipline-based HTML component selection, unique non-repetitive content across the 4x5 thematic matrix, theory-first SCORM sequencing with at least three theory blocks per thematic section followed by two or three complementary components each, mandatory carousel, flashcards, and extensive accordion components in every thematic SCORM section, mandatory stepper-based worked exercises in mathematics sections, charts that carry a theory-connecting thread plus a descriptive reading note, instructional component depth, qualitative evaluation, validated LaTeX math, Chart.js chart data, visual prompts/images, code and pseudocode execution instructions, PDF metadata, references, and downloadable material.
+description: Virtualiza asignaturas 100% virtuales con metodología Aprendizaje Basado en Casos (ABC) siguiendo el proceso oficial UA de 11 fases (0–10) en 2 pipelines con gate de validación docente, Y genera los JSON de contenido SCORM/PDF. Úsala para (a) ejecutar el Pipeline 1 (Fases 0–4) que produce el INSTRUMENTO DE VALIDACIÓN DOCENTE a partir de un syllabus, y (b) ejecutar el Pipeline 2 (Fases 5–10) que, con el instrumento validado, genera el Documento de Saberes (los 4 JSON `subject`-based para la plantilla SCORM/PDF), los recursos e-learning y sus prompts, el montaje LMS y los entregables de QA/implementación/seguimiento. ABC usa 4 MOMENTOS FIJOS (Presentación y análisis del caso · Análisis de pregunta orientadora o micro caso 1 · Análisis de pregunta orientadora o micro caso 2 · Conclusiones): el estudiante analiza un CASO real disciplinar y el Documento de Saberes desarrolla el análisis del caso y de micro-casos/preguntas orientadoras con las bases teóricas para interpretarlos, culminando en conclusiones. Extensión por créditos (30–55 págs), evaluación cualitativa, similitud ≤30% y APA 7. La Fase 5 aplica el contrato de componentes de esta misma skill: selección experta por disciplina, secuencia theory-first (≥3 theory-block por sección temática), carrusel/flashcards/acordeón obligatorios, steppers en matemáticas, Python para resolver ejercicios cuantitativos, charts con hilo conductor + nota, LaTeX validado, banner saberes-link, PDF editorial por facultad.
 ---
 
-# SCORM/PDF JSON Content
+# Virtualización ABC + Contenido SCORM/PDF
+
+> Esta skill hace **dos cosas**: (1) **orquesta** el proceso oficial de virtualización UA (11 fases, 2 pipelines, gate docente) y (2) en la **Fase 5** **genera** los JSON de contenido SCORM/PDF. La parte de orquestación está aquí abajo en "Proceso de virtualización"; la parte de generación es el "Core Workflow" y las reglas de contenido (más abajo), que se aplican **dentro de la Fase 5** y NO cambian.
+
+## Proceso de virtualización (11 fases · 2 pipelines · gate docente)
+
+```
+SYLLABUS (Excel FO_03 / PDF / texto)
+   ▼  PIPELINE 1 · Fases 0–4 (análisis y planeación)
+   │     F0 Alistamiento → F1 Análisis syllabus → F2 Planeación didáctica
+   │     → F3 Diseño de evaluación → F4 Validación académica
+   ▼  INSTRUMENTO DE VALIDACIÓN DOCENTE (.md + .docx + .json espejo)
+   ▼  [ GATE HUMANO: el docente valida caso/momentos/actividades/recursos/evaluación ]
+   ▼  PIPELINE 2 · Fases 5–10 (generación)
+   │     F5 Documento de Saberes (los 4 JSON SCORM/PDF — Core Workflow de abajo)
+   │     F6 Recursos e-learning + prompts · F7 Montaje LMS (→ moodle-content)
+   │     F8 QA · F9 Implementación · F10 Seguimiento
+   ▼  CONTENIDO COMPLETO + plan de aula + indicadores
+```
+
+1. **Identifica el modo.** ¿Pipeline 1 (producir el instrumento) o Pipeline 2 (ya hay instrumento respondido → generar)? Si no está claro, pregúntalo.
+2. **Trabaja en una carpeta de proyecto** `<slug-asignatura>-virtualizacion/`: crea ahí `estado-proyecto.json` y los artefactos `fase-N-*.md`.
+3. **Lee solo lo de la fase en curso** (token-eficiencia): siempre `references/lineamientos-ua.md` + `references/proceso-fases-ua.md` + `references/metodologia-abc.md`; Pipeline 1 → `references/pipeline-1-fases-0-4.md` + `references/instrumento-docente.md`; Pipeline 2 → `references/pipeline-2-fases-5-10.md` + `references/pipeline-documento-saberes.md` + `references/fase-6-prompts.md`.
+4. **Extrae el syllabus** con `scripts/extract_syllabus.mjs`; guarda en `estado-proyecto.json`. No inventes datos: lo faltante = brecha.
+5. **Ejecuta las fases en orden, una a una.** Cada fase lee el estado, produce su artefacto en disco y actualiza el estado (resumen compacto). Valida con `scripts/validate_phase.js`.
+6. **Pipeline 1 termina** en el instrumento docente (Fase 4). DETENTE: no se genera contenido sin validación docente (gate).
+7. **Pipeline 2 arranca** con el instrumento respondido: ingiere las decisiones del docente al estado y genera todo. La **Fase 5** produce los **4 JSON del Documento de Saberes** (uno por momento) siguiendo el **Core Workflow** y las reglas de contenido de abajo (esta misma skill es el motor de contenido — no delega a otra). La **Fase 7** usa `moodle-content`.
+8. **Cierre del Pipeline 2:** deben existir y validar los 4 JSON `<slug>-contenido-NN.json` (Documento de Saberes, uno por momento) y el `<slug>-ABC.moodle.json` (Moodle).
+
+> **Metodología ABC = 4 momentos FIJOS, un archivo por momento.** A diferencia de AG (N temas variables), ABC tiene exactamente 4 momentos en orden fijo: `01` = "Presentación y análisis del caso", `02` = "Análisis de pregunta orientadora o micro caso 1", `03` = "Análisis de pregunta orientadora o micro caso 2", `04` = "Conclusiones". El docente valida el CASO, los micro-casos/preguntas orientadoras, propósitos, preguntas y subtemas por momento, NO el número de momentos. `unitLabel` = "Momento", `contentTotal` = "04". El archivo de Moodle se nombra `<slug>-ABC.moodle.json`.
+
+# SCORM/PDF JSON Content (Fase 5 — motor de contenido)
 
 ## Core Workflow
 

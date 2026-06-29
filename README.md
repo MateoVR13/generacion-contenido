@@ -54,6 +54,22 @@ El JSON separa la experiencia interactiva del SCORM y la guía imprimible del PD
 
 El PDF no debe usar actividades interactivas (`video`, `podcast`, `listening`, `quiz`, `matching`, `multi-select`, `fill-blank`). Para PDF usa teoría, ejemplos, tablas, fórmulas, gráficos Chart.js, código estático si aplica, referencias y ejercicios imprimibles al final.
 
+### PDF editorial (libro-guía) y tema por facultad
+
+La vista PDF se genera como un **libro-guía editorial** tamaño **carta**: portada a sangre,
+página de propósito, tabla de contenido editorial y una **página separadora por tema**. El
+diseño aplica un **tema visual por facultad** de la Universidad de América:
+
+- `subject.faculty` (o `pdf.faculty`) define el tema: `"ingenieria"`, `"economicas"` o
+  `"arquitectura"`. Si no se declara, se **infiere del nombre del programa**
+  (`subject.program`); si no se puede, se usa el tema verde institucional por defecto.
+- Cada facultad usa su paleta y sus **imágenes base** (portada y separador) en
+  `assets/pdf/<facultad>/`. Los **prompts** para generar esas imágenes están en
+  [`pdf-design/`](pdf-design/). Si las imágenes no existen, el PDF usa el color sólido de la
+  facultad (no se rompe).
+- Campos opcionales del PDF: `pdf.guideLabel`, `pdf.title`, `pdf.subtitle`, `pdf.purpose`,
+  `pdf.structure`, `pdf.year`, `pdf.facultyLabel`.
+
 Fragmento simplificado con placeholders. En producción cada JSON debe completar `intro` y `seccion-1` a `seccion-5` en SCORM, más `pdf-intro` y `pdf-seccion-1` a `pdf-seccion-5` en PDF:
 
 ```json

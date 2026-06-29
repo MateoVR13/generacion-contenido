@@ -4,15 +4,12 @@ Use this contract for JSON consumed by the SCORM/PDF template app.
 
 ## Root Shape
 
-New asignatura generation produces seven independent JSON files:
+New asignatura generation produces **N independent JSON files** (one per tema; AG uses a VARIABLE N derived from the syllabus and validated by the docente, NOT a fixed count):
 
 - `<slug-asignatura>-contenido-01.json`
 - `<slug-asignatura>-contenido-02.json`
-- `<slug-asignatura>-contenido-03.json`
-- `<slug-asignatura>-contenido-04.json`
-- `<slug-asignatura>-contenido-05.json`
-- `<slug-asignatura>-contenido-06.json`
-- `<slug-asignatura>-contenido-07.json`
+- … hasta …
+- `<slug-asignatura>-contenido-NN.json` (numeración con dos dígitos)
 
 Each file must be valid on its own and must follow this root shape:
 
@@ -52,8 +49,9 @@ Do not use `course`.
   "id": "stable-id",
   "title": "Nombre de la Asignatura",
   "program": "Programa Académico",
+  "faculty": "ingenieria",
   "contentNumber": "01",
-  "contentTotal": "07",
+  "contentTotal": "NN",
   "unitLabel": "Tema",
   "description": "Descripción breve",
   "syllabus": {
@@ -81,6 +79,8 @@ Do not use `course`.
 `subject.syllabus` is required when a syllabus PDF or syllabus text was provided. Keep `missingFields` explicit instead of inventing data.
 
 `subject.unitLabel` (opcional) es el rótulo con que la plantilla nombra cada unidad numerada en la sidebar y el banner: la plantilla muestra `"<unitLabel> <contentNumber>"` (p. ej. `"Tema 01"`). Para AG, cuya unidad oficial es el **tema**, usar `"Tema"`. Si se omite, la plantilla usa el rótulo histórico `"Escenario de aprendizaje"`. (Otras metodologías usan `"Momento"`.)
+
+`subject.faculty` define el **tema visual editorial del PDF** (libro-guía tamaño carta) según la facultad de la Universidad de América. Valores válidos: `"ingenieria"` (Ingeniería, ciencia y tecnología), `"economicas"` (Ciencias económicas, administrativas y empresariales) o `"arquitectura"` (Arquitectura, diseño, creatividad, territorio y sostenibilidad). **Derívalo del programa académico del syllabus** (`subject.program` / `extractedFields.faculty`): ingenierías, sistemas, software, industrial, civil, química, ambiental, tecnología → `ingenieria`; economía, administración, negocios, contaduría, finanzas, mercadeo → `economicas`; arquitectura, diseño, urbanismo, creatividad, territorio, sostenibilidad → `arquitectura`. Si el programa no encaja claramente, omite el campo (el PDF usa el tema verde institucional por defecto). Cada facultad aplica su paleta y sus imágenes base (portada/separador) desde `assets/pdf/<faculty>/`; los prompts de esas imágenes están en `pdf-design/`. El motor también puede inferir la facultad desde `subject.program` si `faculty` se omite, pero es preferible declararla.
 
 `subject.methodology` is required for full asignatura package generation. For virtual asignaturas, always use AG - Aprendizaje Guiado:
 
@@ -114,7 +114,7 @@ SCORM is the interactive web branch. It may include video, podcast, listening, q
 
 Each key in `scorm.sections` is the HTML id. It must appear in `scorm.sectionOrder`.
 
-For each of the seven content JSON files, `scorm.sectionOrder` must contain exactly six ids:
+For each of the N content JSON files, `scorm.sectionOrder` must contain exactly six ids:
 
 ```json
 ["intro", "seccion-1", "seccion-2", "seccion-3", "seccion-4", "seccion-5"]
@@ -168,9 +168,9 @@ Use two or three complementary components after each theory block when they add 
 
 ## Package Uniqueness Contract
 
-For complete asignatura generation, the package contains 35 thematic sections: seven contents times five thematic sections. These 35 sections must be unique in concept, explanation, example, activity, visual support, assessment, and RA evidence.
+For complete asignatura generation, the package contains **N × 5** thematic sections: N contents (temas) times five thematic sections each. All these sections must be unique in concept, explanation, example, activity, visual support, assessment, and RA evidence.
 
-Before generating JSON, create an internal 7 x 5 diversity blueprint. Each row must define a distinct disciplinary concept, RA evidence, learner action, example/case, visual artifact, code or trace task when relevant, misconception, guided practice, and feedback. If two sections can exchange their titles without changing the body, the content fails the contract.
+Before generating JSON, create an internal **N × 5** diversity blueprint. Each row must define a distinct disciplinary concept, RA evidence, learner action, example/case, visual artifact, code or trace task when relevant, misconception, guided practice, and feedback. If two sections can exchange their titles without changing the body, the content fails the contract.
 
 Production JSON must not contain repeated learner-facing paragraph shells. The following are contract violations:
 
@@ -220,13 +220,13 @@ Disallowed in PDF:
 
 Put exercises near the end of `pdf.sectionOrder`, before references.
 
-For each of the seven content JSON files, `pdf.sectionOrder` must contain exactly six ids:
+For each of the N content JSON files, `pdf.sectionOrder` must contain exactly six ids:
 
 ```json
 ["pdf-intro", "pdf-seccion-1", "pdf-seccion-2", "pdf-seccion-3", "pdf-seccion-4", "pdf-seccion-5"]
 ```
 
-Each PDF uses the same minimum page extension requested by the user. Do not divide the requested pages across the seven files.
+Each PDF uses the same minimum page extension requested by the user. Do not divide the requested pages across the N files.
 
 Each PDF section must be a unique printable chapter. It must include concept-specific theory, examples, exercises, expected answers, visuals, and evaluation criteria. Do not repeat a generic "study guide" paragraph pattern across all five sections.
 
@@ -742,7 +742,7 @@ Los bancos de ejercicios del PDF deben ser **variados, no mecánicos ni repetiti
 - No component id may appear in `componentOrder` unless it exists in the same section's `components`.
 - No SCORM section id may appear in `scorm.sectionOrder` unless it exists in `scorm.sections`.
 - No PDF section id may appear in `pdf.sectionOrder` unless it exists in `pdf.sections`.
-- New asignatura packages must produce seven JSON files, each with six SCORM sections and six PDF sections.
+- New asignatura packages must produce N JSON files (one per tema, N variable derived from the syllabus), each with six SCORM sections and six PDF sections.
 - Do not put interactive SCORM activity components inside `pdf.sections`.
 - Every thematic SCORM section (`seccion-1` through `seccion-5`) must include at least three components whose `type` is `theory-block` or `concept-block`. The `intro` section is not counted for this requirement.
 - In thematic SCORM sections, `componentOrder` should distribute the required theory blocks through the section as theory -> two or three complementary components -> theory -> two or three complementary components -> theory -> practice/validation/closure.

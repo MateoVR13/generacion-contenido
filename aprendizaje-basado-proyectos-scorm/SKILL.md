@@ -1,9 +1,40 @@
 ---
 name: aprendizaje-basado-proyectos-scorm
-description: Generate validated `subject`-based JSON packages for virtual asignatura SCORM/PDF exports. Use when Codex must create, revise, expand, or validate the three reusable content JSON files (one per ABPr learning moment) required for a 100% virtual asignatura, especially from an attached syllabus PDF or mandatory content requirements, including per-PDF minimum page length, fixed Aprendizaje Basado en Proyectos methodology, six-section content structure, expert discipline-based HTML component selection, unique non-repetitive content across the 3x5 thematic matrix, theory-first SCORM sequencing with at least three theory blocks per thematic section followed by two or three complementary components each, mandatory carousel, flashcards, and extensive accordion components in every thematic SCORM section, mandatory stepper-based worked exercises in mathematics sections, charts that carry a theory-connecting thread plus a descriptive reading note, instructional component depth, qualitative evaluation, validated LaTeX math, Chart.js chart data, visual prompts/images, code and pseudocode execution instructions, PDF metadata, references, and downloadable material.
+description: Virtualiza asignaturas 100% virtuales con metodología Aprendizaje Basado en Proyectos (ABPr) siguiendo el proceso oficial UA de 11 fases (0–10) en 2 pipelines con gate de validación docente, Y genera los JSON de contenido SCORM/PDF. Úsala para (a) ejecutar el Pipeline 1 (Fases 0–4) que produce el INSTRUMENTO DE VALIDACIÓN DOCENTE a partir de un syllabus, y (b) ejecutar el Pipeline 2 (Fases 5–10) que, con el instrumento validado, genera el Documento de Saberes (los 3 JSON `subject`-based para la plantilla SCORM/PDF, uno por momento ABPr), los recursos e-learning y sus prompts, el montaje LMS y los entregables de QA/implementación/seguimiento. ABPr usa 3 MOMENTOS FIJOS (`["Diagnóstico Inicial","Análisis y Diseño","Conclusiones"]`, no un número variable de temas), escenario inicial de problema real + pregunta direccionadora con trabajo colaborativo en equipos, extensión por créditos (30–55 págs), evaluación cualitativa, similitud ≤30% y APA 7. La Fase 5 aplica el contrato de componentes de esta misma skill: selección experta por disciplina, secuencia theory-first (≥3 theory-block por sección temática), carrusel/flashcards/acordeón obligatorios, steppers en matemáticas, Python para resolver ejercicios cuantitativos, charts con hilo conductor + nota, LaTeX validado, banner saberes-link, PDF editorial por facultad.
 ---
 
-# SCORM/PDF JSON Content
+# Virtualización ABPr + Contenido SCORM/PDF
+
+> Esta skill hace **dos cosas**: (1) **orquesta** el proceso oficial de virtualización UA (11 fases, 2 pipelines, gate docente) y (2) en la **Fase 5** **genera** los JSON de contenido SCORM/PDF. La parte de orquestación está abajo en "Proceso de virtualización"; la parte de generación es el "Core Workflow" y las reglas de contenido, que se aplican **dentro de la Fase 5**.
+
+## Proceso de virtualización (11 fases · 2 pipelines · gate docente)
+
+```
+SYLLABUS (Excel FO_03 / PDF / texto)
+   ▼  PIPELINE 1 · Fases 0–4 (análisis y planeación)
+   │     F0 Alistamiento → F1 Análisis syllabus → F2 Planeación didáctica
+   │     → F3 Diseño de evaluación → F4 Validación académica
+   ▼  INSTRUMENTO DE VALIDACIÓN DOCENTE (.md + .docx + .json espejo)
+   ▼  [ GATE HUMANO: el docente valida momentos/actividades/recursos/evaluación ]
+   ▼  PIPELINE 2 · Fases 5–10 (generación)
+   │     F5 Documento de Saberes (los 3 JSON SCORM/PDF — Core Workflow de abajo)
+   │     F6 Recursos e-learning + prompts · F7 Montaje LMS (→ moodle-content)
+   │     F8 QA · F9 Implementación · F10 Seguimiento
+   ▼  CONTENIDO COMPLETO + plan de aula + indicadores
+```
+
+1. **Identifica el modo.** ¿Pipeline 1 (producir el instrumento) o Pipeline 2 (ya hay instrumento respondido → generar)? Si no está claro, pregúntalo.
+2. **Trabaja en una carpeta de proyecto** `<slug-asignatura>-virtualizacion/`: crea ahí `estado-proyecto.json` y los artefactos `fase-N-*.md`.
+3. **Lee solo lo de la fase en curso** (token-eficiencia): siempre `references/lineamientos-ua.md` + `references/proceso-fases-ua.md` + `references/metodologia-abpr.md`; Pipeline 1 → `references/pipeline-1-fases-0-4.md` + `references/instrumento-docente.md`; Pipeline 2 → `references/pipeline-2-fases-5-10.md` + `references/pipeline-documento-saberes.md` + `references/fase-6-prompts.md`.
+4. **Extrae el syllabus** con `scripts/extract_syllabus.mjs`; guarda en `estado-proyecto.json`. No inventes datos: lo faltante = brecha.
+5. **Ejecuta las fases en orden, una a una.** Cada fase lee el estado, produce su artefacto en disco y actualiza el estado (resumen compacto). Valida con `scripts/validate_phase.js`.
+6. **Pipeline 1 termina** en el instrumento docente (Fase 4). DETENTE: no se genera contenido sin validación docente (gate).
+7. **Pipeline 2 arranca** con el instrumento respondido: ingiere las decisiones del docente al estado y genera todo. La **Fase 5** produce los **3 JSON del Documento de Saberes** (uno por momento ABPr) siguiendo el **Core Workflow** y las reglas de contenido de abajo (esta misma skill es el motor de contenido — no delega a otra). La **Fase 7** usa `moodle-content`.
+8. **Cierre del Pipeline 2:** deben existir y validar los 3 JSON `<slug>-contenido-NN.json` (Documento de Saberes: `01` Diagnóstico Inicial, `02` Análisis y Diseño, `03` Conclusiones) y el `<slug>-ABPr.moodle.json` (Moodle).
+
+> **Metodología (clave ABPr):** ABPr usa **3 MOMENTOS FIJOS** — `["Diagnóstico Inicial", "Análisis y Diseño", "Conclusiones"]`, **1 archivo JSON por momento** (`unitLabel: "Momento"`), no un número variable de temas. El escenario inicial plantea un **problema real + pregunta direccionadora** con **trabajo colaborativo en equipos**. El contenido prepara al estudiante para **diseñar y desarrollar un PROYECTO**: identificar e implementar acciones de transformación, analizar el problema, planear y diseñar la solución, y socializar el producto. Ver `references/metodologia-abpr.md`.
+
+# SCORM/PDF JSON Content (Fase 5 — motor de contenido)
 
 ## Core Workflow
 

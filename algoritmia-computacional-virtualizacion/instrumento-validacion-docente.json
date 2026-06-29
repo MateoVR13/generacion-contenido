@@ -1,0 +1,74 @@
+{
+  "asignatura": "Algoritmia Computacional I",
+  "programa": "Tecnología en Aplicaciones Digitales Inteligentes",
+  "metodologiaRecomendada": "AG",
+  "fecha": "2026-06-29",
+  "instrucciones": "Espejo JSON del instrumento. El docente rellena cada campo 'respuesta'/'decision' y se re-ingiere en el Pipeline 2. Valores de decision: 'aprobar' | 'quitar' | 'ajustar' (o 'si'/'ajustar'). No publicar nada sin estas respuestas.",
+  "secciones": {
+    "0_metodologia": { "recomendada": "AG", "alternativa": "ABPr", "decision": "", "respuesta": "" },
+    "1_identificacion": {
+      "ra": { "valor": ["RA1", "RA2"], "decision": "", "respuesta": "" },
+      "saberes": { "decision": "", "respuesta": "" },
+      "evaluacion": { "decision": "", "respuesta": "" },
+      "creditosHoras": { "valor": "3 / 144", "decision": "", "respuesta": "" }
+    },
+    "2_naturaleza": {
+      "tipo": { "valor": "teorico-practica", "decision": "" },
+      "recursosSimulacion": { "propuesta": "Python (IDE/online) + PSeInt", "respuesta": "" },
+      "practicasEstudiante": { "respuesta": "" }
+    },
+    "3_temas": {
+      "nPropuesto": 6,
+      "decisionN": "",
+      "temas": [
+        { "n": 1, "titulo": "Fundamentos del algoritmo y representación", "ra": "RA1", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" },
+        { "n": 2, "titulo": "Lenguaje de programación, tipos de datos y librerías", "ra": "RA1", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" },
+        { "n": 3, "titulo": "Estructuras selectivas y de control", "ra": "RA1", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" },
+        { "n": 4, "titulo": "Arreglos unidimensionales (cadenas, listas, tuplas, diccionarios)", "ra": "RA1", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" },
+        { "n": 5, "titulo": "Arreglos multidimensionales y memoria", "ra": "RA2", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" },
+        { "n": 6, "titulo": "Funciones y proyecto integrador", "ra": "RA2", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" }
+      ],
+      "observaciones": ""
+    },
+    "4_actividades_talleres": {
+      "talleres": [
+        { "tema": 1, "decision": "", "ajuste": "" },
+        { "tema": 2, "decision": "", "ajuste": "" },
+        { "tema": 3, "decision": "", "ajuste": "" },
+        { "tema": 4, "decision": "", "ajuste": "" },
+        { "tema": 5, "decision": "", "ajuste": "" },
+        { "tema": 6, "decision": "", "ajuste": "" }
+      ],
+      "actividadesSugeridas": "",
+      "observaciones": ""
+    },
+    "5_recursos_material": {
+      "componentesDidacticos": { "n": 3, "propuesta": "infografía (T1), video explicativo (T3), OVA/juego (T4)", "respuesta": "" },
+      "materialComplementario": [
+        { "id": "M1", "decision": "", "ajuste": "" },
+        { "id": "M2", "decision": "", "ajuste": "" },
+        { "id": "M3", "decision": "", "ajuste": "" },
+        { "id": "M4", "decision": "", "ajuste": "" },
+        { "id": "M5", "decision": "", "ajuste": "" }
+      ],
+      "materialAgregado": [],
+      "porcentajeIngles": 40,
+      "respuesta": ""
+    },
+    "6_evaluacion": {
+      "diagnostica": { "archivo": "evaluacion/diagnostica-algoritmia-computacional.json", "decision": "", "preguntas": "Ver D1..D15 en el .json; marcar por pregunta aprobar/quitar/ajustar." },
+      "formativas": { "decision": "", "respuesta": "" },
+      "sumativa": { "decision": "", "respuesta": "" },
+      "complementarios": { "decision": "", "respuesta": "" },
+      "ponderaciones": { "respuesta": "" }
+    },
+    "7_feedback": { "enfasis": "", "fuentesObligatorias": "", "advertenciasEticas": "" },
+    "8_brechas": {
+      "codigoAsignatura": "",
+      "lenguajeEntorno": "",
+      "ponderaciones": "",
+      "biblioInglesVerificacion": "",
+      "repartoSaberesRA2": ""
+    }
+  }
+}

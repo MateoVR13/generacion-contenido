@@ -1,0 +1,37 @@
+{
+  "description": "Imágenes base del PDF editorial por facultad. Genera con los prompts en prompts/ y coloca los .jpg en las rutas 'path'. El CSS de assets/editor.js ya las referencia; si faltan, el PDF usa el color sólido de la facultad.",
+  "page": { "size": "Carta (Letter)", "inches": "8.5 x 11", "px300dpi": "2550 x 3300" },
+  "palette": { "verde": "#172006", "lima": "#c0f500", "dorado": "#f0b300" },
+  "faculties": {
+    "ingenieria": {
+      "label": "Ingeniería, ciencia y tecnología",
+      "accent": "#2bb7d4",
+      "ink": "#0f2a3f",
+      "images": [
+        { "role": "portada",   "path": "assets/pdf/ingenieria/portada.jpg",   "px": "2550x3300", "prompt": "prompts/portada-ingenieria.md" },
+        { "role": "separador", "path": "assets/pdf/ingenieria/separador.jpg", "px": "2550x3300", "prompt": "prompts/separador-ingenieria.md" },
+        { "role": "encabezado","path": "assets/pdf/ingenieria/encabezado.jpg","px": "2550x600",  "prompt": "prompts/encabezado-ingenieria.md" }
+      ]
+    },
+    "economicas": {
+      "label": "Ciencias económicas, administrativas y empresariales",
+      "accent": "#33c08a",
+      "ink": "#123a2a",
+      "images": [
+        { "role": "portada",   "path": "assets/pdf/economicas/portada.jpg",   "px": "2550x3300", "prompt": "prompts/portada-economicas.md" },
+        { "role": "separador", "path": "assets/pdf/economicas/separador.jpg", "px": "2550x3300", "prompt": "prompts/separador-economicas.md" },
+        { "role": "encabezado","path": "assets/pdf/economicas/encabezado.jpg","px": "2550x600",  "prompt": "prompts/encabezado-economicas.md" }
+      ]
+    },
+    "arquitectura": {
+      "label": "Arquitectura, diseño, creatividad, territorio y sostenibilidad",
+      "accent": "#e08a3c",
+      "ink": "#3a2418",
+      "images": [
+        { "role": "portada",   "path": "assets/pdf/arquitectura/portada.jpg",   "px": "2550x3300", "prompt": "prompts/portada-arquitectura.md" },
+        { "role": "separador", "path": "assets/pdf/arquitectura/separador.jpg", "px": "2550x3300", "prompt": "prompts/separador-arquitectura.md" },
+        { "role": "encabezado","path": "assets/pdf/arquitectura/encabezado.jpg","px": "2550x600",  "prompt": "prompts/encabezado-arquitectura.md" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2 @@
+Coloca aquí las imágenes de esta facultad: portada.jpg, separador.jpg, encabezado.jpg
+Ver pdf-design/prompts/ para generarlas y pdf-design/manifest.json para los tamaños.

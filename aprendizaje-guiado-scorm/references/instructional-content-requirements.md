@@ -82,30 +82,28 @@ Represent the selected methodology under:
 
 Use diagnostic, formative, and final evaluation inside the AG route; those evaluation moments do not replace the official phases.
 
-## Seven Content Package Structure
+## N (Variable) Content Package Structure
 
-Every new asignatura generation must produce exactly seven independent JSON files:
+**AG uses a VARIABLE number of temas (N), not a fixed count.** N is derived from the syllabus (number of RA, saberes, thematic units) in Pipeline 1 (Fase 2) and validated by the docente in the instrumento; each tema = one progressive stage. Never assume 7. Every new asignatura generation must produce exactly **N** independent JSON files, one per tema:
 
 1. `<slug-asignatura>-contenido-01.json`
 2. `<slug-asignatura>-contenido-02.json`
-3. `<slug-asignatura>-contenido-03.json`
-4. `<slug-asignatura>-contenido-04.json`
-5. `<slug-asignatura>-contenido-05.json`
-6. `<slug-asignatura>-contenido-06.json`
-7. `<slug-asignatura>-contenido-07.json`
+   … up to …
+N. `<slug-asignatura>-contenido-NN.json` (zero-padded to two digits)
 
 Each JSON file must include:
 
-- `subject.contentNumber` from `01` to `07`.
-- `subject.contentTotal: "07"`.
+- `subject.contentNumber` from `01` to `NN`.
+- `subject.contentTotal`: the value of N as a two-digit string (e.g. `"05"`, `"08"`).
 - `subject.methodology.code: "AG"`.
+- `subject.unitLabel: "Tema"`.
 - Six SCORM sections: `intro`, `seccion-1`, `seccion-2`, `seccion-3`, `seccion-4`, `seccion-5`.
 - Six PDF sections: `pdf-intro`, `pdf-seccion-1`, `pdf-seccion-2`, `pdf-seccion-3`, `pdf-seccion-4`, `pdf-seccion-5`.
 - At least three substantial `theory-block` or `concept-block` components inside every thematic SCORM section (`seccion-1` through `seccion-5`). Do not count the introductory section toward this minimum.
 
-The user-provided PDF extension applies to each PDF file. If the user requests "mínimo 12 páginas", each of the seven `pdf` branches must support 12 printable pages.
+The user-provided PDF extension applies to each PDF file. If the user requests "mínimo 12 páginas", each of the N `pdf` branches must support 12 printable pages.
 
-Across the full package, the 35 thematic sections must be different. A package that repeats the same theoretical shell, practice steps, exercise pattern, expected answer, feedback, visual prompt, or code scaffold with only topic names changed does not meet academic quality requirements, even if the JSON structure is valid.
+Across the full package, the **N × 5** thematic sections must be different. A package that repeats the same theoretical shell, practice steps, exercise pattern, expected answer, feedback, visual prompt, or code scaffold with only topic names changed does not meet academic quality requirements, even if the JSON structure is valid.
 
 ## Course Structure Expectations
 
@@ -128,7 +126,7 @@ For 2, 3, and 4 credit asignaturas, orient didactic components as 2, 3, and 4 co
 
 Before drafting each SCORM theme, apply `component-selection.md`: identify the disciplinary representation that best teaches the concept and select supported HTML components from that evidence need. Do not choose a chart, formula, image, code block, interaction, or accordion just because the layout needs variety.
 
-Before drafting text, apply `content-uniqueness-validation.md`: plan the 7 x 5 package as a diversity matrix and ensure every thematic section has unique RA evidence, example/case, visual artifact, code or trace task, misconception, guided practice, feedback, and transfer.
+Before drafting text, apply `content-uniqueness-validation.md`: plan the **N × 5** package as a diversity matrix and ensure every thematic section has unique RA evidence, example/case, visual artifact, code or trace task, misconception, guided practice, feedback, and transfer.
 
 Each SCORM theme should follow a visible instructional line. Adapt the components to the discipline, but keep the logic:
 

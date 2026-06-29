@@ -1,14 +1,43 @@
 ---
 name: aprendizaje-guiado-scorm
-description: Generate validated `subject`-based JSON packages for virtual asignatura SCORM/PDF exports. Use when Codex must create, revise, expand, or validate the seven reusable content JSON files required for a 100% virtual asignatura, especially from an attached syllabus PDF or mandatory content requirements, including per-PDF minimum page length, fixed Aprendizaje Guiado methodology, six-section content structure, expert discipline-based HTML component selection, unique non-repetitive content across the 7x5 thematic matrix, theory-first SCORM sequencing with at least three theory blocks per thematic section followed by two or three complementary components each, mandatory carousel, flashcards, and extensive accordion components in every thematic SCORM section, mandatory stepper-based worked exercises in mathematics sections, charts that carry a theory-connecting thread plus a descriptive reading note, instructional component depth, qualitative evaluation, validated LaTeX math, Chart.js chart data, visual prompts/images, code and pseudocode execution instructions, PDF metadata, references, and downloadable material.
+description: Virtualiza asignaturas 100% virtuales con metodología Aprendizaje Guiado (AG) siguiendo el proceso oficial UA de 11 fases (0–10) en 2 pipelines con gate de validación docente, Y genera los JSON de contenido SCORM/PDF. Úsala para (a) ejecutar el Pipeline 1 (Fases 0–4) que produce el INSTRUMENTO DE VALIDACIÓN DOCENTE a partir de un syllabus, y (b) ejecutar el Pipeline 2 (Fases 5–10) que, con el instrumento validado, genera el Documento de Saberes (los N JSON `subject`-based para la plantilla SCORM/PDF), los recursos e-learning y sus prompts, el montaje LMS y los entregables de QA/implementación/seguimiento. AG usa N temas VARIABLES (no fijos), extensión por créditos (30–55 págs), evaluación cualitativa, similitud ≤30% y APA 7. La Fase 5 aplica el contrato de componentes de esta misma skill: selección experta por disciplina, secuencia theory-first (≥3 theory-block por sección temática), carrusel/flashcards/acordeón obligatorios, steppers en matemáticas, Python para resolver ejercicios cuantitativos, charts con hilo conductor + nota, LaTeX validado, banner saberes-link, PDF editorial por facultad.
 ---
 
-# SCORM/PDF JSON Content
+# Virtualización AG + Contenido SCORM/PDF
+
+> Esta skill hace **dos cosas**: (1) **orquesta** el proceso oficial de virtualización UA (11 fases, 2 pipelines, gate docente) y (2) en la **Fase 5** **genera** los JSON de contenido SCORM/PDF. La parte de orquestación está abajo en "Proceso de virtualización"; la parte de generación es el "Core Workflow" y las reglas de contenido, que se aplican **dentro de la Fase 5**.
+
+## Proceso de virtualización (11 fases · 2 pipelines · gate docente)
+
+```
+SYLLABUS (Excel FO_03 / PDF / texto)
+   ▼  PIPELINE 1 · Fases 0–4 (análisis y planeación)
+   │     F0 Alistamiento → F1 Análisis syllabus → F2 Planeación didáctica
+   │     → F3 Diseño de evaluación → F4 Validación académica
+   ▼  INSTRUMENTO DE VALIDACIÓN DOCENTE (.md + .docx + .json espejo)
+   ▼  [ GATE HUMANO: el docente valida temas/actividades/recursos/evaluación ]
+   ▼  PIPELINE 2 · Fases 5–10 (generación)
+   │     F5 Documento de Saberes (los N JSON SCORM/PDF — Core Workflow de abajo)
+   │     F6 Recursos e-learning + prompts · F7 Montaje LMS (→ moodle-content)
+   │     F8 QA · F9 Implementación · F10 Seguimiento
+   ▼  CONTENIDO COMPLETO + plan de aula + indicadores
+```
+
+1. **Identifica el modo.** ¿Pipeline 1 (producir el instrumento) o Pipeline 2 (ya hay instrumento respondido → generar)? Si no está claro, pregúntalo.
+2. **Trabaja en una carpeta de proyecto** `<slug-asignatura>-virtualizacion/`: crea ahí `estado-proyecto.json` y los artefactos `fase-N-*.md`.
+3. **Lee solo lo de la fase en curso** (token-eficiencia): siempre `references/lineamientos-ua.md` + `references/proceso-fases-ua.md` + `references/metodologia-ag.md`; Pipeline 1 → `references/pipeline-1-fases-0-4.md` + `references/instrumento-docente.md`; Pipeline 2 → `references/pipeline-2-fases-5-10.md` + `references/pipeline-documento-saberes.md` + `references/fase-6-prompts.md`.
+4. **Extrae el syllabus** con `scripts/extract_syllabus.mjs`; guarda en `estado-proyecto.json`. No inventes datos: lo faltante = brecha.
+5. **Ejecuta las fases en orden, una a una.** Cada fase lee el estado, produce su artefacto en disco y actualiza el estado (resumen compacto). Valida con `scripts/validate_phase.js`.
+6. **Pipeline 1 termina** en el instrumento docente (Fase 4). DETENTE: no se genera contenido sin validación docente (gate).
+7. **Pipeline 2 arranca** con el instrumento respondido: ingiere las decisiones del docente al estado y genera todo. La **Fase 5** produce los **N JSON del Documento de Saberes** siguiendo el **Core Workflow** y las reglas de contenido de abajo (esta misma skill es el motor de contenido — no delega a otra). La **Fase 7** usa `moodle-content`.
+8. **Cierre del Pipeline 2:** deben existir y validar los N JSON `<slug>-contenido-NN.json` (Documento de Saberes) y el `<slug>-AG.moodle.json` (Moodle).
+
+# SCORM/PDF JSON Content (Fase 5 — motor de contenido)
 
 ## Core Workflow
 
-1. Convert the user request and any provided syllabus into a package of **seven** reusable `subject` JSON files for SCORM/PDF.
-2. Ask for missing essentials only when they block generation: asignatura name, target level, language, syllabus source, and **minimum pages per PDF**. The page extension always applies to each of the seven PDFs, not to the total package.
+1. Convert the user request and any provided syllabus into a package of **N** reusable `subject` JSON files for SCORM/PDF — one per tema. **AG uses a VARIABLE number of temas (N), not a fixed count**; N is derived from the syllabus in Pipeline 1 (Fase 2) and validated by the docente in the instrumento. When this skill is invoked standalone (without the pipeline), ask for N or derive it from the syllabus; never assume 7. `subject.contentTotal` = N and `subject.contentNumber` runs `01..N`.
+2. Ask for missing essentials only when they block generation: asignatura name, target level, language, syllabus source, **número de temas N** (si no viene del Pipeline 1), and **minimum pages per PDF**. The page extension always applies to each PDF, not to the total package.
 3. Before producing a complete JSON artifact, read:
    - `references/json-contract.md`
    - `references/instructional-content-requirements.md`
@@ -24,7 +53,7 @@ description: Generate validated `subject`-based JSON packages for virtual asigna
 5. Use only the files inside this `aprendizaje-guiado-scorm/` folder as the skill's reusable reference base; do not depend on `../requisitos-contenido/` or external attachments unless the user provides new source material in the current task.
 6. If a syllabus PDF is attached, extract it first and store the academic mapping in `subject.syllabus`. Mark missing fields in `subject.syllabus.missingFields`; do not invent institutional metadata, credits, percentages, dates, codes, or references.
 7. Generate JSON only, unless the user asks for explanation.
-8. For new asignatura generation, write exactly seven artifacts in the current project root using this naming pattern: `<slug-asignatura>-contenido-01.json` through `<slug-asignatura>-contenido-07.json`. Do not create, overwrite, or replace `content.json` for generated asignatura content.
+8. For new asignatura generation, write **N** artifacts (one per tema) in the current project root using this naming pattern: `<slug-asignatura>-contenido-01.json` through `<slug-asignatura>-contenido-NN.json` (zero-padded to two digits). Do not create, overwrite, or replace `content.json` for generated asignatura content.
 9. Do not automatically load or apply the generated JSON files in the app. Do not call browser/app loader functions. The author will load each JSON manually with the UI or with `?content=<slug-asignatura>-contenido-01.json` when they decide to review it.
 10. Keep the JSON compatible with the SCORM/PDF app:
    - Root key is `subject`, not `course`.
@@ -33,8 +62,8 @@ description: Generate validated `subject`-based JSON packages for virtual asigna
    - `sectionOrder` and each `componentOrder` must match real object keys in their own branch.
    - Every component needs a stable id and a `type`.
 11. Use only **AG - Aprendizaje Guiado** as methodology for generated virtual asignaturas. Do not use project, challenge, research, case, or any non-AG active methodology unless the app and institutional rules are explicitly changed later.
-12. Each of the seven JSON files must contain exactly six SCORM sections and exactly six PDF sections: one introductory section plus five content sections.
-13. Before generating text, create an internal 7 x 5 diversity blueprint for the full package using `references/content-uniqueness-validation.md`. Each content and each thematic section must have a distinct concept, RA evidence, example/case, visual artifact, code or trace task, misconception, practice, and feedback. Do not include the blueprint in JSON unless the app later supports it.
+12. Each of the N JSON files must contain exactly six SCORM sections and exactly six PDF sections: one introductory section plus five content sections.
+13. Before generating text, create an internal **N x 5** diversity blueprint for the full package using `references/content-uniqueness-validation.md`. Each content and each thematic section must have a distinct concept, RA evidence, example/case, visual artifact, code or trace task, misconception, practice, and feedback. Do not include the blueprint in JSON unless the app later supports it.
 14. Before generating each JSON file, perform an internal expert component-selection pass for every thematic section. Choose components from the supported template list according to discipline, RA, concept type, evidence needed, and branch (SCORM/PDF). Do not include weak charts, formulas, images, code blocks, or interactions just to fill a pattern.
 15. Make the requested minimum extension explicit through `pdf.sections` in every JSON file; do not rely on SCORM interactive activities to create PDF pages.
 16. Draft each thematic SCORM section (`seccion-1` through `seccion-5`) as a **TEMA DEL SABER** (a disciplinary topic), built on **exactly three theory blocks, each followed by two or three expert-selected complementary components**: `theory-block` -> 2-3 components -> `theory-block` -> 2-3 components -> `theory-block` -> 2-3 components. Each section title names a topic of the subject matter (e.g. "El determinante: definición e interpretación"), **never** a process label such as "Práctica guiada", "Taller", "Ejercicios", "Validación" or "Cierre". Worked examples and step-by-step guided exercises (`stepper`) go **inside** the topic as supporting components for that saber; they must NOT become a section nor be the section's theme. Across the three clusters of every thematic section it is **mandatory** to include at least one `carousel`, at least one `flashcards`, and at least one `accordion`; distribute them where they reinforce the preceding theory, never stacked as filler.
@@ -49,13 +78,13 @@ description: Generate validated `subject`-based JSON packages for virtual asigna
 - **Resultados de aprendizaje en PRIMERA PERSONA del singular.** Redacta y conserva todo RA conjugado en primera persona del presente ("Modelo...", "Resuelvo...", "Opero...", "Aplico...", "Represento...", "Valoro...", "Evalúo...", "Desarrollo..."), nunca en infinitivo ("Modelar/Resolver") ni en tercera persona ("Modela/Resuelve"). Conserva el verbo del RA del syllabus; solo conjúgalo a primera persona si viniera en otra forma. Aplica en `subject.syllabus.learningOutcomes`, en cualquier texto que enuncie el RA y en las tablas de diseño.
 - Every major component should declare or clearly evidence the RA/learning outcome it supports.
 - Design SCORM as an active Moodle learning experience, not as a file repository.
-- Treat every asignatura as 100% virtual and generated as seven content JSON files. Do not generate a single all-course JSON for a new asignatura.
-- Every generated JSON must represent one content number (`subject.contentNumber`: `01` to `07`) and should include `subject.contentTotal: "07"`.
+- Treat every asignatura as 100% virtual and generated as **N content JSON files** (one per tema; N variable, NOT fixed). Do not generate a single all-course JSON for a new asignatura.
+- Every generated JSON must represent one content number (`subject.contentNumber`: `01` to `NN`) and should include `subject.contentTotal` = N (two-digit string).
 - Every generated JSON must have these six internal sections in both `scorm.sectionOrder` and `pdf.sectionOrder`: introductory section, section 1, section 2, section 3, section 4, section 5. Use stable ids such as `intro`, `seccion-1`, `seccion-2`, `seccion-3`, `seccion-4`, `seccion-5` and PDF ids such as `pdf-intro`, `pdf-seccion-1`, ..., `pdf-seccion-5`.
-- Across the full package, the 35 thematic sections (`7 contenidos x 5 secciones`) must be conceptually and textually unique. Do not reuse paragraph shells, bullets, table rows, exercise prompts, expected answers, examples, code/pseudocode scaffolds, feedback, image prompts, or closing prompts with only the topic name changed.
+- Across the full package, the **N × 5** thematic sections (`N temas x 5 secciones`) must be conceptually and textually unique. Do not reuse paragraph shells, bullets, table rows, exercise prompts, expected answers, examples, code/pseudocode scaffolds, feedback, image prompts, or closing prompts with only the topic name changed.
 - Repetition is allowed only for stable metadata, institutional labels, methodology names, RA wording, rubric level names, file naming conventions, references, and required UI labels. Learner-facing theory, PDF study-guide text, practice, feedback, examples, and visual prompts must be section-specific.
 - Declaring `learningOutcomeIds` is not sufficient RA alignment. Each section and major component must show how its specific task, example, code, visual, practice, or evaluation evidences the RA.
-- In every generated JSON, each thematic SCORM section (`seccion-1` through `seccion-5`) must contain **at least three** `theory-block` or `concept-block` components. Do not count `intro` toward this requirement. If the user explicitly requests a single-unit JSON instead of seven files, apply the same rule to that unit's five thematic SCORM sections.
+- In every generated JSON, each thematic SCORM section (`seccion-1` through `seccion-5`) must contain **at least three** `theory-block` or `concept-block` components. Do not count `intro` toward this requirement. If the user explicitly requests a single-unit JSON instead of the N files, apply the same rule to that unit's five thematic SCORM sections.
 - Structure each thematic SCORM section as repeated instructional cycles built on **three theory blocks, each immediately followed by a cluster of two or three complementary components**: `theory-block`/`concept-block` -> two or three complementary components -> `theory-block`/`concept-block` -> two or three complementary components -> `theory-block`/`concept-block` -> two or three complementary components (with practice/validation/closure inside the final cluster). Complementary components may include image/figure, formula, chart, table, code, accordion, tabs, flashcards, carousel, stepper, quiz, matching, multi-select, fill-blank, callout, summary, or reflection, but only when they add learning value and are preceded by the theory that contextualizes them.
 - **Mandatory complementary components per thematic SCORM section:** every thematic SCORM section (`seccion-1` through `seccion-5`) must include, distributed across its three component clusters, at least one `carousel`, at least one `flashcards`, and at least one `accordion`. These are obligatory in every thematic section, not optional menu items; the remaining complementary slots are filled with the strongest disciplinary components for the concept. The `intro` section is exempt from this requirement.
 - **Accordions must be substantial, not labels.** Each `accordion` item must contain a relatively extensive explanation of **two to three paragraphs** that genuinely complements and extends the theory already presented in the section (nuances, comparisons, common misconceptions, applied implications, edge cases). Do not use one-line accordion items or use accordions to hold the primary theoretical explanation; they deepen theory that a `theory-block`/`concept-block` already established.
@@ -130,10 +159,10 @@ Before finalizing JSON:
 - Check that mandatory project requirements and syllabus inputs were used or explicitly marked as unavailable.
 - Check `subject.syllabus` exists when a syllabus PDF was provided.
 - Check missing syllabus fields are listed instead of invented.
-- Check new asignatura generation produced exactly seven files named `<slug-asignatura>-contenido-01.json` through `<slug-asignatura>-contenido-07.json`, not `content.json`.
-- Check every generated file has `subject.contentNumber`, `subject.contentTotal: "07"`, and consistent title/metadata for that content.
+- Check new asignatura generation produced exactly N files named `<slug-asignatura>-contenido-01.json` through `<slug-asignatura>-contenido-NN.json`, not `content.json`.
+- Check every generated file has `subject.contentNumber`, `subject.contentTotal` = N, and consistent title/metadata for that content.
 - Check every generated file has exactly six SCORM sections and exactly six PDF sections: intro plus five content sections.
-- Check the 7 x 5 diversity blueprint was applied: every thematic section has a distinct disciplinary concept, RA evidence, example/case, visual artifact, code or trace task, misconception, practice, and feedback.
+- Check the N × 5 diversity blueprint was applied: every thematic section has a distinct disciplinary concept, RA evidence, example/case, visual artifact, code or trace task, misconception, practice, and feedback.
 - Check no long learner-facing sentence or paragraph is repeated across thematic sections or contents, except stable metadata and fixed institutional labels.
 - Check each thematic SCORM section (`seccion-1` through `seccion-5`) contains three `theory-block`/`concept-block` components, each immediately followed by a cluster of two or three complementary components grouped after the theory block that explains them.
 - Check every thematic SCORM section includes at least one `carousel`, at least one `flashcards`, and at least one `accordion`, distributed across its three component clusters (not the `intro` section).
