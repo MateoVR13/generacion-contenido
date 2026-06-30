@@ -267,14 +267,14 @@
         }
       },
       pdf: {
-        guideLabel: "GUÍA DE ESTUDIO VIRTUAL",
+        guideLabel: "DOCUMENTO DE SABERES",
         kicker: "[Eje de aprendizaje] · [Práctica aplicada] · [Autoevaluación]",
         institution: "Universidad de América",
         year: "2026",
         title: "[Título del PDF]",
         subtitle: "[Subtítulo o alcance del contenido]",
         purpose: "[Propósito formativo del contenido.]",
-        structure: "[Estructura de la guía.]",
+        structure: "[Estructura del documento.]",
         sectionOrder: ["pdf-tema-1"],
         sections: {
           "pdf-tema-1": {
@@ -913,11 +913,40 @@
     } else if (type === "callout") {
       body = '<div class="pdf-callout pdf-callout-' + attr(component.tone || "light") + '">' + pdfText(component.body || component.text || component.content) + "</div>";
     } else if (type === "exercise" || type === "exercise-set") {
+      // Tipos de ejercicio diferenciados por `kind` (retrocompatible: sin kind → "practico").
+      const KINDS = {
+        practico:      { label: "Ejercicio práctico", icon: "✏️" },
+        codigo:        { label: "Ejercicio de código", icon: "💻" },
+        consulta:      { label: "Consulta", icon: "🔎" },
+        investigacion: { label: "Investigación", icon: "🧭" },
+        reflexion:     { label: "Reflexión", icon: "💭" },
+        analisis:      { label: "Análisis", icon: "📊" }
+      };
       body = asArray(component.items || component.exercises).map(function (item, index) {
-        return '<div class="pdf-practice"><h4>Ejercicio ' + (index + 1) + "</h4>" +
+        const kind = (item.kind || "practico").toLowerCase();
+        const meta = KINDS[kind] || KINDS.practico;
+        const steps = asArray(item.steps).length
+          ? '<ol class="pdf-ex-steps">' + asArray(item.steps).map(function (s) {
+              return "<li>" + mathText(typeof s === "string" ? s : (s.text || s.title || "")) + "</li>";
+            }).join("") + "</ol>"
+          : "";
+        const code = item.code
+          ? '<pre class="pdf-code"><code class="language-' + attr(item.language || "python") + '">' + escapeHtml(item.code) + "</code></pre>"
+          : "";
+        const out = item.expectedOutput
+          ? '<p class="pdf-muted"><strong>Salida esperada:</strong> ' + mathText(item.expectedOutput) + "</p>"
+          : "";
+        return '<div class="pdf-practice pdf-ex pdf-ex-' + attr(kind) + '">' +
+          '<div class="pdf-ex__head"><span class="pdf-ex__badge" aria-hidden="true">' + meta.icon + "</span>" +
+          '<span class="pdf-ex__label">' + meta.label + " " + (index + 1) + "</span>" +
+          (item.title ? '<span class="pdf-ex__title">· ' + mathText(item.title) + "</span>" : "") + "</div>" +
           pdfText(item.prompt || item.statement || item.body) +
+          steps +
           (item.formula ? '<div class="pdf-formula small" data-formula="' + attr(item.formula) + '"></div>' : "") +
+          code +
+          out +
           (item.answer ? '<p class="pdf-muted"><strong>Respuesta esperada:</strong> ' + mathText(item.answer) + "</p>" : "") +
+          (item.deliverable ? '<p class="pdf-muted"><strong>Entregable:</strong> ' + mathText(item.deliverable) + "</p>" : "") +
           "</div>";
       }).join("");
     } else if (type === "evaluation-activity" || type === "evaluation") {
@@ -1046,6 +1075,53 @@
       }).join("") + "</ol>";
     } else if (type === "downloads") {
       body = '<ul class="pdf-bullets">' + asArray(component.items).map(function (doc) { return "<li>" + escapeHtml(doc.title) + " · " + escapeHtml(doc.meta || "") + "</li>"; }).join("") + "</ul>";
+    } else if (type === "key-box" || type === "keybox" || type === "highlight-box") {
+      // Caja llamativa para destacar info: variante por `variant` (clave | dato | industria | alerta | tip).
+      const variant = (component.variant || "clave").toLowerCase();
+      const ICON = { clave: "🔑", dato: "📊", industria: "🏭", alerta: "⚠️", tip: "💡", definicion: "📘" };
+      const eyebrow = component.eyebrow || ({ clave: "Concepto clave", dato: "Dato", industria: "En la industria", alerta: "Atención", tip: "Tip", definicion: "Definición" }[variant] || "Destacado");
+      return '<aside class="pdf-keybox pdf-keybox--' + attr(variant) + '">' +
+        '<div class="pdf-keybox__head"><span class="pdf-keybox__icon" aria-hidden="true">' + (ICON[variant] || "🔑") + "</span>" +
+        '<span class="pdf-keybox__eyebrow">' + escapeHtml(eyebrow) + "</span></div>" +
+        (component.title ? '<h4 class="pdf-keybox__title">' + mathText(component.title) + "</h4>" : "") +
+        '<div class="pdf-keybox__body">' + pdfText(component.body || component.text || component.content) + "</div>" +
+        "</aside>";
+    } else if (type === "two-column" || type === "two-col" || type === "columns") {
+      // Disposición a 2 columnas. `left`/`right` o `columns:[...]`; cada lado admite título + párrafos.
+      const cols = component.columns
+        ? asArray(component.columns)
+        : [{ title: component.leftTitle, body: component.left }, { title: component.rightTitle, body: component.right }];
+      const colHtml = cols.slice(0, 2).map(function (c) {
+        return '<div class="pdf-2col__cell">' +
+          (c.title ? '<h4 class="pdf-2col__title">' + mathText(c.title) + "</h4>" : "") +
+          pdfText(c.body || c.content || c.text) + "</div>";
+      }).join("");
+      return '<section class="pdf-component">' + title + description +
+        '<div class="pdf-2col">' + colHtml + "</div></section>";
+    } else if (type === "trigger-question" || type === "pregunta-detonadora" || type === "detonadora") {
+      // Pregunta detonadora: banner verde oscuro con UNA pregunta al inicio del tema. Sin título visible.
+      const q = component.question || component.prompt || component.text || component.title || "";
+      const eyebrow = component.eyebrow || "Para empezar";
+      return '<aside class="pdf-trigger">' +
+        (eyebrow ? '<span class="pdf-trigger__eyebrow">' + escapeHtml(eyebrow) + "</span>" : "") +
+        '<p class="pdf-trigger__q">' + mathText(q) + "</p>" +
+        "</aside>";
+    } else if (type === "column-flow" || type === "two-col-flow" || type === "newspaper") {
+      // Prosa larga que FLUYE en 2 columnas tipo periódico (toda la sección/bloque). Distinto de
+      // `two-column` (que son 2 tarjetas lado a lado): aquí el texto continúa de una columna a la otra.
+      const paras = asArray(component.body || component.paragraphs || component.text);
+      body = '<div class="pdf-colflow">' + paras.map(function (p) {
+        return "<p>" + mathText(p) + "</p>";
+      }).join("") + "</div>";
+    } else if (type === "data-highlight" || type === "stat-row" || type === "stats") {
+      // Fila de cifras destacadas (número grande + etiqueta), estilo editorial moderno.
+      // Cifras muy largas (p. ej. 0.30000000000000004) usan un tamaño menor para no desbordar la tarjeta.
+      body = '<div class="pdf-stats">' + asArray(component.items || component.stats).map(function (s) {
+        const value = String(s.value || s.number || "");
+        const longCls = value.replace(/\s/g, "").length > 9 ? " pdf-stat--long" : "";
+        return '<div class="pdf-stat' + longCls + '"><span class="pdf-stat__num">' + mathText(value) + "</span>" +
+          '<span class="pdf-stat__label">' + mathText(s.label || s.text || "") + "</span></div>";
+      }).join("") + "</div>";
     } else {
       body = '<div class="pdf-box"><p>' + escapeHtml(type || "custom") + "</p></div>";
     }
@@ -1138,12 +1214,23 @@
       body = '<div class="pdf-callout pdf-callout-' + attr(component.tone || "light") + '">' + pdfEdParas(ck, component.body || component.text || component.content) + "</div>";
     } else if (type === "exercise" || type === "exercise-set") {
       const coll = component.items != null ? "items" : "exercises";
+      const EXLAB = { practico: "✏️ Ejercicio práctico", codigo: "💻 Ejercicio de código", consulta: "🔎 Consulta", investigacion: "🧭 Investigación", reflexion: "💭 Reflexión", analisis: "📊 Análisis" };
       body = asArray(component.items || component.exercises).map(function (item, i) {
         const pk = item.prompt != null ? "prompt" : item.statement != null ? "statement" : "body";
-        return '<div class="pdf-practice"><h4>Ejercicio ' + (i + 1) + "</h4>" +
+        const kind = (item.kind || "practico").toLowerCase();
+        const label = (EXLAB[kind] || EXLAB.practico) + " " + (i + 1);
+        const steps = asArray(item.steps).length
+          ? '<ol class="pdf-ex-steps">' + asArray(item.steps).map(function (s) { return "<li>" + mathText(typeof s === "string" ? s : (s.text || s.title || "")) + "</li>"; }).join("") + "</ol>"
+          : "";
+        const code = item.code ? '<pre class="pdf-code"><code class="language-' + attr(item.language || "python") + '">' + escapeHtml(item.code) + "</code></pre>" : "";
+        return '<div class="pdf-practice pdf-ex pdf-ex-' + attr(kind) + '"><div class="pdf-ex__head"><span class="pdf-ex__label">' + label + "</span></div>" +
           pdfEdParas(coll + "." + i + "." + pk, item.prompt || item.statement || item.body) +
+          steps +
           (item.formula ? '<div class="pdf-formula small" data-formula="' + attr(item.formula) + '"></div>' : "") +
+          code +
+          (item.expectedOutput != null ? '<p class="pdf-muted"><strong>Salida esperada:</strong> ' + mathText(item.expectedOutput) + "</p>" : "") +
           (item.answer != null ? '<p class="pdf-muted"><strong>Respuesta esperada:</strong> ' + pdfEd(coll + "." + i + ".answer", item.answer) + "</p>" : "") +
+          (item.deliverable != null ? '<p class="pdf-muted"><strong>Entregable:</strong> ' + mathText(item.deliverable) + "</p>" : "") +
           "</div>";
       }).join("");
     } else if (type === "objectives" || type === "summary") {
@@ -1229,8 +1316,8 @@
         comps + "</article>";
     }).join("");
     host.innerHTML = '<div class="pdf-preview-doc">' +
-      '<div class="pdf-preview-banner"><span class="pdf-preview-kicker">' + escapeHtml(pdf.guideLabel || "GUÍA DE ESTUDIO VIRTUAL") + '</span>' +
-      '<strong>' + escapeHtml(pdf.title || subject.title || "Guía PDF") + "</strong>" +
+      '<div class="pdf-preview-banner"><span class="pdf-preview-kicker">' + escapeHtml(pdf.guideLabel || "DOCUMENTO DE SABERES") + '</span>' +
+      '<strong>' + escapeHtml(pdf.title || subject.title || "Documento de Saberes") + "</strong>" +
       '<span class="pdf-preview-hint">Edición visual en vivo · escribe directamente sobre el texto</span></div>' +
       sections + "</div>";
     // Render math + charts inside the preview (scoped enhancer; does not touch SCORM nav).
@@ -1260,22 +1347,31 @@
   }
 
   let logoDataUrlCache = null;
+  // Carga AMBOS logos (negro y blanco) como data URL base64 y devuelve { black, white }.
+  // Imprescindible cargar los dos por separado: la portada usa el BLANCO (fondo oscuro) y el
+  // colofón el NEGRO (fondo claro). No se puede derivar uno del otro por string-replace porque
+  // viajan como base64 (no contienen la ruta "logo-negro"/"logo-blanco").
   async function loadLogoDataUrl() {
     if (logoDataUrlCache) return logoDataUrlCache;
-    try {
-      const response = await fetch(new URL("assets/logo-negro.png", window.location.href).href);
-      if (!response.ok) return "";
-      const blob = await response.blob();
-      logoDataUrlCache = await new Promise(function (resolve) {
-        const reader = new FileReader();
-        reader.onload = function () { resolve(String(reader.result || "")); };
-        reader.onerror = function () { resolve(""); };
-        reader.readAsDataURL(blob);
-      });
-      return logoDataUrlCache;
-    } catch (err) {
-      return "";
+    async function toDataUrl(path) {
+      try {
+        const response = await fetch(new URL(path, window.location.href).href);
+        if (!response.ok) return "";
+        const blob = await response.blob();
+        return await new Promise(function (resolve) {
+          const reader = new FileReader();
+          reader.onload = function () { resolve(String(reader.result || "")); };
+          reader.onerror = function () { resolve(""); };
+          reader.readAsDataURL(blob);
+        });
+      } catch (err) { return ""; }
     }
+    const [black, white] = await Promise.all([
+      toDataUrl("assets/logo-negro.png"),
+      toDataUrl("assets/logo-blanco.png")
+    ]);
+    logoDataUrlCache = { black: black, white: white };
+    return logoDataUrlCache;
   }
 
   // Mapea el programa/facultad declarado en el JSON a uno de los tres temas visuales
@@ -1321,18 +1417,34 @@
     const pdfSource = pdfContent(content);
     const institution = pdf.institution || "Universidad de América";
     const fac = pdfFaculty(content);
-    // logoSrc: explicit logo reference chosen by the caller.
-    // - blob preview -> embedded base64 data URL (relative paths do not resolve from a blob: document)
-    // - SCORM zip     -> relative "assets/logo-negro.png" (the file is bundled next to guia-estudio.html)
-    // Fallback to the relative path when no logoSrc is provided.
-    const logoBlack = logoSrc || "assets/logo-negro.png";
-    const logoWhite = logoSrc ? logoSrc.replace("logo-negro", "logo-blanco") : "assets/logo-blanco.png";
+    // logoSrc puede ser:
+    //  - { black, white }  -> objeto con ambos logos en base64 (preview/exportación; lo provee loadLogoDataUrl)
+    //  - string            -> retrocompatibilidad: un único data URL/ruta (se intenta derivar el blanco)
+    //  - vacío             -> rutas relativas (SCORM zip junto a guia-estudio.html)
+    // La PORTADA y los SEPARADORES (fondo oscuro) usan SIEMPRE el logo BLANCO; el colofón (fondo claro) el NEGRO.
+    let logoBlack, logoWhite;
+    if (logoSrc && typeof logoSrc === "object") {
+      logoBlack = logoSrc.black || "assets/logo-negro.png";
+      logoWhite = logoSrc.white || logoSrc.black || "assets/logo-blanco.png";
+    } else if (typeof logoSrc === "string" && logoSrc) {
+      logoBlack = logoSrc;
+      logoWhite = logoSrc.indexOf("logo-negro") !== -1 ? logoSrc.replace("logo-negro", "logo-blanco") : "assets/logo-blanco.png";
+    } else {
+      logoBlack = "assets/logo-negro.png";
+      logoWhite = "assets/logo-blanco.png";
+    }
     const totalSections = orderedSections(pdfSource).length;
 
     const sections = orderedSections(pdfSource).map(function (sectionId, index) {
       const section = pdfSource.sections[sectionId];
       const num = String(index + 1).padStart(2, "0");
-      const sectionTitle = section.title || section.navLabel || sectionId;
+      // La plantilla ya numera la sección (separador + opener). Se elimina del título cualquier prefijo
+      // redundante para evitar doble numeración y ruido editorial:
+      //  - numérico:      "1. ", "2) ", "3 - "
+      //  - etiquetado:    "Saber 4 · ", "Tema 2 - ", "Unidad 3: " (la portada NO debe decir "Saber N")
+      const sectionTitle = String(section.title || section.navLabel || sectionId)
+        .replace(/^\s*(?:saber|tema|unidad|cap[ií]tulo|secci[oó]n)\s+\d+\s*[·.)\-–:]\s+/i, "")
+        .replace(/^\s*\d+\s*[·.)\-–:]\s+/, "");
       const components = componentOrder(section).map(function (componentId) {
         return renderPdfComponent(section.components[componentId]);
       }).filter(Boolean).join("");
@@ -1350,7 +1462,9 @@
       // Cuerpo del tema (la apertura repite el lead completo para arrancar la lectura).
       const body = '<article class="pdf-page-section pdf-fac-' + attr(fac.key) + '">' +
         '<div class="pdf-section-opener"><span class="pdf-section-opener__num">' + num + "</span>" +
-        '<h2 class="pdf-h2">' + escapeHtml(sectionTitle) + "</h2></div>" +
+        '<h2 class="pdf-h2">' + escapeHtml(sectionTitle) + "</h2>" +
+        '<img class="pdf-section-opener__mark" src="' + attr(logoBlack) + '" alt="" aria-hidden="true">' +
+        "</div>" +
         '<div class="pdf-intro">' + pdfText(section.intro || section.description) + "</div>" +
         components +
         "</article>";
@@ -1367,7 +1481,7 @@
     }).join("");
 
     return '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>PDF · ' + escapeHtml(subject.title || "Asignatura") + '</title>' +
-      '<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">' +
+      '<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">' +
       '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">' +
       '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">' +
       '<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"><\/script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"><\/script>' +
@@ -1378,7 +1492,7 @@
       '<div class="pdf-cover__veil"></div>' +
       '<header class="pdf-cover__top"><img src="' + attr(logoWhite) + '" alt="Universidad de América"><span>' + escapeHtml(fac.label) + "</span></header>" +
       '<div class="pdf-cover__main">' +
-      '<p class="pdf-cover__label">' + escapeHtml(pdf.guideLabel || "GUÍA DE ESTUDIO") + "</p>" +
+      '<p class="pdf-cover__label">' + escapeHtml(pdf.guideLabel || "DOCUMENTO DE SABERES") + "</p>" +
       '<h1 class="pdf-cover__title">' + escapeHtml(pdf.title || subject.title || "[Título del PDF]") + "</h1>" +
       '<p class="pdf-cover__subject">' + escapeHtml(subject.title || "[Nombre de la Asignatura]") + "</p>" +
       (pdf.subtitle ? '<p class="pdf-cover__subtitle">' + escapeHtml(pdf.subtitle) + "</p>" : "") +
@@ -1388,7 +1502,7 @@
       // PÁGINA DE CRÉDITOS / PROPÓSITO.
       '<section class="pdf-colophon"><img src="' + attr(logoBlack) + '" alt=""><div class="pdf-colophon__grid">' +
       '<div><h3>Propósito formativo</h3><p>' + escapeHtml(pdf.purpose || "[Propósito formativo.]") + "</p></div>" +
-      '<div><h3>Cómo usar esta guía</h3><p>' + escapeHtml(pdf.structure || "[Estructura del contenido.]") + "</p></div>" +
+      '<div><h3>Cómo usar este documento</h3><p>' + escapeHtml(pdf.structure || "[Estructura del contenido.]") + "</p></div>" +
       '<div><h3>Asignatura</h3><p>' + escapeHtml(subject.title || "") + "</p></div>" +
       '<div><h3>Programa</h3><p>' + escapeHtml(subject.program || "") + "</p></div>" +
       "</div></section>" +
@@ -1401,17 +1515,23 @@
 
   function pdfCss() {
     return `
-      /* ============ Tema editorial por facultad (variables) ============ */
+      /* ============ Paleta institucional UA (coherente con el SCORM) ============
+         Verde institucional + lima de marca en TODO el PDF. Cada facultad solo aporta
+         un acento SECUNDARIO sutil (--fac-accent2), nunca cambia el verde/lima base. */
       :root {
-        --fac-ink: #172006;        /* verde institucional profundo */
-        --fac-accent: #c0f500;     /* lima de marca */
-        --fac-gold: #f0b300;       /* dorado */
-        --fac-tint: #f4f7ec;       /* fondo de apoyo claro */
-        --fac-soft: #5f655b;       /* texto secundario */
+        --fac-ink: #1a2403;        /* verde institucional profundo (= SCORM primary-container) */
+        --fac-accent: #c0f500;     /* lima de marca (= SCORM secondary-fixed) */
+        --fac-lime-deep: #4f6600;  /* lima oscuro para texto sobre claro */
+        --fac-gold: #f0b300;       /* ámbar/dorado secundario */
+        --fac-tint: #f3f6ea;       /* fondo de apoyo claro (lima muy suave) */
+        --fac-tint2: #eef7d6;      /* lima muy claro para cajas */
+        --fac-soft: #5a5c52;       /* texto secundario */
+        --fac-line: #d7ddc8;       /* bordes/separadores */
+        --fac-accent2: #4f6600;    /* acento secundario por facultad (default verde) */
       }
-      body.pdf-fac-ingenieria  { --fac-ink:#0f2a3f; --fac-accent:#2bb7d4; --fac-gold:#f0b300; --fac-tint:#eef5f8; }
-      body.pdf-fac-economicas  { --fac-ink:#123a2a; --fac-accent:#33c08a; --fac-gold:#f0b300; --fac-tint:#edf6f1; }
-      body.pdf-fac-arquitectura{ --fac-ink:#3a2418; --fac-accent:#e08a3c; --fac-gold:#caa64a; --fac-tint:#f6f1ea; }
+      body.pdf-fac-ingenieria  { --fac-accent2:#2bb7d4; }
+      body.pdf-fac-economicas  { --fac-accent2:#33c08a; }
+      body.pdf-fac-arquitectura{ --fac-accent2:#e08a3c; }
 
       @page {
         size: 8.5in 11in;
@@ -1427,9 +1547,9 @@
         margin: 0;
         background: #e7e9e3;
         color: #1d2412;
-        font-family: Inter, Arial, sans-serif;
-        font-size: 10.5pt;
-        line-height: 1.5;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 11.5pt;
+        line-height: 1.62;
       }
       body { overflow-wrap: break-word; }
       .print-btn {
@@ -1437,10 +1557,19 @@
         right: 18px; top: 18px; z-index: 9;
         background: var(--fac-ink); color: #fff;
         border: 0; border-radius: 4px; padding: 9px 13px;
-        font: 700 10pt Montserrat, sans-serif;
+        font: 700 10pt Poppins, sans-serif;
       }
       .pdf-cover, .pdf-colophon, .pdf-toc, .pdf-divider, .pdf-page-section {
         width: 100%; background: #fff;
+      }
+
+      /* Portadas, separadores de tema, tabla de contenido y colofón: 100% Poppins (sans).
+         La serif (Playfair) es SOLO para el cuerpo/prosa de los temas, nunca en las portadas. */
+      .pdf-cover, .pdf-cover *,
+      .pdf-divider, .pdf-divider *,
+      .pdf-toc, .pdf-toc *,
+      .pdf-colophon, .pdf-colophon * {
+        font-family: Poppins, sans-serif;
       }
 
       /* ===================== PORTADA full-bleed ===================== */
@@ -1466,24 +1595,24 @@
       }
       .pdf-cover__top img { width: 42mm; height: auto; }
       .pdf-cover__top span {
-        font: 700 9pt Montserrat, sans-serif; text-transform: uppercase;
+        font: 700 9pt Poppins, sans-serif; text-transform: uppercase;
         letter-spacing: .14em; opacity: .92; text-align: right;
       }
       .pdf-cover__main { margin-top: auto; max-width: 150mm; }
       .pdf-cover__label {
         display: inline-block; margin: 0 0 6mm;
         background: var(--fac-accent); color: var(--fac-ink);
-        font: 800 9.5pt Montserrat, sans-serif; text-transform: uppercase; letter-spacing: .12em;
+        font: 800 9.5pt Poppins, sans-serif; text-transform: uppercase; letter-spacing: .12em;
         padding: 2mm 4mm; border-radius: 1mm;
       }
       .pdf-cover__title {
         margin: 0 0 6mm;
-        font: 600 38pt/1.04 Fraunces, Georgia, serif;
+        font: 800 38pt/1.04 Poppins, sans-serif; letter-spacing: -0.015em;
         text-shadow: 0 1mm 4mm rgba(0,0,0,.35);
         overflow-wrap: anywhere;
       }
       .pdf-cover__subject {
-        margin: 0; font: 700 15pt Montserrat, sans-serif;
+        margin: 0; font: 700 15pt Poppins, sans-serif;
         text-transform: uppercase; letter-spacing: .04em;
       }
       .pdf-cover__subtitle { margin: 4mm 0 0; font-size: 12pt; max-width: 140mm; opacity: .95; }
@@ -1491,7 +1620,7 @@
         position: relative; z-index: 1; margin-top: 14mm;
         display: flex; justify-content: space-between; gap: 6mm;
         border-top: .5mm solid rgba(255,255,255,.45); padding-top: 4mm;
-        font: 600 8.6pt Montserrat, sans-serif; text-transform: uppercase; letter-spacing: .06em;
+        font: 600 8.6pt Poppins, sans-serif; text-transform: uppercase; letter-spacing: .06em;
       }
 
       /* ===================== COLOFÓN / PROPÓSITO ===================== */
@@ -1507,7 +1636,7 @@
       }
       .pdf-colophon__grid h3 {
         margin: 0 0 2.5mm; color: var(--fac-ink);
-        font: 800 11pt Montserrat, sans-serif; text-transform: uppercase; letter-spacing: .04em;
+        font: 800 11pt Poppins, sans-serif; text-transform: uppercase; letter-spacing: .04em;
         padding-left: 3mm; border-left: 1.6mm solid var(--fac-accent);
       }
       .pdf-colophon__grid p { margin: 0; color: #3b4233; }
@@ -1520,11 +1649,11 @@
       .pdf-toc__head { margin-bottom: 12mm; }
       .pdf-toc__kicker {
         display: block; color: var(--fac-soft);
-        font: 700 9pt Montserrat, sans-serif; text-transform: uppercase; letter-spacing: .12em;
+        font: 700 9pt Poppins, sans-serif; text-transform: uppercase; letter-spacing: .12em;
         margin-bottom: 2mm;
       }
       .pdf-toc__head h1 {
-        margin: 0; font: 600 30pt Fraunces, Georgia, serif; color: var(--fac-ink);
+        margin: 0; font: 800 30pt Poppins, sans-serif; letter-spacing: -0.015em; color: var(--fac-ink);
       }
       .pdf-toc__head h1:after {
         content: ''; display: block; width: 34mm; height: 1.6mm;
@@ -1538,10 +1667,10 @@
         padding: 4mm 0; border-bottom: .3mm solid #e2e6db;
       }
       .pdf-toc__num {
-        font: 800 16pt Montserrat, sans-serif; color: var(--fac-accent);
+        font: 800 16pt Poppins, sans-serif; color: var(--fac-accent);
         -webkit-text-stroke: .3mm var(--fac-ink); min-width: 14mm;
       }
-      .pdf-toc__title { font: 600 12.5pt Montserrat, sans-serif; flex: 0 1 auto; }
+      .pdf-toc__title { font: 600 12.5pt Poppins, sans-serif; flex: 0 1 auto; }
       .pdf-toc__dots { flex: 1; border-bottom: .3mm dotted #b9bfb0; transform: translateY(-1mm); }
 
       /* ===================== SEPARADOR DE TEMA (full page) ===================== */
@@ -1562,15 +1691,15 @@
       }
       .pdf-divider__body { position: relative; z-index: 1; max-width: 150mm; }
       .pdf-divider__eyebrow {
-        display: block; font: 700 9.5pt Montserrat, sans-serif;
+        display: block; font: 700 9.5pt Poppins, sans-serif;
         text-transform: uppercase; letter-spacing: .16em; opacity: .92; margin-bottom: 5mm;
       }
       .pdf-divider__num {
-        display: block; font: 900 84pt/0.9 Montserrat, sans-serif;
+        display: block; font: 900 84pt/0.9 Poppins, sans-serif;
         color: var(--fac-accent); text-shadow: 0 1mm 6mm rgba(0,0,0,.4);
       }
       .pdf-divider__title {
-        margin: 4mm 0 0; font: 600 30pt/1.08 Fraunces, Georgia, serif;
+        margin: 4mm 0 0; font: 800 30pt/1.08 Poppins, sans-serif; letter-spacing: -0.015em;
         text-shadow: 0 1mm 4mm rgba(0,0,0,.4); overflow-wrap: anywhere;
       }
       .pdf-divider__lead { margin-top: 6mm; max-width: 140mm; font-size: 11.5pt; opacity: .95; }
@@ -1584,30 +1713,41 @@
         border-bottom: 1.4mm solid var(--fac-accent);
         padding-bottom: 4mm; margin-bottom: 7mm;
       }
+      /* Marca de agua de la U a la derecha del encabezado, opacidad reducida (no se ve vacío). */
+      .pdf-section-opener__mark {
+        margin-left: auto; width: 30mm; height: auto; opacity: 0.18; flex: 0 0 auto;
+        align-self: center;
+      }
       .pdf-section-opener__num {
-        font: 900 26pt Montserrat, sans-serif; color: var(--fac-ink);
+        font: 900 26pt Poppins, sans-serif; color: var(--fac-ink);
         line-height: 1;
       }
       .pdf-h2 {
         margin: 0; flex: 1;
-        font: 600 21pt/1.1 Fraunces, Georgia, serif; color: var(--fac-ink);
-        overflow-wrap: anywhere;
+        font: 800 25pt/1.08 Poppins, sans-serif; color: var(--fac-ink);
+        letter-spacing: -0.015em; overflow-wrap: anywhere;
       }
       .pdf-intro {
-        font-size: 11pt; color: #2b3122; margin-bottom: 5mm;
+        font-size: 12pt; line-height: 1.62; color: #2b3122; margin-bottom: 6mm;
       }
-      .pdf-intro p:first-child::first-letter {
-        float: left; font: 600 30pt/0.8 Fraunces, Georgia, serif;
-        color: var(--fac-ink); padding: 1mm 2mm 0 0;
+      /* Primer párrafo de la intro destacado (lead), SIN capitular de libro clásico. */
+      .pdf-intro p:first-child {
+        font-size: 12.5pt; line-height: 1.6; color: #232a1a;
       }
+      /* Subtítulos con jerarquía marcada: eyebrow lima + título grande, para romper la monotonía. */
       .pdf-h3 {
-        margin: 7mm 0 2.5mm;
+        margin: 8mm 0 3mm;
         color: var(--fac-ink);
-        font: 700 13pt Fraunces, Georgia, serif;
+        font: 800 16pt/1.15 Poppins, sans-serif; letter-spacing: -0.01em;
+        padding-left: 3.5mm; border-left: 2mm solid var(--fac-accent);
+      }
+      .pdf-h3::before {
+        content: ""; display: block; width: 9mm; height: 1.1mm;
+        background: var(--fac-gold); border-radius: 99px; margin: 0 0 2mm;
       }
       .pdf-intro p,
       .pdf-component p {
-        margin: 0 0 3mm;
+        margin: 0 0 4mm;
       }
       .pdf-component {
         margin: 5mm 0;
@@ -1618,35 +1758,151 @@
       .pdf-box {
         border: 1px solid #dfe4d9;
         border-left: 2.5mm solid var(--fac-accent);
-        border-radius: 3px;
-        padding: 3mm;
-        margin: 3mm 0;
+        border-radius: 3.5mm;
+        padding: 4mm 4.5mm;
+        margin: 4mm 0;
         background: #fff;
         break-inside: avoid;
         page-break-inside: avoid;
       }
       .pdf-box h4 {
         margin: 0 0 2mm;
-        font: 800 10.5pt Montserrat, sans-serif;
+        font: 800 11.5pt Poppins, sans-serif;
       }
       .pdf-example,
       .pdf-practice,
       .pdf-callout {
         border: 1px solid #dfe4d9;
-        border-radius: 3px;
-        padding: 3mm;
-        margin: 3mm 0;
+        border-radius: 3.5mm;
+        padding: 4mm 4.5mm;
+        margin: 4mm 0;
         break-inside: avoid;
         page-break-inside: avoid;
       }
       .pdf-example {
-        background: #eaf9fc;
-        border-left: 2.5mm solid #00a8b8;
+        background: var(--fac-tint);
+        border-left: 2.5mm solid var(--fac-gold);
       }
       .pdf-practice {
         background: var(--fac-tint);
         border-left: 2.5mm solid var(--fac-accent);
       }
+      /* Ejercicios por tipo (kind): tarjeta con badge circular de color, etiqueta y banda lateral. */
+      .pdf-ex { position: relative; }
+      .pdf-ex__head {
+        display: flex; align-items: center; gap: 2.5mm; margin: 0 0 2.5mm;
+        padding-bottom: 1.5mm; border-bottom: 0.3mm solid rgba(0,0,0,0.08);
+      }
+      .pdf-ex__badge {
+        flex: 0 0 auto; width: 7mm; height: 7mm; border-radius: 50%;
+        display: inline-flex; align-items: center; justify-content: center;
+        font-size: 10pt; line-height: 1; background: #fff;
+        box-shadow: inset 0 0 0 0.5mm currentColor;
+      }
+      .pdf-ex__label {
+        font: 800 8pt Poppins, sans-serif; text-transform: uppercase;
+        letter-spacing: 0.08em; color: var(--fac-ink);
+      }
+      .pdf-ex__title { font: 500 9.5pt Poppins, sans-serif; color: var(--fac-soft); }
+      /* Cada tipo: color de banda izquierda, fondo suave y color del badge (currentColor del head). */
+      .pdf-practice.pdf-ex { background: #fff; border: 0.3mm solid var(--fac-line); border-left: 2.5mm solid var(--fac-accent); }
+      .pdf-ex-practico   { border-left-color: var(--fac-lime-deep); }
+      .pdf-ex-practico   .pdf-ex__badge { color: var(--fac-lime-deep); }
+      .pdf-ex-codigo     { border-left-color: #1a2403; background: #f4f6ef !important; }
+      .pdf-ex-codigo     .pdf-ex__badge { color: #1a2403; }
+      .pdf-ex-consulta   { border-left-color: #0a7d8c; background: #eef9fb !important; }
+      .pdf-ex-consulta   .pdf-ex__badge { color: #0a7d8c; }
+      .pdf-ex-investigacion { border-left-color: #c98a00; background: #fff8e6 !important; }
+      .pdf-ex-investigacion .pdf-ex__badge { color: #c98a00; }
+      .pdf-ex-reflexion  { border-left-color: #6a4fd6; background: #f5f2ff !important; }
+      .pdf-ex-reflexion  .pdf-ex__badge { color: #6a4fd6; }
+      .pdf-ex-analisis   { border-left-color: #1f8fb0; background: #eef7fb !important; }
+      .pdf-ex-analisis   .pdf-ex__badge { color: #1f8fb0; }
+      .pdf-ex-steps { margin: 2mm 0 0 4mm; padding: 0; font-size: 9.5pt; color: #2b3122; }
+      .pdf-ex-steps li { margin: 0 0 1.2mm; }
+
+      /* ===================== Pregunta detonadora (banner verde oscuro) ===================== */
+      .pdf-trigger {
+        margin: 4mm 0 6mm; padding: 5mm 6mm; border-radius: 4mm;
+        background: var(--fac-ink); color: #fff; border-left: 3mm solid var(--fac-accent);
+        break-inside: avoid; page-break-inside: avoid;
+      }
+      .pdf-trigger__eyebrow {
+        display: block; margin-bottom: 2mm;
+        font: 800 8.5pt Poppins, sans-serif; text-transform: uppercase;
+        letter-spacing: 0.12em; color: var(--fac-accent);
+      }
+      .pdf-trigger__q {
+        margin: 0; font: 700 15pt/1.25 Poppins, sans-serif; color: #fff;
+      }
+
+      /* ===================== Caja llamativa (key-box) ===================== */
+      .pdf-keybox {
+        margin: 5mm 0; padding: 4.5mm 5mm; border-radius: 4mm;
+        background: var(--fac-tint2); border: 0.3mm solid var(--fac-line);
+        border-left: 3mm solid var(--fac-accent);
+        break-inside: avoid; page-break-inside: avoid;
+      }
+      .pdf-keybox__head { display: flex; align-items: center; gap: 2.5mm; margin: 0 0 2mm; }
+      .pdf-keybox__icon {
+        font-size: 11pt; line-height: 1; width: 7mm; height: 7mm; flex: 0 0 auto;
+        display: inline-flex; align-items: center; justify-content: center;
+        background: #fff; border-radius: 50%; box-shadow: 0 0 0 0.4mm var(--fac-line);
+      }
+      .pdf-keybox__eyebrow {
+        font: 800 8.5pt Poppins, sans-serif; text-transform: uppercase;
+        letter-spacing: 0.1em; color: var(--fac-lime-deep);
+      }
+      .pdf-keybox__title { margin: 0 0 2mm; font: 800 13pt Poppins, sans-serif; color: var(--fac-ink); }
+      .pdf-keybox__body { font-size: 11pt; line-height: 1.55; color: #2b3122; }
+      .pdf-keybox__body p { margin: 0 0 2.5mm; }
+      .pdf-keybox--dato      { background: #eef7fb; border-left-color: var(--fac-gold); }
+      .pdf-keybox--dato .pdf-keybox__eyebrow { color: #b3261e; }
+      .pdf-keybox--industria { background: #f4f6ef; border-left-color: #1a2403; }
+      .pdf-keybox--alerta    { background: #fff4e6; border-left-color: var(--fac-gold); }
+      .pdf-keybox--alerta .pdf-keybox__eyebrow { color: #b3261e; }
+      .pdf-keybox--tip       { background: #fff8e6; border-left-color: var(--fac-gold); }
+      .pdf-keybox--definicion{ background: #eef7fb; border-left-color: var(--fac-accent2); }
+
+      /* ===================== Disposición a 2 columnas (tarjetas lado a lado) ===================== */
+      /* Flex real: las dos celdas quedan UNA AL LADO DE LA OTRA, no apiladas. */
+      .pdf-2col {
+        display: flex; gap: 6mm; margin: 3mm 0; align-items: stretch;
+        break-inside: avoid; page-break-inside: avoid;
+      }
+      /* Tarjetas: cada celda ocupa la mitad, contenedor redondeado moderno. */
+      .pdf-2col__cell {
+        flex: 1 1 0; min-width: 0; break-inside: avoid; padding: 4mm 4.5mm;
+        background: #fff; border: 0.3mm solid var(--fac-line);
+        border-radius: 4mm; border-top: 2mm solid var(--fac-accent);
+      }
+      .pdf-2col__cell p:last-child { margin-bottom: 0; }
+      .pdf-2col__title { margin: 0 0 2mm; font: 800 11.5pt Poppins, sans-serif; color: var(--fac-ink); }
+      .pdf-2col p { margin: 0 0 2.5mm; font-size: 10.5pt; line-height: 1.55; }
+
+      /* Prosa a 2 columnas tipo periódico (column-flow): el texto continúa de columna a columna.
+         Aquí SÍ es correcto column-count (es prosa continua, no tarjetas con break-inside). */
+      .pdf-colflow {
+        column-count: 2; column-gap: 8mm; column-rule: 0.3mm solid var(--fac-line);
+        margin: 3mm 0; text-align: justify; hyphens: auto;
+      }
+      .pdf-colflow p { margin: 0 0 3mm; font-size: 10.5pt; line-height: 1.55; }
+      .pdf-colflow p:first-child { margin-top: 0; }
+
+      /* ===================== Cifras destacadas (data-highlight) ===================== */
+      .pdf-stats { display: flex; flex-wrap: wrap; gap: 4mm; margin: 4mm 0; }
+      .pdf-stat {
+        flex: 1 1 40mm; min-width: 40mm; padding: 4.5mm 5mm; border-radius: 4mm;
+        background: var(--fac-ink); color: #fff; break-inside: avoid;
+        display: flex; flex-direction: column; justify-content: flex-start;
+      }
+      /* Número grande pero que TOLERA cifras largas: se reduce y parte sin desbordar la tarjeta. */
+      .pdf-stat__num {
+        display: block; font: 800 23pt/1.02 Poppins, sans-serif; color: var(--fac-accent);
+        overflow-wrap: anywhere; word-break: break-word; hyphens: none;
+      }
+      .pdf-stat--long .pdf-stat__num { font-size: 15pt; }
+      .pdf-stat__label { display: block; margin-top: 2.5mm; font: 600 9pt Poppins, sans-serif; color: rgba(255,255,255,0.9); }
       .pdf-callout {
         background: var(--fac-tint);
         border-left: 2.5mm solid var(--fac-accent);
@@ -1666,7 +1922,7 @@
       .pdf-callout h4 {
         margin: 0 0 2mm;
         color: var(--fac-ink);
-        font: 800 10.5pt Montserrat, sans-serif;
+        font: 800 10.5pt Poppins, sans-serif;
       }
       .pdf-bullets,
       .pdf-numbered {
@@ -1795,12 +2051,12 @@
       .pdf-image-placeholder strong {
         display: block;
         margin-bottom: 2mm;
-        font: 800 9.5pt Montserrat, sans-serif;
+        font: 800 9.5pt Poppins, sans-serif;
         text-transform: uppercase;
       }
       .pdf-code-meta {
         color: #5f655b;
-        font: 700 8.5pt Montserrat, sans-serif;
+        font: 700 8.5pt Poppins, sans-serif;
         text-transform: uppercase;
       }
       .pdf-code {
@@ -1833,10 +2089,10 @@
       .pdf-metric strong {
         display: block;
         color: var(--fac-accent);
-        font: 800 16pt Montserrat, sans-serif;
+        font: 800 16pt Poppins, sans-serif;
       }
       .pdf-metric span {
-        font: 700 8.5pt Montserrat, sans-serif;
+        font: 700 8.5pt Poppins, sans-serif;
         text-transform: uppercase;
       }
 
@@ -1847,12 +2103,12 @@
       @page {
         @bottom-center {
           content: counter(page);
-          font: 600 8.5pt Montserrat, sans-serif;
+          font: 600 8.5pt Poppins, sans-serif;
           color: #8a9080;
         }
         @bottom-left {
           content: "Universidad de América";
-          font: 600 7.5pt Montserrat, sans-serif;
+          font: 600 7.5pt Poppins, sans-serif;
           color: #b3b8ab;
         }
       }

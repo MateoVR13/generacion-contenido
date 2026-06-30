@@ -1,130 +1,249 @@
 {
   "asignatura": "Algoritmia Computacional I",
-  "tipo": "diagnostica",
-  "estado": "propuesto",
+  "tipo": "diagnóstica (revisión automática)",
   "contestadas": 10,
-  "banco": 15,
-  "descripcion": "Banco diagnóstico de prerrequisitos (saberes previos: Álgebra Lineal y lógica/fundamentos básicos). El estudiante contesta 10 de 15 (aleatorias). Revisión automática, retroalimentación por pregunta. NO se publica sin validación docente.",
+  "totalBanco": 15,
+  "instrucciones": "Esta evaluación diagnóstica NO afecta tu nota. Su objetivo es identificar los conocimientos previos (prerrequisitos) con los que llegas al curso: razonamiento lógico-matemático, lógica proposicional básica, secuencias y patrones, aritmética y álgebra básica, nociones de conjuntos y orden, seguimiento de pasos (razonamiento algorítmico cotidiano), tablas de verdad simples y nociones introductorias de Álgebra Lineal (vectores y matrices). El banco contiene 15 preguntas de opción múltiple; el sistema te presentará 10 seleccionadas y registrará tu desempeño para orientar el acompañamiento inicial. Lee cada enunciado con atención, elige UNA sola opción (A, B, C o D) y revisa la retroalimentación. No uses calculadora ni programación: razona a mano. Tiempo sugerido: 20 minutos.",
   "preguntas": [
     {
-      "id": "D1", "prerrequisito": "Álgebra Lineal — matrices",
-      "enunciado": "Una matriz de tamaño 3×4 tiene:",
-      "opciones": ["3 elementos", "4 elementos", "12 elementos", "7 elementos"],
-      "correcta": 2,
-      "retroPositiva": "Correcto: filas × columnas = 3 × 4 = 12 elementos. Esta noción será clave para arreglos multidimensionales (Tema 5).",
-      "retroNegativa": "Una matriz m×n tiene m×n elementos (filas por columnas). Repasa representación de matrices (M4 / Álgebra Lineal)."
+      "id": "Q01",
+      "prerrequisito": "Razonamiento algorítmico cotidiano (seguir pasos en orden)",
+      "enunciado": "Un algoritmo es una secuencia ordenada y finita de pasos para resolver un problema. De las siguientes 'recetas', ¿cuál NO puede considerarse un algoritmo válido?",
+      "opciones": [
+        { "clave": "A", "texto": "Para hacer un té: 1) hervir agua, 2) poner la bolsa en la taza, 3) verter el agua, 4) esperar 3 minutos." },
+        { "clave": "B", "texto": "Para sumar dos números: 1) tomar el primero, 2) tomar el segundo, 3) entregar su suma." },
+        { "clave": "C", "texto": "Para ordenar una fila: 1) sigue mezclando a las personas hasta que estés conforme, sin un criterio definido." },
+        { "clave": "D", "texto": "Para entrar a clase virtual: 1) abrir el navegador, 2) ir al enlace, 3) ingresar usuario y contraseña, 4) pulsar 'Unirse'." }
+      ],
+      "respuestaCorrecta": "C",
+      "retroalimentacion": {
+        "correcta": "Correcto. Un algoritmo debe ser preciso (cada paso bien definido) y finito (termina). 'Mezclar hasta estar conforme, sin criterio' no es preciso ni garantiza terminación, por lo que no es un algoritmo válido.",
+        "incorrecta": "Repasa las propiedades de un algoritmo: finitud, precisión (pasos no ambiguos) y orden. La opción C falla porque no define cuándo termina ni con qué criterio actuar. Material de refuerzo: Tema 1 'Fundamentos del algoritmo y su representación'."
+      }
     },
     {
-      "id": "D2", "prerrequisito": "Lógica — proposiciones",
-      "enunciado": "La expresión lógica «(V Y F)» (verdadero AND falso) evalúa a:",
-      "opciones": ["Verdadero", "Falso", "Indeterminado", "Error"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: AND es verdadero solo si ambos son verdaderos. Fundamento de las estructuras selectivas (Tema 3).",
-      "retroNegativa": "El operador AND (Y) solo da verdadero si AMBOS operandos son verdaderos. Repasa tablas de verdad."
+      "id": "Q02",
+      "prerrequisito": "Lógica proposicional básica (conectivos y negación)",
+      "enunciado": "Sea $p$: 'llueve' y $q$: 'llevo paraguas'. ¿Cuál enunciado corresponde a la proposición $p \\rightarrow q$ (si $p$ entonces $q$)?",
+      "opciones": [
+        { "clave": "A", "texto": "Llueve y llevo paraguas." },
+        { "clave": "B", "texto": "Si llueve, entonces llevo paraguas." },
+        { "clave": "C", "texto": "Llueve o llevo paraguas." },
+        { "clave": "D", "texto": "No llueve." }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. El conectivo condicional $p \\rightarrow q$ se lee 'si $p$ entonces $q$', donde $p$ es el antecedente y $q$ el consecuente.",
+        "incorrecta": "Distingue los conectivos: conjunción $\\land$ ('y'), disyunción $\\lor$ ('o'), negación $\\neg$ ('no') y condicional $\\rightarrow$ ('si...entonces'). La forma 'si...entonces' es el condicional. Material de refuerzo: lógica proposicional, base del Tema 3 'Estructuras selectivas y de control'."
+      }
     },
     {
-      "id": "D3", "prerrequisito": "Lógica — operador OR",
-      "enunciado": "La expresión «(F O V)» (falso OR verdadero) evalúa a:",
-      "opciones": ["Falso", "Verdadero", "Error", "Indeterminado"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: OR es verdadero si al menos uno lo es. Lo usarás en condiciones compuestas (Tema 3).",
-      "retroNegativa": "El operador OR (O) da verdadero si al menos un operando es verdadero. Repasa tablas de verdad."
+      "id": "Q03",
+      "prerrequisito": "Tablas de verdad simples (conjunción)",
+      "enunciado": "En una tabla de verdad, ¿en qué caso la conjunción $p \\land q$ es VERDADERA?",
+      "opciones": [
+        { "clave": "A", "texto": "Solo cuando $p$ es verdadera y $q$ es falsa." },
+        { "clave": "B", "texto": "Cuando al menos una de las dos es verdadera." },
+        { "clave": "C", "texto": "Únicamente cuando $p$ y $q$ son ambas verdaderas." },
+        { "clave": "D", "texto": "Cuando ambas son falsas." }
+      ],
+      "respuestaCorrecta": "C",
+      "retroalimentacion": {
+        "correcta": "Correcto. La conjunción $p \\land q$ es verdadera solo si AMBAS proposiciones son verdaderas; en cualquier otro caso es falsa.",
+        "incorrecta": "Recuerda: la conjunción ('y') exige que las dos sean verdaderas. 'Al menos una verdadera' describe la disyunción $\\lor$ ('o'). Material de refuerzo: tablas de verdad, prerrequisito de las condiciones lógicas del Tema 3."
+      }
     },
     {
-      "id": "D4", "prerrequisito": "Aritmética — módulo",
-      "enunciado": "El residuo de dividir 17 entre 5 (17 mód 5) es:",
-      "opciones": ["2", "3", "1", "0"],
-      "correcta": 0,
-      "retroPositiva": "Correcto: 17 = 5×3 + 2, residuo 2. El operador módulo es útil para detectar pares/múltiplos en algoritmos.",
-      "retroNegativa": "17 = 5×3 + 2 → residuo 2. Repasa división entera y residuo (operador módulo)."
+      "id": "Q04",
+      "prerrequisito": "Secuencias y patrones numéricos",
+      "enunciado": "Observa la secuencia: $2, 5, 8, 11, \\ldots$ ¿Cuál es el siguiente término?",
+      "opciones": [
+        { "clave": "A", "texto": "$13$" },
+        { "clave": "B", "texto": "$15$" },
+        { "clave": "C", "texto": "$22$" },
+        { "clave": "D", "texto": "$14$" }
+      ],
+      "respuestaCorrecta": "D",
+      "retroalimentacion": {
+        "correcta": "Correcto. Es una progresión aritmética con diferencia constante $+3$: $11 + 3 = 14$.",
+        "incorrecta": "Busca la regla del patrón: cada término aumenta en $3$ ($2 \\to 5 \\to 8 \\to 11$). Por tanto el siguiente es $11+3=14$. Reconocer patrones prepara para entender ciclos e iteración (Tema 3)."
+      }
     },
     {
-      "id": "D5", "prerrequisito": "Resolución de problemas — secuencia",
-      "enunciado": "Para preparar café, el orden correcto de pasos sería:",
-      "opciones": ["Servir, calentar agua, agregar café", "Calentar agua, agregar café, servir", "Agregar café, servir, calentar agua", "Servir, agregar café, calentar agua"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: el orden de los pasos importa. Esa es la esencia de un algoritmo (Tema 1).",
-      "retroNegativa": "Un algoritmo es una secuencia ORDENADA de pasos; el resultado depende del orden. Repasa la noción de algoritmo."
+      "id": "Q05",
+      "prerrequisito": "Aritmética básica (jerarquía de operaciones)",
+      "enunciado": "Evalúa respetando la jerarquía de operaciones: $3 + 4 \\times 2 - 1 = \\ ?$",
+      "opciones": [
+        { "clave": "A", "texto": "$13$" },
+        { "clave": "B", "texto": "$9$" },
+        { "clave": "C", "texto": "$10$" },
+        { "clave": "D", "texto": "$12$" }
+      ],
+      "respuestaCorrecta": "C",
+      "retroalimentacion": {
+        "correcta": "Correcto. Primero la multiplicación: $4 \\times 2 = 8$; luego $3 + 8 - 1 = 10$.",
+        "incorrecta": "Aplica la jerarquía (PEMDAS): primero multiplicación y división, después suma y resta. $4\\times 2 = 8$, entonces $3+8-1=10$. Esta jerarquía también rige las expresiones en programación. Material de refuerzo: aritmética básica."
+      }
     },
     {
-      "id": "D6", "prerrequisito": "Álgebra Lineal — vectores",
-      "enunciado": "Un vector con 5 componentes se puede representar en programación como:",
-      "opciones": ["Un solo número", "Una lista/arreglo de 5 elementos", "Una matriz 5×5", "Una condición"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: un vector se modela como una lista/arreglo unidimensional (Tema 4).",
-      "retroNegativa": "Un vector de n componentes se modela como un arreglo/lista de n elementos. Repasa vectores."
+      "id": "Q06",
+      "prerrequisito": "Álgebra básica (despeje de ecuaciones lineales)",
+      "enunciado": "Resuelve para $x$ en la ecuación $2x + 3 = 11$.",
+      "opciones": [
+        { "clave": "A", "texto": "$x = 4$" },
+        { "clave": "B", "texto": "$x = 7$" },
+        { "clave": "C", "texto": "$x = 5$" },
+        { "clave": "D", "texto": "$x = 14$" }
+      ],
+      "respuestaCorrecta": "A",
+      "retroalimentacion": {
+        "correcta": "Correcto. Restas $3$ a ambos lados: $2x = 8$; divides entre $2$: $x = 4$.",
+        "incorrecta": "Para despejar, aísla la variable haciendo la misma operación en ambos lados: $2x+3=11 \\Rightarrow 2x=8 \\Rightarrow x=4$. Material de refuerzo: ecuaciones lineales de primer grado."
+      }
     },
     {
-      "id": "D7", "prerrequisito": "Lógica — comparación",
-      "enunciado": "¿Cuál condición es verdadera si x = 7?",
-      "opciones": ["x > 10", "x == 5", "x < 10", "x != 7"],
-      "correcta": 2,
-      "retroPositiva": "Correcto: 7 < 10 es verdadero. Las comparaciones gobiernan las decisiones (Tema 3).",
-      "retroNegativa": "Evalúa cada comparación con x=7: solo «x < 10» es verdadera. Repasa operadores relacionales."
+      "id": "Q07",
+      "prerrequisito": "Nociones de conjuntos (intersección)",
+      "enunciado": "Sean los conjuntos $A = \\{1, 2, 3, 4\\}$ y $B = \\{3, 4, 5, 6\\}$. ¿Cuál es $A \\cap B$ (la intersección)?",
+      "opciones": [
+        { "clave": "A", "texto": "$\\{1, 2, 3, 4, 5, 6\\}$" },
+        { "clave": "B", "texto": "$\\{3, 4\\}$" },
+        { "clave": "C", "texto": "$\\{1, 2\\}$" },
+        { "clave": "D", "texto": "$\\{5, 6\\}$" }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. La intersección $A \\cap B$ contiene los elementos que están en AMBOS conjuntos: $3$ y $4$.",
+        "incorrecta": "La intersección $\\cap$ toma solo los elementos comunes a los dos conjuntos. La unión $\\cup$ (todos los elementos) sería $\\{1,2,3,4,5,6\\}$. Material de refuerzo: teoría de conjuntos, base de estructuras de datos (Tema 4)."
+      }
     },
     {
-      "id": "D8", "prerrequisito": "Aritmética — porcentaje",
-      "enunciado": "El 20% de 50 es:",
-      "opciones": ["5", "10", "20", "100"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: 0,20 × 50 = 10. Cálculos así aparecen en ejercicios de programación.",
-      "retroNegativa": "20% = 0,20; 0,20 × 50 = 10. Repasa porcentajes."
+      "id": "Q08",
+      "prerrequisito": "Nociones de orden y comparación",
+      "enunciado": "¿Cuál de las siguientes desigualdades es VERDADERA?",
+      "opciones": [
+        { "clave": "A", "texto": "$-3 > -1$" },
+        { "clave": "B", "texto": "$0 > 2$" },
+        { "clave": "C", "texto": "$-5 < -2$" },
+        { "clave": "D", "texto": "$\\tfrac{1}{2} > 1$" }
+      ],
+      "respuestaCorrecta": "C",
+      "retroalimentacion": {
+        "correcta": "Correcto. En la recta numérica $-5$ está más a la izquierda que $-2$, por lo que $-5 < -2$.",
+        "incorrecta": "Con números negativos, cuanto mayor es el valor absoluto, MENOR es el número: $-5 < -2$. Las comparaciones son la base de los operadores relacionales en programación. Material de refuerzo: orden en los números reales."
+      }
     },
     {
-      "id": "D9", "prerrequisito": "Resolución de problemas — variables",
-      "enunciado": "Si una variable «contador» vale 3 y se incrementa en 1 dos veces, queda en:",
-      "opciones": ["3", "4", "5", "6"],
-      "correcta": 2,
-      "retroPositiva": "Correcto: 3 → 4 → 5. La actualización de variables es base de los ciclos (Tema 3).",
-      "retroNegativa": "Cada incremento suma 1: 3+1+1 = 5. Repasa el concepto de variable y actualización."
+      "id": "Q09",
+      "prerrequisito": "Nociones básicas de Álgebra Lineal (vectores: suma)",
+      "enunciado": "Dados los vectores $\\vec{u} = (2, 3)$ y $\\vec{v} = (1, 4)$, calcula $\\vec{u} + \\vec{v}$.",
+      "opciones": [
+        { "clave": "A", "texto": "$(2, 12)$" },
+        { "clave": "B", "texto": "$(3, 7)$" },
+        { "clave": "C", "texto": "$(1, 1)$" },
+        { "clave": "D", "texto": "$(3, 12)$" }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. Los vectores se suman componente a componente: $(2+1,\\ 3+4) = (3, 7)$.",
+        "incorrecta": "La suma de vectores se hace coordenada por coordenada: la primera con la primera y la segunda con la segunda. $(2+1, 3+4) = (3,7)$. Material de refuerzo: fundamentos de Álgebra Lineal (vectores)."
+      }
     },
     {
-      "id": "D10", "prerrequisito": "Lógica — negación",
-      "enunciado": "Si la afirmación «está lloviendo» es verdadera, su negación «NO está lloviendo» es:",
-      "opciones": ["Verdadera", "Falsa", "Ambas", "Ninguna"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: la negación invierte el valor de verdad. Útil en condiciones (Tema 3).",
-      "retroNegativa": "La negación (NOT) invierte el valor: si es verdadero, su negación es falsa. Repasa el operador NOT."
+      "id": "Q10",
+      "prerrequisito": "Nociones básicas de Álgebra Lineal (dimensiones de una matriz)",
+      "enunciado": "Una matriz se describe como '$m \\times n$' ($m$ filas por $n$ columnas). ¿Qué dimensión tiene la matriz $\\begin{pmatrix} 1 & 0 & 2 \\\\ 4 & 5 & 6 \\end{pmatrix}$?",
+      "opciones": [
+        { "clave": "A", "texto": "$3 \\times 2$" },
+        { "clave": "B", "texto": "$6 \\times 1$" },
+        { "clave": "C", "texto": "$2 \\times 3$" },
+        { "clave": "D", "texto": "$2 \\times 2$" }
+      ],
+      "respuestaCorrecta": "C",
+      "retroalimentacion": {
+        "correcta": "Correcto. La matriz tiene 2 filas y 3 columnas, por lo que su dimensión es $2 \\times 3$.",
+        "incorrecta": "El orden es FILAS por COLUMNAS. Aquí hay 2 filas (horizontales) y 3 columnas (verticales): $2 \\times 3$. Esta noción se reutiliza en arreglos multidimensionales. Material de refuerzo: matrices (Álgebra Lineal) y Tema 4."
+      }
     },
     {
-      "id": "D11", "prerrequisito": "Álgebra Lineal — suma de matrices",
-      "enunciado": "Para sumar dos matrices, deben tener:",
-      "opciones": ["Cualquier tamaño", "El mismo número de filas y columnas", "Solo el mismo número de filas", "Determinante igual"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: la suma exige igual dimensión. Lo aplicarás en operaciones matriciales (Tema 5).",
-      "retroNegativa": "Dos matrices se suman solo si tienen las mismas dimensiones (m×n). Repasa operaciones con matrices."
+      "id": "Q11",
+      "prerrequisito": "Lógica proposicional (negación de un cuantificador / condicional)",
+      "enunciado": "Si la afirmación 'Todos los estudiantes aprobaron' es FALSA, ¿qué se puede concluir con certeza?",
+      "opciones": [
+        { "clave": "A", "texto": "Ningún estudiante aprobó." },
+        { "clave": "B", "texto": "Al menos un estudiante NO aprobó." },
+        { "clave": "C", "texto": "Todos los estudiantes reprobaron." },
+        { "clave": "D", "texto": "Exactamente la mitad aprobó." }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. La negación de 'todos cumplen' es 'al menos uno no cumple'; no implica que ninguno haya aprobado.",
+        "incorrecta": "Negar un cuantificador universal ('todos') produce un existencial ('al menos uno no'). Que sea falso que 'todos aprobaron' solo garantiza que hubo al menos un caso que no aprobó. Material de refuerzo: cuantificadores y negación lógica."
+      }
     },
     {
-      "id": "D12", "prerrequisito": "Resolución de problemas — entrada/salida",
-      "enunciado": "En un algoritmo, los «datos de entrada» son:",
-      "opciones": ["El resultado final", "La información que recibe para procesar", "Un error", "El nombre del programa"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: entrada = datos que recibe; el algoritmo los procesa y produce una salida (Tema 1).",
-      "retroNegativa": "Un algoritmo recibe ENTRADAS, las procesa y produce SALIDAS. Repasa el modelo entrada-proceso-salida."
+      "id": "Q12",
+      "prerrequisito": "Razonamiento algorítmico (trazado / seguir pasos con variables)",
+      "enunciado": "Sigue estos pasos: 1) $x = 5$; 2) $x = x + 3$; 3) $x = x \\times 2$. ¿Cuál es el valor final de $x$?",
+      "opciones": [
+        { "clave": "A", "texto": "$16$" },
+        { "clave": "B", "texto": "$13$" },
+        { "clave": "C", "texto": "$26$" },
+        { "clave": "D", "texto": "$10$" }
+      ],
+      "respuestaCorrecta": "A",
+      "retroalimentacion": {
+        "correcta": "Correcto. Paso a paso: $x=5$, luego $x=5+3=8$, luego $x=8\\times 2=16$.",
+        "incorrecta": "Ejecuta los pasos en orden, actualizando el valor de $x$ en cada uno: $5 \\to 8 \\to 16$. Cuidado: en el paso 3 se multiplica el valor YA actualizado ($8$), no el original. Esto es 'trazado de escritorio'. Material de refuerzo: Tema 1 (trazado) y noción de variable."
+      }
     },
     {
-      "id": "D13", "prerrequisito": "Aritmética — orden de operaciones",
-      "enunciado": "El valor de «2 + 3 × 4» es:",
-      "opciones": ["20", "14", "24", "9"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: primero la multiplicación (3×4=12), luego 2+12=14. La precedencia importa en expresiones (Tema 2).",
-      "retroNegativa": "Por precedencia, la multiplicación va antes: 3×4=12, luego +2 = 14. Repasa el orden de operaciones."
+      "id": "Q13",
+      "prerrequisito": "Aritmética básica (porcentajes)",
+      "enunciado": "Un curso tiene 40 estudiantes y el 25% son de modalidad presencial. ¿Cuántos estudiantes son presenciales?",
+      "opciones": [
+        { "clave": "A", "texto": "$25$" },
+        { "clave": "B", "texto": "$15$" },
+        { "clave": "C", "texto": "$4$" },
+        { "clave": "D", "texto": "$10$" }
+      ],
+      "respuestaCorrecta": "D",
+      "retroalimentacion": {
+        "correcta": "Correcto. El 25% equivale a $\\tfrac{1}{4}$, y $\\tfrac{1}{4}$ de $40$ es $10$.",
+        "incorrecta": "Para calcular un porcentaje: $25\\% \\times 40 = 0.25 \\times 40 = 10$. Recuerda que $25\\% = \\tfrac{25}{100} = \\tfrac{1}{4}$. Material de refuerzo: porcentajes y fracciones."
+      }
     },
     {
-      "id": "D14", "prerrequisito": "Lógica — secuencia condicional",
-      "enunciado": "«Si llueve, llevo paraguas; si no, llevo gafas de sol.» Si NO llueve, llevo:",
-      "opciones": ["Paraguas", "Gafas de sol", "Ambos", "Nada"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: la rama «si no» (else) se ejecuta cuando la condición es falsa (Tema 3).",
-      "retroNegativa": "La estructura si/si-no ejecuta la rama «si no» cuando la condición es falsa. Repasa condicionales."
+      "id": "Q14",
+      "prerrequisito": "Álgebra básica (evaluación de expresiones con potencias)",
+      "enunciado": "Evalúa la expresión $f(x) = x^2 - 2x + 1$ para $x = 3$.",
+      "opciones": [
+        { "clave": "A", "texto": "$4$" },
+        { "clave": "B", "texto": "$2$" },
+        { "clave": "C", "texto": "$16$" },
+        { "clave": "D", "texto": "$10$" }
+      ],
+      "respuestaCorrecta": "A",
+      "retroalimentacion": {
+        "correcta": "Correcto. Sustituyendo: $3^2 - 2(3) + 1 = 9 - 6 + 1 = 4$.",
+        "incorrecta": "Sustituye $x=3$ y respeta la jerarquía: primero la potencia $3^2=9$ y el producto $2\\cdot 3=6$, luego $9-6+1=4$. Evaluar expresiones prepara para entender las funciones del Tema 5. Material de refuerzo: potencias y evaluación de expresiones."
+      }
     },
     {
-      "id": "D15", "prerrequisito": "Resolución de problemas — repetición",
-      "enunciado": "Para sumar los números del 1 al 100, la herramienta más adecuada es:",
-      "opciones": ["Una sola suma manual", "Una estructura repetitiva (ciclo)", "Una condición", "Una variable de texto"],
-      "correcta": 1,
-      "retroPositiva": "Correcto: una tarea repetitiva se resuelve con un ciclo (Tema 3).",
-      "retroNegativa": "Cuando una acción se repite muchas veces, se usa una estructura repetitiva (ciclo). Repasa la idea de iteración."
+      "id": "Q15",
+      "prerrequisito": "Lógica proposicional (disyunción exclusiva / razonamiento condicional)",
+      "enunciado": "Regla: 'Si el número es par, entonces es divisible por 2'. Sabiendo que el número 7 NO es divisible por 2, ¿qué se concluye correctamente?",
+      "opciones": [
+        { "clave": "A", "texto": "El número 7 es par." },
+        { "clave": "B", "texto": "El número 7 no es par (es impar)." },
+        { "clave": "C", "texto": "No se puede concluir nada." },
+        { "clave": "D", "texto": "La regla es falsa." }
+      ],
+      "respuestaCorrecta": "B",
+      "retroalimentacion": {
+        "correcta": "Correcto. Aplicas el modus tollens: si 'par $\\rightarrow$ divisible por 2' y NO es divisible por 2, entonces NO es par. El 7 es impar.",
+        "incorrecta": "Usa el razonamiento condicional (modus tollens): de $p \\rightarrow q$ y la negación de $q$ ($\\neg q$) se deduce $\\neg p$. Como 7 no es divisible por 2, no puede ser par. Material de refuerzo: reglas de inferencia y condicional."
+      }
     }
   ]
 }

@@ -6,7 +6,7 @@
 <title>Plantilla JSON SCORM/PDF</title>
 <meta name="description" content="Plantilla reutilizable para contenido SCORM y guía PDF a partir de un archivo JSON."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Poppins:wght@400;500;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -75,14 +75,14 @@
         </h2>
       </div>
 
-      <div class="hidden 2xl:flex items-center gap-sm shrink-0">
+      <div class="banner-content-block hidden 2xl:flex items-center gap-sm shrink-0 ml-auto">
         <span id="banner-content-label" class="font-label-caps text-label-caps text-secondary-fixed uppercase">Escenario de aprendizaje 01</span>
         <span id="banner-content-number" class="w-9 h-9 rounded-full bg-secondary-fixed text-primary flex items-center justify-center font-bold">
           01
         </span>
       </div>
 
-      <div class="author-toolbar ml-auto flex items-center shrink-0">
+      <div class="author-toolbar flex items-center shrink-0">
         <input id="json-file-input" type="file" accept="application/json,.json" class="hidden"/>
         <label for="json-file-input" class="author-action" title="Cargar JSON">
           <span class="material-symbols-outlined" aria-hidden="true">upload_file</span>

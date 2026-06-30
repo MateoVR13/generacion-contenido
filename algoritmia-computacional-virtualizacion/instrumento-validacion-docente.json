@@ -1,74 +1,216 @@
 {
   "asignatura": "Algoritmia Computacional I",
-  "programa": "Tecnología en Aplicaciones Digitales Inteligentes",
-  "metodologiaRecomendada": "AG",
-  "fecha": "2026-06-29",
-  "instrucciones": "Espejo JSON del instrumento. El docente rellena cada campo 'respuesta'/'decision' y se re-ingiere en el Pipeline 2. Valores de decision: 'aprobar' | 'quitar' | 'ajustar' (o 'si'/'ajustar'). No publicar nada sin estas respuestas.",
+  "metodologia": "AG",
+  "creditos": 3,
   "secciones": {
-    "0_metodologia": { "recomendada": "AG", "alternativa": "ABPr", "decision": "", "respuesta": "" },
     "1_identificacion": {
-      "ra": { "valor": ["RA1", "RA2"], "decision": "", "respuesta": "" },
-      "saberes": { "decision": "", "respuesta": "" },
-      "evaluacion": { "decision": "", "respuesta": "" },
-      "creditosHoras": { "valor": "3 / 144", "decision": "", "respuesta": "" }
+      "ra": [
+        {
+          "id": "RA1",
+          "texto": "Reconozco las principales estructuras de programación para la generación de algoritmos computacionales utilizando herramientas de control.",
+          "correcto": null
+        },
+        {
+          "id": "RA2",
+          "texto": "Evalúo adecuadamente la asignación dinámica de memoria en un computador para la ejecución de algoritmos, a partir de programación estructurada.",
+          "correcto": null
+        }
+      ],
+      "ajustes": ""
     },
     "2_naturaleza": {
-      "tipo": { "valor": "teorico-practica", "decision": "" },
-      "recursosSimulacion": { "propuesta": "Python (IDE/online) + PSeInt", "respuesta": "" },
-      "practicasEstudiante": { "respuesta": "" }
+      "tipo": null,
+      "recursos_practica": ""
     },
     "3_temas": {
-      "nPropuesto": 6,
-      "decisionN": "",
+      "n_propuesto": 6,
+      "n_adecuado": null,
       "temas": [
-        { "n": 1, "titulo": "Fundamentos del algoritmo y representación", "ra": "RA1", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" },
-        { "n": 2, "titulo": "Lenguaje de programación, tipos de datos y librerías", "ra": "RA1", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" },
-        { "n": 3, "titulo": "Estructuras selectivas y de control", "ra": "RA1", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" },
-        { "n": 4, "titulo": "Arreglos unidimensionales (cadenas, listas, tuplas, diccionarios)", "ra": "RA1", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" },
-        { "n": 5, "titulo": "Arreglos multidimensionales y memoria", "ra": "RA2", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" },
-        { "n": 6, "titulo": "Funciones y proyecto integrador", "ra": "RA2", "decision": "", "subtemasCompletos": "", "subtemasAgregarQuitar": "" }
+        {
+          "n": 1,
+          "titulo": "Fundamentos del algoritmo y su representación",
+          "aprobado": null,
+          "subtemas_ok": null
+        },
+        {
+          "n": 2,
+          "titulo": "Lenguajes, tipos de datos y librerías",
+          "aprobado": null,
+          "subtemas_ok": null
+        },
+        {
+          "n": 3,
+          "titulo": "Estructuras selectivas y de control",
+          "aprobado": null,
+          "subtemas_ok": null
+        },
+        {
+          "n": 4,
+          "titulo": "Arreglos y estructuras de datos",
+          "aprobado": null,
+          "subtemas_ok": null
+        },
+        {
+          "n": 5,
+          "titulo": "Funciones, modularidad y memoria",
+          "aprobado": null,
+          "subtemas_ok": null
+        },
+        {
+          "n": 6,
+          "titulo": "Proyecto integrador: solución algorítmica",
+          "aprobado": null,
+          "subtemas_ok": null
+        }
       ],
-      "observaciones": ""
+      "ajustes": ""
     },
-    "4_actividades_talleres": {
-      "talleres": [
-        { "tema": 1, "decision": "", "ajuste": "" },
-        { "tema": 2, "decision": "", "ajuste": "" },
-        { "tema": 3, "decision": "", "ajuste": "" },
-        { "tema": 4, "decision": "", "ajuste": "" },
-        { "tema": 5, "decision": "", "ajuste": "" },
-        { "tema": 6, "decision": "", "ajuste": "" }
-      ],
-      "actividadesSugeridas": "",
-      "observaciones": ""
-    },
-    "5_recursos_material": {
-      "componentesDidacticos": { "n": 3, "propuesta": "infografía (T1), video explicativo (T3), OVA/juego (T4)", "respuesta": "" },
-      "materialComplementario": [
-        { "id": "M1", "decision": "", "ajuste": "" },
-        { "id": "M2", "decision": "", "ajuste": "" },
-        { "id": "M3", "decision": "", "ajuste": "" },
-        { "id": "M4", "decision": "", "ajuste": "" },
-        { "id": "M5", "decision": "", "ajuste": "" }
-      ],
-      "materialAgregado": [],
-      "porcentajeIngles": 40,
-      "respuesta": ""
-    },
+    "4_talleres": [
+      {
+        "tema": 1,
+        "aprobado": null,
+        "ajuste": ""
+      },
+      {
+        "tema": 2,
+        "aprobado": null,
+        "ajuste": ""
+      },
+      {
+        "tema": 3,
+        "aprobado": null,
+        "ajuste": ""
+      },
+      {
+        "tema": 4,
+        "aprobado": null,
+        "ajuste": ""
+      },
+      {
+        "tema": 5,
+        "aprobado": null,
+        "ajuste": ""
+      },
+      {
+        "tema": 6,
+        "aprobado": null,
+        "ajuste": ""
+      }
+    ],
+    "5_material": [
+      {
+        "id": "M1",
+        "idioma": "es",
+        "aprobado": null
+      },
+      {
+        "id": "M2",
+        "idioma": "es",
+        "aprobado": null
+      },
+      {
+        "id": "M3",
+        "idioma": "en",
+        "aprobado": null
+      },
+      {
+        "id": "M4",
+        "idioma": "en",
+        "aprobado": null
+      },
+      {
+        "id": "M5",
+        "idioma": "es",
+        "aprobado": null
+      }
+    ],
     "6_evaluacion": {
-      "diagnostica": { "archivo": "evaluacion/diagnostica-algoritmia-computacional.json", "decision": "", "preguntas": "Ver D1..D15 en el .json; marcar por pregunta aprobar/quitar/ajustar." },
-      "formativas": { "decision": "", "respuesta": "" },
-      "sumativa": { "decision": "", "respuesta": "" },
-      "complementarios": { "decision": "", "respuesta": "" },
-      "ponderaciones": { "respuesta": "" }
+      "diagnostica_ok": null,
+      "sumativa_ok": null,
+      "banco": [
+        {
+          "n": 1,
+          "aprobado": null
+        },
+        {
+          "n": 2,
+          "aprobado": null
+        },
+        {
+          "n": 3,
+          "aprobado": null
+        },
+        {
+          "n": 4,
+          "aprobado": null
+        },
+        {
+          "n": 5,
+          "aprobado": null
+        },
+        {
+          "n": 6,
+          "aprobado": null
+        },
+        {
+          "n": 7,
+          "aprobado": null
+        },
+        {
+          "n": 8,
+          "aprobado": null
+        },
+        {
+          "n": 9,
+          "aprobado": null
+        },
+        {
+          "n": 10,
+          "aprobado": null
+        },
+        {
+          "n": 11,
+          "aprobado": null
+        },
+        {
+          "n": 12,
+          "aprobado": null
+        },
+        {
+          "n": 13,
+          "aprobado": null
+        },
+        {
+          "n": 14,
+          "aprobado": null
+        },
+        {
+          "n": 15,
+          "aprobado": null
+        }
+      ]
     },
-    "7_feedback": { "enfasis": "", "fuentesObligatorias": "", "advertenciasEticas": "" },
-    "8_brechas": {
-      "codigoAsignatura": "",
-      "lenguajeEntorno": "",
-      "ponderaciones": "",
-      "biblioInglesVerificacion": "",
-      "repartoSaberesRA2": ""
-    }
+    "7_sugerencias": {
+      "enfasis": "",
+      "metodologia_final": "AG"
+    },
+    "8_brechas": [
+      {
+        "tema": "metodologia",
+        "respuesta": ""
+      },
+      {
+        "tema": "horas-acompanamiento",
+        "respuesta": ""
+      },
+      {
+        "tema": "ponderaciones",
+        "respuesta": ""
+      },
+      {
+        "tema": "facultades-ejemplos",
+        "respuesta": ""
+      }
+    ]
   }
 }

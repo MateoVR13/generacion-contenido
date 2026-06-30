@@ -1,0 +1,3291 @@
+{
+  "subject": {
+    "id": "algoritmia-computacional-tema-04-arreglos",
+    "title": "Algoritmia Computacional I",
+    "program": "Tecnología en Aplicaciones Digitales Inteligentes",
+    "faculty": "ingenieria",
+    "contentNumber": "04",
+    "contentTotal": "06",
+    "unitLabel": "Tema",
+    "contentTitle": "Arreglos y estructuras de datos",
+    "description": "Tema 4 del Documento de Saberes de Algoritmia Computacional I: organización de datos en cadenas, listas, tuplas, diccionarios y arreglos multidimensionales (matrices), su recorrido e indexación y la selección de la estructura adecuada para modelar datos de ingeniería. Conecta el RA1 (reconocer estructuras de programación) con el RA2 (evaluar la asignación dinámica de memoria), usando Python con orientación a procesos industriales.",
+    "syllabus": {
+      "source": {
+        "type": "text",
+        "fileName": "estado-proyecto.json"
+      },
+      "extractedFields": {
+        "asignatura": "Algoritmia Computacional I",
+        "programa": "Tecnología en Aplicaciones Digitales Inteligentes",
+        "facultad": "Facultad de Ingeniería",
+        "creditos": "3",
+        "modalidad": "100% virtual",
+        "metodologia": "Aprendizaje Guiado (AG)",
+        "saberes": "S18 Arreglos: cadenas · S19 Listas, tuplas y diccionarios · S20 Arreglos multidimensionales",
+        "tema": "Arreglos y estructuras de datos"
+      },
+      "learningOutcomes": [
+        "RA1: Reconozco las principales estructuras de programación para la generación de algoritmos computacionales utilizando herramientas de control.",
+        "RA2: Evalúo adecuadamente la asignación dinámica de memoria en un computador para la ejecución de algoritmos, a partir de programación estructurada."
+      ],
+      "priorKnowledge": [
+        "Tipos de datos primitivos, variables y entrada/salida (Tema 2).",
+        "Estructuras selectivas e iterativas: condicionales y ciclos for/while (Tema 3).",
+        "Indexación basada en cero y nociones básicas de Álgebra Lineal (matrices) como conocimiento previo del programa."
+      ],
+      "competencies": [
+        "Selecciona la estructura de datos pertinente (cadena, lista, tupla, diccionario o matriz) según la naturaleza del dato a modelar.",
+        "Recorre e indexa estructuras lineales y multidimensionales para calcular un resultado, evaluando el costo de acceso y el uso de memoria."
+      ],
+      "evaluationCriteria": [
+        "CE1: Genera algoritmos con estructuras de control que recorren e indexan estructuras de datos correctamente.",
+        "CE2: Entrega soluciones informáticas con estructuras vectoriales y matriciales pertinentes al problema de ingeniería."
+      ],
+      "topics": [
+        "Cadenas: indexación, slicing, inmutabilidad y métodos de texto.",
+        "Listas: estructura lineal mutable y de crecimiento dinámico.",
+        "Tuplas y diccionarios: registros inmutables y mapeo clave-valor.",
+        "Arreglos multidimensionales: matrices como listas anidadas y su recorrido.",
+        "Recorrido, indexación y criterios de selección de la estructura adecuada."
+      ],
+      "methodologyNotes": [
+        "Aprendizaje Guiado: cada sección presenta teoría, ejercicios resueltos paso a paso y verificación en Python.",
+        "Ejemplos transversales a varias ingenierías con orientación a procesos industriales."
+      ],
+      "evaluationPlan": [
+        "Taller formativo del Tema 4: modelar un conjunto de datos de ingeniería con la estructura adecuada (lista/diccionario/matriz) y recorrerla para calcular un resultado (RA1, RA2)."
+      ],
+      "bibliography": {
+        "basic": [
+          "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana.",
+          "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones."
+        ],
+        "complementary": [
+          "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms (3rd ed.). MIT Press.",
+          "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media."
+        ]
+      },
+      "missingFields": []
+    },
+    "methodology": {
+      "code": "AG",
+      "name": "Aprendizaje Guiado",
+      "rationale": "Ruta guiada para aprendizaje virtual autónomo con acompañamiento, práctica y retroalimentación.",
+      "moments": [
+        "Fase 1",
+        "Fase 2",
+        "Fase 3",
+        "Fase 4"
+      ]
+    }
+  },
+  "scorm": {
+    "labels": {
+      "theoryNav": "Contenido Teórico",
+      "materialNav": "Material Complementario"
+    },
+    "sectionOrder": [
+      "intro",
+      "seccion-1",
+      "seccion-2",
+      "seccion-3",
+      "seccion-4",
+      "seccion-5"
+    ],
+    "sections": {
+      "intro": {
+        "kind": "theory",
+        "theme": "Arreglos y estructuras de datos",
+        "badge": "Tema 04 de 06",
+        "navLabel": "Introducción",
+        "title": "Arreglos y estructuras de datos",
+        "intro": [
+          "Bienvenido al Tema 04 de Algoritmia Computacional I. En los temas anteriores aprendiste a representar un algoritmo, a elegir tipos de datos y a controlar el flujo con condicionales y ciclos. Hasta ahora cada variable guardaba un solo valor; en este tema das un salto decisivo: pasas de la variable suelta a la estructura de datos, capaz de almacenar y organizar muchos valores bajo un mismo nombre.",
+          "El propósito es que reconozcas las principales estructuras —cadenas, listas, tuplas, diccionarios y matrices—, que las recorras e indexes con las estructuras de control del Tema 3 (RA1) y que evalúes cómo cada una usa la memoria cuando crece o cambia durante la ejecución (RA2).",
+          "El enfoque es transversal a la ingeniería y orientado a procesos industriales: un lote de mediciones de un sensor, el inventario de repuestos de una planta o el mapa de temperaturas de un horno son, todos, conjuntos de datos que exigen elegir bien la estructura que los representa."
+        ],
+        "componentOrder": [
+          "intro-objetivos",
+          "intro-saberes",
+          "intro-orientadoras",
+          "intro-ruta"
+        ],
+        "components": {
+          "intro-objetivos": {
+            "type": "objectives",
+            "title": "Propósito del tema",
+            "items": [
+              {
+                "icon": "track_changes",
+                "text": "Reconocer cadenas, listas, tuplas, diccionarios y arreglos multidimensionales, y distinguir cuándo usar cada uno (RA1)."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Recorrer e indexar estructuras lineales y matrices con ciclos y condicionales para calcular un resultado (RA1)."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Evaluar cómo cada estructura usa la memoria al crecer, copiarse o referenciarse durante la ejecución (RA2)."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Seleccionar y justificar la estructura adecuada para modelar un conjunto de datos de ingeniería."
+              }
+            ]
+          },
+          "intro-saberes": {
+            "type": "prior-knowledge",
+            "title": "Saberes previos",
+            "eyebrow": "Antes de empezar",
+            "prompts": [
+              "¿Cómo recorrerías con un ciclo $for$ una secuencia de valores si todos comparten el mismo nombre pero ocupan posiciones distintas?",
+              "Recuerda que la indexación empieza en cero: en una secuencia de $n$ elementos, ¿cuál es el índice del primero y cuál el del último?",
+              "Del Álgebra Lineal, ¿cómo identificas un elemento de una matriz con su fila y su columna $a_{ij}$?"
+            ]
+          },
+          "intro-orientadoras": {
+            "type": "callout",
+            "title": "Preguntas orientadoras",
+            "body": [
+              "¿Qué estructura representa mejor mis datos: una secuencia ordenada, un registro fijo o un mapeo de claves a valores?",
+              "¿Cómo recorro una matriz y cómo cambia el uso de memoria cuando una estructura crece dinámicamente durante la ejecución?"
+            ]
+          },
+          "intro-ruta": {
+            "type": "callout",
+            "title": "Cómo recorrer este contenido",
+            "body": [
+              "El tema avanza en cinco secciones: cadenas de caracteres, listas, tuplas y diccionarios, arreglos multidimensionales (matrices) y, por último, recorrido, indexación y selección de la estructura adecuada.",
+              "Cada sección combina desarrollo teórico, ejercicios resueltos paso a paso y código Python ejecutable para verificarlos. Dedica alrededor de 45 minutos a cada sección y resuelve los ejercicios por tu cuenta antes de revelar el paso final o ejecutar el código."
+            ]
+          }
+        }
+      },
+      "seccion-1": {
+        "kind": "theory",
+        "theme": "Cadenas de caracteres",
+        "badge": "Tema 04 · Sección 1",
+        "navLabel": "Cadenas",
+        "title": "Cadenas de caracteres: secuencia, indexación e inmutabilidad",
+        "intro": [
+          "Una cadena (string) es la estructura con que un programa almacena texto: códigos de lote, lecturas etiquetadas, nombres de equipos o mensajes de un proceso. Internamente es una secuencia ordenada de caracteres, y por eso comparte con las listas la lógica de índices y recorrido, con una diferencia clave que estudiarás aquí: es inmutable."
+        ],
+        "componentOrder": [
+          "s1-detonadora",
+          "s1-teoria-1",
+          "s1-figura-indices",
+          "s1-flashcards",
+          "s1-teoria-2",
+          "s1-tabla-metodos",
+          "s1-carrusel",
+          "s1-teoria-3",
+          "s1-stepper-codigo",
+          "s1-stepper-conteo",
+          "s1-codigo-validar",
+          "s1-figura-slice",
+          "s1-acordion",
+          "s1-callout-saberes",
+          "s1-reflexion"
+        ],
+        "components": {
+          "s1-teoria-1": {
+            "type": "theory-block",
+            "title": "La cadena como secuencia indexada",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una cadena es una secuencia ordenada de caracteres encerrada entre comillas, por ejemplo $codigo = \\text{'LOTE-2024A'}$. Cada carácter ocupa una posición numerada desde cero: el primero tiene índice $0$ y, en una cadena de longitud $n$, el último tiene índice $n-1$. Python admite además índices negativos, donde $-1$ es el último carácter, lo que facilita leer el final sin conocer la longitud exacta.",
+              "Acceder a un carácter se hace con corchetes, $codigo[0]$, y extraer un tramo (rebanado o slicing) se escribe $codigo[inicio:fin]$, tomando desde $inicio$ hasta $fin-1$. El slicing es la operación que permite separar el prefijo de un código del número de serie, o aislar la unidad de una lectura como '23.5 °C'.",
+              "Como toda secuencia, una cadena se mide con $len(codigo)$ y se recorre con un ciclo $for$, reutilizando las estructuras de control del Tema 3. Esta doble lectura —texto para una persona, secuencia indexada para el algoritmo— es la base para parsear, validar y transformar información textual en un proceso."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "format_list_numbered",
+                "text": "Los índices empiezan en $0$; el último carácter está en $n-1$."
+              },
+              {
+                "icon": "content_cut",
+                "text": "El slicing $s[a:b]$ extrae desde $a$ hasta $b-1$."
+              },
+              {
+                "icon": "swap_horiz",
+                "text": "Un índice negativo $-1$ apunta al último carácter."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Longitud y recorrido",
+                "body": [
+                  "La longitud es la cantidad de caracteres y delimita los índices válidos; recorrer la cadena con un ciclo permite contar, buscar o transformar carácter por carácter."
+                ],
+                "formula": "0 \\le i \\le n-1, \\qquad n = \\operatorname{len}(s)",
+                "formulaNote": "Cualquier índice fuera de este rango produce el error IndexError en tiempo de ejecución."
+              }
+            ],
+            "example": {
+              "title": "Lectura de un código de lote",
+              "body": [
+                "Si $codigo = \\text{'LOTE-2024A'}$, entonces $codigo[0]=\\text{'L'}$, $codigo[-1]=\\text{'A'}$ y $codigo[5:9]=\\text{'2024'}$, el año extraído del código."
+              ]
+            },
+            "closing": [
+              "Antes de manipular texto, identifica qué posición ocupa cada dato dentro de la cadena: esa es la información que harás explícita con índices y rebanadas."
+            ]
+          },
+          "s1-figura-indices": {
+            "type": "image",
+            "title": "Índices positivos y negativos de una cadena",
+            "assetId": "alg04-fig-cadena-indices",
+            "src": "",
+            "alt": "La cadena 'LOTE-2024A' dibujada como una fila de casillas; sobre cada casilla el índice positivo de 0 a 9 y debajo el índice negativo de -10 a -1.",
+            "caption": "Cada carácter ocupa una casilla con un índice positivo (de izquierda a derecha) y uno negativo (de derecha a izquierda). Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español: la cadena 'LOTE-2024A' representada como una fila de 10 casillas contiguas, una por carácter. Encima de cada casilla, el índice positivo 0,1,2,...,9; debajo de cada casilla, el índice negativo -10,-9,...,-1. Resaltar con color la casilla del índice 0 y la del índice -1. Estilo limpio, fondo claro, monoespaciado, etiquetas legibles."
+          },
+          "s1-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards · Vocabulario de cadenas",
+            "cards": [
+              {
+                "term": "Cadena (string)",
+                "definition": "Secuencia ordenada e inmutable de caracteres usada para almacenar texto, como un código de lote o una etiqueta.",
+                "icon": "text_fields"
+              },
+              {
+                "term": "Índice",
+                "definition": "Posición numerada de un carácter; empieza en $0$ y llega hasta $n-1$, con $n$ la longitud de la cadena.",
+                "icon": "format_list_numbered"
+              },
+              {
+                "term": "Slicing (rebanado)",
+                "definition": "Operación $s[a:b]$ que devuelve una subcadena desde la posición $a$ hasta $b-1$ sin modificar el original.",
+                "icon": "content_cut"
+              },
+              {
+                "term": "Inmutabilidad",
+                "definition": "Propiedad por la que una cadena no se puede cambiar en el lugar; toda transformación crea una nueva cadena en memoria.",
+                "icon": "lock"
+              },
+              {
+                "term": "Método de cadena",
+                "definition": "Función asociada a la cadena, como $upper()$, $split()$ o $strip()$, que devuelve un nuevo texto procesado.",
+                "icon": "build"
+              }
+            ]
+          },
+          "s1-teoria-2": {
+            "type": "theory-block",
+            "title": "Inmutabilidad y métodos de texto",
+            "eyebrow": "Comportamiento en memoria",
+            "body": [
+              "A diferencia de una lista, una cadena es inmutable: no se puede reasignar un carácter individual con $s[0]=\\text{'X'}$, porque eso produce un error. Toda transformación —pasar a mayúsculas, reemplazar un carácter, recortar espacios— genera una cadena nueva y deja la original intacta. Esta es la primera conexión con el RA2: cada método de texto reserva memoria para un resultado nuevo en lugar de modificar el dato existente.",
+              "Los métodos de cadena encapsulan esas transformaciones frecuentes. $upper()$ y $lower()$ normalizan mayúsculas y minúsculas para comparar códigos sin ambigüedad; $strip()$ elimina espacios sobrantes de una lectura leída de un archivo; $replace(a,b)$ sustituye un fragmento; y $split(sep)$ parte la cadena en una lista de tramos usando un separador, operación esencial para leer datos delimitados como '23.5;24.1;22.8'.",
+              "Como los métodos devuelven un valor nuevo, deben asignarse a una variable o usarse de inmediato: escribir $codigo.upper()$ sin guardar el resultado no cambia $codigo$. Comprender esto evita el error clásico de creer que el texto se transformó cuando en realidad el cambio se descartó."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "lock",
+                "text": "Una cadena no se modifica en el lugar; cada transformación crea una nueva."
+              },
+              {
+                "icon": "call_split",
+                "text": "$split(sep)$ convierte texto delimitado en una lista de tramos."
+              },
+              {
+                "icon": "save",
+                "text": "El resultado de un método debe asignarse o se pierde."
+              }
+            ],
+            "example": {
+              "title": "Normalizar y partir una lectura",
+              "body": [
+                "Si $lectura = \\text{' 23.5;24.1;22.8 '}$, entonces $lectura.strip().split(\\text{';'})$ produce la lista $['23.5','24.1','22.8']$, lista para convertir cada tramo a número."
+              ]
+            },
+            "closing": [
+              "Cuando proceses texto, recuerda capturar siempre el resultado del método: el dato original no cambia por sí solo."
+            ]
+          },
+          "s1-tabla-metodos": {
+            "type": "table",
+            "title": "Métodos de cadena frecuentes en procesos de datos",
+            "columns": [
+              "Método",
+              "Qué hace",
+              "Ejemplo industrial"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "$upper()$ / $lower()$",
+                  "Cambia mayúsculas/minúsculas",
+                  "Comparar 'lote-a' y 'LOTE-A' como iguales"
+                ]
+              },
+              {
+                "cells": [
+                  "$strip()$",
+                  "Elimina espacios en los extremos",
+                  "Limpiar una lectura leída de un sensor"
+                ]
+              },
+              {
+                "cells": [
+                  "$replace(a,b)$",
+                  "Sustituye un fragmento por otro",
+                  "Cambiar la coma decimal por punto"
+                ]
+              },
+              {
+                "cells": [
+                  "$split(sep)$",
+                  "Parte el texto en una lista",
+                  "Separar valores de una línea CSV"
+                ]
+              },
+              {
+                "cells": [
+                  "$find(sub)$",
+                  "Devuelve el índice de una subcadena",
+                  {
+                    "badge": "-1 si no existe",
+                    "tone": "warning"
+                  }
+                ]
+              }
+            ]
+          },
+          "s1-carrusel": {
+            "type": "carousel",
+            "title": "Carrusel · De un código a sus partes",
+            "slides": [
+              {
+                "label": "Paso 1",
+                "title": "Observar la estructura del código",
+                "body": [
+                  "El código $\\text{'LOTE-2024A'}$ tiene un prefijo, un año y un sufijo de línea. Cada parte ocupa posiciones fijas que podemos extraer por índice."
+                ],
+                "icon": "visibility"
+              },
+              {
+                "label": "Paso 2",
+                "title": "Extraer el prefijo con slicing",
+                "body": [
+                  "Las primeras cuatro posiciones forman el prefijo; el slicing $[0:4]$ devuelve 'LOTE' sin tocar el resto."
+                ],
+                "formula": "codigo[0:4]",
+                "icon": "content_cut"
+              },
+              {
+                "label": "Paso 3",
+                "title": "Extraer el año",
+                "body": [
+                  "Las posiciones 5 a 8 contienen el año; $[5:9]$ devuelve '2024'."
+                ],
+                "formula": "codigo[5:9]",
+                "icon": "event"
+              },
+              {
+                "label": "Paso 4",
+                "title": "Tomar el sufijo de línea",
+                "body": [
+                  "El último carácter identifica la línea de producción; el índice negativo $-1$ lo obtiene sin contar la longitud."
+                ],
+                "formula": "codigo[-1]",
+                "icon": "label"
+              },
+              {
+                "label": "Paso 5",
+                "title": "Reunir el resultado",
+                "body": [
+                  "Con prefijo, año y línea separados, el algoritmo ya puede validar o clasificar el lote."
+                ],
+                "icon": "check_circle"
+              }
+            ]
+          },
+          "s1-teoria-3": {
+            "type": "theory-block",
+            "title": "Validar y transformar texto en un algoritmo",
+            "eyebrow": "Aplicación",
+            "body": [
+              "Validar texto consiste en comprobar que una cadena cumple un formato esperado antes de usarla. En un proceso industrial, un código mal formado puede detener una línea: por eso un algoritmo verifica la longitud, el prefijo y los caracteres antes de aceptar el dato. Esta validación combina indexación, slicing y métodos como $isdigit()$, que indica si un tramo contiene solo dígitos.",
+              "Transformar texto es el segundo uso habitual: convertir una lectura textual '23.5' en el número $23.5$ con $float()$, o construir un reporte concatenando cadenas con el operador $+$. La concatentación, al ser inmutable la cadena, también crea un texto nuevo cada vez, algo que se debe tener presente cuando se construyen reportes largos en un ciclo.",
+              "Recorrer una cadena carácter por carácter con un ciclo $for$ permite contar ocurrencias, detectar caracteres inválidos o calcular una suma de control. Así, las estructuras de control del Tema 3 y la indexación de este tema se combinan para procesar información textual de forma fiable."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "fact_check",
+                "text": "Validar = comprobar longitud, prefijo y contenido antes de usar el dato."
+              },
+              {
+                "icon": "transform",
+                "text": "$float(s)$ convierte una lectura textual en número operable."
+              },
+              {
+                "icon": "loop",
+                "text": "Un ciclo $for$ recorre la cadena para contar o verificar."
+              }
+            ],
+            "example": {
+              "title": "Verificar un código",
+              "body": [
+                "Un código es válido si $len(codigo)=10$, $codigo[0:4]=\\text{'LOTE'}$ y $codigo[5:9].isdigit()$ es verdadero; si falla cualquiera, el algoritmo rechaza el lote."
+              ]
+            },
+            "closing": [
+              "Procesar texto es decidir qué comprobar y qué extraer: la cadena es la materia prima y los índices, métodos y ciclos son tus herramientas."
+            ]
+          },
+          "s1-stepper-codigo": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 4.1 · Extraer y validar un código de lote",
+            "statement": "Dado el código $codigo = \\text{'LOTE-2024A'}$, extraer el prefijo, el año y la línea, y decidir si el código es válido (longitud 10, prefijo 'LOTE', año numérico).",
+            "steps": [
+              {
+                "title": "Medir la longitud",
+                "body": "Cuenta los caracteres para confirmar que el código tiene el tamaño esperado.",
+                "formula": "\\operatorname{len}(codigo)=10",
+                "final": false
+              },
+              {
+                "title": "Extraer el prefijo",
+                "body": "Toma las cuatro primeras posiciones con slicing.",
+                "formula": "codigo[0:4]=\\text{'LOTE'}",
+                "final": false
+              },
+              {
+                "title": "Extraer el año",
+                "body": "Toma las posiciones 5 a 8 y comprueba que solo contengan dígitos.",
+                "formula": "codigo[5:9]=\\text{'2024'},\\ \\text{isdigit}=\\text{True}",
+                "final": false
+              },
+              {
+                "title": "Tomar la línea",
+                "body": "El último carácter identifica la línea de producción.",
+                "formula": "codigo[-1]=\\text{'A'}",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "El código es válido porque cumple longitud, prefijo y año numérico; el algoritmo lo acepta.",
+                "formula": "(\\operatorname{len}=10)\\,\\wedge\\,(\\text{prefijo}='LOTE')\\,\\wedge\\,(\\text{año numérico}) \\Rightarrow \\text{válido}",
+                "final": true
+              }
+            ]
+          },
+          "s1-stepper-conteo": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 4.1b · Contar dígitos recorriendo una cadena",
+            "statement": "Recorrer la cadena $serie=\\text{'AB12C3'}$ con un ciclo y contar cuántos de sus caracteres son dígitos, usando el método $isdigit()$ por carácter.",
+            "steps": [
+              {
+                "title": "Inicializar el contador",
+                "body": "Empieza en cero antes de recorrer la cadena.",
+                "formula": "digitos = 0",
+                "final": false
+              },
+              {
+                "title": "Recorrer carácter por carácter",
+                "body": "Un ciclo $for$ visita cada carácter de la cadena en orden de índice.",
+                "formula": "\\text{'A'},\\text{'B'},\\text{'1'},\\text{'2'},\\text{'C'},\\text{'3'}",
+                "final": false
+              },
+              {
+                "title": "Evaluar la condición y acumular",
+                "body": "Si el carácter es dígito, suma uno al contador.",
+                "formula": "\\text{'1'},\\text{'2'},\\text{'3'} \\Rightarrow digitos = 3",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "La cadena tiene 6 caracteres y 3 son dígitos; el conteo recorre toda la secuencia exactamente una vez.",
+                "formula": "digitos = 3 \\ \\text{de} \\ \\operatorname{len}(serie)=6",
+                "final": true
+              }
+            ]
+          },
+          "s1-codigo-validar": {
+            "type": "code",
+            "title": "Verificación en Python · validar un código de lote",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "validar_codigo.py",
+            "instructions": [
+              "Lee el fragmento e identifica dónde se usan la longitud, el slicing y los índices negativos.",
+              "Guarda el archivo como validar_codigo.py y ejecútalo desde una terminal con python validar_codigo.py.",
+              "Cambia el valor de la variable codigo por uno mal formado (por ejemplo 'LOTE-20X4A') y vuelve a ejecutar para ver cómo cambia el resultado."
+            ],
+            "code": "codigo = 'LOTE-2024A'\n\nprefijo = codigo[0:4]\nanio = codigo[5:9]\nlinea = codigo[-1]\n\nvalido = (len(codigo) == 10) and (prefijo == 'LOTE') and anio.isdigit()\n\nprint('Prefijo:', prefijo)\nprint('Anio:', anio)\nprint('Linea:', linea)\nprint('Codigo valido:', valido)",
+            "expectedOutput": [
+              "Debe imprimir Prefijo: LOTE, Anio: 2024, Linea: A y Codigo valido: True.",
+              "Con un año no numérico como '20X4', anio.isdigit() es False y la última línea pasa a Codigo valido: False, confirmando la validación del ejercicio resuelto."
+            ]
+          },
+          "s1-figura-slice": {
+            "type": "figure",
+            "title": "El slicing extrae tramos sin alterar el original",
+            "assetId": "alg04-fig-slicing",
+            "src": "",
+            "alt": "La cadena 'LOTE-2024A' con tres llaves de color resaltando los tramos [0:4]='LOTE', [5:9]='2024' y [-1]='A', y debajo la cadena original intacta.",
+            "caption": "Cada rebanada produce una subcadena nueva; la cadena original permanece sin cambios (inmutabilidad). Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español: arriba la cadena 'LOTE-2024A' en casillas con índices. Tres llaves de colores distintos marcan los tramos: [0:4] etiquetado 'LOTE' (prefijo), [5:9] etiquetado '2024' (año) y [-1] etiquetado 'A' (línea). Debajo, una copia de la misma cadena rotulada 'original sin cambios' para ilustrar la inmutabilidad. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s1-acordion": {
+            "type": "accordion",
+            "title": "Matices y errores frecuentes con cadenas",
+            "items": [
+              {
+                "icon": "lock",
+                "title": "Intentar modificar un carácter en el lugar",
+                "open": true,
+                "body": [
+                  "Un error muy común es escribir $codigo[0]=\\text{'X'}$ esperando cambiar el primer carácter. Como la cadena es inmutable, Python responde con un TypeError. Para 'cambiar' un carácter hay que construir una cadena nueva, por ejemplo con slicing y concatenación: $\\text{'X'}+codigo[1:]$.",
+                  "Esta inmutabilidad no es un capricho: garantiza que una cadena usada como clave o como identificador no cambie por accidente a mitad de un algoritmo. La contraparte es que transformar mucho texto crea muchas cadenas temporales, un detalle que importa al evaluar el uso de memoria (RA2)."
+                ]
+              },
+              {
+                "icon": "save",
+                "title": "Olvidar guardar el resultado de un método",
+                "body": [
+                  "Escribir $codigo.upper()$ sin asignar el resultado no transforma $codigo$: el texto en mayúsculas se calcula y se descarta de inmediato. Es el error que más confunde a quien empieza, porque el método 'parece' que actuó pero la variable sigue igual.",
+                  "La regla es simple: como los métodos devuelven una cadena nueva, hay que capturarla, por ejemplo $codigo = codigo.upper()$, o usarla directamente dentro de una comparación o un print. Comprobar el valor de la variable después del método evita arrastrar este error."
+                ]
+              },
+              {
+                "icon": "tag",
+                "title": "Confundir el carácter con su valor numérico",
+                "body": [
+                  "El carácter $\\text{'5'}$ no es el número $5$: una cadena de dígitos sigue siendo texto y no se puede sumar aritméticamente. Sumar $\\text{'2'}+\\text{'3'}$ produce $\\text{'23'}$ (concatenación), no $5$.",
+                  "Antes de operar con lecturas leídas como texto hay que convertirlas con $int()$ o $float()$. Este paso de conversión es frecuente al leer datos de sensores o archivos, donde todo llega como cadena y debe transformarse a número para calcular promedios o totales."
+                ]
+              }
+            ]
+          },
+          "s1-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": [
+              "El documento imprimible del Documento de Saberes amplía las cadenas con más ejemplos de parseo de identificadores industriales, una tabla extendida de métodos de texto y ejercicios adicionales de validación por slicing."
+            ]
+          },
+          "s1-reflexion": {
+            "type": "reflection",
+            "title": "Cierre y transferencia",
+            "body": [
+              "Piensa en un identificador que se use en tu campo (una placa, un SKU, una matrícula o un código de proceso). ¿Qué información lleerías por posición con slicing y qué comprobarías para aceptarlo como válido?"
+            ]
+          },
+          "s1-detonadora": {
+            "type": "trigger-question",
+            "eyebrow": "Para empezar",
+            "question": "Imagina que al final de un turno tienes 500 lecturas de un sensor y debes calcular su promedio: ¿seguirías creando una variable distinta para cada lectura, o cómo organizarías todos esos valores bajo un solo nombre para poder recorrerlos con un ciclo?"
+          }
+        }
+      },
+      "seccion-2": {
+        "kind": "theory",
+        "theme": "Listas",
+        "badge": "Tema 04 · Sección 2",
+        "navLabel": "Listas",
+        "title": "Listas: secuencia lineal mutable y de crecimiento dinámico",
+        "intro": [
+          "Cuando un proceso genera muchos datos del mismo tipo —las lecturas de un turno, las piezas producidas por hora, los tiempos de un ensayo— necesitamos una estructura que los agrupe, los mantenga ordenados y permita agregar más sobre la marcha. Esa estructura es la lista: una secuencia lineal, indexada y, a diferencia de la cadena, mutable."
+        ],
+        "componentOrder": [
+          "s2-teoria-1",
+          "s2-figura-lista",
+          "s2-carrusel",
+          "s2-teoria-2",
+          "s2-tabla-ops",
+          "s2-flashcards",
+          "s2-teoria-3",
+          "s2-stepper-promedio",
+          "s2-stepper-filtro",
+          "s2-codigo-promedio",
+          "s2-figura-memoria",
+          "s2-acordion",
+          "s2-callout-saberes",
+          "s2-quiz"
+        ],
+        "components": {
+          "s2-teoria-1": {
+            "type": "theory-block",
+            "title": "La lista como colección ordenada y mutable",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una lista es una colección ordenada de elementos escrita entre corchetes, por ejemplo $lecturas = [23.5, 24.1, 22.8, 25.0]$. Comparte con la cadena la indexación desde cero y el recorrido con ciclos, pero añade dos capacidades decisivas: sus elementos se pueden cambiar en el lugar ($lecturas[0]=23.7$) y la lista puede crecer o encogerse durante la ejecución.",
+              "Esta mutabilidad la convierte en la estructura predilecta para acumular datos cuya cantidad no se conoce de antemano. Con $append(x)$ se agrega un elemento al final, con $insert(i,x)$ se inserta en una posición y con $pop(i)$ o $remove(x)$ se elimina. Cada operación modifica la misma lista, sin crear una copia nueva.",
+              "Una lista puede contener elementos de distinto tipo y hasta otras listas, lo que la hace muy flexible; en este tema la usaremos sobre todo como vector de mediciones homogéneas, la representación natural de una serie de datos de un proceso. Recorrerla con un ciclo $for$ es el camino para sumar, promediar, filtrar o buscar el máximo."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "list",
+                "text": "La lista es ordenada, indexada desde $0$ y mutable."
+              },
+              {
+                "icon": "add_circle",
+                "text": "$append$, $insert$, $pop$ y $remove$ cambian la lista en el lugar."
+              },
+              {
+                "icon": "trending_up",
+                "text": "Crece dinámicamente: ideal para datos de cantidad desconocida."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Indexación y rebanado",
+                "body": [
+                  "Como en las cadenas, $lista[i]$ accede al elemento $i$ y $lista[a:b]$ extrae una sublista; pero aquí la asignación $lista[i]=v$ sí está permitida porque la lista es mutable."
+                ],
+                "formula": "lista[i] = v, \\qquad 0 \\le i \\le n-1",
+                "formulaNote": "La diferencia con la cadena es exactamente esta asignación por índice, que la lista permite y la cadena no."
+              }
+            ],
+            "example": {
+              "title": "Acumular lecturas de un turno",
+              "body": [
+                "Partiendo de $lecturas=[]$, cada vez que llega una medición se hace $lecturas.append(valor)$; al final del turno la lista contiene toda la serie lista para analizar."
+              ]
+            },
+            "closing": [
+              "Usa una lista cuando los datos sean una secuencia que puede crecer y cuyos elementos quizá necesites modificar."
+            ]
+          },
+          "s2-figura-lista": {
+            "type": "image",
+            "title": "Una lista como casillas indexadas que crecen",
+            "assetId": "alg04-fig-lista-append",
+            "src": "",
+            "alt": "Fila de casillas con valores 23.5, 24.1, 22.8 e índices 0,1,2; una flecha indica que append agrega 25.0 en una nueva casilla de índice 3 al final.",
+            "caption": "append agrega un elemento en una nueva posición al final; la lista crece dinámicamente sin recrearse desde cero. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español: una lista representada como casillas contiguas con los valores 23.5, 24.1, 22.8 y sus índices 0,1,2 encima. Una flecha curva etiquetada 'append(25.0)' apunta a una casilla nueva añadida a la derecha con valor 25.0 e índice 3, dibujada con borde punteado para indicar que es nueva. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s2-carrusel": {
+            "type": "carousel",
+            "title": "Carrusel · Construir una serie de mediciones",
+            "slides": [
+              {
+                "label": "Paso 1",
+                "title": "Crear una lista vacía",
+                "body": [
+                  "Antes del turno no hay datos; se parte de una lista vacía que irá creciendo: $lecturas=[]$."
+                ],
+                "icon": "playlist_add"
+              },
+              {
+                "label": "Paso 2",
+                "title": "Agregar cada medición",
+                "body": [
+                  "Cada lectura nueva se añade al final con $append$, conservando el orden de llegada."
+                ],
+                "formula": "lecturas.\\text{append}(valor)",
+                "icon": "add"
+              },
+              {
+                "label": "Paso 3",
+                "title": "Consultar por índice",
+                "body": [
+                  "La primera lectura es $lecturas[0]$ y la última $lecturas[-1]$; el orden refleja el tiempo."
+                ],
+                "icon": "search"
+              },
+              {
+                "label": "Paso 4",
+                "title": "Recorrer para calcular",
+                "body": [
+                  "Un ciclo $for$ suma todos los valores para luego promediar la serie completa."
+                ],
+                "formula": "\\sum_{i=0}^{n-1} lecturas[i]",
+                "icon": "functions"
+              },
+              {
+                "label": "Paso 5",
+                "title": "Corregir un valor",
+                "body": [
+                  "Si una lectura fue errónea, la mutabilidad permite corregirla en el lugar: $lecturas[2]=23.0$."
+                ],
+                "icon": "edit"
+              }
+            ]
+          },
+          "s2-teoria-2": {
+            "type": "theory-block",
+            "title": "Operaciones, recorrido y reducción de una lista",
+            "eyebrow": "Procesamiento",
+            "body": [
+              "Procesar una lista casi siempre significa recorrerla con un ciclo y reducirla a un resultado: una suma, un promedio, un máximo o un conteo de elementos que cumplen una condición. Python ofrece funciones directas como $sum(lista)$, $max(lista)$, $min(lista)$ y $len(lista)$, pero entender el recorrido manual con $for$ es esencial, porque cualquier cálculo a la medida se construye así.",
+              "El patrón de acumulación es el más importante: se inicializa un acumulador (en cero para sumar, o con el primer elemento para buscar el máximo) y, en cada vuelta del ciclo, se actualiza con el elemento actual. El promedio combina dos reducciones, la suma y la cantidad: $\\bar{x}=\\frac{1}{n}\\sum_{i} x_i$. Este patrón se reutiliza en casi todos los algoritmos de este tema.",
+              "El filtrado es la otra operación clave: recorrer la lista y conservar solo los elementos que cumplen una condición, por ejemplo las lecturas que superan un umbral de alarma. El resultado suele ser una lista nueva más corta, construida con $append$ dentro del ciclo."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "functions",
+                "text": "Reducir = recorrer la lista y combinarla en un solo valor."
+              },
+              {
+                "icon": "add_box",
+                "text": "El patrón de acumulación inicializa y actualiza un acumulador en cada vuelta."
+              },
+              {
+                "icon": "filter_alt",
+                "text": "Filtrar = conservar los elementos que cumplen una condición."
+              }
+            ],
+            "example": {
+              "title": "Promedio de una serie",
+              "body": [
+                "Para $lecturas=[23.5,24.1,22.8,25.0]$ la suma es $95.4$ y la cantidad $4$, así que el promedio es $\\bar{x}=95.4/4=23.85$ °C."
+              ]
+            },
+            "closing": [
+              "Identifica primero qué quieres obtener de la lista —un total, un extremo, un subconjunto— y elige entre acumular o filtrar."
+            ]
+          },
+          "s2-tabla-ops": {
+            "type": "table",
+            "title": "Operaciones de lista y su efecto en memoria",
+            "columns": [
+              "Operación",
+              "Efecto sobre la lista",
+              "¿Crea estructura nueva?"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "$append(x)$",
+                  "Agrega x al final",
+                  {
+                    "badge": "No: muta la misma",
+                    "tone": "success"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "$insert(i,x)$",
+                  "Inserta x en la posición i",
+                  {
+                    "badge": "No: muta la misma",
+                    "tone": "success"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "$pop(i)$",
+                  "Quita y devuelve el elemento i",
+                  {
+                    "badge": "No: muta la misma",
+                    "tone": "success"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "$lista[a:b]$",
+                  "Extrae una sublista",
+                  {
+                    "badge": "Sí: copia parcial",
+                    "tone": "warning"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "$lista.copy()$",
+                  "Duplica toda la lista",
+                  {
+                    "badge": "Sí: copia completa",
+                    "tone": "warning"
+                  }
+                ]
+              }
+            ]
+          },
+          "s2-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards · Conceptos de listas",
+            "cards": [
+              {
+                "term": "Lista",
+                "definition": "Colección ordenada, indexada y mutable escrita entre corchetes; almacena una secuencia de elementos que puede crecer.",
+                "icon": "list"
+              },
+              {
+                "term": "Mutabilidad",
+                "definition": "Capacidad de cambiar elementos en el lugar y de crecer o encoger sin crear una estructura nueva.",
+                "icon": "edit"
+              },
+              {
+                "term": "append",
+                "definition": "Método que agrega un elemento al final de la lista, ampliando su tamaño en uno.",
+                "icon": "add"
+              },
+              {
+                "term": "Patrón de acumulación",
+                "definition": "Técnica de recorrer la lista actualizando un acumulador en cada vuelta para obtener una suma, máximo o conteo.",
+                "icon": "add_box"
+              },
+              {
+                "term": "Filtrado",
+                "definition": "Recorrido que conserva solo los elementos que cumplen una condición, produciendo una lista más corta.",
+                "icon": "filter_alt"
+              }
+            ]
+          },
+          "s2-teoria-3": {
+            "type": "theory-block",
+            "title": "Crecimiento dinámico y uso de memoria",
+            "eyebrow": "Conexión con el RA2",
+            "body": [
+              "Aquí aparece de lleno el RA2: una lista no reserva una memoria fija de antemano, sino que crece dinámicamente a medida que se agregan elementos. Internamente, cuando una lista se queda sin espacio reservado, el sistema reserva un bloque mayor y copia los elementos al nuevo bloque; por eso una lista que crece mucho consume más memoria que un dato del mismo tamaño conocido desde el inicio.",
+              "Esto tiene una consecuencia práctica: el acceso por índice $lista[i]$ es inmediato porque los elementos están contiguos, pero insertar o eliminar al inicio obliga a desplazar todos los demás. Evaluar la asignación dinámica de memoria significa anticipar este costo: una lista es excelente para acumular y leer por posición, y menos eficiente para insertar en medio de una serie muy larga.",
+              "Comparada con una cadena (inmutable, que crea texto nuevo en cada cambio) o con una tupla (de tamaño fijo), la lista es la estructura que mejor representa datos que varían en cantidad durante la ejecución. Elegirla con criterio es parte de evaluar adecuadamente cómo el programa usa la memoria."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "memory",
+                "text": "La lista reserva memoria dinámicamente al crecer (RA2)."
+              },
+              {
+                "icon": "bolt",
+                "text": "El acceso por índice es inmediato; insertar al inicio es costoso."
+              },
+              {
+                "icon": "balance",
+                "text": "Mejor para acumular y leer; peor para insertar en medio de series largas."
+              }
+            ],
+            "example": {
+              "title": "Costo de crecer",
+              "body": [
+                "Acumular $10\\,000$ lecturas con $append$ es eficiente; en cambio insertar cada nueva lectura en la posición $0$ obligaría a desplazar las $10\\,000$ anteriores en cada paso."
+              ]
+            },
+            "closing": [
+              "Antes de elegir una lista, pregúntate cómo crecerá y por dónde la modificarás: ahí se decide su costo en memoria y tiempo."
+            ]
+          },
+          "s2-stepper-promedio": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 4.2 · Promedio de una serie de lecturas",
+            "statement": "Dada la lista de temperaturas $lecturas=[23.5, 24.1, 22.8, 25.0]$, calcular el promedio recorriéndola con el patrón de acumulación.",
+            "steps": [
+              {
+                "title": "Inicializar el acumulador",
+                "body": "Empieza la suma en cero antes de recorrer la lista.",
+                "formula": "suma = 0",
+                "final": false
+              },
+              {
+                "title": "Acumular cada elemento",
+                "body": "En cada vuelta del ciclo se agrega el elemento actual a la suma.",
+                "formula": "suma = 23.5+24.1+22.8+25.0 = 95.4",
+                "final": false
+              },
+              {
+                "title": "Contar los elementos",
+                "body": "La cantidad de lecturas es la longitud de la lista.",
+                "formula": "n = \\operatorname{len}(lecturas) = 4",
+                "final": false
+              },
+              {
+                "title": "Dividir suma entre cantidad",
+                "body": "El promedio es la suma dividida por el número de elementos.",
+                "formula": "\\bar{x} = \\frac{95.4}{4}",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "El promedio queda entre el mínimo (22.8) y el máximo (25.0) de la serie, lo que confirma que el cálculo es coherente.",
+                "formula": "\\bar{x} = 23.85\\ \\text{°C}",
+                "final": true
+              }
+            ]
+          },
+          "s2-stepper-filtro": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 4.3 · Filtrar lecturas sobre un umbral",
+            "statement": "De la lista $lecturas=[23.5, 24.1, 22.8, 25.0]$, obtener una lista nueva con las lecturas que superan el umbral de alarma $u=24.0$ °C.",
+            "steps": [
+              {
+                "title": "Crear la lista de resultado",
+                "body": "Empieza con una lista vacía que recogerá los valores que cumplen la condición.",
+                "formula": "alarmas = []",
+                "final": false
+              },
+              {
+                "title": "Evaluar la condición elemento a elemento",
+                "body": "Recorre la lista y compara cada lectura con el umbral.",
+                "formula": "lecturas[i] > 24.0",
+                "final": false
+              },
+              {
+                "title": "Agregar los que cumplen",
+                "body": "Cuando la condición es verdadera, agrega el valor a la lista de alarmas.",
+                "formula": "24.1 > 24.0 \\Rightarrow \\text{agregar},\\quad 25.0 > 24.0 \\Rightarrow \\text{agregar}",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "Solo dos lecturas superan el umbral; la lista resultante es más corta que la original, como debe ser un filtrado.",
+                "formula": "alarmas = [24.1, 25.0]",
+                "final": true
+              }
+            ]
+          },
+          "s2-codigo-promedio": {
+            "type": "code",
+            "title": "Verificación en Python · promedio y filtrado de lecturas",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "serie_lecturas.py",
+            "instructions": [
+              "Lee el fragmento e identifica el patrón de acumulación (suma) y el filtrado con append dentro del ciclo.",
+              "Guarda el archivo como serie_lecturas.py y ejecútalo con python serie_lecturas.py.",
+              "Agrega una lectura con lecturas.append(26.3) antes del cálculo y vuelve a ejecutar para ver cómo cambian el promedio y la lista de alarmas; así compruebas el crecimiento dinámico de la lista."
+            ],
+            "code": "lecturas = [23.5, 24.1, 22.8, 25.0]\numbral = 24.0\n\nsuma = 0\nfor x in lecturas:\n    suma += x\npromedio = suma / len(lecturas)\n\nalarmas = []\nfor x in lecturas:\n    if x > umbral:\n        alarmas.append(x)\n\nprint('Promedio:', round(promedio, 2))\nprint('Alarmas:', alarmas)",
+            "expectedOutput": [
+              "Debe imprimir Promedio: 23.85 y Alarmas: [24.1, 25.0], coincidiendo con los ejercicios resueltos 4.2 y 4.3.",
+              "Al agregar 26.3 con append, el promedio sube y la lista de alarmas pasa a [24.1, 25.0, 26.3], evidenciando que la lista creció en una posición."
+            ]
+          },
+          "s2-figura-memoria": {
+            "type": "figure",
+            "title": "Crecimiento dinámico de una lista en memoria",
+            "assetId": "alg04-fig-lista-memoria",
+            "src": "",
+            "alt": "Bloque de memoria reservado para una lista con 4 celdas ocupadas y 2 libres; al hacer append más allá del bloque, se dibuja un bloque mayor al que se copian los elementos.",
+            "caption": "Cuando una lista llena su bloque reservado, el sistema reserva un bloque mayor y copia los elementos: así crece dinámicamente (RA2). Elaboración propia.",
+            "prompt": "Crear un diagrama didáctico en español sobre el crecimiento de una lista en memoria: a la izquierda, un bloque de memoria con 4 celdas ocupadas (valores) y 2 celdas libres punteadas. Una flecha 'append cuando el bloque está lleno' lleva a la derecha a un bloque más grande con todas las celdas previas copiadas más la nueva. Etiquetar 'reserva dinámica' y 'copia de elementos'. Estilo esquemático limpio, fondo claro, etiquetas legibles."
+          },
+          "s2-acordion": {
+            "type": "accordion",
+            "title": "Matices y errores frecuentes con listas",
+            "items": [
+              {
+                "icon": "link",
+                "title": "Asignar una lista no la copia: comparte la referencia",
+                "open": true,
+                "body": [
+                  "Escribir $b = a$ con dos listas no crea una segunda lista: hace que $b$ y $a$ apunten a la misma estructura en memoria. Si luego se hace $b.append(x)$, el cambio también aparece en $a$, porque son el mismo objeto. Este es uno de los errores de memoria más sutiles y conecta directamente con el RA2.",
+                  "Para obtener una lista independiente hay que copiarla explícitamente con $a.copy()$ o $list(a)$. Comprender la diferencia entre referenciar y copiar es clave al evaluar cómo un algoritmo usa la memoria: una copia duplica el espacio ocupado, mientras que una referencia lo comparte."
+                ]
+              },
+              {
+                "icon": "delete_sweep",
+                "title": "Modificar una lista mientras se recorre",
+                "body": [
+                  "Eliminar elementos de una lista dentro del mismo ciclo $for$ que la recorre provoca que el algoritmo se salte posiciones o procese datos equivocados, porque los índices se desplazan al borrar. Es un error frecuente al intentar filtrar 'en el lugar'.",
+                  "La solución segura es construir una lista nueva con los elementos que se desean conservar (el patrón de filtrado), o recorrer una copia mientras se modifica la original. Separar la lista que se lee de la que se escribe evita resultados impredecibles."
+                ]
+              },
+              {
+                "icon": "speed",
+                "title": "Insertar al inicio es más costoso que al final",
+                "body": [
+                  "$append$ agrega al final en tiempo prácticamente constante, pero $insert(0, x)$ obliga a desplazar todos los elementos una posición a la derecha. En una serie de miles de lecturas, insertar siempre al inicio multiplica el trabajo y el movimiento de datos en memoria.",
+                  "Por eso, para acumular datos que llegan en orden, se agrega al final; si se necesita procesar en orden inverso, es preferible acumular al final y recorrer la lista al revés que insertar al inicio repetidamente. Anticipar este costo forma parte de evaluar la eficiencia del algoritmo."
+                ]
+              }
+            ]
+          },
+          "s2-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": [
+              "En el documento imprimible encontrarás el tratamiento extendido de las listas: variantes del patrón de acumulación, filtrado encadenado y un análisis detallado del costo de insertar al inicio frente a agregar al final, con su impacto en la memoria reservada."
+            ]
+          },
+          "s2-quiz": {
+            "type": "quiz",
+            "title": "Chequeo · Listas y memoria",
+            "questions": [
+              {
+                "prompt": "Tras ejecutar $a=[1,2,3]$; $b=a$; $b.append(4)$, ¿qué contiene $a$?",
+                "options": [
+                  {
+                    "text": "$[1,2,3,4]$, porque $b$ y $a$ son la misma lista",
+                    "correct": true,
+                    "feedback": "Correcto: la asignación $b=a$ comparte la referencia; ambas variables apuntan al mismo objeto, así que el append afecta a las dos."
+                  },
+                  {
+                    "text": "$[1,2,3]$, porque $b$ es una copia independiente",
+                    "correct": false,
+                    "feedback": "Revisa la referencia compartida: $b=a$ no copia la lista; para una copia independiente se usa $a.copy()$."
+                  },
+                  {
+                    "text": "Produce un error porque no se puede modificar una lista",
+                    "correct": false,
+                    "feedback": "Las listas son mutables: $append$ es válido. El punto del ejercicio es que $a$ y $b$ comparten la misma estructura."
+                  }
+                ]
+              },
+              {
+                "prompt": "¿Cuál es la forma más eficiente de acumular lecturas que llegan en orden durante un turno?",
+                "options": [
+                  {
+                    "text": "Agregarlas al final con $append$",
+                    "correct": true,
+                    "feedback": "Correcto: $append$ agrega al final en tiempo prácticamente constante, sin desplazar los elementos existentes."
+                  },
+                  {
+                    "text": "Insertarlas siempre en la posición $0$ con $insert(0,x)$",
+                    "correct": false,
+                    "feedback": "Insertar al inicio desplaza todos los elementos en cada paso; en una serie larga es mucho más costoso que $append$."
+                  },
+                  {
+                    "text": "Crear una cadena y concatenar cada lectura",
+                    "correct": false,
+                    "feedback": "Una cadena es inmutable y guarda texto, no números operables; para una serie de valores la estructura adecuada es la lista."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "seccion-3": {
+        "kind": "theory",
+        "theme": "Tuplas y diccionarios",
+        "badge": "Tema 04 · Sección 3",
+        "navLabel": "Tuplas y diccionarios",
+        "title": "Tuplas y diccionarios: registros inmutables y mapeo clave-valor",
+        "intro": [
+          "No todos los datos son una serie homogénea. A veces necesitamos un registro fijo que no debe cambiar —las coordenadas de un punto, los parámetros de una máquina— y otras veces necesitamos buscar un dato por su nombre y no por su posición —el stock de un repuesto a partir de su código—. Para lo primero está la tupla; para lo segundo, el diccionario."
+        ],
+        "componentOrder": [
+          "s3-teoria-1",
+          "s3-figura-tupla",
+          "s3-carrusel",
+          "s3-teoria-2",
+          "s3-tabla-comparativa",
+          "s3-flashcards",
+          "s3-teoria-3",
+          "s3-stepper-inventario",
+          "s3-stepper-actualizar",
+          "s3-codigo-inventario",
+          "s3-figura-dict",
+          "s3-acordion",
+          "s3-callout-saberes",
+          "s3-fill-blank"
+        ],
+        "components": {
+          "s3-teoria-1": {
+            "type": "theory-block",
+            "title": "La tupla: un registro ordenado e inmutable",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una tupla es una secuencia ordenada de elementos escrita entre paréntesis, por ejemplo $punto=(4, 7)$ o $maquina=(\\text{'CNC-12'}, 220, 15)$. Se indexa y se recorre igual que una lista, pero con una diferencia esencial: es inmutable, no se puede cambiar un elemento ni agregar otro después de crearla.",
+              "Esa inmutabilidad la hace ideal para representar un registro fijo cuyos campos no deben alterarse por accidente: las coordenadas de una posición, el RGB de un color, o la terna (modelo, voltaje, potencia) de un equipo. Al ser fija, una tupla ocupa una memoria determinada desde su creación, lo que la hace más predecible que una lista (conexión con el RA2).",
+              "Una ventaja muy usada es el desempaquetado: una tupla puede repartir sus valores en varias variables de una sola vez, $x, y = punto$, lo que hace el código más legible al nombrar cada campo. Las tuplas también permiten que una función devuelva varios resultados a la vez."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "lock",
+                "text": "La tupla es ordenada, indexada e inmutable."
+              },
+              {
+                "icon": "inventory_2",
+                "text": "Representa registros fijos: coordenadas, parámetros, ternas."
+              },
+              {
+                "icon": "unfold_more",
+                "text": "Permite desempaquetar varios valores: $x, y = punto$."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Tupla frente a lista",
+                "body": [
+                  "Si el conjunto de valores no debe cambiar y representa un registro con significado posicional, es una tupla; si es una colección que crece o se edita, es una lista."
+                ],
+                "formula": "punto=(4,7) \\;\\text{(fijo)}\\qquad lecturas=[23.5,24.1] \\;\\text{(crece)}",
+                "formulaNote": "La elección entre tupla y lista comunica la intención: dato fijo frente a colección variable."
+              }
+            ],
+            "example": {
+              "title": "Coordenadas de un sensor",
+              "body": [
+                "La posición de un sensor $pos=(12, 30)$ no debería cambiar durante el cálculo; al ser tupla, intentar $pos[0]=15$ produce un error y protege el dato."
+              ]
+            },
+            "closing": [
+              "Usa una tupla cuando quieras decir 'este registro es fijo'; la inmutabilidad es una garantía, no una limitación."
+            ]
+          },
+          "s3-figura-tupla": {
+            "type": "image",
+            "title": "Tupla como registro fijo y su desempaquetado",
+            "assetId": "alg04-fig-tupla",
+            "src": "",
+            "alt": "La tupla ('CNC-12', 220, 15) con candados en cada campo indicando inmutabilidad y flechas que reparten los valores en las variables modelo, voltaje y potencia.",
+            "caption": "Una tupla guarda un registro fijo; el desempaquetado reparte cada campo en una variable con nombre. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español: la tupla ('CNC-12', 220, 15) dibujada como tres casillas entre paréntesis, cada una con un pequeño candado que indica inmutabilidad. Tres flechas etiquetadas reparten los valores hacia tres variables: modelo='CNC-12', voltaje=220, potencia=15. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s3-carrusel": {
+            "type": "carousel",
+            "title": "Carrusel · Cuándo usar tupla y cuándo diccionario",
+            "slides": [
+              {
+                "label": "Caso 1",
+                "title": "Posición fija",
+                "body": [
+                  "La coordenada de un punto $(4,7)$ no cambia: una tupla protege ese registro y permite leerlo por posición."
+                ],
+                "icon": "place"
+              },
+              {
+                "label": "Caso 2",
+                "title": "Parámetros de un equipo",
+                "body": [
+                  "La terna (modelo, voltaje, potencia) describe un equipo con campos fijos: una tupla es la representación natural."
+                ],
+                "icon": "settings"
+              },
+              {
+                "label": "Caso 3",
+                "title": "Stock por código",
+                "body": [
+                  "Para buscar el stock de un repuesto por su código, importa el nombre, no la posición: ahí entra el diccionario."
+                ],
+                "icon": "inventory"
+              },
+              {
+                "label": "Caso 4",
+                "title": "Configuración con nombres",
+                "body": [
+                  "Una configuración como {'voltaje':220, 'potencia':15} se lee por clave y es fácil de extender."
+                ],
+                "icon": "tune"
+              },
+              {
+                "label": "Regla",
+                "title": "Posición o nombre",
+                "body": [
+                  "Si accedes por posición y el dato es fijo, tupla; si accedes por un nombre o clave, diccionario."
+                ],
+                "icon": "rule"
+              }
+            ]
+          },
+          "s3-teoria-2": {
+            "type": "theory-block",
+            "title": "El diccionario: mapeo de claves a valores",
+            "eyebrow": "Acceso por nombre",
+            "body": [
+              "Un diccionario almacena pares clave-valor entre llaves, por ejemplo $stock=\\{\\text{'R-100'}:40, \\text{'R-205'}:12, \\text{'R-310'}:8\\}$. En lugar de acceder por una posición numérica, se accede por la clave: $stock[\\text{'R-205'}]$ devuelve $12$. La clave funciona como un nombre o etiqueta única que identifica cada dato.",
+              "La gran ventaja del diccionario es la búsqueda directa: encontrar el stock de un repuesto por su código es prácticamente inmediato, sin recorrer toda la estructura, porque internamente usa una tabla de dispersión (hash). Esto contrasta con una lista, donde buscar un valor exige recorrerla. Las claves deben ser inmutables (cadenas, números o tuplas) y únicas; los valores pueden ser de cualquier tipo.",
+              "El diccionario es mutable: se agregan o cambian pares con $stock[\\text{'R-400'}]=25$ y se eliminan con $del\\ stock[\\text{'R-310'}]$. Recorrer un diccionario con un ciclo permite visitar sus claves, sus valores o ambos a la vez, lo que lo hace ideal para resumir, totalizar o reportar datos identificados por nombre."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "vpn_key",
+                "text": "El diccionario asocia claves únicas con valores."
+              },
+              {
+                "icon": "search",
+                "text": "La búsqueda por clave es directa, no requiere recorrer todo."
+              },
+              {
+                "icon": "edit",
+                "text": "Es mutable: se agregan, cambian y eliminan pares."
+              }
+            ],
+            "example": {
+              "title": "Inventario por código",
+              "body": [
+                "Con $stock=\\{\\text{'R-100'}:40, \\text{'R-205'}:12\\}$, consultar $stock[\\text{'R-100'}]$ devuelve $40$ de inmediato, sin importar cuántos repuestos haya en el inventario."
+              ]
+            },
+            "closing": [
+              "Usa un diccionario cuando necesites encontrar un dato por su nombre o código en vez de por su posición."
+            ]
+          },
+          "s3-tabla-comparativa": {
+            "type": "table",
+            "title": "Lista, tupla y diccionario frente a frente",
+            "columns": [
+              "Característica",
+              "Lista",
+              "Tupla",
+              "Diccionario"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Delimitador",
+                  "[ ]",
+                  "( )",
+                  "{ clave: valor }"
+                ]
+              },
+              {
+                "cells": [
+                  "Acceso",
+                  "por índice",
+                  "por índice",
+                  "por clave"
+                ]
+              },
+              {
+                "cells": [
+                  "¿Mutable?",
+                  {
+                    "badge": "Sí",
+                    "tone": "success"
+                  },
+                  {
+                    "badge": "No",
+                    "tone": "danger"
+                  },
+                  {
+                    "badge": "Sí",
+                    "tone": "success"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Orden",
+                  "ordenada",
+                  "ordenada",
+                  "por inserción"
+                ]
+              },
+              {
+                "cells": [
+                  "Uso típico",
+                  "serie que crece",
+                  "registro fijo",
+                  "dato buscado por nombre"
+                ]
+              }
+            ]
+          },
+          "s3-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards · Tuplas y diccionarios",
+            "cards": [
+              {
+                "term": "Tupla",
+                "definition": "Secuencia ordenada e inmutable entre paréntesis; representa un registro fijo accesible por índice.",
+                "icon": "lock"
+              },
+              {
+                "term": "Desempaquetado",
+                "definition": "Repartir los elementos de una tupla en varias variables a la vez, como $x, y = punto$.",
+                "icon": "unfold_more"
+              },
+              {
+                "term": "Diccionario",
+                "definition": "Colección mutable de pares clave-valor entre llaves; el dato se busca por su clave, no por su posición.",
+                "icon": "menu_book"
+              },
+              {
+                "term": "Clave",
+                "definition": "Nombre único e inmutable que identifica un valor dentro del diccionario; puede ser cadena, número o tupla.",
+                "icon": "vpn_key"
+              },
+              {
+                "term": "Búsqueda por clave",
+                "definition": "Acceso directo a un valor mediante su clave, prácticamente inmediato gracias a la tabla de dispersión interna.",
+                "icon": "search"
+              }
+            ]
+          },
+          "s3-teoria-3": {
+            "type": "theory-block",
+            "title": "Recorrer y totalizar un diccionario",
+            "eyebrow": "Aplicación industrial",
+            "body": [
+              "Un uso central del diccionario es resumir información agrupada por una clave. Por ejemplo, si cada repuesto tiene un stock, recorrer el diccionario permite sumar el inventario total, encontrar el repuesto con menos existencias o listar los que están por debajo de un mínimo de reposición. El recorrido visita pares (clave, valor), de modo que en cada vuelta se conoce a la vez el código y su cantidad.",
+              "El diccionario también sirve para construir un conteo o agrupamiento sobre la marcha: al procesar muchos eventos, se usa la clave para acumular en su valor (por ejemplo, contar cuántas piezas defectuosas produjo cada máquina). Si la clave aún no existe, se inicializa; si ya existe, se incrementa. Este patrón de conteo es uno de los más potentes de la programación.",
+              "Como el diccionario es mutable y crece dinámicamente, comparte con la lista la consideración de memoria del RA2: agregar claves reserva más espacio. La diferencia es que el diccionario cambia velocidad de acceso por algo de memoria adicional de la tabla de dispersión, un compromiso que conviene evaluar según el tamaño del problema."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "summarize",
+                "text": "Recorrer el diccionario visita pares (clave, valor)."
+              },
+              {
+                "icon": "plus_one",
+                "text": "El patrón de conteo acumula por clave: inicializa o incrementa."
+              },
+              {
+                "icon": "memory",
+                "text": "Cambia memoria de la tabla hash por acceso rápido (RA2)."
+              }
+            ],
+            "example": {
+              "title": "Inventario total",
+              "body": [
+                "Para $stock=\\{\\text{'R-100'}:40, \\text{'R-205'}:12, \\text{'R-310'}:8\\}$, recorrer y sumar los valores da un inventario total de $60$ unidades."
+              ]
+            },
+            "closing": [
+              "Cuando los datos tengan un nombre natural y necesites resumirlos por ese nombre, el diccionario es la estructura adecuada."
+            ]
+          },
+          "s3-stepper-inventario": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 4.4 · Inventario total y repuesto crítico",
+            "statement": "Dado el inventario $stock=\\{\\text{'R-100'}:40,\\ \\text{'R-205'}:12,\\ \\text{'R-310'}:8\\}$, calcular el inventario total y hallar el repuesto con menor existencia.",
+            "steps": [
+              {
+                "title": "Inicializar acumuladores",
+                "body": "Empieza el total en cero y prepara una variable para el mínimo.",
+                "formula": "total = 0,\\quad minimo = +\\infty",
+                "final": false
+              },
+              {
+                "title": "Recorrer pares clave-valor",
+                "body": "En cada vuelta se conoce el código del repuesto y su cantidad.",
+                "formula": "(\\text{'R-100'},40),\\ (\\text{'R-205'},12),\\ (\\text{'R-310'},8)",
+                "final": false
+              },
+              {
+                "title": "Acumular el total",
+                "body": "Suma cada cantidad al total del inventario.",
+                "formula": "total = 40+12+8 = 60",
+                "final": false
+              },
+              {
+                "title": "Rastrear el mínimo",
+                "body": "Compara cada cantidad con el mínimo actual y guarda la menor con su código.",
+                "formula": "\\min(40,12,8) = 8 \\Rightarrow \\text{'R-310'}",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "El total es 60 y el repuesto crítico es 'R-310' con 8 unidades; la suma de las partes confirma el total.",
+                "formula": "total = 60,\\quad \\text{crítico} = \\text{'R-310'}",
+                "final": true
+              }
+            ]
+          },
+          "s3-stepper-actualizar": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 4.5 · Registrar una entrada y una salida de stock",
+            "statement": "Sobre $stock=\\{\\text{'R-100'}:40,\\ \\text{'R-205'}:12\\}$, registrar la entrada de 10 unidades de 'R-100' y la salida de 5 de 'R-205', y agregar el repuesto nuevo 'R-400' con 25 unidades.",
+            "steps": [
+              {
+                "title": "Entrada de 'R-100'",
+                "body": "Suma 10 al valor existente de la clave 'R-100'.",
+                "formula": "stock[\\text{'R-100'}] = 40 + 10 = 50",
+                "final": false
+              },
+              {
+                "title": "Salida de 'R-205'",
+                "body": "Resta 5 al valor existente de la clave 'R-205'.",
+                "formula": "stock[\\text{'R-205'}] = 12 - 5 = 7",
+                "final": false
+              },
+              {
+                "title": "Alta de un repuesto nuevo",
+                "body": "Asignar a una clave que no existía crea el par automáticamente.",
+                "formula": "stock[\\text{'R-400'}] = 25",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "El diccionario refleja los tres cambios y creció en una clave: el diccionario es mutable y dinámico.",
+                "formula": "stock = \\{\\text{'R-100'}:50,\\ \\text{'R-205'}:7,\\ \\text{'R-400'}:25\\}",
+                "final": true
+              }
+            ]
+          },
+          "s3-codigo-inventario": {
+            "type": "code",
+            "title": "Verificación en Python · resumen de inventario",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "inventario.py",
+            "instructions": [
+              "Lee el fragmento e identifica cómo se recorre el diccionario con items() y cómo se acumulan el total y el mínimo.",
+              "Guarda el archivo como inventario.py y ejecútalo con python inventario.py.",
+              "Agrega un repuesto con stock['R-400'] = 25 antes del recorrido y vuelve a ejecutar para ver cómo cambian el total y el repuesto crítico."
+            ],
+            "code": "stock = {'R-100': 40, 'R-205': 12, 'R-310': 8}\n\ntotal = 0\ncritico = None\nminimo = float('inf')\nfor codigo, cantidad in stock.items():\n    total += cantidad\n    if cantidad < minimo:\n        minimo = cantidad\n        critico = codigo\n\nprint('Inventario total:', total)\nprint('Repuesto critico:', critico, 'con', minimo, 'unidades')",
+            "expectedOutput": [
+              "Debe imprimir Inventario total: 60 y Repuesto critico: R-310 con 8 unidades, coincidiendo con el ejercicio resuelto 4.4.",
+              "Si agregas 'R-400': 25, el total sube a 85 y el repuesto crítico sigue siendo R-310, lo que confirma que el recorrido evalúa todas las claves."
+            ]
+          },
+          "s3-figura-dict": {
+            "type": "figure",
+            "title": "Acceso por clave en un diccionario",
+            "assetId": "alg04-fig-diccionario",
+            "src": "",
+            "alt": "Diagrama con claves de texto 'R-100', 'R-205', 'R-310' a la izquierda y flechas que apuntan a sus valores 40, 12, 8 a la derecha; una lupa sobre 'R-205' muestra acceso directo al valor 12.",
+            "caption": "Cada clave apunta directamente a su valor; buscar por clave no exige recorrer toda la estructura. Elaboración propia.",
+            "prompt": "Crear un diagrama didáctico en español de un diccionario: a la izquierda, tres claves de texto en cajas ('R-100', 'R-205', 'R-310'); a la derecha, tres valores numéricos (40, 12, 8). Flechas conectan cada clave con su valor. Sobre la clave 'R-205' dibujar una lupa con la etiqueta 'acceso directo al valor 12' para ilustrar la búsqueda por clave. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s3-acordion": {
+            "type": "accordion",
+            "title": "Matices y errores frecuentes con tuplas y diccionarios",
+            "items": [
+              {
+                "icon": "report_problem",
+                "title": "Acceder a una clave que no existe",
+                "open": true,
+                "body": [
+                  "Consultar $stock[\\text{'R-999'}]$ cuando esa clave no está en el diccionario produce un KeyError que detiene el programa. Es un error muy común al procesar datos de entrada que pueden no estar registrados, como un código mal digitado.",
+                  "La forma segura es comprobar antes con $\\text{'R-999'} \\in stock$ o usar $stock.get(\\text{'R-999'}, 0)$, que devuelve un valor por defecto en lugar de fallar. En un proceso industrial, manejar la clave ausente evita que un dato faltante interrumpa toda la línea de cálculo."
+                ]
+              },
+              {
+                "icon": "key_off",
+                "title": "Querer usar una lista como clave",
+                "body": [
+                  "Las claves de un diccionario deben ser inmutables, así que una cadena, un número o una tupla sirven, pero una lista no: intentar usar una lista como clave produce un error de tipo no hashable. La razón es que la tabla de dispersión necesita que la clave no cambie.",
+                  "Si necesitas una clave compuesta —por ejemplo (línea, turno)— usa una tupla, que es inmutable y por tanto válida como clave. Esta es una de las razones prácticas por las que tuplas y diccionarios se estudian juntos."
+                ]
+              },
+              {
+                "icon": "compare_arrows",
+                "title": "Confundir 'ordenado por posición' con 'buscado por clave'",
+                "body": [
+                  "Una lista mantiene un orden por posición y se recorre en secuencia; un diccionario se piensa por clave, no por posición. Usar una lista para buscar un repuesto por código obliga a recorrerla entera en cada consulta, mientras que el diccionario lo encuentra de inmediato.",
+                  "El criterio de elección es la pregunta '¿cómo voy a buscar el dato?': si la respuesta es 'por su nombre o código', el diccionario es la estructura adecuada; si es 'por su orden de llegada' o 'el i-ésimo', la lista. Elegir bien también optimiza el uso de memoria y tiempo (RA2)."
+                ]
+              }
+            ]
+          },
+          "s3-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": [
+              "El documento de saberes profundiza en tuplas y diccionarios con el patrón de conteo por clave aplicado a piezas defectuosas por máquina, claves compuestas mediante tuplas y casos resueltos de inventario y configuración de equipos."
+            ]
+          },
+          "s3-fill-blank": {
+            "type": "fill-blank",
+            "title": "Completa · Elegir entre tupla y diccionario",
+            "prompt": "Completa las frases sobre la estructura adecuada para cada caso.",
+            "parts": [
+              "Una secuencia ordenada que no debe cambiar, como las coordenadas de un punto, se modela con una ",
+              {
+                "placeholder": "estructura",
+                "answers": [
+                  "tupla",
+                  "tuplas"
+                ]
+              },
+              ", que es ",
+              {
+                "placeholder": "propiedad",
+                "answers": [
+                  "inmutable",
+                  "inmutables",
+                  "fija"
+                ]
+              },
+              ". Para buscar el stock de un repuesto por su código sin recorrer toda la estructura, se usa un ",
+              {
+                "placeholder": "estructura",
+                "answers": [
+                  "diccionario",
+                  "diccionarios",
+                  "dict"
+                ]
+              },
+              ", donde el dato se obtiene por su ",
+              {
+                "placeholder": "acceso",
+                "answers": [
+                  "clave",
+                  "llave",
+                  "key"
+                ]
+              },
+              "."
+            ]
+          }
+        }
+      },
+      "seccion-4": {
+        "kind": "theory",
+        "theme": "Arreglos multidimensionales",
+        "badge": "Tema 04 · Sección 4",
+        "navLabel": "Matrices",
+        "title": "Arreglos multidimensionales: matrices como listas anidadas",
+        "intro": [
+          "Muchos datos de ingeniería son bidimensionales por naturaleza: el mapa de temperaturas de una placa, la malla de un horno, una imagen en escala de grises o una tabla de producción por máquina y por turno. Para representarlos no basta una lista lineal: necesitamos un arreglo multidimensional, una matriz, que en Python se construye como una lista de listas."
+        ],
+        "componentOrder": [
+          "s4-teoria-1",
+          "s4-figura-matriz",
+          "s4-carrusel",
+          "s4-teoria-2",
+          "s4-formula-recorrido",
+          "s4-flashcards",
+          "s4-teoria-3",
+          "s4-stepper-suma",
+          "s4-stepper-maximo",
+          "s4-codigo-matriz",
+          "s4-figura-recorrido",
+          "s4-acordion",
+          "s4-callout-saberes",
+          "s4-multi-select"
+        ],
+        "components": {
+          "s4-teoria-1": {
+            "type": "theory-block",
+            "title": "La matriz como lista de listas",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una matriz es un arreglo de dos dimensiones: filas y columnas. En Python se representa de forma natural como una lista cuyos elementos son, a su vez, listas (cada una es una fila). Por ejemplo, $M=[[20,21,19],[22,24,23]]$ es una matriz de $2$ filas y $3$ columnas que podría guardar temperaturas medidas en dos instantes y tres puntos.",
+              "El acceso usa dos índices: $M[i][j]$ devuelve el elemento de la fila $i$ y la columna $j$, ambos contados desde cero. Esto generaliza la indexación lineal de las listas: el primer índice elige la fila (una lista interna) y el segundo elige el elemento dentro de esa fila. La correspondencia con la notación matemática $a_{ij}$ del Álgebra Lineal es directa.",
+              "La forma o dimensión de la matriz es el par (número de filas, número de columnas). Conocerla es indispensable para recorrerla sin salirse de rango: el número de filas es $len(M)$ y el número de columnas, $len(M[0])$. Una matriz bien formada (rectangular) tiene todas sus filas de la misma longitud."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "grid_on",
+                "text": "Una matriz es una lista de listas: cada fila es una lista."
+              },
+              {
+                "icon": "pin_drop",
+                "text": "$M[i][j]$ accede a la fila $i$, columna $j$, ambas desde $0$."
+              },
+              {
+                "icon": "aspect_ratio",
+                "text": "Forma = (filas, columnas) = $(\\operatorname{len}(M),\\ \\operatorname{len}(M[0]))$."
+              }
+            ],
+            "sections": [
+              {
+                "title": "De la notación matemática al código",
+                "body": [
+                  "El elemento $a_{ij}$ de la teoría se escribe $M[i][j]$ en el algoritmo; el cambio principal es que la programación cuenta filas y columnas desde cero, no desde uno."
+                ],
+                "formula": "a_{ij} \\;\\longleftrightarrow\\; M[i][j], \\qquad 0 \\le i < \\text{filas},\\ 0 \\le j < \\text{columnas}",
+                "formulaNote": "Tener presente el índice cero evita el error de leer una fila o columna de más."
+              }
+            ],
+            "example": {
+              "title": "Leer un punto de medición",
+              "body": [
+                "En $M=[[20,21,19],[22,24,23]]$, el valor $M[1][1]=24$ es la temperatura del segundo instante (fila 1) en el segundo punto (columna 1)."
+              ]
+            },
+            "closing": [
+              "Antes de recorrer una matriz, fija su forma: cuántas filas y cuántas columnas determina toda la lógica de los dos índices."
+            ]
+          },
+          "s4-figura-matriz": {
+            "type": "image",
+            "title": "Matriz como lista de listas con índices de fila y columna",
+            "assetId": "alg04-fig-matriz",
+            "src": "",
+            "alt": "Cuadrícula 2 por 3 con valores 20,21,19 en la fila 0 y 22,24,23 en la fila 1; los índices de fila 0,1 a la izquierda y los de columna 0,1,2 arriba; resaltada la celda M[1][1]=24.",
+            "caption": "La matriz M[i][j] se indexa por fila i y columna j desde cero; M[1][1]=24. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español: una cuadrícula de 2 filas por 3 columnas con los valores 20,21,19 en la fila superior y 22,24,23 en la inferior. Etiquetar los índices de fila (0 arriba, 1 abajo) a la izquierda y los índices de columna (0,1,2) arriba. Resaltar con color la celda de la fila 1, columna 1 (valor 24) y rotularla 'M[1][1]'. A un lado, mostrar la misma matriz escrita como lista de listas [[20,21,19],[22,24,23]]. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s4-carrusel": {
+            "type": "carousel",
+            "title": "Carrusel · Construir y leer una matriz",
+            "slides": [
+              {
+                "label": "Paso 1",
+                "title": "Escribir la matriz",
+                "body": [
+                  "Cada fila es una lista; la matriz es la lista que las agrupa: $M=[[20,21,19],[22,24,23]]$."
+                ],
+                "icon": "grid_on"
+              },
+              {
+                "label": "Paso 2",
+                "title": "Conocer la forma",
+                "body": [
+                  "El número de filas es $len(M)=2$ y el de columnas $len(M[0])=3$."
+                ],
+                "formula": "(\\text{filas},\\text{columnas})=(2,3)",
+                "icon": "aspect_ratio"
+              },
+              {
+                "label": "Paso 3",
+                "title": "Acceder a un elemento",
+                "body": [
+                  "$M[0][2]$ es la fila 0, columna 2: el valor 19."
+                ],
+                "formula": "M[0][2]=19",
+                "icon": "pin_drop"
+              },
+              {
+                "label": "Paso 4",
+                "title": "Recorrer una fila",
+                "body": [
+                  "Un ciclo sobre las columnas de la fila $i$ visita todos sus valores en orden."
+                ],
+                "icon": "table_rows"
+              },
+              {
+                "label": "Paso 5",
+                "title": "Recorrer toda la matriz",
+                "body": [
+                  "Dos ciclos anidados, uno por filas y otro por columnas, visitan cada celda exactamente una vez."
+                ],
+                "icon": "apps"
+              }
+            ]
+          },
+          "s4-teoria-2": {
+            "type": "theory-block",
+            "title": "Recorrido con ciclos anidados",
+            "eyebrow": "Estructuras de control en dos dimensiones",
+            "body": [
+              "Recorrer una matriz completa requiere dos ciclos anidados: el ciclo externo avanza por las filas y el interno, por las columnas de cada fila. Es la aplicación directa del anidamiento estudiado en el Tema 3, ahora con un propósito claro: visitar cada celda $M[i][j]$ exactamente una vez para sumarla, compararla o transformarla.",
+              "El orden del recorrido importa para la interpretación, aunque no para visitar todas las celdas: recorrer por filas (fila completa antes de pasar a la siguiente) es lo más común y coincide con cómo se almacena la matriz. Si el problema pide totalizar por columna —por ejemplo, el promedio de cada punto de medición a lo largo del tiempo— se invierte el rol de los índices.",
+              "El número total de operaciones de un recorrido completo es el producto de filas por columnas. Esta es una primera noción de costo: procesar una matriz grande implica un trabajo proporcional a su cantidad de celdas, algo que conviene tener presente al evaluar la eficiencia y la memoria que ocupa la estructura (RA2)."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "repeat",
+                "text": "Dos ciclos anidados recorren filas y columnas."
+              },
+              {
+                "icon": "swap_vert",
+                "text": "Recorrer por filas o por columnas según el resultado buscado."
+              },
+              {
+                "icon": "calculate",
+                "text": "El costo de un recorrido completo es filas × columnas."
+              }
+            ],
+            "example": {
+              "title": "Sumar toda la matriz",
+              "body": [
+                "Para sumar todos los valores de $M=[[20,21,19],[22,24,23]]$, el ciclo externo elige cada fila y el interno suma sus columnas: $20+21+19+22+24+23=129$."
+              ]
+            },
+            "closing": [
+              "Decide el orden de los dos índices según lo que quieras totalizar: por fila o por columna; el resto es el patrón de acumulación que ya conoces."
+            ]
+          },
+          "s4-formula-recorrido": {
+            "type": "formula",
+            "title": "Suma de los elementos de una matriz",
+            "context": [
+              "Para totalizar una matriz se recorren todas sus celdas con dos índices y se acumulan sus valores; esta expresión formaliza el recorrido con ciclos anidados."
+            ],
+            "latex": "S = \\sum_{i=0}^{m-1} \\sum_{j=0}^{n-1} M[i][j]",
+            "variables": [
+              {
+                "symbol": "m",
+                "description": "número de filas de la matriz, $\\operatorname{len}(M)$."
+              },
+              {
+                "symbol": "n",
+                "description": "número de columnas, $\\operatorname{len}(M[0])$."
+              },
+              {
+                "symbol": "M[i][j]",
+                "description": "elemento de la fila $i$ y la columna $j$."
+              }
+            ],
+            "explanation": [
+              "La suma doble se lee de adentro hacia afuera: el índice interno $j$ recorre las columnas de una fila fija $i$, y el externo $i$ avanza por las filas. Equivale exactamente a dos ciclos $for$ anidados, y el número de términos sumados es $m \\times n$, el total de celdas."
+            ]
+          },
+          "s4-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards · Matrices y recorrido",
+            "cards": [
+              {
+                "term": "Matriz (arreglo 2D)",
+                "definition": "Arreglo de filas y columnas representado como una lista de listas; se accede con dos índices $M[i][j]$.",
+                "icon": "grid_on"
+              },
+              {
+                "term": "Fila",
+                "definition": "Cada lista interna de la matriz; se obtiene con $M[i]$ y contiene todos los valores de esa fila.",
+                "icon": "table_rows"
+              },
+              {
+                "term": "Forma (dimensión)",
+                "definition": "Par (filas, columnas) que determina los índices válidos; filas $=\\operatorname{len}(M)$, columnas $=\\operatorname{len}(M[0])$.",
+                "icon": "aspect_ratio"
+              },
+              {
+                "term": "Ciclos anidados",
+                "definition": "Dos ciclos, uno dentro de otro, que recorren todas las celdas de la matriz exactamente una vez.",
+                "icon": "repeat"
+              },
+              {
+                "term": "Recorrido por filas",
+                "definition": "Visitar cada fila completa antes de pasar a la siguiente; coincide con el almacenamiento de la matriz.",
+                "icon": "swap_vert"
+              }
+            ]
+          },
+          "s4-teoria-3": {
+            "type": "theory-block",
+            "title": "Estadísticos por fila y por columna",
+            "eyebrow": "Aplicación industrial",
+            "body": [
+              "Sobre una matriz de datos de proceso se calculan resúmenes en dos direcciones. Por fila se obtiene, por ejemplo, el promedio de todos los puntos en un mismo instante; por columna, la evolución de un mismo punto de medición a lo largo del tiempo. Saber cuál índice fijar y cuál recorrer es la decisión central de estos algoritmos.",
+              "Para totalizar por fila se fija la fila $i$ y se recorre la columna $j$; para totalizar por columna se fija la columna $j$ y se recorre la fila $i$. El máximo global, en cambio, se obtiene comparando todas las celdas en un recorrido completo, manteniendo un acumulador con el mayor valor visto y, si interesa, su posición $(i,j)$.",
+              "Estos cálculos convierten una matriz de mediciones en información para decidir: detectar el punto más caliente de una placa, el turno con mayor producción o la zona fuera de tolerancia. La matriz es la estructura adecuada precisamente cuando el dato tiene dos dimensiones naturales y queremos resumirlo en cualquiera de ellas."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "table_rows",
+                "text": "Resumen por fila: fija $i$, recorre $j$."
+              },
+              {
+                "icon": "view_column",
+                "text": "Resumen por columna: fija $j$, recorre $i$."
+              },
+              {
+                "icon": "trending_up",
+                "text": "Máximo global: recorrido completo con acumulador y posición."
+              }
+            ],
+            "example": {
+              "title": "Punto más caliente",
+              "body": [
+                "En $M=[[20,21,19],[22,24,23]]$ el máximo es $24$, en la posición $(1,1)$: el segundo punto en el segundo instante es el más caliente."
+              ]
+            },
+            "closing": [
+              "Formula la pregunta antes de codificar: '¿por fila, por columna o global?' decide qué índice fijas y cuál recorres."
+            ]
+          },
+          "s4-stepper-suma": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 4.6 · Suma total y promedio por fila",
+            "statement": "Para la matriz de temperaturas $M=[[20,21,19],[22,24,23]]$, calcular la suma total de todos los valores y el promedio de cada fila.",
+            "steps": [
+              {
+                "title": "Fijar la forma",
+                "body": "Identifica filas y columnas para planear el recorrido.",
+                "formula": "m = 2 \\ \\text{filas},\\quad n = 3 \\ \\text{columnas}",
+                "final": false
+              },
+              {
+                "title": "Recorrer con ciclos anidados",
+                "body": "El ciclo externo elige la fila y el interno suma sus columnas.",
+                "formula": "S = (20+21+19) + (22+24+23)",
+                "final": false
+              },
+              {
+                "title": "Suma por fila",
+                "body": "Cada fila se totaliza por separado.",
+                "formula": "S_0 = 60,\\qquad S_1 = 69",
+                "final": false
+              },
+              {
+                "title": "Promedio por fila",
+                "body": "Divide cada suma de fila entre el número de columnas.",
+                "formula": "\\bar{x}_0 = \\frac{60}{3} = 20,\\qquad \\bar{x}_1 = \\frac{69}{3} = 23",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "La suma total es la suma de las sumas por fila, lo que confirma el recorrido completo.",
+                "formula": "S = S_0 + S_1 = 60 + 69 = 129",
+                "final": true
+              }
+            ]
+          },
+          "s4-stepper-maximo": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 4.7 · Localizar el valor máximo y su posición",
+            "statement": "En la matriz $M=[[20,21,19],[22,24,23]]$, encontrar la temperatura máxima y la posición $(i,j)$ donde ocurre.",
+            "steps": [
+              {
+                "title": "Inicializar con la primera celda",
+                "body": "Toma $M[0][0]$ como máximo provisional y guarda su posición.",
+                "formula": "max = 20,\\quad (i,j) = (0,0)",
+                "final": false
+              },
+              {
+                "title": "Recorrer todas las celdas",
+                "body": "Compara cada elemento con el máximo provisional en un recorrido completo.",
+                "formula": "M[i][j] > max ?",
+                "final": false
+              },
+              {
+                "title": "Actualizar al hallar uno mayor",
+                "body": "Cuando una celda supera al máximo, se actualizan el valor y la posición.",
+                "formula": "24 > 22 > 21 > 20 \\Rightarrow max = 24",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "El máximo es 24 en la posición (1,1); ninguna otra celda lo supera, así que es el punto más caliente.",
+                "formula": "max = 24,\\quad (i,j) = (1,1)",
+                "final": true
+              }
+            ]
+          },
+          "s4-codigo-matriz": {
+            "type": "code",
+            "title": "Verificación en Python · recorrer una matriz de temperaturas",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "matriz_temperaturas.py",
+            "instructions": [
+              "Lee el fragmento e identifica los dos ciclos anidados y cómo se localizan el máximo y su posición (i, j).",
+              "Guarda el archivo como matriz_temperaturas.py y ejecútalo con python matriz_temperaturas.py.",
+              "Cambia un valor de la matriz (por ejemplo M[0][1] = 30) y vuelve a ejecutar para confirmar que el máximo y su posición se actualizan."
+            ],
+            "code": "M = [[20, 21, 19],\n     [22, 24, 23]]\n\ntotal = 0\nmaximo = M[0][0]\npos = (0, 0)\nfor i in range(len(M)):\n    for j in range(len(M[0])):\n        total += M[i][j]\n        if M[i][j] > maximo:\n            maximo = M[i][j]\n            pos = (i, j)\n\nfor i in range(len(M)):\n    promedio_fila = sum(M[i]) / len(M[i])\n    print('Promedio fila', i, ':', round(promedio_fila, 2))\n\nprint('Suma total:', total)\nprint('Maximo:', maximo, 'en posicion', pos)",
+            "expectedOutput": [
+              "Debe imprimir Promedio fila 0 : 20.0, Promedio fila 1 : 23.0, Suma total: 129 y Maximo: 24 en posicion (1, 1), coincidiendo con los ejercicios resueltos 4.6 y 4.7.",
+              "Si pones M[0][1] = 30, el máximo pasa a 30 en posición (0, 1) y los promedios de la fila 0 cambian, confirmando el recorrido por celdas."
+            ]
+          },
+          "s4-figura-recorrido": {
+            "type": "figure",
+            "title": "Recorrido por filas con ciclos anidados",
+            "assetId": "alg04-fig-recorrido-matriz",
+            "src": "",
+            "alt": "Cuadrícula 2 por 3 con flechas numeradas que recorren la fila 0 de izquierda a derecha y luego la fila 1, indicando el orden de visita de las seis celdas.",
+            "caption": "El recorrido por filas visita cada celda una vez: termina una fila antes de pasar a la siguiente. Elaboración propia.",
+            "prompt": "Crear un diagrama didáctico en español: cuadrícula de 2 filas por 3 columnas con celdas numeradas. Dibujar flechas que muestren el orden de recorrido por filas: visitar las tres celdas de la fila 0 de izquierda a derecha (pasos 1,2,3) y luego las de la fila 1 (pasos 4,5,6), con una flecha de retorno al inicio de la siguiente fila. Etiquetar 'ciclo externo: filas' y 'ciclo interno: columnas'. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s4-acordion": {
+            "type": "accordion",
+            "title": "Matices y errores frecuentes con matrices",
+            "items": [
+              {
+                "icon": "report_problem",
+                "title": "Salirse del rango de índices",
+                "open": true,
+                "body": [
+                  "En una matriz de $m$ filas y $n$ columnas, los índices válidos van de $0$ a $m-1$ para las filas y de $0$ a $n-1$ para las columnas. Usar $M[m][n]$ o recorrer con $range(1, m+1)$ produce un IndexError, el error más común al pasar de la notación matemática (que empieza en 1) al código (que empieza en 0).",
+                  "La defensa es recorrer siempre con $range(len(M))$ para las filas y $range(len(M[0]))$ para las columnas, de modo que los límites se deriven de la propia matriz y no de un número escrito a mano. Así el recorrido se adapta solo si la matriz cambia de tamaño."
+                ]
+              },
+              {
+                "icon": "warning",
+                "title": "Crear una matriz con filas que comparten memoria",
+                "body": [
+                  "Un error sutil de memoria (RA2) es construir una matriz repitiendo una misma fila, como $M = [[0]*3]*2$. Esto no crea dos filas independientes: las dos posiciones apuntan a la misma lista interna, así que modificar $M[0][0]$ también cambia $M[1][0]$.",
+                  "La forma correcta es construir cada fila por separado, por ejemplo con una comprensión $[[0]*3\\ \\text{for}\\ \\_\\ \\text{in}\\ range(2)]$, que reserva una lista distinta por fila. Reconocer cuándo se comparte una referencia y cuándo se reserva memoria nueva es exactamente la competencia del RA2."
+                ]
+              },
+              {
+                "icon": "swap_horiz",
+                "title": "Confundir el índice de fila con el de columna",
+                "body": [
+                  "El primer índice siempre es la fila y el segundo la columna: $M[i][j]$, no $M[j][i]$. Invertirlos suele 'funcionar' en matrices cuadradas sin dar error, pero entrega valores transpuestos y resultados incorrectos que son difíciles de detectar.",
+                  "Una buena práctica es nombrar los ciclos de forma explícita (fila, columna) en lugar de i, j cuando la legibilidad importa, y verificar el resultado con un caso pequeño cuya respuesta se conozca a mano, como hicimos en los ejercicios resueltos."
+                ]
+              }
+            ]
+          },
+          "s4-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": [
+              "Para las matrices, el documento imprimible añade recorridos por columna, el cálculo de estadísticos en ambas direcciones y una explicación gráfica del error de las filas que comparten memoria, con ejercicios de localización de extremos."
+            ]
+          },
+          "s4-multi-select": {
+            "type": "multi-select",
+            "title": "Selección múltiple · Recorrido de matrices",
+            "prompt": "Selecciona todas las afirmaciones correctas sobre las matrices representadas como listas de listas en Python.",
+            "options": [
+              {
+                "text": "$M[i][j]$ accede al elemento de la fila $i$ y la columna $j$, ambas desde cero.",
+                "correct": true
+              },
+              {
+                "text": "El número de filas es $len(M)$ y el de columnas $len(M[0])$ en una matriz rectangular.",
+                "correct": true
+              },
+              {
+                "text": "Recorrer toda la matriz requiere dos ciclos anidados, uno por filas y otro por columnas.",
+                "correct": true
+              },
+              {
+                "text": "$M = [[0]*3]*2$ crea siempre dos filas independientes en memoria.",
+                "correct": false
+              },
+              {
+                "text": "El primer índice de $M[i][j]$ corresponde a la columna y el segundo a la fila.",
+                "correct": false
+              }
+            ]
+          }
+        }
+      },
+      "seccion-5": {
+        "kind": "theory",
+        "theme": "Recorrido, indexación y selección de la estructura",
+        "badge": "Tema 04 · Sección 5",
+        "navLabel": "Elegir la estructura",
+        "title": "Recorrido, indexación y selección de la estructura adecuada",
+        "intro": [
+          "Ya conoces cadenas, listas, tuplas, diccionarios y matrices. La competencia que cierra el tema no es manejar una más, sino elegir bien: ante un problema real de ingeniería, decidir qué estructura representa mejor los datos, cómo recorrerlos y qué costo de memoria y de acceso implica esa decisión. Aquí integramos el RA1 (recorrer e indexar) con el RA2 (evaluar la asignación de memoria)."
+        ],
+        "componentOrder": [
+          "s5-teoria-1",
+          "s5-figura-decision",
+          "s5-carrusel",
+          "s5-teoria-2",
+          "s5-chart-acceso",
+          "s5-flashcards",
+          "s5-teoria-3",
+          "s5-stepper-caso",
+          "s5-stepper-costo",
+          "s5-codigo-caso",
+          "s5-figura-pipeline",
+          "s5-acordion",
+          "s5-callout-saberes",
+          "s5-evaluacion",
+          "s5-referencias"
+        ],
+        "components": {
+          "s5-teoria-1": {
+            "type": "theory-block",
+            "title": "Criterios para elegir la estructura adecuada",
+            "eyebrow": "Decisión de diseño",
+            "body": [
+              "Elegir la estructura de datos es la primera decisión de diseño de un algoritmo y condiciona todo lo que sigue. Tres preguntas guían la elección. Primera: ¿cómo accederé al dato, por su posición/orden o por un nombre/clave? El orden y la posición apuntan a listas o tuplas; el nombre o el código, a diccionarios. Segunda: ¿el conjunto debe cambiar durante la ejecución o es fijo? Lo que crece o se edita es lista o diccionario; lo fijo es tupla.",
+              "Tercera pregunta: ¿cuántas dimensiones tiene el dato? Una secuencia simple es lista; una tabla de filas y columnas es matriz. A estas tres se suma el tipo del contenido: si el dato es texto, la cadena ofrece sus métodos; si son valores numéricos homogéneos, la lista o la matriz facilitan el cálculo.",
+              "Responder estas preguntas antes de escribir código evita rehacer el algoritmo a mitad de camino y, sobre todo, evita elegir una estructura que obligue a recorridos costosos o a duplicar memoria innecesariamente. La estructura adecuada es la que hace que el recorrido y el acceso que el problema exige sean naturales y eficientes."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "help",
+                "text": "¿Acceso por posición/orden o por nombre/clave?"
+              },
+              {
+                "icon": "autorenew",
+                "text": "¿El conjunto es fijo o cambia durante la ejecución?"
+              },
+              {
+                "icon": "view_in_ar",
+                "text": "¿Una dimensión (lista) o dos (matriz)?"
+              }
+            ],
+            "sections": [
+              {
+                "title": "Una regla práctica",
+                "body": [
+                  "Si buscas por un identificador, usa diccionario; si procesas una serie que crece, lista; si el registro es fijo, tupla; si el dato es bidimensional, matriz; si es texto, cadena."
+                ],
+                "formula": "\\text{acceso} + \\text{mutabilidad} + \\text{dimensión} + \\text{tipo} \\;\\Rightarrow\\; \\text{estructura}",
+                "formulaNote": "La estructura adecuada surge de combinar estos cuatro criterios, no de la costumbre."
+              }
+            ],
+            "example": {
+              "title": "Un mismo dato, dos estructuras",
+              "body": [
+                "Una serie de lecturas que crece se modela con una lista; pero si cada lectura se identifica por el código del sensor que la produjo, un diccionario sensor → lecturas representa mejor el problema."
+              ]
+            },
+            "closing": [
+              "No empieces a programar eligiendo la estructura por costumbre: respóndete primero acceso, mutabilidad, dimensión y tipo."
+            ]
+          },
+          "s5-figura-decision": {
+            "type": "image",
+            "title": "Árbol de decisión para elegir la estructura",
+            "assetId": "alg04-fig-arbol-decision",
+            "src": "",
+            "alt": "Diagrama de árbol que parte de la pregunta cómo accedo al dato y se ramifica hacia cadena, lista, tupla, diccionario y matriz según posición/clave, mutabilidad y dimensión.",
+            "caption": "Un árbol de decisión guía la elección de la estructura a partir de acceso, mutabilidad y dimensión del dato. Elaboración propia.",
+            "prompt": "Crear un diagrama de árbol de decisión en español para elegir una estructura de datos. Nodo raíz: '¿El dato es texto?' -> Sí: 'Cadena'. No -> '¿Accedo por clave/nombre?' -> Sí: 'Diccionario'. No -> '¿Tiene dos dimensiones (filas y columnas)?' -> Sí: 'Matriz (lista de listas)'. No -> '¿El conjunto cambia durante la ejecución?' -> Sí: 'Lista'; No: 'Tupla'. Usar cajas para cada estructura final y rombos para las preguntas. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s5-carrusel": {
+            "type": "carousel",
+            "title": "Carrusel · Una estructura para cada caso de ingeniería",
+            "slides": [
+              {
+                "label": "Mecánica",
+                "title": "Serie de vibración",
+                "body": [
+                  "Las muestras de vibración de un eje, que llegan en orden y crecen en cantidad, se acumulan en una lista para promediar y detectar picos."
+                ],
+                "icon": "vibration"
+              },
+              {
+                "label": "Industrial",
+                "title": "Inventario de repuestos",
+                "body": [
+                  "El stock de cada repuesto se consulta por su código: un diccionario código → cantidad permite buscar y actualizar al instante."
+                ],
+                "icon": "inventory"
+              },
+              {
+                "label": "Ambiental",
+                "title": "Mapa de calidad de aire",
+                "body": [
+                  "Las mediciones por estación y por hora forman una tabla bidimensional: una matriz por estación (filas) y hora (columnas)."
+                ],
+                "icon": "grid_on"
+              },
+              {
+                "label": "Mecatrónica",
+                "title": "Posición de un actuador",
+                "body": [
+                  "La coordenada objetivo de un actuador es un registro fijo (x, y, z): una tupla protege ese dato de cambios accidentales."
+                ],
+                "icon": "place"
+              },
+              {
+                "label": "Procesos",
+                "title": "Códigos de lote",
+                "body": [
+                  "Los identificadores de lote se procesan como cadenas: slicing y métodos extraen y validan sus partes."
+                ],
+                "icon": "text_fields"
+              }
+            ]
+          },
+          "s5-teoria-2": {
+            "type": "theory-block",
+            "title": "Costo de acceso y de recorrido",
+            "eyebrow": "Conexión con el RA2",
+            "body": [
+              "La estructura elegida determina cuánto cuesta acceder a un dato y recorrer el conjunto. Acceder por índice en una lista o por clave en un diccionario es prácticamente inmediato y no depende del tamaño: se dice que tiene costo constante. En cambio, buscar un valor concreto recorriendo una lista crece con el número de elementos: si la lista tiene $n$ datos, en el peor caso hay que mirar los $n$.",
+              "Esta diferencia es decisiva cuando el conjunto es grande. Buscar repetidamente un repuesto por su código en una lista de miles de elementos obliga a recorrerla cada vez; el mismo dato en un diccionario se encuentra de inmediato. El precio del diccionario es algo más de memoria para su tabla de dispersión: ese es el compromiso que el RA2 pide evaluar, intercambiar memoria por velocidad de acceso.",
+              "Recorrer una estructura completa siempre cuesta proporcional a su tamaño: $n$ para una lista, $m \\times n$ para una matriz. No hay forma de evitarlo si hay que visitar todos los datos, pero sí se puede evitar recorrer de más eligiendo bien: un diccionario evita el recorrido cuando solo se busca un dato puntual."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "bolt",
+                "text": "Acceso por índice o por clave: costo constante, no crece con $n$."
+              },
+              {
+                "icon": "search",
+                "text": "Buscar recorriendo una lista: costo proporcional a $n$."
+              },
+              {
+                "icon": "memory",
+                "text": "El diccionario cambia memoria por velocidad de búsqueda (RA2)."
+              }
+            ],
+            "example": {
+              "title": "Buscar 10 000 veces",
+              "body": [
+                "Consultar el stock de un repuesto $10\\,000$ veces en un diccionario es inmediato cada vez; en una lista de $5\\,000$ códigos, cada consulta podría recorrer miles de elementos."
+              ]
+            },
+            "closing": [
+              "Pregúntate cuántas veces accederás al dato: si buscas mucho por nombre, el costo justifica el diccionario."
+            ]
+          },
+          "s5-chart-acceso": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Costo de búsqueda según la estructura y el tamaño $n$",
+            "description": [
+              "Este gráfico retoma la comparación de costos de acceso desarrollada antes y la observa en función del tamaño del conjunto, para visualizar por qué la estructura adecuada depende de cuántos datos haya y de cuántas búsquedas se hagan."
+            ],
+            "note": "Lectura del gráfico: el eje horizontal es el número de elementos n y el vertical, el número aproximado de comparaciones que cuesta una búsqueda. La búsqueda en un diccionario (por clave) se mantiene casi plana cerca de 1 sin importar n, mientras que la búsqueda recorriendo una lista crece de forma lineal con n. La conclusión es que, para conjuntos grandes y búsquedas frecuentes por nombre, el diccionario es mucho más eficiente; para conjuntos pequeños o recorridos completos, la diferencia es irrelevante.",
+            "height": "300px",
+            "labels": [
+              "100",
+              "500",
+              "1000",
+              "2000",
+              "5000"
+            ],
+            "datasets": [
+              {
+                "label": "Búsqueda en lista (recorrido)",
+                "data": [
+                  100,
+                  500,
+                  1000,
+                  2000,
+                  5000
+                ]
+              },
+              {
+                "label": "Búsqueda en diccionario (clave)",
+                "data": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              }
+            ],
+            "options": {
+              "scales": {
+                "y": {
+                  "title": {
+                    "display": true,
+                    "text": "Comparaciones aproximadas"
+                  }
+                },
+                "x": {
+                  "title": {
+                    "display": true,
+                    "text": "Número de elementos n"
+                  }
+                }
+              }
+            }
+          },
+          "s5-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards · Selección y costo de estructuras",
+            "cards": [
+              {
+                "term": "Estructura adecuada",
+                "definition": "La que hace natural y eficiente el acceso y el recorrido que el problema exige, según acceso, mutabilidad, dimensión y tipo del dato.",
+                "icon": "checklist"
+              },
+              {
+                "term": "Costo constante",
+                "definition": "Acceso cuyo tiempo no crece con el tamaño del conjunto, como leer una lista por índice o un diccionario por clave.",
+                "icon": "bolt"
+              },
+              {
+                "term": "Costo lineal",
+                "definition": "Trabajo proporcional al número de elementos $n$, como buscar un valor recorriendo toda una lista.",
+                "icon": "trending_up"
+              },
+              {
+                "term": "Compromiso memoria-velocidad",
+                "definition": "Intercambio del RA2: el diccionario usa algo más de memoria a cambio de búsquedas mucho más rápidas.",
+                "icon": "balance"
+              },
+              {
+                "term": "Recorrido completo",
+                "definition": "Visitar todos los elementos; cuesta $n$ en una lista y $m\\times n$ en una matriz, sin importar la estructura.",
+                "icon": "all_inclusive"
+              }
+            ]
+          },
+          "s5-teoria-3": {
+            "type": "theory-block",
+            "title": "Un caso integrador de proceso industrial",
+            "eyebrow": "Integración del tema",
+            "body": [
+              "Reunamos todo en un caso. Una planta registra, por turno, las lecturas de temperatura de varias máquinas. Llega un archivo donde cada línea es un texto del tipo 'M01;78.5'. El problema pide: validar cada línea, agrupar las lecturas por máquina y reportar el promedio de cada una y la máquina más caliente. Resolverlo exige combinar las cinco estructuras del tema.",
+              "Cada línea es una cadena que se valida y se parte con $split$ para separar el código de la máquina (texto) del valor (que se convierte a número). Las lecturas de cada máquina se acumulan en una lista, porque crecen y son una serie homogénea. Y todas las máquinas se organizan en un diccionario máquina → lista de lecturas, porque queremos buscar y resumir por el nombre de la máquina, no por una posición.",
+              "Con esa estructura, recorrer el diccionario y promediar cada lista responde el reporte; comparar los promedios identifica la máquina más caliente. La elección de estructuras —cadena para parsear, lista para acumular, diccionario para agrupar— es la que hace que el algoritmo sea directo, eficiente y fácil de extender. Esto es exactamente lo que evalúa el taller del tema."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "text_fields",
+                "text": "Cadena para validar y parsear cada línea."
+              },
+              {
+                "icon": "list",
+                "text": "Lista para acumular las lecturas de cada máquina."
+              },
+              {
+                "icon": "menu_book",
+                "text": "Diccionario para agrupar y resumir por máquina."
+              }
+            ],
+            "example": {
+              "title": "Estructura del caso",
+              "body": [
+                "El resultado intermedio es $datos=\\{\\text{'M01'}:[78.5, 80.1],\\ \\text{'M02'}:[72.0]\\}$: un diccionario cuyos valores son listas, la combinación natural del problema."
+              ]
+            },
+            "closing": [
+              "Un buen diseño de datos resuelve la mitad del algoritmo: cuando la estructura encaja con el problema, el recorrido se vuelve evidente."
+            ]
+          },
+          "s5-stepper-caso": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 4.8 · Agrupar lecturas por máquina y hallar la más caliente",
+            "statement": "Dadas las líneas ['M01;78.5', 'M02;72.0', 'M01;80.1'], agrupar las lecturas por máquina en un diccionario, calcular el promedio de cada una y encontrar la máquina más caliente.",
+            "steps": [
+              {
+                "title": "Parsear cada línea",
+                "body": "Separa el código de la máquina y el valor con split, y convierte el valor a número.",
+                "formula": "\\text{'M01;78.5'} \\to (\\text{'M01'},\\ 78.5)",
+                "final": false
+              },
+              {
+                "title": "Agrupar en el diccionario",
+                "body": "Usa el código como clave; si no existe, inicia una lista; si existe, agrega la lectura.",
+                "formula": "datos = \\{\\text{'M01'}:[78.5, 80.1],\\ \\text{'M02'}:[72.0]\\}",
+                "final": false
+              },
+              {
+                "title": "Promediar cada máquina",
+                "body": "Recorre el diccionario y promedia la lista de cada clave.",
+                "formula": "\\bar{x}_{M01} = \\frac{78.5+80.1}{2} = 79.3,\\qquad \\bar{x}_{M02} = 72.0",
+                "final": false
+              },
+              {
+                "title": "Comparar promedios",
+                "body": "La máquina más caliente es la de mayor promedio.",
+                "formula": "\\max(79.3,\\ 72.0) = 79.3",
+                "final": false
+              },
+              {
+                "title": "Verificar",
+                "body": "La máquina más caliente es 'M01' con promedio 79.3 °C; el agrupamiento por clave hizo directo el resumen.",
+                "formula": "\\text{más caliente} = \\text{'M01'} \\ (79.3\\ \\text{°C})",
+                "final": true
+              }
+            ]
+          },
+          "s5-stepper-costo": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 4.9 · Decidir entre lista y diccionario por costo",
+            "statement": "Un inventario tiene $n=5000$ repuestos y se consultará el stock por código $k=10\\,000$ veces. Estimar el trabajo de búsqueda con una lista (recorrido) frente a un diccionario (clave) y decidir la estructura adecuada.",
+            "steps": [
+              {
+                "title": "Costo de una búsqueda en lista",
+                "body": "Buscar un código recorriendo la lista mira, en el peor caso, todos los elementos.",
+                "formula": "c_{lista} \\approx n = 5000 \\ \\text{comparaciones}",
+                "final": false
+              },
+              {
+                "title": "Costo de una búsqueda en diccionario",
+                "body": "El acceso por clave es prácticamente inmediato y no depende de $n$.",
+                "formula": "c_{dicc} \\approx 1 \\ \\text{comparación}",
+                "final": false
+              },
+              {
+                "title": "Multiplicar por las consultas",
+                "body": "El trabajo total es el costo unitario por el número de búsquedas.",
+                "formula": "T_{lista} \\approx 10^4 \\times 5000 = 5\\times 10^7,\\qquad T_{dicc} \\approx 10^4 \\times 1 = 10^4",
+                "final": false
+              },
+              {
+                "title": "Verificar y decidir",
+                "body": "El diccionario realiza unas tres mil veces menos comparaciones; para búsquedas frecuentes por código, la estructura adecuada es el diccionario, a cambio de algo más de memoria (RA2).",
+                "formula": "\\frac{T_{lista}}{T_{dicc}} \\approx \\frac{5\\times 10^7}{10^4} = 5000",
+                "final": true
+              }
+            ]
+          },
+          "s5-codigo-caso": {
+            "type": "code",
+            "title": "Verificación en Python · caso integrador del tema",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "caso_planta.py",
+            "instructions": [
+              "Lee el fragmento e identifica las cinco estructuras combinadas: cadena (split), conversión a número, lista (acumular), diccionario (agrupar) y el recorrido final.",
+              "Guarda el archivo como caso_planta.py y ejecútalo con python caso_planta.py.",
+              "Agrega una línea 'M02;75.4' a la lista de entrada y vuelve a ejecutar para ver cómo cambia el promedio de M02 y, si corresponde, la máquina más caliente."
+            ],
+            "code": "lineas = ['M01;78.5', 'M02;72.0', 'M01;80.1']\n\ndatos = {}\nfor linea in lineas:\n    codigo, valor = linea.split(';')\n    valor = float(valor)\n    if codigo not in datos:\n        datos[codigo] = []\n    datos[codigo].append(valor)\n\nmas_caliente = None\nmejor_promedio = float('-inf')\nfor maquina, lecturas in datos.items():\n    promedio = sum(lecturas) / len(lecturas)\n    print('Maquina', maquina, 'promedio:', round(promedio, 2))\n    if promedio > mejor_promedio:\n        mejor_promedio = promedio\n        mas_caliente = maquina\n\nprint('Mas caliente:', mas_caliente, 'con', round(mejor_promedio, 2), 'C')",
+            "expectedOutput": [
+              "Debe imprimir Maquina M01 promedio: 79.3, Maquina M02 promedio: 72.0 y Mas caliente: M01 con 79.3 C, coincidiendo con el ejercicio resuelto 4.8.",
+              "Al agregar 'M02;75.4', el promedio de M02 sube a 73.7 pero M01 sigue siendo la más caliente, lo que demuestra que el diccionario agrupa correctamente las lecturas por clave."
+            ]
+          },
+          "s5-figura-pipeline": {
+            "type": "figure",
+            "title": "Pipeline de datos: de la cadena al reporte",
+            "assetId": "alg04-fig-pipeline",
+            "src": "",
+            "alt": "Flujo horizontal: líneas de texto -> validar y partir (cadena) -> convertir a número -> acumular por máquina (lista) -> agrupar por código (diccionario) -> recorrer y promediar -> reporte de la máquina más caliente.",
+            "caption": "Cada etapa usa la estructura adecuada: cadena para parsear, lista para acumular, diccionario para agrupar. Elaboración propia.",
+            "prompt": "Crear un diagrama de flujo horizontal en español que muestre un pipeline de datos en cinco etapas conectadas por flechas: (1) 'Líneas de texto M01;78.5' -> (2) 'Validar y partir con split (CADENA)' -> (3) 'Convertir valor a número' -> (4) 'Acumular lecturas por máquina (LISTA)' -> (5) 'Agrupar por código (DICCIONARIO)' -> (6) 'Recorrer, promediar y reportar máquina más caliente'. Resaltar el nombre de la estructura usada en cada etapa. Estilo limpio, fondo claro, etiquetas legibles."
+          },
+          "s5-acordion": {
+            "type": "accordion",
+            "title": "Matices y errores frecuentes al elegir y recorrer estructuras",
+            "items": [
+              {
+                "icon": "report_problem",
+                "title": "Elegir la estructura por costumbre y no por el problema",
+                "open": true,
+                "body": [
+                  "Un error de diseño habitual es usar siempre listas porque son las más conocidas, incluso cuando el problema busca datos por un nombre. Buscar repetidamente por código en una lista obliga a recorrerla entera en cada consulta, mientras que un diccionario resuelve la búsqueda de inmediato.",
+                  "La estructura debe surgir de las preguntas de acceso, mutabilidad, dimensión y tipo, no del hábito. Dedicar un minuto a ese análisis antes de codificar evita reescribir el algoritmo cuando el volumen de datos crece y el recorrido se vuelve lento."
+                ]
+              },
+              {
+                "icon": "memory",
+                "title": "Duplicar memoria sin necesidad",
+                "body": [
+                  "Crear copias completas de listas o diccionarios grandes 'por si acaso' duplica la memoria ocupada y rara vez es necesario. Recordando lo visto en las secciones anteriores, una asignación comparte la referencia, y solo se debe copiar cuando se necesita modificar una versión sin afectar la otra.",
+                  "Evaluar la asignación dinámica de memoria (RA2) incluye decidir cuándo basta con una referencia y cuándo una copia es imprescindible. En conjuntos grandes, esta decisión es la diferencia entre un algoritmo que cabe en memoria y uno que la agota."
+                ]
+              },
+              {
+                "icon": "merge_type",
+                "title": "Combinar estructuras cuando el dato lo pide",
+                "body": [
+                  "Muchos problemas reales no se resuelven con una sola estructura, sino con su combinación: un diccionario cuyos valores son listas, una lista de tuplas o una matriz de cadenas. Forzar todo a una única estructura suele complicar el recorrido en lugar de simplificarlo.",
+                  "El caso integrador del tema muestra la pauta: cadena para parsear, lista para acumular y diccionario para agrupar. Reconocer cuándo anidar estructuras es una señal de madurez en el diseño de algoritmos y es justo lo que el proyecto integrador del Tema 6 pondrá a prueba."
+                ]
+              }
+            ]
+          },
+          "s5-callout-saberes": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Puedes profundizar este tema en el Documento de Saberes",
+            "body": [
+              "El cierre del tema en el documento imprimible reúne el árbol de decisión completo, la comparación de costos de acceso entre estructuras y el banco de ejercicios mixtos (mecánicos, de razonamiento, de ejecución en Python y de aplicación) que prepara el taller del tema."
+            ]
+          },
+          "s5-evaluacion": {
+            "type": "evaluation-activity",
+            "title": "Taller del Tema 4 · Modelar y recorrer un conjunto de datos de ingeniería",
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ],
+            "criterion": "CE1: recorre e indexa correctamente la estructura elegida con estructuras de control. CE2: entrega una solución con la estructura vectorial o matricial pertinente y justifica su elección y su uso de memoria.",
+            "evidence": "Programa en Python que modela un conjunto de datos de tu disciplina con la estructura adecuada (lista, diccionario o matriz), la recorre para calcular un resultado y un texto breve que justifica por qué esa estructura es la pertinente y cómo crece en memoria.",
+            "technique": "Taller aplicado",
+            "instrument": "Rúbrica analítica",
+            "evaluationMoment": "avance",
+            "participationType": "individual",
+            "feedback": {
+              "strengths": "Elección de estructura coherente con el acceso, la mutabilidad y la dimensión del dato, con recorrido correcto.",
+              "improvement": "Usar una lista donde un diccionario evitaría recorridos costosos, o no justificar el uso de memoria de la estructura.",
+              "reinforcement": "Repasar el árbol de decisión y el caso integrador, y rehacer un ejercicio resuelto del tema antes de modelar.",
+              "nextStep": "Llevar la estructura elegida al Tema 5 para encapsular su recorrido en funciones modulares."
+            },
+            "rubric": {
+              "type": "analitica",
+              "levels": [
+                "No acreditable",
+                "Deficiente",
+                "Insuficiente",
+                "Aceptable",
+                "Bueno",
+                "Muy bueno",
+                "Sobresaliente"
+              ],
+              "criteria": [
+                {
+                  "name": "Selección de la estructura (CE2)",
+                  "descriptors": {
+                    "Aceptable": "Elige una estructura que funciona aunque no sea la más pertinente o no justifique del todo la elección.",
+                    "Sobresaliente": "Elige la estructura óptima (o su combinación) y justifica la decisión con los criterios de acceso, mutabilidad, dimensión y memoria."
+                  }
+                },
+                {
+                  "name": "Recorrido e indexación (CE1)",
+                  "descriptors": {
+                    "Aceptable": "Recorre la estructura y calcula el resultado con errores menores de índice o de borde.",
+                    "Sobresaliente": "Recorre e indexa sin errores, evita salirse de rango y verifica el resultado con un caso de prueba."
+                  }
+                }
+              ]
+            }
+          },
+          "s5-referencias": {
+            "type": "references",
+            "title": "Referencias",
+            "items": [
+              "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana. (Cadenas, arreglos y estructuras de datos).",
+              "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms (3rd ed.). MIT Press. (Arrays, listas y tablas hash; costo de acceso).",
+              "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media. (Strings, lists, tuples and dictionaries).",
+              "Recursos didácticos (figuras, gráfico, ejercicios y casos): Elaboración propia."
+            ]
+          }
+        }
+      }
+    }
+  },
+  "pdf": {
+    "guideLabel": "DOCUMENTO DE SABERES VIRTUAL",
+    "kicker": "Aprendizaje guiado · Práctica aplicada · Autoevaluación",
+    "institution": "Universidad de América",
+    "year": "2026",
+    "title": "Algoritmia Computacional I · Tema 04: Arreglos y estructuras de datos",
+    "subtitle": "Tema 04 de 06 · Cadenas, listas, tuplas, diccionarios y matrices en Python",
+    "purpose": "Reconocer las principales estructuras de datos, recorrerlas e indexarlas con estructuras de control (RA1) y evaluar su uso de memoria para seleccionar la estructura adecuada en problemas de ingeniería (RA2).",
+    "structure": "Teoría · ejemplos resueltos · banco de ejercicios · referencias.",
+    "sectionOrder": [
+      "pdf-intro",
+      "pdf-seccion-1",
+      "pdf-seccion-2",
+      "pdf-seccion-3",
+      "pdf-seccion-4",
+      "pdf-seccion-5"
+    ],
+    "sections": {
+      "pdf-intro": {
+        "title": "Presentación del tema",
+        "intro": [
+          "Este documento imprimible acompaña el Tema 04 de Algoritmia Computacional I y propone un recorrido con hilo conductor. En los temas anteriores aprendiste a representar un algoritmo, a elegir tipos de datos y a controlar el flujo con condicionales y ciclos; hasta ahora, sin embargo, cada variable guardaba un único valor.",
+          "Aquí das un salto: pasas de la variable suelta a la estructura de datos, capaz de almacenar y organizar muchos valores bajo un mismo nombre, recorrerlos con las estructuras de control que ya dominas (RA1) y evaluar cómo cada una usa la memoria al crecer, copiarse o referenciarse (RA2).",
+          "El enfoque es transversal a la ingeniería y orientado a procesos industriales: un lote de mediciones de un sensor, el inventario de repuestos de una planta o el mapa de temperaturas de un horno son, todos, conjuntos de datos que exigen elegir bien la estructura que los representa."
+        ],
+        "componentOrder": [
+          "pdf-intro-keybox-ruta",
+          "pdf-intro-objetivos",
+          "pdf-intro-mapa",
+          "pdf-intro-callout"
+        ],
+        "components": {
+          "pdf-intro-objetivos": {
+            "type": "objectives",
+            "title": "Resultados de aprendizaje del tema",
+            "items": [
+              {
+                "icon": "track_changes",
+                "text": "RA1: reconozco y recorro estructuras de datos (cadenas, listas, tuplas, diccionarios, matrices) con estructuras de control."
+              },
+              {
+                "icon": "track_changes",
+                "text": "RA2: evalúo cómo cada estructura asigna y usa la memoria al crecer, copiarse o referenciarse, para elegir la pertinente."
+              }
+            ]
+          },
+          "pdf-intro-mapa": {
+            "type": "list",
+            "title": "Mapa de el documento",
+            "ordered": true,
+            "items": [
+              "Cadenas: indexación, slicing, inmutabilidad y métodos de texto.",
+              "Listas: secuencia mutable, patrón de acumulación y crecimiento dinámico.",
+              "Tuplas y diccionarios: registros fijos y mapeo clave-valor.",
+              "Arreglos multidimensionales: matrices y recorrido con ciclos anidados.",
+              "Recorrido, indexación, costo y selección de la estructura adecuada.",
+              "Banco de ejercicios y referencias."
+            ]
+          },
+          "pdf-intro-callout": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "menu_book",
+            "title": "Cómo usar este documento",
+            "body": [
+              "Estudia cada sección en orden, reproduce los ejemplos resueltos a mano y verifica cada resultado ejecutando el código Python correspondiente en una terminal.",
+              "Resuelve el banco de ejercicios del final antes de entregar el taller del tema; combina ejercicios mecánicos, de razonamiento, de ejecución en Python y de consulta."
+            ]
+          },
+          "pdf-intro-keybox-ruta": {
+            "type": "key-box",
+            "variant": "tip",
+            "title": "Cómo leer este documento",
+            "body": [
+              "Cada sección de este documento avanza como un capítulo —teoría en prosa, un ejemplo resuelto y su verificación en Python— para que la elección de la estructura adecuada deje de ser intuición y se convierta en un criterio de diseño."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-1": {
+        "title": "Cadenas: indexación, slicing e inmutabilidad",
+        "intro": [
+          "Hasta la presentación de este documento cada variable que escribíamos guardaba un único valor; demos ahora el primer paso hacia las estructuras de datos por el caso más cotidiano en un proceso industrial: el texto.",
+          "Los códigos de lote, las etiquetas de equipos y las lecturas que un sensor entrega como '23.5 °C' llegan al programa en forma de cadenas, y antes de poder operar con ellas hay que saber leerlas por posición y descomponerlas.",
+          "Esta sección abre el recorrido mostrando que una cadena, aunque la veamos como texto, es para el algoritmo una secuencia indexada; al terminar sabrás extraer tramos con slicing y entenderás por qué su inmutabilidad marca la diferencia con la lista que estudiaremos después."
+        ],
+        "componentOrder": [
+          "pdf-s1-detonadora",
+          "pdf-s1-teoria",
+          "pdf-s1-teoria-cierre",
+          "pdf-s1-keybox-inmutabilidad",
+          "pdf-s1-figura",
+          "pdf-s1-tabla",
+          "pdf-s1-ejemplo",
+          "pdf-s1-codigo",
+          "pdf-s1-cierre"
+        ],
+        "components": {
+          "pdf-s1-figura": {
+            "type": "image",
+            "title": "Índices positivos y negativos de una cadena",
+            "assetId": "alg04-fig-cadena-indices",
+            "src": "",
+            "alt": "La cadena 'LOTE-2024A' dibujada como una fila de casillas; sobre cada casilla el índice positivo de 0 a 9 y debajo el índice negativo de -10 a -1.",
+            "caption": "Figura 4.1. Cada carácter ocupa una casilla con un índice positivo (de izquierda a derecha) y uno negativo (de derecha a izquierda); leerla así es lo que permite que el slicing $[5:9]$ recupere el año. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español: la cadena 'LOTE-2024A' representada como una fila de 10 casillas contiguas, una por carácter. Encima de cada casilla, el índice positivo 0,1,2,...,9; debajo de cada casilla, el índice negativo -10,-9,...,-1. Resaltar con color la casilla del índice 0 y la del índice -1. Estilo limpio, fondo claro, monoespaciado, etiquetas legibles."
+          },
+          "pdf-s1-tabla": {
+            "type": "table",
+            "title": "Operaciones de cadena más usadas",
+            "columns": [
+              "Operación",
+              "Sintaxis",
+              "Resultado"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Acceso por índice",
+                  "$s[0]$",
+                  "Primer carácter"
+                ]
+              },
+              {
+                "cells": [
+                  "Último carácter",
+                  "$s[-1]$",
+                  "Carácter final sin contar longitud"
+                ]
+              },
+              {
+                "cells": [
+                  "Rebanado",
+                  "$s[a:b]$",
+                  "Subcadena de $a$ a $b-1$"
+                ]
+              },
+              {
+                "cells": [
+                  "Longitud",
+                  "$len(s)$",
+                  "Número de caracteres"
+                ]
+              },
+              {
+                "cells": [
+                  "Partir",
+                  "$s.split(';')$",
+                  "Lista de tramos"
+                ]
+              }
+            ]
+          },
+          "pdf-s1-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo 4.1 · Extraer y validar un código de lote",
+            "context": [
+              "Leamos juntos un caso típico de control de producción. Para el código $codigo=\\text{'LOTE-2024A'}$, queremos extraer el prefijo, el año y la línea, y decidir si el código es válido bajo la regla del proceso: longitud 10, prefijo 'LOTE' y año numérico."
+            ],
+            "formula": "codigo[0:4]=\\text{'LOTE'},\\quad codigo[5:9]=\\text{'2024'},\\quad codigo[-1]=\\text{'A'}",
+            "solution": [
+              "Longitud: $len(codigo)=10$, cumple.",
+              "Prefijo: $codigo[0:4]=\\text{'LOTE'}$, cumple.",
+              "Año: $codigo[5:9]=\\text{'2024'}$ y el método $isdigit()$ devuelve verdadero, cumple.",
+              "Conclusión: el código es válido y la línea de producción es 'A'. Si el año fuera '20X4', $isdigit()$ daría falso y el algoritmo rechazaría el lote, deteniendo el dato antes de que contamine el resto del proceso."
+            ]
+          },
+          "pdf-s1-codigo": {
+            "type": "code",
+            "title": "Verificación en Python · validar un código de lote",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "validar_codigo.py",
+            "instructions": [
+              "Lee el fragmento e identifica dónde se aplican la longitud, el slicing y el índice negativo del Ejemplo 4.1.",
+              "Guarda el archivo como validar_codigo.py y ejecútalo en una terminal con python validar_codigo.py.",
+              "Repite la ejecución cambiando codigo por uno mal formado, como 'LOTE-20X4A', y observa cómo el campo valido pasa a False."
+            ],
+            "code": "codigo = 'LOTE-2024A'\n\nprefijo = codigo[0:4]\nanio = codigo[5:9]\nlinea = codigo[-1]\n\nvalido = (len(codigo) == 10) and (prefijo == 'LOTE') and anio.isdigit()\n\nprint('Prefijo:', prefijo)\nprint('Anio:', anio)\nprint('Linea:', linea)\nprint('Codigo valido:', valido)",
+            "expectedOutput": [
+              "La salida es Prefijo: LOTE, Anio: 2024, Linea: A y Codigo valido: True."
+            ]
+          },
+          "pdf-s1-cierre": {
+            "type": "callout",
+            "tone": "success",
+            "icon": "arrow_forward",
+            "title": "De un dato de texto a una serie de datos",
+            "body": [
+              "Una cadena resuelve el problema de leer y validar un único texto, pero no el de almacenar muchos valores que llegan uno tras otro durante un turno. Para esa serie homogénea que además puede crecer y modificarse necesitamos una estructura mutable: la lista, protagonista de la siguiente sección."
+            ]
+          },
+          "pdf-s1-keybox-inmutabilidad": {
+            "type": "key-box",
+            "variant": "definicion",
+            "title": "Inmutabilidad de la cadena",
+            "body": [
+              "Una cadena es inmutable: una vez creada, ninguno de sus caracteres puede reasignarse en el lugar. Toda transformación —cambiar mayúsculas, reemplazar o recortar— produce una cadena nueva en memoria y conserva intacta la original. Por eso el resultado de un método siempre debe asignarse o usarse de inmediato."
+            ]
+          },
+          "pdf-s1-teoria": {
+            "type": "column-flow",
+            "title": "La cadena como secuencia indexada e inmutable",
+            "body": [
+              "Conviene empezar por la idea que sostiene todo lo demás: una cadena es una secuencia ordenada de caracteres y, como tal, cada carácter ocupa una posición numerada. Python adopta la indexación basada en cero, de modo que en una cadena de longitud $n$ los índices válidos van de $0$ a $n-1$, y un índice negativo como $-1$ apunta al último carácter sin necesidad de conocer la longitud.",
+              "Esta forma de numerar no es un detalle sintáctico: es la convención que comparten todas las secuencias del lenguaje y que reutilizaremos en listas y matrices. Como recuerda Downey (2015), pensar en el texto como una secuencia de caracteres es lo que permite recorrerlo y transformarlo con las mismas herramientas de control que ya conocemos.",
+              "Sobre esa numeración se construyen las dos operaciones de lectura más usadas. El acceso a un solo carácter se escribe con corchetes, $s[i]$, mientras que la extracción de un tramo —el rebanado o slicing— se escribe $s[a:b]$ y devuelve los caracteres desde la posición $a$ hasta la $b-1$, sin incluir la última.",
+              "El slicing es la operación que separa el prefijo de un código de su número de serie o aísla el valor numérico de una lectura etiquetada, y por eso será la herramienta central del ejemplo de esta sección.",
+              "Hay, sin embargo, una propiedad que distingue a la cadena de la lista y que conviene fijar desde ahora: la inmutabilidad. No se puede reasignar un carácter individual con $s[0]=\\text{'X'}$; toda transformación —pasar a mayúsculas, reemplazar un fragmento, recortar espacios— produce una cadena nueva y deja la original intacta.",
+              "Joyanes (2013) subraya que esta característica obliga a tratar cada operación de texto como la creación de un nuevo dato, algo que tiene un costo de memoria apreciable cuando se construyen textos largos dentro de un ciclo.",
+              "Los métodos de cadena encapsulan esas transformaciones frecuentes: $upper()$ y $lower()$ normalizan mayúsculas, $strip()$ limpia espacios sobrantes, $replace(a,b)$ sustituye y $split(sep)$ parte el texto en una lista de tramos. Como todos devuelven un valor nuevo, su resultado debe asignarse o usarse de inmediato, o el cambio se pierde."
+            ]
+          },
+          "pdf-s1-teoria-cierre": {
+            "type": "callout",
+            "tone": "light",
+            "body": [
+              "Con esta doble lectura del texto —legible para una persona, indexable para el algoritmo— ya podemos visualizar cómo se numera una cadena real antes de descomponerla."
+            ]
+          },
+          "pdf-s1-detonadora": {
+            "type": "trigger-question",
+            "eyebrow": "Para empezar",
+            "question": "Si un proceso te entrega al final del turno 500 lecturas de un sensor y necesitas su promedio, ¿tendría sentido declarar 500 variables sueltas, o cómo agruparías todos esos valores bajo un mismo nombre para recorrerlos con un ciclo?"
+          }
+        }
+      },
+      "pdf-seccion-2": {
+        "title": "Listas: secuencia mutable y crecimiento dinámico",
+        "intro": [
+          "La cadena nos enseñó a leer un dato de texto por posición, pero dejó pendiente una necesidad muy común: ¿qué hacemos cuando un proceso no entrega un valor, sino muchos del mismo tipo que llegan uno tras otro? Las lecturas de un turno, las piezas producidas por hora o los tiempos de un ensayo forman una serie que debemos agrupar, mantener ordenada y ampliar sobre la marcha.",
+          "Para eso existe la lista, la primera estructura realmente mutable del tema. En esta sección retomamos la indexación que ya dominamos y le sumamos dos capacidades nuevas —cambiar elementos en el lugar y crecer dinámicamente—, que nos llevarán por primera vez a discutir el uso de memoria del RA2."
+        ],
+        "componentOrder": [
+          "pdf-s2-teoria",
+          "pdf-s2-teoria-cierre",
+          "pdf-s2-twocol-mutable",
+          "pdf-s2-figura",
+          "pdf-s2-tabla",
+          "pdf-s2-data-costos",
+          "pdf-s2-ejemplo",
+          "pdf-s2-codigo",
+          "pdf-s2-cierre"
+        ],
+        "components": {
+          "pdf-s2-figura": {
+            "type": "image",
+            "title": "Crecimiento dinámico de una lista en memoria",
+            "assetId": "alg04-fig-lista-memoria",
+            "src": "",
+            "alt": "Bloque de memoria reservado para una lista con 4 celdas ocupadas y 2 libres; al hacer append más allá del bloque, se dibuja un bloque mayor al que se copian los elementos.",
+            "caption": "Figura 4.2. Cuando una lista llena su bloque reservado, el sistema reserva un bloque mayor y copia los elementos: así crece dinámicamente, con el costo de memoria que el RA2 pide evaluar. Elaboración propia.",
+            "prompt": "Crear un diagrama didáctico en español sobre el crecimiento de una lista en memoria: a la izquierda, un bloque de memoria con 4 celdas ocupadas (valores) y 2 celdas libres punteadas. Una flecha 'append cuando el bloque está lleno' lleva a la derecha a un bloque más grande con todas las celdas previas copiadas más la nueva. Etiquetar 'reserva dinámica' y 'copia de elementos'. Estilo esquemático limpio, fondo claro, etiquetas legibles."
+          },
+          "pdf-s2-tabla": {
+            "type": "table",
+            "title": "Operaciones de lista y efecto en memoria",
+            "columns": [
+              "Operación",
+              "Efecto",
+              "¿Crea estructura nueva?"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "$append(x)$",
+                  "Agrega al final",
+                  "No: muta la misma lista"
+                ]
+              },
+              {
+                "cells": [
+                  "$insert(0,x)$",
+                  "Inserta al inicio (desplaza el resto)",
+                  "No, pero costoso"
+                ]
+              },
+              {
+                "cells": [
+                  "$a[a:b]$",
+                  "Sublista",
+                  "Sí: copia parcial"
+                ]
+              },
+              {
+                "cells": [
+                  "$b=a$",
+                  "Comparte la referencia",
+                  "No: mismo objeto"
+                ]
+              },
+              {
+                "cells": [
+                  "$a.copy()$",
+                  "Duplica la lista",
+                  "Sí: copia completa"
+                ]
+              }
+            ]
+          },
+          "pdf-s2-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo 4.2 · Promedio y filtrado de lecturas",
+            "context": [
+              "Tomemos la serie de temperaturas de un turno, $lecturas=[23.5, 24.1, 22.8, 25.0]$. Queremos dos resultados: el promedio del turno y la lista de las lecturas que superan el umbral de alarma $u=24.0$ °C."
+            ],
+            "formula": "\\bar{x}=\\frac{23.5+24.1+22.8+25.0}{4}",
+            "solution": [
+              "Acumulación: la suma es $95.4$ y la cantidad $4$, de modo que el promedio es $\\bar{x}=23.85$ °C.",
+              "Filtrado: recorriendo la serie, solo $24.1$ y $25.0$ superan el umbral, así que la lista de alarmas es $[24.1, 25.0]$, más corta que la original.",
+              "Verificación: el promedio queda entre el mínimo (22.8) y el máximo (25.0), lo que confirma que el recorrido es coherente."
+            ]
+          },
+          "pdf-s2-codigo": {
+            "type": "code",
+            "title": "Verificación en Python · acumulación y filtrado",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "serie_lecturas.py",
+            "instructions": [
+              "Identifica en el código el patrón de acumulación (la suma) y el filtrado con append dentro del ciclo, tal como se resolvió a mano en el Ejemplo 4.2.",
+              "Guarda el archivo como serie_lecturas.py y ejecútalo con python serie_lecturas.py.",
+              "Agrega lecturas.append(26.3) antes de los cálculos y vuelve a ejecutar: el promedio cambia y la alarma incorpora el nuevo valor, evidenciando el crecimiento dinámico de la lista."
+            ],
+            "code": "lecturas = [23.5, 24.1, 22.8, 25.0]\numbral = 24.0\n\nsuma = 0\nfor x in lecturas:\n    suma += x\npromedio = suma / len(lecturas)\n\nalarmas = []\nfor x in lecturas:\n    if x > umbral:\n        alarmas.append(x)\n\nprint('Promedio:', round(promedio, 2))\nprint('Alarmas:', alarmas)",
+            "expectedOutput": [
+              "Imprime Promedio: 23.85 y Alarmas: [24.1, 25.0], coincidiendo con la solución manual del Ejemplo 4.2."
+            ]
+          },
+          "pdf-s2-cierre": {
+            "type": "callout",
+            "tone": "success",
+            "icon": "arrow_forward",
+            "title": "De la serie ordenada al registro y al mapeo",
+            "body": [
+              "La lista resuelve las series homogéneas que crecen, pero no todo dato es una serie: a veces necesitamos un registro fijo que no debe cambiar y otras buscar un valor por su nombre en lugar de por su posición. Esas dos necesidades nos llevan, en la siguiente sección, a la tupla y al diccionario."
+            ]
+          },
+          "pdf-s2-twocol-mutable": {
+            "type": "two-column",
+            "title": "Estructuras mutables vs. inmutables",
+            "columns": [
+              {
+                "title": "Mutable (lista)",
+                "body": [
+                  "Permite cambiar un elemento en el lugar con $lista[i]=v$ y crecer o encoger durante la ejecución con $append$, $insert$ o $pop$. Es la opción para una serie de datos cuya cantidad no se conoce de antemano."
+                ]
+              },
+              {
+                "title": "Inmutable (cadena y tupla)",
+                "body": [
+                  "No admite reasignación por índice: cualquier cambio crea un objeto nuevo. Esta rigidez la hace predecible y segura para identificadores y registros fijos, pero impide acumular datos sobre la marcha."
+                ]
+              }
+            ]
+          },
+          "pdf-s2-data-costos": {
+            "type": "data-highlight",
+            "title": "Costo de las operaciones de lista",
+            "items": [
+              {
+                "value": "O(1)",
+                "label": "Acceso por índice $lista[i]$"
+              },
+              {
+                "value": "O(n)",
+                "label": "Insertar al inicio (desplaza el resto)"
+              },
+              {
+                "value": "O(n)",
+                "label": "Buscar un valor recorriendo la lista"
+              }
+            ]
+          },
+          "pdf-s2-teoria": {
+            "type": "column-flow",
+            "title": "La lista mutable y el patrón de acumulación",
+            "body": [
+              "Una lista es una colección ordenada de elementos, indexada desde cero y escrita entre corchetes, por ejemplo $lecturas=[23.5, 24.1, 22.8, 25.0]$. Comparte con la cadena la lógica de índices y el recorrido con ciclos, pero introduce dos diferencias decisivas: sus elementos se pueden cambiar en el lugar con $lecturas[0]=23.7$ y la lista puede crecer o encoger durante la ejecución.",
+              "Joyanes (2013) presenta esta estructura como la representación natural de una colección homogénea cuya cantidad de elementos no se conoce de antemano, precisamente el caso de una serie de mediciones que se va acumulando.",
+              "Esa mutabilidad se manifiesta en un puñado de operaciones que conviene tener claras: $append(x)$ agrega un elemento al final, $insert(i,x)$ lo coloca en una posición y $pop(i)$ o $remove(x)$ eliminan; todas modifican la misma lista sin crear una copia.",
+              "Una vez construida la serie, procesarla casi siempre significa reducirla a un valor mediante el patrón de acumulación, que es el procedimiento más reutilizable del tema: se inicializa un acumulador —en cero para sumar, o con el primer elemento para buscar un máximo— y en cada vuelta del ciclo se actualiza con el elemento actual. Así se obtienen la suma, el conteo, el extremo y, combinando suma y cantidad, el promedio $\\bar{x}=\\frac{1}{n}\\sum_i x_i$.",
+              "El filtrado es la otra operación clave: recorrer la lista y conservar en una lista nueva solo los elementos que cumplen una condición, como las lecturas que superan un umbral de alarma.",
+              "Detrás de esa comodidad hay una historia de memoria que el RA2 nos pide entender. El crecimiento de una lista es dinámico: cuando llena el espacio que tenía reservado, el sistema reserva un bloque mayor y copia los elementos al nuevo bloque. De ahí se siguen dos consecuencias prácticas.",
+              "La primera es que el acceso por índice $lista[i]$ es inmediato porque los elementos están contiguos, pero insertar al inicio obliga a desplazar a todos los demás. La segunda, más sutil, es que asignar una lista a otra variable con $b=a$ no la copia: ambas variables apuntan al mismo objeto, así que modificar una afecta a la otra; para una copia independiente se usa $copy()$.",
+              "Cormen et al. (2009) describen este tipo de compromisos entre costo de operación y uso de espacio como el núcleo del análisis de una estructura de datos, y anticiparlos es justamente lo que evalúa el RA2."
+            ]
+          },
+          "pdf-s2-teoria-cierre": {
+            "type": "callout",
+            "tone": "light",
+            "body": [
+              "Veamos primero cómo crece una lista en memoria al agregar un elemento, y luego pongamos el patrón de acumulación y el filtrado a trabajar sobre una serie real."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-3": {
+        "title": "Tuplas y diccionarios: registros fijos y mapeo clave-valor",
+        "intro": [
+          "Con la lista ya sabemos modelar series que crecen y se modifican, pero esa misma flexibilidad es un inconveniente cuando un dato no debe cambiar nunca, o cuando lo natural no es buscarlo por su posición sino por su nombre.",
+          "Las coordenadas de un punto y los parámetros de fábrica de una máquina son registros fijos; el stock de un repuesto, en cambio, se consulta por su código y no por el lugar que ocupa en una lista.",
+          "Esta sección presenta las dos estructuras que responden a esas necesidades: la tupla, inmutable y predecible, y el diccionario, que asocia claves a valores y permite encontrar un dato sin recorrer toda la estructura."
+        ],
+        "componentOrder": [
+          "pdf-s3-teoria",
+          "pdf-s3-teoria-cierre",
+          "pdf-s3-twocol-tupla-dicc",
+          "pdf-s3-tabla",
+          "pdf-s3-ejemplo",
+          "pdf-s3-codigo",
+          "pdf-s3-cierre"
+        ],
+        "components": {
+          "pdf-s3-tabla": {
+            "type": "table",
+            "title": "Lista, tupla y diccionario",
+            "columns": [
+              "Característica",
+              "Lista",
+              "Tupla",
+              "Diccionario"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Delimitador",
+                  "[ ]",
+                  "( )",
+                  "{ clave: valor }"
+                ]
+              },
+              {
+                "cells": [
+                  "Acceso",
+                  "por índice",
+                  "por índice",
+                  "por clave"
+                ]
+              },
+              {
+                "cells": [
+                  "Mutable",
+                  "sí",
+                  "no",
+                  "sí"
+                ]
+              },
+              {
+                "cells": [
+                  "Uso típico",
+                  "serie que crece",
+                  "registro fijo",
+                  "dato buscado por nombre"
+                ]
+              }
+            ]
+          },
+          "pdf-s3-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo 4.3 · Inventario total y repuesto crítico",
+            "context": [
+              "Un almacén de repuestos se modela bien con un diccionario código → existencias. Para el inventario $stock=\\{\\text{'R-100'}:40,\\ \\text{'R-205'}:12,\\ \\text{'R-310'}:8\\}$, calculemos el total de unidades y detectemos el repuesto con menor existencia."
+            ],
+            "formula": "total=\\sum_{c}\\ stock[c]=40+12+8",
+            "solution": [
+              "Total: recorriendo los valores del diccionario, $40+12+8=60$ unidades.",
+              "Repuesto crítico: el menor valor es $8$, asociado a la clave 'R-310', que sería el primer candidato a reabastecer.",
+              "Tras registrar una entrada con $stock[\\text{'R-100'}]=50$ y dar de alta un repuesto nuevo con $stock[\\text{'R-400'}]=25$, el diccionario actualiza una clave y crece en otra: es mutable y dinámico, igual que la lista, pero indexado por nombre."
+            ]
+          },
+          "pdf-s3-codigo": {
+            "type": "code",
+            "title": "Verificación en Python · total y repuesto crítico",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "inventario.py",
+            "instructions": [
+              "Observa cómo el ciclo recorre los pares (clave, valor) del diccionario para totalizar y para localizar el mínimo, tal como se hizo a mano en el Ejemplo 4.3.",
+              "Guarda el archivo como inventario.py y ejecútalo con python inventario.py.",
+              "Da de alta un repuesto con stock['R-400'] = 25 antes de los cálculos y comprueba que el total cambia y que el crítico puede cambiar de clave."
+            ],
+            "code": "stock = {'R-100': 40, 'R-205': 12, 'R-310': 8}\n\ntotal = 0\nfor codigo in stock:\n    total += stock[codigo]\n\ncritico = None\nfor codigo, cantidad in stock.items():\n    if critico is None or cantidad < stock[critico]:\n        critico = codigo\n\nprint('Total de unidades:', total)\nprint('Repuesto critico:', critico, '->', stock[critico])",
+            "expectedOutput": [
+              "Imprime Total de unidades: 60 y Repuesto critico: R-310 -> 8, coincidiendo con la solución manual del Ejemplo 4.3."
+            ]
+          },
+          "pdf-s3-cierre": {
+            "type": "callout",
+            "tone": "success",
+            "icon": "arrow_forward",
+            "title": "De una dimensión a dos",
+            "body": [
+              "Cadenas, listas, tuplas y diccionarios organizan datos en una sola dimensión, ya sea por posición o por clave. Pero muchos datos de ingeniería tienen dos dimensiones —un mapa de temperaturas, una tabla por máquina y turno— y para representarlos necesitamos los arreglos multidimensionales: las matrices que estudiaremos a continuación."
+            ]
+          },
+          "pdf-s3-twocol-tupla-dicc": {
+            "type": "two-column",
+            "title": "Tupla vs. diccionario",
+            "columns": [
+              {
+                "title": "Tupla — registro fijo",
+                "body": [
+                  "Secuencia ordenada e inmutable entre paréntesis. Se accede por posición y representa un dato que no debe cambiar, como la coordenada $(x,y)$ o la terna (modelo, voltaje, potencia) de un equipo. Habilita el desempaquetado $x, y = punto$."
+                ]
+              },
+              {
+                "title": "Diccionario — mapeo clave-valor",
+                "body": [
+                  "Conjunto mutable de pares clave-valor entre llaves. Se accede por la clave, no por la posición: $stock[\\text{'R-205'}]$ devuelve el stock de ese repuesto, y la búsqueda es casi inmediata gracias a su tabla de dispersión."
+                ]
+              }
+            ]
+          },
+          "pdf-s3-teoria": {
+            "type": "column-flow",
+            "title": "Tupla inmutable y diccionario clave-valor",
+            "body": [
+              "Empecemos por la tupla, la más sencilla de las dos. Es una secuencia ordenada e inmutable escrita entre paréntesis que representa un registro fijo cuyos campos no deben cambiar: una coordenada $(x,y)$, o la terna (modelo, voltaje, potencia) de un equipo.",
+              "Se indexa y se recorre igual que una lista, pero no admite modificación, lo que la hace predecible en memoria y habilita una escritura muy legible, el desempaquetado $x, y = punto$, que reparte los campos del registro en variables con nombre. Esa inmutabilidad es justamente lo que se busca cuando el dato representa una identidad que el algoritmo no debe alterar por accidente.",
+              "El diccionario responde a una pregunta distinta: ¿cómo encontrar un dato por su nombre? Almacena pares clave-valor entre llaves y se accede por la clave, no por la posición, de modo que $stock[\\text{'R-205'}]$ devuelve directamente el valor asociado a ese código.",
+              "La clave debe ser única e inmutable —una cadena, un número o una tupla—, y la consulta por clave es prácticamente inmediata gracias a la tabla de dispersión (hash table) que el diccionario mantiene internamente.",
+              "Esa estructura interna, descrita por Cormen et al. (2009) como el mecanismo que reduce el costo de búsqueda a tiempo casi constante, es lo que diferencia al diccionario de una lista, en la que localizar un valor obligaría a recorrer los elementos uno a uno.",
+              "El diccionario es además mutable: se agregan o cambian pares con $stock[clave]=valor$ y se eliminan con $del$. Recorrerlo visita los pares (clave, valor), lo que permite totalizar, agrupar o contar por clave.",
+              "De ahí surge el patrón de conteo —inicializar la clave si todavía no existe e incrementarla si ya está presente—, uno de los más útiles del tema y que reaparecerá al agrupar lecturas por máquina en la última sección.",
+              "Oviedo (2005) recuerda que elegir entre acceso por posición y acceso por clave es una decisión de diseño que condiciona la claridad y la eficiencia de todo el algoritmo, no un mero detalle de sintaxis."
+            ]
+          },
+          "pdf-s3-teoria-cierre": {
+            "type": "callout",
+            "tone": "light",
+            "body": [
+              "La tabla siguiente contrasta lista, tupla y diccionario para que la elección entre ellas sea explícita antes de pasar al ejemplo de inventario."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-4": {
+        "title": "Arreglos multidimensionales: matrices y recorrido",
+        "intro": [
+          "Hasta aquí todas las estructuras organizaban los datos a lo largo de una sola dimensión. Sin embargo, buena parte de la información de ingeniería es naturalmente bidimensional: un mapa de temperaturas de un horno, una tabla de producción por máquina y turno o la imagen de una cámara de inspección se describen con filas y columnas.",
+          "Esta sección extiende lo aprendido al caso multidimensional presentando la matriz como una lista de listas, su acceso con dos índices $M[i][j]$ y, sobre todo, el recorrido con ciclos anidados, que es la primera vez que combinamos dos estructuras de control para visitar un conjunto de datos completo."
+        ],
+        "componentOrder": [
+          "pdf-s4-teoria",
+          "pdf-s4-teoria-cierre",
+          "pdf-s4-keybox-alias",
+          "pdf-s4-formula",
+          "pdf-s4-data-recorrido",
+          "pdf-s4-ejemplo",
+          "pdf-s4-codigo",
+          "pdf-s4-cierre"
+        ],
+        "components": {
+          "pdf-s4-formula": {
+            "type": "formula",
+            "title": "Suma de los elementos de una matriz",
+            "context": [
+              "Totalizar una matriz equivale a recorrer todas sus celdas con dos índices y acumular sus valores."
+            ],
+            "latex": "S = \\sum_{i=0}^{m-1} \\sum_{j=0}^{n-1} M[i][j]",
+            "variables": [
+              {
+                "symbol": "m",
+                "description": "número de filas, $\\operatorname{len}(M)$."
+              },
+              {
+                "symbol": "n",
+                "description": "número de columnas, $\\operatorname{len}(M[0])$."
+              }
+            ],
+            "explanation": [
+              "La suma doble equivale a dos ciclos $for$ anidados: el índice interno $j$ recorre las columnas de una fila $i$ fija y el externo $i$ avanza por las filas; el número total de términos es $m\\times n$."
+            ]
+          },
+          "pdf-s4-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo 4.4 · Suma total, promedio por fila y máximo",
+            "context": [
+              "Modelemos un mapa de temperaturas con la matriz $M=[[20,21,19],[22,24,23]]$, donde cada fila es una zona del horno y cada columna un sensor. Calculemos la suma total, el promedio de cada fila y la temperatura máxima con su posición."
+            ],
+            "formula": "S=\\sum_{i}\\sum_{j} M[i][j]=129",
+            "solution": [
+              "Sumas por fila: $S_0=20+21+19=60$ y $S_1=22+24+23=69$; suma total $S=129$.",
+              "Promedios por fila: $\\bar{x}_0=60/3=20$ y $\\bar{x}_1=69/3=23$, lo que muestra que la segunda zona del horno está más caliente.",
+              "Máximo: $24$ en la posición $(1,1)$, el punto más caliente. La suma total coincide con $S_0+S_1$, lo que verifica que el recorrido visitó todas las celdas exactamente una vez."
+            ]
+          },
+          "pdf-s4-codigo": {
+            "type": "code",
+            "title": "Verificación en Python · recorrer una matriz con ciclos anidados",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "matriz_temperaturas.py",
+            "instructions": [
+              "Localiza los dos ciclos anidados y comprueba que el índice i recorre filas y j recorre columnas, como en la suma doble de la fórmula.",
+              "Guarda el archivo como matriz_temperaturas.py y ejecútalo con python matriz_temperaturas.py.",
+              "Modifica un valor de M (por ejemplo M[0][1] = 30) y vuelve a ejecutar para ver cómo cambian el total, el promedio de la fila y la posición del máximo."
+            ],
+            "code": "M = [[20, 21, 19], [22, 24, 23]]\n\ntotal = 0\nfor i in range(len(M)):\n    for j in range(len(M[0])):\n        total += M[i][j]\n\npromedios = []\nfor fila in M:\n    promedios.append(sum(fila) / len(fila))\n\nmaximo = M[0][0]\npos = (0, 0)\nfor i in range(len(M)):\n    for j in range(len(M[0])):\n        if M[i][j] > maximo:\n            maximo = M[i][j]\n            pos = (i, j)\n\nprint('Suma total:', total)\nprint('Promedios por fila:', promedios)\nprint('Maximo:', maximo, 'en', pos)",
+            "expectedOutput": [
+              "Imprime Suma total: 129, Promedios por fila: [20.0, 23.0] y Maximo: 24 en (1, 1), coincidiendo con la solución manual del Ejemplo 4.4."
+            ]
+          },
+          "pdf-s4-cierre": {
+            "type": "callout",
+            "tone": "success",
+            "icon": "arrow_forward",
+            "title": "De conocer cada estructura a elegir la adecuada",
+            "body": [
+              "Con la matriz completamos el catálogo de estructuras del tema. Queda la decisión más importante: ante un problema concreto, ¿cuál de todas conviene? La sección final integra criterios de selección, costo de acceso y la combinación de estructuras, y cierra con el banco de ejercicios y las referencias."
+            ]
+          },
+          "pdf-s4-keybox-alias": {
+            "type": "key-box",
+            "variant": "alerta",
+            "title": "Cuidado al construir una matriz",
+            "body": [
+              "Crear una matriz con $[[0]*n]*m$ es engañoso: las $m$ filas terminan compartiendo la misma lista interna en memoria, de modo que escribir en una celda altera esa celda en todas las filas. Reserva una lista independiente por fila para evitar esta referencia compartida."
+            ]
+          },
+          "pdf-s4-data-recorrido": {
+            "type": "data-highlight",
+            "title": "Costo de recorrer una matriz",
+            "items": [
+              {
+                "value": "$m \\times n$",
+                "label": "Celdas visitadas en un recorrido completo"
+              },
+              {
+                "value": "2",
+                "label": "Ciclos anidados (filas y columnas)"
+              },
+              {
+                "value": "$M[i][j]$",
+                "label": "Acceso a una celda con dos índices"
+              }
+            ]
+          },
+          "pdf-s4-teoria": {
+            "type": "column-flow",
+            "title": "La matriz como lista de listas y su recorrido",
+            "body": [
+              "Una matriz es un arreglo de filas y columnas que en Python no requiere un tipo especial: se representa como una lista de listas, donde cada lista interna es una fila. El acceso usa dos índices, $M[i][j]$, ambos contados desde cero, lo que corresponde de manera directa con la notación $a_{ij}$ del Álgebra Lineal que ya conoces.",
+              "La forma de la matriz es el par (filas, columnas), que se obtiene con filas $=len(M)$ y columnas $=len(M[0])$; conocer la forma es lo que permite recorrerla sin salirse de rango.",
+              "Recorrer una matriz completa exige dos ciclos anidados: el externo avanza por las filas y el interno, por las columnas de cada fila. Visitar cada celda exactamente una vez cuesta $m\\times n$ operaciones, y esta cuenta es nuestra primera noción explícita de costo computacional.",
+              "Cormen et al. (2009) plantean que estimar el número de operaciones de un recorrido en función del tamaño del dato es el punto de partida del análisis de algoritmos; en una matriz, ese tamaño es el producto de sus dimensiones, y el orden del recorrido —por filas o por columnas— se elige según el resumen que se busca (un total por fila, un total por columna o un total global).",
+              "La construcción de matrices esconde un error de memoria característico que el RA2 nos pide reconocer. Crear una matriz repitiendo una misma fila, como $[[0]*n]*m$, parece correcto pero es peligroso: las $m$ filas comparten la misma lista interna en memoria, de modo que modificar una celda de una fila altera esa misma celda en todas.",
+              "La forma correcta reserva una lista independiente por fila. Además, conviene recorrer con $range(len(M))$ y $range(len(M[0]))$ para que el algoritmo se adapte a cualquier tamaño sin índices fijos. Estos dos cuidados —reservar bien y recorrer con la forma real— son los que distinguen un manejo robusto de matrices."
+            ]
+          },
+          "pdf-s4-teoria-cierre": {
+            "type": "callout",
+            "tone": "light",
+            "body": [
+              "Antes del ejemplo, formalicemos el recorrido completo como una suma doble, que es la traducción matemática de los dos ciclos anidados."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-5": {
+        "title": "Selección de la estructura adecuada y banco de ejercicios",
+        "intro": [
+          "Ya conocemos cadenas, listas, tuplas, diccionarios y matrices, cada una con su forma de organizar la información. La pregunta que cierra el tema es la más profesional de todas: ante un problema concreto, ¿cuál conviene?",
+          "Esta última sección reúne los hilos de las anteriores en un criterio de decisión, evalúa el costo de acceso y de memoria que justifica cada elección (RA2) y muestra cómo los problemas reales suelen combinar varias estructuras. Termina con un banco de ejercicios diferenciado, pensado para el trabajo autónomo previo al taller, y con las referencias del tema."
+        ],
+        "componentOrder": [
+          "pdf-s5-teoria",
+          "pdf-s5-teoria-cierre",
+          "pdf-s5-keybox-criterios",
+          "pdf-s5-tabla",
+          "pdf-s5-data-acceso",
+          "pdf-s5-ejemplo",
+          "pdf-s5-codigo",
+          "pdf-s5-cierre",
+          "pdf-s5-banco",
+          "pdf-s5-referencias"
+        ],
+        "components": {
+          "pdf-s5-tabla": {
+            "type": "table",
+            "title": "Referencia rápida de selección de estructura",
+            "columns": [
+              "Si el dato es...",
+              "Estructura",
+              "Por qué"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "texto (código, etiqueta)",
+                  "Cadena",
+                  "métodos de texto e indexación por carácter"
+                ]
+              },
+              {
+                "cells": [
+                  "serie homogénea que crece",
+                  "Lista",
+                  "mutable y de crecimiento dinámico"
+                ]
+              },
+              {
+                "cells": [
+                  "registro fijo (coordenada, terna)",
+                  "Tupla",
+                  "inmutable y predecible en memoria"
+                ]
+              },
+              {
+                "cells": [
+                  "dato buscado por nombre/código",
+                  "Diccionario",
+                  "búsqueda por clave casi inmediata"
+                ]
+              },
+              {
+                "cells": [
+                  "tabla de filas y columnas",
+                  "Matriz",
+                  "dos índices y recorrido anidado"
+                ]
+              }
+            ]
+          },
+          "pdf-s5-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo 4.5 · Agrupar lecturas por máquina",
+            "context": [
+              "Cerremos con un caso que exige varias estructuras a la vez. Dadas las líneas ['M01;78.5', 'M02;72.0', 'M01;80.1'] de un registro de proceso, agrupemos las lecturas por máquina, promediemos cada grupo y hallemos la máquina más caliente."
+            ],
+            "formula": "datos=\\{\\text{'M01'}:[78.5,80.1],\\ \\text{'M02'}:[72.0]\\}",
+            "solution": [
+              "Parseo: cada cadena se parte con $split(';')$ en código y valor, y el valor textual se convierte a número con $float()$.",
+              "Agrupamiento: un diccionario máquina → lista de lecturas acumula los valores por clave; aquí conviven cadena, lista y diccionario.",
+              "Promedios: $\\bar{x}_{M01}=(78.5+80.1)/2=79.3$ y $\\bar{x}_{M02}=72.0$; la máquina más caliente es 'M01'."
+            ]
+          },
+          "pdf-s5-codigo": {
+            "type": "code",
+            "title": "Verificación en Python · agrupar y promediar por máquina",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "agrupar_por_maquina.py",
+            "instructions": [
+              "Observa cómo se combinan las tres estructuras: la cadena se parte con split, el diccionario agrupa por clave y cada valor es una lista que crece con append.",
+              "Guarda el archivo como agrupar_por_maquina.py y ejecútalo con python agrupar_por_maquina.py.",
+              "Agrega una línea más, por ejemplo 'M02;75.4', a la lista lineas y vuelve a ejecutar para ver cómo cambia el promedio del grupo y, eventualmente, la máquina más caliente."
+            ],
+            "code": "lineas = ['M01;78.5', 'M02;72.0', 'M01;80.1']\n\ndatos = {}\nfor linea in lineas:\n    codigo, valor = linea.split(';')\n    valor = float(valor)\n    if codigo not in datos:\n        datos[codigo] = []\n    datos[codigo].append(valor)\n\npromedios = {}\nfor maquina, lecturas in datos.items():\n    promedios[maquina] = round(sum(lecturas) / len(lecturas), 1)\n\nmas_caliente = max(promedios, key=promedios.get)\n\nprint('Agrupado:', datos)\nprint('Promedios:', promedios)\nprint('Mas caliente:', mas_caliente)",
+            "expectedOutput": [
+              "Imprime Agrupado: {'M01': [78.5, 80.1], 'M02': [72.0]}, Promedios: {'M01': 79.3, 'M02': 72.0} y Mas caliente: M01, confirmando la solución del Ejemplo 4.5."
+            ]
+          },
+          "pdf-s5-cierre": {
+            "type": "callout",
+            "tone": "info",
+            "icon": "emoji_objects",
+            "title": "Síntesis del tema y puente al proyecto integrador",
+            "body": [
+              "Pasamos de la variable suelta a cinco estructuras que organizan los datos por posición, por clave o por filas y columnas, y aprendimos a elegir entre ellas según el acceso, la mutabilidad, la dimensión, el tipo y el costo de memoria. Con este criterio resuelve el banco de ejercicios que sigue y prepara el taller del tema; estas decisiones de diseño serán la base del proyecto integrador del Tema 6."
+            ]
+          },
+          "pdf-s5-banco": {
+            "type": "exercise-set",
+            "title": "Banco de ejercicios para trabajo autónomo",
+            "intro": [
+              "Los ejercicios mezclan tipos de manera deliberada: hay cálculo a mano, análisis de comportamiento en memoria, programación en Python, consulta de fuentes y reflexión de diseño. Resuelve primero los de procedimiento y deja para el final los de investigación y reflexión, que articulan el tema con tu propia disciplina."
+            ],
+            "items": [
+              {
+                "kind": "practico",
+                "title": "Slicing de un identificador",
+                "prompt": "Dada la cadena $codigo=\\text{'EQ-0457-X'}$, extrae con slicing el número '0457' y el sufijo de línea 'X'.",
+                "formula": "codigo[3:7],\\ codigo[-1]",
+                "answer": "$codigo[3:7]=\\text{'0457'}$ y $codigo[-1]=\\text{'X'}$."
+              },
+              {
+                "kind": "practico",
+                "title": "Reducción de una lista",
+                "prompt": "Para los tiempos de ciclo $tiempos=[12, 9, 15, 11]$ (minutos), calcula a mano la suma, el promedio y el máximo recorriendo la lista con el patrón de acumulación.",
+                "formula": "\\bar{x}=\\frac{12+9+15+11}{4}",
+                "answer": "suma $=47$, promedio $=11.75$ min, máximo $=15$ min."
+              },
+              {
+                "kind": "analisis",
+                "title": "Referencia frente a copia",
+                "prompt": "Explica por qué $b=a$ entre dos listas no crea una copia y determina qué imprime $a$ tras ejecutar $b.append(7)$ si $a=[1,2]$. Indica cómo obtener una copia independiente y qué implica cada opción para el uso de memoria.",
+                "formula": "b=a;\\ b.\\text{append}(7)",
+                "answer": "$a$ pasa a $[1,2,7]$ porque $a$ y $b$ comparten la misma referencia; una copia independiente se obtiene con $a.copy()$ o $list(a)$, que sí duplica la memoria ocupada."
+              },
+              {
+                "kind": "codigo",
+                "title": "Recorrer una matriz por columnas",
+                "prompt": "Escribe y ejecuta en Python un programa que reciba la matriz $M=[[3,8,5],[7,2,9]]$, imprima la suma de cada columna y el valor mínimo global con su posición $(i,j)$. Verifica el resultado a mano.",
+                "language": "python",
+                "code": "M = [[3, 8, 5], [7, 2, 9]]\n\nsumas_col = []\nfor j in range(len(M[0])):\n    s = 0\n    for i in range(len(M)):\n        s += M[i][j]\n    sumas_col.append(s)\n\nminimo = M[0][0]\npos = (0, 0)\nfor i in range(len(M)):\n    for j in range(len(M[0])):\n        if M[i][j] < minimo:\n            minimo = M[i][j]\n            pos = (i, j)\n\nprint('Sumas por columna:', sumas_col)\nprint('Minimo global:', minimo, 'en', pos)",
+                "expectedOutput": "Sumas por columna: [10, 10, 14] y Minimo global: 2 en (1, 1)."
+              },
+              {
+                "kind": "codigo",
+                "title": "Agrupar por clave",
+                "prompt": "Implementa en Python el agrupamiento por clave del Ejemplo 4.5 a partir de la lista ['A;5', 'B;3', 'A;7', 'B;9', 'A;1'] y reporta el promedio de cada clave.",
+                "language": "python",
+                "code": "lineas = ['A;5', 'B;3', 'A;7', 'B;9', 'A;1']\n\ndatos = {}\nfor linea in lineas:\n    clave, valor = linea.split(';')\n    datos.setdefault(clave, []).append(float(valor))\n\nfor clave, valores in datos.items():\n    print(clave, round(sum(valores) / len(valores), 2))",
+                "expectedOutput": "A 4.33 y B 6.0 (la clave 'A' agrupa 5, 7 y 1; la 'B' agrupa 3 y 9)."
+              },
+              {
+                "kind": "consulta",
+                "title": "La tabla de dispersión",
+                "prompt": "Consulta qué es una tabla de dispersión (hash table) y por qué hace que la búsqueda por clave en un diccionario sea casi inmediata.",
+                "steps": [
+                  "Busca la definición en una fuente académica, por ejemplo Cormen et al. (2009)",
+                  "Resume en cinco líneas cómo la función hash localiza un valor sin recorrer toda la estructura",
+                  "Relaciónalo con el costo de acceso constante visto en la sección 5"
+                ],
+                "deliverable": "Párrafo breve con la definición y una cita en formato APA 7."
+              },
+              {
+                "kind": "investigacion",
+                "title": "Estructuras en una librería de tu programa",
+                "prompt": "Investiga cómo una librería de Python relevante para tu programa (por ejemplo numpy para arreglos numéricos o pandas para tablas) representa internamente los datos y qué ventaja de memoria o de velocidad ofrece frente a una lista de listas.",
+                "steps": [
+                  "Selecciona la librería y localiza su documentación oficial o un artículo académico reciente",
+                  "Identifica qué estructura de datos usa internamente y para qué tipo de dato la recomienda",
+                  "Compara su uso de memoria o su costo de acceso con el de las estructuras nativas del tema"
+                ],
+                "deliverable": "Media página con la comparación y la fuente citada en APA 7."
+              },
+              {
+                "kind": "reflexion",
+                "title": "Decisión de diseño en tu disciplina",
+                "prompt": "Elige un conjunto de datos propio de tu disciplina (mediciones, inventario, registros, una imagen) y reflexiona: aplicando los cuatro criterios (acceso, mutabilidad, dimensión y tipo), ¿qué estructura o combinación lo representa mejor y qué costo de memoria asumes con esa elección? Justifica tu decisión en pocas líneas."
+              }
+            ]
+          },
+          "pdf-s5-referencias": {
+            "type": "references",
+            "title": "Referencias",
+            "items": [
+              "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana.",
+              "Joyanes Aguilar, L. (2008). Fundamentos de programación. McGraw-Hill.",
+              "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones.",
+              "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms (3rd ed.). MIT Press.",
+              "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media.",
+              "Recursos didácticos (figuras, gráfico, ejercicios y casos): Elaboración propia."
+            ]
+          },
+          "pdf-s5-keybox-criterios": {
+            "type": "key-box",
+            "variant": "clave",
+            "title": "Cuatro preguntas para elegir la estructura",
+            "body": [
+              "Antes de programar, decide la estructura respondiendo: ¿cómo se accede al dato, por posición o por clave?; ¿el dato es fijo o cambiante?; ¿cuántas dimensiones tiene, una o dos?; y ¿de qué tipo es su contenido, texto o números? Cada respuesta apunta a una estructura del tema."
+            ]
+          },
+          "pdf-s5-data-acceso": {
+            "type": "data-highlight",
+            "title": "Costo de acceso según la vía",
+            "items": [
+              {
+                "value": "O(1)",
+                "label": "Lista por índice o diccionario por clave"
+              },
+              {
+                "value": "O(n)",
+                "label": "Buscar un valor recorriendo una lista"
+              }
+            ]
+          },
+          "pdf-s5-teoria": {
+            "type": "column-flow",
+            "title": "Criterios de selección y costo de acceso",
+            "body": [
+              "Elegir la estructura adecuada es la primera decisión de diseño de un algoritmo, y conviene tomarla con un criterio explícito en lugar de por costumbre. Cuatro preguntas la guían: cómo se accede al dato (por posición y orden, o por nombre y clave), si el dato es fijo o cambiante (mutabilidad), cuántas dimensiones tiene (una o dos) y de qué tipo es su contenido (texto o números).",
+              "Cada respuesta apunta a una estructura del tema: el acceso por nombre lleva al diccionario; la serie que crece, a la lista; el registro que no debe cambiar, a la tupla; la tabla de filas y columnas, a la matriz; y el texto, a la cadena.",
+              "Oviedo (2005) insiste en que esta correspondencia entre la naturaleza del dato y la estructura que lo representa es la base de un algoritmo claro y mantenible.",
+              "A los cuatro criterios se suma una consideración que el RA2 vuelve central: el costo. Leer un elemento por índice en una lista o por clave en un diccionario es prácticamente inmediato (costo constante), mientras que buscar un valor recorriendo una lista crece con el número de elementos (costo lineal).",
+              "El diccionario logra su rapidez a cambio de algo más de memoria para su tabla de dispersión; ese compromiso entre velocidad y espacio es exactamente lo que Cormen et al. (2009) describen como el corazón del análisis de estructuras de datos, y es lo que el RA2 pide evaluar antes de comprometerse con una solución.",
+              "Por último, conviene perder el miedo a combinar estructuras, porque los problemas reales rara vez encajan en una sola. Un diccionario cuyos valores son listas resuelve de forma elegante agrupar lecturas por máquina; una lista de tuplas representa una tabla de registros; una matriz puede guardarse en un diccionario indexado por turno.",
+              "Reconocer cuándo anidar estructuras, y cuándo basta una referencia compartida en lugar de una copia que duplica la memoria, es la madurez de diseño que se evalúa en el taller del tema y que prepara el proyecto integrador del Tema 6."
+            ]
+          },
+          "pdf-s5-teoria-cierre": {
+            "type": "callout",
+            "tone": "light",
+            "body": [
+              "La tabla siguiente condensa estos criterios en una referencia de bolsillo, y el ejemplo final muestra las tres estructuras trabajando juntas."
+            ]
+          }
+        }
+      }
+    }
+  }
+}

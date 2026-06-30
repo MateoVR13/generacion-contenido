@@ -1,0 +1,3042 @@
+{
+  "subject": {
+    "id": "algoritmia-computacional-i-tema-01",
+    "title": "Algoritmia Computacional I",
+    "program": "Tecnología en Aplicaciones Digitales Inteligentes",
+    "faculty": "ingenieria",
+    "contentNumber": "01",
+    "contentTotal": "06",
+    "unitLabel": "Tema",
+    "description": "Tema 1: Fundamentos del algoritmo y su representación. El estudiante reconoce qué es un algoritmo, sus propiedades, el modelo entrada-proceso-salida, y aprende a representarlo con flujograma y pseudocódigo antes de programar, validándolo con una prueba de escritorio.",
+    "syllabus": {
+      "source": {
+        "type": "pdf",
+        "fileName": "syllabus-algoritmia-computacional.pdf"
+      },
+      "extractedFields": {
+        "faculty": "Facultad de Ingeniería",
+        "program": "Tecnología en Aplicaciones Digitales Inteligentes",
+        "credits": 3,
+        "modality": "Virtual",
+        "level": "Tecnología (pregrado)",
+        "nature": "teorico-practica"
+      },
+      "learningOutcomes": [
+        "RA1: Reconozco las principales estructuras de programación para la generación de algoritmos computacionales utilizando herramientas de control.",
+        "RA2: Evalúo adecuadamente la asignación dinámica de memoria en un computador para la ejecución de algoritmos, a partir de programación estructurada."
+      ],
+      "priorKnowledge": [
+        "Lógica y razonamiento secuencial básico.",
+        "Matemática básica (aritmética y comparaciones).",
+        "Nociones de Álgebra Lineal (vectores y arreglos)."
+      ],
+      "competencies": [
+        "UC2: Estructurar metodológicamente el desarrollo de algoritmos y la construcción de prototipos mecatrónicos, integrando la programación orientada a objetos y la inteligencia artificial, para generar soluciones tecnológicas aplicadas a procesos industriales."
+      ],
+      "evaluationCriteria": [
+        "CE1: Fundamenta algoritmos a partir de pseudocódigos; identifica ventajas/desventajas de lenguaje máquina y ensamblador; genera algoritmos con estructuras selectivas y de control."
+      ],
+      "topics": [
+        "Concepto y propiedades del algoritmo",
+        "Entrada/proceso/salida",
+        "Flujograma (símbolos)",
+        "Pseudocódigo",
+        "Prueba de escritorio/trazado"
+      ],
+      "methodologyNotes": [
+        "Aprendizaje Guiado: ruta de fundamentos con teoría, ejemplos resueltos, talleres formativos y retroalimentación.",
+        "Ejemplos transversales a las ingenierías con orientación a procesos industriales.",
+        "Lenguaje de implementación: Python; representación previa con pseudocódigo y PSeInt para el Tema 1."
+      ],
+      "evaluationPlan": [
+        "Taller formativo del Tema 1: diseñar el algoritmo (pseudocódigo + flujograma) de un problema sencillo del contexto del estudiante y realizar su prueba de escritorio.",
+        "Evidencia: pseudocódigo, flujograma y tabla de traza."
+      ],
+      "bibliography": {
+        "basic": [
+          "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana.",
+          "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones."
+        ],
+        "complementary": [
+          "Joyanes Aguilar, L. (2008). Fundamentos de programación. McGraw Hill.",
+          "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms (3rd ed.). MIT Press.",
+          "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media."
+        ]
+      },
+      "missingFields": [
+        "Código de la asignatura no provisto en el syllabus.",
+        "El syllabus no define ponderaciones por actividad.",
+        "El syllabus no numera explícitamente los temas; se infieren de los saberes S1-S25."
+      ]
+    },
+    "methodology": {
+      "code": "AG",
+      "name": "Aprendizaje Guiado",
+      "rationale": "Ruta guiada para aprendizaje virtual autónomo con acompañamiento, práctica y retroalimentación: el estudiante avanza de la comprensión del algoritmo a su representación formal (flujograma y pseudocódigo) y a su validación con prueba de escritorio.",
+      "moments": [
+        "Fase 1",
+        "Fase 2",
+        "Fase 3",
+        "Fase 4"
+      ]
+    }
+  },
+  "scorm": {
+    "labels": {
+      "theoryNav": "Contenido Teórico",
+      "materialNav": "Material Complementario"
+    },
+    "sectionOrder": [
+      "intro",
+      "seccion-1",
+      "seccion-2",
+      "seccion-3",
+      "seccion-4",
+      "seccion-5"
+    ],
+    "sections": {
+      "intro": {
+        "kind": "theory",
+        "theme": "Intro",
+        "badge": "Escenario de aprendizaje 01",
+        "navLabel": "Presentación",
+        "title": "Fundamentos del algoritmo y su representación",
+        "intro": [
+          "Bienvenido al Tema 1 de Algoritmia Computacional I. Antes de escribir una sola línea de código, todo profesional de la ingeniería necesita pensar la solución: descomponer un problema, ordenar los pasos y comprobar que funcionan. Ese pensamiento ordenado es el algoritmo, y es la base de toda aplicación digital, sistema de control industrial o prototipo inteligente.",
+          "En este Escenario de aprendizaje 01 partimos de la pregunta orientadora: ¿qué hace que un procedimiento sea un algoritmo, y cómo se representa antes de programar? Recorreremos cinco temas del saber: el concepto y las propiedades del algoritmo, el modelo entrada-proceso-salida, el flujograma con sus símbolos normalizados, el pseudocódigo y, finalmente, la prueba de escritorio que valida la solución a mano."
+        ],
+        "componentOrder": [
+          "intro-presentacion",
+          "intro-objetivos",
+          "intro-saberes-previos",
+          "intro-ruta"
+        ],
+        "components": {
+          "intro-presentacion": {
+            "type": "theory-block",
+            "title": "De qué trata esta asignatura y este tema",
+            "eyebrow": "Presentación",
+            "body": [
+              "Algoritmia Computacional I es una asignatura de fundamentación para el programa de Tecnología en Aplicaciones Digitales Inteligentes. Su propósito es que aprendas a estructurar metodológicamente la solución de problemas: del enunciado de un proceso a un procedimiento claro, finito y reproducible que después podrá implementarse en un lenguaje como Python.",
+              "El alcance de la asignatura abarca seis temas que progresan desde el concepto de algoritmo hasta un proyecto integrador de orientación industrial. Este Tema 1 es la base: aquí construyes el lenguaje y las herramientas de representación (flujograma, pseudocódigo y prueba de escritorio) que usarás en todos los temas siguientes.",
+              "El valor profesional es directo: en una planta, un laboratorio o una línea de producción, antes de automatizar un proceso se diseña y se valida su lógica. Un algoritmo mal pensado se convierte en un programa que falla; uno bien representado y trazado ahorra tiempo, recursos y errores costosos."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "schema",
+                "text": "El algoritmo es el diseño de la solución; el programa es su implementación."
+              },
+              {
+                "icon": "draw",
+                "text": "Representar antes de programar (flujograma y pseudocódigo) reduce errores."
+              },
+              {
+                "icon": "fact_check",
+                "text": "La prueba de escritorio valida la lógica a mano, sin computador."
+              },
+              {
+                "icon": "factory",
+                "text": "Los ejemplos son transversales a las ingenierías y a procesos industriales."
+              }
+            ],
+            "closing": [
+              "Mantén una idea guía durante todo el tema: si no puedes explicar tu solución paso a paso a otra persona, todavía no tienes un algoritmo."
+            ]
+          },
+          "intro-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos del Tema 1",
+            "items": [
+              {
+                "icon": "track_changes",
+                "text": "Reconocer qué es un algoritmo y verificar sus propiedades (finitud, precisión, determinismo, entrada y salida)."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Describir cualquier procedimiento con el modelo entrada-proceso-salida (EPS)."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Representar un algoritmo mediante un flujograma con símbolos normalizados."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Escribir el mismo algoritmo en pseudocódigo estructurado."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Validar la lógica con una prueba de escritorio y su tabla de traza."
+              }
+            ]
+          },
+          "intro-saberes-previos": {
+            "type": "prior-knowledge",
+            "title": "Saberes previos",
+            "eyebrow": "Antes de empezar",
+            "prompts": [
+              "Piensa en una rutina cotidiana o industrial (preparar un café, calibrar un sensor): ¿podrías escribir sus pasos de forma que cualquier persona los siga sin ambigüedad?",
+              "¿Qué diferencia crees que hay entre una receta y una idea vaga de cómo hacer algo?",
+              "Recuerda de Álgebra Lineal cómo se ordena una lista de valores: esa noción de secuencia y posición nos servirá para razonar sobre datos."
+            ]
+          },
+          "intro-ruta": {
+            "type": "list",
+            "title": "Ruta del Escenario de aprendizaje 01",
+            "ordered": true,
+            "items": [
+              "Tema del saber 1: Concepto y propiedades del algoritmo.",
+              "Tema del saber 2: Entrada, proceso y salida (modelo EPS).",
+              "Tema del saber 3: Flujograma y sus símbolos normalizados.",
+              "Tema del saber 4: Pseudocódigo estructurado.",
+              "Tema del saber 5: Prueba de escritorio y tabla de traza."
+            ]
+          }
+        }
+      },
+      "seccion-1": {
+        "kind": "theory",
+        "theme": "Tema del saber 1",
+        "badge": "Escenario de aprendizaje 01",
+        "navLabel": "Concepto y propiedades del algoritmo",
+        "title": "Concepto y propiedades del algoritmo",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "methodologyMoment": "Fase 1",
+        "estimatedTime": "60 minutos",
+        "intro": [
+          "Todo lo que automatizamos en ingeniería empieza con un algoritmo. En este tema del saber definimos qué es exactamente un algoritmo y qué propiedades debe cumplir para que una máquina, o cualquier persona, pueda ejecutarlo sin ambigüedad."
+        ],
+        "componentOrder": [
+          "s1-detonadora",
+          "s1-teoria-concepto",
+          "s1-figura-algoritmo",
+          "s1-carrusel-propiedades",
+          "s1-teoria-propiedades",
+          "s1-tabla-comparacion",
+          "s1-flashcards",
+          "s1-stepper-finitud",
+          "s1-code-clasificar",
+          "s1-teoria-algoritmo-vs-programa",
+          "s1-figura-niveles",
+          "s1-accordion-errores",
+          "s1-quiz",
+          "s1-saberes-link"
+        ],
+        "components": {
+          "s1-teoria-concepto": {
+            "type": "theory-block",
+            "title": "Qué es un algoritmo",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Un algoritmo es un conjunto ordenado y finito de pasos no ambiguos que, a partir de unos datos de entrada, permite resolver un problema o realizar una tarea y producir un resultado en un tiempo finito. La palabra proviene del matemático Al-Juarismi, pero la idea es universal: una receta de cocina, un protocolo de calibración o un instructivo de mantenimiento son algoritmos expresados en lenguaje natural.",
+              "Lo que distingue a un algoritmo de una idea vaga es la precisión. Cada paso debe estar tan claramente definido que dos personas distintas, siguiéndolo, obtengan el mismo resultado. En ingeniería esto es crítico: un procedimiento de arranque de un equipo industrial no puede depender de la interpretación de quien lo ejecuta.",
+              "El algoritmo es independiente del lenguaje de programación. Primero se diseña la lógica (qué pasos y en qué orden) y solo después se traduce a Python, a C o a la instrucción de un controlador. Por eso el algoritmo es el verdadero objeto de estudio de esta asignatura: el código es apenas una de sus implementaciones posibles."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "list_alt",
+                "text": "Conjunto ordenado y finito de pasos."
+              },
+              {
+                "icon": "verified",
+                "text": "Pasos no ambiguos: misma entrada, mismo resultado."
+              },
+              {
+                "icon": "input",
+                "text": "Recibe datos de entrada y produce una salida."
+              },
+              {
+                "icon": "code_off",
+                "text": "Es independiente del lenguaje de programación."
+              }
+            ],
+            "example": {
+              "title": "Ejemplo cotidiano",
+              "body": [
+                "El procedimiento para sacar el promedio de tres mediciones de temperatura es un algoritmo: sumar las tres mediciones, dividir entre tres y reportar el valor. Tiene entrada (las mediciones), proceso (suma y división) y salida (el promedio)."
+              ]
+            },
+            "closing": [
+              "Antes de avanzar, formula con tus palabras: ¿por qué un procedimiento ambiguo no puede considerarse un algoritmo?"
+            ]
+          },
+          "s1-figura-algoritmo": {
+            "type": "image",
+            "title": "El algoritmo como puente entre problema y solución",
+            "assetId": "alg-t1-puente-problema-solucion",
+            "src": "",
+            "alt": "Diagrama horizontal con tres bloques: Problema a la izquierda, Algoritmo (caja con pasos numerados) en el centro y Solución/Resultado a la derecha, con flechas que conectan los tres.",
+            "caption": "El algoritmo es el procedimiento intermedio que transforma un problema en una solución reproducible. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español, estilo plano y limpio, con tres bloques conectados por flechas de izquierda a derecha: (1) bloque 'Problema' con ícono de signo de interrogación; (2) bloque central 'Algoritmo' que muestre una lista vertical de pasos numerados 1, 2, 3; (3) bloque 'Solución / Resultado' con ícono de check. Sobre el bloque central rotular las propiedades 'finito · ordenado · no ambiguo'. Paleta institucional sobria, tipografía legible."
+          },
+          "s1-carrusel-propiedades": {
+            "type": "carousel",
+            "title": "Las cinco propiedades de un algoritmo",
+            "slides": [
+              {
+                "label": "Finitud",
+                "title": "Finitud",
+                "body": [
+                  "Un algoritmo debe terminar después de un número finito de pasos. Un procedimiento que nunca acaba no resuelve el problema. En un proceso industrial, un ciclo que no termina deja un equipo bloqueado."
+                ],
+                "icon": "hourglass_bottom"
+              },
+              {
+                "label": "Precisión",
+                "title": "Precisión (no ambigüedad)",
+                "body": [
+                  "Cada paso debe estar definido sin lugar a interpretaciones. 'Calienta un poco' no es preciso; 'calienta hasta 60 grados Celsius' sí lo es."
+                ],
+                "icon": "center_focus_strong"
+              },
+              {
+                "label": "Determinismo",
+                "title": "Determinismo",
+                "body": [
+                  "Con los mismos datos de entrada, el algoritmo debe seguir siempre la misma secuencia de pasos y producir el mismo resultado. Esto garantiza reproducibilidad en mediciones y control."
+                ],
+                "icon": "repeat"
+              },
+              {
+                "label": "Entrada",
+                "title": "Entrada (cero o más datos)",
+                "body": [
+                  "El algoritmo recibe datos que provienen del exterior o se generan internamente. Por ejemplo, las lecturas de un sensor o los parámetros de una pieza a fabricar."
+                ],
+                "icon": "login"
+              },
+              {
+                "label": "Salida",
+                "title": "Salida (uno o más resultados)",
+                "body": [
+                  "Todo algoritmo produce al menos un resultado que es la respuesta al problema: un valor, un informe, una decisión o una acción sobre un actuador."
+                ],
+                "icon": "logout"
+              }
+            ]
+          },
+          "s1-teoria-propiedades": {
+            "type": "theory-block",
+            "title": "Por qué cada propiedad importa en ingeniería",
+            "eyebrow": "Desarrollo",
+            "body": [
+              "Las cinco propiedades no son una lista académica: cada una previene un tipo de fallo concreto. La finitud evita que un sistema quede atrapado en un ciclo infinito; la precisión elimina las interpretaciones que generan resultados distintos según el operario; el determinismo asegura que un experimento o un control sea reproducible.",
+              "Las propiedades de entrada y salida obligan a delimitar el problema: ¿qué datos necesito y qué debo entregar? Un algoritmo sin salida no sirve para nada, y uno cuyas entradas no están claras producirá resultados impredecibles. En la práctica, definir con cuidado entradas y salidas es la mitad del diseño.",
+              "Conviene también distinguir eficiencia de corrección. Un algoritmo puede ser correcto (produce la salida esperada) pero poco eficiente (tarda demasiado o usa demasiada memoria). En este tema nos centramos en la corrección y la claridad; la eficiencia se estudiará al avanzar la asignatura."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "block",
+                "text": "Finitud evita ciclos infinitos."
+              },
+              {
+                "icon": "rule",
+                "text": "Precisión elimina interpretaciones del operario."
+              },
+              {
+                "icon": "science",
+                "text": "Determinismo garantiza reproducibilidad."
+              },
+              {
+                "icon": "balance",
+                "text": "Corrección y eficiencia son cosas distintas."
+              }
+            ],
+            "closing": [
+              "Si un algoritmo cumple las cinco propiedades pero tarda horas, ¿es correcto? ¿es útil? Distingue ambas preguntas."
+            ]
+          },
+          "s1-tabla-comparacion": {
+            "type": "table",
+            "title": "Procedimiento ambiguo vs. algoritmo",
+            "columns": [
+              "Aspecto",
+              "Instrucción ambigua",
+              "Paso de algoritmo"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Cantidad",
+                  "Agrega bastante reactivo",
+                  "Agrega 5 mL de reactivo"
+                ]
+              },
+              {
+                "cells": [
+                  "Condición",
+                  "Cuando esté caliente, retira",
+                  "Cuando la temperatura sea mayor o igual a 60 grados Celsius, retira"
+                ]
+              },
+              {
+                "cells": [
+                  "Repetición",
+                  "Revisa varias veces",
+                  "Repite la medición 3 veces"
+                ]
+              },
+              {
+                "cells": [
+                  "Terminación",
+                  "Sigue hasta que quede bien",
+                  "Detente cuando el error sea menor que 0.01"
+                ]
+              }
+            ]
+          },
+          "s1-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards: vocabulario del algoritmo",
+            "cards": [
+              {
+                "term": "Algoritmo",
+                "definition": "Conjunto ordenado y finito de pasos no ambiguos que transforma datos de entrada en una salida para resolver un problema.",
+                "icon": "schema"
+              },
+              {
+                "term": "Finitud",
+                "definition": "Propiedad por la cual el algoritmo termina tras un número finito de pasos; sin ella el procedimiento no concluye.",
+                "icon": "hourglass_bottom"
+              },
+              {
+                "term": "Determinismo",
+                "definition": "Con la misma entrada, el algoritmo recorre los mismos pasos y entrega el mismo resultado, garantizando reproducibilidad.",
+                "icon": "repeat"
+              },
+              {
+                "term": "Corrección",
+                "definition": "Cualidad de un algoritmo que, para toda entrada válida, produce la salida esperada según la especificación del problema.",
+                "icon": "verified"
+              },
+              {
+                "term": "Ambigüedad",
+                "definition": "Defecto de una instrucción que admite más de una interpretación; viola la propiedad de precisión y debe eliminarse.",
+                "icon": "help"
+              }
+            ]
+          },
+          "s1-stepper-finitud": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: verificar que un procedimiento es un algoritmo",
+            "statement": "Dada la instrucción 'para clasificar piezas, mide cada pieza, si mide más de 10 cm marcala como larga, de lo contrario como corta, hasta terminar el lote de N piezas', verifica que cumple las cinco propiedades de un algoritmo.",
+            "steps": [
+              {
+                "title": "Identificar entradas y salidas",
+                "body": "Entrada: el lote de $N$ piezas y su medida. Salida: la clasificación (larga/corta) de cada pieza. Cumple las propiedades de entrada y salida.",
+                "final": false
+              },
+              {
+                "title": "Comprobar precisión",
+                "body": "El umbral 'más de 10 cm' es un criterio exacto, no ambiguo. Cada paso está definido sin interpretaciones. Cumple precisión.",
+                "formula": "\\text{larga} \\iff \\text{medida} > 10\\,\\text{cm}",
+                "final": false
+              },
+              {
+                "title": "Comprobar determinismo",
+                "body": "Para una misma pieza con la misma medida, siempre se obtiene la misma clasificación. Cumple determinismo.",
+                "final": false
+              },
+              {
+                "title": "Comprobar finitud",
+                "body": "El procedimiento se repite exactamente $N$ veces y se detiene al terminar el lote. Al ser $N$ finito, el algoritmo termina.",
+                "formula": "\\text{iteraciones}=N<\\infty",
+                "final": false
+              },
+              {
+                "title": "Concluir",
+                "body": "El procedimiento cumple las cinco propiedades, por lo tanto es un algoritmo válido y puede representarse formalmente y luego programarse.",
+                "final": true
+              }
+            ]
+          },
+          "s1-code-clasificar": {
+            "type": "code",
+            "title": "El algoritmo de clasificación, implementado en Python",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "clasificar_piezas.py",
+            "instructions": [
+              "Este programa implementa el algoritmo de clasificación de piezas que verificaste en el ejemplo resuelto anterior, para que veas cómo la lógica diseñada se vuelve un programa ejecutable.",
+              "Guarda el archivo como clasificar_piezas.py y ejecútalo desde una terminal con: python clasificar_piezas.py",
+              "El programa no pide datos: el lote de medidas está dentro de una lista para reproducir un caso concreto. Observa que el umbral de 10 cm es exacto, lo que respeta la propiedad de precisión.",
+              "Cambia los valores de la lista y vuelve a ejecutar: el determinismo garantiza que las mismas medidas produzcan siempre la misma clasificación."
+            ],
+            "code": "# clasificar_piezas.py\n# Entrada: lista finita de medidas (cm)\n# Proceso: comparar cada medida con el umbral de 10 cm\n# Salida: clasificacion de cada pieza\n\nmedidas = [12.0, 8.5, 10.0, 15.2]   # lote finito de piezas\n\nfor medida in medidas:\n    if medida > 10:\n        clasificacion = \"larga\"\n    else:\n        clasificacion = \"corta\"\n    print(\"Medida\", medida, \"cm ->\", clasificacion)",
+            "expectedOutput": [
+              "Debe mostrar una linea por pieza: 12.0 cm -> larga; 8.5 cm -> corta; 10.0 cm -> corta; 15.2 cm -> larga.",
+              "Observa que 10.0 cm se clasifica como 'corta' porque la condicion es 'mayor que 10' (no 'mayor o igual'): este es el caso limite del umbral que el diseno debe definir explicitamente."
+            ]
+          },
+          "s1-teoria-algoritmo-vs-programa": {
+            "type": "theory-block",
+            "title": "Algoritmo, programa y niveles de abstracción",
+            "eyebrow": "Distinción clave",
+            "body": [
+              "Es frecuente confundir algoritmo con programa. El algoritmo es la idea de la solución expresada de forma estructurada e independiente de la tecnología; el programa es esa idea escrita en un lenguaje concreto que una computadora puede ejecutar. Un mismo algoritmo puede dar lugar a muchos programas distintos.",
+              "Entre el problema y la máquina existen niveles de abstracción. En el nivel más alto pensamos en lenguaje natural y diagramas; luego escribimos pseudocódigo, que es semiformal; después lo traducimos a un lenguaje de alto nivel como Python; y finalmente el computador lo convierte a instrucciones de bajo nivel. Cada nivel se aleja un poco más del problema humano y se acerca a la máquina.",
+              "Trabajar primero en los niveles altos (flujograma y pseudocódigo) tiene una ventaja práctica enorme: corregir un error en un diagrama cuesta minutos, mientras que corregirlo en un sistema ya implementado puede costar días. Por eso esta asignatura insiste en diseñar y validar antes de codificar."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "lightbulb",
+                "text": "Algoritmo = idea estructurada; programa = implementación."
+              },
+              {
+                "icon": "layers",
+                "text": "Hay niveles de abstracción entre el problema y la máquina."
+              },
+              {
+                "icon": "savings",
+                "text": "Corregir en el diseño es mucho más barato que en el código."
+              }
+            ],
+            "closing": [
+              "Recuerda: un buen programador no empieza tecleando, empieza pensando el algoritmo."
+            ]
+          },
+          "s1-figura-niveles": {
+            "type": "image",
+            "title": "Niveles de abstracción del problema a la máquina",
+            "assetId": "alg-t1-niveles-abstraccion",
+            "src": "",
+            "alt": "Pirámide o escalera invertida de cuatro niveles: lenguaje natural y diagrama arriba, pseudocódigo, lenguaje de alto nivel (Python), e instrucciones de máquina abajo.",
+            "caption": "Del problema humano a la máquina: cada nivel es más formal y más cercano al computador. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español tipo escalera descendente de cuatro peldaños, de arriba (más humano) a abajo (más máquina): peldaño 1 'Lenguaje natural y diagrama', peldaño 2 'Pseudocódigo', peldaño 3 'Lenguaje de alto nivel (Python)', peldaño 4 'Instrucciones de máquina (bits)'. A la izquierda una flecha vertical etiquetada 'más cercano al humano' arriba y 'más cercano a la máquina' abajo. Estilo plano, paleta institucional."
+          },
+          "s1-accordion-errores": {
+            "type": "accordion",
+            "title": "Profundización y errores frecuentes",
+            "items": [
+              {
+                "icon": "warning",
+                "title": "Confundir 'que funcione' con 'que sea correcto'",
+                "open": true,
+                "body": [
+                  "Un error muy común al iniciar en algoritmia es probar un procedimiento con un solo caso, verlo funcionar y darlo por bueno. La corrección de un algoritmo no se demuestra con un ejemplo afortunado: significa que produce la salida esperada para toda entrada válida, incluyendo los casos límite.",
+                  "Por ejemplo, un procedimiento para clasificar piezas puede acertar con piezas claramente largas o cortas, pero fallar justo en el valor del umbral (¿una pieza de exactamente 10 cm es larga o corta?). Ese caso límite hay que definirlo explícitamente, porque de lo contrario la instrucción es ambigua y deja de ser un algoritmo."
+                ]
+              },
+              {
+                "icon": "psychology",
+                "title": "Pensar que el algoritmo depende del lenguaje",
+                "body": [
+                  "Otra confusión frecuente es creer que para diseñar un algoritmo hay que conocer primero un lenguaje de programación. Es al revés: el algoritmo es independiente del lenguaje, y por eso lo representamos con herramientas neutrales como el flujograma y el pseudocódigo.",
+                  "Esto tiene una consecuencia práctica: el mismo algoritmo de cálculo del promedio de mediciones se puede implementar en Python, en una hoja de cálculo o en el firmware de un microcontrolador. Dominar el diseño te hace independiente de la moda tecnológica del momento.",
+                  "En contextos industriales esto es especialmente valioso, porque los equipos y lenguajes cambian, pero la lógica del proceso (medir, comparar, decidir, actuar) permanece estable a lo largo de los años."
+                ]
+              },
+              {
+                "icon": "timer",
+                "title": "Olvidar la finitud y crear procedimientos sin fin",
+                "body": [
+                  "Un algoritmo debe terminar. Cuando un procedimiento incluye una repetición ('repite hasta que...'), es indispensable que la condición de parada se cumpla en algún momento; de lo contrario el procedimiento se vuelve infinito y deja de ser un algoritmo.",
+                  "En la práctica esto se traduce en cuidar que en cada vuelta el procedimiento avance hacia su fin: que se procese una pieza más, que el error disminuya, que un contador crezca hacia un límite. Si nada cambia entre una vuelta y la siguiente, la repetición nunca terminará."
+                ]
+              }
+            ]
+          },
+          "s1-quiz": {
+            "type": "quiz",
+            "title": "Chequeo de comprensión",
+            "questions": [
+              {
+                "prompt": "¿Cuál de los siguientes procedimientos NO puede considerarse un algoritmo?",
+                "options": [
+                  {
+                    "text": "Sumar tres mediciones y dividir el total entre tres para obtener el promedio.",
+                    "correct": false,
+                    "feedback": "Este sí es un algoritmo: tiene entrada, proceso y salida, es preciso y finito."
+                  },
+                  {
+                    "text": "Calentar la muestra 'lo necesario' y retirarla 'cuando se vea lista'.",
+                    "correct": true,
+                    "feedback": "Correcto: las instrucciones 'lo necesario' y 'cuando se vea lista' son ambiguas, así que viola la propiedad de precisión y no es un algoritmo."
+                  },
+                  {
+                    "text": "Recorrer un lote de N piezas y marcar como larga la que supere 10 cm.",
+                    "correct": false,
+                    "feedback": "Este sí es un algoritmo: el criterio es exacto y el recorrido del lote de N piezas es finito."
+                  },
+                  {
+                    "text": "Repetir una medición 3 veces y reportar el valor mínimo.",
+                    "correct": false,
+                    "feedback": "Este sí es un algoritmo: tiene un número finito de repeticiones y un criterio claro de salida."
+                  }
+                ]
+              }
+            ]
+          },
+          "s1-saberes-link": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza el concepto de algoritmo en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado de la definición de algoritmo, su historia y la distinción entre corrección y eficiencia, con más ejemplos transversales a las ingenierías, está en el Documento de Saberes (PDF) de la asignatura."
+            ],
+            "reference": "Tema 1, Concepto y propiedades del algoritmo; ver Joyanes (2013) y Oviedo (2005).",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          },
+          "s1-detonadora": {
+            "id": "s1-detonadora",
+            "type": "trigger-question",
+            "eyebrow": "Para empezar",
+            "question": "Antes de escribir una sola línea de código, ¿cómo le explicarías a un compañero los pasos exactos para que un sistema de riego decida solo cuándo abrir y cerrar una válvula, sin dejar ninguna duda sobre qué hacer en cada situación?"
+          }
+        }
+      },
+      "seccion-2": {
+        "kind": "theory",
+        "theme": "Tema del saber 2",
+        "badge": "Escenario de aprendizaje 01",
+        "navLabel": "Entrada, proceso y salida",
+        "title": "Entrada, proceso y salida (modelo EPS)",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "methodologyMoment": "Fase 1",
+        "estimatedTime": "55 minutos",
+        "intro": [
+          "Para diseñar un algoritmo, lo primero es delimitar qué datos entran, qué transformación ocurre y qué resultado sale. Ese marco se llama modelo entrada-proceso-salida (EPS) y es la forma más simple y poderosa de empezar a pensar cualquier solución."
+        ],
+        "componentOrder": [
+          "s2-teoria-eps",
+          "s2-figura-eps",
+          "s2-flashcards",
+          "s2-teoria-descomposicion",
+          "s2-tabla-eps-casos",
+          "s2-carrusel-fases",
+          "s2-stepper-promedio",
+          "s2-code-eps",
+          "s2-teoria-frontera",
+          "s2-figura-frontera",
+          "s2-accordion-profundizacion",
+          "s2-multiselect",
+          "s2-saberes-link"
+        ],
+        "components": {
+          "s2-teoria-eps": {
+            "type": "theory-block",
+            "title": "El modelo entrada-proceso-salida",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "El modelo entrada-proceso-salida (EPS, en inglés Input-Process-Output) describe cualquier sistema o algoritmo como una caja que recibe datos (entrada), los transforma (proceso) y entrega resultados (salida). Es el esquema mental con el que un ingeniero analiza desde un programa hasta una línea de producción.",
+              "La entrada son los datos que el algoritmo necesita para trabajar: lecturas de sensores, parámetros de una pieza, valores que el usuario digita. El proceso es la secuencia de operaciones (cálculos, comparaciones, decisiones) que transforma esos datos. La salida es el resultado útil: un valor, un informe, una clasificación o una orden a un actuador.",
+              "Identificar estos tres elementos antes de diseñar el detalle evita un error típico: empezar a escribir pasos sin saber qué se quiere obtener. Si defines primero la salida deseada y la entrada disponible, el proceso casi se diseña solo, porque sabes de dónde partes y a dónde tienes que llegar."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "login",
+                "text": "Entrada: los datos que necesita el algoritmo."
+              },
+              {
+                "icon": "settings",
+                "text": "Proceso: la transformación de esos datos."
+              },
+              {
+                "icon": "logout",
+                "text": "Salida: el resultado útil que se entrega."
+              },
+              {
+                "icon": "flag",
+                "text": "Definir salida y entrada primero guía el diseño del proceso."
+              }
+            ],
+            "example": {
+              "title": "Ejemplo industrial",
+              "body": [
+                "En un control de calidad: entrada = peso medido de cada producto; proceso = comparar con el rango permitido; salida = aceptar o rechazar el producto."
+              ]
+            },
+            "closing": [
+              "Antes de seguir, escribe el EPS de un problema de tu carrera: ¿qué entra, qué se transforma, qué sale?"
+            ]
+          },
+          "s2-figura-eps": {
+            "type": "image",
+            "title": "Esquema entrada-proceso-salida",
+            "assetId": "alg-t1-esquema-eps",
+            "src": "",
+            "alt": "Caja central rotulada Proceso con una flecha de entrada a la izquierda etiquetada Entrada (datos) y una flecha de salida a la derecha etiquetada Salida (resultado).",
+            "caption": "El algoritmo visto como una caja que transforma datos de entrada en resultados de salida. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español: una caja rectangular central con la etiqueta 'PROCESO (transformación)'; a la izquierda una flecha horizontal entrando con la etiqueta 'ENTRADA: datos (sensores, parámetros, usuario)'; a la derecha una flecha horizontal saliendo con la etiqueta 'SALIDA: resultado (valor, informe, decisión)'. Bajo la caja un pequeño ejemplo: entrada peso, proceso comparar con rango, salida aceptar/rechazar. Estilo plano, paleta institucional."
+          },
+          "s2-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards: componentes del modelo EPS",
+            "cards": [
+              {
+                "term": "Entrada",
+                "definition": "Datos que el algoritmo necesita antes de operar; pueden provenir de un sensor, del usuario o de otro proceso.",
+                "icon": "login"
+              },
+              {
+                "term": "Proceso",
+                "definition": "Secuencia de operaciones (cálculos, comparaciones, decisiones) que transforma la entrada en la salida.",
+                "icon": "settings"
+              },
+              {
+                "term": "Salida",
+                "definition": "Resultado útil que entrega el algoritmo y que responde al problema planteado.",
+                "icon": "logout"
+              },
+              {
+                "term": "Variable",
+                "definition": "Espacio con nombre que almacena un dato (de entrada, intermedio o de salida) y cuyo valor puede cambiar durante el proceso.",
+                "icon": "data_object"
+              },
+              {
+                "term": "Especificación",
+                "definition": "Descripción precisa de qué entradas recibe y qué salida debe producir el algoritmo, sin decir todavía cómo.",
+                "icon": "description"
+              }
+            ]
+          },
+          "s2-teoria-descomposicion": {
+            "type": "theory-block",
+            "title": "Del problema al EPS: descomponer antes de resolver",
+            "eyebrow": "Método",
+            "body": [
+              "Descomponer un problema con el modelo EPS consiste en hacerse tres preguntas en orden: ¿qué resultado quiero (salida)?, ¿con qué datos cuento (entrada)?, ¿qué operaciones convierten lo uno en lo otro (proceso)? Este orden, empezando por la salida, es contraintuitivo pero muy eficaz.",
+              "Una vez identificados los datos, conviene nombrarlos con variables. Una variable es un espacio con nombre donde guardamos un dato; por ejemplo, podemos llamar 'suma' al acumulado de mediciones y 'n' a la cantidad de datos. Nombrar bien las variables hace el proceso legible y reduce errores.",
+              "El proceso suele descomponerse a su vez en subpasos más simples. Calcular un promedio, por ejemplo, se descompone en: acumular la suma de los valores, contar cuántos son y dividir. Esta descomposición progresiva es la esencia del pensamiento algorítmico y la base de la modularidad que estudiaremos en temas posteriores."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "help_outline",
+                "text": "Pregúntate primero por la salida, luego por la entrada."
+              },
+              {
+                "icon": "label",
+                "text": "Nombra los datos con variables claras."
+              },
+              {
+                "icon": "account_tree",
+                "text": "Descompón el proceso en subpasos simples."
+              }
+            ],
+            "closing": [
+              "La descomposición no termina aquí: cada subpaso puede volver a verse como un pequeño EPS."
+            ]
+          },
+          "s2-tabla-eps-casos": {
+            "type": "table",
+            "title": "Modelo EPS en distintas ingenierías",
+            "columns": [
+              "Caso",
+              "Entrada",
+              "Proceso",
+              "Salida"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Control de calidad (industrial)",
+                  "Peso de cada producto",
+                  "Comparar con el rango permitido",
+                  {
+                    "badge": "Aceptar / rechazar",
+                    "tone": "success"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Monitoreo ambiental",
+                  "Lecturas de un sensor de CO2",
+                  "Promediar y comparar con el umbral",
+                  {
+                    "badge": "Alarma o normal",
+                    "tone": "info"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Mecánica / estructuras",
+                  "Cargas sobre una viga",
+                  "Calcular esfuerzo y factor de seguridad",
+                  {
+                    "badge": "Seguro / inseguro",
+                    "tone": "warning"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Eléctrica",
+                  "Voltaje y corriente medidos",
+                  "Calcular la potencia consumida",
+                  {
+                    "badge": "Potencia (W)",
+                    "tone": "info"
+                  }
+                ]
+              }
+            ]
+          },
+          "s2-carrusel-fases": {
+            "type": "carousel",
+            "title": "Las tres preguntas guía del modelo EPS",
+            "slides": [
+              {
+                "label": "1. Salida",
+                "title": "¿Qué quiero obtener?",
+                "body": [
+                  "Define con precisión el resultado esperado. Si no sabes a dónde quieres llegar, no podrás diseñar el camino. En el promedio de mediciones, la salida es un único número: el promedio."
+                ],
+                "icon": "logout"
+              },
+              {
+                "label": "2. Entrada",
+                "title": "¿Con qué datos cuento?",
+                "body": [
+                  "Lista los datos disponibles y su origen. Para el promedio, la entrada son las mediciones y, opcionalmente, cuántas son. Aquí decides también qué entradas son válidas."
+                ],
+                "icon": "login"
+              },
+              {
+                "label": "3. Proceso",
+                "title": "¿Cómo transformo entrada en salida?",
+                "body": [
+                  "Diseña la secuencia de operaciones que conecta entrada con salida. Para el promedio: acumular la suma, contar los valores y dividir la suma entre la cantidad."
+                ],
+                "icon": "settings"
+              }
+            ]
+          },
+          "s2-stepper-promedio": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: diseñar el EPS del promedio de mediciones",
+            "statement": "Una estación de monitoreo registra tres mediciones de temperatura: 58, 62 y 60 grados Celsius. Diseña el modelo EPS de un algoritmo que calcule su promedio y clasifique el proceso como normal si el promedio es menor o igual a 60.",
+            "steps": [
+              {
+                "title": "Definir la salida",
+                "body": "Se requieren dos resultados: el promedio $\\bar{x}$ y la clasificación (normal/alto). Esta es la salida del algoritmo.",
+                "final": false
+              },
+              {
+                "title": "Definir la entrada",
+                "body": "Las tres mediciones $x_1=58$, $x_2=62$, $x_3=60$ y el umbral de 60 grados. Esta es la entrada.",
+                "final": false
+              },
+              {
+                "title": "Diseñar el proceso: acumular la suma",
+                "body": "Se suman las mediciones para obtener el acumulado.",
+                "formula": "S = x_1 + x_2 + x_3 = 58 + 62 + 60 = 180",
+                "final": false
+              },
+              {
+                "title": "Diseñar el proceso: dividir entre la cantidad",
+                "body": "Se divide la suma entre la cantidad de mediciones $n=3$ para obtener el promedio.",
+                "formula": "\\bar{x} = \\frac{S}{n} = \\frac{180}{3} = 60",
+                "final": false
+              },
+              {
+                "title": "Decidir y concluir",
+                "body": "Como $\\bar{x}=60$ cumple $\\bar{x} \\leq 60$, la salida es promedio 60 grados y clasificación 'normal'. El EPS queda definido: entrada (3 mediciones, umbral), proceso (sumar, dividir, comparar), salida (promedio y clasificación).",
+                "formula": "\\bar{x}=60 \\leq 60 \\Rightarrow \\text{normal}",
+                "final": true
+              }
+            ]
+          },
+          "s2-code-eps": {
+            "type": "code",
+            "title": "El modelo EPS, hecho explícito en Python",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "potencia_electrica.py",
+            "instructions": [
+              "Este programa muestra el modelo entrada-proceso-salida de un caso eléctrico transversal a las ingenierías: calcular la potencia a partir del voltaje y la corriente.",
+              "Guarda el archivo como potencia_electrica.py y ejecútalo con: python potencia_electrica.py",
+              "Cuando se ejecute, ingresa el voltaje (por ejemplo 120) y la corriente (por ejemplo 2.5). El programa hace visible cada parte del EPS con comentarios.",
+              "Identifica en el código qué líneas son la entrada, cuál es el proceso, cuál es el dato intermedio y cuál es la salida; relaciona cada una con el esquema EPS que estudiaste."
+            ],
+            "code": "# potencia_electrica.py\n# Entrada: voltaje (V) y corriente (A)\n# Proceso: multiplicar para obtener la potencia\n# Salida: potencia en vatios\n\n# --- ENTRADA ---\nvoltaje = float(input(\"Voltaje (V): \"))\ncorriente = float(input(\"Corriente (A): \"))\n\n# --- PROCESO (potencia es un dato de salida) ---\npotencia = voltaje * corriente\n\n# --- SALIDA ---\nprint(\"Potencia consumida:\", potencia, \"W\")",
+            "expectedOutput": [
+              "Con voltaje 120 y corriente 2.5 debe mostrar: Potencia consumida: 300.0 W.",
+              "El voltaje y la corriente son la ENTRADA; la multiplicacion es el PROCESO; la variable potencia es la SALIDA. Asi el modelo EPS abstracto se vuelve un programa concreto."
+            ]
+          },
+          "s2-teoria-frontera": {
+            "type": "theory-block",
+            "title": "La frontera del sistema y los datos válidos",
+            "eyebrow": "Profundización",
+            "body": [
+              "Cuando aplicamos el modelo EPS debemos trazar una frontera: qué está dentro del algoritmo (el proceso que controlamos) y qué está fuera (las fuentes de datos y los destinos de los resultados). Definir bien la frontera evita que el algoritmo intente resolver cosas que no le corresponden.",
+              "Igual de importante es decidir qué entradas son válidas. Un sensor puede entregar una lectura imposible (una temperatura negativa absoluta) por una falla. Un algoritmo robusto contempla la validación de la entrada: comprobar que los datos están en el rango esperado antes de procesarlos.",
+              "En esta etapa todavía no programamos esa validación, pero sí la anticipamos en el diseño. Anotar en el EPS qué entradas son válidas y qué hacer con las inválidas forma parte de una buena especificación y se traducirá luego en estructuras selectivas, que estudiarás en el Tema 3."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "crop_free",
+                "text": "La frontera separa lo que el algoritmo controla de lo que no."
+              },
+              {
+                "icon": "verified_user",
+                "text": "Especifica qué entradas son válidas."
+              },
+              {
+                "icon": "link",
+                "text": "La validación anticipa las estructuras selectivas del Tema 3."
+              }
+            ],
+            "closing": [
+              "Pregúntate siempre: ¿qué pasa si la entrada es inesperada? Un buen diseño ya tiene una respuesta."
+            ]
+          },
+          "s2-figura-frontera": {
+            "type": "image",
+            "title": "Frontera del sistema y flujo de datos",
+            "assetId": "alg-t1-frontera-sistema",
+            "src": "",
+            "alt": "Recuadro punteado que encierra el bloque Proceso, con fuentes externas de datos (sensor, usuario) a la izquierda y destinos (informe, actuador) a la derecha fuera del recuadro.",
+            "caption": "El recuadro punteado marca la frontera del algoritmo; las fuentes y destinos quedan fuera. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español: un recuadro de borde punteado etiquetado 'Algoritmo (frontera del sistema)' que contiene un bloque 'Proceso'. Fuera del recuadro, a la izquierda, dos íconos con etiquetas 'Sensor' y 'Usuario' conectados con flechas hacia adentro (entradas). A la derecha, fuera del recuadro, dos íconos 'Informe' y 'Actuador' con flechas que salen del recuadro (salidas). Estilo plano, paleta institucional."
+          },
+          "s2-accordion-profundizacion": {
+            "type": "accordion",
+            "title": "Profundización y matices del modelo EPS",
+            "items": [
+              {
+                "icon": "memory",
+                "title": "Datos intermedios: ni entrada ni salida",
+                "open": true,
+                "body": [
+                  "Entre la entrada y la salida existen datos intermedios que el proceso genera y usa internamente, como la variable 'suma' al calcular un promedio. No son entrada (no vienen de fuera) ni salida (no se reportan), pero son indispensables para el proceso.",
+                  "Reconocer estos datos intermedios ayuda a diseñar mejor: cada uno necesita una variable con un nombre claro y un valor inicial bien elegido. Por ejemplo, un acumulador de suma debe empezar en cero; si empieza en otro valor, todo el cálculo se desvía. Este detalle, aparentemente menor, es una de las causas más frecuentes de errores en algoritmos reales."
+                ]
+              },
+              {
+                "icon": "compare_arrows",
+                "title": "EPS frente al algoritmo detallado",
+                "body": [
+                  "El modelo EPS es una vista de alto nivel: dice qué entra, qué sale y qué se transforma, pero no detalla cada paso. El algoritmo completo, que luego escribiremos como flujograma y pseudocódigo, sí detalla el orden exacto de las operaciones.",
+                  "Pensar primero en EPS y luego detallar es una forma de refinamiento progresivo: empezamos por una descripción general y la vamos precisando. Esta estrategia, conocida como diseño descendente o top-down, es central en la programación estructurada que es columna vertebral de esta asignatura.",
+                  "La ventaja es que en cada nivel verificamos coherencia antes de bajar al siguiente: si el EPS está mal planteado, no tiene sentido detallar el proceso. Detectar el error temprano ahorra retrabajo."
+                ]
+              }
+            ]
+          },
+          "s2-multiselect": {
+            "type": "multi-select",
+            "title": "Identifica los elementos del EPS",
+            "prompt": "En el problema 'calcular la potencia eléctrica a partir del voltaje y la corriente medidos y reportarla', selecciona todas las afirmaciones correctas.",
+            "options": [
+              {
+                "text": "El voltaje y la corriente medidos son la entrada.",
+                "correct": true
+              },
+              {
+                "text": "Multiplicar voltaje por corriente es parte del proceso.",
+                "correct": true
+              },
+              {
+                "text": "La potencia reportada es la salida.",
+                "correct": true
+              },
+              {
+                "text": "El sensor de corriente forma parte del proceso interno del algoritmo.",
+                "correct": false
+              },
+              {
+                "text": "El resultado de la multiplicación, antes de reportarse, es un dato intermedio.",
+                "correct": true
+              }
+            ]
+          },
+          "s2-saberes-link": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Amplía el modelo entrada-proceso-salida en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) desarrolla el modelo EPS con más casos de ingeniería, la noción de variable y dato intermedio, y la validación de la entrada que conecta con las estructuras selectivas del Tema 3."
+            ],
+            "reference": "Tema 1, Entrada/proceso/salida; ver Oviedo (2005), Lógica de programación.",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-3": {
+        "kind": "theory",
+        "theme": "Tema del saber 3",
+        "badge": "Escenario de aprendizaje 01",
+        "navLabel": "Flujograma y sus símbolos",
+        "title": "Flujograma y sus símbolos normalizados",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "methodologyMoment": "Fase 2",
+        "estimatedTime": "65 minutos",
+        "intro": [
+          "El flujograma (o diagrama de flujo) es la representación gráfica de un algoritmo. Usa símbolos normalizados y flechas para mostrar el orden de los pasos y las decisiones. Es la primera forma visual de comunicar una solución antes de programarla."
+        ],
+        "componentOrder": [
+          "s3-teoria-flujograma",
+          "s3-figura-simbolos",
+          "s3-tabla-simbolos",
+          "s3-flashcards",
+          "s3-teoria-construccion",
+          "s3-figura-ejemplo-flujo",
+          "s3-carrusel-buenas-practicas",
+          "s3-stepper-flujo-clasificar",
+          "s3-teoria-decision",
+          "s3-code-flujo-a-codigo",
+          "s3-accordion-errores",
+          "s3-matching",
+          "s3-saberes-link"
+        ],
+        "components": {
+          "s3-teoria-flujograma": {
+            "type": "theory-block",
+            "title": "Qué es un flujograma y para qué sirve",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Un flujograma es un diagrama que representa un algoritmo mediante símbolos gráficos conectados por flechas que indican el sentido del flujo. Cada símbolo tiene un significado normalizado (inicio/fin, entrada/salida, proceso, decisión), de modo que cualquier persona familiarizada con la notación pueda leer la lógica sin ambigüedad.",
+              "Su gran ventaja es la comunicación visual: de un vistazo se entiende la estructura de la solución, dónde hay decisiones y dónde hay repeticiones. En entornos de ingeniería, un flujograma es el documento que comparten analistas, programadores y operarios para acordar cómo funciona un proceso antes de automatizarlo.",
+              "El flujograma se centra en el flujo de control: el orden en que se ejecutan las acciones. Por eso es ideal para visualizar bifurcaciones (decisiones) y ciclos (repeticiones), que son justamente las estructuras de control que dominarás en el Tema 3 de esta asignatura."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "account_tree",
+                "text": "Representa el algoritmo con símbolos normalizados."
+              },
+              {
+                "icon": "visibility",
+                "text": "Comunica la lógica de un vistazo."
+              },
+              {
+                "icon": "alt_route",
+                "text": "Muestra con claridad decisiones y repeticiones."
+              }
+            ],
+            "example": {
+              "title": "Ejemplo de uso",
+              "body": [
+                "Antes de programar el control de una banda transportadora, el equipo dibuja el flujograma: detectar pieza, medir, decidir si pasa o se descarta, y volver a empezar. Todos validan la lógica en el diagrama antes de escribir código."
+              ]
+            },
+            "closing": [
+              "Antes de continuar, identifica en un proceso conocido dónde habría una decisión (un 'si... entonces...')."
+            ]
+          },
+          "s3-figura-simbolos": {
+            "type": "image",
+            "title": "Símbolos normalizados del flujograma",
+            "assetId": "alg-t1-simbolos-flujograma",
+            "src": "",
+            "alt": "Tabla visual con los símbolos: óvalo (inicio/fin), paralelogramo (entrada/salida), rectángulo (proceso), rombo (decisión) y flecha (flujo), cada uno con su nombre.",
+            "caption": "Símbolos normalizados básicos del flujograma según la convención ANSI/ISO. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español tipo leyenda: cinco símbolos de flujograma alineados verticalmente con su forma y etiqueta: (1) óvalo redondeado = 'Inicio / Fin'; (2) paralelogramo = 'Entrada / Salida de datos'; (3) rectángulo = 'Proceso (cálculo o asignación)'; (4) rombo = 'Decisión (condición Sí/No)'; (5) flecha = 'Línea de flujo (orden)'. Dibujar cada forma con precisión geométrica, estilo plano, paleta institucional."
+          },
+          "s3-tabla-simbolos": {
+            "type": "table",
+            "title": "Significado de los símbolos básicos",
+            "columns": [
+              "Símbolo",
+              "Nombre",
+              "Uso"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Óvalo",
+                  "Terminal",
+                  "Marca el inicio y el fin del algoritmo."
+                ]
+              },
+              {
+                "cells": [
+                  "Paralelogramo",
+                  "Entrada/Salida",
+                  "Leer datos o mostrar resultados."
+                ]
+              },
+              {
+                "cells": [
+                  "Rectángulo",
+                  "Proceso",
+                  "Realizar un cálculo o asignar un valor a una variable."
+                ]
+              },
+              {
+                "cells": [
+                  "Rombo",
+                  "Decisión",
+                  "Evaluar una condición con dos salidas: Sí y No."
+                ]
+              },
+              {
+                "cells": [
+                  "Flecha",
+                  "Línea de flujo",
+                  "Indicar el orden en que se siguen los pasos."
+                ]
+              }
+            ]
+          },
+          "s3-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards: símbolos del flujograma",
+            "cards": [
+              {
+                "term": "Terminal (óvalo)",
+                "definition": "Símbolo que indica dónde empieza (Inicio) y dónde termina (Fin) el algoritmo; todo flujograma tiene exactamente uno de cada uno.",
+                "icon": "trip_origin"
+              },
+              {
+                "term": "Entrada/Salida (paralelogramo)",
+                "definition": "Símbolo para leer datos del exterior o mostrar resultados al usuario o a otro sistema.",
+                "icon": "swap_horiz"
+              },
+              {
+                "term": "Proceso (rectángulo)",
+                "definition": "Símbolo para una operación: un cálculo o la asignación de un valor a una variable.",
+                "icon": "calculate"
+              },
+              {
+                "term": "Decisión (rombo)",
+                "definition": "Símbolo que evalúa una condición y bifurca el flujo en dos caminos según sea verdadera (Sí) o falsa (No).",
+                "icon": "call_split"
+              },
+              {
+                "term": "Línea de flujo",
+                "definition": "Flecha que conecta los símbolos e indica el orden de ejecución; nunca debe quedar un símbolo sin entrada o sin salida (salvo Inicio y Fin).",
+                "icon": "arrow_forward"
+              }
+            ]
+          },
+          "s3-teoria-construccion": {
+            "type": "theory-block",
+            "title": "Cómo se construye un flujograma correcto",
+            "eyebrow": "Método",
+            "body": [
+              "Un flujograma se lee de arriba hacia abajo y de izquierda a derecha, siguiendo las flechas. Siempre comienza con un único símbolo de Inicio y termina con uno de Fin. Entre ambos se colocan, en orden, las entradas, los procesos y las decisiones que componen el algoritmo.",
+              "El símbolo de decisión (rombo) es el que da expresividad al flujograma: tiene una entrada y dos salidas rotuladas Sí y No. Por una salida sigue el camino cuando la condición se cumple, y por la otra cuando no. Combinando decisiones se construyen las estructuras selectivas; haciendo que una flecha regrese hacia atrás se construyen los ciclos.",
+              "Para que un flujograma sea correcto, todo camino debe poder llegar al Fin, las flechas no deben cruzarse innecesariamente y cada símbolo (salvo Inicio y Fin) debe tener flechas de entrada y de salida. Un flujograma claro es aquel que otra persona puede ejecutar mentalmente sin dudar."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "vertical_align_top",
+                "text": "Un único Inicio y un único Fin."
+              },
+              {
+                "icon": "call_split",
+                "text": "El rombo bifurca en Sí y No."
+              },
+              {
+                "icon": "u_turn_left",
+                "text": "Una flecha de regreso crea un ciclo."
+              }
+            ],
+            "closing": [
+              "Si al seguir las flechas llegas a un símbolo sin salida o a un bucle sin fin, el flujograma tiene un error de diseño."
+            ]
+          },
+          "s3-figura-ejemplo-flujo": {
+            "type": "image",
+            "title": "Flujograma del control de calidad de una pieza",
+            "assetId": "alg-t1-flujograma-clasificar",
+            "src": "",
+            "alt": "Flujograma vertical: Inicio, leer medida, rombo medida mayor que 10, rama Sí marca larga, rama No marca corta, ambas unen y van a Fin.",
+            "caption": "Flujograma que clasifica una pieza según su medida, con una estructura de decisión. Elaboración propia.",
+            "prompt": "Crear un flujograma vertical en español, símbolos normalizados: óvalo 'Inicio'; paralelogramo 'Leer medida de la pieza'; rectángulo opcional omitir; rombo 'medida > 10 cm?' con salida derecha 'Sí' hacia rectángulo 'Clasificar como LARGA' y salida abajo 'No' hacia rectángulo 'Clasificar como CORTA'; ambas ramas se unen y van a paralelogramo 'Mostrar clasificación'; finalmente óvalo 'Fin'. Flechas claras, sin cruces, paleta institucional."
+          },
+          "s3-carrusel-buenas-practicas": {
+            "type": "carousel",
+            "title": "Buenas prácticas al dibujar flujogramas",
+            "slides": [
+              {
+                "label": "Sentido",
+                "title": "Un solo sentido de lectura",
+                "body": [
+                  "Dibuja el flujo de arriba hacia abajo. Si necesitas volver atrás (un ciclo), hazlo con una flecha clara, no con líneas que crucen el diagrama y confundan al lector."
+                ],
+                "icon": "swap_vert"
+              },
+              {
+                "label": "Decisiones",
+                "title": "Rotula siempre las salidas del rombo",
+                "body": [
+                  "Cada decisión debe tener sus dos salidas etiquetadas Sí y No. Un rombo sin etiquetas hace imposible saber qué camino tomar."
+                ],
+                "icon": "label_important"
+              },
+              {
+                "label": "Claridad",
+                "title": "Un símbolo, una acción",
+                "body": [
+                  "Evita meter varios cálculos en un mismo rectángulo. Si separas las acciones, el flujograma es más fácil de leer, depurar y traducir a pseudocódigo."
+                ],
+                "icon": "splitscreen"
+              },
+              {
+                "label": "Cierre",
+                "title": "Todos los caminos llegan al Fin",
+                "body": [
+                  "Verifica que no queden ramas abiertas: todo camino, pase o no por la decisión, debe terminar en el símbolo Fin. Una rama abierta es un algoritmo incompleto."
+                ],
+                "icon": "flag"
+              }
+            ]
+          },
+          "s3-stepper-flujo-clasificar": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: trazar el flujograma de una clasificación",
+            "statement": "Construye, paso a paso, el flujograma de un algoritmo que lee la medida de una pieza y la clasifica como LARGA si supera 10 cm o CORTA en caso contrario.",
+            "steps": [
+              {
+                "title": "Colocar el Inicio",
+                "body": "Se dibuja el óvalo 'Inicio'. Todo flujograma arranca con un único terminal de inicio.",
+                "final": false
+              },
+              {
+                "title": "Leer la entrada",
+                "body": "Con un paralelogramo se lee la medida de la pieza, que es la entrada del algoritmo. Llamamos a esta variable $m$.",
+                "final": false
+              },
+              {
+                "title": "Añadir la decisión",
+                "body": "Con un rombo se evalúa la condición $m > 10$. El rombo tiene dos salidas: Sí y No.",
+                "formula": "m > 10",
+                "final": false
+              },
+              {
+                "title": "Definir las ramas",
+                "body": "Por la salida Sí, un rectángulo asigna la clasificación LARGA; por la salida No, otro rectángulo asigna CORTA. Ambas ramas se reúnen después.",
+                "final": false
+              },
+              {
+                "title": "Mostrar y cerrar",
+                "body": "Un paralelogramo muestra la clasificación (la salida) y, finalmente, el óvalo 'Fin' cierra el flujograma. Todos los caminos llegan al Fin: el flujograma es correcto.",
+                "final": true
+              }
+            ]
+          },
+          "s3-teoria-decision": {
+            "type": "theory-block",
+            "title": "La decisión: el corazón del control de flujo",
+            "eyebrow": "Profundización",
+            "body": [
+              "El símbolo de decisión convierte un flujograma lineal en uno con bifurcaciones. Una condición es una pregunta cuya respuesta es verdadera o falsa, y según ese valor el flujo toma uno de dos caminos. Esta capacidad de decidir es lo que hace que un algoritmo se adapte a distintos datos en lugar de hacer siempre lo mismo.",
+              "Las condiciones se expresan con operadores de comparación: mayor que, menor que, igual a, distinto de. En notación se escriben como $m > 10$, $t \\leq 60$ o $x = 0$. Más adelante, en el Tema 3, combinaremos varias condiciones con operadores lógicos (y, o, no) para construir decisiones más ricas.",
+              "Visualizar la decisión en el flujograma facilita detectar un error frecuente: olvidar uno de los caminos. Si solo dibujamos qué pasa cuando la condición es verdadera y olvidamos el caso falso, el algoritmo queda incompleto. El rombo, con sus dos salidas obligatorias, nos obliga a pensar en ambos escenarios."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "rule",
+                "text": "Una condición se evalúa como verdadera o falsa."
+              },
+              {
+                "icon": "compare",
+                "text": "Se expresa con operadores de comparación."
+              },
+              {
+                "icon": "alt_route",
+                "text": "El rombo obliga a pensar ambos caminos."
+              }
+            ],
+            "closing": [
+              "Cada vez que dibujes un rombo, pregúntate: ¿qué pasa por el Sí y qué pasa por el No? Ambos deben estar resueltos."
+            ]
+          },
+          "s3-code-flujo-a-codigo": {
+            "type": "code",
+            "title": "Del rombo de decisión al if en Python",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "decision_banda.py",
+            "instructions": [
+              "Este programa traduce a Python el flujograma del control de calidad que trazaste: cada símbolo del diagrama se convierte en una línea de código.",
+              "Guarda el archivo como decision_banda.py y ejecútalo con: python decision_banda.py",
+              "El programa recorre un lote de piezas que simulan la banda transportadora; el rombo de decisión 'm > 10?' se convierte en una estructura if/else.",
+              "Compara la salida con el flujograma: cada pieza sigue la rama Sí o la rama No según su medida, igual que en el diagrama. Cambia las medidas y verifica que el comportamiento es el mismo que predijiste con el flujograma."
+            ],
+            "code": "# decision_banda.py\n# Traduccion del flujograma de clasificacion a codigo\n# El rombo 'm > 10?' se vuelve un if/else\n\nlote = [9.0, 11.5, 10.0, 13.0]   # medidas de las piezas en la banda\n\nfor m in lote:               # recorre cada pieza (linea de flujo de regreso)\n    if m > 10:               # rombo de decision: rama Si\n        resultado = \"LARGA\"\n    else:                    # rama No\n        resultado = \"CORTA\"\n    print(\"Pieza de\", m, \"cm:\", resultado)   # paralelogramo de salida",
+            "expectedOutput": [
+              "Debe mostrar: Pieza de 9.0 cm: CORTA; Pieza de 11.5 cm: LARGA; Pieza de 10.0 cm: CORTA; Pieza de 13.0 cm: LARGA.",
+              "Cada linea corresponde a un recorrido completo del flujograma para una pieza: el if reproduce exactamente la bifurcacion del rombo entre las ramas Si (LARGA) y No (CORTA)."
+            ]
+          },
+          "s3-accordion-errores": {
+            "type": "accordion",
+            "title": "Errores frecuentes al diagramar",
+            "items": [
+              {
+                "icon": "error",
+                "title": "Ramas que no se reúnen ni terminan",
+                "open": true,
+                "body": [
+                  "Un error muy habitual al principiar es dejar una de las salidas del rombo sin continuación: se dibuja qué ocurre por el Sí pero la rama del No queda flotando. El resultado es un flujograma incompleto que, traducido a código, dejaría casos sin manejar.",
+                  "La regla práctica es sencilla: después de una decisión, ambas ramas deben terminar o reunirse en un punto común que continúe el flujo hacia el Fin. Si revisas el diagrama siguiendo cada flecha y alguna te deja en el vacío, hay un error de diseño que debes corregir antes de programar."
+                ]
+              },
+              {
+                "icon": "shuffle",
+                "title": "Confundir proceso con decisión",
+                "body": [
+                  "Otro error frecuente es usar un rectángulo donde debería ir un rombo, o viceversa. El rectángulo representa una acción que siempre se ejecuta (un cálculo, una asignación); el rombo representa una pregunta que bifurca el flujo. Mezclarlos hace ilegible el diagrama.",
+                  "Una forma de evitarlo es leer en voz alta el contenido del símbolo: si es una afirmación ('calcular el promedio'), es un proceso y va en rectángulo; si es una pregunta ('el promedio supera el umbral?'), es una decisión y va en rombo.",
+                  "Esta distinción no es estética: cuando traduzcas el flujograma a pseudocódigo, cada rectángulo será una instrucción y cada rombo será una estructura 'si... entonces... sino...'. Diagramar bien te ahorra confusiones al codificar."
+                ]
+              }
+            ]
+          },
+          "s3-matching": {
+            "type": "matching",
+            "title": "Relaciona cada símbolo con su uso",
+            "pairs": [
+              {
+                "word": "Óvalo",
+                "meaning": "Marca el inicio o el fin del algoritmo"
+              },
+              {
+                "word": "Paralelogramo",
+                "meaning": "Lee datos o muestra resultados"
+              },
+              {
+                "word": "Rectángulo",
+                "meaning": "Realiza un cálculo o una asignación"
+              },
+              {
+                "word": "Rombo",
+                "meaning": "Evalúa una condición y bifurca el flujo"
+              }
+            ],
+            "options": [
+              "Marca el inicio o el fin del algoritmo",
+              "Lee datos o muestra resultados",
+              "Realiza un cálculo o una asignación",
+              "Evalúa una condición y bifurca el flujo"
+            ]
+          },
+          "s3-saberes-link": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza el flujograma en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) presenta la notación completa del flujograma, más ejemplos con decisiones y ciclos, y la convención normalizada de símbolos con casos industriales resueltos."
+            ],
+            "reference": "Tema 1, Flujograma (símbolos); ver Joyanes (2013) y Oviedo (2005).",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-4": {
+        "kind": "theory",
+        "theme": "Tema del saber 4",
+        "badge": "Escenario de aprendizaje 01",
+        "navLabel": "Pseudocódigo",
+        "title": "Pseudocódigo estructurado",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "methodologyMoment": "Fase 2",
+        "estimatedTime": "65 minutos",
+        "intro": [
+          "El pseudocódigo es la representación textual de un algoritmo: describe los pasos con palabras clave estructuradas, muy cercanas a un lenguaje de programación pero sin sus reglas estrictas. Es el puente natural entre el flujograma y el código real."
+        ],
+        "componentOrder": [
+          "s4-teoria-pseudocodigo",
+          "s4-figura-flujo-vs-pseudo",
+          "s4-tabla-palabras",
+          "s4-flashcards",
+          "s4-teoria-estructura",
+          "s4-carrusel-estructuras",
+          "s4-stepper-pseudo-promedio",
+          "s4-teoria-a-python",
+          "s4-code-python",
+          "s4-figura-pseudo-a-python",
+          "s4-accordion-profundizacion",
+          "s4-fill-blank",
+          "s4-saberes-link"
+        ],
+        "components": {
+          "s4-teoria-pseudocodigo": {
+            "type": "theory-block",
+            "title": "Qué es el pseudocódigo",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "El pseudocódigo es una forma de escribir algoritmos usando lenguaje natural estructurado con palabras clave fijas como Inicio, Leer, Escribir, Si, Mientras y Fin. No es un lenguaje de programación real: no se ejecuta directamente, pero su estructura es tan precisa que traducirlo a Python o a cualquier otro lenguaje es casi mecánico.",
+              "Su ventaja frente al flujograma es la densidad: en pocas líneas de texto cabe un algoritmo que en diagrama ocuparía toda una página. Además, al estar escrito en líneas ordenadas y con sangría, refleja directamente la estructura de control (secuencia, selección, repetición) que después tendrá el programa.",
+              "El pseudocódigo es la herramienta preferida por los ingenieros para diseñar y comunicar algoritmos porque combina lo mejor de dos mundos: la libertad del lenguaje natural para expresar ideas y el rigor estructural del código para no dejar ambigüedades. En esta asignatura usaremos pseudocódigo en español, que también puedes practicar en la herramienta PSeInt."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "notes",
+                "text": "Lenguaje natural estructurado con palabras clave."
+              },
+              {
+                "icon": "compress",
+                "text": "Más denso y compacto que el flujograma."
+              },
+              {
+                "icon": "code",
+                "text": "Se traduce casi mecánicamente a código real."
+              }
+            ],
+            "example": {
+              "title": "Ejemplo mínimo",
+              "body": [
+                "Un pseudocódigo para saludar sería: Inicio / Escribir 'Hola' / Fin. Tres líneas que cualquier lenguaje puede implementar."
+              ]
+            },
+            "closing": [
+              "Antes de seguir, observa que el pseudocódigo usa sangría: esa sangría comunica qué pasos dependen de una condición o de un ciclo."
+            ]
+          },
+          "s4-figura-flujo-vs-pseudo": {
+            "type": "image",
+            "title": "Mismo algoritmo: flujograma y pseudocódigo",
+            "assetId": "alg-t1-flujo-vs-pseudo",
+            "src": "",
+            "alt": "Comparación lado a lado: a la izquierda un flujograma de clasificación de pieza, a la derecha el mismo algoritmo escrito en pseudocódigo con Si/Sino.",
+            "caption": "El flujograma y el pseudocódigo representan el mismo algoritmo en dos lenguajes distintos. Elaboración propia.",
+            "prompt": "Crear una figura comparativa en español dividida en dos columnas. Columna izquierda titulada 'Flujograma': flujograma vertical Inicio, leer m, rombo 'm > 10?', Sí -> LARGA, No -> CORTA, mostrar, Fin. Columna derecha titulada 'Pseudocódigo': bloque de texto monoespaciado con 'Inicio / Leer m / Si m > 10 entonces / (sangría) clasificacion <- LARGA / Sino / (sangría) clasificacion <- CORTA / FinSi / Escribir clasificacion / Fin'. Una doble flecha entre columnas con la etiqueta 'mismo algoritmo'. Estilo plano, paleta institucional."
+          },
+          "s4-tabla-palabras": {
+            "type": "table",
+            "title": "Palabras clave del pseudocódigo y su rol",
+            "columns": [
+              "Palabra clave",
+              "Rol",
+              "Estructura"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Inicio / Fin",
+                  "Delimitan el algoritmo",
+                  {
+                    "badge": "Secuencia",
+                    "tone": "info"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Leer",
+                  "Recibe un dato de entrada",
+                  {
+                    "badge": "Entrada",
+                    "tone": "info"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Escribir",
+                  "Muestra un resultado",
+                  {
+                    "badge": "Salida",
+                    "tone": "info"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "asignar (flecha)",
+                  "Guarda un valor en una variable",
+                  {
+                    "badge": "Proceso",
+                    "tone": "info"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Si / Sino / FinSi",
+                  "Toma una decisión",
+                  {
+                    "badge": "Selección",
+                    "tone": "warning"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Mientras / FinMientras",
+                  "Repite mientras se cumpla una condición",
+                  {
+                    "badge": "Repetición",
+                    "tone": "success"
+                  }
+                ]
+              }
+            ]
+          },
+          "s4-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards: pseudocódigo",
+            "cards": [
+              {
+                "term": "Pseudocódigo",
+                "definition": "Descripción textual de un algoritmo con palabras clave estructuradas; no es ejecutable, pero se traduce fácilmente a código real.",
+                "icon": "notes"
+              },
+              {
+                "term": "Asignación",
+                "definition": "Operación que guarda un valor en una variable; en pseudocódigo se escribe con una flecha, por ejemplo $suma \\leftarrow 0$.",
+                "icon": "input"
+              },
+              {
+                "term": "Secuencia",
+                "definition": "Estructura básica en la que las instrucciones se ejecutan una tras otra, en el orden en que aparecen.",
+                "icon": "low_priority"
+              },
+              {
+                "term": "Selección",
+                "definition": "Estructura Si/Sino que ejecuta unas instrucciones u otras según una condición sea verdadera o falsa.",
+                "icon": "call_split"
+              },
+              {
+                "term": "Sangría",
+                "definition": "Espacio a la izquierda que indica qué instrucciones quedan dentro de una estructura de control; comunica la jerarquía del algoritmo.",
+                "icon": "format_indent_increase"
+              }
+            ]
+          },
+          "s4-teoria-estructura": {
+            "type": "theory-block",
+            "title": "Las tres estructuras básicas de control",
+            "eyebrow": "Desarrollo",
+            "body": [
+              "Todo algoritmo, por complejo que sea, se construye combinando solo tres estructuras de control: la secuencia, la selección y la repetición. Este resultado, conocido como teorema de la programación estructurada, es la base de un código ordenado y comprensible, y por ello es columna vertebral de esta asignatura.",
+              "La secuencia es la más simple: las instrucciones se ejecutan una tras otra en orden. La selección (Si... entonces... Sino...) permite elegir entre caminos según una condición. La repetición (Mientras... o Para...) ejecuta un bloque de instrucciones varias veces mientras se cumpla una condición de continuidad.",
+              "En pseudocódigo, estas estructuras se distinguen por sus palabras clave y por la sangría: las instrucciones que dependen de un Si o de un Mientras se escriben desplazadas a la derecha. Esa sangría no es decorativa; comunica con claridad qué pasos están subordinados a una condición. En el Tema 3 profundizarás en selección y repetición; aquí basta con reconocerlas."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "low_priority",
+                "text": "Secuencia: una instrucción tras otra."
+              },
+              {
+                "icon": "call_split",
+                "text": "Selección: elegir entre caminos."
+              },
+              {
+                "icon": "repeat",
+                "text": "Repetición: ejecutar un bloque varias veces."
+              },
+              {
+                "icon": "format_indent_increase",
+                "text": "La sangría muestra qué depende de cada estructura."
+              }
+            ],
+            "closing": [
+              "Con solo estas tres estructuras se puede expresar cualquier algoritmo: esa es la potencia de la programación estructurada."
+            ]
+          },
+          "s4-carrusel-estructuras": {
+            "type": "carousel",
+            "title": "Las tres estructuras en pseudocódigo",
+            "slides": [
+              {
+                "label": "Secuencia",
+                "title": "Secuencia",
+                "body": [
+                  "Las instrucciones se ejecutan en orden, de arriba hacia abajo. Ejemplo: Leer a; Leer b; suma <- a + b; Escribir suma. Cada paso ocurre una sola vez y en orden."
+                ],
+                "icon": "low_priority"
+              },
+              {
+                "label": "Selección",
+                "title": "Selección (Si / Sino)",
+                "body": [
+                  "Se elige un camino según una condición. Ejemplo: Si temperatura > 60 entonces Escribir 'alta' Sino Escribir 'normal' FinSi. Solo se ejecuta una de las dos ramas."
+                ],
+                "icon": "call_split"
+              },
+              {
+                "label": "Repetición",
+                "title": "Repetición (Mientras)",
+                "body": [
+                  "Un bloque se repite mientras la condición sea verdadera. Ejemplo: Mientras quede pieza por medir hacer ... FinMientras. La condición debe volverse falsa en algún momento para que el ciclo termine."
+                ],
+                "icon": "repeat"
+              }
+            ]
+          },
+          "s4-stepper-pseudo-promedio": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: escribir el pseudocódigo del promedio",
+            "statement": "Escribe el pseudocódigo de un algoritmo que lea tres mediciones, calcule su promedio y muestre si el proceso es normal (promedio menor o igual a 60) o alto.",
+            "steps": [
+              {
+                "title": "Delimitar el algoritmo",
+                "body": "Se abre con la palabra clave Inicio y se cerrará con Fin. Entre ambas irá la lógica.",
+                "final": false
+              },
+              {
+                "title": "Leer las entradas",
+                "body": "Se leen las tres mediciones en variables: Leer $x_1$; Leer $x_2$; Leer $x_3$. Estas son las entradas.",
+                "final": false
+              },
+              {
+                "title": "Calcular el promedio (proceso)",
+                "body": "Se asigna a una variable la suma dividida entre tres: $promedio \\leftarrow (x_1 + x_2 + x_3) / 3$.",
+                "formula": "promedio \\leftarrow \\frac{x_1+x_2+x_3}{3}",
+                "final": false
+              },
+              {
+                "title": "Decidir con una selección",
+                "body": "Se usa la estructura Si: Si $promedio \\leq 60$ entonces Escribir 'normal' Sino Escribir 'alto' FinSi. Solo una rama se ejecuta.",
+                "formula": "promedio \\leq 60",
+                "final": false
+              },
+              {
+                "title": "Cerrar y verificar",
+                "body": "Se escribe el promedio y se cierra con Fin. El pseudocódigo está completo: tiene Inicio, entradas, proceso, una selección y Fin, y respeta la sangría de la estructura Si.",
+                "final": true
+              }
+            ]
+          },
+          "s4-teoria-a-python": {
+            "type": "theory-block",
+            "title": "Del pseudocódigo al código en Python",
+            "eyebrow": "Aplicación",
+            "body": [
+              "El último paso del diseño es traducir el pseudocódigo a un lenguaje de programación real. En esta asignatura usamos Python porque su sintaxis es muy cercana al pseudocódigo: Leer se vuelve una llamada a input, Escribir se vuelve print, la asignación con flecha se vuelve el signo igual, y el Si/Sino se vuelve if/else.",
+              "Esta cercanía no es casualidad: Python fue diseñado para ser legible, lo que lo convierte en un excelente primer lenguaje. Sin embargo, conviene recordar que el algoritmo ya estaba resuelto en el pseudocódigo; Python solo le da una forma ejecutable. Si el pseudocódigo era correcto, el programa también lo será.",
+              "Al traducir, hay que respetar las reglas del lenguaje: en Python la sangría no es opcional como en pseudocódigo, sino obligatoria, y es la que define qué instrucciones pertenecen a cada bloque. Por eso la disciplina de sangrar bien el pseudocódigo se transfiere directamente a escribir buen código Python."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "swap_horiz",
+                "text": "Leer -> input, Escribir -> print, Si -> if."
+              },
+              {
+                "icon": "menu_book",
+                "text": "Python es legible y cercano al pseudocódigo."
+              },
+              {
+                "icon": "format_indent_increase",
+                "text": "En Python la sangría es obligatoria y define los bloques."
+              }
+            ],
+            "closing": [
+              "Diseña en pseudocódigo, traduce a Python, y ejecuta para comprobar: ese es el flujo de trabajo profesional."
+            ]
+          },
+          "s4-code-python": {
+            "type": "code",
+            "title": "Traducir el pseudocódigo del promedio a Python",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "promedio_mediciones.py",
+            "instructions": [
+              "Este programa implementa el pseudocódigo del promedio de tres mediciones que resolviste en el ejemplo anterior.",
+              "Guarda el archivo como promedio_mediciones.py y ejecútalo desde una terminal con el comando: python promedio_mediciones.py",
+              "Cuando se ejecute, ingresa una a una las tres mediciones (por ejemplo 58, 62 y 60) y pulsa Enter tras cada valor.",
+              "Compara la salida con el resultado que obtuviste a mano: el promedio debe ser 60 y la clasificación 'normal'. Cambia las entradas a 70, 80 y 90 y observa cómo cambia la clasificación a 'alto'."
+            ],
+            "code": "# promedio_mediciones.py\n# Entrada: tres mediciones de temperatura\n# Proceso: calcular el promedio y clasificar\n# Salida: promedio y clasificacion (normal/alto)\n\nx1 = float(input(\"Medicion 1 (grados C): \"))\nx2 = float(input(\"Medicion 2 (grados C): \"))\nx3 = float(input(\"Medicion 3 (grados C): \"))\n\npromedio = (x1 + x2 + x3) / 3\n\nif promedio <= 60:\n    clasificacion = \"normal\"\nelse:\n    clasificacion = \"alto\"\n\nprint(\"Promedio:\", promedio, \"grados C\")\nprint(\"Clasificacion del proceso:\", clasificacion)",
+            "expectedOutput": [
+              "Con las entradas 58, 62 y 60 debe mostrar: Promedio: 60.0 grados C y Clasificacion del proceso: normal.",
+              "Con las entradas 70, 80 y 90 el promedio sube a 80.0 y la clasificacion cambia a 'alto', porque ya no se cumple la condicion promedio <= 60."
+            ]
+          },
+          "s4-figura-pseudo-a-python": {
+            "type": "image",
+            "title": "Correspondencia pseudocódigo - Python",
+            "assetId": "alg-t1-pseudo-a-python",
+            "src": "",
+            "alt": "Tabla de dos columnas que empareja líneas de pseudocódigo con su equivalente en Python: Leer x con input, Escribir con print, asignación con igual, Si/Sino con if/else.",
+            "caption": "Cada construcción de pseudocódigo tiene un equivalente directo en Python. Elaboración propia.",
+            "prompt": "Crear una figura tipo tabla de dos columnas en español, encabezados 'Pseudocódigo' y 'Python'. Filas emparejadas en texto monoespaciado: 'Leer x' / 'x = float(input())'; 'Escribir r' / 'print(r)'; 'suma <- 0' / 'suma = 0'; 'Si c entonces ... Sino ... FinSi' / 'if c: ... else: ...'; 'Mientras c hacer ... FinMientras' / 'while c: ...'. Flechas que conectan cada fila. Estilo plano, paleta institucional."
+          },
+          "s4-accordion-profundizacion": {
+            "type": "accordion",
+            "title": "Profundización: pseudocódigo y buenas prácticas",
+            "items": [
+              {
+                "icon": "translate",
+                "title": "¿Por qué no escribir directamente en Python?",
+                "open": true,
+                "body": [
+                  "Una pregunta razonable es por qué molestarse en escribir pseudocódigo si al final traduciremos a Python. La razón es que el pseudocódigo nos libera de las reglas del lenguaje (puntos y comas, sintaxis exacta, nombres reservados) para concentrarnos en lo único que importa al diseñar: la lógica.",
+                  "Cuando programas directamente, mezclas dos problemas a la vez: pensar la solución y recordar la sintaxis. Separarlos reduce errores. Los ingenieros con experiencia diseñan en pseudocódigo justamente porque les permite razonar la solución sin distracciones, y solo después se ocupan de los detalles del lenguaje."
+                ]
+              },
+              {
+                "icon": "edit_note",
+                "title": "Convenciones que hacen legible el pseudocódigo",
+                "body": [
+                  "Aunque el pseudocódigo es flexible, conviene seguir convenciones: usar nombres de variables descriptivos (promedio en lugar de p), sangrar las instrucciones que dependen de un Si o un Mientras, y cerrar cada estructura con su palabra clave (FinSi, FinMientras).",
+                  "Estas convenciones tienen un doble beneficio. Primero, hacen que otra persona pueda leer y validar tu algoritmo. Segundo, facilitan la traducción posterior a código, porque la estructura ya está clara y solo hay que cambiar las palabras clave por la sintaxis del lenguaje.",
+                  "La herramienta PSeInt permite escribir pseudocódigo en español y hasta ejecutarlo, lo que es útil para verificar la lógica antes de pasar a Python. Es un buen recurso de práctica autónoma para este tema."
+                ]
+              }
+            ]
+          },
+          "s4-fill-blank": {
+            "type": "fill-blank",
+            "title": "Completa la traducción a Python",
+            "prompt": "Completa la equivalencia entre el pseudocódigo y Python en el algoritmo del promedio.",
+            "parts": [
+              "Para leer un dato numérico, el 'Leer x' del pseudocódigo se escribe en Python como x = float(",
+              {
+                "placeholder": "función de lectura",
+                "answers": [
+                  "input",
+                  "input()"
+                ]
+              },
+              "(...)). Para mostrar un resultado, 'Escribir r' se traduce como ",
+              {
+                "placeholder": "función de salida",
+                "answers": [
+                  "print",
+                  "print()"
+                ]
+              },
+              "(r). Y la estructura 'Si... Sino...' se escribe con las palabras clave if y ",
+              {
+                "placeholder": "rama del Sino",
+                "answers": [
+                  "else",
+                  "else:"
+                ]
+              },
+              "."
+            ]
+          },
+          "s4-saberes-link": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Amplía el pseudocódigo en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) reúne la notación completa del pseudocódigo, la correspondencia con Python y PSeInt, y ejemplos resueltos que combinan secuencia, selección y repetición para problemas de ingeniería."
+            ],
+            "reference": "Tema 1, Pseudocódigo; ver Joyanes (2013) y Downey (2015), Think Python.",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-5": {
+        "kind": "theory",
+        "theme": "Tema del saber 5",
+        "badge": "Escenario de aprendizaje 01",
+        "navLabel": "Prueba de escritorio",
+        "title": "Prueba de escritorio y tabla de traza",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "methodologyMoment": "Fase 3",
+        "estimatedTime": "60 minutos",
+        "intro": [
+          "Antes de confiar en un algoritmo hay que verificarlo. La prueba de escritorio consiste en ejecutar el algoritmo a mano, paso a paso, anotando en una tabla cómo cambian las variables. Es la forma de detectar errores de lógica sin necesidad de un computador."
+        ],
+        "componentOrder": [
+          "s5-teoria-prueba",
+          "s5-figura-tabla-traza",
+          "s5-flashcards",
+          "s5-teoria-como-trazar",
+          "s5-carrusel-pasos",
+          "s5-stepper-traza-promedio",
+          "s5-teoria-ciclo",
+          "s5-stepper-traza-ciclo",
+          "s5-code-verificacion",
+          "s5-figura-traza-ciclo",
+          "s5-accordion-errores",
+          "s5-evaluacion-taller",
+          "s5-quiz",
+          "s5-saberes-link"
+        ],
+        "components": {
+          "s5-teoria-prueba": {
+            "type": "theory-block",
+            "title": "Qué es la prueba de escritorio",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "La prueba de escritorio (también llamada trazado o seguimiento) es la ejecución manual de un algoritmo: el ingeniero toma un caso concreto de entrada y va siguiendo cada instrucción en orden, anotando en una tabla el valor de cada variable después de cada paso. Es como ser el computador por un momento.",
+              "Su propósito es verificar la corrección del algoritmo antes de programarlo o ejecutarlo. Muchos errores de lógica (una condición mal escrita, una variable que no se inicializa, un ciclo que no termina) se detectan en segundos con una prueba de escritorio, mientras que encontrarlos en un programa ya escrito puede tomar mucho más tiempo.",
+              "La prueba de escritorio es además la mejor herramienta de aprendizaje, porque obliga a entender exactamente qué hace cada línea. En esta asignatura la usarás como evidencia: el taller del tema te pedirá entregar la tabla de traza de tu propio algoritmo, demostrando que comprendes su funcionamiento."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "fact_check",
+                "text": "Es la ejecución manual del algoritmo, paso a paso."
+              },
+              {
+                "icon": "table_chart",
+                "text": "Se anota el valor de cada variable en una tabla."
+              },
+              {
+                "icon": "bug_report",
+                "text": "Detecta errores de lógica antes de programar."
+              }
+            ],
+            "example": {
+              "title": "Ejemplo de uso",
+              "body": [
+                "Antes de cargar un algoritmo de control en un PLC industrial, se traza a mano con valores de prueba para confirmar que las decisiones y los ciclos se comportan como se espera."
+              ]
+            },
+            "closing": [
+              "Antes de seguir, recuerda: un algoritmo que no has trazado es un algoritmo en el que no deberías confiar todavía."
+            ]
+          },
+          "s5-figura-tabla-traza": {
+            "type": "image",
+            "title": "Anatomía de una tabla de traza",
+            "assetId": "alg-t1-tabla-traza",
+            "src": "",
+            "alt": "Tabla con una columna por cada variable del algoritmo y una fila por cada paso ejecutado, mostrando cómo cambian los valores.",
+            "caption": "En la tabla de traza, cada columna es una variable y cada fila registra el estado tras un paso. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español de una tabla de traza. Encabezado de columnas: 'Paso', 'x1', 'x2', 'x3', 'suma', 'promedio', 'Salida'. Mostrar 4 filas de ejemplo con valores que evolucionan (suma acumulándose, promedio calculándose al final). Resaltar con color la celda que cambia en cada fila. Añadir una nota al pie: 'una columna por variable, una fila por paso'. Estilo plano, paleta institucional."
+          },
+          "s5-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards: prueba de escritorio",
+            "cards": [
+              {
+                "term": "Prueba de escritorio",
+                "definition": "Ejecución manual de un algoritmo con un caso de entrada concreto, anotando el cambio de cada variable para verificar su corrección.",
+                "icon": "fact_check"
+              },
+              {
+                "term": "Tabla de traza",
+                "definition": "Tabla con una columna por variable y una fila por paso, que registra cómo evolucionan los valores durante la ejecución manual.",
+                "icon": "table_chart"
+              },
+              {
+                "term": "Caso de prueba",
+                "definition": "Conjunto concreto de datos de entrada elegido para verificar el algoritmo, idealmente incluyendo casos normales y casos límite.",
+                "icon": "checklist"
+              },
+              {
+                "term": "Caso límite",
+                "definition": "Entrada en el borde de las condiciones (el valor exacto de un umbral, una lista vacía) donde los algoritmos suelen fallar y conviene probar.",
+                "icon": "warning"
+              },
+              {
+                "term": "Estado",
+                "definition": "Conjunto de los valores de todas las variables en un instante de la ejecución; cada fila de la tabla de traza es un estado.",
+                "icon": "data_usage"
+              }
+            ]
+          },
+          "s5-teoria-como-trazar": {
+            "type": "theory-block",
+            "title": "Cómo realizar una prueba de escritorio",
+            "eyebrow": "Método",
+            "body": [
+              "Para trazar un algoritmo se prepara una tabla con una columna por cada variable y una columna final para la salida. Se elige un caso de prueba (unos datos de entrada concretos) y se recorre el algoritmo instrucción por instrucción, escribiendo en cada fila el nuevo valor de la variable que cambia.",
+              "La clave está en no saltarse pasos ni adelantar resultados: hay que ser tan literal como una máquina. Si una variable todavía no tiene valor, se deja en blanco o se marca como indefinida; cuando una instrucción la modifica, se anota el nuevo valor en una fila nueva. Así se ve con claridad el orden real de los cambios.",
+              "Conviene elegir casos de prueba representativos: uno típico, uno en el límite (justo en el valor de un umbral) y, si aplica, uno inválido. Si el algoritmo se comporta bien en los tres, hay buena evidencia de su corrección. Esta disciplina de probar varios casos es la base de las pruebas de software que verás más adelante."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "view_column",
+                "text": "Una columna por variable, una columna para la salida."
+              },
+              {
+                "icon": "smart_toy",
+                "text": "Sé tan literal como una máquina: no adelantes resultados."
+              },
+              {
+                "icon": "rule",
+                "text": "Prueba un caso típico, uno límite y uno inválido."
+              }
+            ],
+            "closing": [
+              "Si tu tabla de traza coincide con lo que esperabas, ganaste confianza; si no, encontraste un error antes de programar."
+            ]
+          },
+          "s5-carrusel-pasos": {
+            "type": "carousel",
+            "title": "Los pasos de una prueba de escritorio",
+            "slides": [
+              {
+                "label": "1",
+                "title": "Preparar la tabla",
+                "body": [
+                  "Dibuja una columna por cada variable del algoritmo y una columna final para la salida. Añade una columna para el número de paso o la instrucción ejecutada."
+                ],
+                "icon": "table_rows"
+              },
+              {
+                "label": "2",
+                "title": "Elegir el caso de prueba",
+                "body": [
+                  "Selecciona valores de entrada concretos. Empieza por un caso típico y deja preparados un caso límite y uno inválido para repetir la traza."
+                ],
+                "icon": "checklist"
+              },
+              {
+                "label": "3",
+                "title": "Ejecutar instrucción por instrucción",
+                "body": [
+                  "Recorre el algoritmo en orden. Cada vez que una instrucción cambia una variable, anota su nuevo valor en una fila nueva. No te saltes ningún paso."
+                ],
+                "icon": "play_arrow"
+              },
+              {
+                "label": "4",
+                "title": "Comparar con lo esperado",
+                "body": [
+                  "Al llegar al Fin, compara la salida obtenida con la que esperabas. Si coinciden, el caso pasó; si no, localiza el paso donde se desvió el valor."
+                ],
+                "icon": "rule"
+              }
+            ]
+          },
+          "s5-stepper-traza-promedio": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: prueba de escritorio del promedio",
+            "statement": "Realiza la prueba de escritorio del algoritmo del promedio para el caso de entrada x1=58, x2=62, x3=60, con umbral 60.",
+            "steps": [
+              {
+                "title": "Preparar y leer entradas",
+                "body": "Tras leer las entradas, el estado es $x_1=58$, $x_2=62$, $x_3=60$. Las demás variables aún no tienen valor.",
+                "final": false
+              },
+              {
+                "title": "Acumular la suma",
+                "body": "La instrucción de suma calcula el acumulado de las tres mediciones.",
+                "formula": "S = 58 + 62 + 60 = 180",
+                "final": false
+              },
+              {
+                "title": "Calcular el promedio",
+                "body": "Se divide la suma entre 3 y se guarda en la variable promedio.",
+                "formula": "promedio = \\frac{180}{3} = 60",
+                "final": false
+              },
+              {
+                "title": "Evaluar la condición",
+                "body": "Se evalúa $promedio \\leq 60$. Como $60 \\leq 60$ es verdadero, se toma la rama del Si y la salida será 'normal'.",
+                "formula": "60 \\leq 60 \\Rightarrow \\text{verdadero}",
+                "final": false
+              },
+              {
+                "title": "Verificar la salida",
+                "body": "La salida es: promedio 60, clasificación 'normal'. Coincide con lo esperado, por lo que el algoritmo es correcto para este caso. El caso límite (promedio exactamente 60) confirma que el umbral con $\\leq$ es el adecuado.",
+                "final": true
+              }
+            ]
+          },
+          "s5-teoria-ciclo": {
+            "type": "theory-block",
+            "title": "Trazar algoritmos con repetición",
+            "eyebrow": "Profundización",
+            "body": [
+              "Los algoritmos más interesantes incluyen repeticiones, y trazarlos requiere especial cuidado. En un ciclo, las mismas instrucciones se ejecutan varias veces, por lo que la tabla de traza tendrá una fila por cada vuelta del ciclo, mostrando cómo cambian las variables en cada iteración.",
+              "Al trazar un ciclo, hay que prestar atención a tres cosas: el valor inicial de las variables antes de entrar, la condición que decide si se entra o se repite, y cómo cambia en cada vuelta la variable que acerca al ciclo a su fin. Si esa variable no avanza, el ciclo no termina, y la prueba de escritorio lo revela de inmediato.",
+              "Trazar a mano un ciclo unas pocas iteraciones suele bastar para confirmar que la lógica es correcta y que el ciclo terminará. Es una forma poderosa de detectar el temido ciclo infinito antes de ejecutarlo en un computador, un error que en un sistema industrial podría dejar un equipo bloqueado."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "repeat",
+                "text": "Una fila de traza por cada vuelta del ciclo."
+              },
+              {
+                "icon": "start",
+                "text": "Cuida el valor inicial antes de entrar al ciclo."
+              },
+              {
+                "icon": "trending_up",
+                "text": "Verifica que la variable de control avance hacia el fin."
+              }
+            ],
+            "closing": [
+              "Si al trazar un ciclo el valor de control no cambia entre vueltas, has encontrado un ciclo infinito."
+            ]
+          },
+          "s5-stepper-traza-ciclo": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: traza de un ciclo que cuenta piezas conformes",
+            "statement": "Traza el algoritmo: suma <- 0; i <- 1; Mientras i <= 3 hacer: leer medida; Si medida <= 10 entonces conformes <- conformes + 1; i <- i + 1; FinMientras. Caso: medidas 9, 11 y 8; conformes inicia en 0.",
+            "steps": [
+              {
+                "title": "Estado inicial",
+                "body": "Antes del ciclo: $conformes=0$, $i=1$. La condición $i \\leq 3$ se cumple, así que se entra al ciclo.",
+                "formula": "i=1 \\leq 3 \\Rightarrow \\text{entra}",
+                "final": false
+              },
+              {
+                "title": "Primera vuelta (medida 9)",
+                "body": "Se lee medida $=9$. Como $9 \\leq 10$, se incrementa: $conformes=1$. Luego $i$ avanza a 2.",
+                "formula": "9 \\leq 10 \\Rightarrow conformes=1,\\; i=2",
+                "final": false
+              },
+              {
+                "title": "Segunda vuelta (medida 11)",
+                "body": "Se lee medida $=11$. Como $11 \\leq 10$ es falso, $conformes$ sigue en 1. Luego $i$ avanza a 3.",
+                "formula": "11 \\leq 10 \\Rightarrow \\text{falso},\\; conformes=1,\\; i=3",
+                "final": false
+              },
+              {
+                "title": "Tercera vuelta (medida 8)",
+                "body": "Se lee medida $=8$. Como $8 \\leq 10$, se incrementa: $conformes=2$. Luego $i$ avanza a 4.",
+                "formula": "8 \\leq 10 \\Rightarrow conformes=2,\\; i=4",
+                "final": false
+              },
+              {
+                "title": "Salida del ciclo y verificación",
+                "body": "Ahora $i=4$ y la condición $i \\leq 3$ es falsa, por lo que el ciclo termina. La salida es $conformes=2$. El conteo coincide: de las medidas 9, 11 y 8, dos son conformes. El ciclo terminó porque $i$ avanzó en cada vuelta.",
+                "formula": "i=4 \\leq 3 \\Rightarrow \\text{falso, termina}",
+                "final": true
+              }
+            ]
+          },
+          "s5-code-verificacion": {
+            "type": "code",
+            "title": "Verificar la traza del ciclo en Python",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "conteo_conformes.py",
+            "instructions": [
+              "Este programa implementa el algoritmo del ciclo que acabas de trazar a mano, para que compares la salida con tu tabla de traza.",
+              "Guarda el archivo como conteo_conformes.py y ejecútalo desde una terminal con: python conteo_conformes.py",
+              "El programa no pide datos: las tres medidas (9, 11 y 8) están dentro de una lista para reproducir exactamente el caso trazado.",
+              "Confirma que la salida es 2 piezas conformes, el mismo resultado de tu prueba de escritorio. Luego cambia los valores de la lista y vuelve a trazar a mano para verificar que ambos resultados coinciden."
+            ],
+            "code": "# conteo_conformes.py\n# Cuenta cuantas medidas son menores o iguales a 10 (piezas conformes)\n\nmedidas = [9, 11, 8]   # caso de prueba igual al de la traza manual\nconformes = 0\ni = 1\n\nwhile i <= 3:\n    medida = medidas[i - 1]   # i va de 1 a 3, la lista de 0 a 2\n    if medida <= 10:\n        conformes = conformes + 1\n    i = i + 1\n\nprint(\"Piezas conformes:\", conformes)",
+            "expectedOutput": [
+              "La salida debe ser: Piezas conformes: 2",
+              "Este valor coincide con la tabla de traza manual: solo las medidas 9 y 8 cumplen la condicion medida <= 10; la medida 11 no es conforme."
+            ]
+          },
+          "s5-figura-traza-ciclo": {
+            "type": "image",
+            "title": "Tabla de traza del ciclo de conteo",
+            "assetId": "alg-t1-traza-ciclo",
+            "src": "",
+            "alt": "Tabla con columnas i, medida, condicion, conformes, mostrando tres vueltas del ciclo y la salida final igual a 2.",
+            "caption": "Cada fila representa una vuelta del ciclo; la columna conformes muestra el conteo final. Elaboración propia.",
+            "prompt": "Crear una figura de tabla de traza en español del ciclo de conteo. Columnas: 'Vuelta', 'i', 'medida', 'medida <= 10?', 'conformes', y comentario. Filas: estado inicial (i=1, conformes=0); vuelta 1 (i=1, medida=9, Sí, conformes=1); vuelta 2 (i=2, medida=11, No, conformes=1); vuelta 3 (i=3, medida=8, Sí, conformes=2); salida (i=4, condición falsa, fin, conformes=2). Resaltar la celda conformes cuando cambia. Estilo plano, paleta institucional."
+          },
+          "s5-accordion-errores": {
+            "type": "accordion",
+            "title": "Errores frecuentes detectables con la traza",
+            "items": [
+              {
+                "icon": "restart_alt",
+                "title": "Variables no inicializadas",
+                "open": true,
+                "body": [
+                  "Uno de los errores más comunes y más difíciles de ver leyendo el código es olvidar dar un valor inicial a una variable acumuladora. Si un contador de piezas conformes no empieza en cero, su primer incremento parte de un valor indefinido y todo el conteo queda mal.",
+                  "La prueba de escritorio lo revela de inmediato: al preparar la tabla, la columna del contador aparece vacía antes del ciclo y, si el algoritmo no la inicializa, el primer paso intenta sumar sobre 'nada'. Ese hueco en la tabla es la señal de alarma que te dice que falta una instrucción de inicialización."
+                ]
+              },
+              {
+                "icon": "all_inclusive",
+                "title": "El ciclo infinito",
+                "body": [
+                  "El error más temido en un algoritmo con repetición es el ciclo infinito: el bloque se repite sin parar porque la condición de salida nunca se vuelve falsa. Suele ocurrir cuando olvidamos hacer avanzar la variable de control (el contador no se incrementa) o cuando la condición está mal planteada.",
+                  "Trazar el ciclo a mano unas pocas vueltas lo expone con claridad: si en la columna de la variable de control el valor no cambia de una fila a la siguiente, el ciclo nunca terminará. Detectarlo en la traza cuesta segundos; detectarlo en un equipo industrial detenido cuesta mucho más.",
+                  "La buena práctica es verificar, antes de dar por bueno cualquier ciclo, que existe una variable que cambia en cada vuelta y que ese cambio acerca la condición a hacerse falsa. Esa verificación es justamente lo que la prueba de escritorio hace explícito."
+                ]
+              }
+            ]
+          },
+          "s5-evaluacion-taller": {
+            "type": "evaluation-activity",
+            "title": "Taller formativo del Tema 1",
+            "learningOutcomeIds": [
+              "RA1"
+            ],
+            "criterion": "CE1: Fundamenta algoritmos a partir de pseudocódigos y representa correctamente la lógica con flujograma, verificándola mediante prueba de escritorio.",
+            "evidence": "Pseudocódigo, flujograma y tabla de traza de un problema sencillo del contexto del estudiante (por ejemplo, clasificar una medición).",
+            "technique": "Taller (In1)",
+            "instrument": "Rúbrica analítica disciplinar CE1",
+            "weight": "Formativa (sin ponderación numérica; valoración cualitativa por niveles)",
+            "evaluationMoment": "inicial",
+            "participationType": "individual",
+            "feedback": {
+              "strengths": "Claridad de las propiedades del algoritmo, correspondencia entre flujograma y pseudocódigo, y rigor de la tabla de traza.",
+              "improvement": "Revisar ambigüedades en los pasos, ramas de decisión sin cerrar y variables sin inicializar.",
+              "reinforcement": "Volver a trazar el algoritmo con un caso límite y verificar la condición de parada del ciclo.",
+              "nextStep": "Preparar la implementación en Python, base del Tema 2 (lenguajes, tipos de datos y librerías)."
+            },
+            "rubric": {
+              "type": "analitica",
+              "levels": [
+                "No evidenciable",
+                "Deficiente",
+                "Insuficiente",
+                "Aceptable",
+                "Bueno",
+                "Muy bueno",
+                "Sobresaliente"
+              ],
+              "criteria": [
+                {
+                  "name": "Propiedades del algoritmo",
+                  "descriptors": {
+                    "Aceptable": "Reconoce las propiedades y las aplica con apoyo.",
+                    "Sobresaliente": "Justifica con precisión las cinco propiedades en su propio algoritmo y anticipa casos límite."
+                  }
+                },
+                {
+                  "name": "Representación (flujograma y pseudocódigo)",
+                  "descriptors": {
+                    "Aceptable": "Representa la lógica con símbolos y palabras clave correctos en su mayoría.",
+                    "Sobresaliente": "Flujograma y pseudocódigo coherentes entre sí, con sangría y decisiones cerradas, sin ambigüedades."
+                  }
+                },
+                {
+                  "name": "Prueba de escritorio",
+                  "descriptors": {
+                    "Aceptable": "Traza un caso y obtiene la salida.",
+                    "Sobresaliente": "Traza casos típico, límite e inválido, detecta errores y verifica la condición de parada."
+                  }
+                }
+              ]
+            }
+          },
+          "s5-quiz": {
+            "type": "quiz",
+            "title": "Chequeo de comprensión",
+            "questions": [
+              {
+                "prompt": "Durante una prueba de escritorio de un ciclo, observas que la variable de control 'i' mantiene el mismo valor en todas las filas. ¿Qué indica esto?",
+                "options": [
+                  {
+                    "text": "Que el algoritmo es correcto y el ciclo terminará.",
+                    "correct": false,
+                    "feedback": "Al contrario: si la variable de control no cambia, la condición de salida nunca se vuelve falsa."
+                  },
+                  {
+                    "text": "Que el ciclo es infinito porque la condición de salida nunca se cumplirá.",
+                    "correct": true,
+                    "feedback": "Correcto: para que un ciclo termine, la variable de control debe avanzar en cada vuelta hacia el valor que hace falsa la condición."
+                  },
+                  {
+                    "text": "Que falta una variable de salida.",
+                    "correct": false,
+                    "feedback": "El problema no es la salida sino que la variable de control no avanza; revisa la instrucción que debería incrementarla."
+                  },
+                  {
+                    "text": "Que la tabla de traza está mal dibujada.",
+                    "correct": false,
+                    "feedback": "La tabla está cumpliendo su función: justamente revela el error de que la variable de control no cambia."
+                  }
+                ]
+              }
+            ]
+          },
+          "s5-saberes-link": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza la prueba de escritorio en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) amplía la prueba de escritorio con tablas de traza de algoritmos con selección y repetición, criterios para elegir casos de prueba y la conexión con las pruebas de software de temas posteriores."
+            ],
+            "reference": "Tema 1, Prueba de escritorio/trazado; ver Oviedo (2005) y Cormen (2009, EN).",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      }
+    }
+  },
+  "pdf": {
+    "guideLabel": "DOCUMENTO DE SABERES VIRTUAL",
+    "kicker": "Aprendizaje guiado · Práctica aplicada · Autoevaluación",
+    "institution": "Universidad de América",
+    "year": "2026",
+    "title": "Fundamentos del algoritmo y su representación",
+    "subtitle": "Escenario de aprendizaje 01 de 06 · Algoritmia Computacional I",
+    "purpose": "Que el estudiante reconozca qué es un algoritmo, lo represente con flujograma y pseudocódigo, y valide su lógica con una prueba de escritorio, como base para programar en los temas siguientes.",
+    "structure": "Teoría · ejemplos resueltos · ejercicios · referencias APA.",
+    "sectionOrder": [
+      "pdf-intro",
+      "pdf-seccion-1",
+      "pdf-seccion-2",
+      "pdf-seccion-3",
+      "pdf-seccion-4",
+      "pdf-seccion-5"
+    ],
+    "sections": {
+      "pdf-intro": {
+        "title": "Presentación del Escenario de aprendizaje 01",
+        "intro": [
+          "Antes de escribir una sola línea de código, todo profesional de la ingeniería necesita pensar la solución: descomponer el problema, ordenar los pasos y comprobar que funcionan. Ese pensamiento ordenado es el algoritmo, y es la base de cualquier aplicación digital, sistema de control industrial o prototipo inteligente. Este documento de saberes, que acompaña el primer tema de Algoritmia Computacional I, te conducirá por ese camino paso a paso.",
+          "El documento está organizado como un libro de saberes: cinco capítulos encadenados que van del concepto de algoritmo a su verificación, con teoría en prosa, ejemplos resueltos, código en Python y un banco de ejercicios al cierre. Léelo en orden, porque cada capítulo prepara el siguiente; al terminar habrás recorrido el ciclo completo de diseño que usarás durante toda la asignatura."
+        ],
+        "componentOrder": [
+          "pdf-intro-objetivos",
+          "pdf-intro-mapa",
+          "pdf-intro-contexto"
+        ],
+        "components": {
+          "pdf-intro-objetivos": {
+            "type": "objectives",
+            "title": "Resultados esperados del tema",
+            "items": [
+              {
+                "icon": "track_changes",
+                "text": "Reconozco qué es un algoritmo y verifico sus cinco propiedades (alineado con RA1)."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Describo procedimientos con el modelo entrada-proceso-salida."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Represento algoritmos con flujograma y pseudocódigo y los valido con prueba de escritorio."
+              }
+            ]
+          },
+          "pdf-intro-mapa": {
+            "type": "list",
+            "title": "Contenido del documento",
+            "ordered": true,
+            "items": [
+              "Concepto y propiedades del algoritmo.",
+              "Entrada, proceso y salida (modelo EPS).",
+              "Flujograma y sus símbolos normalizados.",
+              "Pseudocódigo estructurado y traducción a Python.",
+              "Prueba de escritorio, tabla de traza y banco de ejercicios."
+            ]
+          },
+          "pdf-intro-contexto": {
+            "type": "text",
+            "title": "Cómo usar este documento",
+            "body": [
+              "Recorre cada capítulo en orden: primero estudia la teoría, luego sigue los ejemplos resueltos reproduciéndolos en papel y, por último, resuelve el banco de ejercicios del cierre. Cada capítulo es independiente pero acumulativo: el pseudocódigo se apoya en el flujograma, y la prueba de escritorio valida ambos.",
+              "Los ejemplos son transversales a las ingenierías y están orientados a procesos industriales (control de calidad, monitoreo, clasificación de piezas), de modo que reconozcas el algoritmo como una herramienta de tu futura práctica profesional."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-1": {
+        "title": "Concepto y propiedades del algoritmo",
+        "intro": [
+          "La presentación de este documento dejó una promesa: que aprenderías a pensar la solución antes de programarla. Cumplirla empieza aquí, con la pieza más elemental y a la vez más poderosa de toda la asignatura, el algoritmo.",
+          "Antes de dibujar un solo flujograma o escribir una línea de Python necesitamos un acuerdo claro sobre qué es exactamente un algoritmo, qué condiciones debe satisfacer para merecer ese nombre y por qué no es lo mismo que un programa. Ese es el recorrido de este primer capítulo, y todo lo que viene después se apoyará en él."
+        ],
+        "componentOrder": [
+          "pdf-s1-detonadora",
+          "pdf-s1-teoria",
+          "pdf-s1-flujo",
+          "pdf-s1-keybox",
+          "pdf-s1-2col",
+          "pdf-s1-tabla",
+          "pdf-s1-ejemplo",
+          "pdf-s1-code",
+          "pdf-s1-figura",
+          "pdf-s1-callout"
+        ],
+        "components": {
+          "pdf-s1-teoria": {
+            "type": "theory-block",
+            "title": "Definición y propiedades",
+            "body": [
+              "Comencemos por la pregunta de fondo: ¿qué hace que un procedimiento sea un algoritmo y no una simple intención de resolver algo? Un algoritmo es un conjunto ordenado y finito de pasos no ambiguos que, a partir de unos datos de entrada, resuelve un problema y produce una salida en un tiempo finito.",
+              "La palabra honra al matemático persa Al-Juarismi, pero la idea es cotidiana: una receta de cocina, un protocolo de calibración o un instructivo de arranque de un equipo son, en rigor, algoritmos expresados en lenguaje natural. Joyanes Aguilar (2013) lo resume con precisión al definir el algoritmo como un método para resolver un problema mediante una secuencia de pasos que debe describirse de forma que pueda llevarse a cabo sin lugar a dudas."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "list_alt",
+                "text": "Pasos ordenados, finitos y no ambiguos."
+              },
+              {
+                "icon": "verified",
+                "text": "Cinco propiedades: finitud, precisión, determinismo, entrada y salida."
+              },
+              {
+                "icon": "code_off",
+                "text": "El algoritmo es independiente del lenguaje."
+              }
+            ]
+          },
+          "pdf-s1-tabla": {
+            "type": "table",
+            "title": "Las cinco propiedades y el fallo que previenen",
+            "columns": [
+              "Propiedad",
+              "Significado",
+              "Fallo que previene"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Finitud",
+                  "Termina en pasos finitos",
+                  "Ciclo infinito"
+                ]
+              },
+              {
+                "cells": [
+                  "Precisión",
+                  "Pasos sin ambigüedad",
+                  "Interpretaciones distintas"
+                ]
+              },
+              {
+                "cells": [
+                  "Determinismo",
+                  "Misma entrada, mismo resultado",
+                  "Resultados irreproducibles"
+                ]
+              },
+              {
+                "cells": [
+                  "Entrada",
+                  "Cero o más datos definidos",
+                  "Datos indefinidos o inválidos"
+                ]
+              },
+              {
+                "cells": [
+                  "Salida",
+                  "Uno o más resultados",
+                  "Procedimiento que no entrega nada útil"
+                ]
+              }
+            ]
+          },
+          "pdf-s1-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: verificar que un procedimiento es un algoritmo",
+            "context": [
+              "Pongamos la teoría a trabajar sobre un caso de planta. Procedimiento: 'para cada una de las $N$ piezas del lote, mide la pieza; si mide más de 10 cm márcala como larga, de lo contrario como corta'. La pregunta no es si el procedimiento parece razonable, sino si satisface las cinco propiedades; las recorremos una por una."
+            ],
+            "formula": "\\text{larga} \\iff m > 10\\,\\text{cm}",
+            "solution": [
+              "Entrada: el lote de $N$ piezas y la medida de cada una. Salida: la clasificación (larga o corta) de cada pieza. Precisión: el umbral de 10 cm es un criterio exacto, sin lugar a interpretaciones. Determinismo: una misma medida produce siempre la misma clasificación. Finitud: el procedimiento se repite exactamente $N$ veces y, al ser $N$ finito, termina.",
+              "Conclusión: el procedimiento cumple las cinco propiedades, de modo que es un algoritmo válido y, por tanto, puede representarse formalmente y luego programarse. Conviene fijarse en un punto delicado: una pieza de exactamente 10 cm queda clasificada como corta, porque la condición es 'mayor que 10' y no 'mayor o igual'. Ese caso límite debe definirse a propósito en el diseño, pues de él depende que la instrucción sea o no ambigua."
+            ]
+          },
+          "pdf-s1-code": {
+            "type": "code",
+            "title": "Del diseño al código: traza del algoritmo de clasificación",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "clasificar_piezas.py",
+            "instructions": [
+              "El procedimiento que acabamos de verificar tiene primero su forma de algoritmo en pseudocódigo y, justo debajo, su traducción a Python para que veas cómo la lógica diseñada se convierte en un programa ejecutable.",
+              "Pseudocódigo del algoritmo:\nInicio\n  Para cada medida en el lote hacer\n    Si medida > 10 entonces\n      clasificacion <- \"larga\"\n    Sino\n      clasificacion <- \"corta\"\n    FinSi\n    Escribir medida, clasificacion\n  FinPara\nFin",
+              "Guarda el código como clasificar_piezas.py y ejecútalo desde una terminal con: python clasificar_piezas.py. El lote está fijo dentro de una lista para reproducir un caso concreto; cambia los valores y vuelve a ejecutar para comprobar que el determinismo hace que las mismas medidas den siempre la misma clasificación."
+            ],
+            "code": "# clasificar_piezas.py\n# Entrada: lista finita de medidas (cm)\n# Proceso: comparar cada medida con el umbral de 10 cm\n# Salida: clasificacion de cada pieza\n\nmedidas = [12.0, 8.5, 10.0, 15.2]   # lote finito de piezas\n\nfor medida in medidas:\n    if medida > 10:\n        clasificacion = \"larga\"\n    else:\n        clasificacion = \"corta\"\n    print(medida, \"cm ->\", clasificacion)",
+            "expectedOutput": [
+              "La salida muestra una linea por pieza: 12.0 cm -> larga; 8.5 cm -> corta; 10.0 cm -> corta; 15.2 cm -> larga.",
+              "Que 10.0 cm aparezca como 'corta' confirma en la practica el caso limite del umbral: el codigo no decide por su cuenta, simplemente obedece la condicion 'mayor que 10' que el diseno fijo de forma explicita."
+            ]
+          },
+          "pdf-s1-figura": {
+            "type": "image",
+            "title": "Niveles de abstracción del problema a la máquina",
+            "assetId": "alg-t1-niveles-abstraccion",
+            "src": "",
+            "alt": "Escalera descendente de cuatro niveles: lenguaje natural y diagrama, pseudocódigo, lenguaje de alto nivel (Python), instrucciones de máquina.",
+            "caption": "Del problema humano a la máquina: cada nivel es más formal. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español tipo escalera descendente de cuatro peldaños: 'Lenguaje natural y diagrama', 'Pseudocódigo', 'Lenguaje de alto nivel (Python)', 'Instrucciones de máquina (bits)'. Flecha vertical a la izquierda con 'más cercano al humano' arriba y 'más cercano a la máquina' abajo. Estilo plano, paleta institucional.",
+            "readingNote": "La figura ordena en una escalera lo que el ejemplo anterior recorrió en la práctica: el mismo algoritmo nace en lenguaje natural, baja a pseudocódigo, se concreta en Python y, por último, el computador lo traduce a instrucciones de máquina. Cada peldaño se aleja del problema humano y se acerca a la máquina, y por eso corregir un error arriba (en el diseño) cuesta minutos, mientras que corregirlo abajo (en el sistema implementado) puede costar días."
+          },
+          "pdf-s1-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Cierre y puente al siguiente capítulo",
+            "body": [
+              "Hemos fijado qué es un algoritmo, las cinco propiedades que debe cumplir y su diferencia con el programa; verificarlas sobre un caso y verlas correr en Python las volvió tangibles. Para diseñar el siguiente algoritmo, sin embargo, primero conviene precisar cuál es la información de partida, cómo se la procesa y qué se obtiene al final: ese marco, el modelo entrada-proceso-salida, es el tema del capítulo 2.",
+              "Para profundizar, revisa en Joyanes (2013) la distinción entre corrección y eficiencia de un algoritmo y en Oviedo (2005) más ejemplos de procedimientos cotidianos analizados como algoritmos."
+            ]
+          },
+          "pdf-s1-keybox": {
+            "type": "key-box",
+            "variant": "definicion",
+            "title": "Algoritmo, en una frase",
+            "body": [
+              "Conjunto ordenado y finito de pasos no ambiguos que, a partir de una entrada, resuelve un problema y produce una salida en un tiempo finito. Es la lógica de la solución, no su escritura en un lenguaje."
+            ]
+          },
+          "pdf-s1-2col": {
+            "type": "two-column",
+            "title": "Algoritmo frente a programa",
+            "columns": [
+              {
+                "title": "Algoritmo",
+                "body": [
+                  "Idea estructurada de la solución, independiente del lenguaje y de la máquina.",
+                  "Un mismo algoritmo del promedio sirve en Python, en una hoja de cálculo o en el firmware de un controlador."
+                ]
+              },
+              {
+                "title": "Programa",
+                "body": [
+                  "Ese algoritmo ya escrito en un lenguaje concreto que la computadora puede ejecutar.",
+                  "Depende de la sintaxis del lenguaje elegido y del entorno donde corre."
+                ]
+              }
+            ]
+          },
+          "pdf-s1-flujo": {
+            "type": "column-flow",
+            "body": [
+              "Si esa secuencia debe ejecutarse sin dudas, entonces el rasgo decisivo es la precisión: cada paso ha de estar definido de modo que dos personas distintas, siguiéndolo, obtengan el mismo resultado. De esa exigencia se desprenden las cinco propiedades que la tradición de la lógica de programación atribuye a todo algoritmo (Oviedo Regino, 2005).",
+              "La finitud asegura que el procedimiento termine tras un número limitado de pasos; la precisión elimina cualquier ambigüedad en las instrucciones; el determinismo garantiza que la misma entrada recorra siempre la misma secuencia y entregue el mismo resultado; la propiedad de entrada admite cero o más datos iniciales; y la propiedad de salida exige que se produzca al menos un resultado.",
+              "Conviene leer estas cinco condiciones no como una lista que memorizar, sino como cinco maneras de prevenir fallos concretos: la finitud impide que un proceso quede atrapado en un ciclo sin fin, la precisión evita que dos operarios interpreten lo mismo de forma distinta y el determinismo hace reproducible una medición o un control.",
+              "Queda una distinción que será una brújula durante toda la asignatura: el algoritmo no es lo mismo que el programa. El algoritmo es la idea estructurada de la solución, independiente del lenguaje y de la máquina; el programa es esa idea ya escrita en un lenguaje concreto que una computadora puede ejecutar.",
+              "Un mismo algoritmo de cálculo de un promedio puede implementarse en Python, en una hoja de cálculo o en el firmware de un controlador industrial sin dejar de ser, en esencia, el mismo algoritmo. Por eso el verdadero objeto de estudio aquí es la lógica de la solución, y no la sintaxis de un lenguaje particular.",
+              "Con la definición y las cinco propiedades claras, lo natural es ponerlas a prueba: tomar un procedimiento concreto y comprobar, propiedad por propiedad, si de verdad merece llamarse algoritmo. Eso es lo que haremos enseguida con un caso del entorno industrial."
+            ]
+          },
+          "pdf-s1-detonadora": {
+            "id": "pdf-s1-detonadora",
+            "type": "trigger-question",
+            "eyebrow": "Para empezar",
+            "question": "Imagina que debes describir, paso a paso y sin ambigüedades, cómo un sistema de riego decide por sí mismo cuándo abrir y cerrar una válvula. ¿Qué pasos darías y cómo garantizarías que cualquier persona los siga e interprete igual, aún antes de programarlos?"
+          }
+        }
+      },
+      "pdf-seccion-2": {
+        "title": "Entrada, proceso y salida (modelo EPS)",
+        "intro": [
+          "En el capítulo anterior establecimos que un algoritmo recibe datos y produce resultados; dos de sus cinco propiedades, de hecho, eran justamente la entrada y la salida.",
+          "Ahora damos el paso siguiente: antes de detallar el orden exacto de los pasos, todo buen diseño empieza por delimitar qué datos entran, qué transformación ocurre y qué resultado debe salir. Ese marco de análisis, sencillo en apariencia y muy potente en la práctica, se llama modelo entrada-proceso-salida (EPS), y será la primera herramienta de diseño que aprenderás a usar de manera sistemática."
+        ],
+        "componentOrder": [
+          "pdf-s2-teoria",
+          "pdf-s2-flujo",
+          "pdf-s2-keybox",
+          "pdf-s2-tabla",
+          "pdf-s2-2col",
+          "pdf-s2-ejemplo",
+          "pdf-s2-code",
+          "pdf-s2-figura",
+          "pdf-s2-callout"
+        ],
+        "components": {
+          "pdf-s2-teoria": {
+            "type": "theory-block",
+            "title": "El modelo EPS y la descomposición del problema",
+            "body": [
+              "El modelo entrada-proceso-salida (en inglés, Input-Process-Output) invita a mirar cualquier algoritmo como una caja que recibe datos, los transforma y entrega resultados. La entrada son los datos que el algoritmo necesita para trabajar: lecturas de un sensor, parámetros de una pieza, valores que el usuario digita.",
+              "El proceso es la secuencia de operaciones —cálculos, comparaciones, decisiones— que transforma esos datos. Y la salida es el resultado útil que responde al problema: un valor, un informe, una clasificación o una orden a un actuador. Este esquema, presente en la tradición de la lógica de programación, es el mismo con el que un ingeniero analiza desde un pequeño programa hasta una línea de producción completa."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "login",
+                "text": "Entrada, proceso y salida estructuran cualquier solución."
+              },
+              {
+                "icon": "help_outline",
+                "text": "Diseña empezando por la salida deseada."
+              },
+              {
+                "icon": "memory",
+                "text": "Los datos intermedios necesitan un valor inicial correcto."
+              }
+            ]
+          },
+          "pdf-s2-tabla": {
+            "type": "table",
+            "title": "Modelo EPS en distintas ingenierías",
+            "columns": [
+              "Caso",
+              "Entrada",
+              "Proceso",
+              "Salida"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Control de calidad",
+                  "Peso del producto",
+                  "Comparar con el rango permitido",
+                  "Aceptar / rechazar"
+                ]
+              },
+              {
+                "cells": [
+                  "Monitoreo ambiental",
+                  "Lecturas de sensor de CO2",
+                  "Promediar y comparar con umbral",
+                  "Alarma o normal"
+                ]
+              },
+              {
+                "cells": [
+                  "Eléctrica",
+                  "Voltaje y corriente",
+                  "Calcular la potencia",
+                  "Potencia en vatios"
+                ]
+              }
+            ]
+          },
+          "pdf-s2-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: EPS del promedio de mediciones",
+            "context": [
+              "Apliquemos ahora el método empezando por la salida, como recomienda el modelo. Una estación de monitoreo registra tres mediciones de temperatura (58, 62 y 60 grados Celsius) que deben promediarse y clasificarse como normal si el promedio resulta menor o igual a 60."
+            ],
+            "formula": "\\bar{x} = \\frac{x_1 + x_2 + x_3}{3}",
+            "solution": [
+              "Salida: el promedio $\\bar{x}$ y la clasificación (normal o alto). Entrada: las tres mediciones y el umbral de 60 grados. Proceso, ya con el destino claro: sumar las mediciones para obtener el acumulado ($S=180$), dividir entre la cantidad de datos ($\\bar{x}=180/3=60$) y comparar el promedio con el umbral.",
+              "Como $\\bar{x}=60 \\leq 60$, la clasificación es 'normal'. El EPS queda completamente definido: entrada (tres mediciones y umbral), proceso (sumar, dividir, comparar) y salida (promedio y clasificación). Observa que $S$ es un dato intermedio: no entró desde fuera ni se reporta, pero sin él el promedio no se calcula."
+            ]
+          },
+          "pdf-s2-code": {
+            "type": "code",
+            "title": "El modelo EPS hecho explícito en Python",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "potencia_electrica.py",
+            "instructions": [
+              "Para ver el modelo EPS en un caso distinto al del ejemplo, tomamos un problema eléctrico transversal a las ingenierías: calcular la potencia a partir del voltaje y la corriente. El código rotula con comentarios cada parte del modelo.",
+              "Guarda el archivo como potencia_electrica.py y ejecútalo con: python potencia_electrica.py. Cuando se solicite, ingresa el voltaje (por ejemplo, 120) y la corriente (por ejemplo, 2.5).",
+              "Mientras lees, identifica qué líneas son la entrada, cuál es el proceso, cuál es el dato intermedio y cuál es la salida, y relaciona cada una con el esquema EPS que acabas de estudiar."
+            ],
+            "code": "# potencia_electrica.py\n# Entrada: voltaje (V) y corriente (A)\n# Proceso: multiplicar para obtener la potencia\n# Salida: potencia en vatios\n\n# --- ENTRADA ---\nvoltaje = float(input(\"Voltaje (V): \"))\ncorriente = float(input(\"Corriente (A): \"))\n\n# --- PROCESO ---\npotencia = voltaje * corriente\n\n# --- SALIDA ---\nprint(\"Potencia consumida:\", potencia, \"W\")",
+            "expectedOutput": [
+              "Con voltaje 120 y corriente 2.5 la salida es: Potencia consumida: 300.0 W.",
+              "El voltaje y la corriente son la ENTRADA; la multiplicacion es el PROCESO; la variable potencia es la SALIDA. Asi el modelo abstracto se vuelve un programa concreto, y el orden de los comentarios refleja exactamente las tres preguntas guia del modelo."
+            ]
+          },
+          "pdf-s2-figura": {
+            "type": "image",
+            "title": "Esquema entrada-proceso-salida",
+            "assetId": "alg-t1-esquema-eps",
+            "src": "",
+            "alt": "Caja central Proceso con flecha de entrada de datos a la izquierda y flecha de salida de resultado a la derecha.",
+            "caption": "El algoritmo como caja que transforma entrada en salida. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español: caja central 'PROCESO (transformación)'; flecha entrando a la izquierda 'ENTRADA: datos'; flecha saliendo a la derecha 'SALIDA: resultado'. Bajo la caja, ejemplo: entrada peso, proceso comparar con rango, salida aceptar/rechazar. Estilo plano, paleta institucional.",
+            "readingNote": "La figura condensa todo el capítulo en una sola imagen: la flecha que entra recoge los datos que estudiamos como entrada, la caja central es el proceso que los transforma y la flecha que sale es la salida. Leerla de izquierda a derecha reproduce el orden de ejecución, pero recuerda que el diseño se piensa al revés, empezando por lo que sale."
+          },
+          "pdf-s2-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Cierre y puente al siguiente capítulo",
+            "body": [
+              "Con el modelo EPS ya sabes delimitar un problema y nombrar sus datos, pero todavía no lo hemos representado de forma que cualquiera pueda seguir su lógica de un vistazo. Esa representación visual, con símbolos normalizados y flechas, es el flujograma, y a él dedicamos el capítulo 3.",
+              "Para ampliar, en Oviedo (2005) encontrarás la noción de variable y la diferencia entre datos de entrada, intermedios y de salida, con ejercicios aplicados al análisis de problemas."
+            ]
+          },
+          "pdf-s2-keybox": {
+            "type": "key-box",
+            "variant": "tip",
+            "title": "Diseña al revés",
+            "body": [
+              "Pregúntate primero por la salida deseada, luego por la entrada disponible y solo al final por el proceso que conecta ambas. Con el origen y el destino fijados, el proceso casi se diseña solo."
+            ]
+          },
+          "pdf-s2-2col": {
+            "type": "two-column",
+            "title": "Datos de entrada frente a datos intermedios",
+            "columns": [
+              {
+                "title": "Datos de entrada",
+                "body": [
+                  "Vienen de fuera: lecturas de un sensor, parámetros de una pieza o valores que digita el usuario.",
+                  "Existen antes de que el proceso empiece."
+                ]
+              },
+              {
+                "title": "Datos intermedios",
+                "body": [
+                  "Los genera y usa el propio proceso, como una variable acumuladora que va sumando mediciones.",
+                  "Necesitan un valor inicial correcto: un acumulador de suma debe partir de cero."
+                ]
+              }
+            ]
+          },
+          "pdf-s2-flujo": {
+            "type": "column-flow",
+            "body": [
+              "Lo valioso del modelo es que sugiere un método de diseño, y aquí conviene un giro contraintuitivo: pregúntate primero por la salida deseada, luego por la entrada disponible y solo al final por el proceso que conecta ambas. Empezar por la salida fija el destino del viaje, y conociendo el punto de partida (la entrada) y el de llegada (la salida), el proceso casi se diseña solo.",
+              "Oviedo Regino (2005) insiste en este análisis previo del problema —qué se pide y con qué se cuenta— como condición para que el algoritmo posterior sea correcto, y recomienda nombrar los datos con variables claras, pues una variable no es más que un espacio con nombre donde se guarda un dato que puede cambiar durante el proceso.",
+              "Hay además un tercer tipo de dato que conviene reconocer desde ya: entre la entrada y la salida aparecen datos intermedios que el proceso genera y usa internamente, como una variable acumuladora que va sumando mediciones. No son entrada, porque no vienen de fuera, ni salida, porque no se reportan, pero sin ellos el proceso no avanza.",
+              "Darles un valor inicial correcto resulta decisivo: un acumulador de suma debe partir de cero, y si arranca en otro valor todo el cálculo se desvía. Este detalle, en apariencia menor, es una de las causas más frecuentes de error en algoritmos reales.",
+              "Para que el modelo deje de ser abstracto, lo mejor es verlo encarnado en problemas de distintas ingenierías y luego seguirlo paso a paso en un ejemplo resuelto; eso es lo que viene a continuación."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-3": {
+        "title": "Flujograma y sus símbolos normalizados",
+        "intro": [
+          "Hasta aquí hemos sabido qué es un algoritmo y cómo delimitarlo con el modelo EPS, pero todo ese análisis vivía en prosa y en nuestra cabeza. Llega el momento de darle una forma visual que cualquiera pueda leer sin ambigüedad y que sirva de acuerdo entre quien diseña, quien programa y quien opera el proceso.",
+          "Esa representación gráfica, hecha de símbolos normalizados conectados por flechas, es el flujograma: la primera manera de ver el algoritmo, comunicarlo y validarlo antes de escribir una sola línea de código."
+        ],
+        "componentOrder": [
+          "pdf-s3-teoria",
+          "pdf-s3-flujo",
+          "pdf-s3-tabla",
+          "pdf-s3-keybox",
+          "pdf-s3-figura",
+          "pdf-s3-ejemplo",
+          "pdf-s3-callout"
+        ],
+        "components": {
+          "pdf-s3-teoria": {
+            "type": "theory-block",
+            "title": "Símbolos y construcción del flujograma",
+            "body": [
+              "Un flujograma, o diagrama de flujo, representa un algoritmo mediante símbolos gráficos cuyo significado está normalizado, de modo que cualquier persona familiarizada con la notación lea la lógica sin dudar.",
+              "El óvalo marca el inicio y el fin; el paralelogramo señala la entrada y la salida de datos; el rectángulo encierra un proceso o una asignación; el rombo plantea una decisión con dos salidas, Sí y No; y la flecha indica el sentido del flujo. Joyanes Aguilar (2013) presenta esta notación como la herramienta gráfica por excelencia para describir el flujo de control de un algoritmo, es decir, el orden en que se ejecutan sus acciones."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "account_tree",
+                "text": "Cinco símbolos básicos con significado normalizado."
+              },
+              {
+                "icon": "call_split",
+                "text": "El rombo bifurca el flujo en Sí y No."
+              },
+              {
+                "icon": "flag",
+                "text": "Todo camino debe llegar al Fin."
+              }
+            ]
+          },
+          "pdf-s3-tabla": {
+            "type": "table",
+            "title": "Símbolos básicos del flujograma",
+            "columns": [
+              "Símbolo",
+              "Nombre",
+              "Uso"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Óvalo",
+                  "Terminal",
+                  "Inicio y fin del algoritmo"
+                ]
+              },
+              {
+                "cells": [
+                  "Paralelogramo",
+                  "Entrada/Salida",
+                  "Leer datos o mostrar resultados"
+                ]
+              },
+              {
+                "cells": [
+                  "Rectángulo",
+                  "Proceso",
+                  "Cálculo o asignación a una variable"
+                ]
+              },
+              {
+                "cells": [
+                  "Rombo",
+                  "Decisión",
+                  "Condición con dos salidas: Sí y No"
+                ]
+              },
+              {
+                "cells": [
+                  "Flecha",
+                  "Línea de flujo",
+                  "Orden de ejecución de los pasos"
+                ]
+              }
+            ]
+          },
+          "pdf-s3-figura": {
+            "type": "image",
+            "title": "Flujograma del control de calidad de una pieza",
+            "assetId": "alg-t1-flujograma-clasificar",
+            "src": "",
+            "alt": "Flujograma vertical: Inicio, leer medida, rombo medida mayor que 10, Sí marca larga, No marca corta, mostrar, Fin.",
+            "caption": "Flujograma que clasifica una pieza según su medida. Elaboración propia.",
+            "prompt": "Crear un flujograma vertical en español con símbolos normalizados: óvalo 'Inicio'; paralelogramo 'Leer medida m'; rombo 'm > 10 cm?' con salida 'Sí' a rectángulo 'clasificar LARGA' y salida 'No' a rectángulo 'clasificar CORTA'; ambas ramas se unen y van a paralelogramo 'Mostrar clasificación'; óvalo 'Fin'. Sin cruces, paleta institucional.",
+            "readingNote": "Esta figura es justamente el algoritmo de clasificación de piezas del capítulo 1, ahora dibujado con la notación que acabamos de definir. Síguela con el dedo desde el óvalo Inicio: el paralelogramo lee la medida, el rombo plantea la decisión $m > 10$, y según la respuesta el flujo toma la rama Sí (larga) o la rama No (corta); ambas se reúnen, el resultado se muestra y el camino llega al único Fin. Verla ejecutar mentalmente es la mejor comprobación de que el flujograma es correcto."
+          },
+          "pdf-s3-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: trazar el flujograma de una clasificación",
+            "context": [
+              "Reconstruyamos paso a paso el flujograma de la figura anterior para fijar el método de construcción. El algoritmo lee la medida de una pieza y la clasifica como LARGA si supera 10 cm o CORTA en caso contrario."
+            ],
+            "formula": "m > 10",
+            "solution": [
+              "Se parte del óvalo Inicio; un paralelogramo lee la medida $m$; un rombo plantea la decisión $m > 10$: por la rama Sí un rectángulo asigna LARGA y por la rama No otro rectángulo asigna CORTA; ambas ramas se reúnen y un paralelogramo muestra la clasificación; finalmente el óvalo Fin cierra el diagrama.",
+              "El diagrama es correcto porque todos los caminos llegan al Fin y las dos ramas del rombo están resueltas. Nota que la estructura del flujograma corresponde uno a uno con el modelo EPS del capítulo 2: leer es la entrada, decidir y asignar es el proceso, y mostrar es la salida."
+            ]
+          },
+          "pdf-s3-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Cierre y puente al siguiente capítulo",
+            "body": [
+              "El flujograma nos dio una representación visual y compartible del algoritmo, ideal para discutirlo en equipo. Pero para acercarnos al código necesitamos una representación textual, más compacta y casi traducible línea a línea: el pseudocódigo. Ese es el contenido del capítulo 4, donde además daremos el salto a Python.",
+              "Para profundizar, Joyanes (2013) presenta la notación normalizada del flujograma con ejemplos que combinan decisiones y ciclos, muy útiles para preparar el Tema 3 sobre estructuras de control."
+            ]
+          },
+          "pdf-s3-keybox": {
+            "type": "key-box",
+            "variant": "alerta",
+            "title": "Un flujograma no es correcto solo por usar bien los símbolos",
+            "body": [
+              "Todo camino debe poder llegar al Fin, cada símbolo —salvo Inicio y Fin— necesita flechas de entrada y de salida, y las dos ramas de cada rombo deben quedar resueltas. Prueba definitiva: otra persona puede ejecutarlo mentalmente sin preguntar qué quiso decir el autor."
+            ]
+          },
+          "pdf-s3-flujo": {
+            "type": "column-flow",
+            "body": [
+              "El diagrama se lee de arriba hacia abajo siguiendo las flechas: comienza con un único Inicio y concluye con un único Fin. El verdadero protagonista es el rombo, porque es el que da expresividad al diagrama.",
+              "Al combinar decisiones se construyen las estructuras selectivas, y al dibujar una flecha de regreso hacia un punto anterior se crea un ciclo o repetición. No es casualidad: el flujograma es, ante todo, una manera de visualizar las bifurcaciones y los ciclos que más adelante, en el Tema 3, se convertirán en las estructuras de control del programa.",
+              "Un flujograma no es correcto solo por usar los símbolos adecuados; debe construirse con disciplina. Todo camino ha de poder llegar al Fin, cada símbolo —salvo Inicio y Fin— necesita flechas de entrada y de salida, y las dos ramas de cada rombo tienen que quedar resueltas. La prueba definitiva es sencilla: un flujograma está bien hecho cuando otra persona puede ejecutarlo mentalmente, paso a paso, sin detenerse a preguntar qué quiso decir el autor.",
+              "Con el significado de cada símbolo claro, el mejor modo de afianzarlo es verlos reunidos en una tabla de referencia y luego seguir cómo se ensamblan en un flujograma completo. Eso es lo que ofrecen la tabla y el ejemplo que siguen."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-4": {
+        "title": "Pseudocódigo estructurado y traducción a Python",
+        "intro": [
+          "El flujograma del capítulo anterior nos mostró el algoritmo de un vistazo, pero los diagramas crecen y se vuelven difíciles de manejar cuando la lógica se complica, y todavía quedan a cierta distancia del código.",
+          "El pseudocódigo viene a tender ese puente: describe el mismo algoritmo en texto estructurado, con palabras clave y sangría, de forma tan precisa que traducirlo a un lenguaje real resulta casi mecánico. En este capítulo aprenderás a escribirlo y, sobre todo, a cruzar por fin la frontera hacia Python, el lenguaje de implementación de la asignatura."
+        ],
+        "componentOrder": [
+          "pdf-s4-teoria",
+          "pdf-s4-flujo",
+          "pdf-s4-2col",
+          "pdf-s4-keybox",
+          "pdf-s4-tabla",
+          "pdf-s4-ejemplo",
+          "pdf-s4-code",
+          "pdf-s4-callout"
+        ],
+        "components": {
+          "pdf-s4-teoria": {
+            "type": "theory-block",
+            "title": "Pseudocódigo y estructuras de control",
+            "body": [
+              "El pseudocódigo expresa el algoritmo con un conjunto reducido de palabras clave fijas —Inicio, Leer, Escribir, Si, Mientras, Fin— y con sangría para mostrar qué instrucciones dependen de qué. No es un lenguaje ejecutable y por eso ninguna máquina lo corre directamente, pero su estructura es tan disciplinada que pasarlo a Python se vuelve casi una transcripción.",
+              "Frente al flujograma resulta más compacto y más fácil de revisar línea a línea, lo que lo convierte en el escalón intermedio natural entre el diagrama y el programa."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "notes",
+                "text": "Texto estructurado con palabras clave y sangría."
+              },
+              {
+                "icon": "category",
+                "text": "Tres estructuras: secuencia, selección, repetición."
+              },
+              {
+                "icon": "swap_horiz",
+                "text": "Traducción directa a Python."
+              }
+            ]
+          },
+          "pdf-s4-tabla": {
+            "type": "table",
+            "title": "Correspondencia pseudocódigo - Python",
+            "columns": [
+              "Pseudocódigo",
+              "Python",
+              "Estructura"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Leer x",
+                  "x = float(input())",
+                  "Entrada"
+                ]
+              },
+              {
+                "cells": [
+                  "Escribir r",
+                  "print(r)",
+                  "Salida"
+                ]
+              },
+              {
+                "cells": [
+                  "suma <- 0",
+                  "suma = 0",
+                  "Asignación"
+                ]
+              },
+              {
+                "cells": [
+                  "Si c entonces ... Sino ... FinSi",
+                  "if c: ... else: ...",
+                  "Selección"
+                ]
+              },
+              {
+                "cells": [
+                  "Mientras c hacer ... FinMientras",
+                  "while c: ...",
+                  "Repetición"
+                ]
+              }
+            ]
+          },
+          "pdf-s4-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: pseudocódigo del promedio con clasificación",
+            "context": [
+              "Retomemos el algoritmo del promedio de mediciones que diseñamos con el modelo EPS en el capítulo 2 y, ahora, escribámoslo en pseudocódigo. El algoritmo lee tres mediciones, calcula su promedio y muestra 'normal' si el promedio es menor o igual a 60, o 'alto' en caso contrario."
+            ],
+            "formula": "promedio \\leftarrow \\frac{x_1 + x_2 + x_3}{3}",
+            "solution": [
+              "Inicio; Leer $x_1$, $x_2$, $x_3$; $promedio \\leftarrow (x_1+x_2+x_3)/3$; Si $promedio \\leq 60$ entonces Escribir 'normal' Sino Escribir 'alto' FinSi; Fin.",
+              "Aquí conviven las tres estructuras de control en su forma más simple: la secuencia (leer y luego calcular), la selección (el Si/Sino que decide la clasificación) y, aunque este caso no la use, el lugar donde encajaría una repetición si hubiera que promediar más de tres datos. La entrada, el proceso y la salida del modelo EPS siguen reconociéndose con claridad, ahora vestidos de palabras clave y sangría."
+            ]
+          },
+          "pdf-s4-code": {
+            "type": "code",
+            "title": "Implementación en Python del promedio",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "promedio_mediciones.py",
+            "instructions": [
+              "Esta es la traducción a Python del pseudocódigo anterior; compárala línea a línea con él para comprobar lo mecánica que resulta la correspondencia.",
+              "Guarda el código como promedio_mediciones.py y ejecútalo con: python promedio_mediciones.py.",
+              "Ingresa las tres mediciones cuando se soliciten y contrasta el resultado con tu cálculo manual del capítulo 2."
+            ],
+            "code": "x1 = float(input(\"Medicion 1: \"))\nx2 = float(input(\"Medicion 2: \"))\nx3 = float(input(\"Medicion 3: \"))\n\npromedio = (x1 + x2 + x3) / 3\n\nif promedio <= 60:\n    clasificacion = \"normal\"\nelse:\n    clasificacion = \"alto\"\n\nprint(\"Promedio:\", promedio)\nprint(\"Clasificacion:\", clasificacion)",
+            "expectedOutput": [
+              "Con 58, 62 y 60 la salida es: Promedio 60.0 y Clasificacion normal. Con 70, 80 y 90: Promedio 80.0 y Clasificacion alto.",
+              "Leido junto al pseudocodigo, el programa lo confirma todo: cada Leer se volvio input, el calculo del promedio quedo igual, el Si/Sino se transformo en if/else y la sangria que ordenaba el pseudocodigo es ahora la que Python exige para delimitar los bloques. Disenar bien en pseudocodigo es, literalmente, casi haber escrito el programa."
+            ]
+          },
+          "pdf-s4-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Cierre y puente al siguiente capítulo",
+            "body": [
+              "Ya tenemos el algoritmo en pseudocódigo y en Python, pero escribirlo no garantiza que sea correcto. Falta el paso que cierra el ciclo de diseño: ejecutarlo a mano, con datos concretos, para verificar su lógica antes de confiar en el computador. Esa verificación es la prueba de escritorio, y con ella, junto a un banco de ejercicios, culmina el documento en el capítulo 5.",
+              "Para ampliar, Downey (2015), en Think Python, desarrolla en inglés la traducción de la lógica a código y las buenas prácticas de legibilidad; puedes practicar el pseudocódigo en español con la herramienta PSeInt."
+            ]
+          },
+          "pdf-s4-2col": {
+            "type": "two-column",
+            "title": "Pseudocódigo frente a Python",
+            "columns": [
+              {
+                "title": "Pseudocódigo",
+                "body": [
+                  "Texto estructurado con palabras clave fijas (Inicio, Leer, Escribir, Si, Mientras) y sangría indicativa.",
+                  "No es ejecutable: ninguna máquina lo corre, sirve para razonar y revisar la lógica línea a línea."
+                ]
+              },
+              {
+                "title": "Python",
+                "body": [
+                  "Lenguaje real de implementación: Leer pasa a input, Escribir a print y Si/Sino a if/else.",
+                  "Aquí la sangría no es decorativa sino obligatoria, porque define los bloques del programa."
+                ]
+              }
+            ]
+          },
+          "pdf-s4-keybox": {
+            "type": "key-box",
+            "variant": "clave",
+            "title": "Solo tres estructuras de control",
+            "body": [
+              "Cualquier algoritmo, por complejo que sea, se construye combinando secuencia, selección ($Si/Sino$) y repetición ($Mientras/Para$). Es el teorema de la programación estructurada de Böhm y Jacopini: con tres bloques bien combinados y sin saltos arbitrarios, el código queda ordenado y legible."
+            ]
+          },
+          "pdf-s4-flujo": {
+            "type": "column-flow",
+            "body": [
+              "Hay un resultado teórico que da solidez a todo esto y conviene tener presente: cualquier algoritmo, por complejo que sea, puede construirse combinando únicamente tres estructuras de control —la secuencia (instrucciones ejecutadas en orden), la selección (Si/Sino, según se cumpla o no una condición) y la repetición (Mientras o Para).",
+              "Es el teorema de la programación estructurada, atribuido a Böhm y Jacopini y popularizado en la práctica docente por autores como Joyanes Aguilar (2013); su consecuencia es que con apenas tres bloques bien combinados y sin saltos arbitrarios se obtiene un código ordenado y legible.",
+              "La traducción a Python es, entonces, directa y predecible: Leer se convierte en input, Escribir en print, la asignación con flecha se vuelve el signo igual y la estructura Si/Sino pasa a if/else.",
+              "El detalle más importante es que en Python la sangría no es decorativa sino obligatoria, pues es ella la que define los bloques; de ahí que la disciplina de sangrar correctamente el pseudocódigo no se pierda, sino que se transfiera intacta al código y prevenga errores desde el primer día.",
+              "La mejor forma de convencerse de que la traducción es mecánica es ponerlas lado a lado: primero la correspondencia entre cada palabra clave y su equivalente en Python, y luego un mismo algoritmo escrito en pseudocódigo y ejecutado en Python."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-5": {
+        "title": "Prueba de escritorio y banco de ejercicios",
+        "intro": [
+          "Llegamos al último eslabón del ciclo de diseño que hemos venido construyendo. Sabemos definir un algoritmo, delimitarlo con el modelo EPS, representarlo con flujograma y pseudocódigo y traducirlo a Python; falta comprobar, sin encender el computador, que esa lógica realmente funciona.",
+          "Ese es el papel de la prueba de escritorio, la ejecución manual del algoritmo anotando en una tabla cómo cambian las variables. Este capítulo desarrolla la técnica, la ilustra con la traza de un ciclo y cierra con un banco de ejercicios variado que integra todo lo aprendido en el tema."
+        ],
+        "componentOrder": [
+          "pdf-s5-teoria",
+          "pdf-s5-flujo",
+          "pdf-s5-keybox",
+          "pdf-s5-ejemplo",
+          "pdf-s5-figura",
+          "pdf-s5-ejercicios",
+          "pdf-s5-callout",
+          "pdf-s5-referencias"
+        ],
+        "components": {
+          "pdf-s5-teoria": {
+            "type": "theory-block",
+            "title": "La prueba de escritorio como verificación",
+            "body": [
+              "La prueba de escritorio es la ejecución manual de un algoritmo: se toma un caso de entrada concreto y se recorre cada instrucción en su orden, anotando en una tabla —una columna por variable y una fila por paso— cómo evolucionan los valores.",
+              "Su gran virtud es económica: permite detectar errores de lógica cuando todavía cuestan minutos corregirlos, antes de invertir tiempo en programar y depurar. Es, en cierto modo, la versión a lápiz de lo que más tarde hará el computador."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "fact_check",
+                "text": "Ejecución manual con tabla de traza."
+              },
+              {
+                "icon": "rule",
+                "text": "Probar casos típico, límite e inválido."
+              },
+              {
+                "icon": "all_inclusive",
+                "text": "Detecta ciclos infinitos y variables sin inicializar."
+              }
+            ]
+          },
+          "pdf-s5-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: traza de un ciclo de conteo",
+            "context": [
+              "Apliquemos la prueba de escritorio a un algoritmo con repetición, que es donde más errores se esconden. Algoritmo: conformes <- 0; i <- 1; Mientras i <= 3: leer medida; Si medida <= 10 entonces conformes <- conformes + 1; i <- i + 1; FinMientras. Caso de prueba: las medidas 9, 11 y 8."
+            ],
+            "formula": "medida \\leq 10 \\Rightarrow conformes \\leftarrow conformes + 1",
+            "solution": [
+              "Estado inicial: conformes=0, i=1. Vuelta 1 (medida 9 $\\leq$ 10): conformes=1, i=2. Vuelta 2 (medida 11 > 10): conformes=1, i=3. Vuelta 3 (medida 8 $\\leq$ 10): conformes=2, i=4.",
+              "Con i=4 la condición $i \\leq 3$ se vuelve falsa y el ciclo termina; la salida es conformes=2. La traza confirma dos cosas a la vez: que el conteo es correcto y que el ciclo terminó precisamente porque la variable de control $i$ avanzó hacia su límite en cada vuelta. Si hubiéramos olvidado la instrucción i <- i + 1, la tabla habría mostrado a $i$ congelada en 1 y el ciclo no habría terminado nunca."
+            ]
+          },
+          "pdf-s5-figura": {
+            "type": "image",
+            "title": "Tabla de traza del ciclo de conteo",
+            "assetId": "alg-t1-traza-ciclo",
+            "src": "",
+            "alt": "Tabla con columnas vuelta, i, medida, condición, conformes, mostrando tres vueltas y la salida final 2.",
+            "caption": "Cada fila es una vuelta del ciclo; la columna conformes muestra el conteo final. Elaboración propia.",
+            "prompt": "Crear una figura de tabla de traza en español del ciclo de conteo. Columnas: 'Vuelta', 'i', 'medida', 'medida <= 10?', 'conformes'. Filas: inicial (i=1, conformes=0); vuelta 1 (medida 9, Sí, conformes 1); vuelta 2 (medida 11, No, conformes 1); vuelta 3 (medida 8, Sí, conformes 2); fin (i=4, condición falsa, conformes 2). Estilo plano, paleta institucional.",
+            "readingNote": "La figura ordena en una cuadrícula la misma traza que acabamos de seguir en prosa. Léela fila por fila de arriba hacia abajo: cada renglón es una vuelta del ciclo y muestra el estado de $i$, la medida leída, si cumple la condición y el valor acumulado de conformes. La última fila, con $i=4$ y la condición ya falsa, es la prueba visual de que el ciclo terminó; este formato de tabla es exactamente el que debes reproducir como evidencia en tus propias pruebas de escritorio."
+          },
+          "pdf-s5-ejercicios": {
+            "type": "exercise-set",
+            "title": "Banco de ejercicios del Tema 1",
+            "intro": [
+              "Los ejercicios siguen el mismo recorrido del tema —del concepto al diseño, del diseño al código y del código a su verificación— y combinan distintos tipos de trabajo: práctica de representación, análisis crítico, programación en Python, consulta de fuentes, indagación aplicada y reflexión profesional. Resuélvelos en ese orden y conserva tus evidencias (pseudocódigo, flujograma, tablas de traza y capturas de ejecución)."
+            ],
+            "items": [
+              {
+                "kind": "practico",
+                "title": "Pseudocódigo del mayor de dos números",
+                "prompt": "Escribe el pseudocódigo de un algoritmo que lea dos números $a$ y $b$ y muestre el mayor. Identifica explícitamente su entrada, su proceso y su salida según el modelo EPS.",
+                "answer": "Inicio; Leer $a$, $b$; Si $a > b$ entonces Escribir $a$ Sino Escribir $b$ FinSi; Fin. Entrada: $a$ y $b$; proceso: la comparación; salida: el mayor."
+              },
+              {
+                "kind": "practico",
+                "title": "Flujograma del mayor de dos números",
+                "prompt": "Dibuja el flujograma del algoritmo del mayor usando los símbolos normalizados (óvalo, paralelogramo, rombo, flecha) y verifica que las dos ramas del rombo estén resueltas y que todo camino llegue al Fin.",
+                "answer": "Óvalo Inicio; paralelogramo Leer $a$, $b$; rombo $a > b$ con rama Sí a 'Escribir $a$' y rama No a 'Escribir $b$'; las ramas se reúnen; óvalo Fin."
+              },
+              {
+                "kind": "practico",
+                "title": "Traza del mayor de dos números",
+                "prompt": "Realiza la prueba de escritorio del algoritmo del mayor para los casos $(a=7, b=3)$, $(a=5, b=5)$ y $(a=2, b=9)$. Construye una tabla de traza (una columna por variable, una fila por caso) y reporta la salida de cada uno.",
+                "formula": "\\text{salida} = \\max(a, b)",
+                "answer": "Caso 1: salida 7. Caso 2: salida 5 (el algoritmo entra por la rama Sino al no cumplirse $a>b$). Caso 3: salida 9. El caso $a=b$ es el límite que conviene probar siempre."
+              },
+              {
+                "kind": "analisis",
+                "title": "¿Es esto un algoritmo?",
+                "prompt": "Se afirma que el procedimiento 'calienta la muestra hasta que esté lista' es un algoritmo. Justifica por qué NO lo es, indica exactamente qué propiedad de las cinco viola y reescríbelo como un paso de algoritmo válido.",
+                "formula": "\\text{lista} \\iff T \\geq 60^{\\circ}\\text{C}"
+              },
+              {
+                "kind": "codigo",
+                "title": "Clasificación de una pieza en Python",
+                "prompt": "Traduce a Python el algoritmo que clasifica una pieza como LARGA si su medida supera 10 cm o CORTA en caso contrario. Ejecútalo con las medidas 12 y 8, y verifica que el resultado coincide con tu prueba de escritorio. Presta atención al caso límite de exactamente 10 cm.",
+                "language": "python",
+                "code": "def clasificar(medida):\n    if medida > 10:\n        return \"larga\"\n    else:\n        return \"corta\"\n\nfor m in [12, 8, 10]:\n    print(m, \"cm ->\", clasificar(m))",
+                "expectedOutput": "12 cm -> larga\n8 cm -> corta\n10 cm -> corta"
+              },
+              {
+                "kind": "codigo",
+                "title": "Conteo de mediciones bajo umbral en Python",
+                "prompt": "Implementa en Python un ciclo que cuente cuántas de N mediciones son menores o iguales a un umbral. Verifica con la lista [9, 11, 8, 15, 7] y umbral 10 que el resultado coincide con la traza manual del ejemplo del capítulo.",
+                "language": "python",
+                "code": "medidas = [9, 11, 8, 15, 7]\numbral = 10\nconformes = 0\nfor medida in medidas:\n    if medida <= umbral:\n        conformes += 1\nprint(\"Conformes:\", conformes)",
+                "expectedOutput": "Conformes: 3"
+              },
+              {
+                "kind": "consulta",
+                "title": "Origen y definición del término algoritmo",
+                "prompt": "Consulta en la bibliografía básica la definición formal de algoritmo y el origen histórico del término, y contrástalos con la definición de este documento.",
+                "steps": [
+                  "Localiza el capítulo introductorio de Joyanes Aguilar (2013) o de Oviedo Regino (2005) donde se define algoritmo.",
+                  "Transcribe la definición textual y señala qué propiedades menciona el autor.",
+                  "Compara esa definición con las cinco propiedades de este documento e indica coincidencias y diferencias de matiz."
+                ],
+                "deliverable": "Media página con la definición citada en APA 7 y un párrafo de comparación."
+              },
+              {
+                "kind": "investigacion",
+                "title": "Un algoritmo real en tu programa de ingeniería",
+                "prompt": "Investiga una aplicación real de los algoritmos en un proceso propio de tu programa (control industrial, monitoreo ambiental, automatización o clasificación) y descríbela con el modelo entrada-proceso-salida.",
+                "steps": [
+                  "Busca una fuente académica reciente (artículo, norma técnica o capítulo de libro) sobre el proceso elegido.",
+                  "Identifica en el proceso qué constituye la entrada, el proceso y la salida.",
+                  "Determina si el procedimiento descrito cumple las cinco propiedades del algoritmo y justifica."
+                ],
+                "deliverable": "Informe breve (una página) con el EPS del caso y la fuente citada en APA 7."
+              },
+              {
+                "kind": "reflexion",
+                "title": "Diseñar antes de codificar",
+                "prompt": "En el tema sostuvimos que corregir un error en el diseño cuesta minutos y corregirlo en un sistema ya implementado puede costar días. A partir de tu experiencia o de un caso que conozcas, reflexiona: ¿qué consecuencias tendría, en un proceso industrial real, omitir la representación con flujograma y pseudocódigo y empezar a programar de inmediato?"
+              },
+              {
+                "kind": "practico",
+                "title": "Taller del tema: del proceso al algoritmo verificado",
+                "prompt": "Elige un proceso de tu contexto (calibrar un sensor, clasificar una medición, validar un dato) y recorre con él todo el ciclo del tema: diséñalo con el modelo EPS, represéntalo con pseudocódigo y flujograma, y entrega su prueba de escritorio para al menos un caso típico y un caso límite. Esta es la evidencia del taller formativo del Tema 1.",
+                "answer": "Se espera coherencia entre EPS, flujograma y pseudocódigo, y una tabla de traza que demuestre que el algoritmo cumple finitud y produce la salida correcta en ambos casos."
+              }
+            ]
+          },
+          "pdf-s5-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Cierre del tema y enlace con lo que viene",
+            "body": [
+              "Has completado el ciclo de diseño que da nombre a este documento: definir el algoritmo, delimitarlo con el modelo EPS, representarlo con flujograma y pseudocódigo, traducirlo a Python y verificarlo con una prueba de escritorio. Estas herramientas son el cimiento sobre el que el Tema 2 levantará las variables, los tipos de datos y los operadores, y el Tema 3, las estructuras de control que aquí solo anticipamos.",
+              "Para ampliar las técnicas de verificación, Cormen et al. (2009), en Introduction to algorithms, formalizan en inglés la corrección y la terminación de los algoritmos mediante invariantes de ciclo."
+            ]
+          },
+          "pdf-s5-referencias": {
+            "type": "references",
+            "title": "Referencias",
+            "style": "APA 7",
+            "items": [
+              "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms (3rd ed.). MIT Press.",
+              "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media.",
+              "Joyanes Aguilar, L. (2008). Fundamentos de programación. McGraw-Hill.",
+              "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana.",
+              "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones."
+            ]
+          },
+          "pdf-s5-keybox": {
+            "type": "key-box",
+            "variant": "alerta",
+            "title": "Dos errores que la traza delata de inmediato",
+            "body": [
+              "Acumuladores mal inicializados: un contador que no empieza en cero arrastra ese sesgo hasta el final.",
+              "Ciclo infinito: si la variable de control no cambia entre vueltas, la condición nunca se vuelve falsa y se viola la propiedad de finitud."
+            ]
+          },
+          "pdf-s5-flujo": {
+            "type": "column-flow",
+            "body": [
+              "No cualquier caso sirve para probar. Conviene elegir entradas representativas: una típica, una en el límite —el valor exacto de un umbral, como la pieza de 10 cm que ya nos dio que pensar— y, cuando aplique, una inválida.",
+              "Al trazar un ciclo hay que prestar atención especial a la variable de control y verificar que en cada vuelta avance hacia el valor que vuelve falsa la condición; si no lo hace, el ciclo nunca termina y se viola la propiedad de finitud del capítulo 1.",
+              "Cormen et al. (2009) formalizan esta idea con la noción de invariante de ciclo, una propiedad que se mantiene en cada vuelta y permite argumentar tanto la corrección como la terminación de un algoritmo.",
+              "En la práctica, dos errores muy frecuentes saltan a la vista con solo trazar la tabla: las variables acumuladoras mal inicializadas —un contador que no empieza en cero y arrastra ese sesgo hasta el final— y el ciclo infinito, en el que la variable de control no cambia entre vueltas. Detectarlos a tiempo sobre el papel evita que se conviertan en fallos costosos en un sistema ya implementado.",
+              "Veamos la técnica en acción sobre un ciclo de conteo y luego ordenemos su traza en una tabla, para que el método quede listo antes de afrontar el banco de ejercicios."
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -72,7 +72,9 @@ los recursos son correctos y coherentes con la asignatura, y aportar lo que solo
      revisable, cada una con `[ ] Aprobar [ ] Quitar [ ] Ajustar` y filas para que el profesor **agregue**.
      El banco solo se finaliza con las preguntas aprobadas/ajustadas por el profesor. **Ninguna pregunta
      diagnóstica se publica sin esta revisión docente.** (Si el banco es extenso, puede adjuntarse como anexo
-     del instrumento, pero debe ir CON el instrumento para su validación.)
+     del instrumento, pero debe ir CON el instrumento para su validación.) Una vez aprobado, el banco se
+     exporta a **GIFT** (`evaluacion/diagnostica-<slug>.gift`) para que el profesor lo **importe directamente
+     al banco de preguntas de Moodle** (Banco de preguntas → Importar → formato GIFT).
 
 7. **Sugerencias y feedback libre del docente**:
    - Observaciones generales, errores a evitar, énfasis disciplinares, ejemplos/casos preferidos, fuentes

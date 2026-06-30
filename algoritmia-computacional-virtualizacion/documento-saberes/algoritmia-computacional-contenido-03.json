@@ -1,0 +1,3255 @@
+{
+  "subject": {
+    "id": "algoritmia-computacional-i-tema-03",
+    "title": "Algoritmia Computacional I",
+    "program": "Tecnología en Aplicaciones Digitales Inteligentes",
+    "faculty": "ingenieria",
+    "contentNumber": "03",
+    "contentTotal": "06",
+    "unitLabel": "Tema",
+    "description": "Tema 3 del Documento de Saberes: estructuras selectivas (condicionales) y estructuras de control (iterativas), con operadores lógicos, control de iteración y anidamiento, aplicadas al control del flujo de algoritmos en contextos de ingeniería y procesos industriales.",
+    "syllabus": {
+      "source": {
+        "type": "pdf",
+        "fileName": "syllabus-algoritmia-computacional-i.pdf"
+      },
+      "extractedFields": {
+        "credits": 3,
+        "modality": "Virtual",
+        "faculty": "Facultad de Ingeniería",
+        "level": "Tecnología (pregrado)",
+        "nature": "teorico-practica"
+      },
+      "learningOutcomes": [
+        "RA1: Reconozco las principales estructuras de programación para la generación de algoritmos computacionales utilizando herramientas de control.",
+        "RA2: Evalúo adecuadamente la asignación dinámica de memoria en un computador para la ejecución de algoritmos, a partir de programación estructurada."
+      ],
+      "priorKnowledge": [
+        "Concepto y propiedades del algoritmo; representación con flujograma y pseudocódigo (Tema 1).",
+        "Tipos de datos primitivos, variables, entrada/salida y uso de librerías en un lenguaje de alto nivel (Tema 2).",
+        "Lógica proposicional y operaciones de comparación básicas."
+      ],
+      "competencies": [
+        "UC2: Estructurar metodológicamente el desarrollo de algoritmos y la construcción de prototipos, integrando programación, para generar soluciones tecnológicas aplicadas a procesos industriales."
+      ],
+      "evaluationCriteria": [
+        "CE1: Genera algoritmos con estructuras selectivas y de control que resuelven problemas de su contexto, con condiciones de parada correctas y flujo justificado."
+      ],
+      "topics": [
+        "Condicionales (if/elif/else)",
+        "Operadores lógicos",
+        "Ciclos (for/while)",
+        "Control de iteración (break, continue, condición de parada)",
+        "Anidamiento de estructuras"
+      ],
+      "methodologyNotes": [
+        "Aprendizaje Guiado: ruta guiada con teoría, ejemplos resueltos paso a paso, práctica en Python y retroalimentación formativa.",
+        "Ejemplos transversales a las ingenierías con orientación a procesos industriales.",
+        "Lenguaje de ejemplos y resolución: Python (con pseudocódigo de apoyo cuando aclara la lógica)."
+      ],
+      "evaluationPlan": [
+        "Taller formativo del Tema 3: resolver un problema que requiera estructuras selectivas e iterativas con condición de parada correcta y explicación del control de flujo (RA1)."
+      ],
+      "bibliography": {
+        "basic": [
+          "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana.",
+          "Joyanes Aguilar, L. (2008). Fundamentos de programación. McGraw-Hill."
+        ],
+        "complementary": [
+          "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones.",
+          "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms (3rd ed.). MIT Press.",
+          "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media."
+        ]
+      },
+      "missingFields": [
+        "El syllabus no define ponderaciones numéricas por actividad; la evaluación se mantiene cualitativa y formativa.",
+        "El syllabus no numera explícitamente los temas; se derivan de los saberes S13-S15."
+      ]
+    },
+    "methodology": {
+      "code": "AG",
+      "name": "Aprendizaje Guiado",
+      "rationale": "Ruta guiada para aprendizaje virtual autónomo con acompañamiento, práctica y retroalimentación: cada estructura de control se explica, se traza paso a paso, se implementa en Python y se transfiere a un caso de ingeniería.",
+      "moments": [
+        "Fase 1",
+        "Fase 2",
+        "Fase 3",
+        "Fase 4"
+      ]
+    }
+  },
+  "scorm": {
+    "labels": {
+      "theoryNav": "Contenido Teórico",
+      "materialNav": "Material Complementario"
+    },
+    "sectionOrder": [
+      "intro",
+      "seccion-1",
+      "seccion-2",
+      "seccion-3",
+      "seccion-4",
+      "seccion-5"
+    ],
+    "sections": {
+      "intro": {
+        "kind": "theory",
+        "theme": "Intro",
+        "badge": "Escenario de aprendizaje 03",
+        "navLabel": "Introducción",
+        "title": "Estructuras selectivas y de control",
+        "intro": [
+          "En el Tema 1 aprendiste a representar un algoritmo y en el Tema 2 a implementarlo con tipos de datos y librerías. Hasta ahora, sin embargo, tus algoritmos ejecutaban una instrucción tras otra en línea recta. En este Escenario de aprendizaje 03 le damos al algoritmo la capacidad de decidir y de repetir: las estructuras selectivas (condicionales) y las estructuras de control (iterativas) son el mecanismo con el que un programa elige qué hacer según los datos y cuántas veces hacerlo.",
+          "Trabajaremos siempre sobre situaciones de ingeniería y procesos industriales: clasificar una medición de un sensor, validar un lote de producción, recorrer una serie de lecturas para detectar fallas o controlar un proceso por lotes. Verás cada estructura primero como concepto, luego trazada paso a paso, después implementada y verificada en Python, y finalmente transferida a un caso. El desarrollo ampliado de cada tema, con más ejemplos y referencias, está en el Documento de Saberes (PDF) de la asignatura."
+        ],
+        "componentOrder": [
+          "intro-saberes-previos",
+          "intro-objetivos",
+          "intro-ruta",
+          "intro-diagnostico"
+        ],
+        "components": {
+          "intro-saberes-previos": {
+            "type": "prior-knowledge",
+            "title": "Antes de empezar",
+            "eyebrow": "Saberes previos",
+            "prompts": [
+              "¿Cómo representarías con un flujograma una decisión del tipo \"si la temperatura supera el umbral, activar alarma\"?",
+              "¿Qué tipo de dato usarías para almacenar el resultado de una comparación como \"presion mayor que 5\"?",
+              "Si tuvieras que revisar 500 lecturas de un sensor, ¿escribirías 500 instrucciones o buscarías repetir una sola?"
+            ]
+          },
+          "intro-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos del Tema 3",
+            "learningOutcomeIds": [
+              "RA1"
+            ],
+            "items": [
+              {
+                "icon": "call_split",
+                "text": "Reconozco cuándo un algoritmo debe decidir y selecciono la estructura condicional adecuada (if, if/else, if/elif/else)."
+              },
+              {
+                "icon": "logic",
+                "text": "Combino condiciones con operadores lógicos y de comparación para expresar reglas de decisión de ingeniería."
+              },
+              {
+                "icon": "loop",
+                "text": "Construyo ciclos for y while para repetir un proceso, eligiendo el ciclo según se conozca o no el número de repeticiones."
+              },
+              {
+                "icon": "stop_circle",
+                "text": "Controlo la iteración con condiciones de parada correctas y con break/continue, evitando ciclos infinitos."
+              },
+              {
+                "icon": "account_tree",
+                "text": "Anido estructuras selectivas e iterativas para resolver problemas de control de procesos más complejos."
+              }
+            ]
+          },
+          "intro-ruta": {
+            "type": "theory-block",
+            "title": "Cómo recorrerás este escenario",
+            "eyebrow": "Ruta de aprendizaje guiado",
+            "body": [
+              "El tema se organiza en cinco saberes encadenados. Cada uno aporta una pieza del control de flujo: primero la decisión simple, luego cómo combinar varias condiciones, después la repetición, en seguida cómo gobernar esa repetición y, por último, cómo combinar decisiones y repeticiones anidándolas.",
+              "En cada saber sigues el mismo ciclo de Aprendizaje Guiado: lees la teoría, observas un ejemplo trazado paso a paso (prueba de escritorio), ejecutas y verificas el código en Python, y reflexionas con una actividad. La evidencia del tema es el taller formativo: resolver un problema con estructuras selectivas e iterativas explicando tu control de flujo."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "looks_one",
+                "text": "Saber 1: decisiones con if/elif/else."
+              },
+              {
+                "icon": "looks_two",
+                "text": "Saber 2: operadores lógicos y de comparación."
+              },
+              {
+                "icon": "looks_3",
+                "text": "Saber 3: ciclos for y while."
+              },
+              {
+                "icon": "looks_4",
+                "text": "Saber 4: control de iteración y condición de parada."
+              },
+              {
+                "icon": "looks_5",
+                "text": "Saber 5: anidamiento de estructuras."
+              }
+            ],
+            "closing": [
+              "Mantén abierto un intérprete de Python (o un cuaderno en línea) mientras avanzas: cada saber te pedirá ejecutar y modificar un fragmento para comprobar lo aprendido."
+            ]
+          },
+          "intro-diagnostico": {
+            "type": "quiz",
+            "title": "Chequeo de entrada",
+            "description": "Verifica tu punto de partida antes de entrar al primer saber.",
+            "questions": [
+              {
+                "prompt": "Un algoritmo que ejecuta sus instrucciones una tras otra, sin decidir ni repetir, se llama estructura...",
+                "options": [
+                  {
+                    "text": "Secuencial.",
+                    "correct": true,
+                    "feedback": "Correcto: la estructura secuencial ejecuta paso tras paso. Las estructuras selectivas e iterativas, foco de este tema, le añaden decisión y repetición."
+                  },
+                  {
+                    "text": "Selectiva.",
+                    "correct": false,
+                    "feedback": "Revisa el concepto: una estructura selectiva elige entre alternativas según una condición; la que ejecuta en línea recta es la secuencial."
+                  },
+                  {
+                    "text": "Iterativa.",
+                    "correct": false,
+                    "feedback": "Revisa el concepto: una estructura iterativa repite instrucciones; la que solo ejecuta en orden, sin repetir, es la secuencial."
+                  }
+                ]
+              },
+              {
+                "prompt": "¿Qué valor representa el resultado de la comparación \"15 > 20\" en programación?",
+                "options": [
+                  {
+                    "text": "Un valor booleano: False.",
+                    "correct": true,
+                    "feedback": "Correcto: una comparación produce un booleano (True/False). Aquí 15 no es mayor que 20, por lo que el resultado es False, dato clave para las decisiones."
+                  },
+                  {
+                    "text": "El número 5.",
+                    "correct": false,
+                    "feedback": "Una comparación no resta los valores: evalúa si la relación es verdadera o falsa y devuelve un booleano (True/False)."
+                  },
+                  {
+                    "text": "Un texto con la palabra \"mayor\".",
+                    "correct": false,
+                    "feedback": "El operador de comparación no devuelve texto, sino un valor booleano (True o False) que las estructuras selectivas usan para decidir."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "seccion-1": {
+        "kind": "theory",
+        "theme": "Saber 1",
+        "badge": "Escenario de aprendizaje 03",
+        "navLabel": "Condicionales",
+        "title": "Condicionales: if, elif y else",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "intro": [
+          "La estructura selectiva es el mecanismo con el que un algoritmo elige entre caminos alternativos según se cumpla o no una condición. En Python se expresa con if, elif y else. Aquí aprenderás a redactar la condición, a encadenar varias alternativas y a evitar los errores típicos de selección."
+        ],
+        "componentOrder": [
+          "s1-detonadora",
+          "s1-teoria-1",
+          "s1-figura-flujo",
+          "s1-flashcards",
+          "s1-stepper-traza",
+          "s1-teoria-2",
+          "s1-figura-elif",
+          "s1-tabla-formas",
+          "s1-carousel",
+          "s1-code-clasificar",
+          "s1-teoria-3",
+          "s1-acordeon-errores",
+          "s1-stepper-elif",
+          "s1-quiz",
+          "s1-saberes"
+        ],
+        "components": {
+          "s1-teoria-1": {
+            "type": "theory-block",
+            "title": "La decisión como bifurcación del flujo",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una estructura selectiva evalúa una condición —una expresión que solo puede ser verdadera o falsa— y, según el resultado, ejecuta un bloque de instrucciones u otro. Es la primera vez que el flujo de un algoritmo deja de ser una línea recta y se bifurca.",
+              "La condición se arma combinando los datos que el algoritmo ya posee mediante operadores relacionales: los de orden (mayor que, menor que) y los de equivalencia (igualdad y diferencia). El resultado de esa comparación es un valor booleano, y ese booleano es lo único que mira el if para decidir.",
+              "En un proceso industrial, casi toda regla de operación es una decisión: si la temperatura del horno supera el umbral, cortar el suministro; si el peso de la pieza está fuera de tolerancia, rechazarla. Modelar bien estas decisiones es el primer paso para automatizar el control."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "call_split",
+                "text": "El if ejecuta su bloque solo si la condición es verdadera."
+              },
+              {
+                "icon": "rule",
+                "text": "La condición se evalúa a un booleano: $\\text{True}$ o $\\text{False}$."
+              },
+              {
+                "icon": "alt_route",
+                "text": "El else cubre el caso en que la condición es falsa."
+              },
+              {
+                "icon": "factory",
+                "text": "Una regla de operación industrial casi siempre es una decisión condicional."
+              }
+            ],
+            "sections": [
+              {
+                "title": "La sangría define el bloque",
+                "body": [
+                  "En Python no hay llaves: las instrucciones que pertenecen al if se identifican por la sangría (indentación). Todo lo que esté indentado bajo el if forma parte de su bloque; al volver al margen, el bloque termina."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Decisión mínima",
+              "body": [
+                "Si una lectura de presión supera 8 bar, el algoritmo registra una alerta; si no, no hace nada. Esa es la forma más simple de selección: un if sin else."
+              ]
+            },
+            "closing": [
+              "Antes de escribir un condicional, formula la condición en lenguaje natural y comprueba que solo pueda ser verdadera o falsa; si admite tres respuestas, necesitarás elif."
+            ]
+          },
+          "s1-figura-flujo": {
+            "type": "figure",
+            "title": "Flujograma de la estructura selectiva",
+            "assetId": "t3-s1-flujo-condicional",
+            "src": "",
+            "alt": "Diagrama de flujo con un rombo de decisión que se ramifica en dos caminos: verdadero y falso.",
+            "caption": "El rombo representa la condición; la bifurcación verdadero/falso muestra cómo el flujo elige un camino. Elaboración propia.",
+            "prompt": "Crear un flujograma didáctico en español de una estructura selectiva doble (if/else). Elementos: inicio (óvalo), un rombo de decisión etiquetado '¿temperatura > umbral?', dos flechas salientes rotuladas 'Verdadero' y 'Falso'; la rama Verdadero lleva a un rectángulo 'Activar alarma', la rama Falso a un rectángulo 'Continuar proceso'; ambas confluyen en un óvalo 'fin'. Estilo limpio, paleta sobria, etiquetas legibles."
+          },
+          "s1-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards · vocabulario de la selección",
+            "cards": [
+              {
+                "term": "Condición",
+                "definition": "Expresión booleana que el if evalúa; determina qué bloque se ejecuta. Por ejemplo, presion > 8.",
+                "icon": "rule"
+              },
+              {
+                "term": "Bloque if",
+                "definition": "Conjunto de instrucciones indentadas que se ejecutan solo cuando la condición es verdadera.",
+                "icon": "subdirectory_arrow_right"
+              },
+              {
+                "term": "Cláusula else",
+                "definition": "Camino alternativo que se ejecuta cuando la condición del if resulta falsa; es opcional.",
+                "icon": "alt_route"
+              },
+              {
+                "term": "elif",
+                "definition": "Contracción de 'else if': agrega una condición adicional que solo se evalúa si las anteriores fueron falsas.",
+                "icon": "format_list_bulleted"
+              }
+            ]
+          },
+          "s1-stepper-traza": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto 1 · Traza de un if/else",
+            "statement": "Un sensor entrega una lectura de presión $p = 8.4$ bar y el umbral de seguridad es $u = 8$ bar. Traza la ejecución de un condicional que active la alarma si $p > u$.",
+            "steps": [
+              {
+                "title": "Identificar los datos",
+                "body": "Antes de evaluar nada, fijamos los valores de entrada: la lectura del sensor y el umbral.",
+                "formula": "p = 8.4,\\quad u = 8",
+                "final": false
+              },
+              {
+                "title": "Evaluar la condición",
+                "body": "Sustituimos en la condición del if y obtenemos un booleano.",
+                "formula": "p > u \\;\\Rightarrow\\; 8.4 > 8 \\;\\Rightarrow\\; \\text{True}",
+                "final": false
+              },
+              {
+                "title": "Elegir el bloque",
+                "body": "Como la condición es verdadera, el flujo entra al bloque del if y omite el else.",
+                "formula": "\\text{ejecuta: activar alarma}",
+                "final": false
+              },
+              {
+                "title": "Verificar el resultado",
+                "body": "La alarma se activa, que es la respuesta esperada para una presión por encima del umbral. Si la lectura hubiera sido $p = 7.2$, la condición sería False y se ejecutaría el else.",
+                "formula": "\\text{salida} = \\text{ALERTA: presion alta}",
+                "final": true
+              }
+            ]
+          },
+          "s1-teoria-2": {
+            "type": "theory-block",
+            "title": "De la decisión doble a la decisión múltiple",
+            "eyebrow": "Formas de la selección",
+            "body": [
+              "No todas las decisiones son de dos caminos. Muchas reglas de ingeniería clasifican un valor en varias categorías: un nivel puede ser bajo, normal o alto. Para esto se encadenan condiciones con elif.",
+              "El encadenamiento if/elif/else se evalúa de arriba hacia abajo: en cuanto una condición resulta verdadera, se ejecuta su bloque y se ignoran todas las demás. El else final captura cualquier caso no contemplado, lo que evita dejar valores sin clasificar.",
+              "El orden de las condiciones importa: deben ir de la más específica o restrictiva a la más general, porque la primera que se cumpla detiene la cadena."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "low_priority",
+                "text": "El if/elif/else se evalúa en orden, de arriba abajo."
+              },
+              {
+                "icon": "done_all",
+                "text": "Solo se ejecuta el bloque de la primera condición verdadera."
+              },
+              {
+                "icon": "category",
+                "text": "El else final clasifica todo lo no cubierto."
+              },
+              {
+                "icon": "sort",
+                "text": "El orden de las condiciones cambia el resultado."
+              }
+            ],
+            "closing": [
+              "Cuando clasifiques en rangos, ordena los elif según los límites del rango y deja el else para el caso restante; así ningún dato queda sin categoría."
+            ]
+          },
+          "s1-figura-elif": {
+            "type": "figure",
+            "title": "Cadena if / elif / else evaluada de arriba abajo",
+            "assetId": "t3-s1-cadena-elif",
+            "src": "",
+            "alt": "Diagrama vertical de tres rombos de decisión encadenados: cada uno con salida verdadera a una acción y salida falsa hacia el siguiente rombo, terminando en un bloque else.",
+            "caption": "La evaluación recorre los rombos de arriba hacia abajo y se detiene en la primera condición verdadera. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español de una cadena if/elif/else para clasificar un nivel de tanque. Tres rombos de decisión apilados verticalmente: '¿nivel < 20?' (Verdadero -> caja 'BAJO'), si Falso baja a '¿nivel <= 80?' (Verdadero -> caja 'NORMAL'), si Falso baja a un bloque final 'else -> ALTO'. Marcar con flechas la ruta 'Falso' que desciende de un rombo al siguiente y resaltar que solo se ejecuta la primera caja alcanzada. Estilo limpio, etiquetas legibles."
+          },
+          "s1-tabla-formas": {
+            "type": "table",
+            "title": "Formas de la estructura selectiva",
+            "columns": [
+              "Forma",
+              "Cuándo usarla",
+              "Ejemplo de regla industrial"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "if simple",
+                  "Ejecutar algo solo si se cumple la condición",
+                  "Registrar alerta si la presión supera el umbral"
+                ]
+              },
+              {
+                "cells": [
+                  "if / else",
+                  "Elegir entre dos acciones excluyentes",
+                  "Aceptar o rechazar una pieza según tolerancia"
+                ]
+              },
+              {
+                "cells": [
+                  "if / elif / else",
+                  "Clasificar en tres o más categorías",
+                  "Marcar nivel de tanque como bajo, normal o alto"
+                ]
+              },
+              {
+                "cells": [
+                  "if anidado",
+                  "Decidir dentro de una decisión",
+                  "Si la máquina está activa, evaluar además su temperatura"
+                ]
+              }
+            ]
+          },
+          "s1-carousel": {
+            "type": "carousel",
+            "title": "Carrusel · anatomía de un condicional",
+            "slides": [
+              {
+                "label": "Paso 1",
+                "title": "Palabra clave if",
+                "body": [
+                  "El condicional empieza con if seguido de la condición y dos puntos. La condición es la pregunta que el algoritmo se hace."
+                ],
+                "icon": "help"
+              },
+              {
+                "label": "Paso 2",
+                "title": "La condición booleana",
+                "body": [
+                  "La condición usa operadores de comparación y devuelve True o False. Es lo único que decide qué camino se toma."
+                ],
+                "icon": "rule"
+              },
+              {
+                "label": "Paso 3",
+                "title": "El bloque indentado",
+                "body": [
+                  "Bajo el if van las instrucciones indentadas que se ejecutan si la condición es verdadera. La sangría delimita el bloque."
+                ],
+                "icon": "subdirectory_arrow_right"
+              },
+              {
+                "label": "Paso 4",
+                "title": "Alternativas elif / else",
+                "body": [
+                  "Los elif añaden más preguntas y el else cubre el resto. Juntos forman una clasificación completa sin huecos."
+                ],
+                "icon": "account_tree"
+              }
+            ]
+          },
+          "s1-code-clasificar": {
+            "type": "code",
+            "title": "Clasificar el nivel de un tanque",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "clasificar_nivel.py",
+            "instructions": [
+              "Lee el fragmento e identifica la entrada (nivel), el proceso (las comparaciones encadenadas) y la salida (la categoría).",
+              "Guarda el archivo como clasificar_nivel.py y ejecútalo desde una terminal con python clasificar_nivel.py.",
+              "Cambia el valor de la variable nivel por 12, 55 y 90 y observa qué rama se ejecuta en cada caso para confirmar el orden de evaluación."
+            ],
+            "code": "nivel = 55  # porcentaje de llenado del tanque\n\nif nivel < 20:\n    estado = \"BAJO: reabastecer\"\nelif nivel <= 80:\n    estado = \"NORMAL: operacion estable\"\nelse:\n    estado = \"ALTO: detener llenado\"\n\nprint(f\"Nivel {nivel}% -> {estado}\")",
+            "expectedOutput": [
+              "Con nivel = 55 imprime: Nivel 55% -> NORMAL: operacion estable.",
+              "Interpreta: como 55 no es menor que 20, se evalúa el elif (55 <= 80 es True) y la cadena se detiene ahí sin llegar al else."
+            ]
+          },
+          "s1-teoria-3": {
+            "type": "theory-block",
+            "title": "Errores frecuentes al decidir",
+            "eyebrow": "Calidad de la selección",
+            "body": [
+              "Un condicional mal escrito no genera error de sintaxis pero produce decisiones equivocadas, lo que en un proceso industrial puede significar rechazar piezas buenas o aceptar piezas defectuosas.",
+              "Los tres errores más comunes son: confundir el operador de asignación (=) con el de comparación (==); escribir condiciones que se solapan, de modo que un valor cae en dos categorías; y olvidar el else, dejando casos sin clasificar.",
+              "La defensa contra estos errores es la prueba de escritorio: trazar a mano el condicional con valores límite y comprobar que cada dato cae en exactamente una rama."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "warning",
+                "text": "$=$ asigna; $==$ compara. Confundirlos rompe la decisión."
+              },
+              {
+                "icon": "join_inner",
+                "text": "Condiciones solapadas hacen que un valor encaje en dos ramas."
+              },
+              {
+                "icon": "block",
+                "text": "Sin else final pueden quedar casos sin tratar."
+              }
+            ],
+            "closing": [
+              "Prueba siempre los valores frontera (justo en el umbral) porque ahí es donde se esconden los errores de comparación."
+            ]
+          },
+          "s1-acordeon-errores": {
+            "type": "accordion",
+            "title": "Profundización · decidir sin equivocarse",
+            "items": [
+              {
+                "icon": "compare_arrows",
+                "title": "Igualdad vs. asignación: == frente a =",
+                "open": true,
+                "body": [
+                  "En Python el signo = asigna un valor a una variable, mientras que == compara dos valores y devuelve un booleano. Escribir if x = 10 es un error de sintaxis, pero la confusión conceptual persiste cuando el estudiante razona la lógica.",
+                  "Conviene leer == en voz alta como '¿es igual a?'. En una regla industrial como 'si el estado del motor es igual a apagado', la traducción correcta es estado == \"apagado\", no estado = \"apagado\", que reasignaría la variable y borraría la lectura real.",
+                  "El mismo cuidado aplica a != (distinto de), <= y >=: son operadores de comparación que producen el booleano que el if necesita; nunca modifican los datos."
+                ]
+              },
+              {
+                "icon": "layers",
+                "title": "Condiciones solapadas y orden de los rangos",
+                "body": [
+                  "Cuando se clasifica por rangos, dos condiciones pueden cubrir el mismo valor si los límites se repiten. Por ejemplo, if nivel <= 80 seguido de elif nivel >= 80 hace que el valor 80 sea capturado por la primera y nunca por la segunda; el solapamiento queda oculto porque solo se ejecuta la primera verdadera.",
+                  "La forma robusta es definir rangos contiguos y excluyentes apoyándose en el orden de evaluación: como cada elif solo se evalúa si los anteriores fueron falsos, basta comparar contra un único límite por rama (nivel < 20, luego nivel <= 80, luego el else).",
+                  "Esta es una diferencia importante con encadenar varios if independientes: varios if separados pueden ejecutar más de un bloque, mientras que if/elif/else ejecuta a lo sumo uno."
+                ]
+              }
+            ]
+          },
+          "s1-stepper-elif": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto 2 · Clasificación con elif",
+            "statement": "Clasifica una temperatura de proceso $T = 78^{\\circ}\\mathrm{C}$ en: baja si $T < 40$, normal si $40 \\le T \\le 80$, alta si $T > 80$.",
+            "steps": [
+              {
+                "title": "Probar la primera condición",
+                "body": "Evaluamos el if. Si es falsa, pasamos al elif.",
+                "formula": "T < 40 \\;\\Rightarrow\\; 78 < 40 \\;\\Rightarrow\\; \\text{False}",
+                "final": false
+              },
+              {
+                "title": "Probar la segunda condición",
+                "body": "Como el if fue falso, evaluamos el elif. Aquí basta con el límite superior porque el inferior ya quedó descartado.",
+                "formula": "40 \\le T \\le 80 \\;\\Rightarrow\\; 40 \\le 78 \\le 80 \\;\\Rightarrow\\; \\text{True}",
+                "final": false
+              },
+              {
+                "title": "Ejecutar el bloque y detener la cadena",
+                "body": "La condición es verdadera: se ejecuta el bloque 'normal' y no se evalúa el else.",
+                "formula": "\\text{categoria} = \\text{normal}",
+                "final": false
+              },
+              {
+                "title": "Verificar con un valor frontera",
+                "body": "Si $T = 80$, la condición $40 \\le 80 \\le 80$ sigue siendo True, así que 80 se clasifica como normal y no como alta. La clasificación cubre todos los casos sin huecos.",
+                "formula": "T = 80 \\;\\Rightarrow\\; \\text{normal}",
+                "final": true
+              }
+            ]
+          },
+          "s1-quiz": {
+            "type": "quiz",
+            "title": "Chequeo · selección",
+            "questions": [
+              {
+                "prompt": "En un if/elif/else, si la condición del if y la del elif son ambas verdaderas para un mismo dato, ¿qué bloque se ejecuta?",
+                "options": [
+                  {
+                    "text": "Solo el del if, porque es la primera condición verdadera y la cadena se detiene.",
+                    "correct": true,
+                    "feedback": "Correcto: el encadenamiento se evalúa de arriba abajo y ejecuta únicamente el bloque de la primera condición verdadera; las demás se ignoran."
+                  },
+                  {
+                    "text": "Ambos, uno después del otro.",
+                    "correct": false,
+                    "feedback": "Revisa el orden de evaluación: a diferencia de varios if independientes, el if/elif/else ejecuta a lo sumo un bloque, el de la primera condición verdadera."
+                  },
+                  {
+                    "text": "Solo el del else.",
+                    "correct": false,
+                    "feedback": "El else solo se ejecuta cuando todas las condiciones anteriores son falsas; aquí la primera ya es verdadera."
+                  }
+                ]
+              }
+            ]
+          },
+          "s1-saberes": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza sobre las condicionales en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) amplía el saber de las estructuras selectivas con la equivalencia entre flujograma, pseudocódigo y código Python, más ejemplos resueltos de clasificación por rangos en contextos industriales y los errores frontera que conviene anticipar."
+            ],
+            "reference": "Tema 3 · Saber 1: Condicionales (if/elif/else)",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          },
+          "s1-detonadora": {
+            "id": "s1-detonadora",
+            "type": "trigger-question",
+            "eyebrow": "Para empezar",
+            "question": "Un sistema de control de un ascensor debe decidir, en milésimas de segundo, si frena, acelera o se detiene según la carga, la velocidad y el piso destino. Si tuvieras que escribir esa decisión con condiciones encadenadas, ¿en qué orden evaluarías los casos y qué pasaría si dos condiciones pudieran cumplirse a la vez?"
+          }
+        }
+      },
+      "seccion-2": {
+        "kind": "theory",
+        "theme": "Saber 2",
+        "badge": "Escenario de aprendizaje 03",
+        "navLabel": "Operadores lógicos",
+        "title": "Operadores lógicos y de comparación",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "intro": [
+          "Una sola comparación rara vez basta para decidir en ingeniería: casi siempre hay que combinar varias condiciones. Los operadores lógicos and, or y not permiten construir reglas compuestas. En este saber aprenderás a combinarlos, a leer su tabla de verdad y a aprovechar la evaluación perezosa de Python."
+        ],
+        "componentOrder": [
+          "s2-teoria-1",
+          "s2-tabla-comparacion",
+          "s2-flashcards",
+          "s2-figura-tabla-verdad",
+          "s2-teoria-2",
+          "s2-figura-banda",
+          "s2-carousel",
+          "s2-stepper-and",
+          "s2-code-validar",
+          "s2-teoria-3",
+          "s2-acordeon",
+          "s2-stepper-cortocircuito",
+          "s2-multiselect",
+          "s2-saberes"
+        ],
+        "components": {
+          "s2-teoria-1": {
+            "type": "theory-block",
+            "title": "Comparar antes de combinar",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Los operadores de comparación relacionan dos valores y producen un booleano: igual ($==$), distinto ($\\ne$), mayor ($>$), menor ($<$), mayor o igual ($\\ge$) y menor o igual ($\\le$). Son los ladrillos con los que se construye cualquier condición.",
+              "Cada comparación responde una pregunta cerrada de sí/no sobre los datos. Por sí sola sirve para decisiones simples, pero las reglas reales suelen exigir que se cumplan varias preguntas a la vez o que baste con una de varias.",
+              "Por eso, antes de combinar, hay que dominar qué devuelve cada comparación. Un error muy común es comparar un texto con un número, lo que produce resultados inesperados; las dos magnitudes que se comparan deben ser del mismo tipo de dato."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "rule",
+                "text": "Cada comparación devuelve un booleano: $\\text{True}$ o $\\text{False}$."
+              },
+              {
+                "icon": "balance",
+                "text": "Compara valores del mismo tipo de dato."
+              },
+              {
+                "icon": "equal",
+                "text": "$==$ compara; $=$ asigna."
+              },
+              {
+                "icon": "swap_vert",
+                "text": "$\\ge$ y $\\le$ incluyen el límite; $>$ y $<$ lo excluyen."
+              }
+            ],
+            "example": {
+              "title": "De la regla a la comparación",
+              "body": [
+                "La regla 'la pieza pasa si su longitud está dentro de tolerancia' se traduce en dos comparaciones: longitud >= minimo y longitud <= maximo, que luego habrá que combinar."
+              ]
+            },
+            "closing": [
+              "Escribe cada comparación por separado y verifica su booleano antes de unirlas con un operador lógico."
+            ]
+          },
+          "s2-tabla-comparacion": {
+            "type": "table",
+            "title": "Operadores de comparación en Python",
+            "columns": [
+              "Operador",
+              "Significado",
+              "Ejemplo",
+              "Resultado"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "==",
+                  "Igual a",
+                  "presion == 5",
+                  {
+                    "badge": "booleano",
+                    "tone": "info"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "!=",
+                  "Distinto de",
+                  "estado != \"ok\"",
+                  {
+                    "badge": "booleano",
+                    "tone": "info"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  ">",
+                  "Mayor que",
+                  "temp > 80",
+                  {
+                    "badge": "booleano",
+                    "tone": "info"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "<",
+                  "Menor que",
+                  "nivel < 20",
+                  {
+                    "badge": "booleano",
+                    "tone": "info"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  ">=",
+                  "Mayor o igual",
+                  "voltaje >= 220",
+                  {
+                    "badge": "incluye límite",
+                    "tone": "success"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "<=",
+                  "Menor o igual",
+                  "rpm <= 3000",
+                  {
+                    "badge": "incluye límite",
+                    "tone": "success"
+                  }
+                ]
+              }
+            ]
+          },
+          "s2-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards · operadores lógicos",
+            "cards": [
+              {
+                "term": "and",
+                "definition": "Devuelve True solo si ambas condiciones son verdaderas. Modela reglas que exigen cumplir todo a la vez.",
+                "icon": "join_inner"
+              },
+              {
+                "term": "or",
+                "definition": "Devuelve True si al menos una condición es verdadera. Modela reglas donde basta con una causa.",
+                "icon": "join_full"
+              },
+              {
+                "term": "not",
+                "definition": "Invierte el valor booleano: convierte True en False y viceversa. Útil para negar una condición.",
+                "icon": "flip"
+              },
+              {
+                "term": "Evaluación perezosa",
+                "definition": "Python deja de evaluar en cuanto el resultado ya está decidido: en un and, si la primera es False, no mira la segunda.",
+                "icon": "bolt"
+              }
+            ]
+          },
+          "s2-figura-tabla-verdad": {
+            "type": "figure",
+            "title": "Tablas de verdad de and, or y not",
+            "assetId": "t3-s2-tablas-verdad",
+            "src": "",
+            "alt": "Tres tablas de verdad: and y or con cuatro filas de combinaciones True/False, y not con dos filas.",
+            "caption": "Las tablas de verdad resumen el resultado de cada operador lógico para todas las combinaciones de entradas. Elaboración propia.",
+            "prompt": "Diseñar una figura didáctica en español con tres tablas de verdad lado a lado. Tabla 'and': columnas A, B, A and B, con filas (V,V->V), (V,F->F), (F,V->F), (F,F->F). Tabla 'or': columnas A, B, A or B, filas (V,V->V), (V,F->V), (F,V->V), (F,F->F). Tabla 'not': columnas A, not A, filas (V->F), (F->V). Usar V/F con colores suaves (verde para verdadero, gris para falso), encabezados claros y título general 'Operadores lógicos'."
+          },
+          "s2-teoria-2": {
+            "type": "theory-block",
+            "title": "Combinar condiciones con and, or y not",
+            "eyebrow": "Reglas compuestas",
+            "body": [
+              "El operador and exige que todas las condiciones unidas sean verdaderas; basta con que una sea falsa para que el conjunto sea falso. Modela reglas del tipo 'la pieza pasa si cumple esto y aquello'.",
+              "El operador or se satisface con que al menos una condición sea verdadera; solo es falso cuando todas lo son. Modela reglas del tipo 'detener el proceso si hay sobrecarga o si hay sobrecalentamiento'.",
+              "El operador not invierte el resultado de una condición. Permite expresar 'mientras el sistema no esté en falla' como not en_falla. Combinar los tres da reglas tan expresivas como cualquier protocolo de operación."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "join_inner",
+                "text": "$A \\text{ and } B$ es verdadero solo si $A$ y $B$ lo son."
+              },
+              {
+                "icon": "join_full",
+                "text": "$A \\text{ or } B$ es falso solo si ambos lo son."
+              },
+              {
+                "icon": "flip",
+                "text": "$\\text{not } A$ invierte el booleano de $A$."
+              },
+              {
+                "icon": "account_tree",
+                "text": "El paréntesis fija el orden cuando se mezclan and y or."
+              }
+            ],
+            "closing": [
+              "Cuando mezcles and con or, usa paréntesis para dejar explícito el agrupamiento; no confíes solo en la precedencia."
+            ]
+          },
+          "s2-figura-banda": {
+            "type": "figure",
+            "title": "El and como intersección de dos condiciones en una recta",
+            "assetId": "t3-s2-banda-tolerancia",
+            "src": "",
+            "alt": "Recta numérica con una zona sombreada entre el mínimo y el máximo; las dos comparaciones se muestran como semirrectas que al intersectarse forman la banda aceptada.",
+            "caption": "La regla longitud >= mínimo and longitud <= máximo equivale a la intersección de dos semirrectas: solo la banda común se acepta. Elaboración propia.",
+            "prompt": "Diseñar una figura didáctica en español sobre una recta numérica horizontal (eje 'longitud (mm)') con marcas en 49.5 (mínimo) y 50.5 (máximo). Dibujar dos franjas: una flecha/semirrecta hacia la derecha desde 49.5 etiquetada 'longitud >= 49.5' y otra hacia la izquierda desde 50.5 etiquetada 'longitud <= 50.5'; resaltar en verde la zona de intersección entre 49.5 y 50.5 con la etiqueta 'and -> ACEPTAR' y en gris las zonas exteriores con 'RECHAZAR'. Ilustra cómo el and combina dos comparaciones en un rango. Estilo limpio."
+          },
+          "s2-carousel": {
+            "type": "carousel",
+            "title": "Carrusel · reglas compuestas en planta",
+            "slides": [
+              {
+                "label": "and",
+                "title": "Doble validación",
+                "body": [
+                  "Una pieza se acepta si longitud >= minimo and longitud <= maximo. Ambas deben cumplirse: si una falla, la pieza se rechaza."
+                ],
+                "icon": "join_inner"
+              },
+              {
+                "label": "or",
+                "title": "Parada por cualquier causa",
+                "body": [
+                  "El proceso se detiene si temperatura > 90 or presion > 8. Basta con que una alarma se dispare para detener."
+                ],
+                "icon": "join_full"
+              },
+              {
+                "label": "not",
+                "title": "Operar mientras no hay falla",
+                "body": [
+                  "La línea avanza mientras not en_mantenimiento. La negación convierte un estado en su contrario para gobernar el flujo."
+                ],
+                "icon": "flip"
+              },
+              {
+                "label": "mixto",
+                "title": "Combinación con paréntesis",
+                "body": [
+                  "'Activar si (turno_dia or turno_noche) and not en_falla' agrupa con paréntesis para que el and no se aplique antes de tiempo."
+                ],
+                "icon": "account_tree"
+              }
+            ]
+          },
+          "s2-stepper-and": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto 1 · Validación con and",
+            "statement": "Una pieza se acepta si su longitud $L = 49.6\\,\\mathrm{mm}$ cumple $L \\ge 49.5$ y $L \\le 50.5$. Evalúa la regla compuesta.",
+            "steps": [
+              {
+                "title": "Evaluar la primera comparación",
+                "body": "Comprobamos el límite inferior.",
+                "formula": "L \\ge 49.5 \\;\\Rightarrow\\; 49.6 \\ge 49.5 \\;\\Rightarrow\\; \\text{True}",
+                "final": false
+              },
+              {
+                "title": "Evaluar la segunda comparación",
+                "body": "Comprobamos el límite superior.",
+                "formula": "L \\le 50.5 \\;\\Rightarrow\\; 49.6 \\le 50.5 \\;\\Rightarrow\\; \\text{True}",
+                "final": false
+              },
+              {
+                "title": "Combinar con and",
+                "body": "El and exige que ambas sean verdaderas; lo son, así que el conjunto es verdadero.",
+                "formula": "\\text{True} \\;\\text{and}\\; \\text{True} \\;\\Rightarrow\\; \\text{True}",
+                "final": false
+              },
+              {
+                "title": "Concluir la decisión",
+                "body": "La regla es verdadera: la pieza se acepta. Si $L$ fuera $51.0$, la segunda comparación sería False y el and daría False, rechazando la pieza.",
+                "formula": "\\text{decision} = \\text{ACEPTAR}",
+                "final": true
+              }
+            ]
+          },
+          "s2-code-validar": {
+            "type": "code",
+            "title": "Validar tolerancia con operadores lógicos",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "validar_tolerancia.py",
+            "instructions": [
+              "Identifica cómo la variable booleana dentro_tolerancia almacena el resultado de combinar dos comparaciones con and.",
+              "Guarda el archivo como validar_tolerancia.py y ejecútalo con python validar_tolerancia.py.",
+              "Modifica longitud a 51.0 y luego a 49.5 (valor frontera) y comprueba que el and clasifica correctamente cada caso."
+            ],
+            "code": "longitud = 49.6  # mm medidos\nminimo, maximo = 49.5, 50.5\n\ndentro_tolerancia = longitud >= minimo and longitud <= maximo\n\nif dentro_tolerancia:\n    print(f\"{longitud} mm -> ACEPTAR\")\nelse:\n    print(f\"{longitud} mm -> RECHAZAR\")",
+            "expectedOutput": [
+              "Con longitud = 49.6 imprime: 49.6 mm -> ACEPTAR.",
+              "Interpreta: ambas comparaciones son True, su and es True; cambiando a 51.0 la segunda comparación se vuelve False y el resultado pasa a RECHAZAR."
+            ]
+          },
+          "s2-teoria-3": {
+            "type": "theory-block",
+            "title": "Precedencia y evaluación perezosa",
+            "eyebrow": "Cómo evalúa Python",
+            "body": [
+              "Cuando una expresión mezcla operadores, Python aplica un orden de precedencia: primero las comparaciones, luego not, después and y por último or. Si el agrupamiento deseado no coincide con esa precedencia, hay que usar paréntesis.",
+              "Python además usa evaluación perezosa (de cortocircuito): en un and, si la primera condición es falsa, no evalúa la segunda porque el resultado ya está decidido; en un or, si la primera es verdadera, tampoco evalúa la segunda.",
+              "La evaluación perezosa no es solo una optimización: permite escribir condiciones seguras, por ejemplo verificar primero que un divisor no sea cero antes de usarlo en una segunda comparación."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "low_priority",
+                "text": "Precedencia: comparaciones, luego $\\text{not}$, luego $\\text{and}$, luego $\\text{or}$."
+              },
+              {
+                "icon": "bolt",
+                "text": "El and corta en la primera condición falsa."
+              },
+              {
+                "icon": "bolt",
+                "text": "El or corta en la primera condición verdadera."
+              },
+              {
+                "icon": "shield",
+                "text": "El cortocircuito permite condiciones de guarda seguras."
+              }
+            ],
+            "closing": [
+              "Aprovecha el cortocircuito poniendo primero la condición que protege a la siguiente (por ejemplo, divisor != 0 antes de dividir)."
+            ]
+          },
+          "s2-acordeon": {
+            "type": "accordion",
+            "title": "Profundización · lógica robusta",
+            "items": [
+              {
+                "icon": "rule",
+                "title": "Las leyes de De Morgan al negar reglas",
+                "open": true,
+                "body": [
+                  "Negar una regla compuesta es fuente frecuente de errores. Las leyes de De Morgan dan la equivalencia exacta: $\\text{not}(A \\text{ and } B)$ equivale a $(\\text{not } A) \\text{ or } (\\text{not } B)$, y $\\text{not}(A \\text{ or } B)$ equivale a $(\\text{not } A) \\text{ and } (\\text{not } B)$.",
+                  "En la práctica, 'la pieza no cumple ambas tolerancias' no significa 'no cumple ninguna': al distribuir el not, el and se transforma en or. Aplicar la ley evita decisiones invertidas que aceptarían piezas fuera de rango.",
+                  "Antes de negar a mano, conviene preguntarse si es más legible expresar la condición positiva directamente; muchas veces reescribir la regla en términos afirmativos es más claro que negar una compuesta."
+                ]
+              },
+              {
+                "icon": "bolt",
+                "title": "Cortocircuito como mecanismo de protección",
+                "body": [
+                  "La evaluación de cortocircuito convierte el orden de las condiciones en una herramienta de diseño. Si se escribe caudal != 0 and presion / caudal > limite, Python solo calcula la división cuando caudal != 0 es verdadero, evitando un error de división por cero.",
+                  "Si se invirtiera el orden (presion / caudal > limite and caudal != 0), la división se intentaría siempre y el programa fallaría cuando el caudal fuera cero. El cortocircuito solo protege si la condición de guarda va primero.",
+                  "Este patrón, llamado condición de guarda, es habitual en control de procesos: se verifica que un recurso esté disponible o que un sensor responda antes de usar su lectura en un cálculo posterior."
+                ]
+              }
+            ]
+          },
+          "s2-stepper-cortocircuito": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto 2 · Cortocircuito con or",
+            "statement": "Evalúa la regla de parada $(\\,T > 90\\,)\\ \\text{or}\\ (\\,p > 8\\,)$ con $T = 95$ y $p = 6$, y explica el cortocircuito.",
+            "steps": [
+              {
+                "title": "Evaluar la primera condición",
+                "body": "Comprobamos la temperatura.",
+                "formula": "T > 90 \\;\\Rightarrow\\; 95 > 90 \\;\\Rightarrow\\; \\text{True}",
+                "final": false
+              },
+              {
+                "title": "Aplicar el cortocircuito del or",
+                "body": "Como la primera condición de un or es verdadera, el resultado global ya es True y Python no evalúa la segunda.",
+                "formula": "\\text{True} \\;\\text{or}\\; (\\ldots) \\;\\Rightarrow\\; \\text{True}",
+                "final": false
+              },
+              {
+                "title": "Concluir la decisión",
+                "body": "La regla es verdadera: el proceso se detiene por sobretemperatura, sin necesidad de mirar la presión.",
+                "formula": "\\text{accion} = \\text{DETENER}",
+                "final": false
+              },
+              {
+                "title": "Verificar el caso contrario",
+                "body": "Si $T = 70$ y $p = 6$, la primera es False y sí se evalúa la segunda: $6 > 8$ es False, el or da False y el proceso continúa.",
+                "formula": "\\text{False} \\;\\text{or}\\; \\text{False} \\;\\Rightarrow\\; \\text{False}",
+                "final": true
+              }
+            ]
+          },
+          "s2-multiselect": {
+            "type": "multi-select",
+            "title": "Selección múltiple · reglas verdaderas",
+            "prompt": "Con a = 5 y b = 0, selecciona TODAS las expresiones que se evalúan a True.",
+            "options": [
+              {
+                "text": "a > 0 and b == 0",
+                "correct": true
+              },
+              {
+                "text": "a > 10 or b == 0",
+                "correct": true
+              },
+              {
+                "text": "not (a == b)",
+                "correct": true
+              },
+              {
+                "text": "a < 0 and b > 0",
+                "correct": false
+              },
+              {
+                "text": "a == 0 or b > 0",
+                "correct": false
+              }
+            ]
+          },
+          "s2-saberes": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza sobre los operadores lógicos en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) desarrolla el álgebra booleana detrás de and, or y not, las leyes de De Morgan aplicadas a reglas de control y más ejemplos de condiciones de guarda con evaluación de cortocircuito para proteger cálculos en procesos industriales."
+            ],
+            "reference": "Tema 3 · Saber 2: Operadores lógicos y de comparación",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-3": {
+        "kind": "theory",
+        "theme": "Saber 3",
+        "badge": "Escenario de aprendizaje 03",
+        "navLabel": "Ciclos for y while",
+        "title": "Estructuras iterativas: ciclos for y while",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "intro": [
+          "Repetir un proceso es tan común como decidir: revisar cada lectura de un turno, procesar cada pieza de un lote o iterar hasta alcanzar una temparatura objetivo. Las estructuras iterativas, o ciclos, automatizan esa repetición. Aquí distinguirás el ciclo for del while y aprenderás a elegir cada uno según conozcas o no el número de repeticiones."
+        ],
+        "componentOrder": [
+          "s3-teoria-1",
+          "s3-figura-flujo-ciclo",
+          "s3-flashcards",
+          "s3-stepper-for",
+          "s3-teoria-2",
+          "s3-figura-forvswhile",
+          "s3-tabla-forvswhile",
+          "s3-carousel",
+          "s3-code-promedio",
+          "s3-teoria-3",
+          "s3-acordeon",
+          "s3-stepper-while",
+          "s3-chart-iteraciones",
+          "s3-saberes"
+        ],
+        "components": {
+          "s3-teoria-1": {
+            "type": "theory-block",
+            "title": "La repetición como estructura de control",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una estructura iterativa ejecuta un bloque de instrucciones varias veces. El bloque que se repite se llama cuerpo del ciclo, y cada repetición es una iteración. La diferencia esencial entre los dos ciclos de Python es cómo se controla cuántas veces se repite.",
+              "El ciclo for recorre los elementos de una colección o un rango conocido: se usa cuando se sabe de antemano sobre qué iterar (cada lectura de una lista, cada número de 1 a 100). El ciclo while repite mientras una condición sea verdadera: se usa cuando no se sabe cuántas iteraciones harán falta, solo cuándo parar.",
+              "Sin ciclos, recorrer 500 lecturas exigiría escribir 500 instrucciones. Con un ciclo, una sola descripción del cuerpo basta para procesar cualquier cantidad de datos, lo que hace los algoritmos escalables a la cantidad real de información de un proceso."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "loop",
+                "text": "El cuerpo del ciclo es el bloque que se repite en cada iteración."
+              },
+              {
+                "icon": "format_list_numbered",
+                "text": "El for recorre una colección o un rango conocido."
+              },
+              {
+                "icon": "all_inclusive",
+                "text": "El while repite mientras una condición sea verdadera."
+              },
+              {
+                "icon": "trending_up",
+                "text": "Un ciclo hace el algoritmo escalable a cualquier número de datos."
+              }
+            ],
+            "example": {
+              "title": "Recorrer un turno de lecturas",
+              "body": [
+                "Para sumar las lecturas de un turno almacenadas en una lista, un for recorre cada lectura y la acumula; no importa si el turno tuvo 8 o 800 mediciones, el cuerpo del ciclo es el mismo."
+              ]
+            },
+            "closing": [
+              "Pregúntate: ¿sé cuántas veces voy a repetir? Si la respuesta es sí, piensa en for; si solo sé la condición para parar, piensa en while."
+            ]
+          },
+          "s3-figura-flujo-ciclo": {
+            "type": "figure",
+            "title": "Flujograma de un ciclo while",
+            "assetId": "t3-s3-flujo-ciclo",
+            "src": "",
+            "alt": "Diagrama de flujo de un ciclo: la condición se evalúa, si es verdadera ejecuta el cuerpo y vuelve a la condición; si es falsa sale.",
+            "caption": "El flujo regresa a la condición tras cada iteración; cuando la condición se vuelve falsa, el ciclo termina. Elaboración propia.",
+            "prompt": "Crear un flujograma didáctico en español de un ciclo while. Elementos: inicio (óvalo), un rombo de decisión '¿condicion verdadera?'; rama 'Sí' lleva a un rectángulo 'Ejecutar cuerpo del ciclo' y luego una flecha que regresa hacia el rombo (formando el lazo de repetición); rama 'No' lleva al óvalo 'fin'. Resaltar la flecha de retorno como el bucle. Estilo limpio, etiquetas legibles."
+          },
+          "s3-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards · vocabulario de la iteración",
+            "cards": [
+              {
+                "term": "Iteración",
+                "definition": "Una ejecución completa del cuerpo del ciclo. Un ciclo de 10 repeticiones realiza 10 iteraciones.",
+                "icon": "loop"
+              },
+              {
+                "term": "for",
+                "definition": "Ciclo definido: recorre cada elemento de una secuencia o rango cuyo tamaño se conoce antes de empezar.",
+                "icon": "format_list_numbered"
+              },
+              {
+                "term": "while",
+                "definition": "Ciclo indefinido: repite mientras una condición sea verdadera; el número de iteraciones depende de los datos.",
+                "icon": "all_inclusive"
+              },
+              {
+                "term": "range(n)",
+                "definition": "Genera los enteros de 0 a n-1; es la forma habitual de repetir un for un número fijo de veces.",
+                "icon": "tag"
+              },
+              {
+                "term": "Acumulador",
+                "definition": "Variable que guarda un resultado parcial (suma, conteo, máximo) y se actualiza en cada iteración.",
+                "icon": "functions"
+              }
+            ]
+          },
+          "s3-stepper-for": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto 1 · Acumular con un for",
+            "statement": "Calcula la suma de las lecturas $[3, 5, 2]$ recorriéndolas con un for y un acumulador inicializado en $0$.",
+            "steps": [
+              {
+                "title": "Inicializar el acumulador",
+                "body": "Antes del ciclo, la suma vale cero.",
+                "formula": "\\text{suma} = 0",
+                "final": false
+              },
+              {
+                "title": "Iteración 1",
+                "body": "Toma el primer elemento (3) y lo suma al acumulador.",
+                "formula": "\\text{suma} = 0 + 3 = 3",
+                "final": false
+              },
+              {
+                "title": "Iteración 2",
+                "body": "Toma el segundo elemento (5) y lo suma.",
+                "formula": "\\text{suma} = 3 + 5 = 8",
+                "final": false
+              },
+              {
+                "title": "Iteración 3",
+                "body": "Toma el tercer elemento (2) y lo suma. No quedan más elementos, el for termina.",
+                "formula": "\\text{suma} = 8 + 2 = 10",
+                "final": false
+              },
+              {
+                "title": "Verificar el resultado",
+                "body": "El for hizo exactamente tres iteraciones (una por elemento) y el acumulador quedó en 10, que coincide con $3+5+2$.",
+                "formula": "\\text{suma} = 10",
+                "final": true
+              }
+            ]
+          },
+          "s3-teoria-2": {
+            "type": "theory-block",
+            "title": "Elegir entre for y while",
+            "eyebrow": "Criterio de selección",
+            "body": [
+              "El for es el ciclo definido: el número de iteraciones queda fijado por la colección o el rango que recorre. Es ideal para procesar cada elemento de una lista de lecturas o para repetir una acción un número exacto de veces con range.",
+              "El while es el ciclo indefinido: repite mientras su condición sea verdadera, y el número de iteraciones depende de cómo evolucionen los datos dentro del cuerpo. Es ideal para procesos que terminan al alcanzar un objetivo, como calentar hasta una temperatura o pedir un dato hasta que sea válido.",
+              "Un while mal diseñado, cuya condición nunca se vuelve falsa, produce un ciclo infinito que bloquea el programa. Por eso todo while necesita que algo en su cuerpo modifique la variable de la condición y la acerque a la parada."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "format_list_numbered",
+                "text": "for: número de iteraciones conocido (ciclo definido)."
+              },
+              {
+                "icon": "all_inclusive",
+                "text": "while: número de iteraciones dependiente de la condición (indefinido)."
+              },
+              {
+                "icon": "warning",
+                "text": "Un while sin avance hacia la parada es un ciclo infinito."
+              },
+              {
+                "icon": "update",
+                "text": "El cuerpo del while debe modificar la variable de control."
+              }
+            ],
+            "closing": [
+              "Si eliges while, identifica desde el principio qué instrucción del cuerpo acerca la condición a hacerse falsa; sin ella, el ciclo no termina."
+            ]
+          },
+          "s3-figura-forvswhile": {
+            "type": "figure",
+            "title": "Dónde vive el control: for definido frente a while indefinido",
+            "assetId": "t3-s3-for-vs-while",
+            "src": "",
+            "alt": "Dos esquemas lado a lado: a la izquierda un for que recorre una colección de cajas etiquetadas; a la derecha un while con un rombo de condición que regula el lazo.",
+            "caption": "En el for el control lo fija la colección recorrida; en el while lo fija la condición que se reevalúa en cada vuelta. Elaboración propia.",
+            "prompt": "Diseñar una figura comparativa en español con dos paneles. Panel izquierdo titulado 'for (definido)': una fila de cajas etiquetadas lectura[0], lectura[1], lectura[2]... con una flecha que las recorre una a una y la nota 'el número de iteraciones lo fija la colección'. Panel derecho titulado 'while (indefinido)': un rombo 'temperatura < objetivo' con un lazo de retorno hacia sí mismo y una salida cuando es falso, con la nota 'el número de iteraciones lo fija la condición'. Resaltar visualmente qué controla cada ciclo. Estilo limpio, etiquetas legibles."
+          },
+          "s3-tabla-forvswhile": {
+            "type": "table",
+            "title": "for frente a while",
+            "columns": [
+              "Criterio",
+              "Ciclo for",
+              "Ciclo while"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Tipo",
+                  "Definido",
+                  "Indefinido"
+                ]
+              },
+              {
+                "cells": [
+                  "Controla las repeticiones",
+                  "La colección o el range",
+                  "La condición booleana"
+                ]
+              },
+              {
+                "cells": [
+                  "Se conoce el número de iteraciones",
+                  {
+                    "badge": "Sí",
+                    "tone": "success"
+                  },
+                  {
+                    "badge": "No siempre",
+                    "tone": "warning"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Caso típico industrial",
+                  "Procesar cada pieza de un lote",
+                  "Calentar hasta alcanzar la temperatura"
+                ]
+              },
+              {
+                "cells": [
+                  "Riesgo principal",
+                  "Recorrer fuera de rango",
+                  "Ciclo infinito"
+                ]
+              }
+            ]
+          },
+          "s3-carousel": {
+            "type": "carousel",
+            "title": "Carrusel · patrones de ciclo",
+            "slides": [
+              {
+                "label": "Recorrido",
+                "title": "Recorrer una colección",
+                "body": [
+                  "for lectura in lecturas: procesa una a una cada medición almacenada. El ciclo termina solo cuando se agota la colección."
+                ],
+                "icon": "list"
+              },
+              {
+                "label": "Conteo fijo",
+                "title": "Repetir n veces",
+                "body": [
+                  "for i in range(10): ejecuta el cuerpo exactamente diez veces. range controla el número de iteraciones."
+                ],
+                "icon": "repeat"
+              },
+              {
+                "label": "Condición",
+                "title": "Repetir hasta un objetivo",
+                "body": [
+                  "while temperatura < objetivo: sigue calentando mientras no se alcance la meta. El cuerpo debe acercar temperatura al objetivo."
+                ],
+                "icon": "device_thermostat"
+              },
+              {
+                "label": "Validación",
+                "title": "Pedir hasta que sea válido",
+                "body": [
+                  "while not dato_valido: vuelve a solicitar el dato hasta que pase la validación; el número de intentos no se conoce de antemano."
+                ],
+                "icon": "verified"
+              }
+            ]
+          },
+          "s3-code-promedio": {
+            "type": "code",
+            "title": "Promedio de lecturas con un for",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "promedio_lecturas.py",
+            "instructions": [
+              "Identifica el acumulador (suma) y el contador (len) que permiten calcular el promedio al recorrer la lista.",
+              "Guarda el archivo como promedio_lecturas.py y ejecútalo con python promedio_lecturas.py.",
+              "Agrega o quita lecturas en la lista y vuelve a ejecutar: el mismo cuerpo del for procesa cualquier cantidad de datos."
+            ],
+            "code": "lecturas = [21.5, 22.0, 20.8, 23.1, 21.9]  # grados C por hora\n\nsuma = 0\nfor t in lecturas:\n    suma = suma + t\n\npromedio = suma / len(lecturas)\nprint(f\"{len(lecturas)} lecturas, promedio = {promedio:.2f} C\")",
+            "expectedOutput": [
+              "Imprime: 5 lecturas, promedio = 21.86 C.",
+              "Interpreta: el for realizó cinco iteraciones (una por lectura) acumulando en suma; el promedio se obtiene dividiendo por la cantidad de elementos. Si la lista quedara vacía, len sería 0 y la división fallaría: un caso a controlar."
+            ]
+          },
+          "s3-teoria-3": {
+            "type": "theory-block",
+            "title": "El recorrido en detalle: variable de control y acumuladores",
+            "eyebrow": "Mecánica del ciclo",
+            "body": [
+              "En cada iteración, el for asigna a una variable de control el siguiente elemento de la colección; en un while, la variable de control es la que aparece en la condición y se actualiza dentro del cuerpo. Seguir esa variable es la clave para trazar un ciclo.",
+              "Los acumuladores resuelven la mayoría de los problemas de iteración: una suma parte de cero y agrega en cada vuelta; un contador cuenta cuántas veces ocurre algo; un máximo guarda el mayor valor visto hasta el momento. Todos se inicializan antes del ciclo y se actualizan dentro.",
+              "Trazar un ciclo es construir una tabla con el valor de cada variable en cada iteración. Esa prueba de escritorio revela errores como inicializar mal el acumulador o actualizar la variable de control en el lugar equivocado."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "swap_horiz",
+                "text": "La variable de control cambia en cada iteración."
+              },
+              {
+                "icon": "functions",
+                "text": "Un acumulador se inicializa antes y se actualiza dentro del ciclo."
+              },
+              {
+                "icon": "table_chart",
+                "text": "Trazar el ciclo es tabular cada variable por iteración."
+              },
+              {
+                "icon": "south",
+                "text": "Un máximo guarda el mayor valor observado hasta el momento."
+              }
+            ],
+            "closing": [
+              "Para cualquier ciclo, dibuja una tabla con una fila por iteración y una columna por variable; el resultado final es la última fila."
+            ]
+          },
+          "s3-acordeon": {
+            "type": "accordion",
+            "title": "Profundización · iterar con seguridad",
+            "items": [
+              {
+                "icon": "functions",
+                "title": "Patrones de acumulación: suma, conteo, máximo y mínimo",
+                "open": true,
+                "body": [
+                  "La mayoría de los algoritmos de recorrido encajan en un patrón de acumulación. La suma inicializa el acumulador en cero y agrega cada elemento; el conteo inicializa en cero y suma uno cuando se cumple una condición; el máximo inicializa con el primer valor (o con menos infinito) y lo reemplaza por cualquier elemento mayor.",
+                  "Elegir bien el valor inicial es crítico: inicializar una suma en uno daría un resultado desplazado, e inicializar un máximo en cero fallaría si todas las lecturas fueran negativas. El valor inicial debe ser neutro respecto de la operación que se acumula.",
+                  "Estos patrones se combinan: en un mismo recorrido se puede sumar para el promedio, contar cuántas lecturas superan un umbral y guardar la lectura máxima, actualizando los tres acumuladores en cada iteración."
+                ]
+              },
+              {
+                "icon": "rule",
+                "title": "for sobre range frente a recorrer la colección",
+                "body": [
+                  "Existen dos formas de recorrer datos con un for: iterar directamente sobre la colección (for t in lecturas) o iterar sobre los índices (for i in range(len(lecturas))). La primera es más legible cuando solo se necesita el valor; la segunda es necesaria cuando además se requiere la posición del elemento.",
+                  "Recorrer por índice abre la puerta a un error clásico: usar range(len(lecturas)+1) o acceder a lecturas[i+1] sin control, lo que produce un acceso fuera de rango. El for sobre la colección evita ese riesgo porque nunca se sale de los elementos existentes.",
+                  "Como regla práctica, recorre directamente la colección salvo que necesites el índice; si lo necesitas, considera enumerate, que entrega posición y valor a la vez y reduce los errores de indexación."
+                ]
+              }
+            ]
+          },
+          "s3-stepper-while": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto 2 · Traza de un while",
+            "statement": "Un proceso calienta desde $T = 20^{\\circ}\\mathrm{C}$ subiendo $15^{\\circ}\\mathrm{C}$ por ciclo mientras $T < 60$. Traza las iteraciones y cuenta cuántas se realizan.",
+            "steps": [
+              {
+                "title": "Estado inicial",
+                "body": "Antes del while, fijamos la temperatura y el contador de ciclos.",
+                "formula": "T = 20,\\quad \\text{ciclos} = 0",
+                "final": false
+              },
+              {
+                "title": "Iteración 1",
+                "body": "La condición $20 < 60$ es True: se calienta y se cuenta el ciclo.",
+                "formula": "T = 20 + 15 = 35,\\quad \\text{ciclos} = 1",
+                "final": false
+              },
+              {
+                "title": "Iteración 2",
+                "body": "La condición $35 < 60$ es True: se vuelve a calentar.",
+                "formula": "T = 35 + 15 = 50,\\quad \\text{ciclos} = 2",
+                "final": false
+              },
+              {
+                "title": "Iteración 3",
+                "body": "La condición $50 < 60$ es True: se calienta una vez más.",
+                "formula": "T = 50 + 15 = 65,\\quad \\text{ciclos} = 3",
+                "final": false
+              },
+              {
+                "title": "Salir y verificar",
+                "body": "Ahora $65 < 60$ es False: el while termina tras 3 ciclos. La temperatura final supera el objetivo, lo que muestra que el while se detiene al primer chequeo falso, no exactamente en 60.",
+                "formula": "T = 65,\\quad \\text{ciclos} = 3",
+                "final": true
+              }
+            ]
+          },
+          "s3-chart-iteraciones": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Evolución de la temperatura por iteración del while",
+            "description": [
+              "Hilo conductor: el ejemplo resuelto del while mostró cómo la temperatura crece en cada ciclo hasta que la condición se vuelve falsa. Graficamos esa misma traza para visualizar por qué el ciclo termina en la tercera iteración y por qué la temperatura final supera el objetivo."
+            ],
+            "note": "Lectura del gráfico: el eje horizontal es el número de iteración y el vertical la temperatura en grados Celsius. La serie sube en escalones de 15 grados; la línea punteada marca el objetivo de 60. En la iteración 2 la temperatura (50) aún está por debajo, así que el ciclo ejecuta una vez más y la lleva a 65, superando el objetivo. Esto evidencia que un while con incremento fijo no se detiene en el valor exacto, sino en el primer paso que hace falsa la condición.",
+            "height": "300px",
+            "labels": [
+              "Inicio",
+              "Iter 1",
+              "Iter 2",
+              "Iter 3"
+            ],
+            "datasets": [
+              {
+                "label": "Temperatura (C)",
+                "data": [
+                  20,
+                  35,
+                  50,
+                  65
+                ]
+              },
+              {
+                "label": "Objetivo (60 C)",
+                "data": [
+                  60,
+                  60,
+                  60,
+                  60
+                ],
+                "borderDash": [
+                  6,
+                  6
+                ]
+              }
+            ],
+            "options": {
+              "scales": {
+                "y": {
+                  "title": {
+                    "display": true,
+                    "text": "Temperatura (C)"
+                  }
+                },
+                "x": {
+                  "title": {
+                    "display": true,
+                    "text": "Iteracion"
+                  }
+                }
+              }
+            }
+          },
+          "s3-saberes": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza sobre los ciclos en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) compara en detalle el ciclo definido (for) y el indefinido (while), desarrolla los patrones de acumulación (suma, conteo, máximo, mínimo) con pruebas de escritorio completas y muestra cómo recorrer colecciones de datos de ingeniería sin salirse de rango."
+            ],
+            "reference": "Tema 3 · Saber 3: Estructuras iterativas (for/while)",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-4": {
+        "kind": "theory",
+        "theme": "Saber 4",
+        "badge": "Escenario de aprendizaje 03",
+        "navLabel": "Control de iteración",
+        "title": "Control de iteración: condición de parada, break y continue",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "intro": [
+          "Tener un ciclo no basta: hay que gobernarlo. Una condición de parada mal planteada produce un ciclo infinito o uno que termina antes de tiempo. En este saber aprenderás a diseñar condiciones de parada correctas y a usar break y continue para alterar el flujo del ciclo cuando una situación lo justifica."
+        ],
+        "componentOrder": [
+          "s4-teoria-1",
+          "s4-figura-break",
+          "s4-flashcards",
+          "s4-stepper-parada",
+          "s4-teoria-2",
+          "s4-carousel",
+          "s4-tabla-break-continue",
+          "s4-code-busqueda",
+          "s4-teoria-3",
+          "s4-figura-parada",
+          "s4-acordeon",
+          "s4-stepper-continue",
+          "s4-quiz",
+          "s4-saberes"
+        ],
+        "components": {
+          "s4-teoria-1": {
+            "type": "theory-block",
+            "title": "La condición de parada: por qué un ciclo termina",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Todo ciclo necesita una condición de parada: la situación que hace que deje de repetirse. En el for la parada es implícita (se agota la colección o el rango); en el while es explícita (la condición se vuelve falsa). Diseñarla bien es lo que distingue un ciclo correcto de uno que se cuelga.",
+              "Para que un while termine, tres elementos deben estar presentes: una variable de control inicializada antes del ciclo, una condición que la examine, y una actualización dentro del cuerpo que la acerque a hacer falsa la condición. Si falta la actualización, el ciclo es infinito.",
+              "En control de procesos, la condición de parada modela cuándo el proceso ha cumplido su objetivo: alcanzar una temperatura, agotar un lote, recibir una orden de detención. Pensar primero en la parada evita ciclos que nunca terminan o que se detienen antes de completar la tarea."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "stop_circle",
+                "text": "La condición de parada define cuándo el ciclo deja de repetirse."
+              },
+              {
+                "icon": "play_arrow",
+                "text": "El for para al agotar la colección; el while, al volverse falsa su condición."
+              },
+              {
+                "icon": "update",
+                "text": "Sin actualización de la variable de control, el while es infinito."
+              },
+              {
+                "icon": "flag",
+                "text": "La parada modela el objetivo cumplido del proceso."
+              }
+            ],
+            "example": {
+              "title": "Tres piezas que faltan",
+              "body": [
+                "Un while que produce piezas mientras producidas < meta necesita que producidas aumente en cada vuelta; si nadie la incrementa, la condición producidas < meta nunca cambia y el ciclo no termina."
+              ]
+            },
+            "closing": [
+              "Antes de ejecutar un while, responde: ¿qué instrucción acerca la condición a hacerse falsa? Si no existe, el ciclo es infinito."
+            ]
+          },
+          "s4-figura-break": {
+            "type": "figure",
+            "title": "break y continue dentro de un ciclo",
+            "assetId": "t3-s4-break-continue",
+            "src": "",
+            "alt": "Diagrama de un ciclo con dos desvíos: break sale del ciclo y continue salta a la siguiente iteración.",
+            "caption": "break interrumpe el ciclo por completo; continue salta el resto del cuerpo y pasa a la siguiente iteración. Elaboración propia.",
+            "prompt": "Diseñar una figura didáctica en español de un ciclo con break y continue. Mostrar un bucle rectangular (cuerpo del ciclo) con dos puntos de decisión internos: uno etiquetado '¿condicion de salida?' cuya rama 'Sí' tiene una flecha 'break' que sale del bucle hacia 'fin del ciclo'; otro etiquetado '¿caso a omitir?' cuya rama 'Sí' tiene una flecha 'continue' que regresa al inicio del bucle saltando el resto del cuerpo. Resaltar break en rojo y continue en azul. Etiquetas claras."
+          },
+          "s4-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards · control del ciclo",
+            "cards": [
+              {
+                "term": "Condición de parada",
+                "definition": "La situación que hace que el ciclo termine: colección agotada en el for, condición falsa en el while.",
+                "icon": "stop_circle"
+              },
+              {
+                "term": "Ciclo infinito",
+                "definition": "Ciclo cuya condición de parada nunca se cumple; el programa se repite sin fin y se bloquea.",
+                "icon": "all_inclusive"
+              },
+              {
+                "term": "break",
+                "definition": "Instrucción que abandona el ciclo de inmediato, sin completar la iteración ni las siguientes.",
+                "icon": "logout"
+              },
+              {
+                "term": "continue",
+                "definition": "Instrucción que salta el resto del cuerpo y pasa directamente a la siguiente iteración.",
+                "icon": "skip_next"
+              },
+              {
+                "term": "Centinela",
+                "definition": "Valor especial que indica el fin de los datos y dispara la condición de parada (por ejemplo, -1).",
+                "icon": "flag"
+              }
+            ]
+          },
+          "s4-stepper-parada": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto 1 · Diseñar la condición de parada",
+            "statement": "Produce piezas mientras $\\text{producidas} < 3$, partiendo de $\\text{producidas} = 0$ y sumando $1$ por ciclo. Traza hasta la parada.",
+            "steps": [
+              {
+                "title": "Estado inicial",
+                "body": "Inicializamos la variable de control antes del ciclo.",
+                "formula": "\\text{producidas} = 0",
+                "final": false
+              },
+              {
+                "title": "Iteración 1",
+                "body": "La condición $0 < 3$ es True: se produce una pieza y se actualiza la variable de control.",
+                "formula": "\\text{producidas} = 0 + 1 = 1",
+                "final": false
+              },
+              {
+                "title": "Iteración 2",
+                "body": "La condición $1 < 3$ es True: otra pieza.",
+                "formula": "\\text{producidas} = 1 + 1 = 2",
+                "final": false
+              },
+              {
+                "title": "Iteración 3",
+                "body": "La condición $2 < 3$ es True: la tercera pieza.",
+                "formula": "\\text{producidas} = 2 + 1 = 3",
+                "final": false
+              },
+              {
+                "title": "Parar y verificar",
+                "body": "Ahora $3 < 3$ es False: el ciclo termina con exactamente 3 piezas. La actualización (+1 por ciclo) garantizó que la condición se volviera falsa: no es un ciclo infinito.",
+                "formula": "\\text{producidas} = 3 \\;\\Rightarrow\\; \\text{parar}",
+                "final": true
+              }
+            ]
+          },
+          "s4-teoria-2": {
+            "type": "theory-block",
+            "title": "break y continue: alterar el flujo del ciclo",
+            "eyebrow": "Control fino",
+            "body": [
+              "A veces conviene salir del ciclo antes de agotar la condición natural, o saltarse una iteración concreta. Para eso existen break y continue, dos instrucciones que alteran el flujo del ciclo sin cambiar su condición.",
+              "break abandona el ciclo de inmediato: útil para una búsqueda que termina en cuanto encuentra lo que busca, evitando recorrer el resto. continue salta el resto del cuerpo y pasa a la siguiente iteración: útil para ignorar datos no válidos sin interrumpir el recorrido completo.",
+              "Ambas instrucciones se colocan dentro de un condicional: break o continue solo se ejecutan cuando se cumple una condición específica. Usadas con criterio simplifican el código; abusadas, lo vuelven difícil de seguir, así que conviene que la lógica principal siga estando en la condición del ciclo."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "logout",
+                "text": "break sale del ciclo por completo."
+              },
+              {
+                "icon": "skip_next",
+                "text": "continue salta a la siguiente iteración."
+              },
+              {
+                "icon": "search",
+                "text": "break es ideal para detener una búsqueda al hallar el objetivo."
+              },
+              {
+                "icon": "filter_alt",
+                "text": "continue es ideal para descartar datos no válidos sin parar el recorrido."
+              }
+            ],
+            "closing": [
+              "Coloca break y continue siempre dentro de un if; sin condición, romperían o saltarían en la primera iteración y el ciclo perdería sentido."
+            ]
+          },
+          "s4-carousel": {
+            "type": "carousel",
+            "title": "Carrusel · cuándo cortar o saltar",
+            "slides": [
+              {
+                "label": "Búsqueda",
+                "title": "Detener al encontrar",
+                "body": [
+                  "Al buscar la primera lectura defectuosa en un lote, un break sale en cuanto se halla, sin revisar las restantes: ahorra trabajo."
+                ],
+                "icon": "search"
+              },
+              {
+                "label": "Filtrado",
+                "title": "Saltar datos inválidos",
+                "body": [
+                  "Al procesar lecturas, un continue salta las negativas (errores de sensor) y sigue con la siguiente sin contaminar el promedio."
+                ],
+                "icon": "filter_alt"
+              },
+              {
+                "label": "Centinela",
+                "title": "Parar con un valor especial",
+                "body": [
+                  "Un while que lee datos hasta recibir -1 usa ese centinela como señal de fin; al detectarlo, un break cierra el ciclo."
+                ],
+                "icon": "flag"
+              },
+              {
+                "label": "Cuidado",
+                "title": "No abusar de break",
+                "body": [
+                  "Demasiados break dispersos ocultan cuándo termina el ciclo. La condición principal debe seguir siendo legible en el while o for."
+                ],
+                "icon": "warning"
+              }
+            ]
+          },
+          "s4-tabla-break-continue": {
+            "type": "table",
+            "title": "break frente a continue",
+            "columns": [
+              "Aspecto",
+              "break",
+              "continue"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Efecto",
+                  "Termina el ciclo completo",
+                  "Termina solo la iteración actual"
+                ]
+              },
+              {
+                "cells": [
+                  "Hacia dónde sigue",
+                  "A la instrucción posterior al ciclo",
+                  "A la siguiente iteración del ciclo"
+                ]
+              },
+              {
+                "cells": [
+                  "Caso típico",
+                  "Búsqueda que ya encontró su objetivo",
+                  "Descartar un dato no válido"
+                ]
+              },
+              {
+                "cells": [
+                  "Iteraciones restantes",
+                  {
+                    "badge": "Se cancelan",
+                    "tone": "danger"
+                  },
+                  {
+                    "badge": "Se conservan",
+                    "tone": "success"
+                  }
+                ]
+              }
+            ]
+          },
+          "s4-code-busqueda": {
+            "type": "code",
+            "title": "Buscar la primera lectura fuera de rango con break",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "buscar_falla.py",
+            "instructions": [
+              "Identifica cómo el break detiene la búsqueda en cuanto se encuentra la primera lectura fuera del rango seguro.",
+              "Guarda el archivo como buscar_falla.py y ejecútalo con python buscar_falla.py.",
+              "Cambia los valores de la lista para que la falla esté al final, o para que no haya ninguna falla, y observa cómo cambia el número de lecturas revisadas."
+            ],
+            "code": "lecturas = [21.0, 22.5, 95.0, 23.0]  # grados C\nlimite = 80\nposicion_falla = -1\n\nfor i in range(len(lecturas)):\n    if lecturas[i] > limite:\n        posicion_falla = i\n        break  # no hace falta seguir buscando\n\nif posicion_falla == -1:\n    print(\"Sin fallas en el lote\")\nelse:\n    print(f\"Primera falla en posicion {posicion_falla}: {lecturas[posicion_falla]} C\")",
+            "expectedOutput": [
+              "Imprime: Primera falla en posicion 2: 95.0 C.",
+              "Interpreta: el ciclo revisó las posiciones 0, 1 y 2; al hallar 95.0 > 80 ejecutó break y no revisó la posición 3. El centinela -1 distingue el caso 'no hubo falla'."
+            ]
+          },
+          "s4-teoria-3": {
+            "type": "theory-block",
+            "title": "Evitar el ciclo infinito",
+            "eyebrow": "Diseño robusto",
+            "body": [
+              "El ciclo infinito es el error más temido de la iteración: el programa deja de responder porque la condición de parada nunca se cumple. Sus causas habituales son olvidar actualizar la variable de control, actualizarla en la dirección equivocada o escribir una condición que siempre es verdadera.",
+              "La defensa principal es la prueba de escritorio: trazar las primeras iteraciones y confirmar que la variable de control avanza hacia la parada. Si tras varias iteraciones la condición sigue idéntica, el ciclo es infinito.",
+              "Como salvaguarda adicional, en ciclos que dependen de datos externos o de un sensor se suele añadir un límite máximo de iteraciones o un valor centinela, de modo que el ciclo termine aunque la condición ideal no llegue a cumplirse."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "report",
+                "text": "El ciclo infinito ocurre cuando la parada nunca se cumple."
+              },
+              {
+                "icon": "trending_flat",
+                "text": "Causa típica: la variable de control no avanza hacia la parada."
+              },
+              {
+                "icon": "fact_check",
+                "text": "La prueba de escritorio detecta el ciclo infinito antes de ejecutar."
+              },
+              {
+                "icon": "timer",
+                "text": "Un límite máximo de iteraciones actúa como salvaguarda."
+              }
+            ],
+            "closing": [
+              "Si dudas de un while, ejecuta tres iteraciones a mano: si la variable de control no se mueve hacia la condición de parada, corrígelo antes de ejecutar."
+            ]
+          },
+          "s4-figura-parada": {
+            "type": "figure",
+            "title": "Los tres elementos que garantizan la parada de un while",
+            "assetId": "t3-s4-tres-elementos",
+            "src": "",
+            "alt": "Esquema con tres bloques rotulados inicialización, condición y actualización conectados alrededor de un ciclo, mostrando cómo el tercero acerca la variable a la parada.",
+            "caption": "Sin la actualización que acerca la variable de control a la condición de parada, el while nunca termina. Elaboración propia.",
+            "prompt": "Crear una figura didáctica en español que muestre los tres elementos de un while que termina. Bloque 1 'Inicialización (antes del ciclo): producidas = 0' fuera del lazo. Bloque 2 'Condición: producidas < meta' como rombo en la cabecera del lazo. Bloque 3 'Actualización (dentro del cuerpo): producidas += 1' con una flecha que indica 'acerca la variable a la parada' apuntando de vuelta a la condición. Contrastar al lado, en gris y tachado, un cuarto bloque 'sin actualización -> ciclo infinito'. Resaltar la flecha de avance hacia la parada. Estilo limpio, etiquetas legibles."
+          },
+          "s4-acordeon": {
+            "type": "accordion",
+            "title": "Profundización · gobernar la repetición",
+            "items": [
+              {
+                "icon": "flag",
+                "title": "El patrón centinela para leer datos de longitud desconocida",
+                "open": true,
+                "body": [
+                  "Cuando no se sabe cuántos datos llegarán —por ejemplo, lecturas de un operario que termina escribiendo un valor especial— se usa el patrón centinela: un valor convenido (como -1) que no pertenece a los datos reales y que señala el fin de la entrada.",
+                  "El ciclo while continúa mientras el dato leído sea distinto del centinela y se detiene en cuanto lo recibe. Es esencial leer un primer dato antes del while (lectura anticipada) y volver a leer al final del cuerpo, para que el centinela se evalúe antes de procesarse como dato real.",
+                  "Este patrón es el equivalente algorítmico de 'procesar hasta que llegue la señal de fin', muy común en adquisición de datos de procesos donde la cantidad de muestras varía de un turno a otro."
+                ]
+              },
+              {
+                "icon": "compare_arrows",
+                "title": "break/continue frente a rediseñar la condición",
+                "body": [
+                  "Muchos usos de break pueden reescribirse incorporando la condición de salida al propio while. Por ejemplo, 'while True: ... if encontrado: break' equivale a 'while not encontrado: ...'. La segunda forma deja la condición de parada visible en la cabecera del ciclo, lo que suele ser más legible.",
+                  "El break se justifica cuando la salida depende de algo que solo se conoce a mitad del cuerpo, o cuando rediseñar la condición obligaría a duplicar cálculos. continue, por su parte, es claro para descartar casos al inicio del cuerpo, pero si hay muchos continue conviene revisar si un if que envuelve el resto del cuerpo sería más legible.",
+                  "El criterio es la legibilidad: la persona que lee el código debe entender en pocos segundos bajo qué condiciones el ciclo termina y qué iteraciones se omiten. Si break o continue ayudan a esa claridad, úsalos; si la oscurecen, rediseña la condición."
+                ]
+              }
+            ]
+          },
+          "s4-stepper-continue": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto 2 · Sumar válidos con continue",
+            "statement": "Suma solo las lecturas válidas (no negativas) de $[12, -1, 8, -3, 5]$ usando continue para saltar las negativas.",
+            "steps": [
+              {
+                "title": "Inicializar el acumulador",
+                "body": "Antes del ciclo, la suma de válidos vale cero.",
+                "formula": "\\text{suma} = 0",
+                "final": false
+              },
+              {
+                "title": "Procesar 12 y luego -1",
+                "body": "12 es válida y se suma. La siguiente, -1, es negativa: el continue salta el resto del cuerpo y no la suma.",
+                "formula": "\\text{suma} = 0 + 12 = 12;\\quad -1 \\to \\text{saltada}",
+                "final": false
+              },
+              {
+                "title": "Procesar 8 y luego -3",
+                "body": "8 es válida y se suma. -3 es negativa: continue la salta.",
+                "formula": "\\text{suma} = 12 + 8 = 20;\\quad -3 \\to \\text{saltada}",
+                "final": false
+              },
+              {
+                "title": "Procesar 5",
+                "body": "5 es válida y se suma. No quedan elementos: el for termina.",
+                "formula": "\\text{suma} = 20 + 5 = 25",
+                "final": false
+              },
+              {
+                "title": "Verificar el resultado",
+                "body": "Solo se sumaron las tres lecturas válidas (12, 8, 5). El continue impidió que las negativas contaminaran el resultado, que es $12+8+5 = 25$.",
+                "formula": "\\text{suma} = 25",
+                "final": true
+              }
+            ]
+          },
+          "s4-quiz": {
+            "type": "quiz",
+            "title": "Chequeo · control de iteración",
+            "questions": [
+              {
+                "prompt": "Un while con la condición numero > 0 no termina nunca aunque numero empiece en 5. ¿Cuál es la causa más probable?",
+                "options": [
+                  {
+                    "text": "Dentro del cuerpo no se modifica numero para acercarlo a 0 (falta la actualización).",
+                    "correct": true,
+                    "feedback": "Correcto: si la variable de control no avanza hacia la parada, la condición sigue siendo verdadera para siempre. Es la causa típica del ciclo infinito."
+                  },
+                  {
+                    "text": "El operador > no se puede usar en un while.",
+                    "correct": false,
+                    "feedback": "El operador > es válido en cualquier condición; el problema no es el operador sino que la variable de control no se actualiza dentro del ciclo."
+                  },
+                  {
+                    "text": "Los while siempre son infinitos por definición.",
+                    "correct": false,
+                    "feedback": "No: un while termina cuando su condición se vuelve falsa. El error aquí es que nada en el cuerpo hace que eso ocurra."
+                  }
+                ]
+              }
+            ]
+          },
+          "s4-saberes": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza sobre el control de iteración en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) detalla cómo construir condiciones de parada correctas, el patrón centinela con lectura anticipada, el uso disciplinado de break y continue y las salvaguardas (límite de iteraciones) para evitar ciclos infinitos en sistemas de adquisición de datos."
+            ],
+            "reference": "Tema 3 · Saber 4: Control de iteración (parada, break, continue)",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-5": {
+        "kind": "theory",
+        "theme": "Saber 5",
+        "badge": "Escenario de aprendizaje 03",
+        "navLabel": "Anidamiento",
+        "title": "Anidamiento de estructuras selectivas e iterativas",
+        "learningOutcomeIds": [
+          "RA1"
+        ],
+        "intro": [
+          "Los problemas reales rara vez se resuelven con una sola estructura. Anidar es colocar una estructura dentro de otra: un if dentro de un for, un for dentro de un while. En este saber integrarás todo lo anterior para construir el control de flujo de un proceso completo, que es justamente la evidencia del taller del tema."
+        ],
+        "componentOrder": [
+          "s5-teoria-1",
+          "s5-figura-anidado",
+          "s5-flashcards",
+          "s5-stepper-if-en-for",
+          "s5-teoria-2",
+          "s5-figura-matriz",
+          "s5-carousel",
+          "s5-tabla-casos",
+          "s5-code-control-lote",
+          "s5-teoria-3",
+          "s5-acordeon",
+          "s5-stepper-for-en-while",
+          "s5-taller",
+          "s5-saberes"
+        ],
+        "components": {
+          "s5-teoria-1": {
+            "type": "theory-block",
+            "title": "Anidar: estructuras dentro de estructuras",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Anidar significa que el cuerpo de una estructura contiene otra estructura completa. El caso más frecuente es un if dentro de un ciclo: el ciclo recorre los datos y, en cada iteración, el if decide qué hacer con el dato actual. También se anidan ciclos dentro de ciclos y condicionales dentro de condicionales.",
+              "La sangría es la que indica el nivel de anidamiento: cada estructura interna se indenta un nivel más respecto de la que la contiene. Leer correctamente la sangría es indispensable para saber qué instrucción pertenece a qué estructura.",
+              "El anidamiento es lo que permite expresar reglas de operación completas: 'para cada pieza del lote, si está fuera de tolerancia, registrarla y, si además es la tercera consecutiva, detener la línea'. Cada cláusula corresponde a una estructura anidada."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "account_tree",
+                "text": "Anidar es poner una estructura completa dentro del cuerpo de otra."
+              },
+              {
+                "icon": "subdirectory_arrow_right",
+                "text": "Cada nivel de anidamiento añade un nivel de sangría."
+              },
+              {
+                "icon": "filter_alt",
+                "text": "Un if dentro de un for decide qué hacer con cada elemento recorrido."
+              },
+              {
+                "icon": "grid_on",
+                "text": "Un for dentro de un for recorre estructuras de dos dimensiones, como una matriz."
+              }
+            ],
+            "example": {
+              "title": "Decidir dentro de recorrer",
+              "body": [
+                "Para contar cuántas piezas de un lote están fuera de tolerancia, un for recorre el lote y, dentro, un if comprueba la tolerancia de cada pieza e incrementa un contador cuando falla."
+              ]
+            },
+            "closing": [
+              "Antes de anidar, describe la regla completa en lenguaje natural; cada 'para cada', 'si' y 'mientras' de esa frase se convierte en una estructura, y su orden indica el anidamiento."
+            ]
+          },
+          "s5-figura-anidado": {
+            "type": "figure",
+            "title": "Niveles de anidamiento y sangría",
+            "assetId": "t3-s5-anidamiento",
+            "src": "",
+            "alt": "Esquema de un for que contiene un if, que a su vez contiene otro if, con sangrías crecientes que marcan los niveles.",
+            "caption": "Cada estructura interna se indenta un nivel más; la sangría revela a qué estructura pertenece cada instrucción. Elaboración propia.",
+            "prompt": "Diseñar una figura didáctica en español que muestre el anidamiento por sangría. Representar como bloques anidados con bordes de colores: un bloque exterior 'for pieza in lote' (nivel 0), dentro un bloque 'if fuera_de_tolerancia' (nivel 1, indentado), dentro otro bloque 'if tercera_consecutiva' (nivel 2, más indentado) con la accion 'detener linea'. Mostrar líneas guía verticales que marquen cada nivel de sangría y etiquetas 'nivel 0/1/2' a la izquierda. Estilo tipo editor de código limpio."
+          },
+          "s5-flashcards": {
+            "type": "flashcards",
+            "title": "Flashcards · anidamiento",
+            "cards": [
+              {
+                "term": "Estructura externa",
+                "definition": "La que contiene a otra; suele ser el ciclo que recorre los datos.",
+                "icon": "crop_din"
+              },
+              {
+                "term": "Estructura interna",
+                "definition": "La que está dentro del cuerpo de otra; se ejecuta en cada iteración o rama de la externa.",
+                "icon": "filter_center_focus"
+              },
+              {
+                "term": "Nivel de anidamiento",
+                "definition": "Profundidad de una estructura: cuántas estructuras la contienen. Se refleja en la sangría.",
+                "icon": "stairs"
+              },
+              {
+                "term": "Doble for",
+                "definition": "Un for dentro de otro for; ejecuta su cuerpo (filas x columnas) veces, útil para recorrer matrices.",
+                "icon": "grid_on"
+              }
+            ]
+          },
+          "s5-stepper-if-en-for": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto 1 · if dentro de for",
+            "statement": "Cuenta cuántas piezas del lote $[49.6, 51.2, 50.0, 48.9]$ quedan fuera de la tolerancia $[49.5, 50.5]$ recorriendo con un for y decidiendo con un if.",
+            "steps": [
+              {
+                "title": "Inicializar el contador",
+                "body": "Antes del for, el contador de piezas fuera de tolerancia vale cero.",
+                "formula": "\\text{fuera} = 0",
+                "final": false
+              },
+              {
+                "title": "Pieza 49.6",
+                "body": "El if evalúa si está fuera del rango. $49.5 \\le 49.6 \\le 50.5$ es True, así que está dentro: el contador no cambia.",
+                "formula": "\\text{fuera} = 0",
+                "final": false
+              },
+              {
+                "title": "Pieza 51.2",
+                "body": "$51.2 > 50.5$: está fuera de tolerancia, el if incrementa el contador.",
+                "formula": "\\text{fuera} = 0 + 1 = 1",
+                "final": false
+              },
+              {
+                "title": "Pieza 50.0 y pieza 48.9",
+                "body": "50.0 está dentro (no cambia). 48.9 < 49.5: está fuera, el contador sube de nuevo.",
+                "formula": "\\text{fuera} = 1 + 1 = 2",
+                "final": false
+              },
+              {
+                "title": "Verificar el resultado",
+                "body": "El for recorrió las 4 piezas y el if anidado detectó 2 fuera de tolerancia (51.2 y 48.9). El conteo se actualiza solo cuando la decisión interna lo justifica.",
+                "formula": "\\text{fuera} = 2",
+                "final": true
+              }
+            ]
+          },
+          "s5-teoria-2": {
+            "type": "theory-block",
+            "title": "Ciclos anidados y recorridos de dos dimensiones",
+            "eyebrow": "Anidar repeticiones",
+            "body": [
+              "Cuando un ciclo contiene a otro, el ciclo interno completa todas sus iteraciones por cada iteración del externo. Si el externo repite $m$ veces y el interno $n$, el cuerpo más interno se ejecuta $m \\times n$ veces.",
+              "Este patrón es la forma natural de recorrer datos bidimensionales: una rejilla de sensores, una matriz de mediciones o una tabla de turnos por máquina. El ciclo externo avanza por filas y el interno por columnas, visitando cada celda.",
+              "El costo crece rápido: con anidamiento doble, duplicar el tamaño de los datos cuadruplica el número de operaciones. Por eso es importante anidar solo lo necesario y reconocer cuándo un recorrido doble es inevitable y cuándo se puede evitar."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "repeat",
+                "text": "El ciclo interno se completa entero en cada vuelta del externo."
+              },
+              {
+                "icon": "calculate",
+                "text": "Anidamiento doble: el cuerpo interno corre $m \\times n$ veces."
+              },
+              {
+                "icon": "grid_on",
+                "text": "Dos for anidados recorren una matriz fila por fila, columna por columna."
+              },
+              {
+                "icon": "speed",
+                "text": "Duplicar los datos cuadruplica las operaciones de un doble ciclo."
+              }
+            ],
+            "closing": [
+              "Antes de anidar dos ciclos, estima cuántas veces correrá el cuerpo interno; si el número crece demasiado, revisa si hay una forma menos costosa de resolverlo."
+            ]
+          },
+          "s5-figura-matriz": {
+            "type": "figure",
+            "title": "Doble ciclo recorriendo una matriz de mediciones",
+            "assetId": "t3-s5-recorrido-matriz",
+            "src": "",
+            "alt": "Matriz de 3 filas por 4 columnas con flechas que muestran el recorrido fila por fila; el ciclo externo avanza por filas y el interno por columnas.",
+            "caption": "El for externo selecciona la fila (sensor) y el for interno recorre sus columnas (horas), visitando cada celda una vez. Elaboración propia.",
+            "prompt": "Diseñar una figura didáctica en español de un recorrido de matriz con doble for. Dibujar una rejilla 3x4 con encabezados de columna 'h1..h4' (horas) y de fila 'S1, S2, S3' (sensores). Trazar flechas que indiquen el orden de visita: recorre toda la fila S1 (de h1 a h4), baja a S2 y repite, etc. Etiquetar 'for externo: filas (sensores)' a la izquierda y 'for interno: columnas (horas)' arriba; añadir la nota 'cuerpo interno se ejecuta 3 x 4 = 12 veces'. Estilo limpio, celdas con valores numéricos de ejemplo."
+          },
+          "s5-carousel": {
+            "type": "carousel",
+            "title": "Carrusel · patrones de anidamiento",
+            "slides": [
+              {
+                "label": "if en for",
+                "title": "Filtrar y contar",
+                "body": [
+                  "for sobre las lecturas, con un if dentro que cuenta o registra solo las que cumplen una condición. Es el patrón de inspección de un lote."
+                ],
+                "icon": "filter_alt"
+              },
+              {
+                "label": "for en for",
+                "title": "Recorrer una matriz",
+                "body": [
+                  "for de filas con un for de columnas dentro: visita cada celda de una rejilla de sensores o una matriz de mediciones."
+                ],
+                "icon": "grid_on"
+              },
+              {
+                "label": "if en while",
+                "title": "Decidir mientras se repite",
+                "body": [
+                  "while que controla un proceso, con un if dentro que reacciona a cada estado leído, por ejemplo disparando una alarma."
+                ],
+                "icon": "device_thermostat"
+              },
+              {
+                "label": "for en while",
+                "title": "Procesar por bloques",
+                "body": [
+                  "while que itera por lotes mientras haya producción, con un for dentro que procesa cada pieza del lote actual."
+                ],
+                "icon": "inventory_2"
+              }
+            ]
+          },
+          "s5-tabla-casos": {
+            "type": "table",
+            "title": "Combinaciones de anidamiento y su uso",
+            "columns": [
+              "Combinación",
+              "Qué resuelve",
+              "Ejemplo de ingeniería"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "if dentro de for",
+                  "Aplicar una decisión a cada elemento",
+                  "Contar piezas fuera de tolerancia en un lote"
+                ]
+              },
+              {
+                "cells": [
+                  "for dentro de for",
+                  "Recorrer datos de dos dimensiones",
+                  "Sumar una matriz de mediciones sensor x hora"
+                ]
+              },
+              {
+                "cells": [
+                  "if dentro de while",
+                  "Reaccionar a estados durante un proceso",
+                  "Disparar alarma si una variable cruza el umbral"
+                ]
+              },
+              {
+                "cells": [
+                  "for dentro de while",
+                  "Procesar bloques sucesivos",
+                  "Procesar cada pieza de cada lote producido"
+                ]
+              }
+            ]
+          },
+          "s5-code-control-lote": {
+            "type": "code",
+            "title": "Inspección de un lote con estructuras anidadas",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "inspeccion_lote.py",
+            "instructions": [
+              "Identifica las tres estructuras anidadas: el for que recorre, el if que clasifica y el if anidado que detiene la línea.",
+              "Guarda el archivo como inspeccion_lote.py y ejecútalo con python inspeccion_lote.py.",
+              "Modifica la lista para que tres piezas defectuosas queden consecutivas y observa cómo el segundo if detiene la inspección con un break."
+            ],
+            "code": "lote = [50.0, 51.3, 51.8, 52.1, 49.9]  # mm\nmin_tol, max_tol = 49.5, 50.5\ndefectuosas = 0\nconsecutivas = 0\n\nfor i in range(len(lote)):\n    pieza = lote[i]\n    if pieza < min_tol or pieza > max_tol:\n        defectuosas += 1\n        consecutivas += 1\n        if consecutivas == 3:\n            print(f\"Linea detenida en la pieza {i}: 3 defectuosas seguidas\")\n            break\n    else:\n        consecutivas = 0\n\nprint(f\"Defectuosas detectadas: {defectuosas}\")",
+            "expectedOutput": [
+              "Imprime: Linea detenida en la pieza 3: 3 defectuosas seguidas, y luego Defectuosas detectadas: 3.",
+              "Interpreta: el for recorre el lote; el primer if cuenta defectuosas y consecutivas; el if anidado detecta las 3 seguidas (posiciones 1, 2 y 3) y ejecuta break, deteniendo la inspección antes de la última pieza."
+            ]
+          },
+          "s5-teoria-3": {
+            "type": "theory-block",
+            "title": "Diseñar el control de flujo de un proceso completo",
+            "eyebrow": "Integración del tema",
+            "body": [
+              "Resolver un problema con anidamiento exige diseñar antes de escribir. La estrategia es descomponer el problema en la pregunta '¿qué se repite?' (el ciclo externo) y '¿qué se decide en cada repetición?' (los condicionales internos), y solo entonces traducirlo a código.",
+              "Una prueba de escritorio del algoritmo anidado, con una tabla que registre las variables en cada iteración y la rama tomada por cada if, es la mejor forma de verificar que el control de flujo es correcto antes de ejecutarlo. Es la técnica que aprendiste en el Tema 1 aplicada ahora a estructuras combinadas.",
+              "Este saber cierra el Tema 3 e integra los cuatro anteriores: las decisiones (Saber 1), las condiciones compuestas (Saber 2), los ciclos (Saber 3) y su control (Saber 4) se combinan aquí para gobernar el flujo de un proceso completo. Es exactamente lo que pide el taller del tema."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "psychology",
+                "text": "Diseña primero: qué se repite y qué se decide en cada repetición."
+              },
+              {
+                "icon": "table_chart",
+                "text": "La prueba de escritorio verifica el flujo anidado antes de ejecutar."
+              },
+              {
+                "icon": "integration_instructions",
+                "text": "El anidamiento integra los cuatro saberes previos del tema."
+              },
+              {
+                "icon": "assignment_turned_in",
+                "text": "Es la base de la evidencia del taller del Tema 3."
+              }
+            ],
+            "closing": [
+              "Para el taller, parte de la regla en lenguaje natural, conviértela en estructuras anidadas, trázala a mano y solo entonces escríbela y ejecútala en Python."
+            ]
+          },
+          "s5-acordeon": {
+            "type": "accordion",
+            "title": "Profundización · anidar bien",
+            "items": [
+              {
+                "icon": "layers",
+                "title": "Anidamiento profundo y cómo reducirlo",
+                "open": true,
+                "body": [
+                  "Cuando el anidamiento supera tres niveles, el código se vuelve difícil de leer y de probar: cada nivel multiplica las combinaciones de caminos posibles. Un if dentro de un if dentro de un for dentro de un while ya exige seguir cuatro contextos a la vez.",
+                  "Una técnica para reducir la profundidad es la cláusula de guarda: en lugar de envolver todo el cuerpo en un if, se comprueba la condición opuesta al inicio y se usa continue o se omite el resto, dejando el cuerpo principal sin sangrar de más. Esto aplana el código y aclara qué casos se descartan.",
+                  "Otra técnica, que verás a fondo en el Tema 5, es extraer la lógica interna a una función: el ciclo externo llama a la función por cada elemento, y la decisión queda encapsulada y nombrada. La modularidad y el control de flujo se complementan."
+                ]
+              },
+              {
+                "icon": "warning",
+                "title": "Errores típicos del anidamiento: sangría y acumuladores mal ubicados",
+                "body": [
+                  "El error más frecuente del anidamiento en Python es la sangría incorrecta: colocar una instrucción un nivel de más o de menos cambia a qué estructura pertenece. Por ejemplo, inicializar un acumulador dentro del ciclo externo en lugar de antes de él lo reinicia en cada vuelta y arruina el resultado.",
+                  "Otro error es ubicar el reset de un contador de eventos consecutivos en el lugar equivocado: si no se reinicia en la rama else, el conteo de 'consecutivas' no distingue eventos seguidos de eventos dispersos, y la regla de control falla.",
+                  "La prueba de escritorio con una columna por variable y una fila por iteración es la herramienta que destapa estos errores: si una variable toma un valor inesperado en alguna fila, la causa suele ser una instrucción ubicada en el nivel de sangría incorrecto."
+                ]
+              }
+            ]
+          },
+          "s5-stepper-for-en-while": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto 2 · for dentro de while (procesar lotes)",
+            "statement": "Procesa lotes de 2 piezas mientras el total producido sea menor que 4. Traza cuántas piezas produce el doble ciclo (while externo, for interno).",
+            "steps": [
+              {
+                "title": "Estado inicial",
+                "body": "El total producido empieza en cero; el while controla la producción global.",
+                "formula": "\\text{total} = 0",
+                "final": false
+              },
+              {
+                "title": "Lote 1 (while: 0 < 4 es True)",
+                "body": "El for interno procesa 2 piezas del lote, sumando una por iteración.",
+                "formula": "\\text{total} = 0 + 1 + 1 = 2",
+                "final": false
+              },
+              {
+                "title": "Lote 2 (while: 2 < 4 es True)",
+                "body": "La condición del while sigue siendo verdadera, así que se procesa otro lote completo de 2 piezas.",
+                "formula": "\\text{total} = 2 + 1 + 1 = 4",
+                "final": false
+              },
+              {
+                "title": "Evaluar el while de nuevo",
+                "body": "Ahora $4 < 4$ es False: el while no inicia un tercer lote y el doble ciclo termina.",
+                "formula": "4 < 4 \\;\\Rightarrow\\; \\text{False}",
+                "final": false
+              },
+              {
+                "title": "Verificar el resultado",
+                "body": "El for interno corrió 2 veces por cada uno de los 2 lotes: $2 \\times 2 = 4$ piezas en total, coherente con la meta. El for interno se completó entero en cada vuelta del while externo.",
+                "formula": "\\text{total} = 4 \\text{ piezas (2 lotes} \\times \\text{2)}",
+                "final": true
+              }
+            ]
+          },
+          "s5-taller": {
+            "type": "evaluation-activity",
+            "title": "Taller formativo del Tema 3 (evidencia)",
+            "learningOutcomeIds": [
+              "RA1"
+            ],
+            "criterion": "CE1: Genera un algoritmo con estructuras selectivas e iterativas que resuelve un problema de su contexto, con condición de parada correcta y control de flujo justificado.",
+            "evidence": "Programa en Python que combine condicionales y ciclos (con anidamiento) para resolver un problema de ingeniería o proceso industrial, acompañado de la explicación del control de flujo y una prueba de escritorio.",
+            "technique": "Taller (In1)",
+            "instrument": "Rúbrica analítica disciplinar (CE1)",
+            "weight": "Formativa (sin ponderación numérica; retroalimentación cualitativa)",
+            "evaluationMoment": "avance",
+            "participationType": "individual",
+            "studentAction": "Elige un problema de tu contexto que requiera decidir y repetir (por ejemplo, inspeccionar un lote, controlar un proceso por umbrales o validar una serie de lecturas). Diseña el algoritmo, trázalo a mano, impleméntalo en Python con condicionales y ciclos, asegura una condición de parada correcta y explica tu control de flujo.",
+            "feedbackRoute": "Retroalimentación del docente y autoevaluación con la rúbrica.",
+            "feedback": {
+              "strengths": "Condición de parada correcta, estructuras adecuadas al problema y control de flujo bien explicado.",
+              "improvement": "Condiciones solapadas, riesgo de ciclo infinito o anidamiento más profundo del necesario.",
+              "reinforcement": "Repite la prueba de escritorio con valores frontera y revisa el patrón de acumulación usado.",
+              "nextStep": "Lleva la solución al Tema 4 modelando sus datos con la estructura de datos más adecuada."
+            },
+            "rubric": {
+              "type": "analitica",
+              "levels": [
+                "No acreditable",
+                "Deficiente",
+                "Insuficiente",
+                "Aceptable",
+                "Bueno",
+                "Muy bueno",
+                "Sobresaliente"
+              ],
+              "criteria": [
+                {
+                  "name": "Selección de estructuras",
+                  "descriptors": {
+                    "Aceptable": "Usa condicionales y ciclos pertinentes al problema.",
+                    "Sobresaliente": "Justifica la elección de cada estructura y descarta alternativas menos adecuadas."
+                  }
+                },
+                {
+                  "name": "Condición de parada y control de flujo",
+                  "descriptors": {
+                    "Aceptable": "El ciclo termina correctamente.",
+                    "Sobresaliente": "Garantiza la parada, evita el ciclo infinito y explica con claridad el flujo y los casos frontera."
+                  }
+                },
+                {
+                  "name": "Implementación y verificación",
+                  "descriptors": {
+                    "Aceptable": "El programa en Python ejecuta y produce el resultado esperado.",
+                    "Sobresaliente": "Incluye prueba de escritorio coherente con la ejecución y maneja datos no válidos."
+                  }
+                }
+              ]
+            }
+          },
+          "s5-saberes": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza sobre el anidamiento en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) integra los cinco saberes del tema con casos resueltos de control de procesos completos, técnicas para reducir el anidamiento profundo (cláusulas de guarda y extracción a funciones) y la prueba de escritorio de algoritmos anidados que sustenta el taller del Tema 3."
+            ],
+            "reference": "Tema 3 · Saber 5: Anidamiento de estructuras",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      }
+    }
+  },
+  "pdf": {
+    "guideLabel": "DOCUMENTO DE SABERES VIRTUAL",
+    "kicker": "Aprendizaje guiado · Práctica aplicada · Autoevaluación",
+    "institution": "Universidad de América",
+    "year": "2026",
+    "title": "Estructuras selectivas y de control",
+    "subtitle": "Documento de Saberes · Tema 3 · Algoritmia Computacional I",
+    "purpose": "Desarrollar las estructuras selectivas (condicionales) y de control (iterativas) para gobernar el flujo de un algoritmo, integrándolas en soluciones de ingeniería con orientación a procesos industriales (RA1).",
+    "structure": "Teoría por saber · ejemplos resueltos · banco de ejercicios · referencias APA.",
+    "sectionOrder": [
+      "pdf-intro",
+      "pdf-seccion-1",
+      "pdf-seccion-2",
+      "pdf-seccion-3",
+      "pdf-seccion-4",
+      "pdf-seccion-5"
+    ],
+    "sections": {
+      "pdf-intro": {
+        "title": "Presentación del Tema 3",
+        "intro": [
+          "Este capítulo del Documento de Saberes desarrolla, en versión imprimible y a modo de libro de saberes, el control de flujo de los algoritmos: las dos capacidades que transforman una lista de instrucciones en una solución inteligente, decidir y repetir. Es el puente natural entre lo aprendido en los Temas 1 y 2 —representar un algoritmo y escribirlo en secuencia con datos y librerías— y lo que viene después: construir programas que reaccionan a los datos y procesan información a escala real.",
+          "El recorrido sigue un hilo conductor de cinco saberes encadenados. Primero el algoritmo aprende a decidir con una condición (Saber 1) y luego a combinar varias condiciones en una regla (Saber 2); enseguida aprende a repetir un proceso (Saber 3) y a gobernar esa repetición para que termine cuando debe (Saber 4).",
+          "Finalmente combina ambas capacidades anidándolas para controlar un proceso completo (Saber 5), que es la base del taller con que se evalúa el tema. Cada saber se lee como un capítulo con su teoría en prosa, sus ejemplos resueltos paso a paso y su código Python verificable."
+        ],
+        "componentOrder": [
+          "s1-detonadora",
+          "pdf-intro-objetivos",
+          "pdf-intro-mapa",
+          "pdf-intro-contexto"
+        ],
+        "components": {
+          "pdf-intro-objetivos": {
+            "type": "objectives",
+            "title": "Resultado de aprendizaje y objetivos",
+            "items": [
+              {
+                "icon": "track_changes",
+                "text": "Aplico las estructuras selectivas y de control vistas en este tema para diseñar algoritmos que tomen decisiones y repitan procesos, en el marco del RA1 sobre el reconocimiento de estructuras de programación."
+              },
+              {
+                "icon": "call_split",
+                "text": "Selecciono la estructura selectiva adecuada (if/elif/else) y combino condiciones con operadores lógicos."
+              },
+              {
+                "icon": "loop",
+                "text": "Construyo ciclos for y while con condición de parada correcta y los controlo con break y continue."
+              },
+              {
+                "icon": "account_tree",
+                "text": "Anido estructuras para resolver problemas de control de procesos completos."
+              }
+            ]
+          },
+          "pdf-intro-mapa": {
+            "type": "list",
+            "title": "Mapa del capítulo",
+            "ordered": true,
+            "items": [
+              "Saber 1: Condicionales (if, elif, else).",
+              "Saber 2: Operadores lógicos y de comparación.",
+              "Saber 3: Estructuras iterativas (ciclos for y while).",
+              "Saber 4: Control de iteración (condición de parada, break, continue).",
+              "Saber 5: Anidamiento de estructuras y banco de ejercicios del tema."
+            ]
+          },
+          "pdf-intro-contexto": {
+            "type": "text",
+            "title": "Para qué sirve este tema",
+            "body": [
+              "Toda automatización de un proceso industrial descansa en dos capacidades: decidir según el estado del sistema y repetir una acción sobre muchos datos. Un controlador que apaga una bomba al superar un nivel está decidiendo; un programa que revisa las mil lecturas de un turno está repitiendo. Este tema enseña a expresar ambas con precisión.",
+              "El lenguaje de trabajo es Python, por su legibilidad y por ser el estándar de la asignatura, apoyado en pseudocódigo cuando aclara la lógica. Cada saber incluye ejemplos resueltos paso a paso que puedes reproducir y verificar en tu propio equipo."
+            ]
+          },
+          "s1-detonadora": {
+            "id": "s1-detonadora",
+            "type": "trigger-question",
+            "eyebrow": "Para empezar",
+            "question": "Piensa en el controlador de un ascensor: con varias condiciones posibles (peso al límite, puerta abierta, llamada en otro piso), ¿qué criterio seguirías para evaluarlas en el orden correcto y evitar que dos órdenes contradictorias se ejecuten a la vez?"
+          }
+        }
+      },
+      "pdf-seccion-1": {
+        "title": "Condicionales: if, elif y else",
+        "intro": [
+          "En los Temas 1 y 2 construimos algoritmos que ejecutaban sus instrucciones una tras otra, en una sola línea de avance. Esa secuencialidad, sin embargo, deja al programa ciego ante los datos: hace siempre lo mismo, llueva o truene. El primer saber de este tema rompe esa rigidez al dotar al algoritmo de la capacidad de elegir.",
+          "Aquí desarrollaremos la estructura selectiva en sus tres formas, la lógica con que Python recorre una cadena de condiciones y los errores que más comprometen una decisión; con ello quedará lista la base para, en el Saber 2, combinar varias condiciones a la vez."
+        ],
+        "componentOrder": [
+          "pdf-s1-teoria",
+          "pdf-s1-keybox",
+          "pdf-s1-tabla",
+          "pdf-s1-figura",
+          "pdf-s1-ejemplo",
+          "pdf-s1-code",
+          "pdf-s1-code-interpretacion",
+          "pdf-s1-callout"
+        ],
+        "components": {
+          "pdf-s1-teoria": {
+            "type": "column-flow",
+            "title": "Decidir según una condición",
+            "body": [
+              "Imaginemos un sistema de monitoreo que vigila el horno de una planta. Mientras todo transcurre con normalidad, el algoritmo se limita a leer y registrar; pero en el instante en que la temperatura cruza un umbral debe actuar de otra manera.",
+              "Ese cambio de comportamiento según el estado del proceso es, en esencia, una decisión, y la estructura que la materializa es la estructura selectiva o condicional. Joyanes Aguilar (2013) la define como aquella que altera el flujo secuencial para que el programa escoja, entre dos o más alternativas, el bloque de instrucciones que se ejecutará según el resultado de evaluar una condición.",
+              "Esa condición es una expresión que solo puede dar verdadero o falso. Se construye con operadores de comparación sobre los datos disponibles y produce un valor booleano que es lo único que el if examina para decidir su rumbo.",
+              "Conviene recordar, como insiste Oviedo Regino (2005), que toda decisión computacional se reduce a una pregunta de respuesta cerrada: el algoritmo no interpreta matices, sino que lee un único bit de verdad y bifurca en consecuencia. De ahí que formular bien la condición sea más importante que escribir el bloque que la sigue.",
+              "Las formas de la selección crecen en riqueza. La más simple es el if sin else, que ejecuta su bloque solo cuando la condición es verdadera y, de lo contrario, no hace nada. El if/else introduce una alternativa explícita y obliga a elegir entre dos caminos excluyentes.",
+              "Cuando las categorías son tres o más —pensemos en clasificar un nivel como bajo, normal o alto— se encadena el if/elif/else, que Python evalúa de arriba hacia abajo y resuelve ejecutando únicamente el bloque de la primera condición verdadera; el else final actúa como red de seguridad que captura cualquier caso no contemplado.",
+              "Dos detalles de Python merecen atención porque en otros lenguajes se resuelven con llaves. El primero es que el bloque de cada cláusula se delimita por la sangría: todo lo indentado bajo el if pertenece a su bloque, y al volver al margen el bloque termina.",
+              "El segundo es que el orden de los elif no es decorativo: como la primera condición verdadera detiene la cadena, ordenar las condiciones de la más restrictiva a la más general garantiza que cada dato caiga en exactamente una categoría. Con esta gramática mínima ya podemos traducir buena parte de las reglas de operación de un proceso industrial."
+            ]
+          },
+          "pdf-s1-tabla": {
+            "type": "table",
+            "title": "Formas de la estructura selectiva",
+            "columns": [
+              "Forma",
+              "Cuándo usarla",
+              "Regla industrial de ejemplo"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "if simple",
+                  "Actuar solo si se cumple la condición",
+                  "Registrar alerta si la presión supera el umbral"
+                ]
+              },
+              {
+                "cells": [
+                  "if / else",
+                  "Elegir entre dos acciones excluyentes",
+                  "Aceptar o rechazar una pieza según tolerancia"
+                ]
+              },
+              {
+                "cells": [
+                  "if / elif / else",
+                  "Clasificar en tres o más categorías",
+                  "Marcar el nivel del tanque como bajo, normal o alto"
+                ]
+              }
+            ]
+          },
+          "pdf-s1-figura": {
+            "type": "figure",
+            "title": "Flujograma de la estructura selectiva doble",
+            "assetId": "t3-s1-flujo-condicional",
+            "src": "",
+            "alt": "Diagrama de flujo con un rombo de decisión que se ramifica en verdadero y falso.",
+            "caption": "Representación del if/else: el rombo evalúa la condición y el flujo toma una de dos ramas. Elaboración propia.",
+            "prompt": "Crear un flujograma didáctico en español de una estructura selectiva doble (if/else). Elementos: inicio (óvalo), un rombo de decisión etiquetado '¿temperatura > umbral?', dos flechas salientes rotuladas 'Verdadero' y 'Falso'; la rama Verdadero lleva a un rectángulo 'Activar alarma', la rama Falso a un rectángulo 'Continuar proceso'; ambas confluyen en un óvalo 'fin'. Estilo limpio, paleta sobria, etiquetas legibles."
+          },
+          "pdf-s1-ejemplo": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto · Clasificación con elif",
+            "statement": "Clasifica una temperatura $T = 78^{\\circ}\\mathrm{C}$ como baja si $T < 40$, normal si $40 \\le T \\le 80$ y alta si $T > 80$.",
+            "steps": [
+              {
+                "title": "Primera condición",
+                "body": "Se evalúa el if; si es falsa se pasa al elif.",
+                "formula": "T < 40 \\;\\Rightarrow\\; 78 < 40 \\;\\Rightarrow\\; \\text{False}",
+                "final": false
+              },
+              {
+                "title": "Segunda condición",
+                "body": "Como el if fue falso, se evalúa el elif.",
+                "formula": "40 \\le 78 \\le 80 \\;\\Rightarrow\\; \\text{True}",
+                "final": false
+              },
+              {
+                "title": "Resultado",
+                "body": "Se ejecuta el bloque 'normal' y la cadena se detiene sin llegar al else. El valor frontera $T = 80$ también se clasifica como normal.",
+                "formula": "\\text{categoria} = \\text{normal}",
+                "final": true
+              }
+            ]
+          },
+          "pdf-s1-code": {
+            "type": "code",
+            "title": "Llevar la clasificación a Python",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "clasificar_nivel.py",
+            "instructions": [
+              "Reproduce el fragmento en tu equipo y ejecútalo con python clasificar_nivel.py.",
+              "Sustituye nivel por 12, 55 y 90 para comprobar que cada valor activa exactamente una rama y verificar el orden de evaluación de la cadena."
+            ],
+            "code": "nivel = 55  # porcentaje de llenado del tanque\n\nif nivel < 20:\n    estado = \"BAJO: reabastecer\"\nelif nivel <= 80:\n    estado = \"NORMAL: operacion estable\"\nelse:\n    estado = \"ALTO: detener llenado\"\n\nprint(f\"Nivel {nivel}% -> {estado}\")",
+            "expectedOutput": [
+              "Con nivel = 55 imprime: Nivel 55% -> NORMAL: operacion estable."
+            ]
+          },
+          "pdf-s1-code-interpretacion": {
+            "type": "text",
+            "title": "Lectura del código",
+            "body": [
+              "El fragmento traduce, casi palabra por palabra, la regla industrial 'si el tanque está por debajo del 20 % reabastecer, si llega hasta el 80 % operación estable, en otro caso detener el llenado'. Al ejecutarlo con nivel = 55, la primera condición ($55 < 20$) es falsa, de modo que el intérprete pasa al elif; allí $55 \\le 80$ es verdadera, se asigna el estado 'NORMAL' y la cadena se detiene sin llegar al else.",
+              "Cambiar el dato de entrada permite comprobar que cada valor activa una sola rama: ahí se vuelve tangible que el if/elif/else no es una lista de comprobaciones independientes, sino una clasificación excluyente."
+            ]
+          },
+          "pdf-s1-callout": {
+            "type": "callout",
+            "tone": "warning",
+            "title": "Antes de seguir y puente al siguiente tema",
+            "body": [
+              "Cuida los errores frontera: confundir $=$ (asignación) con $==$ (comparación) o solapar rangos rompe la decisión sin generar error de sintaxis, así que prueba siempre los valores justo en el umbral. Con la decisión simple dominada, surge enseguida una limitación: una sola comparación rara vez basta para una regla real. El Saber 2 muestra cómo encadenar varias condiciones con operadores lógicos para expresar reglas compuestas."
+            ]
+          },
+          "pdf-s1-keybox": {
+            "type": "key-box",
+            "variant": "definicion",
+            "title": "Estructura selectiva",
+            "body": [
+              "Es la estructura de control que rompe el avance secuencial para que el algoritmo elija, según el valor de verdad de una condición booleana, cuál de varios bloques de instrucciones ejecutar. Su sintaxis en Python es if / elif / else, y solo una de sus ramas llega a ejecutarse en cada paso."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-2": {
+        "title": "Operadores lógicos y de comparación",
+        "intro": [
+          "El Saber 1 nos dejó decidiendo con una sola pregunta a la vez. Pero apenas miramos una regla de operación real descubrimos que rara vez una comparación basta: una pieza se acepta si su longitud está por encima de un mínimo y por debajo de un máximo; un proceso se detiene si la temperatura es excesiva o si la presión lo es.",
+          "Necesitamos, entonces, un lenguaje para enlazar varias condiciones en una sola decisión. Ese lenguaje son los operadores lógicos and, or y not. En este apartado los estudiaremos junto con su tabla de verdad, las reglas de precedencia con que Python los combina y la evaluación de cortocircuito, una característica que más adelante nos protegerá de errores de cálculo."
+        ],
+        "componentOrder": [
+          "pdf-s2-teoria",
+          "pdf-s2-tabla-verdad",
+          "pdf-s2-twocol",
+          "pdf-s2-formula",
+          "pdf-s2-ejemplo",
+          "pdf-s2-code",
+          "pdf-s2-code-interpretacion",
+          "pdf-s2-callout"
+        ],
+        "components": {
+          "pdf-s2-teoria": {
+            "type": "column-flow",
+            "title": "Combinar condiciones",
+            "body": [
+              "Antes de combinar conviene afinar la pieza elemental: la comparación. Los operadores de comparación —igual ($==$), distinto ($\\ne$), mayor ($>$), menor ($<$), mayor o igual ($\\ge$) y menor o igual ($\\le$)— relacionan dos valores del mismo tipo y devuelven un booleano.",
+              "Cada uno responde una pregunta cerrada sobre los datos, y de la fidelidad de esa pregunta depende toda la decisión. Un error sutil pero frecuente, señalado por Oviedo Regino (2005), es comparar magnitudes de tipos distintos, por ejemplo un texto con un número; el resultado deja de tener sentido aunque el programa no proteste.",
+              "Sobre esas comparaciones se levantan los operadores lógicos. El operador and es verdadero solo cuando todas las condiciones que une lo son; modela reglas del tipo 'la pieza pasa si cumple esto y aquello'. El operador or se satisface con que al menos una sea verdadera, y solo resulta falso cuando todas lo son; modela reglas donde basta una causa para actuar, como detener una línea por sobrecarga o por sobrecalentamiento.",
+              "El operador not invierte el booleano de una condición y permite expresar estados negados, como 'operar mientras el sistema no esté en falla'. Joyanes Aguilar (2008) subraya que estos tres operadores, heredados del álgebra de Boole, son suficientes para construir cualquier regla de control por compleja que parezca.",
+              "Falta un matiz que distingue a un programador experto: cómo evalúa Python estas expresiones. El lenguaje aplica una precedencia fija —primero las comparaciones, luego not, después and y por último or—, de modo que cuando el agrupamiento deseado no coincide con ese orden hay que escribir paréntesis explícitos.",
+              "Además, Python usa evaluación de cortocircuito (o evaluación perezosa): en un and detiene la evaluación en cuanto encuentra la primera condición falsa, y en un or, en cuanto encuentra la primera verdadera, porque en ambos casos el resultado ya quedó decidido.",
+              "Esta no es una mera optimización: como veremos, permite escribir condiciones de guarda que protegen un cálculo posterior, una técnica habitual cuando una lectura podría provocar una división por cero o el acceso a un recurso ausente."
+            ]
+          },
+          "pdf-s2-tabla-verdad": {
+            "type": "table",
+            "title": "Tablas de verdad de and, or y not",
+            "columns": [
+              "A",
+              "B",
+              "A and B",
+              "A or B",
+              "not A"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "V",
+                  "V",
+                  "V",
+                  "V",
+                  "F"
+                ]
+              },
+              {
+                "cells": [
+                  "V",
+                  "F",
+                  "F",
+                  "V",
+                  "F"
+                ]
+              },
+              {
+                "cells": [
+                  "F",
+                  "V",
+                  "F",
+                  "V",
+                  "V"
+                ]
+              },
+              {
+                "cells": [
+                  "F",
+                  "F",
+                  "F",
+                  "F",
+                  "V"
+                ]
+              }
+            ]
+          },
+          "pdf-s2-formula": {
+            "type": "formula",
+            "title": "Leyes de De Morgan",
+            "context": [
+              "Negar una regla compuesta es fuente frecuente de errores; las leyes de De Morgan dan la equivalencia exacta para distribuir el not sobre and y or."
+            ],
+            "latex": "\\text{not}(A \\wedge B) = (\\text{not } A) \\vee (\\text{not } B), \\qquad \\text{not}(A \\vee B) = (\\text{not } A) \\wedge (\\text{not } B)",
+            "variables": [
+              {
+                "symbol": "A",
+                "description": "primera condición booleana."
+              },
+              {
+                "symbol": "B",
+                "description": "segunda condición booleana."
+              },
+              {
+                "symbol": "\\wedge",
+                "description": "operador and (conjunción)."
+              },
+              {
+                "symbol": "\\vee",
+                "description": "operador or (disyunción)."
+              }
+            ],
+            "explanation": [
+              "Al distribuir el not, el and se transforma en or y viceversa. Aplicar la ley evita decisiones invertidas: 'no cumple ambas tolerancias' no es lo mismo que 'no cumple ninguna'."
+            ]
+          },
+          "pdf-s2-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto · Cortocircuito como guarda",
+            "context": [
+              "Una regla calcula presion / caudal solo cuando el caudal no es cero, para evitar la división por cero."
+            ],
+            "formula": "(\\text{caudal} \\ne 0) \\;\\text{and}\\; (\\text{presion} / \\text{caudal} > \\text{limite})",
+            "solution": [
+              "Como Python evalúa el and de izquierda a derecha y corta en la primera condición falsa, la división solo se intenta cuando caudal != 0 es verdadero.",
+              "Si el caudal es cero, la primera condición es falsa, el and ya es falso y la división nunca se ejecuta: la condición de guarda protege el cálculo. Invertir el orden provocaría un error de división por cero."
+            ]
+          },
+          "pdf-s2-code": {
+            "type": "code",
+            "title": "Una regla de planta combinando and, or y not",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "regla_planta.py",
+            "instructions": [
+              "Reproduce el fragmento y ejecútalo con python regla_planta.py.",
+              "Cambia los valores de longitud, temperatura, presion y en_falla para forzar cada decisión y observar cómo and, or y not se combinan con los paréntesis."
+            ],
+            "code": "longitud = 49.6      # mm\ntemperatura = 70     # C\npresion = 6          # bar\nen_falla = False\n\ndentro_tolerancia = longitud >= 49.5 and longitud <= 50.5\nhay_alarma = temperatura > 90 or presion > 8\nopera = dentro_tolerancia and not en_falla and not hay_alarma\n\nprint(f\"Tolerancia OK: {dentro_tolerancia}, Alarma: {hay_alarma}, Operar: {opera}\")",
+            "expectedOutput": [
+              "Imprime: Tolerancia OK: True, Alarma: False, Operar: True."
+            ]
+          },
+          "pdf-s2-code-interpretacion": {
+            "type": "text",
+            "title": "Lectura del código",
+            "body": [
+              "Cada línea booleana captura una regla de operación distinta y la nombra: dentro_tolerancia une dos comparaciones con and (deben cumplirse ambas), hay_alarma las une con or (basta una causa para alarmar) y opera negocia las tres usando not para exigir que no haya falla ni alarma.",
+              "El paréntesis implícito que da la precedencia hace que las comparaciones se resuelvan antes que los operadores lógicos; nombrar cada subcondición convierte una expresión que sería ilegible en tres frases declarativas. Al modificar los datos de entrada se comprueba la regla compuesta: por ejemplo, basta poner en_falla = True para que opera pase a False sin tocar el resto, lo que evidencia el papel del not como interruptor de seguridad."
+            ]
+          },
+          "pdf-s2-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Recomendación de legibilidad y puente al siguiente tema",
+            "body": [
+              "Cuando mezcles and con or, usa paréntesis para fijar el agrupamiento; muchas veces expresar la regla en forma afirmativa es más claro que negar una condición compuesta. Hasta aquí el algoritmo decide, pero sigue actuando una sola vez. El Saber 3 le añade la otra gran capacidad del control de flujo: repetir, para que esas mismas reglas se apliquen a cientos de lecturas sin reescribirlas."
+            ]
+          },
+          "pdf-s2-twocol": {
+            "type": "two-column",
+            "title": "and frente a or",
+            "columns": [
+              {
+                "title": "and (conjunción)",
+                "body": [
+                  "Es verdadero solo cuando ambas condiciones lo son; basta que una falle para que toda la expresión sea falsa.",
+                  "Modela reglas que exigen cumplir varios requisitos a la vez, como aceptar una pieza si $\\text{longitud} \\ge \\text{min}$ y $\\text{longitud} \\le \\text{max}$."
+                ]
+              },
+              {
+                "title": "or (disyunción)",
+                "body": [
+                  "Es verdadero cuando al menos una condición lo es; solo resulta falso si todas fallan.",
+                  "Modela reglas con causas alternativas, como disparar una alarma si la temperatura es excesiva o la presión lo es."
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "pdf-seccion-3": {
+        "title": "Estructuras iterativas: ciclos for y while",
+        "intro": [
+          "Hasta ahora el algoritmo decide, pero ejecuta cada decisión una sola vez. Supongamos que la planta del Saber anterior genera mil lecturas por turno: aplicar la regla a mano, mil veces, sería absurdo, y escribir mil instrucciones idénticas, imposible de mantener. La respuesta es la segunda gran capacidad del control de flujo: repetir.",
+          "Las estructuras iterativas, o ciclos, permiten describir una vez el trabajo y dejar que la máquina lo repita tantas veces como los datos lo exijan. En este apartado distinguiremos el ciclo definido (for) del indefinido (while), fijaremos el criterio para elegir entre ellos y presentaremos los patrones de acumulación que resuelven casi todos los recorridos. Después, en el Saber 4, aprenderemos a gobernar esa repetición para que termine cuando debe."
+        ],
+        "componentOrder": [
+          "pdf-s3-teoria",
+          "pdf-s3-tabla",
+          "pdf-s3-keybox",
+          "pdf-s3-ejemplo",
+          "pdf-s3-code",
+          "pdf-s3-code-interpretacion",
+          "pdf-s3-callout"
+        ],
+        "components": {
+          "pdf-s3-teoria": {
+            "type": "column-flow",
+            "title": "Repetir con for y con while",
+            "body": [
+              "Una estructura iterativa ejecuta varias veces un mismo bloque de instrucciones, llamado cuerpo del ciclo; cada ejecución completa de ese cuerpo es una iteración. Joyanes Aguilar (2013) recuerda que la iteración es lo que vuelve escalable a un algoritmo: sin ciclos, recorrer quinientas lecturas exigiría escribir quinientas instrucciones, mientras que con un ciclo una sola descripción del cuerpo procesa cualquier cantidad de datos.",
+              "La diferencia esencial entre los dos ciclos que ofrece Python no está en lo que hacen, sino en cómo se controla cuántas veces lo hacen.",
+              "El for es el ciclo definido: recorre los elementos de una colección o de un rango conocido —cada lectura de una lista, cada entero generado por range— y, por tanto, el número de iteraciones queda fijado de antemano por aquello que se recorre. El while es el ciclo indefinido: repite mientras una condición se mantenga verdadera, de modo que el número de iteraciones depende de cómo evolucionen los datos dentro del cuerpo.",
+              "Downey (2015) ofrece un criterio práctico que conviene memorizar: si sabemos sobre qué vamos a iterar, el for expresa la intención con más claridad; si solo conocemos la condición que debe cumplirse para detenernos, el while es la herramienta adecuada.",
+              "Buena parte del trabajo dentro de un ciclo se reduce a un puñado de patrones de acumulación. Una suma inicializa un acumulador en cero y le agrega cada elemento; un contador parte de cero y suma uno cada vez que se cumple una condición; un máximo guarda el mayor valor observado hasta el momento. Todos comparten la misma anatomía: la variable se inicializa antes del ciclo y se actualiza dentro de él.",
+              "Conviene advertir desde ya el riesgo propio del while: si ninguna instrucción del cuerpo modifica la variable que aparece en la condición acercándola a la parada, el ciclo no termina nunca y se convierte en un ciclo infinito, el error que más tememos al iterar."
+            ]
+          },
+          "pdf-s3-tabla": {
+            "type": "table",
+            "title": "Ciclo for frente a ciclo while",
+            "columns": [
+              "Criterio",
+              "for (definido)",
+              "while (indefinido)"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Controla las repeticiones",
+                  "La colección o el range",
+                  "La condición booleana"
+                ]
+              },
+              {
+                "cells": [
+                  "Número de iteraciones conocido",
+                  "Sí",
+                  "No siempre"
+                ]
+              },
+              {
+                "cells": [
+                  "Caso típico",
+                  "Procesar cada pieza de un lote",
+                  "Calentar hasta alcanzar la temperatura"
+                ]
+              },
+              {
+                "cells": [
+                  "Riesgo principal",
+                  "Recorrer fuera de rango",
+                  "Ciclo infinito"
+                ]
+              }
+            ]
+          },
+          "pdf-s3-ejemplo": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto · Acumular con un for",
+            "statement": "Suma las lecturas $[3, 5, 2]$ con un acumulador inicializado en $0$.",
+            "steps": [
+              {
+                "title": "Inicializar",
+                "body": "Antes del ciclo, el acumulador vale cero.",
+                "formula": "\\text{suma} = 0",
+                "final": false
+              },
+              {
+                "title": "Recorrer",
+                "body": "En cada iteración se agrega un elemento: $0+3$, $3+5$, $8+2$.",
+                "formula": "\\text{suma}: 0 \\to 3 \\to 8 \\to 10",
+                "final": false
+              },
+              {
+                "title": "Resultado",
+                "body": "Tras tres iteraciones (una por elemento) el acumulador queda en 10, igual a $3+5+2$.",
+                "formula": "\\text{suma} = 10",
+                "final": true
+              }
+            ]
+          },
+          "pdf-s3-code": {
+            "type": "code",
+            "title": "Promedio de lecturas con un for",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "promedio_lecturas.py",
+            "instructions": [
+              "Reproduce el fragmento en tu equipo, ejecútalo con python promedio_lecturas.py y verifica el promedio.",
+              "Modifica la lista de lecturas para comprobar que el mismo cuerpo del for procesa cualquier cantidad de datos."
+            ],
+            "code": "lecturas = [21.5, 22.0, 20.8, 23.1, 21.9]\nsuma = 0\nfor t in lecturas:\n    suma = suma + t\npromedio = suma / len(lecturas)\nprint(f\"{len(lecturas)} lecturas, promedio = {promedio:.2f} C\")",
+            "expectedOutput": [
+              "Imprime: 5 lecturas, promedio = 21.86 C. Si la lista quedara vacía, len sería 0 y la división fallaría: un caso a controlar."
+            ]
+          },
+          "pdf-s3-code-interpretacion": {
+            "type": "text",
+            "title": "Lectura del código",
+            "body": [
+              "El fragmento ilustra el patrón de acumulación en su forma más pura. La variable suma se inicializa en cero antes del for —el valor neutro de la adición— y el cuerpo del ciclo la actualiza una vez por cada lectura, sin que importe si la lista tiene cinco elementos o quinientos: el mismo cuerpo sirve para ambos casos, que es exactamente la escalabilidad de la que hablaba la teoría.",
+              "El promedio surge después dividiendo el acumulado entre len(lecturas), el número de iteraciones que realizó el for. La observación sobre la lista vacía no es anecdótica: anticipa un caso límite (dividir entre cero) que en el Saber 4 aprenderemos a gobernar con una condición de parada o una guarda, enlazando la iteración con su control."
+            ]
+          },
+          "pdf-s3-callout": {
+            "type": "callout",
+            "tone": "warning",
+            "title": "Antes de ejecutar un while, y antes del siguiente saber",
+            "body": [
+              "Localiza siempre en el cuerpo del while la instrucción que modifica la variable de control hacia la salida; si ninguna lo hace, la repetición no termina nunca. Saber repetir, sin embargo, es solo la mitad del oficio: hace falta gobernar la repetición. El Saber 4 desarrolla la condición de parada y las instrucciones break y continue, que deciden cuándo cortar el ciclo y cuándo saltar una iteración."
+            ]
+          },
+          "pdf-s3-keybox": {
+            "type": "key-box",
+            "variant": "tip",
+            "title": "¿For o while?",
+            "body": [
+              "Si puedes responder de antemano cuántas veces se repetirá el trabajo (recorrer un lote, contar de 1 a 100) usa for, el ciclo definido. Si la repetición depende de un suceso futuro cuyo número de pasos no conoces (calentar hasta alcanzar una temperatura, leer hasta que llegue un centinela) usa while, el ciclo indefinido."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-4": {
+        "title": "Control de iteración: condición de parada, break y continue",
+        "intro": [
+          "El Saber 3 nos enseñó a repetir, y con ello asomó un peligro: un ciclo que repite sin saber cuándo detenerse bloquea el programa, y otro que se detiene antes de tiempo deja el trabajo a medias. Tener un ciclo, por tanto, no basta; hay que gobernarlo.",
+          "Este apartado desarrolla el corazón de ese gobierno: la condición de parada que decide cuándo el ciclo termina, las causas del temido ciclo infinito, y las dos instrucciones —break y continue— que permiten alterar finamente el flujo de la repetición.",
+          "Cerramos con el patrón centinela, que resuelve un caso muy común en ingeniería: leer datos cuya cantidad no se conoce de antemano. Todo ello prepara el terreno para el Saber 5, donde combinaremos decisiones y repeticiones anidándolas."
+        ],
+        "componentOrder": [
+          "pdf-s4-teoria",
+          "pdf-s4-keybox",
+          "pdf-s4-tabla",
+          "pdf-s4-ejemplo",
+          "pdf-s4-code",
+          "pdf-s4-code-interpretacion",
+          "pdf-s4-callout"
+        ],
+        "components": {
+          "pdf-s4-teoria": {
+            "type": "column-flow",
+            "title": "Gobernar la repetición",
+            "body": [
+              "Todo ciclo necesita una condición de parada: la situación precisa que hace que deje de repetirse. En el for esa parada es implícita, porque el ciclo termina cuando se agota la colección o el rango que recorre; en el while es explícita, y ocurre cuando la condición de la cabecera se vuelve falsa.",
+              "Joyanes Aguilar (2008) insiste en que diseñar primero la parada —y no el cuerpo— es lo que separa un ciclo correcto de uno que se cuelga, porque obliga a responder, antes de programar, a la pregunta de cuándo el proceso ha cumplido su objetivo.",
+              "Para que un while termine deben coexistir tres elementos que conviene verificar como una lista de comprobación: una variable de control inicializada antes del ciclo, una condición que la examine en la cabecera y una actualización dentro del cuerpo que la acerque a hacer falsa esa condición. Si falta la tercera, la condición permanece verdadera para siempre y el ciclo es infinito.",
+              "La defensa más barata, como recuerda Downey (2015), no es ejecutar a ver qué pasa, sino la prueba de escritorio: trazar las primeras iteraciones y confirmar que la variable de control avanza, en efecto, hacia la parada.",
+              "Sobre ese gobierno básico, Python ofrece dos instrucciones que alteran el flujo sin tocar la condición del ciclo. La instrucción break abandona el ciclo de inmediato, lo que resulta natural para una búsqueda que termina en cuanto halla su objetivo y no necesita revisar el resto.",
+              "La instrucción continue salta el resto del cuerpo y pasa directamente a la siguiente iteración, ideal para descartar datos no válidos sin interrumpir el recorrido completo. Ambas se colocan siempre dentro de un condicional, porque sin él romperían o saltarían en la primera vuelta y el ciclo perdería sentido.",
+              "Queda un patrón clásico para cerrar el saber. Cuando no se sabe cuántos datos llegarán —pensemos en las lecturas que un operario introduce hasta dar por terminada la captura— se emplea el patrón centinela: un valor convenido que no pertenece a los datos reales (por ejemplo, $-1$) señala el fin de la entrada y dispara la parada.",
+              "Como salvaguarda adicional, en ciclos que dependen de un sensor o de datos externos conviene añadir un límite máximo de iteraciones, de modo que el ciclo termine incluso si la condición ideal nunca llega a cumplirse."
+            ]
+          },
+          "pdf-s4-tabla": {
+            "type": "table",
+            "title": "break frente a continue",
+            "columns": [
+              "Aspecto",
+              "break",
+              "continue"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Efecto",
+                  "Termina el ciclo completo",
+                  "Termina solo la iteración actual"
+                ]
+              },
+              {
+                "cells": [
+                  "Continúa en",
+                  "La instrucción posterior al ciclo",
+                  "La siguiente iteración"
+                ]
+              },
+              {
+                "cells": [
+                  "Caso típico",
+                  "Búsqueda que halló su objetivo",
+                  "Descartar un dato no válido"
+                ]
+              }
+            ]
+          },
+          "pdf-s4-ejemplo": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto · Sumar válidos con continue",
+            "statement": "Suma solo las lecturas no negativas de $[12, -1, 8, -3, 5]$, saltando las negativas con continue.",
+            "steps": [
+              {
+                "title": "Inicializar",
+                "body": "La suma de válidos empieza en cero.",
+                "formula": "\\text{suma} = 0",
+                "final": false
+              },
+              {
+                "title": "Recorrer y filtrar",
+                "body": "Se suman 12, 8 y 5; las negativas -1 y -3 disparan continue y se omiten.",
+                "formula": "\\text{suma}: 0 \\to 12 \\to 20 \\to 25",
+                "final": false
+              },
+              {
+                "title": "Resultado",
+                "body": "Solo se acumularon las tres lecturas válidas: $12+8+5 = 25$. continue impidió que las negativas contaminaran el resultado.",
+                "formula": "\\text{suma} = 25",
+                "final": true
+              }
+            ]
+          },
+          "pdf-s4-code": {
+            "type": "code",
+            "title": "Lectura con centinela y salvaguarda de iteraciones",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "captura_centinela.py",
+            "instructions": [
+              "Reproduce el fragmento y ejecútalo con python captura_centinela.py.",
+              "Cambia la lista de entradas: pon el centinela -1 más tarde, o quítalo del todo, y observa cómo la salvaguarda max_lecturas evita que el ciclo se prolongue indefinidamente."
+            ],
+            "code": "entradas = [21.0, 22.5, 23.1, -1, 99.9]  # -1 es el centinela de fin\nmax_lecturas = 100\nsuma = 0\nvalidas = 0\ni = 0\n\nwhile i < len(entradas) and i < max_lecturas:\n    dato = entradas[i]\n    if dato == -1:        # centinela: fin de la captura\n        break\n    suma += dato\n    validas += 1\n    i += 1\n\npromedio = suma / validas if validas > 0 else 0\nprint(f\"{validas} lecturas validas, promedio = {promedio:.2f} C\")",
+            "expectedOutput": [
+              "Imprime: 3 lecturas validas, promedio = 22.20 C."
+            ]
+          },
+          "pdf-s4-code-interpretacion": {
+            "type": "text",
+            "title": "Lectura del código",
+            "body": [
+              "El fragmento reúne tres ideas del saber en un mismo ciclo. La condición de parada del while combina dos guardas: $i < \\text{len(entradas)}$ asegura no salir del rango de la lista e $i < \\text{max\\_lecturas}$ actúa como salvaguarda contra una repetición desbocada. Dentro del cuerpo, el centinela $-1$ dispara un break que detiene la captura sin procesar ese valor falso ni los que vengan detrás, razón por la cual el $99.9$ posterior nunca se suma.",
+              "La variable de control i se actualiza al final, garantizando el avance hacia la parada. Por último, la expresión condicional para el promedio protege la división contra el caso de cero lecturas válidas, el caso límite que habíamos dejado pendiente en el Saber 3."
+            ]
+          },
+          "pdf-s4-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Diseñar break con criterio y puente al siguiente tema",
+            "body": [
+              "Cuando la salida puede expresarse en la propia condición del while, prefiérela a un break disperso: la condición de parada queda visible en la cabecera y el código es más legible. Con la decisión y la repetición ya dominadas y gobernadas, solo falta combinarlas. El Saber 5 anida decisiones dentro de repeticiones para resolver problemas de control completos y conduce al taller que integra todo el tema."
+            ]
+          },
+          "pdf-s4-keybox": {
+            "type": "key-box",
+            "variant": "alerta",
+            "title": "Cuidado con el ciclo infinito",
+            "body": [
+              "Un while cuya condición nunca llega a ser falsa repite para siempre y bloquea el programa. Ocurre cuando se olvida actualizar la variable de control dentro del cuerpo, o cuando esa actualización nunca acerca la condición a su salida. Verifica siempre que cada iteración modifique el estado en la dirección que conduce a la parada."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-5": {
+        "title": "Anidamiento de estructuras y banco de ejercicios",
+        "intro": [
+          "Llegamos al saber que reúne todo lo anterior. A lo largo del tema aprendimos por separado a decidir (Saberes 1 y 2) y a repetir gobernando la repetición (Saberes 3 y 4); pero los problemas reales rara vez se resuelven con una estructura aislada. Inspeccionar un lote exige recorrer las piezas y, en cada una, decidir si está dentro de tolerancia: repetir y decidir a la vez.",
+          "Anidar es precisamente eso, colocar una estructura dentro de otra. Este apartado integra los cinco saberes del tema mostrando cómo se combinan los ciclos y los condicionales para gobernar un proceso completo, y cierra el capítulo con el banco de ejercicios y las referencias de la asignatura. Es, además, la base directa de la evidencia del taller."
+        ],
+        "componentOrder": [
+          "pdf-s5-teoria",
+          "pdf-s5-datahighlight",
+          "pdf-s5-tabla",
+          "pdf-s5-ejemplo",
+          "pdf-s5-code",
+          "pdf-s5-code-interpretacion",
+          "pdf-s5-ejercicios",
+          "pdf-s5-referencias"
+        ],
+        "components": {
+          "pdf-s5-teoria": {
+            "type": "column-flow",
+            "title": "Anidar para gobernar un proceso completo",
+            "body": [
+              "Anidar significa colocar una estructura completa dentro del cuerpo de otra. El caso más frecuente, y el más útil en ingeniería, es un if dentro de un ciclo: el ciclo recorre los datos y, en cada iteración, el if decide qué hacer con el dato actual.",
+              "También se anidan ciclos dentro de ciclos, lo que abre la puerta a recorrer datos de dos dimensiones —una matriz de mediciones, una rejilla de sensores—; con anidamiento doble el cuerpo más interno se ejecuta $m \\times n$ veces, una multiplicación que conviene tener presente porque, como advierte Cormen et al. (2009) al analizar el costo de los algoritmos, duplicar el tamaño de los datos en un recorrido doble cuadruplica el número de operaciones.",
+              "En Python la sangría es la que revela el nivel de anidamiento: cada estructura interna se indenta un nivel más respecto de la que la contiene, y leer correctamente esa sangría es indispensable para saber qué instrucción pertenece a qué estructura.",
+              "La estrategia de diseño que recomienda Oviedo Regino (2005) consiste en descomponer el problema en dos preguntas antes de escribir una sola línea: '¿qué se repite?', que define el ciclo externo, y '¿qué se decide en cada repetición?', que define los condicionales internos. Solo después de trazar esa descomposición con una prueba de escritorio se traduce a código.",
+              "Conviene, por último, no abusar del anidamiento. Cuando supera tres niveles el código se vuelve difícil de leer y de probar, porque cada nivel multiplica los caminos posibles.",
+              "Dos técnicas lo aplanan: las cláusulas de guarda —comprobar la condición opuesta al inicio y descartar el caso con continue, evitando envolver todo el cuerpo en un if— y la extracción de la lógica interna a una función, recurso que se profundiza en el Tema 5. Este saber integra los cuatro anteriores y sustenta el taller del tema, la evidencia con la que se cierra el aprendizaje del control de flujo."
+            ]
+          },
+          "pdf-s5-tabla": {
+            "type": "table",
+            "title": "Combinaciones de anidamiento",
+            "columns": [
+              "Combinación",
+              "Qué resuelve",
+              "Ejemplo de ingeniería"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "if dentro de for",
+                  "Aplicar una decisión a cada elemento",
+                  "Contar piezas fuera de tolerancia en un lote"
+                ]
+              },
+              {
+                "cells": [
+                  "for dentro de for",
+                  "Recorrer datos de dos dimensiones",
+                  "Sumar una matriz de mediciones sensor x hora"
+                ]
+              },
+              {
+                "cells": [
+                  "for dentro de while",
+                  "Procesar bloques sucesivos",
+                  "Procesar cada pieza de cada lote producido"
+                ]
+              }
+            ]
+          },
+          "pdf-s5-ejemplo": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto · if dentro de for",
+            "statement": "Cuenta cuántas piezas de $[49.6, 51.2, 50.0, 48.9]$ quedan fuera de la tolerancia $[49.5, 50.5]$.",
+            "steps": [
+              {
+                "title": "Inicializar el contador",
+                "body": "Antes del for, el contador de piezas fuera de tolerancia vale cero.",
+                "formula": "\\text{fuera} = 0",
+                "final": false
+              },
+              {
+                "title": "Recorrer y decidir",
+                "body": "El if interno marca fuera de rango 51.2 ($> 50.5$) y 48.9 ($< 49.5$); 49.6 y 50.0 están dentro.",
+                "formula": "\\text{fuera}: 0 \\to 1 \\to 2",
+                "final": false
+              },
+              {
+                "title": "Resultado",
+                "body": "El for recorrió las 4 piezas y el if anidado contó 2 fuera de tolerancia.",
+                "formula": "\\text{fuera} = 2",
+                "final": true
+              }
+            ]
+          },
+          "pdf-s5-code": {
+            "type": "code",
+            "title": "Doble for sobre una matriz de mediciones",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "matriz_sensores.py",
+            "instructions": [
+              "Reproduce el fragmento y ejecútalo con python matriz_sensores.py.",
+              "Cambia el umbral y algún valor de la matriz, y traza a mano cuántas veces se ejecuta el cuerpo interno para confirmar el conteo 3 x 4."
+            ],
+            "code": "# filas = sensores S1..S3, columnas = horas h1..h4\nmediciones = [\n    [21.0, 22.5, 80.5, 23.0],\n    [19.8, 81.2, 20.1, 22.7],\n    [24.0, 23.5, 22.9, 90.1],\n]\numbral = 80\nfuera = 0\n\nfor fila in mediciones:        # for externo: cada sensor\n    for valor in fila:         # for interno: cada hora\n        if valor > umbral:     # if anidado: decide por celda\n            fuera += 1\n\nprint(f\"Celdas sobre el umbral: {fuera} de {len(mediciones) * len(mediciones[0])}\")",
+            "expectedOutput": [
+              "Imprime: Celdas sobre el umbral: 3 de 12."
+            ]
+          },
+          "pdf-s5-code-interpretacion": {
+            "type": "text",
+            "title": "Lectura del código",
+            "body": [
+              "El fragmento muestra los tres niveles de anidamiento que describe la teoría conviviendo en un solo recorrido. El for externo selecciona cada fila (un sensor) y, por cada una, el for interno completa entero su recorrido de columnas (las horas), de modo que el cuerpo más interno se ejecuta $3 \\times 4 = 12$ veces, tantas como celdas tiene la matriz.",
+              "Dentro de ese cuerpo, el if decide para cada celda si supera el umbral y, en caso afirmativo, actualiza el contador fuera. La salida confirma que tres de las doce mediciones rebasan los 80 grados.",
+              "Vale la pena observar dónde se inicializa el acumulador: fuera vive fuera de ambos ciclos, porque ponerlo dentro del for externo lo reiniciaría en cada fila y arruinaría el conteo global, exactamente el error de ubicación que conviene vigilar al anidar."
+            ]
+          },
+          "pdf-s5-ejercicios": {
+            "type": "exercise-set",
+            "title": "Banco de ejercicios del Tema 3",
+            "intro": [
+              "Resuelve el banco combinando los cinco saberes. Cada ejercicio indica su tipo: los prácticos y de análisis se resuelven con lápiz y prueba de escritorio, los de código se ejecutan en Python, y los de consulta e investigación se entregan con su cita en APA 7."
+            ],
+            "items": [
+              {
+                "kind": "practico",
+                "title": "Clasificar un voltaje por rangos",
+                "prompt": "Escribe la cadena if/elif/else que clasifique un voltaje de red en bajo ($< 200$ V), nominal ($200 \\le V \\le 240$ V) o alto ($> 240$ V), e indica qué rama toma el valor frontera $V = 240$ V.",
+                "formula": "200 \\le V \\le 240",
+                "answer": "El valor frontera 240 V cae en la rama nominal, porque $200 \\le 240 \\le 240$ es verdadero y la cadena se detiene antes de evaluar el caso 'alto'."
+              },
+              {
+                "kind": "practico",
+                "title": "Trazar un acumulador",
+                "prompt": "Dada la lista de lecturas $[18, 22, 30, 25, 19]$, traza a mano un for con un acumulador que calcule su suma y su promedio, mostrando el valor del acumulador después de cada iteración.",
+                "formula": "\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i",
+                "answer": "El acumulador toma los valores 18, 40, 70, 95 y 114; con $n = 5$, el promedio es $114/5 = 22.8$."
+              },
+              {
+                "kind": "analisis",
+                "title": "Diagnosticar un ciclo infinito",
+                "prompt": "Un while con la condición $\\text{intentos} < 3$ nunca termina aunque intentos empiece en 0. Analiza qué elemento le falta al cuerpo del ciclo para evitar el ciclo infinito y reescribe la lógica de parada correcta.",
+                "formula": "\\text{intentos} = \\text{intentos} + 1"
+              },
+              {
+                "kind": "analisis",
+                "title": "Negar una regla compuesta con De Morgan",
+                "prompt": "Justifica con las leyes de De Morgan por qué $\\text{not}(a > 0 \\;\\text{and}\\; b > 0)$ no equivale a $(a < 0 \\;\\text{and}\\; b < 0)$, y escribe la negación correcta de la regla.",
+                "formula": "\\text{not}(a > 0 \\wedge b > 0) = (a \\le 0) \\vee (b \\le 0)"
+              },
+              {
+                "kind": "reflexion",
+                "title": "Criterio para elegir break o continue",
+                "prompt": "Al inspeccionar un lote, ¿en qué situaciones preferirías un break y en cuáles un continue? Reflexiona sobre cómo cada elección afecta la legibilidad del control de flujo y qué información dejarías de procesar en cada caso."
+              },
+              {
+                "kind": "codigo",
+                "title": "Filtrar y detener un recorrido",
+                "prompt": "Implementa y ejecuta en Python un programa que recorra una lista de temperaturas usando continue para ignorar las lecturas negativas (errores de sensor) y break para detenerse al encontrar la primera lectura superior a $100^{\\circ}\\mathrm{C}$. Reporta cuántas lecturas válidas procesó antes de detenerse.",
+                "language": "python",
+                "code": "temperaturas = [21.0, -5.0, 45.0, -2.0, 130.0, 30.0]\nvalidas = 0\nfor t in temperaturas:\n    if t < 0:\n        continue          # error de sensor: se ignora\n    if t > 100:\n        break             # falla critica: se detiene\n    validas += 1\nprint(f\"Lecturas validas procesadas: {validas}\")",
+                "expectedOutput": "Lecturas validas procesadas: 2"
+              },
+              {
+                "kind": "codigo",
+                "title": "Contar celdas sobre umbral con doble for",
+                "prompt": "Escribe en Python un doble for que recorra una matriz 3x3 de mediciones (lista de listas) y cuente cuántas celdas superan un umbral dado; verifica el resultado con una prueba de escritorio antes de ejecutarlo.",
+                "language": "python",
+                "code": "matriz = [[12, 88, 40], [95, 30, 70], [60, 99, 20]]\numbral = 80\nfuera = 0\nfor fila in matriz:\n    for valor in fila:\n        if valor > umbral:\n            fuera += 1\nprint(fuera)",
+                "expectedOutput": "3"
+              },
+              {
+                "kind": "consulta",
+                "title": "El patrón centinela en la bibliografía",
+                "prompt": "Consulta cómo describe la bibliografía del tema el patrón centinela (sentinel value) en la lectura de datos y documenta tu hallazgo con una cita en APA 7.",
+                "steps": [
+                  "Busca el patrón en uno de los textos del tema (Joyanes Aguilar, 2013; Oviedo Regino, 2005; o Downey, 2015).",
+                  "Resume en tres líneas cómo funciona la lectura anticipada y qué papel cumple el valor centinela.",
+                  "Relaciónalo con un caso de adquisición de datos de tu programa donde la cantidad de muestras varía."
+                ],
+                "deliverable": "Párrafo breve con la definición del patrón, el caso de aplicación y la referencia citada en APA 7."
+              },
+              {
+                "kind": "investigacion",
+                "title": "Estructuras de control en tu disciplina",
+                "prompt": "Investiga una aplicación real de las estructuras selectivas e iterativas en un sistema de control o automatización propio de tu programa de ingeniería, y argumenta por qué el control de flujo es crítico en ese caso.",
+                "steps": [
+                  "Selecciona un sistema concreto de tu campo (control de un PLC, monitoreo de un proceso, validación de un lote, etc.).",
+                  "Identifica qué decisiones (condicionales) y qué repeticiones (ciclos) gobiernan su lógica.",
+                  "Busca una fuente académica reciente que respalde el caso y cítala en APA 7.",
+                  "Explica una consecuencia de operación que tendría una condición de parada mal diseñada en ese sistema."
+                ],
+                "deliverable": "Informe de media página con el caso, su lógica de control de flujo y la cita en APA 7."
+              },
+              {
+                "kind": "practico",
+                "title": "Evidencia del taller: control de un proceso",
+                "prompt": "Diseña el algoritmo (pseudocódigo y luego Python) que controle un proceso de tu contexto combinando condicionales y ciclos anidados, con una condición de parada correcta, y explica su control de flujo apoyándote en una prueba de escritorio. Este ejercicio corresponde a la evidencia del taller del tema.",
+                "answer": "Producto esperado: pseudocódigo, código Python ejecutable, prueba de escritorio con valores frontera y un párrafo que justifique la elección de cada estructura y la condición de parada."
+              }
+            ]
+          },
+          "pdf-s5-referencias": {
+            "type": "references",
+            "title": "Referencias",
+            "items": [
+              "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms (3rd ed.). MIT Press.",
+              "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media.",
+              "Joyanes Aguilar, L. (2008). Fundamentos de programación. McGraw-Hill.",
+              "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana.",
+              "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones."
+            ]
+          },
+          "pdf-s5-datahighlight": {
+            "type": "data-highlight",
+            "items": [
+              {
+                "value": "$O(n)$",
+                "label": "Recorrer una lista con un solo ciclo"
+              },
+              {
+                "value": "$m \\times n$",
+                "label": "Iteraciones del cuerpo en un doble for sobre una matriz"
+              },
+              {
+                "value": "$O(n^{2})$",
+                "label": "Costo de anidar dos ciclos sobre el mismo conjunto"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

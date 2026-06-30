@@ -89,6 +89,10 @@ function isLearnerFacingString(value, location) {
   if (isIgnoredPath(location)) return false;
   if (location.endsWith(".type") || location.endsWith(".icon") || location.endsWith(".src") || location.endsWith(".assetId")) return false;
   if (location.endsWith(".language") || location.endsWith(".languageLabel") || location.endsWith(".fileName")) return false;
+  // El código (`.code`) es legítimamente reutilizable: un mismo snippet (validación, recorrido, función)
+  // puede enseñarse en una sección, repetirse en su versión PDF y reaparecer en el banco de ejercicios.
+  // No es prosa de aprendizaje; exigir unicidad textual del código forzaría variaciones artificiales.
+  if (location.endsWith(".code")) return false;
   return display(value).length >= MIN_EXACT_CHARS;
 }
 

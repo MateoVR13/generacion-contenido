@@ -92,13 +92,19 @@ tailwind.config = {
       },
       fontSize: {
         "label-caps": ["12px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "700" }],
-        "h1": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
-        "code": ["14px", { lineHeight: "1.5", fontWeight: "500" }],
-        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
-        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
-        "h1-mobile": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
-        "h3": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
-        "h2": ["32px", { lineHeight: "1.3", fontWeight: "600" }]
+        "h1": ["54px", { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "800" }],
+        "code": ["14.5px", { lineHeight: "1.5", fontWeight: "500" }],
+        "body-md": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+        "body-lg": ["20px", { lineHeight: "1.65", fontWeight: "400" }],
+        "h1-mobile": ["36px", { lineHeight: "1.2", fontWeight: "800" }],
+        "h3": ["31px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "h2": ["38px", { lineHeight: "1.25", letterSpacing: "-0.01em", fontWeight: "700" }],
+        // Tamaños base usados por la prosa del SCORM. Subidos para dar más cuerpo a los párrafos
+        // y mayor distinción frente a los rótulos en mayúscula (label-caps, 12px).
+        "xs": ["13px", { lineHeight: "1.5" }],
+        "sm": ["16px", { lineHeight: "1.6" }],
+        "base": ["18px", { lineHeight: "1.6" }],
+        "lg": ["20px", { lineHeight: "1.6" }]
       }
     }
   }

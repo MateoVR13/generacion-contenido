@@ -77,7 +77,7 @@ Do not use `course`.
 
 `subject.syllabus` is required when a syllabus PDF or syllabus text was provided. Keep `missingFields` explicit instead of inventing data.
 
-`subject.faculty` define el **tema visual editorial del PDF** (libro-guía tamaño carta) según la facultad de la Universidad de América. Valores válidos: `"ingenieria"` (Ingeniería, ciencia y tecnología), `"economicas"` (Ciencias económicas, administrativas y empresariales) o `"arquitectura"` (Arquitectura, diseño, creatividad, territorio y sostenibilidad). **Derívalo del programa académico del syllabus** (`subject.program` / `extractedFields.faculty`): ingenierías, sistemas, software, industrial, civil, química, ambiental, tecnología → `ingenieria`; economía, administración, negocios, contaduría, finanzas, mercadeo → `economicas`; arquitectura, diseño, urbanismo, creatividad, territorio, sostenibilidad → `arquitectura`. Si el programa no encaja claramente, omite el campo (el PDF usa el tema verde institucional por defecto). Cada facultad aplica su paleta y sus imágenes base (portada/separador) desde `assets/pdf/<faculty>/`; los prompts de esas imágenes están en `pdf-design/`. El motor también puede inferir la facultad desde `subject.program` si `faculty` se omite, pero es preferible declararla.
+`subject.faculty` define el **tema visual editorial del PDF** (documento de saberes tamaño carta) según la facultad de la Universidad de América. Valores válidos: `"ingenieria"` (Ingeniería, ciencia y tecnología), `"economicas"` (Ciencias económicas, administrativas y empresariales) o `"arquitectura"` (Arquitectura, diseño, creatividad, territorio y sostenibilidad). **Derívalo del programa académico del syllabus** (`subject.program` / `extractedFields.faculty`): ingenierías, sistemas, software, industrial, civil, química, ambiental, tecnología → `ingenieria`; economía, administración, negocios, contaduría, finanzas, mercadeo → `economicas`; arquitectura, diseño, urbanismo, creatividad, territorio, sostenibilidad → `arquitectura`. Si el programa no encaja claramente, omite el campo (el PDF usa el tema verde institucional por defecto). Cada facultad aplica su paleta y sus imágenes base (portada/separador) desde `assets/pdf/<faculty>/`; los prompts de esas imágenes están en `pdf-design/`. El motor también puede inferir la facultad desde `subject.program` si `faculty` se omite, pero es preferible declararla.
 
 `subject.methodology` is required for full asignatura package generation. For virtual asignaturas, always use ABR - Aprendizaje Basado en Retos:
 
@@ -227,9 +227,39 @@ Each PDF uses the same minimum page extension requested by the user. Do not divi
 
 Each PDF section must be a unique printable chapter. It must include concept-specific theory, examples, exercises, expected answers, visuals, and evaluation criteria. Do not repeat a generic "study guide" paragraph pattern across all five sections.
 
+**Narrativa guiada (el PDF es el Documento de Saberes, no un volcado de bullets).** Cada sección temática del PDF debe
+leerse como un capítulo con hilo conductor:
+- **Abre con un párrafo-puente** que conecte con el tema anterior y anuncie qué se aprenderá (en la primera
+  sección, conecta con el escenario inicial / propósito del documento).
+- **Desarrolla la teoría como prosa guiada** (`theory-block` con varios párrafos que progresan), no como
+  listas sueltas; integra las definiciones en el relato y **cita en APA 7** donde corresponda.
+- **Integra los apoyos en el relato**: una figura/`image` con su pie y su lectura, un `example` o `code`
+  contextualizado (no decorativo) y, cuando aporte, un `chart` con hilo conductor + nota.
+- **Cierra con una transición** (`callout` o párrafo de cierre) que sintetice y prepare el siguiente tema.
+- **No numeres los títulos de sección PDF** ("1. ", "2. ", …): la plantilla ya numera cada sección en el
+  separador y el encabezado. Un título con prefijo numérico produce DOBLE numeración ("02  1. ..."). Escribe
+  el título sin número (p. ej. "Concepto y propiedades del algoritmo", no "1. Concepto...").
+- **El título de sección PDF es SOLO el nombre del saber**, sin etiqueta de "Saber N", "Tema N", "Unidad N"
+  delante (la portada de cada sección no debe decir "Saber 4 · ..."). Ej.: `"Control de iteración: condición
+  de parada, break y continue"`, NO `"Saber 4 · Control de iteración..."`.
+- **Controla la densidad de texto** (parámetro de calidad del PDF): ningún párrafo debe superar ~4–5 líneas
+  (≈ 65–80 palabras). Si una idea es más larga, **divídela en varios párrafos** o convierte parte en una
+  `key-box`, una lista o un `two-column`. Una sección PDF no debe ser un muro de prosa: alterna párrafos
+  cortos con componentes de variación visual. Evita secciones con > 5–6 párrafos seguidos sin un quiebre
+  visual (caja, columnas, imagen, lista o subtítulo).
+- **Varía la jerarquía de subtítulos**: usa `theory-block`/`pdf-h3` para subtemas de modo que el documento
+  tenga ritmo (título de sección grande → subtítulos medianos → prosa). No conviertas todo en párrafos al
+  mismo nivel; segmenta cada saber en 2–4 subtemas con su propio subtítulo.
+- Los **ejercicios** van al final como `exercise-set` con `kind` variados (practico/codigo/consulta/
+  investigacion/reflexion/analisis), presentados de forma diferenciada — no un bloque uniforme de "Ejercicio
+  1, 2, 3". El bloque de RA/Saberes/Evidencias se declara explícito por sección cuando aplique.
+La meta es un documento de saberes con voz docente, progresión clara y lectura agradable, no una ficha.
+
+> **Nunca llames "guía" al PDF.** El PDF es el **Documento de Saberes** de la asignatura. No uses "esta guía", "la guía", "guía de estudio", "libro-guía" ni "guía PDF" para referirte a él (ni en títulos, callouts, portada o prosa): di "este documento", "el Documento de Saberes" o "el documento". La palabra "guiado/guiada" solo aplica a la metodología (Aprendizaje Guiado), no al PDF.
+
 ```json
 "pdf": {
-  "guideLabel": "GUÍA DE ESTUDIO VIRTUAL",
+  "guideLabel": "DOCUMENTO DE SABERES",
   "kicker": "Aprendizaje basado en retos · Práctica aplicada · Autoevaluación",
   "institution": "Universidad de América",
   "year": "2026",
@@ -291,6 +321,47 @@ The supported components below are a catalog, not a checklist. Select them throu
 > - **Compartidos (SCORM y PDF):** `objectives`, `theory-block` / `concept-block` / `theory`, `text`, `list`, `formula`, `table`, `chart`, `image` / `figure`, `code`, `callout`, `example`, `exercise-set`, `references`, `summary`, `reflection`, `prior-knowledge`, `evaluation-activity`.
 > - **Solo SCORM (interactivos / multimedia):** `accordion`, `flashcards`, `carousel`, `tabs`, `stepper`, `video`, `podcast`, `metrics`, `timeline`, `quiz`, `listening-true-false`, `matching`, `multi-select`, `fill-blank`, `downloads`, `visual-prompt`, `saberes-link`.
 > - **Solo PDF (rama imprimible):** ver "PDF Branch". No pongas componentes interactivos (`video`, `podcast`, `listening`, `quiz`, `matching`, `multi-select`, `fill-blank`, `flashcards`, `carousel`, `tabs`) en `pdf.sections`.
+> - **Componentes de presentación SOLO PDF (variación visual):** `key-box` (caja llamativa destacada),
+>   `two-column` (disposición a 2 columnas) y `data-highlight` (cifras destacadas). Úsalos para **romper la
+>   monotonía de párrafos** y dar ritmo editorial moderno al documento.
+
+### Componentes de variación visual del PDF (úsalos para que NO sea todo párrafos)
+
+El PDF debe variar la disposición y la jerarquía: alterna texto a 1 columna con bloques a 2 columnas, intercala
+cajas llamativas y cifras destacadas. **No** uses solo `theory-block` + `example` repetidos.
+
+- **`key-box`** — caja destacada para una idea clave, dato, advertencia o tip. Campo `variant`:
+  `clave` | `dato` | `industria` | `alerta` | `tip` | `definicion` (cada uno con color e ícono propios).
+  Campos: `variant`, `title` (opcional), `body` (párrafos). Ej.:
+  ```json
+  { "type": "key-box", "variant": "clave", "title": "Las 5 propiedades", "body": ["Un algoritmo debe ser finito, preciso, definido, con entrada y con salida."] }
+  ```
+- **`two-column`** — dos columnas lado a lado (comparaciones, ventajas/desventajas, antes/después). Campos:
+  `columns: [{title, body}, {title, body}]` (o `left`/`right`). Ej.:
+  ```json
+  { "type": "two-column", "title": "for vs. while", "columns": [ {"title": "for", "body": ["Recorre un rango conocido."]}, {"title": "while", "body": ["Repite mientras se cumple una condición."]} ] }
+  ```
+- **`data-highlight`** — fila de cifras grandes (número + etiqueta), para magnitudes/comparaciones. Campos:
+  `items: [{value, label}]`. Ej.:
+  ```json
+  { "type": "data-highlight", "items": [ {"value": "O(n)", "label": "Búsqueda lineal"}, {"value": "O(log n)", "label": "Búsqueda binaria"} ] }
+  ```
+- **`column-flow`** — prosa larga maquetada a **2 columnas tipo periódico** (el texto fluye de una columna a
+  la otra). Úsalo para una explicación teórica extensa que, a 1 columna, sería un muro; a 2 columnas se lee
+  más ágil y moderno. Distinto de `two-column` (que son 2 tarjetas comparativas lado a lado). Campos:
+  `body: ["párrafo 1", "párrafo 2", …]`. Cada `value` de `data-highlight` debe ser corto (≤ 9 caracteres):
+  para cifras larguísimas usa una forma compacta (p. ej. `"≈0.3"` y explica el detalle en el label), no
+  `0.30000000000000004`. Ej.:
+  ```json
+  { "type": "column-flow", "body": ["Una librería es un conjunto de funciones ya probadas...", "Python distingue la biblioteca estándar del ecosistema externo...", "Importar admite matices de sintaxis..."] }
+  ```
+
+**Pauta de uso por sección PDF (densidad y ritmo — REGLA DURA):** una sección NUNCA debe tener más de
+**3 párrafos de prosa seguidos** sin un quiebre visual (key-box, two-column, column-flow, data-highlight,
+lista, tabla, imagen o subtítulo). Si una explicación necesita más de 3 párrafos seguidos, conviértela en un
+`column-flow` (2 columnas) o trocea con un subtítulo `theory-block`. Cada sección incluye **al menos 1**
+elemento de variación visual. Prosa ligera: párrafos de 40–70 palabras. El objetivo es un PDF que respira, no
+un muro de texto.
 >
 > Nota: `text`, `list`, `example` y `exercise-set` se renderizan tanto en SCORM como en PDF (la plantilla los soporta en ambas ramas), así que un `list` en una sección SCORM es válido y no rompe el render.
 
@@ -649,6 +720,21 @@ Use for terminology, grammar, formula parts, process steps, or short reasoning c
 
 Use their existing field names from the template project.
 
+### `trigger-question` — pregunta detonadora (SCORM y PDF, recomendado al inicio de cada tema)
+
+Banner **verde oscuro** (fondo `primary-container` #1a2403, acento lima) con **UNA pregunta** que abre el tema y
+activa los saberes previos. Se renderiza en SCORM (`renderTrigger`) y en PDF (`.pdf-trigger`). **No** muestra
+ningún título tipo "Pregunta detonadora": es solo el banner con la pregunta (y un `eyebrow` corto opcional).
+
+- Va como **primer componente** de la sección (intro/seccion-1) o al inicio del tema, una sola pregunta.
+- Campos: `question` (la pregunta; obligatorio), `eyebrow` (rótulo corto, por defecto "Para empezar"),
+  `icon` (opcional, por defecto `help`).
+- La pregunta debe ser abierta, retadora y conectada al contexto de ingeniería del tema.
+
+```json
+{ "type": "trigger-question", "eyebrow": "Para empezar", "question": "¿Cómo decidirías, sin ejecutar el programa, si un algoritmo terminará siempre?" }
+```
+
 ### `saberes-link` — puente al Documento de Saberes (SCORM only, obligatorio por tema)
 
 Componente **dedicado y llamativo** que articula el SCORM con el Documento de Saberes (PDF). Reemplaza al
@@ -659,7 +745,11 @@ SCORM↔PDF.
 
 - Cada sección temática SCORM (`seccion-1` … `seccion-5`) debe incluir **exactamente uno**, normalmente
   como cierre del tema (último o penúltimo componente del `componentOrder`).
-- No usar en `intro` ni en `pdf.sections` (es SCORM only).
+- No usar en `intro` ni en `pdf.sections` (es SCORM only). **PROHIBIDO en el branch PDF cualquier aviso que
+  remita al Documento de Saberes** (ni `saberes-link` ni un `callout` tipo "Puedes profundizar en el Documento
+  de Saberes", "versión impresa del tema", "el recurso SCORM ofrece…"): el PDF **ES** el Documento de Saberes,
+  así que remitir a él desde el propio PDF es circular (equivale a "revisa el SCORM estando en el SCORM"). En
+  el PDF, los `callout` solo se usan para cierres/transiciones, advertencias o recomendaciones del propio tema.
 - Campos: `heading` (titular destacado), `body` (1–2 párrafos con qué amplía el Documento de Saberes),
   `eyebrow` (rótulo superior, por defecto "Documento de Saberes"), `reference` (opcional: capítulo/páginas
   sugeridas a consultar), `cta` (opcional: frase de invitación), `icon` (opcional, por defecto `menu_book`).
@@ -676,7 +766,7 @@ SCORM↔PDF.
     "El desarrollo ampliado de este tema —con más ejemplos, demostraciones y referencias— está en el Documento de Saberes (PDF) de la asignatura."
   ],
   "reference": "Capítulo 2 · Sistemas lineales · págs. 18-26",
-  "cta": "Consulta la guía PDF de la asignatura"
+  "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
 }
 ```
 
@@ -699,7 +789,7 @@ SCORM↔PDF.
 ```json
 {
   "type": "list",
-  "title": "Mapa de la guía",
+  "title": "Mapa del documento",
   "ordered": true,
   "items": ["Paso 1.", "Paso 2."]
 }
@@ -719,17 +809,38 @@ SCORM↔PDF.
 
 ### exercise-set
 
-Los bancos de ejercicios del PDF deben ser **variados, no mecánicos ni repetitivos**: mezcla tipos —mecánico/procedimiento, analítico/razonamiento, **ejecución en Python**, consulta/investigación y aplicación contextual— en lugar de clonar el mismo enunciado con números cambiados. Indica el tipo de cada ejercicio (p. ej. en `prompt` o un campo `kind`) para que el banco se vea diverso. Incluye los mecánicos, pero que no sean la mayoría. (Ver `instructional-content-requirements.md` → Exercises And Practice.)
+Los bancos de ejercicios del PDF deben ser **variados, no mecánicos ni repetitivos**: mezcla tipos en lugar
+de clonar el mismo enunciado con números cambiados. **Cada ejercicio lleva un campo `kind`** que la plantilla
+PDF usa para darle una presentación diferenciada (etiqueta, ícono y color por tipo). Valores de `kind`
+**exactos** que reconoce el render (usa estos literales; otro valor cae a `practico`):
+
+| `kind` | Para qué | Campos típicos |
+|---|---|---|
+| `practico` | ejercicio de procedimiento/cálculo | `prompt`, `formula`, `answer` |
+| `codigo` | escribir/ejecutar código | `prompt`, `code`, `language` (def. `python`), `expectedOutput` |
+| `consulta` | buscar/consultar una fuente o dato | `prompt`, `steps[]`, `deliverable` |
+| `investigacion` | indagación más amplia con pasos | `prompt`, `steps[]`, `deliverable` |
+| `reflexion` | pregunta de reflexión/criterio | `prompt` |
+| `analisis` | analizar/justificar/detectar error | `prompt`, `formula` |
+
+Campos de cada item: `kind`, `title` (opcional, breve), `prompt`/`statement`/`body` (enunciado, admite
+LaTeX `$...$`), `steps[]` (lista de pasos para consulta/investigación), `code` + `language`
+(para `codigo`), `expectedOutput`, `formula`, `answer` (respuesta esperada), `deliverable` (qué entrega).
+Mezcla tipos: incluye `practico` pero que no sean la mayoría; usa `codigo` para Python, `consulta`/
+`investigacion` para indagación con fuentes APA 7, y `reflexion`/`analisis` para razonamiento.
 
 ```json
 {
   "type": "exercise-set",
   "title": "Banco de ejercicios",
   "items": [
-    {"kind": "mecánico", "prompt": "Resuelve el sistema por eliminación.", "formula": "x=1", "answer": "Respuesta opcional."},
-    {"kind": "analítico", "prompt": "Justifica si el sistema tiene solución única e identifica el error en el procedimiento mostrado."},
-    {"kind": "ejecución-python", "prompt": "Verifica la solución resolviendo el sistema con numpy.linalg.solve y compara con tu resultado manual."},
-    {"kind": "consulta-investigación", "prompt": "Investiga una aplicación real de los sistemas lineales en tu programa y cita la fuente en APA 7."}
+    {"kind": "practico", "title": "Solución por eliminación", "prompt": "Resuelve el sistema por eliminación.", "formula": "x=1", "answer": "x=1, y=2."},
+    {"kind": "analisis", "prompt": "Justifica si el sistema tiene solución única e identifica el error en el procedimiento mostrado."},
+    {"kind": "codigo", "prompt": "Verifica la solución con numpy y compara con tu resultado manual.", "language": "python", "code": "import numpy as np
+A = np.array([[2,1],[1,3]])
+b = np.array([4,5])
+print(np.linalg.solve(A, b))", "expectedOutput": "[1.4 1.2]"},
+    {"kind": "investigacion", "prompt": "Investiga una aplicación real de los sistemas lineales en tu programa.", "steps": ["Busca una fuente académica reciente", "Resume el caso en 5 líneas", "Relaciónalo con un saber del tema"], "deliverable": "Párrafo con la cita en APA 7."}
   ]
 }
 ```

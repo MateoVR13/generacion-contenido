@@ -1,0 +1,991 @@
+{
+  "moodle": {
+    "branding": {
+      "logoUrl": "https://i.postimg.cc/c1tGwQnF/Logo-UA.png",
+      "institution": "Universidad de América",
+      "faculty": "Facultad de Ingeniería",
+      "year": "2026"
+    },
+    "course": {
+      "title": "Algoritmia Computacional I",
+      "program": "Tecnología en Aplicaciones Digitales Inteligentes",
+      "description": "Te damos la bienvenida a Algoritmia Computacional I. Mediante una ruta guiada (Aprendizaje Guiado) avanzarás paso a paso desde el concepto de algoritmo y su representación (flujograma y pseudocódigo) hasta las estructuras de control, los arreglos, la modularidad con funciones y la gestión de memoria, cerrando con un proyecto integrador de orientación industrial. Los ejemplos se trabajan en Python (con pseudocódigo y PSeInt en el Tema 1) y se conectan de forma transversal con problemas de las ingenierías.",
+      "methodology": {
+        "code": "AG",
+        "name": "Aprendizaje Guiado",
+        "moments": [
+          "Fundamentos del algoritmo y su representación",
+          "Lenguajes, tipos de datos y librerías",
+          "Estructuras selectivas y de control",
+          "Arreglos y estructuras de datos",
+          "Funciones, modularidad y memoria",
+          "Proyecto integrador: solución algorítmica"
+        ]
+      },
+      "momentLabelSingular": "Tema",
+      "momentCountLabel": "6 Temas"
+    },
+    "pageOrder": [
+      "bienvenida",
+      "momento-1",
+      "momento-2",
+      "momento-3",
+      "momento-4",
+      "momento-5",
+      "momento-6",
+      "cierre"
+    ],
+    "pages": {
+      "bienvenida": {
+        "type": "welcome",
+        "components": [
+          {
+            "type": "hero",
+            "eyebrow": "Tecnología en Aplicaciones Digitales Inteligentes · Unidad de Bienvenida",
+            "faculty": "Facultad de Ingeniería",
+            "title": "Algoritmia Computacional I",
+            "description": "Bienvenido a este recorrido formativo. Aprenderás a pensar y construir algoritmos: desde representarlos con flujograma y pseudocódigo, pasando por tipos de datos, librerías, estructuras de control, arreglos y funciones, hasta integrarlo todo en una solución algorítmica de orientación industrial. Trabajaremos con Python (y pseudocódigo/PSeInt en el Tema 1) sobre problemas reales de la ingeniería.",
+            "chips": [
+              {
+                "icon": "🎓",
+                "label": "Tecnología en Aplicaciones Digitales Inteligentes"
+              },
+              {
+                "icon": "📖",
+                "label": "Aprendizaje Guiado"
+              },
+              {
+                "icon": "🏅",
+                "label": "6 Temas"
+              },
+              {
+                "icon": "🪪",
+                "label": "3 créditos · 100% virtual"
+              }
+            ],
+            "videoLabel": "Video de presentación",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video de presentación del curso (Synthesia/YouTube)."
+          },
+          {
+            "type": "learning-outcomes",
+            "icon": "🎯",
+            "title": "Resultados de Aprendizaje",
+            "subtitle": "Al finalizar el curso estarás en capacidad de reconocer, construir y evaluar algoritmos con estructuras de programación y programación estructurada.",
+            "outcomes": [
+              {
+                "number": "1",
+                "label": "Reconozco",
+                "text": "<strong>Reconozco</strong> las principales estructuras de programación para la generación de algoritmos computacionales utilizando herramientas de control."
+              },
+              {
+                "number": "2",
+                "label": "Evalúo",
+                "text": "<strong>Evalúo</strong> adecuadamente la asignación dinámica de memoria en un computador para la ejecución de algoritmos, a partir de programación estructurada."
+              }
+            ]
+          },
+          {
+            "type": "activities",
+            "icon": "🚀",
+            "title": "Actividades de Inicio",
+            "subtitle": "Antes de comenzar la ruta, completa estas actividades que activan tus conocimientos previos y abren el espacio de encuentro del curso.",
+            "items": [
+              {
+                "icon": "🧭",
+                "step": "Paso 1",
+                "title": "Evaluación diagnóstica",
+                "description": "Resuelve un cuestionario breve de revisión automática sobre razonamiento lógico-matemático, secuencias y patrones, aritmética/álgebra básica y nociones de Álgebra Lineal (vectores y matrices) para identificar tu punto de partida.",
+                "details": {
+                  "summary": "▸ Descripción y orientaciones",
+                  "text": "El diagnóstico es de carácter formativo y NO incide en tu nota. El sistema te presentará 10 preguntas de opción múltiple de un banco de 15, con retroalimentación por pregunta. Tiempo sugerido: 20 minutos; razona a mano (sin calculadora ni programación). Sus resultados orientan el acompañamiento inicial antes del Tema 1."
+                },
+                "opensAt": "",
+                "closesAt": "",
+                "button": {
+                  "href": "",
+                  "label": "Iniciar diagnóstico →"
+                },
+                "todo": "Crear el cuestionario diagnóstico en Moodle (banco evaluacion/diagnostica-algoritmia-computacional.json) y pegar su URL; definir fechas de apertura/cierre."
+              },
+              {
+                "icon": "💬",
+                "step": "Paso 2",
+                "title": "Foro de presentación",
+                "description": "Preséntate ante tus compañeros y comparte un proceso de tu entorno (preferiblemente industrial o de ingeniería) que creas que podría automatizarse con un algoritmo.",
+                "details": {
+                  "summary": "▸ Descripción y orientaciones",
+                  "text": "Publica una intervención inicial (mínimo 80 palabras) describiendo el proceso y los pasos que seguiría tu algoritmo, y responde al menos a dos compañeros. Se valoran la pertinencia del ejemplo y la calidad del intercambio."
+                },
+                "opensAt": "",
+                "closesAt": "",
+                "button": {
+                  "href": "",
+                  "label": "Ir al foro →"
+                },
+                "todo": "Crear el foro de presentación en Moodle y pegar su URL; definir fechas."
+              }
+            ]
+          },
+          {
+            "type": "course-glance",
+            "icon": "🔎",
+            "title": "Tu Curso de un Vistazo",
+            "subtitle": "Conoce a tu docente y accede a los documentos clave del curso.",
+            "cards": [
+              {
+                "kind": "teacher",
+                "photoUrl": "",
+                "name": "",
+                "role": "Docente del curso",
+                "bio": "",
+                "tags": [
+                  "Algoritmia",
+                  "Programación en Python",
+                  "Estructuras de datos"
+                ],
+                "todo": "Completar datos del docente (foto, nombre, título y bio) cuando los provea la coordinación; no inventar."
+              },
+              {
+                "kind": "syllabus",
+                "title": "Syllabus del curso",
+                "description": "Consulta competencia, resultados de aprendizaje, contenidos, criterios de evaluación y bibliografía oficial.",
+                "previewUrl": "",
+                "button": {
+                  "href": "",
+                  "label": "Abrir Syllabus"
+                },
+                "todo": "Pegar URL del PDF del syllabus en Moodle."
+              },
+              {
+                "kind": "schedule",
+                "title": "Cronograma",
+                "description": "Revisa fechas de apertura y cierre de cada tema, talleres y evaluaciones a lo largo de las 4 semanas del módulo.",
+                "previewUrl": "",
+                "button": {
+                  "href": "",
+                  "label": "Abrir Cronograma"
+                },
+                "todo": "Pegar URL del PDF del cronograma en Moodle."
+              }
+            ]
+          },
+          {
+            "type": "resources",
+            "icon": "📚",
+            "title": "Recursos de Apoyo",
+            "subtitle": "Material seleccionado para acompañar tu estudio durante todo el curso (40% en inglés, internacionalización).",
+            "cards": [
+              {
+                "resourceType": "e-book",
+                "level": "Fundamental",
+                "icon": "📘",
+                "title": "Joyanes (2013) — Fundamentos generales de programación",
+                "description": "Texto base disciplinar para fundamentos del algoritmo, pseudocódigo, tipos de datos y estructuras de control.",
+                "href": "",
+                "todo": "Verificar acceso en biblioteca externa-digital y pegar URL."
+              },
+              {
+                "resourceType": "e-book",
+                "level": "Avanzado",
+                "icon": "📗",
+                "title": "Cormen et al. (2009) — Introduction to Algorithms (EN)",
+                "description": "Referencia internacional clave en algoritmos y estructuras de datos. Recurso en inglés.",
+                "href": "",
+                "todo": "Verificar edición/acceso en base de datos institucional y pegar URL."
+              },
+              {
+                "resourceType": "artículo",
+                "level": "Intermedio",
+                "icon": "📰",
+                "title": "Downey (2015) — Think Python (2nd ed., EN)",
+                "description": "Libro abierto en inglés para tipos de datos, estructuras y funciones; apoyo autónomo.",
+                "href": "https://greenteapress.com/wp/think-python-2e/"
+              },
+              {
+                "resourceType": "software",
+                "level": "Práctico",
+                "icon": "💻",
+                "title": "Python 3 / PSeInt",
+                "description": "Entornos para implementar y probar tus algoritmos: Python para todos los temas y PSeInt para el pseudocódigo del Tema 1.",
+                "href": "",
+                "todo": "Pegar URL/instructivo de instalación de Python y PSeInt en Moodle."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Algoritmia Computacional I",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Material de apoyo del aula. Algoritmia Computacional I · Tecnología en Aplicaciones Digitales Inteligentes."
+          }
+        ]
+      },
+      "momento-1": {
+        "type": "moment",
+        "momentNumber": "1",
+        "momentName": "Fundamentos del algoritmo y su representación",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🧩",
+            "eyebrow": "Algoritmia Computacional I · Tema 1",
+            "title": "Fundamentos del algoritmo y su representación",
+            "subtitle": "Fundamentos del algoritmo y su representación: concepto, entrada/proceso/salida, flujograma, pseudocódigo y prueba de escritorio."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Tema 1",
+            "text": "En este primer tema comprenderás qué hace que un procedimiento sea un algoritmo (finitud, precisión, orden) y cómo representarlo antes de programar. Identificarás el esquema entrada/proceso/salida, dibujarás flujogramas con su simbología, escribirás pseudocódigo y validarás tu lógica con una prueba de escritorio (trazado). Estas bases sostienen toda la ruta del curso.",
+            "videoLabel": "Video del tema",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Tema 1 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🎓",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM — Tema 1",
+            "description": "Estudia el documento de saberes interactivo del Tema 1: concepto y propiedades del algoritmo, entrada/proceso/salida, flujograma, pseudocódigo y prueba de escritorio, con ejemplos animados y comprobaciones de comprensión.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Subir el paquete SCORM del Tema 1 (algoritmia-computacional-contenido-01) a Moodle y pegar su URL."
+          },
+          {
+            "type": "workshop",
+            "icon": "✏️",
+            "title": "Taller del Tema 1 — Diseño y trazado de un algoritmo",
+            "subtitle": "Taller formativo del escenario de aprendizaje",
+            "estimatedTime": "3 horas",
+            "participationType": "Individual",
+            "evaluationMoment": "Formativo (inicial)",
+            "learningOutcomeIds": [
+              "RA1"
+            ],
+            "objective": "Que diseñes el algoritmo (pseudocódigo + flujograma) que resuelve un problema sencillo de tu contexto y lo valides con una prueba de escritorio.",
+            "context": "Elige un problema sencillo de tu entorno o disciplina (por ejemplo, clasificar una medición de un sensor según un umbral, decidir si una pieza pasa control de calidad, o calcular el promedio de lecturas). Vas a representarlo de forma clara antes de programarlo.",
+            "steps": [
+              "Describe el problema e identifica claramente la <strong>entrada</strong>, el <strong>proceso</strong> y la <strong>salida</strong>.",
+              "Redacta el <strong>pseudocódigo</strong> del algoritmo con pasos precisos, ordenados y finitos.",
+              "Dibuja el <strong>flujograma</strong> correspondiente usando la simbología estándar (inicio/fin, proceso, decisión, entrada/salida).",
+              "Realiza la <strong>prueba de escritorio</strong>: arma una tabla de traza con al menos dos juegos de datos de entrada y verifica que la salida sea correcta."
+            ],
+            "deliverable": "Documento con: enunciado del problema, esquema entrada/proceso/salida, pseudocódigo, flujograma y la tabla de traza de la prueba de escritorio.",
+            "submission": "Sube un PDF a la tarea del Tema 1 en Moodle antes del cierre de la semana.",
+            "rubric": [
+              {
+                "criterio": "Formulación",
+                "descriptor": "Identifica correctamente entrada, proceso y salida del problema elegido."
+              },
+              {
+                "criterio": "Pseudocódigo",
+                "descriptor": "Los pasos son precisos, ordenados y finitos; el algoritmo resuelve el problema."
+              },
+              {
+                "criterio": "Flujograma",
+                "descriptor": "Usa la simbología adecuada y es coherente con el pseudocódigo."
+              },
+              {
+                "criterio": "Prueba de escritorio",
+                "descriptor": "La tabla de traza es correcta y demuestra el funcionamiento con varios datos."
+              }
+            ],
+            "feedback": {
+              "strengths": "Reconoce con claridad las propiedades del algoritmo y representa la lógica de forma comprensible.",
+              "improvement": "Cuida la precisión de cada paso y la correspondencia exacta entre pseudocódigo y flujograma."
+            },
+            "href": "",
+            "buttonLabel": "Entregar el taller →",
+            "todo": "Crear la tarea del taller del Tema 1 en Moodle y pegar su URL."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema: M1, M2).",
+            "items": [
+              {
+                "resourceName": "Joyanes (2013) — Fundamentos generales de programación",
+                "tipo": "Libro base",
+                "apa": "Joyanes Aguilar, L. (2013). <em>Fundamentos generales de programación</em>. McGraw-Hill Interamericana.",
+                "justificacion": "Fuente disciplinar primaria para los fundamentos del algoritmo, pseudocódigo y representación.",
+                "href": "",
+                "todo": "Verificar acceso en biblioteca externa-digital y pegar URL."
+              },
+              {
+                "resourceName": "Oviedo (2005) — Lógica de programación",
+                "tipo": "Libro complementario",
+                "apa": "Oviedo Regino, E. (2005). <em>Lógica de programación</em>. Ecoe Ediciones.",
+                "justificacion": "Refuerza la lógica algorítmica y la construcción de pseudocódigo y diagramas de flujo.",
+                "href": "",
+                "todo": "Verificar acceso institucional-digital y pegar URL."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Algoritmia Computacional I · Tema 1",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Algoritmia Computacional I · Tema 1: Fundamentos del algoritmo y su representación."
+          }
+        ]
+      },
+      "momento-2": {
+        "type": "moment",
+        "momentNumber": "2",
+        "momentName": "Lenguajes, tipos de datos y librerías",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🔤",
+            "eyebrow": "Algoritmia Computacional I · Tema 2",
+            "title": "Del algoritmo al programa: lenguajes, tipos de datos y librerías",
+            "subtitle": "Lenguajes, tipos de datos y librerías: de lenguaje máquina a alto nivel, datos primitivos, variables, E/S y uso de librerías."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Tema 2",
+            "text": "En este tema llevarás tus algoritmos a un lenguaje de alto nivel (Python). Distinguirás el lenguaje máquina del de alto nivel, elegirás tipos de datos primitivos según el problema, manejarás variables y entrada/salida, e importarás y usarás librerías para resolver tareas de cómputo con menos esfuerzo.",
+            "videoLabel": "Video del tema",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Tema 2 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🎓",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM — Tema 2",
+            "description": "Recorre el documento de saberes interactivo del Tema 2: lenguaje máquina vs. alto nivel, tipos de datos primitivos, variables, entrada/salida e importación y uso de librerías, con ejemplos en Python.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Subir el paquete SCORM del Tema 2 (algoritmia-computacional-contenido-02) a Moodle y pegar su URL."
+          },
+          {
+            "type": "workshop",
+            "icon": "✏️",
+            "title": "Taller del Tema 2 — Tipos de datos y librerías en Python",
+            "subtitle": "Taller formativo del escenario de aprendizaje",
+            "estimatedTime": "3 horas",
+            "participationType": "Individual",
+            "evaluationMoment": "Formativo (inicial)",
+            "learningOutcomeIds": [
+              "RA1"
+            ],
+            "objective": "Que implementes en un lenguaje de alto nivel (Python) un programa que use distintos tipos de datos y al menos una librería para una tarea de cómputo.",
+            "context": "Plantea una tarea de cómputo de tu interés (por ejemplo, estadísticas de un conjunto de mediciones, conversión de unidades, o un cálculo matemático con math/statistics). El programa debe leer datos, procesarlos y mostrar resultados.",
+            "steps": [
+              "Define la tarea y los <strong>tipos de datos</strong> que usarás (enteros, flotantes, cadenas, booleanos) y justifica cada elección.",
+              "Implementa el programa en <strong>Python</strong> con entrada y salida claras.",
+              "Importa y usa al menos una <strong>librería</strong> (por ejemplo <code>math</code>, <code>statistics</code> o similar) y explica para qué te sirve.",
+              "Ejecuta el programa con datos de prueba y comenta el código brevemente."
+            ],
+            "deliverable": "Código ejecutable (.py) con tipos de datos y librería justificados, más una breve nota que explique las decisiones tomadas.",
+            "submission": "Sube el archivo .py (o un enlace al repositorio/notebook) a la tarea del Tema 2 en Moodle antes del cierre de la semana.",
+            "rubric": [
+              {
+                "criterio": "Tipos de datos",
+                "descriptor": "Usa y justifica adecuadamente los tipos de datos según el problema."
+              },
+              {
+                "criterio": "Uso de librería",
+                "descriptor": "Importa y aplica correctamente al menos una librería pertinente."
+              },
+              {
+                "criterio": "Funcionamiento",
+                "descriptor": "El programa se ejecuta sin errores y produce la salida esperada."
+              },
+              {
+                "criterio": "Claridad",
+                "descriptor": "El código está organizado y comentado de forma comprensible."
+              }
+            ],
+            "feedback": {
+              "strengths": "Selecciona tipos de datos y librerías pertinentes y obtiene un programa funcional.",
+              "improvement": "Justifica mejor las decisiones de diseño y valida la entrada del usuario."
+            },
+            "href": "",
+            "buttonLabel": "Entregar el taller →",
+            "todo": "Crear la tarea del taller del Tema 2 en Moodle y pegar su URL."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema: M1, M4).",
+            "items": [
+              {
+                "resourceName": "Joyanes (2013) — Fundamentos generales de programación",
+                "tipo": "Libro base",
+                "apa": "Joyanes Aguilar, L. (2013). <em>Fundamentos generales de programación</em>. McGraw-Hill Interamericana.",
+                "justificacion": "Cubre tipos de datos, variables y entrada/salida en lenguajes de alto nivel.",
+                "href": "",
+                "todo": "Verificar acceso en biblioteca externa-digital y pegar URL."
+              },
+              {
+                "resourceName": "Downey (2015) — Think Python (2nd ed.)",
+                "tipo": "Recurso abierto (libro en línea, EN)",
+                "apa": "Downey, A. B. (2015). <em>Think Python: How to think like a computer scientist</em> (2nd ed.). O'Reilly Media.",
+                "justificacion": "Texto abierto en inglés para tipos de datos y uso de librerías; apoyo autónomo e internacionalización.",
+                "href": "https://greenteapress.com/wp/think-python-2e/",
+                "todo": "Verificar vigencia del enlace abierto y formato de cita APA del editor."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Algoritmia Computacional I · Tema 2",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Algoritmia Computacional I · Tema 2: Lenguajes, tipos de datos y librerías."
+          }
+        ]
+      },
+      "momento-3": {
+        "type": "moment",
+        "momentNumber": "3",
+        "momentName": "Estructuras selectivas y de control",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🔀",
+            "eyebrow": "Algoritmia Computacional I · Tema 3",
+            "title": "Estructuras selectivas y de control",
+            "subtitle": "Estructuras selectivas y de control: condicionales, operadores lógicos, ciclos, control de iteración y anidamiento."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Tema 3",
+            "text": "En este tema controlarás el flujo de tus algoritmos. Aprenderás a tomar decisiones con condicionales (if/elif/else) y operadores lógicos, a repetir acciones con ciclos (for/while), a definir condiciones de parada correctas para evitar ciclos infinitos y a combinar estructuras mediante anidamiento.",
+            "videoLabel": "Video del tema",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Tema 3 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🎓",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM — Tema 3",
+            "description": "Recorre el documento de saberes interactivo del Tema 3: condicionales, operadores lógicos, ciclos for/while, control de iteración y anidamiento, con ejemplos en Python paso a paso.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Subir el paquete SCORM del Tema 3 (algoritmia-computacional-contenido-03) a Moodle y pegar su URL."
+          },
+          {
+            "type": "workshop",
+            "icon": "✏️",
+            "title": "Taller del Tema 3 — Control de flujo selectivo e iterativo",
+            "subtitle": "Taller formativo del escenario de aprendizaje",
+            "estimatedTime": "3 horas",
+            "participationType": "Individual",
+            "evaluationMoment": "Formativo (avance)",
+            "learningOutcomeIds": [
+              "RA1"
+            ],
+            "objective": "Que resuelvas un problema que requiera estructuras selectivas e iterativas (con condición de parada correcta) y expliques tu control de flujo.",
+            "context": "Elige un problema que combine decisiones y repetición (por ejemplo, validar lecturas hasta recibir un valor válido, clasificar una serie de mediciones, o procesar elementos hasta un centinela). Implementa la solución cuidando el control del ciclo.",
+            "steps": [
+              "Plantea el problema e identifica qué decisiones (<strong>selectivas</strong>) y qué repeticiones (<strong>iterativas</strong>) necesitas.",
+              "Implementa la solución en Python usando <strong>condicionales</strong> y <strong>ciclos</strong> con una <strong>condición de parada</strong> bien definida.",
+              "Asegura que no haya ciclos infinitos y prueba casos límite (por ejemplo, entrada vacía o valores extremos).",
+              "Explica por escrito tu <strong>control de flujo</strong>: cuándo se ejecuta cada rama y cómo termina el ciclo."
+            ],
+            "deliverable": "Programa en Python con condicionales y ciclos, más una explicación del control de flujo y de la condición de parada.",
+            "submission": "Sube el archivo .py y la explicación (PDF o comentarios) a la tarea del Tema 3 en Moodle antes del cierre de la semana.",
+            "rubric": [
+              {
+                "criterio": "Selección",
+                "descriptor": "Usa condicionales y operadores lógicos de forma correcta y pertinente."
+              },
+              {
+                "criterio": "Iteración",
+                "descriptor": "Implementa ciclos con condición de parada correcta; no hay ciclos infinitos."
+              },
+              {
+                "criterio": "Robustez",
+                "descriptor": "Maneja casos límite y produce resultados correctos."
+              },
+              {
+                "criterio": "Explicación",
+                "descriptor": "Explica con claridad el flujo de control de su solución."
+              }
+            ],
+            "feedback": {
+              "strengths": "Controla el flujo con seguridad y argumenta sus decisiones de diseño.",
+              "improvement": "Refina las condiciones de parada y prueba más casos límite."
+            },
+            "href": "",
+            "buttonLabel": "Entregar el taller →",
+            "todo": "Crear la tarea del taller del Tema 3 en Moodle y pegar su URL."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema: M1, M2, M3).",
+            "items": [
+              {
+                "resourceName": "Joyanes (2013) — Fundamentos generales de programación",
+                "tipo": "Libro base",
+                "apa": "Joyanes Aguilar, L. (2013). <em>Fundamentos generales de programación</em>. McGraw-Hill Interamericana.",
+                "justificacion": "Desarrolla las estructuras selectivas y de control con ejemplos y ejercicios.",
+                "href": "",
+                "todo": "Verificar acceso en biblioteca externa-digital y pegar URL."
+              },
+              {
+                "resourceName": "Oviedo (2005) — Lógica de programación",
+                "tipo": "Libro complementario",
+                "apa": "Oviedo Regino, E. (2005). <em>Lógica de programación</em>. Ecoe Ediciones.",
+                "justificacion": "Refuerza la lógica de las estructuras de control y el diseño de condiciones.",
+                "href": "",
+                "todo": "Verificar acceso institucional-digital y pegar URL."
+              },
+              {
+                "resourceName": "Cormen et al. (2009) — Introduction to Algorithms (EN)",
+                "tipo": "Libro complementario (EN)",
+                "apa": "Cormen, T. H., Leiserson, C. E., Rivest, R. L., &amp; Stein, C. (2009). <em>Introduction to algorithms</em> (3rd ed.). MIT Press.",
+                "justificacion": "Referencia internacional sobre la lógica de control y el costo de los ciclos (internacionalización).",
+                "href": "",
+                "todo": "Verificar edición/acceso en base de datos y pegar URL."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Algoritmia Computacional I · Tema 3",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Algoritmia Computacional I · Tema 3: Estructuras selectivas y de control."
+          }
+        ]
+      },
+      "momento-4": {
+        "type": "moment",
+        "momentNumber": "4",
+        "momentName": "Arreglos y estructuras de datos",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🗂️",
+            "eyebrow": "Algoritmia Computacional I · Tema 4",
+            "title": "Arreglos y estructuras de datos",
+            "subtitle": "Arreglos y estructuras de datos: cadenas, listas, tuplas, diccionarios, arreglos multidimensionales (matrices) y recorrido/indexación."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Tema 4",
+            "text": "En este tema organizarás datos en las estructuras adecuadas: cadenas, listas, tuplas y diccionarios, además de arreglos multidimensionales (matrices). Aprenderás a elegir la estructura que mejor representa tus datos y a recorrerlos e indexarlos para calcular resultados. Aquí comienzas a evidenciar también el RA2.",
+            "videoLabel": "Video del tema",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Tema 4 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🎓",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM — Tema 4",
+            "description": "Recorre el documento de saberes interactivo del Tema 4: cadenas, listas, tuplas, diccionarios, matrices y técnicas de recorrido e indexación, con ejemplos en Python.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Subir el paquete SCORM del Tema 4 (algoritmia-computacional-contenido-04) a Moodle y pegar su URL."
+          },
+          {
+            "type": "workshop",
+            "icon": "✏️",
+            "title": "Taller del Tema 4 — Modelado de datos de ingeniería",
+            "subtitle": "Taller formativo del escenario de aprendizaje",
+            "estimatedTime": "3 horas",
+            "participationType": "Individual",
+            "evaluationMoment": "Formativo (avance)",
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ],
+            "objective": "Que modeles un conjunto de datos de ingeniería con la estructura adecuada (lista, diccionario o matriz) y la recorras para calcular un resultado.",
+            "context": "Toma un conjunto de datos de ingeniería (por ejemplo, lecturas de varios sensores, registros de producción por máquina, o una matriz de costos/distancias). Decide qué estructura lo representa mejor y úsala para obtener un resultado útil.",
+            "steps": [
+              "Describe los datos y elige la <strong>estructura</strong> más adecuada (lista, tupla, diccionario o matriz), justificando tu elección.",
+              "Crea la estructura en Python y cárgale los datos del problema.",
+              "Recorre la estructura (<strong>indexación</strong> y/o iteración) para calcular un resultado (suma, promedio, máximo, conteo, etc.).",
+              "Muestra el resultado y comenta cómo el recorrido aprovecha la estructura elegida."
+            ],
+            "deliverable": "Programa en Python con la estructura elegida y justificada, el recorrido implementado y el resultado calculado.",
+            "submission": "Sube el archivo .py (o enlace al notebook) a la tarea del Tema 4 en Moodle antes del cierre de la semana.",
+            "rubric": [
+              {
+                "criterio": "Elección de estructura",
+                "descriptor": "Selecciona y justifica la estructura de datos adecuada para el problema."
+              },
+              {
+                "criterio": "Modelado",
+                "descriptor": "Representa correctamente los datos de ingeniería en la estructura."
+              },
+              {
+                "criterio": "Recorrido",
+                "descriptor": "Recorre e indexa la estructura correctamente para obtener el resultado."
+              },
+              {
+                "criterio": "Resultado",
+                "descriptor": "El cálculo es correcto y está interpretado en el contexto."
+              }
+            ],
+            "feedback": {
+              "strengths": "Asocia bien el tipo de dato con la estructura y recorre con soltura.",
+              "improvement": "Argumenta la eficiencia de la estructura elegida frente a alternativas."
+            },
+            "href": "",
+            "buttonLabel": "Entregar el taller →",
+            "todo": "Crear la tarea del taller del Tema 4 en Moodle y pegar su URL."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema: M3, M4).",
+            "items": [
+              {
+                "resourceName": "Cormen et al. (2009) — Introduction to Algorithms (EN)",
+                "tipo": "Libro complementario (EN)",
+                "apa": "Cormen, T. H., Leiserson, C. E., Rivest, R. L., &amp; Stein, C. (2009). <em>Introduction to algorithms</em> (3rd ed.). MIT Press.",
+                "justificacion": "Referencia internacional sobre estructuras de datos (arreglos, listas, tablas hash) y su uso (internacionalización).",
+                "href": "",
+                "todo": "Verificar edición/acceso en base de datos y pegar URL."
+              },
+              {
+                "resourceName": "Downey (2015) — Think Python (2nd ed.)",
+                "tipo": "Recurso abierto (libro en línea, EN)",
+                "apa": "Downey, A. B. (2015). <em>Think Python: How to think like a computer scientist</em> (2nd ed.). O'Reilly Media.",
+                "justificacion": "Texto abierto en inglés para listas, tuplas y diccionarios en Python; apoyo autónomo.",
+                "href": "https://greenteapress.com/wp/think-python-2e/",
+                "todo": "Verificar vigencia del enlace abierto y formato de cita APA del editor."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Algoritmia Computacional I · Tema 4",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Algoritmia Computacional I · Tema 4: Arreglos y estructuras de datos."
+          }
+        ]
+      },
+      "momento-5": {
+        "type": "moment",
+        "momentNumber": "5",
+        "momentName": "Funciones, modularidad y memoria",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🧱",
+            "eyebrow": "Algoritmia Computacional I · Tema 5",
+            "title": "Funciones, modularidad y memoria",
+            "subtitle": "Funciones, modularidad y memoria: definición y llamada, parámetros y retorno, alcance, pila vs. memoria dinámica y programación estructurada."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Tema 5",
+            "text": "En este tema modularizarás tus soluciones con funciones: aprenderás a descomponer un problema, a definir parámetros y valores de retorno, y a entender el alcance de las variables. Además evaluarás cómo se asigna y libera la memoria (pila vs. memoria dinámica) en el marco de la programación estructurada. Aquí profundizas el RA2.",
+            "videoLabel": "Video del tema",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Tema 5 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🎓",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM — Tema 5",
+            "description": "Recorre el documento de saberes interactivo del Tema 5: definición y llamada de funciones, parámetros y retorno, alcance de variables, pila vs. memoria dinámica y programación estructurada, con ejemplos en Python.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Subir el paquete SCORM del Tema 5 (algoritmia-computacional-contenido-05) a Moodle y pegar su URL."
+          },
+          {
+            "type": "workshop",
+            "icon": "✏️",
+            "title": "Taller del Tema 5 — Refactorización modular y análisis de memoria",
+            "subtitle": "Taller formativo del escenario de aprendizaje",
+            "estimatedTime": "3 horas",
+            "participationType": "Individual",
+            "evaluationMoment": "Formativo (avance)",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "objective": "Que refactorices una solución previa en funciones modulares y analices el uso de memoria (alcance, pila vs. dinámica).",
+            "context": "Parte de una de tus soluciones anteriores (Tema 3 o Tema 4) escrita como un único bloque. La vas a reorganizar en funciones con responsabilidades claras y a razonar sobre cómo se gestiona la memoria durante su ejecución.",
+            "steps": [
+              "Identifica las tareas repetidas o separables y conviértelas en <strong>funciones</strong> con parámetros y retorno.",
+              "Reescribe el programa de forma <strong>modular</strong> siguiendo la programación estructurada (un punto de entrada, funciones cohesionadas).",
+              "Analiza el <strong>alcance</strong> de las variables (locales vs. globales) y explica qué se almacena en la <strong>pila</strong> y qué requiere <strong>memoria dinámica</strong>.",
+              "Compara la versión modular con la original (legibilidad, reutilización y uso de memoria)."
+            ],
+            "deliverable": "Programa modular en Python más un análisis escrito del uso de memoria (alcance, pila vs. memoria dinámica) y de las mejoras frente a la versión original.",
+            "submission": "Sube el .py y el análisis (PDF) a la tarea del Tema 5 en Moodle antes del cierre de la semana.",
+            "rubric": [
+              {
+                "criterio": "Modularidad",
+                "descriptor": "Descompone la solución en funciones cohesionadas con parámetros y retorno."
+              },
+              {
+                "criterio": "Alcance",
+                "descriptor": "Distingue correctamente variables locales y globales."
+              },
+              {
+                "criterio": "Memoria",
+                "descriptor": "Explica con propiedad la diferencia entre pila y memoria dinámica en su programa."
+              },
+              {
+                "criterio": "Mejora",
+                "descriptor": "Argumenta las ventajas de la versión modular frente a la original."
+              }
+            ],
+            "feedback": {
+              "strengths": "Modulariza con criterio y razona correctamente sobre la memoria.",
+              "improvement": "Profundiza en la relación entre alcance, ciclo de vida de las variables y memoria."
+            },
+            "href": "",
+            "buttonLabel": "Entregar el taller →",
+            "todo": "Crear la tarea del taller del Tema 5 en Moodle y pegar su URL."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema: M3, M4).",
+            "items": [
+              {
+                "resourceName": "Cormen et al. (2009) — Introduction to Algorithms (EN)",
+                "tipo": "Libro complementario (EN)",
+                "apa": "Cormen, T. H., Leiserson, C. E., Rivest, R. L., &amp; Stein, C. (2009). <em>Introduction to algorithms</em> (3rd ed.). MIT Press.",
+                "justificacion": "Referencia internacional sobre procedimientos/funciones y modelo de memoria de la ejecución (internacionalización).",
+                "href": "",
+                "todo": "Verificar edición/acceso en base de datos y pegar URL."
+              },
+              {
+                "resourceName": "Downey (2015) — Think Python (2nd ed.)",
+                "tipo": "Recurso abierto (libro en línea, EN)",
+                "apa": "Downey, A. B. (2015). <em>Think Python: How to think like a computer scientist</em> (2nd ed.). O'Reilly Media.",
+                "justificacion": "Texto abierto en inglés para funciones, parámetros y alcance en Python; apoyo autónomo.",
+                "href": "https://greenteapress.com/wp/think-python-2e/",
+                "todo": "Verificar vigencia del enlace abierto y formato de cita APA del editor."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Algoritmia Computacional I · Tema 5",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Algoritmia Computacional I · Tema 5: Funciones, modularidad y memoria."
+          }
+        ]
+      },
+      "momento-6": {
+        "type": "moment",
+        "momentNumber": "6",
+        "momentName": "Proyecto integrador: solución algorítmica",
+        "components": [
+          {
+            "type": "moment-banner",
+            "icon": "🏗️",
+            "eyebrow": "Algoritmia Computacional I · Tema 6",
+            "title": "Proyecto integrador: solución algorítmica",
+            "subtitle": "Proyecto integrador: análisis del problema, diseño modular, implementación, pruebas y documentación de una solución algorítmica de orientación industrial."
+          },
+          {
+            "type": "moment-intro",
+            "icon": "📝",
+            "title": "Introducción al Tema 6",
+            "text": "En este tema integrador reunirás todo lo aprendido en una solución algorítmica completa de orientación industrial. Recorrerás el ciclo de desarrollo: analizar el problema, diseñar de forma modular, implementar en Python integrando estructuras de control, arreglos y funciones, probar la solución y documentarla. Aquí evidencias RA1 y RA2 de forma conjunta.",
+            "videoLabel": "Video del tema",
+            "videoEmbedUrl": "",
+            "todo": "Pegar URL del video del Tema 6 (Synthesia/YouTube)."
+          },
+          {
+            "type": "scorm-link",
+            "icon": "🎓",
+            "eyebrow": "Contenido Teórico",
+            "title": "Material Interactivo SCORM — Tema 6",
+            "description": "Recorre el documento de saberes interactivo del Tema 6: análisis del problema, diseño modular, implementación, pruebas y documentación de la solución, con un caso guiado de orientación industrial.",
+            "button": {
+              "href": "",
+              "label": "Abrir contenido →"
+            },
+            "todo": "Subir el paquete SCORM del Tema 6 (algoritmia-computacional-contenido-06) a Moodle y pegar su URL."
+          },
+          {
+            "type": "workshop",
+            "icon": "🏁",
+            "title": "Proyecto integrador — Solución algorítmica de orientación industrial",
+            "subtitle": "Evidencia sumativa final del curso",
+            "estimatedTime": "8 horas",
+            "participationType": "Individual",
+            "evaluationMoment": "Sumativo (final)",
+            "learningOutcomeIds": [
+              "RA1",
+              "RA2"
+            ],
+            "objective": "Que desarrolles una solución algorítmica completa de orientación industrial integrando estructuras de control, arreglos y funciones, con pruebas y documentación.",
+            "context": "Elige (o adapta) un problema de un proceso industrial o de ingeniería (por ejemplo, control de calidad por lotes, planificación de tareas en una línea de producción, o análisis de mediciones de un proceso). Desarrolla una solución que integre lo trabajado durante todo el curso.",
+            "steps": [
+              "<strong>Análisis del problema</strong>: define entradas, salidas, restricciones y los requisitos de la solución.",
+              "<strong>Diseño modular</strong>: descompón la solución en funciones y elige las estructuras de datos adecuadas.",
+              "<strong>Implementación</strong> en Python integrando estructuras de control, arreglos y funciones.",
+              "<strong>Pruebas</strong>: diseña y ejecuta casos de prueba (incluyendo casos límite) y registra los resultados.",
+              "<strong>Documentación</strong>: explica el diseño, las decisiones y el manejo de memoria, e incluye instrucciones de uso."
+            ],
+            "deliverable": "Proyecto final: código fuente en Python, conjunto de pruebas con resultados y documento de la solución (análisis, diseño, manual de uso y reflexión sobre memoria).",
+            "submission": "Sube el proyecto (código + documentación, o enlace a repositorio) a la tarea del proyecto integrador en Moodle antes del cierre de la última semana.",
+            "rubric": [
+              {
+                "criterio": "Análisis y diseño",
+                "descriptor": "Analiza el problema y propone un diseño modular coherente con estructuras adecuadas."
+              },
+              {
+                "criterio": "Implementación",
+                "descriptor": "Integra correctamente estructuras de control, arreglos y funciones; el programa funciona."
+              },
+              {
+                "criterio": "Pruebas",
+                "descriptor": "Diseña y ejecuta pruebas pertinentes, incluidos casos límite."
+              },
+              {
+                "criterio": "Documentación",
+                "descriptor": "Documenta la solución con claridad, incluyendo el manejo de memoria."
+              },
+              {
+                "criterio": "Orientación industrial",
+                "descriptor": "La solución aborda un problema realista de proceso industrial o de ingeniería."
+              }
+            ],
+            "feedback": {
+              "strengths": "Integra los saberes del curso en una solución funcional, probada y bien documentada.",
+              "improvement": "Amplía la cobertura de pruebas y profundiza en la eficiencia y el uso de memoria."
+            },
+            "href": "",
+            "buttonLabel": "Entregar el proyecto →",
+            "todo": "Crear la tarea del proyecto integrador en Moodle y pegar su URL."
+          },
+          {
+            "type": "complementary",
+            "icon": "📎",
+            "title": "Material Complementario",
+            "subtitle": "Material complementario seleccionado para este tema (cobertura por tema: M5).",
+            "items": [
+              {
+                "resourceName": "Molina &amp; Jiménez (2012) — Programación gráfica para ingenieros",
+                "tipo": "Libro complementario",
+                "apa": "Molina Martínez, J. y Jiménez Buendía, M. (2012). <em>Programación gráfica para ingenieros</em>. Alfaomega.",
+                "justificacion": "Aplicación a soluciones de ingeniería; sustenta el proyecto integrador de orientación industrial.",
+                "href": "",
+                "todo": "Verificar acceso institucional-físico y pegar URL/ubicación."
+              }
+            ]
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Algoritmia Computacional I · Tema 6",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Algoritmia Computacional I · Tema 6: Proyecto integrador: solución algorítmica."
+          }
+        ]
+      },
+      "cierre": {
+        "type": "closing",
+        "components": [
+          {
+            "type": "closing-hero",
+            "eyebrow": "Algoritmia Computacional I · Cierre del curso",
+            "faculty": "Facultad de Ingeniería",
+            "title": "¡Has completado el recorrido!",
+            "description": "Felicitaciones. A lo largo de los 6 temas aprendiste a representar algoritmos, a llevarlos a un lenguaje de alto nivel con tipos de datos y librerías, a controlar su flujo, a organizar datos en estructuras, a modularizar con funciones razonando sobre la memoria, y a integrar todo en un proyecto de orientación industrial. Este cierre sintetiza lo aprendido y te propone próximos pasos.",
+            "chips": [
+              {
+                "icon": "✅",
+                "label": "6 Temas completados"
+              },
+              {
+                "icon": "🏅",
+                "label": "Algoritmia Computacional I"
+              }
+            ]
+          },
+          {
+            "type": "summary",
+            "icon": "🧠",
+            "title": "Lo que lograste",
+            "subtitle": "Síntesis de los resultados de aprendizaje alcanzados durante el curso.",
+            "items": [
+              {
+                "number": "1",
+                "label": "Reconozco",
+                "text": "Reconoces y aplicas las principales estructuras de programación (selectivas, de control, arreglos y funciones) para generar algoritmos computacionales utilizando herramientas de control."
+              },
+              {
+                "number": "2",
+                "label": "Evalúo",
+                "text": "Evalúas la asignación dinámica de memoria para la ejecución de algoritmos, a partir de programación estructurada y diseño modular."
+              }
+            ]
+          },
+          {
+            "type": "next-steps",
+            "icon": "🧭",
+            "title": "Próximos pasos",
+            "subtitle": "Recomendaciones para consolidar y proyectar lo aprendido.",
+            "items": [
+              {
+                "icon": "📝",
+                "title": "Proyecto integrador final",
+                "description": "Asegúrate de haber entregado el proyecto integrador del Tema 6, que constituye la evidencia sumativa que integra RA1 y RA2.",
+                "button": {
+                  "href": "",
+                  "label": "Ir al proyecto integrador →"
+                },
+                "todo": "Pegar la URL de la tarea del proyecto integrador en Moodle."
+              },
+              {
+                "icon": "🚀",
+                "title": "Profundiza",
+                "description": "Continúa con cursos de programación orientada a objetos, estructuras de datos avanzadas e inteligencia artificial para aplicar la algoritmia a nuevos contextos industriales.",
+                "button": {
+                  "href": "",
+                  "label": "Ver rutas de continuidad →"
+                },
+                "todo": "Pegar la URL de la ruta de continuidad/curso siguiente en Moodle."
+              }
+            ]
+          },
+          {
+            "type": "final-evaluation",
+            "icon": "🏁",
+            "eyebrow": "Evaluación sumativa",
+            "title": "Proyecto Integrador Final",
+            "description": "Demuestra el logro integral de los resultados de aprendizaje entregando la solución algorítmica completa de orientación industrial del Tema 6.",
+            "button": {
+              "href": "",
+              "label": "Abrir el proyecto integrador →"
+            },
+            "todo": "Pegar la URL de la tarea del proyecto integrador final en Moodle."
+          },
+          {
+            "type": "footer",
+            "courseTitle": "Algoritmia Computacional I · Cierre",
+            "copyright": "© 2026 Universidad de América · Facultad de Ingeniería",
+            "note": "Algoritmia Computacional I · Tecnología en Aplicaciones Digitales Inteligentes · Cierre del curso."
+          }
+        ]
+      }
+    }
+  }
+}

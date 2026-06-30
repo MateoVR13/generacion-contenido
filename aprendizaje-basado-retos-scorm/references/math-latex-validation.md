@@ -55,6 +55,12 @@ Prefer standard KaTeX-safe commands:
 
 Avoid unsupported or unnecessary display macros, custom commands, packages, `\\newcommand`, TikZ, raw HTML, or notation that depends on a LaTeX package unavailable to KaTeX.
 
+- **No combines un espacio fino con un superíndice/subíndice (`\\,^` o `\\,_`).** KaTeX 0.16.x del template
+  falla al parsear `\\,^{\\circ}` ("Got group of unknown type: 'internal'") y la expresión se renderiza en rojo.
+  Para grados escribe `^{\\circ}` directamente (p. ej. `78^{\\circ}\\mathrm{C}`), sin el `\\,` previo. El
+  espacio fino `\\,` solo es válido cuando va seguido de texto/comando normal (`49.6\\,\\mathrm{mm}`), nunca
+  inmediatamente antes de `^` o `_`.
+
 ## Instructional Validation
 
 A mathematically valid expression is not enough. Confirm that:

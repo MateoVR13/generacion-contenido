@@ -1,0 +1,3101 @@
+{
+  "subject": {
+    "id": "algoritmia-computacional-i-tema-02",
+    "title": "Algoritmia Computacional I",
+    "program": "Tecnología en Aplicaciones Digitales Inteligentes",
+    "faculty": "ingenieria",
+    "contentNumber": "02",
+    "contentTotal": "06",
+    "unitLabel": "Tema",
+    "description": "Segundo tema del curso: cómo un lenguaje de programación, sus tipos de datos y sus librerías permiten convertir un algoritmo en un programa ejecutable aplicado a procesos de ingeniería.",
+    "syllabus": {
+      "source": {
+        "type": "pdf",
+        "fileName": "syllabus-algoritmia-computacional.pdf"
+      },
+      "extractedFields": {
+        "faculty": "Facultad de Ingeniería",
+        "program": "Tecnología en Aplicaciones Digitales Inteligentes",
+        "credits": 3,
+        "modality": "Virtual",
+        "level": "Tecnología (pregrado)",
+        "nature": "teorico-practica"
+      },
+      "learningOutcomes": [
+        "RA1: Reconozco las principales estructuras de programación para la generación de algoritmos computacionales utilizando herramientas de control.",
+        "RA2: Evalúo adecuadamente la asignación dinámica de memoria en un computador para la ejecución de algoritmos, a partir de programación estructurada."
+      ],
+      "priorKnowledge": [
+        "Concepto y propiedades del algoritmo (Tema 1).",
+        "Representación con flujograma y pseudocódigo.",
+        "Prueba de escritorio o trazado de un algoritmo.",
+        "Fundamentos de Álgebra Lineal y lógica básica."
+      ],
+      "competencies": [
+        "UC2: Estructurar metodológicamente el desarrollo de algoritmos y la construcción de prototipos, integrando programación e inteligencia artificial, para generar soluciones aplicadas a procesos industriales."
+      ],
+      "evaluationCriteria": [
+        "CE1: Fundamenta algoritmos a partir de pseudocódigos; identifica ventajas y desventajas del lenguaje máquina y ensamblador; genera algoritmos con estructuras selectivas y de control."
+      ],
+      "topics": [
+        "Lenguaje máquina vs. lenguaje de alto nivel",
+        "Tipos de datos primitivos",
+        "Variables",
+        "Entrada y salida",
+        "Importación y uso de librerías"
+      ],
+      "methodologyNotes": [
+        "Metodología Aprendizaje Guiado (AG) confirmada por el docente.",
+        "Ruta guiada con teoría, ejemplos resueltos, práctica en Python y retroalimentación.",
+        "Ejemplos transversales a las ingenierías con orientación a procesos industriales."
+      ],
+      "evaluationPlan": [
+        "Taller formativo del Tema 2: implementar un programa que use distintos tipos de datos y al menos una librería para una tarea de cómputo."
+      ],
+      "bibliography": {
+        "basic": [
+          "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana.",
+          "Joyanes Aguilar, L. (2008). Fundamentos de programación. McGraw-Hill.",
+          "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones."
+        ],
+        "complementary": [
+          "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media."
+        ]
+      },
+      "missingFields": [
+        "El syllabus no numera explícitamente los temas; se infieren de los saberes S7-S10.",
+        "El syllabus no define ponderaciones por actividad.",
+        "Código de la asignatura no especificado."
+      ]
+    },
+    "methodology": {
+      "code": "AG",
+      "name": "Aprendizaje Guiado",
+      "rationale": "Ruta guiada para aprendizaje virtual autónomo con acompañamiento, práctica y retroalimentación.",
+      "moments": [
+        "Fase 1",
+        "Fase 2",
+        "Fase 3",
+        "Fase 4"
+      ]
+    }
+  },
+  "scorm": {
+    "labels": {
+      "theoryNav": "Contenido Teórico",
+      "materialNav": "Material Complementario"
+    },
+    "sectionOrder": [
+      "intro",
+      "seccion-1",
+      "seccion-2",
+      "seccion-3",
+      "seccion-4",
+      "seccion-5"
+    ],
+    "sections": {
+      "intro": {
+        "kind": "theory",
+        "theme": "Intro",
+        "badge": "Tema 02 de 06",
+        "navLabel": "Introducción",
+        "title": "Del algoritmo al programa: lenguajes, tipos de datos y librerías",
+        "intro": [
+          "En el Tema 1 aprendiste a expresar la lógica de un algoritmo con flujograma y pseudocódigo. Ahora darás el paso que convierte ese diseño en un programa que la máquina ejecuta: elegir un lenguaje, representar la información con tipos de datos adecuados y reutilizar librerías ya construidas.",
+          "Este Tema 02 de 06 desarrolla el saber que sostiene el resto del curso: sin entender cómo el computador almacena un número, una cadena o un valor lógico, ni cómo se importan herramientas externas, no es posible implementar estructuras de control (Tema 3), arreglos (Tema 4) ni funciones (Tema 5)."
+        ],
+        "componentOrder": [
+          "intro-presentacion",
+          "intro-saberes-previos",
+          "intro-objetivos",
+          "intro-ruta",
+          "intro-diagnostico"
+        ],
+        "components": {
+          "intro-presentacion": {
+            "type": "theory-block",
+            "title": "Por qué este tema importa para tu perfil",
+            "eyebrow": "Presentación del tema",
+            "body": [
+              "Un algoritmo correcto en pseudocódigo todavía no hace nada útil: necesita traducirse a un lenguaje que el computador pueda ejecutar. En ingeniería esto ocurre todos los días, desde un script que promedia lecturas de un sensor de temperatura hasta un programa que valida tolerancias en una línea de producción.",
+              "En este tema trabajarás con Python como lenguaje de alto nivel de referencia, porque su sintaxis cercana al pseudocódigo facilita concentrarse en la lógica y en el manejo correcto de la información. Verás cómo el mismo dato puede representarse de varias formas y por qué esa elección afecta la exactitud de un cálculo de ingeniería.",
+              "La meta no es memorizar instrucciones, sino tomar decisiones informadas: qué tipo de dato modela mejor una magnitud física, cómo capturar datos de un proceso y qué librería evita reescribir cálculos ya resueltos por la comunidad."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "translate",
+                "text": "El lenguaje de alto nivel acerca el algoritmo a la persona; la máquina ejecuta su traducción."
+              },
+              {
+                "icon": "category",
+                "text": "El tipo de dato define qué valores y qué operaciones son válidos sobre una variable."
+              },
+              {
+                "icon": "inventory_2",
+                "text": "Las librerías reutilizan soluciones probadas en lugar de reinventarlas."
+              }
+            ],
+            "closing": [
+              "Mientras avanzas, pregúntate: ¿qué información maneja mi proceso y cómo la represento sin perder exactitud?"
+            ]
+          },
+          "intro-saberes-previos": {
+            "type": "prior-knowledge",
+            "title": "Saberes previos",
+            "eyebrow": "Antes de empezar",
+            "prompts": [
+              "¿Podrías escribir en pseudocódigo un algoritmo que lea dos valores y muestre su promedio?",
+              "¿Recuerdas la diferencia entre la entrada, el proceso y la salida de un algoritmo?",
+              "¿Qué pasos seguiste en el Tema 1 para hacer la prueba de escritorio de un algoritmo?"
+            ]
+          },
+          "intro-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos del tema",
+            "items": [
+              {
+                "icon": "track_changes",
+                "text": "Distingo el lenguaje máquina del lenguaje de alto nivel y explico el papel del traductor (intérprete/compilador)."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Selecciono el tipo de dato primitivo adecuado para representar una magnitud o un valor de un proceso de ingeniería."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Declaro y manipulo variables respetando su tipo y su nombre significativo."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Implemento la entrada y la salida de datos convirtiendo correctamente entre tipos."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Importo y uso librerías de Python para resolver una tarea de cómputo, justificando su elección."
+              }
+            ]
+          },
+          "intro-ruta": {
+            "type": "list",
+            "title": "Ruta de las cinco secciones",
+            "ordered": true,
+            "items": [
+              "Lenguaje máquina vs. lenguaje de alto nivel: cómo y por qué se traduce el código.",
+              "Tipos de datos primitivos: enteros, reales, lógicos y cadenas.",
+              "Variables: declaración, nombres, asignación y mutabilidad.",
+              "Entrada y salida: capturar datos y comunicar resultados con conversión de tipos.",
+              "Importación y uso de librerías: reutilizar herramientas como math, statistics y numpy."
+            ]
+          },
+          "intro-diagnostico": {
+            "type": "quiz",
+            "title": "Chequeo de entrada",
+            "questions": [
+              {
+                "prompt": "Antes de profundizar: ¿qué describe mejor para qué sirve un lenguaje de programación?",
+                "options": [
+                  {
+                    "text": "Es un conjunto de reglas que permite expresar un algoritmo de forma que pueda traducirse a instrucciones que el computador ejecuta.",
+                    "correct": true,
+                    "feedback": "Correcto: el lenguaje es el puente entre la lógica que diseñaste y la ejecución en la máquina."
+                  },
+                  {
+                    "text": "Es el hardware donde se guardan los programas mientras se ejecutan.",
+                    "correct": false,
+                    "feedback": "Revisa: eso describe la memoria del computador, no el lenguaje. El lenguaje es notación para expresar instrucciones."
+                  },
+                  {
+                    "text": "Es únicamente el conjunto de ceros y unos que entiende el procesador.",
+                    "correct": false,
+                    "feedback": "Eso es el lenguaje máquina, un caso particular. Un lenguaje de programación de alto nivel es legible para las personas y luego se traduce."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "seccion-1": {
+        "kind": "theory",
+        "theme": "Lenguaje máquina vs. alto nivel",
+        "badge": "Sección 1",
+        "navLabel": "Lenguaje máquina y alto nivel",
+        "title": "Lenguaje máquina y lenguaje de alto nivel",
+        "intro": [
+          "El procesador solo entiende instrucciones binarias. Para no programar en ese nivel, usamos lenguajes de alto nivel que un traductor convierte a código que la máquina ejecuta. Entender esta cadena explica por qué Python es cómodo y qué ocurre 'por debajo'."
+        ],
+        "componentOrder": [
+          "s1-detonadora",
+          "s1-teoria-niveles",
+          "s1-fig-niveles",
+          "s1-tabla-niveles",
+          "s1-flashcards",
+          "s1-teoria-traduccion",
+          "s1-fig-cadena",
+          "s1-carousel-traduccion",
+          "s1-quiz-traduccion",
+          "s1-accordion-mitos",
+          "s1-teoria-python",
+          "s1-stepper-trad",
+          "s1-code-version",
+          "s1-saberes-link"
+        ],
+        "components": {
+          "s1-teoria-niveles": {
+            "type": "theory-block",
+            "title": "Niveles de lenguaje: de los bits al pseudocódigo ejecutable",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una instrucción para el procesador es, en el fondo, una secuencia de bits. Ese lenguaje máquina es directamente ejecutable pero ilegible para las personas y distinto en cada arquitectura de hardware. Programar a ese nivel sería inviable para una solución de ingeniería de tamaño real.",
+              "El lenguaje ensamblador da un primer alivio: reemplaza patrones de bits por mnemónicos como MOV o ADD, pero sigue atado al hardware y obliga a pensar en registros y direcciones de memoria. Es rápido, pero costoso de escribir y mantener.",
+              "Los lenguajes de alto nivel, como Python, C o Java, usan palabras y expresiones cercanas a la notación matemática y al pseudocódigo del Tema 1. El programador escribe la lógica y delega en un traductor la tarea de generar las instrucciones que el procesador ejecuta."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "memory",
+                "text": "El lenguaje máquina es binario, ejecutable y dependiente del hardware."
+              },
+              {
+                "icon": "code",
+                "text": "El ensamblador usa mnemónicos pero sigue ligado a la arquitectura."
+              },
+              {
+                "icon": "translate",
+                "text": "El alto nivel prioriza la legibilidad y la portabilidad."
+              },
+              {
+                "icon": "engineering",
+                "text": "Subir de nivel reduce esfuerzo y errores en proyectos de ingeniería."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Abstracción y portabilidad",
+                "body": [
+                  "Cuanto más alto es el nivel, más detalles del hardware quedan ocultos. Un mismo programa en Python puede correr en distintos computadores de planta porque el traductor se adapta a cada máquina; un programa en ensamblador, no."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Ejemplo orientado a planta",
+              "body": [
+                "Un técnico que automatiza el cálculo del caudal en una tubería prefiere escribir caudal = area * velocidad en alto nivel antes que manipular registros: gana claridad y reduce la probabilidad de error."
+              ]
+            },
+            "closing": [
+              "Antes de elegir un lenguaje, pregúntate qué tan cerca quieres estar del hardware y cuánta legibilidad necesitas para mantener la solución."
+            ]
+          },
+          "s1-fig-niveles": {
+            "type": "image",
+            "title": "Pirámide de niveles de lenguaje",
+            "assetId": "img-niveles-lenguaje",
+            "src": "",
+            "alt": "Pirámide de tres capas: en la base lenguaje máquina (binario), en el medio ensamblador (mnemónicos) y arriba alto nivel (Python), con flechas de traducción hacia abajo.",
+            "caption": "Cada capa superior es más legible para las personas; la traducción desciende hasta el binario que ejecuta el procesador.",
+            "prompt": "Crear una figura didáctica en español tipo pirámide de tres niveles. Base ancha: 'Lenguaje máquina' con ejemplo binario 10110000 0110001; nivel medio: 'Lenguaje ensamblador' con mnemónicos MOV AL, 61h; nivel superior: 'Lenguaje de alto nivel (Python)' con la línea caudal = area * velocidad. Flechas descendentes etiquetadas 'traducción' y un eje lateral 'mayor abstracción y portabilidad' hacia arriba. Estilo limpio, paleta institucional verde-lima."
+          },
+          "s1-tabla-niveles": {
+            "type": "table",
+            "title": "Comparación de los tres niveles",
+            "columns": [
+              "Criterio",
+              "Lenguaje máquina",
+              "Ensamblador",
+              "Alto nivel (Python)"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Legibilidad",
+                  {
+                    "badge": "Muy baja",
+                    "tone": "danger"
+                  },
+                  {
+                    "badge": "Baja",
+                    "tone": "warning"
+                  },
+                  {
+                    "badge": "Alta",
+                    "tone": "success"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Portabilidad",
+                  {
+                    "badge": "Nula",
+                    "tone": "danger"
+                  },
+                  {
+                    "badge": "Baja",
+                    "tone": "warning"
+                  },
+                  {
+                    "badge": "Alta",
+                    "tone": "success"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Velocidad de ejecución",
+                  {
+                    "badge": "Máxima",
+                    "tone": "success"
+                  },
+                  {
+                    "badge": "Muy alta",
+                    "tone": "success"
+                  },
+                  {
+                    "badge": "Moderada",
+                    "tone": "warning"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Esfuerzo de desarrollo",
+                  {
+                    "badge": "Altísimo",
+                    "tone": "danger"
+                  },
+                  {
+                    "badge": "Alto",
+                    "tone": "warning"
+                  },
+                  {
+                    "badge": "Bajo",
+                    "tone": "success"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Cercanía al pseudocódigo",
+                  "Ninguna",
+                  "Escasa",
+                  "Muy alta"
+                ]
+              }
+            ]
+          },
+          "s1-flashcards": {
+            "type": "flashcards",
+            "title": "Vocabulario de niveles de lenguaje",
+            "cards": [
+              {
+                "term": "Lenguaje máquina",
+                "definition": "Conjunto de instrucciones binarias que el procesador ejecuta directamente; depende de la arquitectura del hardware.",
+                "icon": "memory"
+              },
+              {
+                "term": "Ensamblador",
+                "definition": "Lenguaje de bajo nivel que sustituye los patrones binarios por mnemónicos como ADD o MOV, manteniendo el control sobre registros y direcciones.",
+                "icon": "code"
+              },
+              {
+                "term": "Lenguaje de alto nivel",
+                "definition": "Lenguaje legible y portable, como Python, cuya sintaxis se acerca al pseudocódigo y se traduce a instrucciones de máquina.",
+                "icon": "translate"
+              },
+              {
+                "term": "Portabilidad",
+                "definition": "Capacidad de un programa de ejecutarse en distintos equipos sin reescribirlo; es alta en alto nivel y nula en lenguaje máquina.",
+                "icon": "devices"
+              }
+            ]
+          },
+          "s1-teoria-traduccion": {
+            "type": "theory-block",
+            "title": "Compilación e interpretación: cómo se traduce el código",
+            "eyebrow": "Mecanismo de traducción",
+            "body": [
+              "Para que el alto nivel se ejecute, un traductor lo convierte. Un compilador traduce todo el programa de una vez a un archivo ejecutable antes de correrlo, como ocurre en C. Un intérprete, en cambio, lee y ejecuta el código instrucción por instrucción durante la ejecución.",
+              "Python sigue un modelo mixto: primero compila el código fuente a un bytecode intermedio y luego una máquina virtual lo interpreta. Por eso puedes ejecutar un script de inmediato sin un paso de compilación visible, lo que agiliza la experimentación típica del trabajo de ingeniería.",
+              "La diferencia tiene consecuencias prácticas: el lenguaje compilado suele ser más rápido en ejecución, mientras que el interpretado facilita probar ideas rápido y detectar errores línea a línea, ideal para un curso de algoritmia."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "build",
+                "text": "El compilador traduce todo antes de ejecutar y produce un ejecutable."
+              },
+              {
+                "icon": "play_circle",
+                "text": "El intérprete traduce y ejecuta instrucción por instrucción."
+              },
+              {
+                "icon": "bolt",
+                "text": "Python compila a bytecode y luego lo interpreta."
+              }
+            ],
+            "closing": [
+              "Recuerda esta cadena: escribes alto nivel, el traductor produce código de bajo nivel y el procesador lo ejecuta."
+            ]
+          },
+          "s1-fig-cadena": {
+            "type": "figure",
+            "title": "Cadena de traducción del código en Python",
+            "assetId": "img-cadena-traduccion",
+            "src": "",
+            "alt": "Diagrama horizontal: código fuente .py → compilación → bytecode .pyc → máquina virtual de Python → instrucciones de máquina ejecutadas por el procesador.",
+            "caption": "El código fuente se compila a bytecode y una máquina virtual lo interpreta para ejecutarlo en el procesador.",
+            "prompt": "Crear un diagrama de flujo horizontal en español con cuatro bloques conectados por flechas: (1) 'Código fuente (programa.py)', (2) 'Compilación a bytecode (.pyc)', (3) 'Máquina virtual de Python (interpreta)', (4) 'Procesador ejecuta'. Bajo el conjunto, una llave que abarca los pasos 2 y 3 con la etiqueta 'esto ocurre al correr python programa.py'. Estilo esquemático, paleta verde-lima institucional, fuente monoespaciada para nombres de archivo."
+          },
+          "s1-carousel-traduccion": {
+            "type": "carousel",
+            "title": "La cadena de traducción paso a paso",
+            "slides": [
+              {
+                "label": "Paso 1",
+                "title": "Código fuente",
+                "body": [
+                  "Escribes el algoritmo en Python con sintaxis legible: variables, operaciones y llamadas a funciones, muy cerca del pseudocódigo del Tema 1."
+                ],
+                "icon": "edit_note"
+              },
+              {
+                "label": "Paso 2",
+                "title": "Traducción a bytecode",
+                "body": [
+                  "El intérprete de Python compila el código fuente a un bytecode intermedio independiente del procesador, almacenado en archivos .pyc."
+                ],
+                "icon": "sync_alt"
+              },
+              {
+                "label": "Paso 3",
+                "title": "Ejecución en la máquina virtual",
+                "body": [
+                  "La máquina virtual de Python interpreta ese bytecode y lo convierte en instrucciones que el procesador entiende y ejecuta sobre los datos."
+                ],
+                "icon": "memory"
+              },
+              {
+                "label": "Contraste",
+                "title": "Compilado vs. interpretado",
+                "body": [
+                  "En un lenguaje compilado como C, los pasos 2 y 3 ocurren antes de ejecutar y producen un único ejecutable; en Python se entrelazan al correr el programa."
+                ],
+                "icon": "compare_arrows"
+              }
+            ]
+          },
+          "s1-quiz-traduccion": {
+            "type": "quiz",
+            "title": "Verifica: traducción del código",
+            "questions": [
+              {
+                "prompt": "¿Cuál afirmación describe correctamente a un intérprete?",
+                "options": [
+                  {
+                    "text": "Lee y ejecuta el programa instrucción por instrucción durante la ejecución.",
+                    "correct": true,
+                    "feedback": "Correcto: por eso un error puede aparecer justo cuando se llega a la línea que falla."
+                  },
+                  {
+                    "text": "Traduce todo el programa a un ejecutable independiente antes de correrlo.",
+                    "correct": false,
+                    "feedback": "Eso describe a un compilador. El intérprete trabaja durante la ejecución, no antes."
+                  },
+                  {
+                    "text": "Convierte el código de alto nivel directamente en hardware.",
+                    "correct": false,
+                    "feedback": "No: el traductor genera instrucciones, no hardware. Revisa la cadena fuente → bytecode → ejecución."
+                  }
+                ]
+              }
+            ]
+          },
+          "s1-accordion-mitos": {
+            "type": "accordion",
+            "title": "Confusiones frecuentes sobre niveles y traducción",
+            "items": [
+              {
+                "icon": "warning",
+                "title": "\"Python no se compila\"",
+                "open": true,
+                "body": [
+                  "Es una simplificación que conviene matizar. Python sí realiza una compilación, pero a un bytecode intermedio, no a código máquina nativo como C. Ese bytecode lo ejecuta después la máquina virtual de Python.",
+                  "La confusión nace de que el programador no ejecuta un comando de compilación explícito: al escribir python programa.py todo sucede en un solo paso. Por eso decimos que Python 'se siente interpretado', aunque internamente compile primero.",
+                  "En la práctica de ingeniería esto importa cuando comparas rendimiento: para cálculos numéricos intensivos, un lenguaje compilado o librerías escritas en C (como numpy) ejecutan más rápido que un bucle puro en Python."
+                ]
+              },
+              {
+                "icon": "psychology",
+                "title": "\"Más alto nivel siempre es mejor\"",
+                "body": [
+                  "No siempre. Subir de nivel mejora la legibilidad y la portabilidad, pero suele costar velocidad de ejecución y control fino sobre la memoria y el hardware.",
+                  "En un sistema embebido que controla un actuador con tiempos estrictos, un ingeniero puede preferir C o incluso ensamblador para garantizar la respuesta en milisegundos. En un análisis exploratorio de datos de planta, Python es claramente la mejor elección.",
+                  "La decisión depende del problema: prioriza alto nivel cuando la claridad y la rapidez de desarrollo mandan, y baja de nivel cuando el rendimiento o el control del hardware son críticos."
+                ]
+              }
+            ]
+          },
+          "s1-teoria-python": {
+            "type": "theory-block",
+            "title": "Por qué Python es el lenguaje del curso",
+            "eyebrow": "Decisión de herramienta",
+            "body": [
+              "Python combina una sintaxis cercana al pseudocódigo, un ecosistema enorme de librerías y un intérprete que da retroalimentación inmediata. Esto permite concentrarse en la lógica del algoritmo y no en detalles del lenguaje, que es justo el objetivo de RA1.",
+              "Además, es uno de los lenguajes más usados en ingeniería y ciencia de datos para automatizar cálculos, procesar mediciones y prototipar soluciones. Lo que aprendas aquí se transfiere directamente a tareas reales de tu programa.",
+              "A lo largo del tema escribirás y ejecutarás scripts cortos. Cada bloque de código incluirá instrucciones para guardarlo y correrlo desde la terminal, de modo que practiques el ciclo escribir-ejecutar-observar."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "visibility",
+                "text": "Sintaxis legible: el código se parece al pseudocódigo."
+              },
+              {
+                "icon": "speed",
+                "text": "Retroalimentación inmediata al interpretar."
+              },
+              {
+                "icon": "hub",
+                "text": "Ecosistema amplio de librerías de ingeniería."
+              }
+            ],
+            "closing": [
+              "Ten lista una instalación de Python 3 para ejecutar los ejemplos del tema desde tu terminal."
+            ]
+          },
+          "s1-stepper-trad": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: del pseudocódigo al programa ejecutable",
+            "statement": "Convierte a un programa Python ejecutable el algoritmo que calcula el caudal $Q = A \\cdot v$ con área $A = 0.5\\ \\text{m}^2$ y velocidad $v = 2.4\\ \\text{m/s}$, y verifica el resultado.",
+            "steps": [
+              {
+                "title": "Identificar entrada, proceso y salida",
+                "body": "Entrada: área y velocidad. Proceso: multiplicar ambas. Salida: el caudal. Es el mismo esquema del Tema 1, ahora hacia código.",
+                "final": false
+              },
+              {
+                "title": "Traducir a alto nivel",
+                "body": "Cada línea del pseudocódigo se vuelve una instrucción de Python legible.",
+                "formula": "Q = A \\cdot v",
+                "final": false
+              },
+              {
+                "title": "Calcular el valor",
+                "body": "Sustituimos los datos y operamos.",
+                "formula": "Q = 0.5 \\cdot 2.4 = 1.2\\ \\text{m}^3/\\text{s}",
+                "final": false
+              },
+              {
+                "title": "Verificar dimensionalmente",
+                "body": "El resultado tiene unidades de $\\text{m}^2 \\cdot \\text{m/s} = \\text{m}^3/\\text{s}$, coherente con un caudal. El programa debe imprimir 1.2.",
+                "final": true
+              }
+            ]
+          },
+          "s1-code-version": {
+            "type": "code",
+            "title": "Programa: caudal en una tubería",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "caudal.py",
+            "instructions": [
+              "Lee el fragmento e identifica la entrada (las variables area y velocidad), el proceso (la multiplicación) y la salida (print).",
+              "Guarda el archivo como caudal.py y ejecútalo desde una terminal con el comando: python caudal.py",
+              "Este programa no pide datos al usuario: los valores están fijos. Cambia el valor de velocidad a 3.0 y vuelve a ejecutarlo para observar cómo cambia el caudal."
+            ],
+            "code": "# caudal.py — traduce a Python el algoritmo del Tema 1\narea = 0.5        # m^2\nvelocidad = 2.4   # m/s\ncaudal = area * velocidad   # m^3/s\nprint(\"Caudal:\", caudal, \"m^3/s\")",
+            "expectedOutput": [
+              "Debe imprimir: Caudal: 1.2 m^3/s",
+              "Coincide con el cálculo manual del stepper, lo que confirma que la traducción del algoritmo es correcta."
+            ]
+          },
+          "s1-saberes-link": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza sobre niveles de lenguaje en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado de la traducción de código, las generaciones de lenguajes y las ventajas y desventajas del lenguaje máquina y ensamblador está en el Documento de Saberes (PDF) de la asignatura."
+            ],
+            "reference": "Tema 2 · Sección 1 · Lenguaje máquina vs. alto nivel",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          },
+          "s1-detonadora": {
+            "type": "trigger-question",
+            "eyebrow": "Para empezar",
+            "question": "Si un programa de control de planta calcula 0.1 + 0.2 y decide que el resultado NO es igual a 0.3, ¿está fallando el computador o estás pidiéndole algo imposible? ¿Cómo elegirías entonces el tipo de dato y la librería para que tu cálculo de ingeniería sea confiable?"
+          }
+        }
+      },
+      "seccion-2": {
+        "kind": "theory",
+        "theme": "Tipos de datos primitivos",
+        "badge": "Sección 2",
+        "navLabel": "Tipos de datos primitivos",
+        "title": "Tipos de datos primitivos",
+        "intro": [
+          "Todo dato que maneja un programa tiene un tipo: define qué valores admite y qué operaciones son válidas. Elegir bien entre enteros, reales, lógicos y cadenas es lo que evita errores de exactitud en cálculos de ingeniería."
+        ],
+        "componentOrder": [
+          "s2-teoria-tipos",
+          "s2-tabla-tipos",
+          "s2-fig-memoria",
+          "s2-flashcards",
+          "s2-teoria-numericos",
+          "s2-fig-recta",
+          "s2-stepper-float",
+          "s2-code-float",
+          "s2-chart-precision",
+          "s2-accordion-tipos",
+          "s2-teoria-bool-str",
+          "s2-carousel-conversiones",
+          "s2-stepper-bool",
+          "s2-saberes-link"
+        ],
+        "components": {
+          "s2-teoria-tipos": {
+            "type": "theory-block",
+            "title": "Qué es un tipo de dato y por qué condiciona el algoritmo",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Un tipo de dato es la categoría de un valor: indica qué puede almacenar una variable y qué operaciones tienen sentido sobre ella. Sumar dos enteros es válido; 'sumar' dos valores lógicos exige una interpretación distinta. El tipo es, por tanto, un contrato.",
+              "Los tipos primitivos son los bloques básicos con los que se construye cualquier dato más complejo. En Python los esenciales son: entero (int), real o de punto flotante (float), lógico (bool) y cadena de caracteres (str). En el Tema 4 verás cómo combinarlos en estructuras como listas y diccionarios.",
+              "Elegir el tipo correcto no es un detalle: representar el número de piezas producidas como float o una medición continua como int introduce errores conceptuales y de exactitud que se arrastran por todo el cálculo."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "tag",
+                "text": "El tipo define los valores válidos y las operaciones permitidas."
+              },
+              {
+                "icon": "pin",
+                "text": "int representa cantidades discretas; float, magnitudes continuas."
+              },
+              {
+                "icon": "toggle_on",
+                "text": "bool modela condiciones verdadero/falso."
+              },
+              {
+                "icon": "text_fields",
+                "text": "str representa texto: nombres, códigos, etiquetas."
+              }
+            ],
+            "example": {
+              "title": "Ejemplo de elección de tipo",
+              "body": [
+                "El número de tornillos en un lote es int (no existen 3.5 tornillos), pero la presión medida en un manómetro es float porque varía de forma continua."
+              ]
+            },
+            "closing": [
+              "Antes de declarar una variable, pregúntate: ¿este dato es discreto, continuo, lógico o textual?"
+            ]
+          },
+          "s2-tabla-tipos": {
+            "type": "table",
+            "title": "Tipos primitivos en Python",
+            "columns": [
+              "Tipo",
+              "Nombre Python",
+              "Ejemplo de valor",
+              "Uso típico en ingeniería"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Entero",
+                  "int",
+                  "147",
+                  "Conteo de piezas, número de ciclos"
+                ]
+              },
+              {
+                "cells": [
+                  "Real / punto flotante",
+                  "float",
+                  "3.1416",
+                  "Mediciones continuas: presión, caudal, temperatura"
+                ]
+              },
+              {
+                "cells": [
+                  "Lógico",
+                  "bool",
+                  "True / False",
+                  "Estado de una condición: dentro/fuera de tolerancia"
+                ]
+              },
+              {
+                "cells": [
+                  "Cadena",
+                  "str",
+                  "\"motor-A12\"",
+                  "Códigos de equipo, etiquetas, mensajes"
+                ]
+              }
+            ]
+          },
+          "s2-fig-memoria": {
+            "type": "image",
+            "title": "Cómo se almacena cada tipo en memoria",
+            "assetId": "img-tipos-memoria",
+            "src": "",
+            "alt": "Cuatro celdas de memoria etiquetadas con un valor int (147), un float (3.1416), un bool (True) y un str (motor-A12), cada una mostrando su tipo.",
+            "caption": "Cada variable reserva en memoria un espacio cuya interpretación depende del tipo de dato asignado.",
+            "prompt": "Crear una figura didáctica en español con cuatro 'cajas' de memoria horizontales. Caja 1: etiqueta 'int', contenido 147. Caja 2: etiqueta 'float', contenido 3.1416. Caja 3: etiqueta 'bool', contenido True. Caja 4: etiqueta 'str', contenido \"motor-A12\". Sobre cada caja el nombre de una variable (n_piezas, presion, en_tolerancia, codigo). Estilo esquemático, paleta institucional verde-lima, fuente monoespaciada para los valores."
+          },
+          "s2-flashcards": {
+            "type": "flashcards",
+            "title": "Tipos primitivos de un vistazo",
+            "cards": [
+              {
+                "term": "int",
+                "definition": "Tipo entero: representa cantidades discretas, positivas o negativas, sin parte decimal. En Python su precisión es arbitraria.",
+                "icon": "pin"
+              },
+              {
+                "term": "float",
+                "definition": "Número de punto flotante: aproxima magnitudes continuas con un número finito de bits, por lo que puede tener pequeños errores de redondeo.",
+                "icon": "speed"
+              },
+              {
+                "term": "bool",
+                "definition": "Tipo lógico con solo dos valores, True y False; surge al evaluar condiciones y es la base de las estructuras selectivas del Tema 3.",
+                "icon": "toggle_on"
+              },
+              {
+                "term": "str",
+                "definition": "Cadena de caracteres: secuencia ordenada de símbolos delimitada por comillas, usada para texto como códigos y etiquetas.",
+                "icon": "text_fields"
+              }
+            ]
+          },
+          "s2-teoria-numericos": {
+            "type": "theory-block",
+            "title": "Enteros y flotantes: exactitud y redondeo",
+            "eyebrow": "Datos numéricos",
+            "body": [
+              "El tipo int en Python maneja enteros de precisión arbitraria: puede crecer tanto como la memoria lo permita sin perder exactitud. Por eso es ideal para conteos exactos.",
+              "El tipo float, en cambio, representa números reales con una cantidad finita de bits siguiendo el estándar de punto flotante. Esto significa que muchos decimales no se almacenan exactamente: $0.1 + 0.2$ no da exactamente $0.3$ en la mayoría de lenguajes, incluido Python.",
+              "Este comportamiento no es un error del lenguaje, sino una consecuencia de representar infinitos reales con bits finitos. Conocerlo evita conclusiones equivocadas al comparar resultados de cálculos de ingeniería."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "all_inclusive",
+                "text": "int en Python tiene precisión arbitraria."
+              },
+              {
+                "icon": "rule",
+                "text": "float aproxima reales con bits finitos."
+              },
+              {
+                "icon": "report",
+                "text": "Comparar floats con == es riesgoso por el redondeo."
+              }
+            ],
+            "sections": [
+              {
+                "title": "El error de redondeo",
+                "body": [
+                  "La diferencia entre el valor real y su representación en punto flotante se llama error de redondeo. En cálculos largos puede acumularse, así que conviene comparar con una tolerancia en vez de igualdad exacta."
+                ],
+                "formula": "|x_{\\text{calc}} - x_{\\text{real}}| < \\varepsilon",
+                "formulaNote": "Se acepta el resultado si la diferencia con el valor esperado es menor que una tolerancia $\\varepsilon$ pequeña."
+              }
+            ],
+            "closing": [
+              "Cuando compares dos magnitudes float, pregunta si son 'suficientemente cercanas', no si son idénticas."
+            ]
+          },
+          "s2-fig-recta": {
+            "type": "figure",
+            "title": "Enteros discretos frente a reales aproximados",
+            "assetId": "img-int-vs-float",
+            "src": "",
+            "alt": "Dos rectas numéricas: arriba, enteros marcados en puntos exactos 0,1,2,3; abajo, una recta continua de reales con marcas representables y huecos entre ellas que ilustran el redondeo.",
+            "caption": "Los enteros caen en puntos exactos; los reales se aproximan al valor representable más cercano, lo que origina el redondeo.",
+            "prompt": "Crear una figura didáctica en español con dos rectas numéricas superpuestas. Recta superior 'int': puntos exactos y separados en 0, 1, 2, 3 con la etiqueta 'valores discretos exactos'. Recta inferior 'float': línea continua con marcas de 'valores representables' y pequeñas zonas grises entre marcas etiquetadas 'se redondea al más cercano'; señalar 0.1 con una marca y una nota '0.1 no es exacto en binario'. Estilo esquemático, paleta verde-lima institucional."
+          },
+          "s2-stepper-float": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: ¿por qué 0.1 + 0.2 no es 0.3?",
+            "statement": "Analiza si la comparación $0.1 + 0.2 = 0.3$ es verdadera en aritmética de punto flotante y decide cómo comparar correctamente con tolerancia $\\varepsilon = 10^{-9}$.",
+            "steps": [
+              {
+                "title": "Plantear la suma",
+                "body": "Sumamos dos floats que no tienen representación binaria exacta.",
+                "formula": "0.1 + 0.2",
+                "final": false
+              },
+              {
+                "title": "Observar el resultado almacenado",
+                "body": "El valor guardado es ligeramente mayor que 0.3 por el redondeo binario.",
+                "formula": "0.1 + 0.2 = 0.30000000000000004",
+                "final": false
+              },
+              {
+                "title": "Evaluar la igualdad exacta",
+                "body": "Comparar con == da falso, porque los bits no coinciden exactamente con los de 0.3.",
+                "formula": "(0.1 + 0.2) = 0.3 \\Rightarrow \\text{False}",
+                "final": false
+              },
+              {
+                "title": "Comparar con tolerancia",
+                "body": "La forma correcta es verificar que la diferencia sea menor que $\\varepsilon$, lo que sí resulta verdadero.",
+                "formula": "|(0.1+0.2) - 0.3| < 10^{-9} \\Rightarrow \\text{True}",
+                "final": true
+              }
+            ]
+          },
+          "s2-code-float": {
+            "type": "code",
+            "title": "Verificación del redondeo de punto flotante",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "redondeo.py",
+            "instructions": [
+              "Guarda el archivo como redondeo.py y ejecútalo con: python redondeo.py",
+              "Observa primero el valor exacto que imprime la suma y la comparación con ==.",
+              "Luego compara la línea con math.isclose: confirma el resultado del stepper anterior. Cambia la tolerancia rel_tol para ver cómo afecta la decisión."
+            ],
+            "code": "# redondeo.py — exactitud del tipo float\nimport math\n\nsuma = 0.1 + 0.2\nprint(\"Valor almacenado:\", suma)\nprint(\"Igualdad exacta 0.1+0.2 == 0.3:\", suma == 0.3)\nprint(\"Comparacion con tolerancia:\", math.isclose(suma, 0.3, rel_tol=1e-9))",
+            "expectedOutput": [
+              "Valor almacenado: 0.30000000000000004",
+              "Igualdad exacta 0.1+0.2 == 0.3: False",
+              "Comparacion con tolerancia: True",
+              "Confirma que comparar floats con tolerancia es lo correcto en cálculos de ingeniería."
+            ]
+          },
+          "s2-chart-precision": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Acumulación del error de redondeo al sumar $0.1$ repetidamente",
+            "description": [
+              "Hilo conductor: la teoría anterior mostró que un solo float ya tiene error de redondeo. Este gráfico evidencia que, al repetir muchas sumas, ese pequeño error se acumula, lo que justifica el uso de tolerancias en cálculos iterativos de ingeniería."
+            ],
+            "note": "Lectura del gráfico: el eje horizontal es el número de sumas de 0.1 y el eje vertical es la diferencia absoluta entre la suma acumulada en float y el valor exacto esperado. La curva crece de forma escalonada, mostrando que el error no desaparece sino que tiende a aumentar con el número de operaciones; conclusión: en bucles largos conviene controlar el error en vez de confiar en la igualdad exacta.",
+            "height": "300px",
+            "labels": [
+              "100",
+              "1000",
+              "10000",
+              "100000",
+              "1000000"
+            ],
+            "datasets": [
+              {
+                "label": "Error absoluto acumulado",
+                "data": [
+                  1.5e-14,
+                  1.6e-13,
+                  1.9e-12,
+                  1.4e-11,
+                  1.3e-10
+                ]
+              }
+            ],
+            "options": {
+              "scales": {
+                "y": {
+                  "title": {
+                    "display": true,
+                    "text": "Error absoluto"
+                  }
+                },
+                "x": {
+                  "title": {
+                    "display": true,
+                    "text": "Numero de sumas de 0.1"
+                  }
+                }
+              }
+            }
+          },
+          "s2-accordion-tipos": {
+            "type": "accordion",
+            "title": "Profundización sobre los tipos numéricos",
+            "items": [
+              {
+                "icon": "lightbulb",
+                "title": "int vs. float: cuándo elegir cada uno",
+                "open": true,
+                "body": [
+                  "La regla práctica es: si el dato se cuenta, usa int; si se mide, usa float. Las piezas producidas, los ciclos de una máquina o el número de sensores son enteros; la temperatura, la presión o el caudal son continuos y van en float.",
+                  "Forzar el tipo equivocado tiene consecuencias. Guardar una temperatura como int truncaría 36.7 a 36 y perdería información crítica. Guardar un conteo como float invita a comparaciones con redondeo donde no debería haberlo.",
+                  "En Python una división con / siempre devuelve float, incluso 6 / 3 da 3.0. Para obtener un entero usa la división entera //, útil cuando repartes elementos en grupos exactos."
+                ]
+              },
+              {
+                "icon": "science",
+                "title": "Por qué float no es exacto",
+                "body": [
+                  "El estándar IEEE 754 representa los reales con un número fijo de bits divididos en signo, exponente y mantisa. Como hay infinitos reales y bits finitos, la mayoría de decimales se aproxima al valor representable más cercano.",
+                  "Decimales que en base 10 parecen simples, como 0.1, son periódicos en base 2, igual que 1/3 es periódico en base 10. Por eso 0.1 no se guarda exacto y aparece el residuo del ejemplo.",
+                  "Cuando la exactitud decimal es indispensable, por ejemplo en cálculos monetarios o de facturación industrial, se usa el módulo decimal de Python en lugar de float; el redondeo deja de ser un problema."
+                ]
+              }
+            ]
+          },
+          "s2-teoria-bool-str": {
+            "type": "theory-block",
+            "title": "Lógicos y cadenas: condiciones y texto",
+            "eyebrow": "Datos no numéricos",
+            "body": [
+              "El tipo bool solo admite True o False y es el resultado natural de una comparación, como presion > limite. Estos valores serán la condición que gobierne las estructuras selectivas del Tema 3, así que conviene dominarlos ahora.",
+              "El tipo str representa texto: una secuencia ordenada de caracteres delimitada por comillas. Sirve para códigos de equipo, etiquetas, mensajes y, muy importante, para los datos que llegan desde el teclado, que siempre son cadenas hasta que se convierten.",
+              "Entre tipos existe conversión: int(\"25\") transforma una cadena en entero y str(3.14) convierte un número en texto. Manejar estas conversiones es clave para la entrada y salida de la siguiente sección."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "toggle_on",
+                "text": "bool nace de comparaciones y alimenta las decisiones."
+              },
+              {
+                "icon": "format_quote",
+                "text": "str es una secuencia ordenada de caracteres."
+              },
+              {
+                "icon": "swap_horiz",
+                "text": "Las funciones int(), float() y str() convierten entre tipos."
+              }
+            ],
+            "closing": [
+              "Identifica siempre el tipo de cada dato: una conversión olvidada es una de las causas más comunes de error en programas de principiantes."
+            ]
+          },
+          "s2-carousel-conversiones": {
+            "type": "carousel",
+            "title": "Conversiones entre tipos primitivos",
+            "slides": [
+              {
+                "label": "Texto a número",
+                "title": "int() y float()",
+                "body": [
+                  "int(\"25\") devuelve el entero 25; float(\"3.14\") devuelve el real 3.14. Se usan al leer datos del teclado, que llegan como cadena."
+                ],
+                "icon": "swap_horiz"
+              },
+              {
+                "label": "Número a texto",
+                "title": "str()",
+                "body": [
+                  "str(1.2) devuelve la cadena \"1.2\". Es necesario para concatenar un número dentro de un mensaje de salida."
+                ],
+                "icon": "text_fields"
+              },
+              {
+                "label": "A lógico",
+                "title": "bool()",
+                "body": [
+                  "bool(0) es False y bool(5) es True; cualquier número distinto de cero o cadena no vacía se interpreta como verdadero."
+                ],
+                "icon": "toggle_on"
+              },
+              {
+                "label": "Cuidado",
+                "title": "Conversión inválida",
+                "body": [
+                  "int(\"3.5\") lanza un error porque la cadena no representa un entero; primero conviene convertir a float y luego, si procede, a int."
+                ],
+                "icon": "error"
+              }
+            ]
+          },
+          "s2-stepper-bool": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: evaluar una condición de tolerancia",
+            "statement": "Una pieza es aceptable si su diámetro $d$ está dentro de $\\pm 0.2\\ \\text{mm}$ respecto del nominal $d_0 = 12.0\\ \\text{mm}$. Determina el valor lógico para $d = 12.15\\ \\text{mm}$.",
+            "steps": [
+              {
+                "title": "Plantear la condición lógica",
+                "body": "La pieza es aceptable si la desviación absoluta no supera la tolerancia.",
+                "formula": "|d - d_0| \\leq 0.2",
+                "final": false
+              },
+              {
+                "title": "Sustituir los valores",
+                "body": "Calculamos la desviación con los datos.",
+                "formula": "|12.15 - 12.0| = 0.15",
+                "final": false
+              },
+              {
+                "title": "Comparar con la tolerancia",
+                "body": "Evaluamos la desigualdad para obtener un bool.",
+                "formula": "0.15 \\leq 0.2 \\Rightarrow \\text{True}",
+                "final": false
+              },
+              {
+                "title": "Concluir",
+                "body": "El resultado lógico es True: la pieza es aceptable. Este bool sería la condición de un if en el Tema 3.",
+                "final": true
+              }
+            ]
+          },
+          "s2-saberes-link": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza sobre tipos de datos en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado de los tipos primitivos, la representación en memoria, el error de redondeo y las conversiones seguras está en el Documento de Saberes (PDF) de la asignatura."
+            ],
+            "reference": "Tema 2 · Sección 2 · Tipos de datos primitivos",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-3": {
+        "kind": "theory",
+        "theme": "Variables",
+        "badge": "Sección 3",
+        "navLabel": "Variables",
+        "title": "Variables",
+        "intro": [
+          "Una variable es un nombre que referencia un dato en memoria. Saber declararlas, nombrarlas con claridad y entender cómo se asignan y reasignan es indispensable para que un algoritmo sea legible y correcto."
+        ],
+        "componentOrder": [
+          "s3-teoria-variable",
+          "s3-fig-asignacion",
+          "s3-flashcards",
+          "s3-quiz-nombres",
+          "s3-teoria-nombres",
+          "s3-tabla-convenciones",
+          "s3-carousel-asignacion",
+          "s3-accordion-errores",
+          "s3-teoria-mutabilidad",
+          "s3-fig-traza",
+          "s3-stepper-intercambio",
+          "s3-code-intercambio",
+          "s3-saberes-link"
+        ],
+        "components": {
+          "s3-teoria-variable": {
+            "type": "theory-block",
+            "title": "Qué es una variable y cómo se asigna",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una variable es un nombre que apunta a un valor almacenado en memoria. En Python no se declara el tipo por adelantado: el tipo lo determina el valor asignado. La asignación se escribe con el signo igual, que aquí significa 'guarda este valor en este nombre', no una igualdad matemática.",
+              "Cuando escribes presion = 3.5, Python crea (si no existe) el nombre presion y lo asocia al valor 3.5 de tipo float. Si luego escribes presion = 4.0, el mismo nombre pasa a referenciar el nuevo valor. Esta capacidad de cambiar es justamente lo que hace 'variable' a una variable.",
+              "Comprender la asignación como una referencia, no como una caja fija, evita confusiones cuando un dato se actualiza dentro de un cálculo, como al acumular lecturas de un sensor a lo largo de un proceso."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "label",
+                "text": "Una variable es un nombre que referencia un valor."
+              },
+              {
+                "icon": "drive_file_rename_outline",
+                "text": "El signo = asigna, no compara."
+              },
+              {
+                "icon": "autorenew",
+                "text": "Reasignar cambia el valor al que apunta el nombre."
+              }
+            ],
+            "example": {
+              "title": "Acumular una lectura",
+              "body": [
+                "total = 0 reserva un acumulador; total = total + lectura actualiza la variable sumando cada nueva medición, patrón que reutilizarás en los ciclos del Tema 3."
+              ]
+            },
+            "closing": [
+              "Lee siempre x = y como 'x toma el valor de y', de izquierda a derecha al revés del orden natural de lectura."
+            ]
+          },
+          "s3-fig-asignacion": {
+            "type": "image",
+            "title": "Asignación: nombre que apunta a un valor",
+            "assetId": "img-variable-referencia",
+            "src": "",
+            "alt": "Un rótulo 'presion' con una flecha que apunta a una celda de memoria con el valor 3.5; debajo, tras reasignar, la flecha apunta a una nueva celda con 4.0.",
+            "caption": "La variable es una etiqueta que puede reapuntar a otro valor cuando se reasigna.",
+            "prompt": "Crear una figura didáctica en español en dos momentos. Momento 1: una etiqueta 'presion' con flecha hacia una celda de memoria que contiene 3.5 (float). Momento 2 (debajo, rotulado 'tras presion = 4.0'): la misma etiqueta 'presion' con la flecha ahora apuntando a una nueva celda con 4.0, y la celda anterior con 3.5 atenuada. Estilo esquemático, paleta verde-lima institucional, fuente monoespaciada para valores."
+          },
+          "s3-flashcards": {
+            "type": "flashcards",
+            "title": "Conceptos de variable",
+            "cards": [
+              {
+                "term": "Variable",
+                "definition": "Nombre que referencia un valor almacenado en memoria y que puede cambiar durante la ejecución del programa.",
+                "icon": "label"
+              },
+              {
+                "term": "Asignación",
+                "definition": "Operación que asocia un valor a un nombre mediante el signo =, evaluando primero la parte derecha y guardándola en la izquierda.",
+                "icon": "drive_file_rename_outline"
+              },
+              {
+                "term": "Tipado dinámico",
+                "definition": "Característica de Python por la que el tipo de una variable lo determina el valor que se le asigna, no una declaración previa.",
+                "icon": "auto_mode"
+              },
+              {
+                "term": "Identificador",
+                "definition": "Nombre válido para una variable: empieza por letra o guion bajo, no usa espacios ni palabras reservadas y distingue mayúsculas de minúsculas.",
+                "icon": "badge"
+              }
+            ]
+          },
+          "s3-quiz-nombres": {
+            "type": "quiz",
+            "title": "Verifica: identificadores válidos",
+            "questions": [
+              {
+                "prompt": "¿Cuál de estos nombres de variable es válido y además recomendable en Python?",
+                "options": [
+                  {
+                    "text": "temperatura_motor",
+                    "correct": true,
+                    "feedback": "Correcto: usa guion bajo, es descriptivo y respeta la convención snake_case de Python."
+                  },
+                  {
+                    "text": "2do_valor",
+                    "correct": false,
+                    "feedback": "No es válido: un identificador no puede comenzar con un dígito."
+                  },
+                  {
+                    "text": "temperatura motor",
+                    "correct": false,
+                    "feedback": "No es válido: los identificadores no admiten espacios. Usa un guion bajo en su lugar."
+                  }
+                ]
+              }
+            ]
+          },
+          "s3-teoria-nombres": {
+            "type": "theory-block",
+            "title": "Nombrar bien: legibilidad y convenciones",
+            "eyebrow": "Buenas prácticas",
+            "body": [
+              "Un nombre de variable debe describir qué guarda. caudal_max comunica mucho más que x o c. El código se lee muchas más veces de las que se escribe, así que un buen nombre ahorra errores y tiempo de mantenimiento en proyectos de ingeniería.",
+              "Las reglas son estrictas: un identificador empieza por letra o guion bajo, no contiene espacios ni signos, no puede ser una palabra reservada del lenguaje (como if o for) y distingue mayúsculas de minúsculas, de modo que Caudal y caudal son variables distintas.",
+              "La convención de estilo de Python (PEP 8) recomienda snake_case para variables: palabras en minúscula unidas por guion bajo, como velocidad_flujo. Seguir la convención hace tu código consistente con el del resto de la comunidad."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "spellcheck",
+                "text": "El nombre debe describir el contenido."
+              },
+              {
+                "icon": "gavel",
+                "text": "No se permiten espacios, signos ni palabras reservadas."
+              },
+              {
+                "icon": "match_case",
+                "text": "Distingue mayúsculas y minúsculas."
+              }
+            ],
+            "closing": [
+              "Si un compañero no entiende qué guarda tu variable solo con leer su nombre, renómbrala."
+            ]
+          },
+          "s3-tabla-convenciones": {
+            "type": "table",
+            "title": "Nombres de variable: válidos, inválidos y recomendados",
+            "columns": [
+              "Nombre",
+              "¿Válido?",
+              "Comentario"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "caudal_max",
+                  {
+                    "badge": "Sí",
+                    "tone": "success"
+                  },
+                  "Descriptivo y en snake_case: ideal."
+                ]
+              },
+              {
+                "cells": [
+                  "T",
+                  {
+                    "badge": "Sí",
+                    "tone": "warning"
+                  },
+                  "Válido pero poco claro; preferible temperatura."
+                ]
+              },
+              {
+                "cells": [
+                  "1sensor",
+                  {
+                    "badge": "No",
+                    "tone": "danger"
+                  },
+                  "Empieza por dígito."
+                ]
+              },
+              {
+                "cells": [
+                  "dato-final",
+                  {
+                    "badge": "No",
+                    "tone": "danger"
+                  },
+                  "El guion medio se interpreta como resta."
+                ]
+              },
+              {
+                "cells": [
+                  "class",
+                  {
+                    "badge": "No",
+                    "tone": "danger"
+                  },
+                  "Es una palabra reservada del lenguaje."
+                ]
+              }
+            ]
+          },
+          "s3-carousel-asignacion": {
+            "type": "carousel",
+            "title": "Formas de asignación en Python",
+            "slides": [
+              {
+                "label": "Simple",
+                "title": "Asignación básica",
+                "body": [
+                  "a = 5 guarda el valor 5 en la variable a. La parte derecha se evalúa primero y su resultado se asocia al nombre de la izquierda."
+                ],
+                "icon": "looks_one"
+              },
+              {
+                "label": "Acumulada",
+                "title": "Operadores compuestos",
+                "body": [
+                  "total += lectura es equivalente a total = total + lectura; el operador += actualiza la variable sumando, patrón habitual al recorrer datos."
+                ],
+                "icon": "add_circle"
+              },
+              {
+                "label": "Múltiple",
+                "title": "Asignación simultánea",
+                "body": [
+                  "x, y = 1, 2 asigna 1 a x y 2 a y en una sola línea; Python evalúa la derecha completa antes de asignar."
+                ],
+                "icon": "splitscreen"
+              },
+              {
+                "label": "Encadenada",
+                "title": "Mismo valor",
+                "body": [
+                  "a = b = 0 inicializa a y b con el mismo valor 0, útil para reiniciar varios acumuladores a la vez."
+                ],
+                "icon": "link"
+              }
+            ]
+          },
+          "s3-accordion-errores": {
+            "type": "accordion",
+            "title": "Errores frecuentes con variables",
+            "items": [
+              {
+                "icon": "warning",
+                "title": "Confundir asignación (=) con comparación (==)",
+                "open": true,
+                "body": [
+                  "El signo = asigna un valor a una variable; el doble signo == compara dos valores y produce un bool. Escribir if x = 5 en lugar de if x == 5 es un error de sintaxis muy común al empezar.",
+                  "La confusión viene de las matemáticas, donde = significa igualdad. En programación, la asignación es una acción y la comparación es una pregunta. Mantenerlos separados es esencial para las estructuras selectivas del Tema 3.",
+                  "Una pista mental: si la línea 'hace algo' (guardar), es =; si la línea 'pregunta algo' dentro de un if o while, es ==."
+                ]
+              },
+              {
+                "icon": "psychology",
+                "title": "Usar una variable antes de asignarla",
+                "body": [
+                  "En Python una variable solo existe después de su primera asignación. Intentar leer total cuando nunca se escribió total = ... lanza un NameError que detiene el programa.",
+                  "Esto es frecuente al construir acumuladores o contadores: hay que inicializarlos (por ejemplo total = 0) antes del ciclo que los actualiza, no dentro de él.",
+                  "El mensaje de error indica exactamente el nombre no definido. Leerlo con atención suele bastar para corregir: casi siempre falta la línea de inicialización."
+                ]
+              }
+            ]
+          },
+          "s3-teoria-mutabilidad": {
+            "type": "theory-block",
+            "title": "Reasignación y rastreo de valores",
+            "eyebrow": "Comportamiento dinámico",
+            "body": [
+              "Como el tipo lo fija el valor, una misma variable puede pasar de int a float o a str si se le reasigna otro tipo. Es flexible, pero exige disciplina: cambiar el tipo de una variable a mitad del programa suele indicar un diseño confuso.",
+              "Cuando varias instrucciones modifican una variable, conviene rastrear sus valores como en la prueba de escritorio del Tema 1: anota el valor antes y después de cada línea para verificar que el algoritmo hace lo esperado.",
+              "Un caso clásico es intercambiar el contenido de dos variables. Hacerlo bien requiere entender que la asignación evalúa primero la parte derecha, lo que permite a Python intercambiar valores en una sola línea."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "cached",
+                "text": "Una variable puede cambiar de valor y de tipo al reasignarse."
+              },
+              {
+                "icon": "table_rows",
+                "text": "Rastrear valores línea a línea valida el algoritmo."
+              },
+              {
+                "icon": "swap_vert",
+                "text": "El intercambio aprovecha la evaluación de la parte derecha."
+              }
+            ],
+            "closing": [
+              "Si necesitas seguir cómo evoluciona un dato, construye una tabla de traza antes de ejecutar."
+            ]
+          },
+          "s3-fig-traza": {
+            "type": "figure",
+            "title": "Tabla de traza del intercambio con variable auxiliar",
+            "assetId": "img-traza-intercambio",
+            "src": "",
+            "alt": "Tabla de traza con columnas temp, a, b y filas para cada instrucción del intercambio, mostrando cómo cambian los valores hasta a=3 y b=7.",
+            "caption": "Rastrear el valor de cada variable tras cada instrucción confirma que el intercambio es correcto antes de ejecutar.",
+            "prompt": "Crear una figura de una tabla de traza en español con encabezados de columna: 'Instrucción', 'temp', 'a', 'b'. Filas: 'inicio' (—, 7, 3); 'temp = a' (7, 7, 3); 'a = b' (7, 3, 3); 'b = temp' (7, 3, 7). Resaltar la celda que cambia en cada fila. Título 'Traza del intercambio'. Estilo tabla limpia, paleta verde-lima institucional, fuente monoespaciada para valores."
+          },
+          "s3-stepper-intercambio": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: intercambiar dos lecturas",
+            "statement": "Dos sensores reportan $a = 7$ y $b = 3$. Intercambia sus valores de modo que al final $a = 3$ y $b = 7$, y traza cada paso.",
+            "steps": [
+              {
+                "title": "Estado inicial",
+                "body": "Anotamos los valores de partida en la tabla de traza.",
+                "formula": "a = 7,\\quad b = 3",
+                "final": false
+              },
+              {
+                "title": "Guardar un respaldo",
+                "body": "Usamos una variable auxiliar para no perder el valor de a.",
+                "formula": "temp = a = 7",
+                "final": false
+              },
+              {
+                "title": "Reasignar a",
+                "body": "a toma el valor de b.",
+                "formula": "a = b = 3",
+                "final": false
+              },
+              {
+                "title": "Reasignar b y verificar",
+                "body": "b toma el valor guardado en temp. Resultado: a vale 3 y b vale 7, intercambio correcto.",
+                "formula": "b = temp = 7 \\Rightarrow (a,b) = (3,7)",
+                "final": true
+              }
+            ]
+          },
+          "s3-code-intercambio": {
+            "type": "code",
+            "title": "Intercambio de variables en Python",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "intercambio.py",
+            "instructions": [
+              "Guarda el archivo como intercambio.py y ejecútalo con: python intercambio.py",
+              "Compara las dos técnicas: con variable auxiliar (la del stepper) y con asignación múltiple, la forma idiomática de Python.",
+              "Modifica los valores iniciales de a y b y vuelve a ejecutar para confirmar que el intercambio funciona en general."
+            ],
+            "code": "# intercambio.py — intercambiar el valor de dos variables\na = 7\nb = 3\nprint(\"Antes:\", a, b)\n\n# Tecnica con auxiliar (como en el stepper)\ntemp = a\na = b\nb = temp\nprint(\"Despues (auxiliar):\", a, b)\n\n# Tecnica idiomatica de Python: asignacion multiple\na, b = b, a\nprint(\"Despues (multiple):\", a, b)",
+            "expectedOutput": [
+              "Antes: 7 3",
+              "Despues (auxiliar): 3 7",
+              "Despues (multiple): 7 3",
+              "La segunda técnica revierte el intercambio porque vuelve a aplicarlo; demuestra que a, b = b, a hace el cambio en una sola línea. Coincide con la traza del stepper."
+            ]
+          },
+          "s3-saberes-link": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza sobre variables en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado de la asignación, el tipado dinámico, las convenciones de nombres y los errores frecuentes está en el Documento de Saberes (PDF) de la asignatura."
+            ],
+            "reference": "Tema 2 · Sección 3 · Variables",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-4": {
+        "kind": "theory",
+        "theme": "Entrada y salida",
+        "badge": "Sección 4",
+        "navLabel": "Entrada y salida",
+        "title": "Entrada y salida de datos",
+        "intro": [
+          "Un programa útil dialoga con el exterior: recibe datos y comunica resultados. En Python la entrada se captura con input() y la salida se muestra con print(), pero hay un detalle clave: todo lo que entra por teclado es texto y casi siempre hay que convertirlo."
+        ],
+        "componentOrder": [
+          "s4-teoria-es",
+          "s4-fig-flujo",
+          "s4-flashcards",
+          "s4-quiz-input",
+          "s4-teoria-conversion",
+          "s4-fig-conversion",
+          "s4-carousel-print",
+          "s4-stepper-promedio",
+          "s4-accordion-es",
+          "s4-teoria-formato",
+          "s4-code-promedio",
+          "s4-table-formato",
+          "s4-saberes-link"
+        ],
+        "components": {
+          "s4-teoria-es": {
+            "type": "theory-block",
+            "title": "Entrada y salida: el diálogo del programa con el mundo",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Todo algoritmo tiene entrada, proceso y salida (el esquema del Tema 1). La entrada son los datos que el programa recibe; la salida, los resultados que comunica. En Python la función input() lee una línea desde el teclado y print() muestra texto en pantalla.",
+              "El punto crítico es que input() siempre devuelve una cadena (str), aunque el usuario escriba un número. Si necesitas operar aritméticamente con ese dato, debes convertirlo con int() o float() antes de usarlo, o el programa fallará o producirá resultados incorrectos.",
+              "En ingeniería la entrada puede venir del teclado, de un archivo de mediciones o de un sensor; aquí practicaremos con el teclado, pero el principio de validar y convertir el dato es el mismo en todos los casos."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "keyboard",
+                "text": "input() lee una línea del teclado como cadena."
+              },
+              {
+                "icon": "print",
+                "text": "print() comunica resultados en pantalla."
+              },
+              {
+                "icon": "swap_horiz",
+                "text": "La entrada de teclado siempre es str: hay que convertirla."
+              }
+            ],
+            "example": {
+              "title": "Leer una temperatura",
+              "body": [
+                "t = float(input(\"Temperatura: \")) lee el texto, lo convierte a float y lo guarda listo para calcular; sin float() no podrías promediarlo con otras lecturas."
+              ]
+            },
+            "closing": [
+              "Cada vez que uses input() para un número, pregúntate inmediatamente: ¿a qué tipo debo convertir este dato?"
+            ]
+          },
+          "s4-fig-flujo": {
+            "type": "image",
+            "title": "Flujo entrada-proceso-salida con conversión",
+            "assetId": "img-flujo-es",
+            "src": "",
+            "alt": "Diagrama horizontal: teclado → input() devuelve str → conversión a float → proceso (cálculo) → print() → pantalla.",
+            "caption": "El dato cambia de tipo en el camino: entra como texto, se convierte a número, se procesa y la salida vuelve a presentarse como texto.",
+            "prompt": "Crear un diagrama de flujo horizontal en español de cinco bloques conectados por flechas: (1) icono de teclado 'Usuario escribe 25', (2) 'input() → \"25\" (str)', (3) 'float() → 25.0 (float)', (4) 'Proceso: cálculo', (5) 'print() → pantalla'. Resaltar en color el bloque de conversión de tipo. Estilo esquemático, paleta verde-lima institucional, fuente monoespaciada en los valores."
+          },
+          "s4-flashcards": {
+            "type": "flashcards",
+            "title": "Funciones de entrada y salida",
+            "cards": [
+              {
+                "term": "input(mensaje)",
+                "definition": "Muestra un mensaje, espera que el usuario escriba una línea y la devuelve siempre como cadena (str).",
+                "icon": "keyboard"
+              },
+              {
+                "term": "print(valores)",
+                "definition": "Muestra en pantalla los valores indicados, separándolos por espacios y agregando un salto de línea al final.",
+                "icon": "print"
+              },
+              {
+                "term": "Conversión de entrada",
+                "definition": "Aplicar int() o float() al resultado de input() para poder operar aritméticamente con un dato numérico capturado.",
+                "icon": "swap_horiz"
+              },
+              {
+                "term": "f-string",
+                "definition": "Cadena precedida por f que permite insertar variables y expresiones entre llaves dentro del texto de salida, como f\"Total: {total}\".",
+                "icon": "data_object"
+              }
+            ]
+          },
+          "s4-quiz-input": {
+            "type": "quiz",
+            "title": "Verifica: tipo de la entrada",
+            "questions": [
+              {
+                "prompt": "Tras ejecutar edad = input(\"Edad: \") y escribir 25, ¿de qué tipo es la variable edad?",
+                "options": [
+                  {
+                    "text": "str (cadena), porque input() siempre devuelve texto.",
+                    "correct": true,
+                    "feedback": "Correcto: aunque se vea como un número, es texto; para sumarle algo hay que convertirlo con int()."
+                  },
+                  {
+                    "text": "int (entero), porque el usuario escribió un número.",
+                    "correct": false,
+                    "feedback": "No: input() no interpreta el contenido; devuelve la línea como str. La conversión es responsabilidad del programador."
+                  },
+                  {
+                    "text": "float (real), porque podría tener decimales.",
+                    "correct": false,
+                    "feedback": "No: el tipo no depende de lo escrito. input() entrega siempre str hasta que tú lo conviertas."
+                  }
+                ]
+              }
+            ]
+          },
+          "s4-teoria-conversion": {
+            "type": "theory-block",
+            "title": "Convertir y validar la entrada",
+            "eyebrow": "Robustez del programa",
+            "body": [
+              "Convertir la entrada es obligatorio para operar, pero también es un punto de fallo: si el usuario escribe 'abc' y haces int(...), Python lanza un ValueError. Un programa de ingeniería robusto anticipa entradas inválidas.",
+              "La conversión adecuada depende del tipo de dato. Para un conteo de piezas usas int(); para una medición continua, float(). Convertir una medición a int truncaría su parte decimal y perdería exactitud, como vimos en la Sección 2.",
+              "Más adelante, con las estructuras de control del Tema 3, podrás repetir la solicitud hasta que el dato sea válido. Por ahora, asume entradas correctas pero ten presente dónde puede fallar la conversión."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "rule",
+                "text": "Elige int() o float() según el dato sea discreto o continuo."
+              },
+              {
+                "icon": "error",
+                "text": "Una conversión inválida lanza ValueError."
+              },
+              {
+                "icon": "verified",
+                "text": "Validar la entrada hace robusto al programa."
+              }
+            ],
+            "closing": [
+              "Pregúntate siempre qué pasaría si el usuario escribe algo inesperado: ese es el origen de la mayoría de fallos en tiempo de ejecución."
+            ]
+          },
+          "s4-fig-conversion": {
+            "type": "figure",
+            "title": "Conversión válida frente a conversión inválida",
+            "assetId": "img-conversion-valida",
+            "src": "",
+            "alt": "Dos caminos desde una cadena: '25' con int() llega a 25 (correcto); 'abc' con int() llega a un bloque rojo ValueError.",
+            "caption": "Convertir una cadena numérica funciona; convertir texto no numérico provoca un error en tiempo de ejecución.",
+            "prompt": "Crear una figura didáctica en español con dos caminos paralelos. Camino 1 (verde, 'correcto'): caja '\"25\" (str)' → flecha 'int()' → caja '25 (int)'. Camino 2 (rojo, 'falla'): caja '\"abc\" (str)' → flecha 'int()' → caja con icono de error 'ValueError'. Título 'Conversión de la entrada'. Estilo esquemático, fuente monoespaciada para los valores, paleta verde-lima con acento rojo solo para el error."
+          },
+          "s4-carousel-print": {
+            "type": "carousel",
+            "title": "Maneras de comunicar la salida",
+            "slides": [
+              {
+                "label": "Separación",
+                "title": "print con comas",
+                "body": [
+                  "print(\"Caudal:\", caudal) imprime el texto y el valor separados por un espacio; convierte automáticamente el número a texto para mostrarlo."
+                ],
+                "icon": "space_bar"
+              },
+              {
+                "label": "Concatenación",
+                "title": "Unir cadenas",
+                "body": [
+                  "\"Caudal: \" + str(caudal) une textos con +, pero exige convertir el número con str() o se produce un error de tipos."
+                ],
+                "icon": "add"
+              },
+              {
+                "label": "f-string",
+                "title": "Formato moderno",
+                "body": [
+                  "f\"Caudal: {caudal} m3/s\" inserta la variable directamente entre llaves; es la forma más legible y recomendada de construir mensajes."
+                ],
+                "icon": "data_object"
+              },
+              {
+                "label": "Decimales",
+                "title": "Controlar precisión",
+                "body": [
+                  "f\"{caudal:.2f}\" muestra el valor con dos decimales, útil para presentar mediciones sin saturar la pantalla de cifras."
+                ],
+                "icon": "tune"
+              }
+            ]
+          },
+          "s4-stepper-promedio": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: promedio de tres mediciones",
+            "statement": "Un operario captura tres lecturas de temperatura $t_1 = 36.5$, $t_2 = 37.2$, $t_3 = 36.8$ (en °C). Calcula y reporta el promedio con dos decimales.",
+            "steps": [
+              {
+                "title": "Capturar y convertir la entrada",
+                "body": "Cada lectura entra como str por input() y se convierte a float para poder promediarla.",
+                "formula": "t_1, t_2, t_3 \\in \\mathbb{R}",
+                "final": false
+              },
+              {
+                "title": "Plantear el promedio",
+                "body": "El promedio es la suma de las lecturas dividida entre su cantidad.",
+                "formula": "\\bar{t} = \\frac{t_1 + t_2 + t_3}{3}",
+                "final": false
+              },
+              {
+                "title": "Sustituir los valores",
+                "body": "Operamos con los datos capturados.",
+                "formula": "\\bar{t} = \\frac{36.5 + 37.2 + 36.8}{3} = \\frac{110.5}{3}",
+                "final": false
+              },
+              {
+                "title": "Calcular y formatear la salida",
+                "body": "El resultado redondeado a dos decimales es el que se muestra con print.",
+                "formula": "\\bar{t} = 36.83\\ ^{\\circ}\\text{C}",
+                "final": true
+              }
+            ]
+          },
+          "s4-accordion-es": {
+            "type": "accordion",
+            "title": "Profundización sobre entrada y salida",
+            "items": [
+              {
+                "icon": "lightbulb",
+                "title": "¿Por qué input() devuelve siempre texto?",
+                "open": true,
+                "body": [
+                  "El teclado entrega una secuencia de caracteres; el computador no sabe si esos caracteres representan un número, una fecha o una palabra. Por eso input() los entrega tal cual, como str, y deja al programador la decisión de cómo interpretarlos.",
+                  "Esta separación es deliberada y útil: el mismo texto '25' puede convertirse a int para un conteo, a float para una medición o quedarse como str si es un código. El significado lo da el contexto del problema, no el teclado.",
+                  "En sistemas reales que leen datos de archivos o sensores ocurre lo mismo: el dato llega como bytes o texto y un paso explícito de conversión y validación lo transforma en el tipo correcto antes de usarlo."
+                ]
+              },
+              {
+                "icon": "psychology",
+                "title": "Concatenar texto y números sin error",
+                "body": [
+                  "Python no permite sumar una cadena y un número con +, porque + significa concatenación entre textos y suma entre números; mezclarlos produce un TypeError.",
+                  "Hay tres salidas limpias: usar comas en print (print(\"Total:\", total)), convertir con str(total) antes de concatenar, o usar una f-string como f\"Total: {total}\". La f-string es la más legible y la preferida hoy.",
+                  "Controlar la presentación importa en informes de ingeniería: con f\"{valor:.2f}\" se evita mostrar quince decimales de un float y se entrega un resultado limpio y profesional."
+                ]
+              }
+            ]
+          },
+          "s4-teoria-formato": {
+            "type": "theory-block",
+            "title": "Formatear la salida para informes",
+            "eyebrow": "Comunicación de resultados",
+            "body": [
+              "Mostrar un resultado no es solo imprimirlo: es comunicarlo con claridad. Un caudal como 1.2000000003 confunde; redondeado a 1.20 m³/s informa. Las f-strings permiten controlar decimales, alineación y unidades en una sola expresión legible.",
+              "La sintaxis f\"{variable:.2f}\" indica 'muestra este float con dos decimales'. También puedes añadir el símbolo de la unidad como texto fijo, de modo que la salida sea autoexplicativa para quien lee el informe.",
+              "Presentar bien los datos es parte del trabajo de ingeniería: un reporte de proceso debe ser entendible por el operario y por el supervisor, no solo correcto internamente."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "format_list_numbered",
+                "text": "f\"{x:.2f}\" controla los decimales mostrados."
+              },
+              {
+                "icon": "straighten",
+                "text": "Incluir unidades hace la salida autoexplicativa."
+              },
+              {
+                "icon": "summarize",
+                "text": "Una buena salida comunica, no solo imprime."
+              }
+            ],
+            "closing": [
+              "Diseña la salida pensando en quién la va a leer, no solo en que el número sea correcto."
+            ]
+          },
+          "s4-code-promedio": {
+            "type": "code",
+            "title": "Programa: promedio de mediciones con entrada y salida",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "promedio.py",
+            "instructions": [
+              "Guarda el archivo como promedio.py y ejecútalo con: python promedio.py",
+              "El programa pide tres temperaturas. Cuando aparezca el mensaje, escribe 36.5 y pulsa Enter, luego 37.2 y Enter, luego 36.8 y Enter.",
+              "Observa cómo float() convierte cada entrada de texto a número y cómo la f-string formatea la salida a dos decimales. Cambia las lecturas para confirmar el resultado del stepper."
+            ],
+            "code": "# promedio.py — entrada, conversion, proceso y salida\nt1 = float(input(\"Temperatura 1 (C): \"))\nt2 = float(input(\"Temperatura 2 (C): \"))\nt3 = float(input(\"Temperatura 3 (C): \"))\n\npromedio = (t1 + t2 + t3) / 3\nprint(f\"Promedio: {promedio:.2f} C\")",
+            "expectedOutput": [
+              "Con las entradas 36.5, 37.2 y 36.8 debe imprimir: Promedio: 36.83 C",
+              "Coincide con el resultado del stepper, validando la conversión de tipos y el formato de salida."
+            ]
+          },
+          "s4-table-formato": {
+            "type": "table",
+            "title": "Formas de presentar la salida",
+            "columns": [
+              "Técnica",
+              "Ejemplo",
+              "Resultado en pantalla"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "print con comas",
+                  "print(\"T:\", 36.83)",
+                  "T: 36.83"
+                ]
+              },
+              {
+                "cells": [
+                  "Concatenación con str()",
+                  "print(\"T: \" + str(36.83))",
+                  "T: 36.83"
+                ]
+              },
+              {
+                "cells": [
+                  "f-string simple",
+                  "print(f\"T: {t}\")",
+                  "T: 36.83"
+                ]
+              },
+              {
+                "cells": [
+                  "f-string con decimales",
+                  "print(f\"T: {t:.1f}\")",
+                  "T: 36.8"
+                ]
+              }
+            ]
+          },
+          "s4-saberes-link": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza sobre entrada y salida en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado de input() y print(), la conversión y validación de datos y el formateo de resultados con f-strings está en el Documento de Saberes (PDF) de la asignatura."
+            ],
+            "reference": "Tema 2 · Sección 4 · Entrada y salida",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-5": {
+        "kind": "theory",
+        "theme": "Importación y uso de librerías",
+        "badge": "Sección 5",
+        "navLabel": "Librerías",
+        "title": "Importación y uso de librerías",
+        "intro": [
+          "Una librería es una colección de código ya escrito y probado que puedes reutilizar. Importar math, statistics o numpy evita reinventar cálculos y conecta tu programa con herramientas estándar del trabajo de ingeniería."
+        ],
+        "componentOrder": [
+          "s5-teoria-libreria",
+          "s5-fig-ecosistema",
+          "s5-flashcards",
+          "s5-quiz-import",
+          "s5-teoria-import",
+          "s5-fig-import",
+          "s5-tabla-librerias",
+          "s5-carousel-formas",
+          "s5-accordion-librerias",
+          "s5-teoria-uso",
+          "s5-stepper-desviacion",
+          "s5-code-statistics",
+          "s5-evaluacion-taller",
+          "s5-saberes-link"
+        ],
+        "components": {
+          "s5-teoria-libreria": {
+            "type": "theory-block",
+            "title": "Qué es una librería y por qué reutilizar código",
+            "eyebrow": "Base conceptual",
+            "body": [
+              "Una librería (o módulo) es un conjunto de funciones, constantes y herramientas empaquetadas para resolver un tipo de tarea. En lugar de escribir tú mismo la raíz cuadrada o la desviación estándar, importas una librería que ya las implementa de forma correcta y eficiente.",
+              "Reutilizar código tiene ventajas claras: ahorra tiempo, reduce errores (el código de una librería madura está muy probado) y hace tu programa más legible. Es un principio central de la ingeniería de software: no reinventar lo que ya está resuelto.",
+              "Python trae una biblioteca estándar amplia (math, statistics, random, datetime) y un ecosistema externo enorme (numpy, pandas, scipy) muy usado en cálculo numérico y análisis de datos de ingeniería. Saber elegir e importar la adecuada es el objetivo de esta sección."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "inventory_2",
+                "text": "Una librería empaqueta código reutilizable y probado."
+              },
+              {
+                "icon": "savings",
+                "text": "Reutilizar ahorra tiempo y reduce errores."
+              },
+              {
+                "icon": "hub",
+                "text": "Python tiene biblioteca estándar y ecosistema externo."
+              }
+            ],
+            "example": {
+              "title": "De fórmula a librería",
+              "body": [
+                "En vez de programar la raíz cuadrada para calcular el módulo de un vector de fuerzas, importas math y usas math.sqrt(fx**2 + fy**2): más corto, más claro y sin errores de implementación."
+              ]
+            },
+            "closing": [
+              "Antes de programar un cálculo desde cero, pregúntate si ya existe una librería estándar que lo resuelva."
+            ]
+          },
+          "s5-fig-ecosistema": {
+            "type": "image",
+            "title": "Tu programa y las librerías que importa",
+            "assetId": "img-ecosistema-librerias",
+            "src": "",
+            "alt": "Un bloque central 'mi_programa.py' con flechas de importación hacia módulos math, statistics y numpy, cada uno con ejemplos de funciones que aporta.",
+            "caption": "El programa principal importa y combina herramientas de varias librerías sin reescribir su código interno.",
+            "prompt": "Crear una figura didáctica en español con un bloque central 'mi_programa.py' y tres módulos alrededor conectados por flechas etiquetadas 'import'. Módulo 'math' (con sqrt, pi), módulo 'statistics' (con mean, stdev), módulo 'numpy' (con array, mean). Cada módulo como una caja con su icono. Estilo esquemático tipo diagrama de dependencias, paleta verde-lima institucional, fuente monoespaciada para nombres de funciones."
+          },
+          "s5-flashcards": {
+            "type": "flashcards",
+            "title": "Vocabulario de librerías",
+            "cards": [
+              {
+                "term": "Librería / módulo",
+                "definition": "Colección de funciones y constantes reutilizables agrupadas por propósito; se incorpora a un programa con import.",
+                "icon": "inventory_2"
+              },
+              {
+                "term": "import",
+                "definition": "Instrucción que carga una librería para usar sus funciones, normalmente al inicio del archivo.",
+                "icon": "download"
+              },
+              {
+                "term": "Biblioteca estándar",
+                "definition": "Conjunto de módulos que vienen incluidos con Python, como math, statistics o random, sin instalación adicional.",
+                "icon": "library_books"
+              },
+              {
+                "term": "pip",
+                "definition": "Gestor que instala librerías externas (como numpy) desde el repositorio de paquetes de Python cuando no forman parte de la biblioteca estándar.",
+                "icon": "deployed_code"
+              }
+            ]
+          },
+          "s5-quiz-import": {
+            "type": "quiz",
+            "title": "Verifica: importación correcta",
+            "questions": [
+              {
+                "prompt": "Quieres usar la función sqrt de la librería math. ¿Cuál opción la invoca correctamente tras escribir import math?",
+                "options": [
+                  {
+                    "text": "math.sqrt(16)",
+                    "correct": true,
+                    "feedback": "Correcto: con import math se accede a la función mediante el nombre del módulo seguido de un punto."
+                  },
+                  {
+                    "text": "sqrt(16)",
+                    "correct": false,
+                    "feedback": "No funciona con import math: faltaría el prefijo math. Solo sería válido si hubieras escrito from math import sqrt."
+                  },
+                  {
+                    "text": "import.sqrt(16)",
+                    "correct": false,
+                    "feedback": "No: import es una instrucción para cargar el módulo, no un objeto al que se le llamen funciones."
+                  }
+                ]
+              }
+            ]
+          },
+          "s5-teoria-import": {
+            "type": "theory-block",
+            "title": "Formas de importar y acceder a una librería",
+            "eyebrow": "Sintaxis de importación",
+            "body": [
+              "Hay varias formas de importar. import math carga todo el módulo y obliga a usar el prefijo, como math.pi; es la forma más clara porque deja explícito de dónde viene cada función. from math import sqrt trae solo una función y permite llamarla sin prefijo: sqrt(16).",
+              "También existe el alias: import numpy as np carga la librería con un nombre corto, de modo que escribes np.mean(...). Es una convención muy extendida que hace el código más conciso sin perder claridad sobre el origen.",
+              "Evita from math import * (importar todo sin prefijo): mezcla nombres de varias librerías y dificulta saber de dónde viene cada función, lo que provoca conflictos difíciles de depurar en programas grandes."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "download",
+                "text": "import modulo exige prefijo: modulo.funcion()."
+              },
+              {
+                "icon": "filter_alt",
+                "text": "from modulo import funcion trae solo lo necesario."
+              },
+              {
+                "icon": "badge",
+                "text": "import ... as ... define un alias corto (np, pd)."
+              }
+            ],
+            "closing": [
+              "Prefiere importaciones explícitas: facilitan leer el código y rastrear de qué librería viene cada herramienta."
+            ]
+          },
+          "s5-fig-import": {
+            "type": "figure",
+            "title": "Anatomía de las formas de importar",
+            "assetId": "img-formas-import",
+            "src": "",
+            "alt": "Tres líneas de código anotadas: import math (acceso math.sqrt), from math import sqrt (acceso sqrt), import numpy as np (acceso np.mean), con etiquetas señalando cada parte.",
+            "caption": "Cada forma de importar determina cómo se invoca después la función: con prefijo, sin prefijo o mediante alias.",
+            "prompt": "Crear una figura didáctica en español con tres bloques de código anotados. Bloque 1: 'import math' con flecha a 'uso: math.sqrt(16)'. Bloque 2: 'from math import sqrt' con flecha a 'uso: sqrt(16)'. Bloque 3: 'import numpy as np' con flecha a 'uso: np.mean(datos)', señalando 'np' como alias. Estilo esquemático tipo anotación de código, fuente monoespaciada, paleta verde-lima institucional."
+          },
+          "s5-tabla-librerias": {
+            "type": "table",
+            "title": "Librerías frecuentes en ingeniería",
+            "columns": [
+              "Librería",
+              "¿Estándar?",
+              "Aporta",
+              "Caso de uso"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "math",
+                  {
+                    "badge": "Sí",
+                    "tone": "success"
+                  },
+                  "sqrt, pi, sin, cos, log",
+                  "Cálculos trigonométricos y geométricos"
+                ]
+              },
+              {
+                "cells": [
+                  "statistics",
+                  {
+                    "badge": "Sí",
+                    "tone": "success"
+                  },
+                  "mean, median, stdev",
+                  "Resumen estadístico de mediciones"
+                ]
+              },
+              {
+                "cells": [
+                  "random",
+                  {
+                    "badge": "Sí",
+                    "tone": "success"
+                  },
+                  "random, randint, choice",
+                  "Simulación y muestreo"
+                ]
+              },
+              {
+                "cells": [
+                  "numpy",
+                  {
+                    "badge": "No (pip)",
+                    "tone": "warning"
+                  },
+                  "array, mean, operaciones vectoriales",
+                  "Cálculo numérico con grandes conjuntos de datos"
+                ]
+              }
+            ]
+          },
+          "s5-carousel-formas": {
+            "type": "carousel",
+            "title": "Tres formas de importar, comparadas",
+            "slides": [
+              {
+                "label": "Módulo completo",
+                "title": "import math",
+                "body": [
+                  "Carga toda la librería. Se usa con prefijo: math.sqrt(16), math.pi. Es la forma más explícita y fácil de rastrear."
+                ],
+                "icon": "download"
+              },
+              {
+                "label": "Función concreta",
+                "title": "from math import sqrt",
+                "body": [
+                  "Trae solo la función sqrt y se llama sin prefijo: sqrt(16). Útil cuando usas pocas funciones de un módulo."
+                ],
+                "icon": "filter_alt"
+              },
+              {
+                "label": "Alias",
+                "title": "import numpy as np",
+                "body": [
+                  "Carga la librería con un nombre corto. Se invoca como np.mean(datos). Es la convención estándar para numpy y pandas."
+                ],
+                "icon": "badge"
+              },
+              {
+                "label": "Antipatrón",
+                "title": "from math import *",
+                "body": [
+                  "Importa todo sin prefijo. Se desaconseja: mezcla nombres y oculta el origen de las funciones, dificultando la depuración."
+                ],
+                "icon": "block"
+              }
+            ]
+          },
+          "s5-accordion-librerias": {
+            "type": "accordion",
+            "title": "Profundización sobre el uso de librerías",
+            "items": [
+              {
+                "icon": "lightbulb",
+                "title": "Estándar vs. externa: ¿qué necesito instalar?",
+                "open": true,
+                "body": [
+                  "Las librerías de la biblioteca estándar (math, statistics, random, datetime) vienen con Python: basta importarlas. Las externas, como numpy, pandas o scipy, se instalan una vez con el gestor pip, por ejemplo pip install numpy.",
+                  "Esta diferencia importa al compartir un programa: si usas una librería externa, quien lo ejecute debe instalarla también. Por eso los proyectos de ingeniería listan sus dependencias en un archivo requirements.txt.",
+                  "Para tareas pequeñas de este curso, la biblioteca estándar suele bastar. numpy se vuelve indispensable cuando trabajas con muchos datos o con matrices, como verás en el Tema 4 al estudiar arreglos."
+                ]
+              },
+              {
+                "icon": "psychology",
+                "title": "Justificar la elección de una librería",
+                "body": [
+                  "Elegir una librería no es automático: implica valorar si resuelve el problema, si es estándar o requiere instalación, y si su uso simplifica el código sin añadir complejidad innecesaria.",
+                  "Para promediar tres lecturas, statistics.mean es más que suficiente y no exige instalar nada; recurrir a numpy aquí sería sobredimensionar la solución. Para procesar miles de mediciones, en cambio, numpy es claramente superior por su eficiencia.",
+                  "El taller de este tema te pide justificar la librería elegida: esa justificación, basada en el tamaño del problema y la disponibilidad de la herramienta, es parte de pensar como ingeniero."
+                ]
+              }
+            ]
+          },
+          "s5-teoria-uso": {
+            "type": "theory-block",
+            "title": "Usar una librería para resolver un cálculo de ingeniería",
+            "eyebrow": "Aplicación",
+            "body": [
+              "Importada la librería, usar sus funciones es directo: se invocan con su nombre, sus paréntesis y los argumentos que necesitan. La documentación de cada librería describe qué recibe y qué devuelve cada función.",
+              "Un caso típico en control de calidad es resumir un conjunto de mediciones con su media y su desviación estándar. La media indica el valor central; la desviación estándar, cuánto se dispersan las lecturas alrededor de ese centro, lo que revela la estabilidad del proceso.",
+              "La librería statistics ofrece mean y stdev listas para usar. Reproducir el cálculo a mano (como en el stepper) y luego verificarlo con la librería es la mejor forma de confiar en el resultado y de comprender qué hace la función internamente."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "functions",
+                "text": "Las funciones se invocan con nombre, paréntesis y argumentos."
+              },
+              {
+                "icon": "analytics",
+                "text": "media y desviación estándar resumen un conjunto de mediciones."
+              },
+              {
+                "icon": "fact_check",
+                "text": "Verificar el cálculo manual con la librería da confianza."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Desviación estándar muestral",
+                "body": [
+                  "La desviación estándar muestral mide la dispersión de las lecturas respecto de su media; un valor pequeño indica un proceso estable."
+                ],
+                "formula": "s = \\sqrt{\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i - \\bar{x})^2}",
+                "formulaNote": "$x_i$ es cada lectura, $\\bar{x}$ la media y $n$ el número de lecturas; se divide entre $n-1$ por tratarse de una muestra."
+              }
+            ],
+            "closing": [
+              "Comprender qué calcula una función te permite usarla con criterio, no como una caja negra."
+            ]
+          },
+          "s5-stepper-desviacion": {
+            "type": "stepper",
+            "title": "Ejemplo resuelto: media y desviación de un proceso",
+            "statement": "Un proceso reporta tres diámetros (mm): $x_1 = 12.0$, $x_2 = 12.2$, $x_3 = 11.8$. Calcula la media $\\bar{x}$ y la desviación estándar muestral $s$.",
+            "steps": [
+              {
+                "title": "Calcular la media",
+                "body": "Sumamos las lecturas y dividimos entre su cantidad.",
+                "formula": "\\bar{x} = \\frac{12.0 + 12.2 + 11.8}{3} = 12.0",
+                "final": false
+              },
+              {
+                "title": "Calcular las desviaciones al cuadrado",
+                "body": "Restamos la media a cada lectura y elevamos al cuadrado.",
+                "formula": "(0.0)^2 + (0.2)^2 + (-0.2)^2 = 0.08",
+                "final": false
+              },
+              {
+                "title": "Aplicar la fórmula muestral",
+                "body": "Dividimos entre $n-1 = 2$ y tomamos la raíz.",
+                "formula": "s = \\sqrt{\\frac{0.08}{2}} = \\sqrt{0.04}",
+                "final": false
+              },
+              {
+                "title": "Resultado e interpretación",
+                "body": "La desviación estándar es 0.2 mm: las piezas se dispersan poco respecto del centro, indicando un proceso estable.",
+                "formula": "s = 0.2\\ \\text{mm}",
+                "final": true
+              }
+            ]
+          },
+          "s5-code-statistics": {
+            "type": "code",
+            "title": "Resumen estadístico con la librería statistics",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "calidad.py",
+            "instructions": [
+              "Guarda el archivo como calidad.py y ejecútalo con: python calidad.py",
+              "El programa no pide entrada: los diámetros están en una lista. Observa cómo se importa la librería estándar statistics y se usan sus funciones mean y stdev.",
+              "Compara la salida con el resultado del stepper. Luego agrega una cuarta medición a la lista y vuelve a ejecutar para ver cómo cambian la media y la desviación."
+            ],
+            "code": "# calidad.py — resumen estadistico con una libreria estandar\nimport statistics\n\ndiametros = [12.0, 12.2, 11.8]   # mm\nmedia = statistics.mean(diametros)\ndesviacion = statistics.stdev(diametros)\n\nprint(f\"Media: {media:.2f} mm\")\nprint(f\"Desviacion estandar: {desviacion:.2f} mm\")",
+            "expectedOutput": [
+              "Media: 12.00 mm",
+              "Desviacion estandar: 0.20 mm",
+              "Coincide con el cálculo manual del stepper, lo que verifica que la librería statistics resuelve correctamente el resumen del proceso."
+            ]
+          },
+          "s5-evaluacion-taller": {
+            "type": "evaluation-activity",
+            "title": "Taller del Tema 2: tipos de datos y librerías",
+            "learningOutcomeIds": [
+              "RA1"
+            ],
+            "criterion": "CE1: implementa un programa en lenguaje de alto nivel que usa distintos tipos de datos y al menos una librería, justificando su elección para una tarea de cómputo.",
+            "evidence": "Código ejecutable en Python que captura datos, usa al menos dos tipos primitivos distintos y emplea una librería (estándar o externa) para resolver una tarea de cómputo, con la justificación escrita de la librería elegida.",
+            "technique": "Taller práctico (In1)",
+            "instrument": "Rúbrica analítica disciplinar CE1",
+            "evaluationMoment": "avance",
+            "participationType": "individual",
+            "feedback": {
+              "strengths": "Elección pertinente de tipos de datos, conversión correcta de la entrada y uso justificado de la librería.",
+              "improvement": "Revisar conversiones de tipo olvidadas, comparación de floats con igualdad exacta o uso de una librería sobredimensionada.",
+              "reinforcement": "Repetir el ciclo escribir-ejecutar-observar con los ejemplos resueltos de las secciones 2, 4 y 5.",
+              "nextStep": "Llevar estos tipos y librerías a las estructuras selectivas y de control del Tema 3."
+            },
+            "rubric": {
+              "type": "analitica",
+              "levels": [
+                "No acreditable",
+                "Deficiente",
+                "Insuficiente",
+                "Aceptable",
+                "Bueno",
+                "Muy bueno",
+                "Sobresaliente"
+              ],
+              "criteria": [
+                {
+                  "name": "Uso de tipos de datos",
+                  "descriptors": {
+                    "Aceptable": "Usa tipos primitivos correctos para los datos del problema.",
+                    "Sobresaliente": "Selecciona y convierte tipos con exactitud, evitando errores de redondeo y de conversión, y lo justifica."
+                  }
+                },
+                {
+                  "name": "Uso justificado de librería",
+                  "descriptors": {
+                    "Aceptable": "Importa y usa una librería pertinente.",
+                    "Sobresaliente": "Elige la librería más adecuada al tamaño del problema y argumenta por qué frente a alternativas."
+                  }
+                }
+              ]
+            }
+          },
+          "s5-saberes-link": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza sobre librerías en el Documento de Saberes",
+            "body": [
+              "El desarrollo ampliado de la importación de módulos, la biblioteca estándar, las librerías externas y la justificación de su elección está en el Documento de Saberes (PDF) de la asignatura."
+            ],
+            "reference": "Tema 2 · Sección 5 · Importación y uso de librerías",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      }
+    }
+  },
+  "pdf": {
+    "guideLabel": "DOCUMENTO DE SABERES VIRTUAL",
+    "kicker": "Aprendizaje guiado · Práctica aplicada · Autoevaluación",
+    "institution": "Universidad de América",
+    "year": "2026",
+    "title": "Lenguajes, tipos de datos y librerías",
+    "subtitle": "Documento de Saberes · Tema 02 de 06 · Algoritmia Computacional I",
+    "purpose": "Desarrollar el saber que convierte un algoritmo en un programa ejecutable: elegir un lenguaje, representar datos con el tipo correcto, manipular variables, gestionar entrada/salida y reutilizar librerías, con ejemplos transversales a las ingenierías.",
+    "structure": "Teoría · ejemplos resueltos · ejercicios · referencias APA.",
+    "sectionOrder": [
+      "pdf-intro",
+      "pdf-seccion-1",
+      "pdf-seccion-2",
+      "pdf-seccion-3",
+      "pdf-seccion-4",
+      "pdf-seccion-5",
+      "pdf-ejercicios",
+      "pdf-referencias"
+    ],
+    "sections": {
+      "pdf-intro": {
+        "title": "Presentación del tema",
+        "intro": [
+          "En el Tema 1 aprendiste a pensar como programador: descomponer un problema, ordenar pasos y expresarlos con flujograma y pseudocódigo. Quedaba, sin embargo, una pregunta abierta: ¿cómo logra la máquina ejecutar realmente esos pasos? Este segundo tema responde a esa pregunta y abre la puerta a todo el curso, porque sin saber cómo se representa y se procesa la información no podremos construir las estructuras de control (Tema 3), los arreglos (Tema 4) ni las funciones (Tema 5).",
+          "El recorrido de este documento es deliberado. Primero comprenderemos por qué nadie programa en binario y cómo un traductor convierte nuestro código en instrucciones que el procesador entiende. Luego estudiaremos los tipos de datos primitivos, que deciden cómo se almacena un número, un valor lógico o un texto.",
+          "Continuaremos con las variables, que dan nombre a esos datos; con la entrada y la salida, que permiten al programa dialogar con el mundo; y cerraremos reutilizando librerías ya probadas. Cada sección parte de donde quedó la anterior, de modo que la lectura avance como un hilo y no como una colección de fichas sueltas."
+        ],
+        "componentOrder": [
+          "pdf-intro-detonadora",
+          "pdf-intro-objetivos",
+          "pdf-intro-mapa",
+          "pdf-intro-contexto"
+        ],
+        "components": {
+          "pdf-intro-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos de aprendizaje",
+            "items": [
+              {
+                "icon": "track_changes",
+                "text": "Distingo el lenguaje máquina del de alto nivel y el papel del traductor."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Selecciono el tipo de dato primitivo adecuado para cada dato de ingeniería."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Declaro y manipulo variables con nombres significativos."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Implemento entrada y salida con conversión correcta de tipos."
+              },
+              {
+                "icon": "track_changes",
+                "text": "Importo y uso librerías de Python justificando su elección."
+              }
+            ]
+          },
+          "pdf-intro-mapa": {
+            "type": "list",
+            "title": "Mapa del documento",
+            "ordered": true,
+            "items": [
+              "Lenguaje máquina vs. alto nivel y la cadena de traducción.",
+              "Tipos de datos primitivos y exactitud numérica.",
+              "Variables: asignación, nombres y reasignación.",
+              "Entrada y salida con conversión de tipos.",
+              "Importación y uso de librerías.",
+              "Banco de ejercicios y referencias APA."
+            ]
+          },
+          "pdf-intro-contexto": {
+            "type": "column-flow",
+            "title": "Cómo leer y trabajar este documento",
+            "body": [
+              "Te proponemos un método de lectura activa, no de mera consulta. Lee cada sección de corrido para captar el hilo del relato; al llegar a un ejemplo resuelto, reprodúcelo primero a mano, con lápiz y papel, como hacías con la prueba de escritorio del Tema 1.",
+              "Y solo entonces ejecuta el programa en tu computador siguiendo las instrucciones del fragmento. Ese ciclo de leer, anticipar y comprobar es justamente el que persigue el RA1: reconocer las estructuras y herramientas de programación para generar algoritmos computacionales.",
+              "Trabaja con Python 3 instalado y una terminal a mano. Como recuerda Downey (2015), aprender a programar se parece a aprender un idioma: se domina usándolo, no solo leyéndolo. Por eso todos los ejemplos de este documento nacen de procesos de ingeniería —mediciones de un sensor, conteos de piezas, tolerancias de fabricación— para que lo que practiques aquí se transfiera de inmediato a las tareas de tu programa, sea industrial, civil, química o de sistemas.",
+              "Una última recomendación antes de empezar: no memorices instrucciones aisladas. Cada concepto de este tema existe para tomar una decisión —qué tipo representa mejor un dato, qué librería evita reescribir un cálculo— y es esa capacidad de decidir, y no la repetición mecánica, lo que distingue a quien programa con criterio. Comencemos por el principio: por qué el computador no entiende directamente lo que escribimos."
+            ]
+          },
+          "pdf-intro-detonadora": {
+            "type": "trigger-question",
+            "eyebrow": "Para empezar",
+            "question": "Tu programa de planta evalúa 0.1 + 0.2 y concluye que el resultado no es 0.3: ¿es un error del computador o una consecuencia de cómo representa los números? ¿Qué tipo de dato y qué librería elegirías para que el cálculo de ingeniería siga siendo confiable?"
+          }
+        }
+      },
+      "pdf-seccion-1": {
+        "title": "Lenguaje máquina y lenguaje de alto nivel",
+        "intro": [
+          "Cerramos la presentación con una promesa: entender cómo la máquina ejecuta lo que pensamos. Empecemos por ahí. Tienes un algoritmo correcto escrito en pseudocódigo, pero el computador no sabe leerlo; solo entiende secuencias de ceros y unos. Entre tu idea y la ejecución hay, entonces, una cadena de traducción que conviene conocer, porque explica por qué Python resulta tan cómodo y qué ocurre realmente cada vez que pulsas Enter.",
+          "En esta primera sección recorreremos esa cadena de abajo hacia arriba: del lenguaje máquina al ensamblador y, finalmente, a los lenguajes de alto nivel; veremos cómo un traductor cierra la brecha y por qué elegimos Python para el curso."
+        ],
+        "componentOrder": [
+          "pdf-s1-teoria",
+          "pdf-s1-twocol-traductor",
+          "pdf-s1-keybox-altonivel",
+          "pdf-s1-tabla",
+          "pdf-s1-figura",
+          "pdf-s1-ejemplo",
+          "pdf-s1-cierre"
+        ],
+        "components": {
+          "pdf-s1-teoria": {
+            "type": "column-flow",
+            "title": "De los bits al alto nivel: la cadena de traducción",
+            "body": [
+              "Toda instrucción que llega al procesador es, en el fondo, una secuencia de bits. Ese lenguaje máquina es directamente ejecutable, pero resulta ilegible para las personas y, además, cambia con cada arquitectura de hardware: lo que sirve para un procesador no sirve para otro.",
+              "Joyanes Aguilar (2013) describe esta dependencia como la razón histórica por la que programar al nivel del binario era inviable para cualquier solución de ingeniería de tamaño real. El primer alivio llegó con el lenguaje ensamblador, que sustituye los patrones de bits por mnemónicos como MOV o ADD; gana legibilidad, pero sigue atado a los registros y direcciones de una máquina concreta.",
+              "El verdadero salto conceptual son los lenguajes de alto nivel —Python, C, Java—, cuya sintaxis se acerca a la notación matemática y al pseudocódigo que ya manejas. El programador escribe la lógica y delega en un traductor la tarea de generar las instrucciones que el procesador ejecuta.",
+              "Conviene distinguir las dos grandes formas de traducir: un compilador convierte todo el programa de una vez en un ejecutable, antes de correrlo, mientras que un intérprete lee y ejecuta el código instrucción por instrucción durante la ejecución (Joyanes Aguilar, 2008).",
+              "Python adopta un modelo mixto: primero compila el código fuente a un bytecode intermedio y luego una máquina virtual lo interpreta, lo que explica que un script se ejecute de inmediato sin un paso de compilación visible.",
+              "Esta diferencia tiene consecuencias prácticas que un ingeniero debe sopesar. Subir de nivel mejora la legibilidad y la portabilidad —un mismo script de Python puede correr en distintos equipos de planta—, pero suele costar algo de velocidad de ejecución y de control fino sobre el hardware.",
+              "Por eso un sistema embebido con tiempos estrictos puede justificar C o ensamblador, mientras que un análisis exploratorio de mediciones se beneficia claramente de Python. La elección, como casi todo en ingeniería, depende de qué prioriza el proyecto: claridad y rapidez de desarrollo, o rendimiento y cercanía a la máquina.",
+              "Para este curso usaremos Python como lenguaje de referencia precisamente porque su sintaxis cercana al pseudocódigo permite concentrarse en la lógica del algoritmo, que es el objetivo del RA1, y porque su intérprete ofrece retroalimentación inmediata, ideal para el ciclo de escribir, ejecutar y observar que practicaremos en cada sección."
+            ]
+          },
+          "pdf-s1-tabla": {
+            "type": "table",
+            "title": "Comparación de niveles de lenguaje",
+            "columns": [
+              "Criterio",
+              "Máquina",
+              "Ensamblador",
+              "Alto nivel"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Legibilidad",
+                  "Muy baja",
+                  "Baja",
+                  "Alta"
+                ]
+              },
+              {
+                "cells": [
+                  "Portabilidad",
+                  "Nula",
+                  "Baja",
+                  "Alta"
+                ]
+              },
+              {
+                "cells": [
+                  "Velocidad",
+                  "Máxima",
+                  "Muy alta",
+                  "Moderada"
+                ]
+              },
+              {
+                "cells": [
+                  "Esfuerzo de desarrollo",
+                  "Altísimo",
+                  "Alto",
+                  "Bajo"
+                ]
+              }
+            ]
+          },
+          "pdf-s1-figura": {
+            "type": "figure",
+            "title": "Pirámide de niveles de lenguaje",
+            "assetId": "img-niveles-lenguaje",
+            "src": "",
+            "alt": "Pirámide de tres capas: base lenguaje máquina, medio ensamblador, cima alto nivel, con flechas de traducción.",
+            "caption": "La traducción desciende desde el alto nivel hasta el binario que ejecuta el procesador.",
+            "prompt": "Misma figura de la pirámide de niveles de lenguaje usada en el SCORM (assetId img-niveles-lenguaje): base 'Lenguaje máquina' (binario), medio 'Ensamblador' (mnemónicos), cima 'Alto nivel (Python)', flechas descendentes 'traducción' y eje 'mayor abstracción' hacia arriba."
+          },
+          "pdf-s1-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: del pseudocódigo al programa",
+            "context": [
+              "Para ver la cadena de traducción en acción, tomemos un cálculo cotidiano de planta: el caudal $Q = A \\cdot v$ de un fluido en una tubería de área $A = 0.5\\ \\text{m}^2$ por la que circula a una velocidad $v = 2.4\\ \\text{m/s}$. El objetivo es pasar este algoritmo del papel a un programa ejecutable y verificar su resultado."
+            ],
+            "formula": "Q = A \\cdot v = 0.5 \\cdot 2.4 = 1.2\\ \\text{m}^3/\\text{s}",
+            "solution": [
+              "Reconocemos el esquema del Tema 1: la entrada son el área y la velocidad, el proceso es multiplicarlas y la salida es el caudal.",
+              "Cada paso del pseudocódigo se vuelve una línea legible de alto nivel: area = 0.5; velocidad = 2.4; caudal = area * velocidad; print(caudal). Aquí es donde el traductor entra en juego, convirtiendo estas instrucciones en código que el procesador ejecuta.",
+              "El programa imprime 1.2 y el resultado es dimensionalmente coherente, pues $\\text{m}^2 \\cdot \\text{m/s} = \\text{m}^3/\\text{s}$. Que el valor calculado a mano y el impreso por la máquina coincidan confirma que la traducción del algoritmo fue correcta."
+            ]
+          },
+          "pdf-s1-cierre": {
+            "type": "callout",
+            "tone": "success",
+            "title": "En síntesis y hacia dónde vamos",
+            "body": [
+              "Has visto que entre tu idea y la ejecución hay una cadena de traducción, y que trabajar en alto nivel con Python te deja concentrarte en la lógica sin renunciar a ejecutar de inmediato. Pero el ejemplo del caudal escondía una decisión que dimos por obvia: ¿por qué 0.5 y 2.4 se guardan como números 'con coma' y no como enteros?",
+              "Esa pregunta nos lleva al corazón de la siguiente sección. Antes de escribir más programas, necesitamos entender cómo el computador representa cada dato —un número, un valor lógico, un texto— porque de esa representación depende la exactitud de todos nuestros cálculos."
+            ]
+          },
+          "pdf-s1-twocol-traductor": {
+            "type": "two-column",
+            "title": "Compilador vs. intérprete",
+            "columns": [
+              {
+                "title": "Compilador",
+                "body": [
+                  "Traduce todo el programa de una sola vez a un ejecutable antes de correrlo. El resultado se ejecuta rápido, pero cualquier cambio en el código fuente obliga a recompilar. Es el modelo típico de C."
+                ]
+              },
+              {
+                "title": "Intérprete",
+                "body": [
+                  "Lee y ejecuta el código instrucción por instrucción durante la ejecución. Permite probar de inmediato sin un paso de compilación visible, a costa de algo de velocidad. Python combina ambos: compila a bytecode y luego lo interpreta."
+                ]
+              }
+            ]
+          },
+          "pdf-s1-keybox-altonivel": {
+            "type": "key-box",
+            "variant": "definicion",
+            "title": "Lenguaje de alto nivel",
+            "body": [
+              "Lenguaje cuya sintaxis se acerca a la notación matemática y al pseudocódigo, independiente de la arquitectura del hardware. El programador escribe la lógica y delega en un traductor la generación de las instrucciones que ejecuta el procesador."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-2": {
+        "title": "Tipos de datos primitivos",
+        "intro": [
+          "La sección anterior terminó con una pregunta aparentemente inocente: ¿por qué el área 0.5 se guardó como un número con decimales y no como un entero? La respuesta es que, antes de operar con un dato, el programa necesita saber de qué clase es. Esa clase —su tipo— determina qué valores puede almacenar y qué operaciones tienen sentido sobre él.",
+          "Aquí estudiaremos los cuatro tipos primitivos con los que se construye todo lo demás: enteros, reales, lógicos y cadenas. Veremos qué representa cada uno, cómo elegir el adecuado para una magnitud de ingeniería y por qué la representación de los números reales esconde una trampa de exactitud que todo ingeniero debe conocer."
+        ],
+        "componentOrder": [
+          "pdf-s2-teoria",
+          "pdf-s2-keybox-regla",
+          "pdf-s2-tabla",
+          "pdf-s2-formula",
+          "pdf-s2-datahl-float",
+          "pdf-s2-codigo",
+          "pdf-s2-codigo-lectura",
+          "pdf-s2-ejemplo",
+          "pdf-s2-cierre"
+        ],
+        "components": {
+          "pdf-s2-teoria": {
+            "type": "column-flow",
+            "title": "El tipo como contrato del dato",
+            "body": [
+              "Un tipo de dato es, ante todo, un contrato: indica qué valores puede almacenar una variable y qué operaciones tienen sentido sobre ella. Sumar dos enteros es válido; intentar sumar un número y un texto no lo es, porque el contrato del texto no contempla la aritmética.",
+              "Joyanes Aguilar (2008) define los tipos primitivos como los bloques básicos a partir de los cuales se edifica cualquier estructura de datos más compleja, idea que retomaremos en el Tema 4 al combinar estos tipos en listas y diccionarios.",
+              "En Python los primitivos esenciales son cuatro. El entero (int) representa cantidades discretas —piezas, ciclos, sensores— y, a diferencia de otros lenguajes, tiene precisión arbitraria: crece hasta donde lo permita la memoria sin perder exactitud. El real o de punto flotante (float) modela magnitudes continuas —presión, caudal, temperatura— aproximándolas con un número finito de bits.",
+              "El lógico (bool) admite solo True o False y nace de evaluar una condición. La cadena (str) es una secuencia ordenada de caracteres delimitada por comillas, usada para códigos, etiquetas y mensajes.",
+              "Elegir bien el tipo no es un detalle cosmético, sino una decisión de ingeniería. Representar el número de tornillos de un lote como float —admitiendo así 3.5 tornillos— o una medición continua como int —truncando 36.7 a 36— introduce errores conceptuales que se arrastran por todo el cálculo.",
+              "La regla práctica es sencilla: si el dato se cuenta, es entero; si se mide, es real. Y como los datos que llegan del teclado siempre entran como texto, entre los tipos existe conversión mediante int(), float() y str(); dominar esas conversiones será la base de la entrada y la salida de la Sección 4."
+            ]
+          },
+          "pdf-s2-tabla": {
+            "type": "table",
+            "title": "Tipos primitivos y su uso",
+            "columns": [
+              "Tipo",
+              "Python",
+              "Uso en ingeniería"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Entero",
+                  "int",
+                  "Conteo de piezas o ciclos"
+                ]
+              },
+              {
+                "cells": [
+                  "Real",
+                  "float",
+                  "Presión, caudal, temperatura"
+                ]
+              },
+              {
+                "cells": [
+                  "Lógico",
+                  "bool",
+                  "Estado de una condición"
+                ]
+              },
+              {
+                "cells": [
+                  "Cadena",
+                  "str",
+                  "Códigos y etiquetas de equipo"
+                ]
+              }
+            ]
+          },
+          "pdf-s2-formula": {
+            "type": "formula",
+            "title": "Comparación de floats con tolerancia",
+            "context": [
+              "Como float aproxima los reales, no debe compararse con igualdad exacta sino verificando que la diferencia sea menor que una tolerancia pequeña."
+            ],
+            "latex": "|x_{\\text{calc}} - x_{\\text{esp}}| < \\varepsilon",
+            "variables": [
+              {
+                "symbol": "x_{\\text{calc}}",
+                "description": "valor calculado en punto flotante."
+              },
+              {
+                "symbol": "x_{\\text{esp}}",
+                "description": "valor esperado de referencia."
+              },
+              {
+                "symbol": "\\varepsilon",
+                "description": "tolerancia pequeña, por ejemplo $10^{-9}$."
+              }
+            ],
+            "explanation": [
+              "Se acepta la igualdad práctica si la diferencia absoluta cae por debajo de la tolerancia; así se evitan conclusiones erróneas por el redondeo binario."
+            ]
+          },
+          "pdf-s2-codigo": {
+            "type": "code",
+            "title": "Comprobar la exactitud del tipo float",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "redondeo.py",
+            "instructions": [
+              "Guarda el fragmento como redondeo.py y ejecútalo desde una terminal con: python redondeo.py.",
+              "Observa primero el valor exacto que se almacena y el resultado de compararlo con igualdad estricta; luego compara con la función math.isclose, que aplica una tolerancia."
+            ],
+            "code": "# redondeo.py — exactitud del tipo float aplicada a una medicion\nimport math\n\nsuma = 0.1 + 0.2\nprint(\"Valor almacenado:\", suma)\nprint(\"Igualdad exacta 0.1+0.2 == 0.3:\", suma == 0.3)\nprint(\"Comparacion con tolerancia:\", math.isclose(suma, 0.3, rel_tol=1e-9))",
+            "expectedOutput": [
+              "Valor almacenado: 0.30000000000000004",
+              "Igualdad exacta 0.1+0.2 == 0.3: False",
+              "Comparacion con tolerancia: True"
+            ]
+          },
+          "pdf-s2-codigo-lectura": {
+            "type": "text",
+            "title": "Lectura del fragmento",
+            "body": [
+              "La salida confirma lo que anuncia la teoría: el valor guardado no es 0.3 sino 0.30000000000000004, de modo que la comparación con el operador == devuelve False aunque ambos números 'deberían' ser iguales. Cuando en cambio usamos math.isclose, que verifica si la diferencia cae por debajo de una tolerancia, el resultado es True.",
+              "En un cálculo de ingeniería esto significa que nunca debes preguntar si dos magnitudes float son idénticas, sino si son suficientemente cercanas; ese criterio evita rechazar piezas o detener procesos por un residuo de redondeo invisible."
+            ]
+          },
+          "pdf-s2-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: 0.1 + 0.2",
+            "context": [
+              "Para fijar la idea con números, verifiquemos a mano si la igualdad $0.1 + 0.2 = 0.3$ se cumple en la aritmética de punto flotante que usa el computador, antes de confiar en ella dentro de un cálculo iterativo."
+            ],
+            "formula": "|(0.1 + 0.2) - 0.3| < 10^{-9}",
+            "solution": [
+              "Como 0.1 y 0.2 no tienen representación binaria exacta, su suma se almacena como 0.30000000000000004; por eso compararla con igualdad estricta frente a 0.3 da False.",
+              "Si en lugar de la igualdad exacta exigimos que la diferencia absoluta sea menor que una tolerancia $\\varepsilon = 10^{-9}$, el residuo de redondeo queda por debajo del umbral y los valores se aceptan como iguales.",
+              "La lección práctica es clara: al comparar resultados de tipo float, usa una tolerancia y no el operador ==, tal como muestra el fragmento de código anterior."
+            ]
+          },
+          "pdf-s2-cierre": {
+            "type": "callout",
+            "tone": "success",
+            "title": "En síntesis y hacia dónde vamos",
+            "body": [
+              "Ya sabes distinguir cuándo un dato es entero, real, lógico o textual, y por qué la representación de los reales obliga a comparar con tolerancia. Tienes, pues, los valores; falta darles un nombre para poder referirte a ellos y modificarlos a lo largo del programa.",
+              "Ese es el papel de las variables, el tema de la siguiente sección: cómo se declaran, cómo conviene nombrarlas y qué ocurre cuando reasignamos su contenido."
+            ]
+          },
+          "pdf-s2-keybox-regla": {
+            "type": "key-box",
+            "variant": "clave",
+            "title": "La regla de oro del tipo",
+            "body": [
+              "Si el dato se cuenta, es entero (int); si se mide, es real (float). Representar tornillos como float —admitiendo 3.5 tornillos— o una presión como int —truncando 36.7 a 36— introduce errores conceptuales que se arrastran por todo el cálculo."
+            ]
+          },
+          "pdf-s2-datahl-float": {
+            "type": "data-highlight",
+            "items": [
+              {
+                "value": "≈ 0.3",
+                "label": "Resultado real de 0.1 + 0.2 en float (no es exactamente 0.3)"
+              },
+              {
+                "value": "53",
+                "label": "Bits de mantisa de un float de doble precisión"
+              },
+              {
+                "value": "$\\infty$",
+                "label": "Precisión del int en Python (limitada solo por la memoria)"
+              }
+            ]
+          }
+        }
+      },
+      "pdf-seccion-3": {
+        "title": "Variables",
+        "intro": [
+          "Hasta ahora hemos hablado de valores —un caudal de 1.2, una suma de 0.3— como si flotaran sueltos. En un programa real necesitamos guardarlos en algún lugar y poder referirnos a ellos por su nombre para usarlos, actualizarlos y combinarlos. Ese contenedor con nombre es la variable, y de ella depende que un algoritmo sea legible y correcto.",
+          "En esta sección entenderemos qué es realmente una variable en Python, cómo se asigna un valor, qué reglas y convenciones rigen los nombres y qué sucede cuando reasignamos su contenido, un comportamiento que aprovecharemos para resolver con elegancia el clásico intercambio de dos datos."
+        ],
+        "componentOrder": [
+          "pdf-s3-teoria",
+          "pdf-s3-keybox-asignacion",
+          "pdf-s3-tabla",
+          "pdf-s3-figura",
+          "pdf-s3-codigo",
+          "pdf-s3-codigo-lectura",
+          "pdf-s3-ejemplo",
+          "pdf-s3-cierre"
+        ],
+        "components": {
+          "pdf-s3-teoria": {
+            "type": "column-flow",
+            "title": "Nombre que referencia un valor",
+            "body": [
+              "Una variable es un nombre que apunta a un valor almacenado en memoria. Conviene leer la asignación presion = 3.5 no como una igualdad matemática, sino como una acción: 'guarda el valor 3.5 en el nombre presion'.",
+              "Oviedo Regino (2005) insiste en esta distinción porque arrastrar la intuición algebraica del signo igual es una de las primeras fuentes de error de quien aprende a programar. En Python, además, no se declara el tipo por adelantado: el tipo lo determina el valor asignado, una característica llamada tipado dinámico que hace el código más conciso pero exige disciplina.",
+              "Para que un nombre sea válido debe respetar reglas estrictas: empieza por letra o guion bajo, no contiene espacios ni signos, no puede ser una palabra reservada del lenguaje (como if, for o class) y distingue mayúsculas de minúsculas, de modo que Caudal y caudal son variables distintas.",
+              "Más allá de lo permitido, conviene nombrar bien: caudal_max comunica mucho más que x o c, y como el código se lee muchas más veces de las que se escribe, un buen nombre ahorra horas de mantenimiento. La guía de estilo PEP 8 recomienda para variables el formato snake_case —palabras en minúscula unidas por guion bajo, como velocidad_flujo—, una convención que mantiene tu código consistente con el de la comunidad.",
+              "Reasignar una variable cambia el valor —y puede cambiar el tipo— al que apunta el nombre; esa capacidad de variar es justamente lo que la hace 'variable'. Cuando varias instrucciones modifican un mismo dato, rastrear sus valores con una tabla de traza, igual que en la prueba de escritorio del Tema 1, permite validar el algoritmo antes de ejecutarlo.",
+              "Ese hábito será especialmente útil al estudiar un caso que parece trivial pero suele confundir: intercambiar el contenido de dos variables."
+            ]
+          },
+          "pdf-s3-tabla": {
+            "type": "table",
+            "title": "Nombres válidos e inválidos",
+            "columns": [
+              "Nombre",
+              "¿Válido?",
+              "Motivo"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "caudal_max",
+                  "Sí",
+                  "Descriptivo, snake_case"
+                ]
+              },
+              {
+                "cells": [
+                  "1sensor",
+                  "No",
+                  "Empieza por dígito"
+                ]
+              },
+              {
+                "cells": [
+                  "dato-final",
+                  "No",
+                  "El guion se interpreta como resta"
+                ]
+              },
+              {
+                "cells": [
+                  "class",
+                  "No",
+                  "Palabra reservada"
+                ]
+              }
+            ]
+          },
+          "pdf-s3-figura": {
+            "type": "figure",
+            "title": "Asignación como referencia",
+            "assetId": "img-variable-referencia",
+            "src": "",
+            "alt": "Etiqueta 'presion' apuntando a 3.5 y, tras reasignar, apuntando a 4.0.",
+            "caption": "La variable reapunta a un nuevo valor cuando se reasigna.",
+            "prompt": "Misma figura del SCORM (assetId img-variable-referencia): etiqueta 'presion' apuntando a una celda con 3.5 y, tras 'presion = 4.0', reapuntando a una celda con 4.0, con la anterior atenuada."
+          },
+          "pdf-s3-codigo": {
+            "type": "code",
+            "title": "Intercambiar el valor de dos variables",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "intercambio.py",
+            "instructions": [
+              "Guarda el fragmento como intercambio.py y ejecútalo con: python intercambio.py.",
+              "Compara las dos técnicas: la que usa una variable auxiliar (temp) y la asignación múltiple a, b = b, a, propia de Python."
+            ],
+            "code": "# intercambio.py — dos formas de intercambiar el valor de dos variables\na = 7\nb = 3\nprint(\"Antes:\", a, b)\n\n# Tecnica con variable auxiliar\ntemp = a\na = b\nb = temp\nprint(\"Despues (auxiliar):\", a, b)\n\n# Tecnica idiomatica de Python: asignacion multiple (revierte el cambio)\na, b = b, a\nprint(\"Despues (multiple):\", a, b)",
+            "expectedOutput": [
+              "Antes: 7 3",
+              "Despues (auxiliar): 3 7",
+              "Despues (multiple): 7 3"
+            ]
+          },
+          "pdf-s3-codigo-lectura": {
+            "type": "text",
+            "title": "Lectura del fragmento",
+            "body": [
+              "La primera técnica usa una variable auxiliar temp para no perder el valor de a antes de sobrescribirlo, y deja a = 3, b = 7. La segunda línea, a, b = b, a, vuelve a intercambiar y por eso la salida final reaparece como 7 3: lo importante no es el número impreso, sino comprobar que esa única instrucción realiza el cambio completo.",
+              "Funciona porque Python evalúa primero toda la parte derecha —forma la pareja (3, 7)— y solo después la asigna a la izquierda, sin pisar ningún valor. Es el mismo razonamiento que harías en una tabla de traza, ahora condensado en una línea idiomática."
+            ]
+          },
+          "pdf-s3-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: intercambio de dos lecturas",
+            "context": [
+              "Dos sensores reportan $a = 7$ y $b = 3$. Queremos intercambiar sus valores para que al final $a = 3$ y $b = 7$, razonando cada paso como en una prueba de escritorio."
+            ],
+            "formula": "a, b = b, a",
+            "solution": [
+              "Con una variable auxiliar, el orden importa: temp = a guarda un respaldo; a = b sobrescribe a sin perder el dato original; b = temp recupera el respaldo. Así $a = 3$ y $b = 7$.",
+              "La forma idiomática de Python, a, b = b, a, logra lo mismo en una sola línea porque evalúa la pareja de la derecha por completo antes de asignarla.",
+              "El resultado es el intercambio correcto, y la versión de una línea es la preferida por su claridad y por evitar la variable auxiliar."
+            ]
+          },
+          "pdf-s3-cierre": {
+            "type": "callout",
+            "tone": "success",
+            "title": "En síntesis y hacia dónde vamos",
+            "body": [
+              "Ahora sabes dar nombre a los datos, elegir ese nombre con criterio y modificarlo de forma segura. Hasta aquí, sin embargo, todos los valores los hemos fijado nosotros dentro del programa.",
+              "Un programa verdaderamente útil recibe datos del exterior y comunica resultados. En la siguiente sección abrimos esa conversación: cómo capturar información con input(), convertir su tipo y presentar la salida de forma clara."
+            ]
+          },
+          "pdf-s3-keybox-asignacion": {
+            "type": "key-box",
+            "variant": "alerta",
+            "title": "El signo igual no es una igualdad",
+            "body": [
+              "Lee presion = 3.5 como una acción —«guarda el valor 3.5 en el nombre presion»— y no como la igualdad matemática $presion = 3.5$. Arrastrar la intuición algebraica del signo igual es una de las primeras fuentes de error de quien aprende a programar."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-4": {
+        "title": "Entrada y salida de datos",
+        "intro": [
+          "Cerramos la sección anterior anunciando que un programa útil no vive aislado: recibe datos y comunica resultados. Es hora de abrir esa conversación. Todo lo que aprendimos sobre tipos y variables converge aquí, porque el momento más delicado de un programa suele ser el instante en que un dato cruza la frontera entre el mundo y la memoria.",
+          "Veremos cómo capturar información con input(), por qué casi siempre hay que convertir su tipo antes de operar, y cómo presentar la salida de forma clara y profesional con print() y las f-strings, pensando en quién leerá el informe."
+        ],
+        "componentOrder": [
+          "pdf-s4-teoria",
+          "pdf-s4-keybox-inputstr",
+          "pdf-s4-twocol-io",
+          "pdf-s4-tabla",
+          "pdf-s4-figura",
+          "pdf-s4-codigo",
+          "pdf-s4-codigo-lectura",
+          "pdf-s4-ejemplo",
+          "pdf-s4-cierre"
+        ],
+        "components": {
+          "pdf-s4-teoria": {
+            "type": "column-flow",
+            "title": "El diálogo del programa con el exterior",
+            "body": [
+              "Todo algoritmo se organiza en torno al esquema entrada–proceso–salida que ya manejas desde el Tema 1 (Oviedo Regino, 2005). En Python, la función input() lee una línea desde el teclado y la función print() muestra resultados en pantalla.",
+              "Hay, sin embargo, un detalle decisivo: input() devuelve siempre una cadena (str), aunque el usuario teclee un número. La razón es que el teclado entrega caracteres y el programa no puede adivinar si esos caracteres representan un conteo, una medición o un código; la interpretación corresponde al programador.",
+              "De ahí que la conversión sea obligatoria para operar: si necesitas promediar lecturas, debes envolver la entrada con float() o int() según el dato sea continuo o discreto, aplicando los criterios de tipo de la Sección 2.",
+              "Pero esa conversión es también un punto de fallo. Si el usuario escribe 'abc' y se intenta int('abc'), Python lanza un ValueError que detiene el programa. Un programa de ingeniería robusto anticipa entradas inválidas; por ahora supondremos datos correctos, y con las estructuras de control del Tema 3 aprenderás a reintentar la captura hasta que el dato sea válido.",
+              "Comunicar el resultado merece el mismo cuidado que recibirlo. Mostrar un caudal como 1.2000000003 confunde; presentarlo como 1.20 m³/s informa. Las f-strings —cadenas precedidas por f que insertan variables entre llaves, con un formato como f\"{valor:.2f}\"— permiten controlar decimales, alinear cifras y añadir unidades en una sola expresión legible. Presentar bien los datos no es un adorno: un reporte de proceso debe ser entendible tanto por el operario como por el supervisor."
+            ]
+          },
+          "pdf-s4-tabla": {
+            "type": "table",
+            "title": "Técnicas de salida",
+            "columns": [
+              "Técnica",
+              "Ejemplo",
+              "Pantalla"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "print con comas",
+                  "print(\"T:\", 36.83)",
+                  "T: 36.83"
+                ]
+              },
+              {
+                "cells": [
+                  "str() + concatenación",
+                  "print(\"T: \" + str(36.83))",
+                  "T: 36.83"
+                ]
+              },
+              {
+                "cells": [
+                  "f-string con decimales",
+                  "print(f\"T: {t:.1f}\")",
+                  "T: 36.8"
+                ]
+              }
+            ]
+          },
+          "pdf-s4-figura": {
+            "type": "figure",
+            "title": "Flujo entrada-proceso-salida",
+            "assetId": "img-flujo-es",
+            "src": "",
+            "alt": "Teclado → input() str → float() → proceso → print() → pantalla.",
+            "caption": "El dato entra como texto, se convierte a número, se procesa y se presenta como texto.",
+            "prompt": "Misma figura del SCORM (assetId img-flujo-es): flujo horizontal teclado → input() devuelve str → float() → proceso → print() → pantalla, resaltando el bloque de conversión de tipo."
+          },
+          "pdf-s4-codigo": {
+            "type": "code",
+            "title": "Promedio de mediciones con entrada, conversión y salida",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "promedio.py",
+            "instructions": [
+              "Guarda el fragmento como promedio.py y ejecútalo con: python promedio.py.",
+              "Cuando aparezca cada mensaje, escribe 36.5, luego 37.2 y luego 36.8, pulsando Enter tras cada uno. Observa cómo float() convierte la entrada y cómo la f-string formatea la salida a dos decimales."
+            ],
+            "code": "# promedio.py — entrada, conversion, proceso y salida\nt1 = float(input(\"Temperatura 1 (C): \"))\nt2 = float(input(\"Temperatura 2 (C): \"))\nt3 = float(input(\"Temperatura 3 (C): \"))\n\npromedio = (t1 + t2 + t3) / 3\nprint(f\"Promedio: {promedio:.2f} C\")",
+            "expectedOutput": [
+              "Con las entradas 36.5, 37.2 y 36.8 debe imprimir: Promedio: 36.83 C"
+            ]
+          },
+          "pdf-s4-codigo-lectura": {
+            "type": "text",
+            "title": "Lectura del fragmento",
+            "body": [
+              "Cada lectura entra como texto por input() y se transforma de inmediato en número con float(); sin esa conversión, intentar promediar tres cadenas produciría un error de tipos. El cálculo (t1 + t2 + t3) / 3 es la traducción directa de la fórmula del promedio, y la f-string f\"Promedio: {promedio:.2f} C\" cumple el doble papel de redondear a dos decimales y acompañar el número con su unidad.",
+              "El resultado, 36.83 C, es exactamente el del ejemplo resuelto que sigue: la coincidencia entre el cálculo manual y la salida del programa es la verificación que da confianza en el código."
+            ]
+          },
+          "pdf-s4-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: promedio de tres mediciones",
+            "context": [
+              "Un operario captura por teclado tres lecturas de temperatura, $t_1 = 36.5$, $t_2 = 37.2$ y $t_3 = 36.8$ (en °C), y necesita reportar su promedio con dos decimales. Sigamos el dato desde que entra hasta que se muestra."
+            ],
+            "formula": "\\bar{t} = \\frac{36.5 + 37.2 + 36.8}{3} = 36.83\\ ^{\\circ}\\text{C}",
+            "solution": [
+              "Cada lectura llega como str por input() y se convierte a float, porque la temperatura es una magnitud continua que no debe truncarse.",
+              "Se promedia sumando las tres lecturas y dividiendo entre su cantidad: $(36.5 + 37.2 + 36.8)/3 = 110.5/3$.",
+              "El resultado se redondea y comunica con f\"Promedio: {promedio:.2f} C\", que imprime 36.83 C, coherente con el fragmento ejecutado arriba."
+            ]
+          },
+          "pdf-s4-cierre": {
+            "type": "callout",
+            "tone": "success",
+            "title": "En síntesis y hacia dónde vamos",
+            "body": [
+              "Tu programa ya conversa con el mundo: lee datos, los convierte al tipo correcto y comunica resultados claros. Para promediar tres lecturas escribiste tú mismo la fórmula, y eso está bien. Pero ¿y si el cálculo fuera la desviación estándar de cincuenta mediciones?",
+              "Reescribir cálculos ya resueltos es innecesario y propenso a errores. En la última sección descubrirás cómo reutilizar librerías —código probado por la comunidad— para resolver tareas de cómputo sin reinventarlas."
+            ]
+          },
+          "pdf-s4-keybox-inputstr": {
+            "type": "key-box",
+            "variant": "alerta",
+            "title": "input() siempre devuelve texto",
+            "body": [
+              "Aunque el usuario teclee un número, input() entrega una cadena (str). Para operar debes convertir con int() o float() según el dato sea discreto o continuo. Si llega «abc» e intentas int('abc'), Python lanza un ValueError que detiene el programa."
+            ]
+          },
+          "pdf-s4-twocol-io": {
+            "type": "two-column",
+            "title": "Entrada con input() vs. salida con print()",
+            "columns": [
+              {
+                "title": "input() — recibir",
+                "body": [
+                  "Lee una línea desde el teclado y la devuelve como texto. Exige convertir el tipo antes de calcular y anticipar entradas inválidas para que el programa sea robusto."
+                ]
+              },
+              {
+                "title": "print() — comunicar",
+                "body": [
+                  "Muestra resultados en pantalla. Con f-strings como f\"{valor:.2f}\" controlas decimales, alineas cifras y añades unidades en una sola expresión legible: 1.20 m³/s informa, 1.2000000003 confunde."
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "pdf-seccion-5": {
+        "title": "Importación y uso de librerías",
+        "intro": [
+          "Quedó planteada al final de la sección anterior una pregunta incómoda: ¿de verdad debemos programar a mano cada cálculo, incluso uno tan estándar como la desviación estándar de un conjunto de datos? La respuesta de la ingeniería de software es rotunda: no. Llegamos así al último eslabón del tema, donde aprenderemos a apoyarnos en el trabajo ya hecho por otros.",
+          "Veremos qué es una librería, las distintas formas de importarla, cómo elegir entre la biblioteca estándar y el ecosistema externo, y resolveremos con statistics el mismo cálculo de calidad que antes habríamos escrito a mano, cerrando el ciclo del tema."
+        ],
+        "componentOrder": [
+          "pdf-s5-teoria",
+          "pdf-s5-twocol-librerias",
+          "pdf-s5-keybox-import",
+          "pdf-s5-tabla",
+          "pdf-s5-codigo",
+          "pdf-s5-codigo-lectura",
+          "pdf-s5-ejemplo",
+          "pdf-s5-cierre"
+        ],
+        "components": {
+          "pdf-s5-teoria": {
+            "type": "column-flow",
+            "title": "Reutilizar en lugar de reinventar",
+            "body": [
+              "Una librería —o módulo— es un conjunto de funciones, constantes y herramientas empaquetadas para resolver un tipo de tarea. En lugar de programar tú mismo la raíz cuadrada o la desviación estándar, importas una librería que ya las implementa de forma correcta y eficiente. Reutilizar código es un principio central de la ingeniería de software, porque ahorra tiempo, reduce errores —el código de una librería madura está intensamente probado— y hace tu programa más legible (Joyanes Aguilar, 2013).",
+              "Python distingue dos mundos. La biblioteca estándar viene incluida con el lenguaje: módulos como math, statistics, random o datetime se importan sin instalar nada. El ecosistema externo —numpy, pandas, scipy— se instala una sola vez con el gestor pip y es la herramienta habitual del cálculo numérico y el análisis de datos de ingeniería.",
+              "Importar también admite matices de sintaxis: import math obliga a usar el prefijo (math.sqrt); from math import sqrt trae solo esa función y la llama sin prefijo; e import numpy as np carga la librería con un alias corto, convención tan extendida que np y pd se reconocen de inmediato.",
+              "Se desaconseja, en cambio, from math import *, porque mezcla nombres y oculta el origen de cada función, lo que dificulta depurar programas grandes.",
+              "Elegir la librería adecuada es, en sí misma, una decisión de ingeniería. Para promediar tres lecturas, statistics.mean basta y no exige instalar nada; recurrir a numpy aquí sería sobredimensionar la solución. Para procesar miles de mediciones, en cambio, numpy es claramente superior por su eficiencia con grandes conjuntos de datos.",
+              "Valorar si la herramienta es estándar o externa y si su potencia es proporcional al problema —ni más ni menos— es justamente lo que distingue a quien programa con criterio profesional, y es lo que pedirá el taller del tema."
+            ]
+          },
+          "pdf-s5-tabla": {
+            "type": "table",
+            "title": "Librerías frecuentes en ingeniería",
+            "columns": [
+              "Librería",
+              "¿Estándar?",
+              "Aporta"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "math",
+                  "Sí",
+                  "sqrt, pi, sin, cos"
+                ]
+              },
+              {
+                "cells": [
+                  "statistics",
+                  "Sí",
+                  "mean, median, stdev"
+                ]
+              },
+              {
+                "cells": [
+                  "random",
+                  "Sí",
+                  "random, randint"
+                ]
+              },
+              {
+                "cells": [
+                  "numpy",
+                  "No (pip)",
+                  "array, operaciones vectoriales"
+                ]
+              }
+            ]
+          },
+          "pdf-s5-codigo": {
+            "type": "code",
+            "title": "Resumen estadístico con la librería statistics",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "calidad.py",
+            "instructions": [
+              "Guarda el fragmento como calidad.py y ejecútalo con: python calidad.py. No requiere entrada del usuario; los diámetros están en una lista.",
+              "Fíjate en cómo se importa la biblioteca estándar statistics y se usan sus funciones mean y stdev, y compara la salida con el ejemplo resuelto siguiente."
+            ],
+            "code": "# calidad.py — resumen estadistico con una libreria estandar\nimport statistics\n\ndiametros = [12.0, 12.2, 11.8]   # mm\nmedia = statistics.mean(diametros)\ndesviacion = statistics.stdev(diametros)\n\nprint(f\"Media: {media:.2f} mm\")\nprint(f\"Desviacion estandar: {desviacion:.2f} mm\")",
+            "expectedOutput": [
+              "Media: 12.00 mm",
+              "Desviacion estandar: 0.20 mm"
+            ]
+          },
+          "pdf-s5-codigo-lectura": {
+            "type": "text",
+            "title": "Lectura del fragmento",
+            "body": [
+              "El programa ilustra el patrón completo de la sección: una sola línea, import statistics, pone a nuestra disposición funciones probadas, y mean(diametros) y stdev(diametros) resuelven en un instante lo que de otro modo exigiría escribir la suma, la división y la raíz a mano.",
+              "La media 12.00 mm y la desviación 0.20 mm que imprime coinciden con el cálculo manual del ejemplo siguiente, y esa coincidencia es la mejor prueba de que comprendes qué hace la librería por dentro. Reproducir el cálculo a mano y luego verificarlo con la función evita el error de usar una librería como una caja negra."
+            ]
+          },
+          "pdf-s5-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: media y desviación de un proceso",
+            "context": [
+              "Un proceso de control de calidad reporta tres diámetros (en mm): 12.0, 12.2 y 11.8. Queremos resumir el lote con su media y su desviación estándar muestral, que indica cuánto se dispersan las piezas respecto del centro."
+            ],
+            "formula": "s = \\sqrt{\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i - \\bar{x})^2} = \\sqrt{\\frac{0.08}{2}} = 0.2\\ \\text{mm}",
+            "solution": [
+              "La media es $\\bar{x} = (12.0 + 12.2 + 11.8)/3 = 12.0$ mm, el valor central del lote.",
+              "Las desviaciones respecto de la media, elevadas al cuadrado, suman $0.0^2 + 0.2^2 + (-0.2)^2 = 0.08$; al dividir entre $n-1 = 2$ se obtiene 0.04, cuya raíz es 0.2 mm.",
+              "La librería statistics confirma media 12.00 mm y desviación 0.20 mm: como la dispersión es pequeña, concluimos que el proceso es estable."
+            ]
+          },
+          "pdf-s5-cierre": {
+            "type": "callout",
+            "tone": "success",
+            "title": "Cierre del tema: de la idea al programa",
+            "body": [
+              "Hemos recorrido el camino completo que prometía la presentación: comprendiste por qué se traduce el código, cómo representar cada dato con su tipo, cómo nombrarlo en una variable, cómo dialogar con el exterior mediante entrada y salida, y cómo apoyarte en librerías para no reinventar lo ya resuelto. Con estas cinco piezas, un algoritmo del Tema 1 ya puede convertirse en un programa ejecutable y útil.",
+              "El siguiente paso natural es darle al programa la capacidad de decidir y de repetir. En el Tema 3 los valores lógicos que aquí aprendiste a producir se convertirán en las condiciones de las estructuras selectivas y de control. Antes de avanzar, consolida lo visto con el banco de ejercicios que sigue."
+            ]
+          },
+          "pdf-s5-twocol-librerias": {
+            "type": "two-column",
+            "title": "Biblioteca estándar vs. ecosistema externo",
+            "columns": [
+              {
+                "title": "Biblioteca estándar",
+                "body": [
+                  "Viene incluida con el lenguaje: módulos como math, statistics, random o datetime se importan sin instalar nada. Para promediar tres lecturas, statistics.mean basta y no exige dependencias extra."
+                ]
+              },
+              {
+                "title": "Ecosistema externo",
+                "body": [
+                  "Paquetes como numpy, pandas o scipy se instalan una sola vez con el gestor pip. Son la herramienta habitual del cálculo numérico y el análisis de miles de mediciones, donde la biblioteca estándar se quedaría corta."
+                ]
+              }
+            ]
+          },
+          "pdf-s5-keybox-import": {
+            "type": "key-box",
+            "variant": "tip",
+            "title": "Tres formas de importar",
+            "body": [
+              "import math obliga al prefijo (math.sqrt); from math import sqrt trae solo esa función y la llama sin prefijo; import numpy as np carga la librería con un alias corto. Evita from math import *: mezcla nombres y oculta el origen de cada función, lo que dificulta depurar programas grandes."
+            ]
+          }
+        }
+      },
+      "pdf-ejercicios": {
+        "title": "Banco de ejercicios",
+        "intro": [
+          "Llega el momento de poner a prueba lo aprendido. Estos ejercicios no se resuelven todos igual: unos piden cálculo o procedimiento, otros razonar y justificar, otros escribir y ejecutar código en Python, y otros consultar e investigar fuentes. Resuélvelos combinando lápiz y papel con la ejecución en tu computador, y apóyate en los ejemplos resueltos de cada sección.",
+          "Trabaja cada tipo con su propia lógica: en los de código, ejecuta de verdad el programa y compara con la salida esperada; en los de consulta e investigación, registra tus fuentes en formato APA 7; en los de análisis y reflexión, argumenta tu respuesta más allá del resultado."
+        ],
+        "componentOrder": [
+          "pdf-banco"
+        ],
+        "components": {
+          "pdf-banco": {
+            "type": "exercise-set",
+            "title": "Ejercicios del Tema 2",
+            "items": [
+              {
+                "kind": "practico",
+                "title": "Elegir el tipo de dato",
+                "prompt": "Indica el tipo primitivo más adecuado (int, float, bool, str) para cada dato de un proceso industrial: número de motores ensamblados, presión medida en bar, respuesta a '¿está dentro de tolerancia?' y el código de un equipo. Justifica brevemente cada elección según si el dato se cuenta, se mide, es lógico o es texto.",
+                "answer": "Número de motores: int (se cuenta). Presión en bar: float (magnitud continua que se mide). Dentro de tolerancia: bool (condición verdadero/falso). Código de equipo: str (texto, aunque incluya dígitos)."
+              },
+              {
+                "kind": "practico",
+                "title": "Identificadores válidos",
+                "prompt": "Clasifica como válidos o inválidos los siguientes nombres de variable en Python y corrige los incorrectos: 3temperatura, caudal_max, dato final, lambda, _aux.",
+                "answer": "3temperatura: inválido (empieza por dígito) → temperatura_3. caudal_max: válido. dato final: inválido (tiene espacio) → dato_final. lambda: inválido (palabra reservada) → lambda_val. _aux: válido."
+              },
+              {
+                "kind": "analisis",
+                "title": "El redondeo del punto flotante",
+                "prompt": "Explica por qué la comparación 0.1 + 0.2 == 0.3 devuelve False en Python y propón la forma correcta de comparar dos resultados float, expresando el criterio con una tolerancia.",
+                "formula": "|(0.1 + 0.2) - 0.3| < \\varepsilon"
+              },
+              {
+                "kind": "analisis",
+                "title": "Traza del intercambio",
+                "prompt": "Dado $a = 5$ y $b = 9$, construye una tabla de traza con los valores de a y b tras ejecutar la línea a, b = b, a y explica, paso a paso, por qué Python logra el intercambio en una sola instrucción sin variable auxiliar.",
+                "formula": "a, b = b, a"
+              },
+              {
+                "kind": "reflexion",
+                "title": "Cuándo subir o bajar de nivel",
+                "prompt": "Reflexiona: en un sistema embebido que controla un actuador con tiempos de respuesta estrictos, ¿conviene programar en un lenguaje de alto nivel como Python o en uno de más bajo nivel? Argumenta tu criterio contrastando legibilidad y portabilidad frente a velocidad y control del hardware."
+              },
+              {
+                "kind": "codigo",
+                "title": "Promedio de dos lecturas",
+                "prompt": "Escribe y ejecuta un programa que pida por teclado dos lecturas de tipo float, calcule su promedio y lo muestre con dos decimales usando una f-string. Verifica con las entradas 10.0 y 15.0 que imprime 12.50.",
+                "language": "python",
+                "code": "a = float(input(\"Lectura 1: \"))\nb = float(input(\"Lectura 2: \"))\npromedio = (a + b) / 2\nprint(f\"Promedio: {promedio:.2f}\")",
+                "expectedOutput": "Con 10.0 y 15.0 imprime: Promedio: 12.50"
+              },
+              {
+                "kind": "codigo",
+                "title": "Resumen estadístico con statistics",
+                "prompt": "Usando la librería estándar statistics, calcula la media y la desviación estándar muestral de las mediciones [8.1, 8.3, 7.9, 8.0, 8.2] y verifica a mano el resultado de la media.",
+                "language": "python",
+                "code": "import statistics\nlecturas = [8.1, 8.3, 7.9, 8.0, 8.2]\nprint(f\"Media: {statistics.mean(lecturas):.2f}\")\nprint(f\"Desviacion estandar: {statistics.stdev(lecturas):.4f}\")",
+                "expectedOutput": "Media: 8.10\nDesviacion estandar: 0.1581"
+              },
+              {
+                "kind": "consulta",
+                "title": "Estándar frente a externa",
+                "prompt": "Consulta la diferencia entre la biblioteca estándar de Python y una librería externa instalada con pip, y cómo se declaran las dependencias de un proyecto.",
+                "steps": [
+                  "Localiza en la documentación oficial de Python qué módulos forman parte de la biblioteca estándar (por ejemplo, math y statistics).",
+                  "Averigua qué hace el comando pip install y para qué sirve el archivo requirements.txt.",
+                  "Resume en pocas líneas la diferencia y cuándo importa al compartir un programa."
+                ],
+                "deliverable": "Párrafo de 5 a 7 líneas con la distinción explicada y al menos una fuente citada en formato APA 7."
+              },
+              {
+                "kind": "investigacion",
+                "title": "Modelar una tarea de tu programa",
+                "prompt": "Investiga y diseña la solución de una tarea propia de tu programa académico (por ejemplo, clasificar una pieza por su diámetro, validar una tolerancia o resumir mediciones de un sensor), eligiendo los tipos de datos adecuados y al menos una librería pertinente.",
+                "steps": [
+                  "Define el problema y la entrada, el proceso y la salida esperados.",
+                  "Selecciona el tipo de dato para cada variable y justifica por qué.",
+                  "Elige una librería (estándar o externa) y argumenta su elección frente a una alternativa, según el tamaño del problema.",
+                  "Implementa un prototipo en Python y pruébalo con datos de ejemplo."
+                ],
+                "deliverable": "Programa en Python comentado más un texto breve que justifique los tipos de datos y la librería elegida, con una referencia en APA 7."
+              }
+            ]
+          }
+        }
+      },
+      "pdf-referencias": {
+        "title": "Referencias",
+        "intro": [
+          "Fuentes consultadas y recursos para ampliar el tema, en formato APA 7."
+        ],
+        "componentOrder": [
+          "pdf-refs"
+        ],
+        "components": {
+          "pdf-refs": {
+            "type": "references",
+            "title": "Referencias bibliográficas",
+            "items": [
+              "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana.",
+              "Joyanes Aguilar, L. (2008). Fundamentos de programación. McGraw-Hill.",
+              "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones.",
+              "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media. https://greenteapress.com/wp/think-python-2e/",
+              "Figuras y ejemplos de elaboración propia (2026)."
+            ]
+          }
+        }
+      }
+    }
+  }
+}

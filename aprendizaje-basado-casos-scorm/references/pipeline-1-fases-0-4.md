@@ -73,14 +73,19 @@ Diseño inverso: RA → evidencias de evaluación → metodología → actividad
   **15 preguntas** de prerrequisitos (de los "conocimientos/RA previos" del syllabus): enunciado, 4 opciones,
   respuesta correcta y retroalimentación por pregunta. Se entregan EN el instrumento (o como anexo adjunto)
   para que el docente las **apruebe/ajuste/quite**. Estado inicial `"propuesto"`. NO se publica nada sin
-  revisión docente. Archivo propuesto: `evaluacion/diagnostica-<slug>.json` (con `estado:"propuesto"`).
+  revisión docente. Archivos propuestos: `evaluacion/diagnostica-<slug>.json` (con `estado:"propuesto"`,
+  fuente de verdad: metadatos por pregunta, prerrequisito, espejo re-ingestable) **y su exportación a GIFT
+  `evaluacion/diagnostica-<slug>.gift`** (formato importable a Moodle, generado desde el JSON). Reglas GIFT:
+  cada pregunta `::Q01:: enunciado { =correcta #retro+ ~incorrecta #retro- ... }`; el `prerrequisito` va como
+  comentario `// prerrequisito: ...` antes de la pregunta; LaTeX en formato `\(...\)`/`\[...\]` (no `$...$`),
+  caracteres especiales GIFT (`~=#{}:`) escapados con `\`. La selección 10/15 se configura en el quiz de Moodle.
 - **TALLERES por escenario — REDACTAR el propuesto por momento (va al instrumento).** Para cada momento,
   propón el taller (enunciado, evidencia, RA, criterio, instrucciones) en la tabla de la sección 4; el docente
   lo valida. Estado inicial `"propuesto"`.
 - **Entregables (`fase-3-diseno-evaluacion.md`):** mapa general de evaluación; **banco diagnóstico propuesto
   (15 preguntas)**; **talleres por escenario propuestos**; formativas; sumativa; rúbricas; instrumentos
   complementarios; momentos inicial/avance/final; auto/co/hetero.
-- **Estado:** `evaluacion{diagnostica{contestadas:10, banco:15, archivo, estado:"propuesto"},
+- **Estado:** `evaluacion{diagnostica{contestadas:10, banco:15, archivo, archivoGift, estado:"propuesto"},
   formativas[], talleresPorMomento[]{momento, enunciado, evidencia, ra, estado:"propuesto"}, sumativa,
   rubricas[], momentos[]}`.
 

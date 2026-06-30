@@ -33,6 +33,16 @@ micro-casos, propósito, preguntas, subtemas), no su número.
 - Cada concepto central: definición, contexto teórico, principios, relevancia, aplicación en el análisis del
   caso/micro-caso, ejemplos transversales (varias ingenierías/áreas), errores frecuentes, preguntas de
   reflexión, relación con evidencia, APA. Toda la matemática en LaTeX.
+- **El branch PDF es el DOCUMENTO DE SABERES con narrativa, no un volcado de bullets** (ver `references/json-contract.md`
+  → "Narrativa guiada"). Cada sección PDF: párrafo-puente de apertura que conecta con la anterior → teoría
+  como prosa guiada con citas APA → figura/`image` con pie y lectura → ejemplo/`code` contextualizado →
+  cierre/transición (`callout`). Voz docente, progresión clara, lectura agradable.
+- **Ejercicios diferenciados por `kind`** en cada `exercise-set` (practico, codigo, consulta, investigacion,
+  reflexion, analisis) — nunca un bloque uniforme de "Ejercicio 1, 2, 3". Cada `kind` usa sus campos
+  (`code`+`language`+`expectedOutput` para codigo; `steps[]`+`deliverable` para consulta/investigacion).
+- **Código en cada tema (asignaturas de programación/cuantitativas):** incluye al menos un ejemplo de código
+  (componente `code`) contextualizado y un ejercicio `kind:codigo`; en temas conceptuales prioriza
+  pseudocódigo/diagrama pero mantén un ejercicio aplicado.
 - **Entregables (todos obligatorios):**
   - `documento-saberes/<slug>-contenido-01.json … -04.json` (los JSON de la plantilla SCORM/PDF).
   - `fase-5-documento-saberes.md` (mapa de coherencia, distribución de páginas, checklist de rigor).
@@ -48,14 +58,18 @@ El Pipeline 2 **NO los crea de cero**: toma los **aprobados/ajustados por el pro
   Aplica los "Ajustar" del docente, **descarta los marcados "Quitar"**, agrega los que el profesor añadió.
   Son **preguntas de selección múltiple** (4 opciones) con **retroalimentación positiva** (refuerza por qué
   es correcta) y **negativa** (concepto a reforzar + referencia). El estudiante contesta 10 de las aprobadas.
-  Marca `estado:"aprobado"`. Es nivel asignatura: se enlaza desde la página de bienvenida del JSON de Moodle.
+  Marca `estado:"aprobado"`. **Regenera el GIFT** `evaluacion/diagnostica-<slug>.gift` desde el JSON ya
+  aprobado (mismas reglas de la Fase 3: `::Qnn::`, `=`/`~`, `#` retro, `// prerrequisito`, LaTeX `\(...\)`,
+  escape de `~=#{}:`) — es el artefacto que el docente **importa al banco de preguntas de Moodle** (Banco de
+  preguntas → Importar → formato GIFT). Es nivel asignatura: se enlaza desde la página de bienvenida del JSON
+  de Moodle (el `href` del quiz se rellena tras crear el cuestionario con las preguntas importadas).
 - **Talleres por escenario:** cada momento lleva su taller (aprobado en P1) redactado completo dentro de su
   JSON (`quiz`/`evaluation-activity`/`exercise-set` con enunciado, evidencia, RA, criterio y
   retroalimentación). La **sumativa integradora** (todos los momentos/RA, última semana) en el último
   escenario (Conclusiones) o `evaluacion/sumativa-<slug>.json`.
 - **Regla de gobernanza:** ni la diagnóstica ni los talleres se publican sin haber pasado por la revisión del
   profesor en el instrumento (igual que el material complementario).
-- **Estado:** `evaluacion.diagnostica.estado: "aprobado"`, `evaluacion.diagnostica.archivo`,
+- **Estado:** `evaluacion.diagnostica.estado: "aprobado"`, `evaluacion.diagnostica.archivo`, `evaluacion.diagnostica.archivoGift`,
   `evaluacion.talleresPorMomento[].estado: "aprobado"`.
 
 ## Fase 6 — Diseño gráfico y recursos e-learning → GENERA LOS PROMPTS

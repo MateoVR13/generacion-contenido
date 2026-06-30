@@ -1,0 +1,3095 @@
+{
+  "subject": {
+    "id": "algoritmia-computacional-i-tema-05",
+    "title": "Algoritmia Computacional I",
+    "program": "Tecnología en Aplicaciones Digitales Inteligentes",
+    "faculty": "ingenieria",
+    "contentNumber": "05",
+    "contentTotal": "06",
+    "unitLabel": "Tema",
+    "description": "Tema 5: modularización con funciones y evaluación de la asignación de memoria (pila y memoria dinámica) bajo programación estructurada, con ejemplos transversales a las ingenierías y orientación a procesos industriales.",
+    "syllabus": {
+      "source": {
+        "type": "pdf",
+        "fileName": "syllabus-algoritmia-computacional-i.pdf"
+      },
+      "extractedFields": {
+        "faculty": "Facultad de Ingeniería",
+        "program": "Tecnología en Aplicaciones Digitales Inteligentes",
+        "credits": 3,
+        "modality": "Virtual",
+        "level": "Tecnología (pregrado)"
+      },
+      "learningOutcomes": [
+        {
+          "id": "RA1",
+          "text": "Reconozco las principales estructuras de programación para la generación de algoritmos computacionales utilizando herramientas de control."
+        },
+        {
+          "id": "RA2",
+          "text": "Evalúo adecuadamente la asignación dinámica de memoria en un computador para la ejecución de algoritmos, a partir de programación estructurada."
+        }
+      ],
+      "priorKnowledge": [
+        "Estructuras selectivas e iterativas (Tema 3).",
+        "Arreglos y estructuras de datos: listas, tuplas, diccionarios y matrices (Tema 4).",
+        "Tipos de datos primitivos y entrada/salida (Tema 2).",
+        "Nociones de Álgebra Lineal (requisito del programa)."
+      ],
+      "competencies": [
+        "UC2: Estructurar metodológicamente el desarrollo de algoritmos y la construcción de prototipos, integrando programación estructurada y modular, para generar soluciones tecnológicas aplicadas a procesos industriales."
+      ],
+      "evaluationCriteria": [
+        "CE2: Entrega soluciones informáticas modulares y genera soluciones industriales mediante programación estructurada, evaluando la asignación de memoria."
+      ],
+      "topics": [
+        "Definición y llamada de funciones",
+        "Parámetros y retorno",
+        "Alcance de variables",
+        "Pila vs. memoria dinámica",
+        "Programación estructurada"
+      ],
+      "methodologyNotes": [
+        "Aprendizaje Guiado: ruta autónoma con teoría desarrollada, ejemplos resueltos paso a paso, código Python ejecutable y retroalimentación formativa.",
+        "Tema con orientación al RA2: evaluación de la asignación de memoria a partir de programación estructurada."
+      ],
+      "evaluationPlan": [
+        {
+          "moment": "Tema 4-5",
+          "type": "Taller formativo + foro de debate",
+          "evidence": "Refactorización modular y análisis de uso de memoria."
+        }
+      ],
+      "bibliography": {
+        "basic": [
+          "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana.",
+          "Joyanes Aguilar, L. (2008). Fundamentos de programación. McGraw Hill."
+        ],
+        "complementary": [
+          "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms (3rd ed.). MIT Press.",
+          "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media.",
+          "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones."
+        ]
+      },
+      "missingFields": [
+        "Código de la asignatura",
+        "Ponderaciones porcentuales por actividad"
+      ]
+    },
+    "methodology": {
+      "code": "AG",
+      "name": "Aprendizaje Guiado",
+      "rationale": "Ruta guiada para aprendizaje virtual autónomo con acompañamiento, práctica y retroalimentación.",
+      "moments": [
+        "Fase 1",
+        "Fase 2",
+        "Fase 3",
+        "Fase 4"
+      ]
+    }
+  },
+  "scorm": {
+    "labels": {
+      "theoryNav": "Contenido Teórico",
+      "materialNav": "Material Complementario"
+    },
+    "sectionOrder": [
+      "intro",
+      "seccion-1",
+      "seccion-2",
+      "seccion-3",
+      "seccion-4",
+      "seccion-5"
+    ],
+    "sections": {
+      "intro": {
+        "kind": "theory",
+        "theme": "Intro",
+        "badge": "Tema 05 de 06",
+        "navLabel": "Introducción",
+        "title": "Funciones, modularidad y memoria",
+        "intro": [
+          "Hasta ahora resolviste problemas escribiendo instrucciones que se ejecutan de principio a fin. A medida que un algoritmo crece —un controlador de una línea de envasado, un monitor de sensores, un planificador de mantenimiento— ese estilo lineal se vuelve difícil de leer, probar y mantener. Este Tema 05 te enseña a dividir el problema en piezas reutilizables (funciones) y a entender qué ocurre en la memoria del computador cuando esas piezas se ejecutan.",
+          "El hilo conductor del tema es el Resultado de Aprendizaje 2 (RA2): evalúo la asignación de memoria en un computador para la ejecución de algoritmos, a partir de programación estructurada. Verás cómo una llamada a función crea y destruye datos en la pila, en qué se diferencia de la memoria dinámica del montículo (heap), y cómo el diseño modular reduce el riesgo de errores y de consumo innecesario de recursos en aplicaciones de ingeniería."
+        ],
+        "componentOrder": [
+          "intro-objetivos",
+          "intro-presaberes",
+          "intro-ruta"
+        ],
+        "components": {
+          "intro-objetivos": {
+            "type": "objectives",
+            "title": "Lo que lograré en este Escenario de aprendizaje",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "items": [
+              {
+                "icon": "function",
+                "text": "Definir y llamar funciones para descomponer un problema de ingeniería en módulos reutilizables."
+              },
+              {
+                "icon": "input",
+                "text": "Distinguir parámetros, argumentos y valores de retorno, y razonar sobre el paso de datos a una función."
+              },
+              {
+                "icon": "visibility",
+                "text": "Determinar el alcance (local/global) de una variable y evitar efectos colaterales no deseados."
+              },
+              {
+                "icon": "memory",
+                "text": "Evaluar cómo se asigna y libera la memoria en la pila frente a la memoria dinámica del montículo (RA2)."
+              },
+              {
+                "icon": "architecture",
+                "text": "Refactorizar una solución previa en funciones modulares siguiendo programación estructurada."
+              }
+            ]
+          },
+          "intro-presaberes": {
+            "type": "prior-knowledge",
+            "title": "Antes de empezar",
+            "eyebrow": "Saberes previos del Tema 05",
+            "prompts": [
+              "Recuerda del Tema 3: ¿cómo controlas la repetición con un ciclo y su condición de parada? Las funciones encapsularán esos ciclos.",
+              "Recuerda del Tema 4: ¿qué diferencia hay entre una lista (mutable) y una tupla (inmutable)? Esa diferencia será clave al pasar datos a una función.",
+              "Piensa en un proceso industrial que conozcas (dosificar, medir, clasificar). ¿Qué tarea se repite tantas veces que valdría la pena convertirla en una pieza reutilizable?"
+            ]
+          },
+          "intro-ruta": {
+            "type": "theory-block",
+            "title": "Ruta del Tema 05",
+            "eyebrow": "Cómo recorrerás este tema",
+            "body": [
+              "El tema se organiza en cinco saberes encadenados. Primero aprenderás a definir y llamar funciones (Sección 1). Luego controlarás cómo entran y salen los datos mediante parámetros y retorno (Sección 2). Después estudiarás dónde vive cada variable y por cuánto tiempo, es decir, su alcance (Sección 3). A partir de ahí evaluarás el costo en memoria: pila frente a memoria dinámica (Sección 4). Finalmente integrarás todo bajo el paradigma de programación estructurada y refactorizarás una solución previa en módulos (Sección 5)."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "route",
+                "text": "Cinco saberes: definir funciones, parámetros/retorno, alcance, memoria pila/heap y programación estructurada."
+              },
+              {
+                "icon": "schedule",
+                "text": "Dedicación estimada del tema: 7 a 9 horas de trabajo autónomo."
+              },
+              {
+                "icon": "task_alt",
+                "text": "Evidencia integradora: refactorizar una solución previa en funciones y analizar su uso de memoria (RA2)."
+              }
+            ],
+            "closing": [
+              "Al cerrar el tema estarás listo para el Tema 06, el proyecto integrador, donde la modularidad y la gestión de memoria son la base de una solución algorítmica completa de orientación industrial."
+            ]
+          }
+        }
+      },
+      "seccion-1": {
+        "kind": "theory",
+        "theme": "Tema",
+        "badge": "Tema 05 · Sección 1",
+        "navLabel": "Definición y llamada de funciones",
+        "title": "Definición y llamada de funciones",
+        "learningOutcomeIds": [
+          "RA2"
+        ],
+        "intro": [
+          "Una función es un bloque de código con nombre que realiza una tarea específica y que se puede invocar tantas veces como se necesite. Es la unidad básica de la modularidad: nos permite escribir una vez una lógica y reutilizarla, en lugar de copiar y pegar instrucciones."
+        ],
+        "componentOrder": [
+          "s1-detonadora",
+          "s1-teoria-1",
+          "s1-figura-anatomia",
+          "s1-flashcards",
+          "s1-code-definicion",
+          "s1-teoria-2",
+          "s1-figura-flujo",
+          "s1-carousel-flujo",
+          "s1-stepper-llamada",
+          "s1-quiz-1",
+          "s1-teoria-3",
+          "s1-accordion-errores",
+          "s1-stepper-reutilizacion",
+          "s1-saberes"
+        ],
+        "components": {
+          "s1-teoria-1": {
+            "type": "theory-block",
+            "title": "Qué es una función y por qué existe",
+            "eyebrow": "Base conceptual",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "En programación estructurada, una función es una abstracción: le damos un nombre a un conjunto de pasos y, a partir de ese momento, podemos usar ese nombre sin volver a pensar en los detalles internos. Cuando en una planta calculas decenas de veces el caudal a partir de una sección y una velocidad, no reescribes la fórmula cada vez: defines una función caudal(area, velocidad) y la llamas.",
+              "Definir una función no la ejecuta; solo registra su nombre y sus instrucciones para uso posterior. La ejecución ocurre cuando aparece la llamada (la invocación), es decir, el nombre de la función seguido de paréntesis. Esta separación entre definición y llamada es la primera idea que debes interiorizar: el cuerpo de la función permanece inerte hasta que algo lo invoca.",
+              "En Python, una función se define con la palabra reservada def, un nombre descriptivo, una lista de parámetros entre paréntesis y un cuerpo indentado. El nombre debería decir qué hace la función con un verbo (calcular_caudal, validar_temperatura, contar_piezas), porque un buen nombre es la primera línea de documentación."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "label",
+                "text": "Una función agrupa pasos bajo un nombre reutilizable."
+              },
+              {
+                "icon": "bolt",
+                "text": "Definir registra; llamar ejecuta. Son dos momentos distintos."
+              },
+              {
+                "icon": "spellcheck",
+                "text": "El nombre debe ser un verbo que describa la tarea: $\\text{calcular\\_caudal}$."
+              },
+              {
+                "icon": "repeat",
+                "text": "Evita la duplicación: escribe una vez, invoca muchas."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Anatomía mínima",
+                "body": [
+                  "Encabezado (def + nombre + parámetros), cuerpo (las instrucciones) y, casi siempre, un valor de retorno. Si no se retorna nada explícitamente, Python devuelve el valor especial None."
+                ]
+              }
+            ],
+            "example": {
+              "title": "Del cálculo repetido a la función",
+              "body": [
+                "En vez de escribir $Q = A \\cdot v$ en quince lugares del programa de la línea de bombeo, se define una sola función y se la invoca quince veces. Si la fórmula cambia, se corrige en un único lugar."
+              ]
+            },
+            "closing": [
+              "Antes de ver el código, fíjate en la idea: una función es un contrato. Promete hacer una tarea concreta; quien la llama no necesita conocer cómo lo hace por dentro."
+            ]
+          },
+          "s1-figura-anatomia": {
+            "type": "figure",
+            "title": "Anatomía de una función en Python",
+            "assetId": "fig-anatomia-funcion",
+            "src": "",
+            "alt": "Diagrama que rotula las partes de una definición de función: palabra def, nombre, parámetros entre paréntesis, dos puntos, cuerpo indentado y sentencia return.",
+            "caption": "Cada parte cumple un rol: el encabezado declara la interfaz y el cuerpo implementa la tarea.",
+            "prompt": "Crear una figura didáctica en español que muestre la línea 'def calcular_caudal(area, velocidad):' con flechas etiquetadas señalando: 'palabra clave def', 'nombre de la función', 'parámetros', 'dos puntos'; debajo el cuerpo indentado con 'caudal = area * velocidad' y 'return caudal' etiquetados como 'cuerpo' y 'valor de retorno'. Estilo limpio, colores institucionales, tipografía monoespaciada para el código."
+          },
+          "s1-flashcards": {
+            "type": "flashcards",
+            "title": "Vocabulario de funciones",
+            "cards": [
+              {
+                "term": "Definición (def)",
+                "definition": "Acto de registrar el nombre y el cuerpo de una función; no ejecuta nada por sí misma, solo la deja disponible para ser invocada.",
+                "icon": "edit_note"
+              },
+              {
+                "term": "Llamada o invocación",
+                "definition": "Uso del nombre de la función seguido de paréntesis con argumentos; es lo que dispara la ejecución del cuerpo.",
+                "icon": "play_arrow"
+              },
+              {
+                "term": "Cuerpo de la función",
+                "definition": "Conjunto de instrucciones indentadas que se ejecutan cada vez que la función es llamada.",
+                "icon": "code"
+              },
+              {
+                "term": "None",
+                "definition": "Valor que Python devuelve automáticamente cuando una función termina sin una sentencia return explícita.",
+                "icon": "block"
+              }
+            ]
+          },
+          "s1-code-definicion": {
+            "type": "code",
+            "title": "Definir y llamar una función de caudal",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "caudal.py",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "instructions": [
+              "Lee el fragmento e identifica dónde termina la definición (def ...) y dónde empieza la llamada.",
+              "Guarda el archivo como caudal.py y ejecútalo desde una terminal con python caudal.py.",
+              "Cambia los valores de la llamada (por ejemplo, area=0.05, velocidad=3.2) y vuelve a ejecutar para confirmar que el cuerpo se reutiliza con datos distintos."
+            ],
+            "code": "def calcular_caudal(area, velocidad):\n    \"\"\"Caudal volumetrico Q = A * v (m^3/s).\"\"\"\n    caudal = area * velocidad\n    return caudal\n\n# La definicion de arriba no ejecuta nada todavia.\n# La ejecucion ocurre en estas llamadas:\nprint(calcular_caudal(0.02, 2.5))\nprint(calcular_caudal(0.05, 3.2))",
+            "expectedOutput": [
+              "Se imprimen 0.05 y 0.16000000000000003: el mismo cuerpo se ejecutó dos veces con datos distintos. Observa que la definición por sí sola no produjo salida; solo las llamadas lo hicieron."
+            ]
+          },
+          "s1-teoria-2": {
+            "type": "theory-block",
+            "title": "Qué ocurre durante una llamada",
+            "eyebrow": "Flujo de control",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Cuando el programa llega a una llamada, el control de ejecución salta al cuerpo de la función. Antes de ejecutar la primera instrucción del cuerpo, el intérprete recuerda en qué punto del código estaba para poder volver allí cuando la función termine. Ese punto de retorno se guarda automáticamente; más adelante veremos que vive en la pila de llamadas.",
+              "Mientras la función trabaja, el programa principal queda en pausa. Solo cuando la función termina —al llegar al final de su cuerpo o a una sentencia return— el control regresa exactamente a la línea siguiente a la llamada, trayendo consigo el valor de retorno. Este ir y volver es el mecanismo que hace posible componer programas a partir de piezas pequeñas.",
+              "Si una función llama a otra, y esa a una tercera, se forma una cadena de llamadas activas. Comprender este flujo es indispensable para depurar: cuando algo falla, el rastreo (traceback) muestra precisamente esa cadena."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "call_made",
+                "text": "La llamada transfiere el control al cuerpo de la función."
+              },
+              {
+                "icon": "bookmark",
+                "text": "Se guarda el punto de retorno para saber a dónde volver."
+              },
+              {
+                "icon": "call_received",
+                "text": "Al terminar, el control vuelve con el valor de retorno a la línea siguiente."
+              }
+            ],
+            "closing": [
+              "Sigue el flujo paso a paso en el carrusel y el stepper que vienen a continuación: verás el salto al cuerpo y el regreso al punto de llamada."
+            ]
+          },
+          "s1-figura-flujo": {
+            "type": "figure",
+            "title": "Salto y retorno del control en una llamada",
+            "assetId": "fig-flujo-llamada",
+            "src": "",
+            "alt": "Diagrama de flujo con dos columnas: programa principal a la izquierda y cuerpo de la función a la derecha, con una flecha de ida en la llamada y una flecha de vuelta en el return.",
+            "caption": "El control salta al cuerpo en la llamada y regresa a la línea siguiente con el valor de retorno.",
+            "prompt": "Crear un diagrama de flujo didáctico en español con dos carriles verticales: izquierda 'Programa principal' (caja 'total = calcular_caudal(...)') y derecha 'Cuerpo de la función'. Flecha etiquetada 'llamada: salta al cuerpo' del carril izquierdo al derecho, y flecha etiquetada 'return: vuelve con el valor' del derecho al izquierdo, apuntando a la línea siguiente. Indicar 'main en pausa mientras la función trabaja'. Estilo de diagrama de flujo, colores institucionales."
+          },
+          "s1-carousel-flujo": {
+            "type": "carousel",
+            "title": "El viaje de una llamada",
+            "slides": [
+              {
+                "label": "Paso 1",
+                "title": "El programa principal avanza",
+                "body": [
+                  "El intérprete ejecuta línea por línea hasta que encuentra una invocación, por ejemplo total = calcular_caudal(0.02, 2.5)."
+                ],
+                "icon": "play_circle"
+              },
+              {
+                "label": "Paso 2",
+                "title": "Salto al cuerpo",
+                "body": [
+                  "El control pasa al cuerpo de calcular_caudal. Se recuerda el punto exacto desde el que se llamó para poder regresar."
+                ],
+                "icon": "login"
+              },
+              {
+                "label": "Paso 3",
+                "title": "Ejecución interna",
+                "body": [
+                  "Se ejecutan las instrucciones del cuerpo. El programa principal permanece en pausa mientras tanto."
+                ],
+                "icon": "settings"
+              },
+              {
+                "label": "Paso 4",
+                "title": "Retorno",
+                "body": [
+                  "La sentencia return entrega un valor y devuelve el control a la línea que hizo la llamada; ese valor se asigna a total."
+                ],
+                "icon": "logout"
+              }
+            ]
+          },
+          "s1-stepper-llamada": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1: traza de una llamada con retorno",
+            "statement": "Traza la ejecución de total = calcular_caudal(0.02, 2.5) y determina el valor final de total, donde la función retorna $A \\cdot v$.",
+            "steps": [
+              {
+                "title": "Identificar la llamada",
+                "body": "El programa principal encuentra la invocación con dos argumentos: 0.02 y 2.5.",
+                "final": false
+              },
+              {
+                "title": "Vincular argumentos a parámetros",
+                "body": "Al entrar al cuerpo, area toma el valor 0.02 y velocidad toma 2.5.",
+                "formula": "\\text{area}=0.02,\\quad \\text{velocidad}=2.5",
+                "final": false
+              },
+              {
+                "title": "Ejecutar el cuerpo",
+                "body": "Se calcula el producto y se prepara el valor de retorno.",
+                "formula": "Q = 0.02 \\cdot 2.5 = 0.05",
+                "final": false
+              },
+              {
+                "title": "Retornar y asignar",
+                "body": "return entrega 0.05; el control vuelve y total = 0.05.",
+                "formula": "\\text{total}=0.05\\ \\text{m}^3/\\text{s}",
+                "final": true
+              }
+            ]
+          },
+          "s1-quiz-1": {
+            "type": "quiz",
+            "title": "Chequeo: definición vs. llamada",
+            "questions": [
+              {
+                "prompt": "Escribes def medir(): print('listo') y ejecutas el archivo, pero no aparece nada en pantalla. ¿Por qué?",
+                "options": [
+                  {
+                    "text": "Definiste la función pero nunca la llamaste; el cuerpo no se ejecuta sin una invocación medir().",
+                    "correct": true,
+                    "feedback": "Correcto: definir solo registra la función. Falta la llamada medir() para que el cuerpo se ejecute."
+                  },
+                  {
+                    "text": "Las funciones en Python no pueden usar print.",
+                    "correct": false,
+                    "feedback": "Revisa el concepto: print es válido dentro de una función. El problema es que falta la llamada."
+                  },
+                  {
+                    "text": "Hace falta un return para que se imprima.",
+                    "correct": false,
+                    "feedback": "No es el caso: print produce salida sin necesidad de return. Lo que falta es invocar la función."
+                  }
+                ]
+              }
+            ]
+          },
+          "s1-teoria-3": {
+            "type": "theory-block",
+            "title": "Buenas prácticas al nombrar y diseñar funciones",
+            "eyebrow": "Criterio de diseño",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Una función bien diseñada hace una sola cosa y la hace bien. Esta idea, conocida como responsabilidad única, evita funciones gigantes que mezclan lectura de datos, cálculo y presentación. Si una función necesita la palabra 'y' para describirse (lee y calcula y muestra), probablemente deba dividirse.",
+              "El nombre debe revelar la intención. Compara contar_piezas_defectuosas(lote) con f1(x): el primero comunica el propósito sin leer el cuerpo. En contextos de ingeniería, nombres como interpolar_temperatura o normalizar_senal hacen el código autoexplicativo y reducen errores de uso.",
+              "Finalmente, una función debería ser predecible: para los mismos datos de entrada, producir el mismo resultado, sin depender de información oculta. Las funciones predecibles son fáciles de probar y de reutilizar en otro proyecto."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "filter_1",
+                "text": "Responsabilidad única: una función, una tarea."
+              },
+              {
+                "icon": "badge",
+                "text": "El nombre comunica la intención sin leer el cuerpo."
+              },
+              {
+                "icon": "verified",
+                "text": "Predecible: mismos datos de entrada, mismo resultado."
+              }
+            ],
+            "closing": [
+              "Con estos criterios, la reutilización deja de ser teoría: la misma función sirve en varios programas distintos."
+            ]
+          },
+          "s1-accordion-errores": {
+            "type": "accordion",
+            "title": "Errores frecuentes al definir y llamar funciones",
+            "items": [
+              {
+                "icon": "report",
+                "title": "Confundir definir con ejecutar",
+                "open": true,
+                "body": [
+                  "El error más común al iniciar es pensar que escribir def ya ejecuta la función. La definición únicamente registra el nombre y el cuerpo en la memoria del programa; nada del interior se ejecuta hasta que aparece una llamada con paréntesis.",
+                  "Esto se nota cuando el estudiante ve que 'el programa no hace nada': revisa entonces si después de la definición existe la invocación correspondiente. En un archivo de varias funciones, es habitual definirlas todas y olvidar llamarlas desde el flujo principal."
+                ]
+              },
+              {
+                "icon": "do_not_disturb",
+                "title": "Olvidar los paréntesis en la llamada",
+                "body": [
+                  "Escribir calcular_caudal sin paréntesis no llama a la función: solo hace referencia al objeto función. Python no produce error inmediato, pero tampoco ejecuta el cuerpo, lo que genera resultados confusos.",
+                  "La regla práctica es clara: el nombre solo nombra a la función; el nombre seguido de paréntesis la ejecuta. Si necesitas el resultado, siempre van los paréntesis, aunque la función no reciba argumentos: medir()."
+                ]
+              },
+              {
+                "icon": "merge_type",
+                "title": "Funciones que hacen demasiado",
+                "body": [
+                  "Una función que lee un archivo de sensores, calcula promedios, decide alarmas y además imprime un reporte es difícil de probar y de reutilizar, porque mezcla varias responsabilidades en un solo bloque.",
+                  "La solución estructurada es descomponer: una función para leer, otra para calcular, otra para decidir y otra para presentar. Cada una se prueba por separado y puede reutilizarse en otro programa sin arrastrar lo demás. Este principio será la base de la Sección 5 sobre programación estructurada."
+                ]
+              }
+            ]
+          },
+          "s1-stepper-reutilizacion": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 2: reutilizar una función en un lote",
+            "statement": "Usa calcular_caudal para obtener el caudal total de tres bombas con áreas y velocidades distintas y verifica la suma.",
+            "steps": [
+              {
+                "title": "Plantear los datos",
+                "body": "Tres bombas: (0.02, 2.5), (0.03, 2.0) y (0.05, 1.0) como pares (area, velocidad).",
+                "final": false
+              },
+              {
+                "title": "Invocar la función por bomba",
+                "body": "Se llama tres veces a la misma función, una por bomba.",
+                "formula": "Q_1=0.05,\\ Q_2=0.06,\\ Q_3=0.05",
+                "final": false
+              },
+              {
+                "title": "Acumular el total",
+                "body": "Se suman los tres caudales retornados.",
+                "formula": "Q_T = 0.05+0.06+0.05",
+                "final": false
+              },
+              {
+                "title": "Verificar el resultado",
+                "body": "El caudal total es coherente con la suma de las tres bombas.",
+                "formula": "Q_T = 0.16\\ \\text{m}^3/\\text{s}",
+                "final": true
+              }
+            ]
+          },
+          "s1-saberes": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Profundiza la definición y el uso de funciones en el Documento de Saberes",
+            "body": [
+              "En el Documento de Saberes (PDF) de la asignatura encontrarás más ejemplos de funciones aplicadas a procesos industriales, la diferencia entre funciones y procedimientos, y unas pautas para nombrar funciones con criterio profesional."
+            ],
+            "reference": "Tema 5 · Sección 1 · Definición y llamada de funciones",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          },
+          "s1-detonadora": {
+            "id": "s1-detonadora",
+            "type": "trigger-question",
+            "eyebrow": "Para empezar",
+            "question": "Imagina que la misma fórmula para dosificar un reactivo está copiada en 30 puntos de un programa de control de planta y mañana cambia la norma: ¿qué te cuesta ese código duplicado en tiempo, errores y memoria, y qué cambiaría si esa lógica viviera en una sola pieza reutilizable que el programa carga una vez y vuelve a llamar?"
+          }
+        }
+      },
+      "seccion-2": {
+        "kind": "theory",
+        "theme": "Tema",
+        "badge": "Tema 05 · Sección 2",
+        "navLabel": "Parámetros y retorno",
+        "title": "Parámetros y retorno de valores",
+        "learningOutcomeIds": [
+          "RA2"
+        ],
+        "intro": [
+          "Una función se comunica con el resto del programa por dos canales: lo que recibe (parámetros) y lo que devuelve (retorno). Dominar estos canales es lo que distingue una función reutilizable de un bloque rígido que solo sirve para un caso."
+        ],
+        "componentOrder": [
+          "s2-teoria-1",
+          "s2-figura-vinculacion",
+          "s2-tabla-paso",
+          "s2-flashcards",
+          "s2-code-parametros",
+          "s2-teoria-2",
+          "s2-carousel-retorno",
+          "s2-stepper-multiretorno",
+          "s2-multiselect",
+          "s2-teoria-3",
+          "s2-figura-mutable",
+          "s2-accordion-matices",
+          "s2-stepper-default",
+          "s2-saberes"
+        ],
+        "components": {
+          "s2-teoria-1": {
+            "type": "theory-block",
+            "title": "Parámetros, argumentos y paso de datos",
+            "eyebrow": "Base conceptual",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Un parámetro es el nombre que aparece en la definición de la función y que actúa como un recipiente vacío a la espera de un dato. Un argumento es el valor concreto que se entrega en la llamada y que llena ese recipiente. En def dosificar(volumen, concentracion), volumen y concentracion son parámetros; en dosificar(50, 0.3), los números 50 y 0.3 son argumentos.",
+              "Los argumentos se pueden entregar por posición (en el mismo orden de los parámetros) o por nombre (indicando parametro=valor). El paso por nombre hace explícita la intención y evita errores cuando hay muchos parámetros: dosificar(concentracion=0.3, volumen=50) es inequívoco aunque cambie el orden.",
+              "También se pueden declarar valores por defecto: def medir(sensor, unidades='C'). Si la llamada no entrega unidades, se usa 'C'. Esto permite funciones flexibles que cubren el caso común sin obligar a repetir el dato más frecuente en cada llamada."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "inventory_2",
+                "text": "Parámetro = recipiente en la definición; argumento = valor en la llamada."
+              },
+              {
+                "icon": "swap_horiz",
+                "text": "Los argumentos van por posición o por nombre ($\\text{parametro}=\\text{valor}$)."
+              },
+              {
+                "icon": "settings_suggest",
+                "text": "Los valores por defecto cubren el caso común sin repetirlo."
+              }
+            ],
+            "closing": [
+              "La tabla siguiente contrasta las formas de pasar argumentos y cuándo conviene cada una."
+            ]
+          },
+          "s2-figura-vinculacion": {
+            "type": "figure",
+            "title": "Vinculación de argumentos a parámetros",
+            "assetId": "fig-vinculacion-parametros",
+            "src": "",
+            "alt": "Diagrama con la definición dosificar(volumen, concentracion) arriba y la llamada dosificar(50, 0.3) abajo, con flechas que conectan cada argumento con su parámetro por posición.",
+            "caption": "En la llamada, cada argumento llena el parámetro correspondiente según su posición o su nombre.",
+            "prompt": "Crear una figura didáctica en español con dos filas. Arriba la definición 'def dosificar(volumen, concentracion):' con los parámetros resaltados como recipientes vacíos. Abajo la llamada 'dosificar(50, 0.3)'. Flechas que conecten 50 → volumen y 0.3 → concentracion (paso por posición). A un lado, una variante 'dosificar(concentracion=0.3, volumen=50)' mostrando que por nombre el orden no importa. Estilo esquemático, tipografía monoespaciada para el código, colores institucionales."
+          },
+          "s2-tabla-paso": {
+            "type": "table",
+            "title": "Formas de pasar argumentos a una función",
+            "columns": [
+              "Forma",
+              "Sintaxis en la llamada",
+              "Cuándo conviene"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Por posición",
+                  "dosificar(50, 0.3)",
+                  "Funciones cortas con pocos parámetros y orden evidente."
+                ]
+              },
+              {
+                "cells": [
+                  "Por nombre",
+                  "dosificar(volumen=50, concentracion=0.3)",
+                  "Muchos parámetros o valores cuyo significado no es obvio por el orden."
+                ]
+              },
+              {
+                "cells": [
+                  "Con valor por defecto",
+                  "medir(sensor)  →  unidades='C'",
+                  "Existe un caso común que no debería repetirse en cada llamada."
+                ]
+              },
+              {
+                "cells": [
+                  "Mixta",
+                  "registrar(102, turno='noche')",
+                  "Posición para lo evidente y nombre para lo opcional o ambiguo."
+                ]
+              }
+            ]
+          },
+          "s2-flashcards": {
+            "type": "flashcards",
+            "title": "Parámetros y retorno: conceptos clave",
+            "cards": [
+              {
+                "term": "Parámetro",
+                "definition": "Variable declarada en el encabezado de la función que recibirá un valor cuando la función sea llamada.",
+                "icon": "input"
+              },
+              {
+                "term": "Argumento",
+                "definition": "Valor real que se entrega en la llamada y que se vincula al parámetro correspondiente.",
+                "icon": "data_object"
+              },
+              {
+                "term": "return",
+                "definition": "Sentencia que finaliza la función y devuelve un valor al punto de llamada; sin ella, la función devuelve None.",
+                "icon": "keyboard_return"
+              },
+              {
+                "term": "Valor por defecto",
+                "definition": "Valor preasignado a un parámetro que se usa cuando la llamada no entrega ese argumento.",
+                "icon": "settings_backup_restore"
+              }
+            ]
+          },
+          "s2-code-parametros": {
+            "type": "code",
+            "title": "Parámetros por nombre y valor por defecto",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "dosificar.py",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "instructions": [
+              "Lee la función y localiza el parámetro con valor por defecto (unidades).",
+              "Guarda el archivo como dosificar.py y ejecútalo con python dosificar.py.",
+              "Prueba a invertir el orden usando paso por nombre: dosificar(concentracion=0.3, volumen=50) y confirma que el resultado no cambia."
+            ],
+            "code": "def dosificar(volumen, concentracion, unidades='g/L'):\n    masa = volumen * concentracion\n    return f\"{masa} {unidades}\"\n\n# Por posicion:\nprint(dosificar(50, 0.3))\n# Por nombre (orden libre):\nprint(dosificar(concentracion=0.3, volumen=50))\n# Sobrescribiendo el valor por defecto:\nprint(dosificar(50, 0.3, unidades='mg/L'))",
+            "expectedOutput": [
+              "Se imprime '15.0 g/L' dos veces (posición y nombre dan el mismo resultado) y luego '15.0 mg/L'. Esto confirma que el orden no importa al pasar por nombre y que el valor por defecto puede sobrescribirse."
+            ]
+          },
+          "s2-teoria-2": {
+            "type": "theory-block",
+            "title": "El retorno: cómo una función entrega resultados",
+            "eyebrow": "Salida de la función",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "La sentencia return cumple dos funciones a la vez: termina inmediatamente la ejecución de la función y envía un valor al punto de llamada. Cualquier instrucción que esté después de un return ejecutado no se alcanza, lo que se aprovecha para salir temprano cuando un dato no es válido.",
+              "Una función puede devolver un solo valor, varios valores empaquetados en una tupla, o ninguno (en cuyo caso devuelve None). Devolver varios valores es muy útil en ingeniería: una función de análisis puede retornar a la vez el promedio, el máximo y el mínimo de un conjunto de mediciones en una sola llamada.",
+              "Es importante distinguir entre devolver un valor con return y mostrarlo con print. print escribe en pantalla pero no entrega nada al programa; return entrega un dato que el resto del código puede seguir usando. Una función que solo imprime no puede encadenarse con otras."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "logout",
+                "text": "return termina la función y entrega un valor."
+              },
+              {
+                "icon": "account_tree",
+                "text": "Se pueden retornar varios valores en una tupla: $(\\bar{x},\\ \\max,\\ \\min)$."
+              },
+              {
+                "icon": "compare_arrows",
+                "text": "return entrega datos al programa; print solo los muestra."
+              }
+            ],
+            "closing": [
+              "Observa en el carrusel la diferencia entre retornar y solo imprimir, y luego resuelve el ejercicio de retorno múltiple."
+            ]
+          },
+          "s2-carousel-retorno": {
+            "type": "carousel",
+            "title": "return frente a print",
+            "slides": [
+              {
+                "label": "Caso A",
+                "title": "Función que retorna",
+                "body": [
+                  "promedio(lecturas) devuelve el valor; puedes guardarlo, compararlo o pasarlo a otra función. El dato sigue vivo en el programa."
+                ],
+                "icon": "save"
+              },
+              {
+                "label": "Caso B",
+                "title": "Función que solo imprime",
+                "body": [
+                  "mostrar(lecturas) escribe en pantalla pero devuelve None; el resultado no puede reutilizarse en un cálculo posterior."
+                ],
+                "icon": "print"
+              },
+              {
+                "label": "Caso C",
+                "title": "Retorno múltiple",
+                "body": [
+                  "analizar(lecturas) devuelve (promedio, maximo, minimo). En la llamada se desempaqueta: prom, mx, mn = analizar(lecturas)."
+                ],
+                "icon": "call_split"
+              },
+              {
+                "label": "Regla",
+                "title": "Cuál elegir",
+                "body": [
+                  "Si otro código necesita el resultado, usa return. Reserva print para mensajes al usuario, no para entregar datos entre funciones."
+                ],
+                "icon": "rule"
+              }
+            ]
+          },
+          "s2-stepper-multiretorno": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1: retorno múltiple de un análisis",
+            "statement": "Una función analizar(lecturas) recibe [21.0, 23.5, 22.0, 24.5] grados y retorna (promedio, máximo, mínimo). Traza el desempaquetado prom, mx, mn = analizar(lecturas).",
+            "steps": [
+              {
+                "title": "Recibir el argumento",
+                "body": "El parámetro lecturas se vincula a la lista [21.0, 23.5, 22.0, 24.5].",
+                "final": false
+              },
+              {
+                "title": "Calcular las tres medidas",
+                "body": "Se obtienen promedio, máximo y mínimo del conjunto.",
+                "formula": "\\bar{x}=\\frac{21.0+23.5+22.0+24.5}{4}=22.75",
+                "final": false
+              },
+              {
+                "title": "Empaquetar el retorno",
+                "body": "Se devuelve una tupla con los tres resultados.",
+                "formula": "(22.75,\\ 24.5,\\ 21.0)",
+                "final": false
+              },
+              {
+                "title": "Desempaquetar en la llamada",
+                "body": "Cada nombre recibe su componente en orden.",
+                "formula": "\\text{prom}=22.75,\\ \\text{mx}=24.5,\\ \\text{mn}=21.0",
+                "final": true
+              }
+            ]
+          },
+          "s2-multiselect": {
+            "type": "multi-select",
+            "title": "Decisiones correctas sobre parámetros y retorno",
+            "prompt": "Selecciona todas las afirmaciones correctas sobre parámetros y retorno en Python.",
+            "options": [
+              {
+                "text": "El paso de argumentos por nombre permite cambiar el orden sin alterar el resultado.",
+                "correct": true
+              },
+              {
+                "text": "Una función puede retornar varios valores empaquetados en una tupla.",
+                "correct": true
+              },
+              {
+                "text": "Si una función no tiene return, devuelve None.",
+                "correct": true
+              },
+              {
+                "text": "print y return son intercambiables: ambos entregan el dato al programa que llama.",
+                "correct": false
+              },
+              {
+                "text": "Un valor por defecto obliga a entregar siempre ese argumento en la llamada.",
+                "correct": false
+              }
+            ]
+          },
+          "s2-teoria-3": {
+            "type": "theory-block",
+            "title": "Datos mutables como argumentos: un matiz crítico",
+            "eyebrow": "Riesgo y precaución",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Cuando pasas un número o una cadena (datos inmutables) a una función, la función trabaja con el valor sin afectar al original. Pero cuando pasas una lista o un diccionario (datos mutables, vistos en el Tema 4), la función recibe una referencia al mismo objeto: si lo modifica, el cambio se ve también fuera de la función.",
+              "Este comportamiento es una herramienta poderosa —permite que una función actualice una estructura grande sin copiarla— pero también una fuente de errores difíciles de rastrear: una función que 'sin querer' ordena o vacía una lista del programa principal puede corromper datos en otra parte. En sistemas industriales, modificar por accidente un registro compartido de mediciones puede falsear un reporte.",
+              "La práctica segura es decidir explícitamente: si la función debe modificar la estructura, documéntalo; si no debe hacerlo, trabaja sobre una copia. Este matiz conecta directamente con la Sección 4, donde veremos que listas y diccionarios viven en memoria dinámica y se comparten por referencia."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "shield",
+                "text": "Inmutables (número, cadena): la función no afecta al original."
+              },
+              {
+                "icon": "warning",
+                "text": "Mutables (lista, diccionario): la función puede modificar el objeto compartido."
+              },
+              {
+                "icon": "content_copy",
+                "text": "Si no quieres modificar el original, trabaja sobre una copia."
+              }
+            ],
+            "closing": [
+              "La figura siguiente ilustra por qué un mismo objeto puede cambiar 'desde dentro' de una función."
+            ]
+          },
+          "s2-figura-mutable": {
+            "type": "figure",
+            "title": "Paso de un objeto mutable por referencia",
+            "assetId": "fig-paso-referencia",
+            "src": "",
+            "alt": "Diagrama con dos nombres (lecturas en el programa principal y datos dentro de la función) apuntando con flechas al mismo objeto lista en memoria.",
+            "caption": "Ambos nombres apuntan al mismo objeto: si la función modifica el objeto, el cambio es visible fuera.",
+            "prompt": "Crear una figura didáctica en español que muestre a la izquierda el nombre 'lecturas' (programa principal) y a la derecha el nombre 'datos' (parámetro dentro de la función), ambos con flechas que apuntan a un mismo recuadro etiquetado 'objeto lista [21.0, 23.5, ...]' en una zona rotulada 'memoria dinámica (heap)'. Indicar con un texto que modificar el objeto desde la función afecta a ambos nombres. Estilo esquemático, colores institucionales."
+          },
+          "s2-accordion-matices": {
+            "type": "accordion",
+            "title": "Matices del paso de argumentos y el retorno",
+            "items": [
+              {
+                "icon": "rule",
+                "title": "Argumentos posicionales obligatorios antes que los opcionales",
+                "open": true,
+                "body": [
+                  "En la definición, los parámetros sin valor por defecto deben ir antes que los que sí lo tienen. def medir(sensor, unidades='C') es válido, pero def medir(unidades='C', sensor) provoca un error de sintaxis.",
+                  "La razón es la ambigüedad: si los opcionales fueran primero, Python no podría decidir a qué parámetro corresponde un argumento posicional. Ordenar primero lo obligatorio y luego lo opcional mantiene la llamada sin ambigüedad."
+                ]
+              },
+              {
+                "icon": "dangerous",
+                "title": "El peligro de los valores por defecto mutables",
+                "body": [
+                  "Usar una lista o un diccionario como valor por defecto, por ejemplo def acumular(dato, registro=[]), es una trampa clásica: ese valor por defecto se crea una sola vez y se comparte entre todas las llamadas, así que el registro 'recuerda' lo de llamadas anteriores.",
+                  "La práctica segura es usar None como defecto y crear la estructura dentro de la función: registro = [] if registro is None else registro. Así cada llamada parte de una estructura nueva, evitando acumulaciones inesperadas que en un sistema de conteo de piezas podrían sumar lotes que no corresponden."
+                ]
+              },
+              {
+                "icon": "alt_route",
+                "title": "Salir temprano con return",
+                "body": [
+                  "Un return puede usarse al inicio de la función para abortar cuando los datos no son válidos, por ejemplo si una lista de lecturas llega vacía. Esto evita anidar todo el cuerpo dentro de un if y mejora la legibilidad.",
+                  "El patrón se conoce como 'cláusula de guarda': se verifican primero las condiciones que impiden continuar y se retorna de inmediato; el resto del cuerpo asume datos válidos. Es coherente con la programación estructurada porque mantiene un flujo claro y predecible."
+                ]
+              }
+            ]
+          },
+          "s2-stepper-default": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 2: cláusula de guarda y valor por defecto",
+            "statement": "Diseña promedio(lecturas, redondeo=2) que retorne None si la lista está vacía y, en otro caso, el promedio redondeado. Traza promedio([10.0, 20.0, 30.0]).",
+            "steps": [
+              {
+                "title": "Cláusula de guarda",
+                "body": "Si la lista está vacía, se retorna None de inmediato; aquí no aplica porque hay tres datos.",
+                "final": false
+              },
+              {
+                "title": "Usar el valor por defecto",
+                "body": "No se pasó redondeo, así que toma su valor por defecto 2.",
+                "formula": "\\text{redondeo}=2",
+                "final": false
+              },
+              {
+                "title": "Calcular el promedio",
+                "body": "Se suma y se divide entre la cantidad de datos.",
+                "formula": "\\bar{x}=\\frac{10.0+20.0+30.0}{3}=20.0",
+                "final": false
+              },
+              {
+                "title": "Redondear y retornar",
+                "body": "Se redondea a 2 decimales y se devuelve el resultado.",
+                "formula": "\\text{return}\\ 20.0",
+                "final": true
+              }
+            ]
+          },
+          "s2-saberes": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Amplía el manejo de parámetros y retorno en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) desarrolla los argumentos variables (*args, **kwargs), el desempaquetado de tuplas y más casos de paso por referencia frente a paso por valor con ejemplos de ingeniería."
+            ],
+            "reference": "Tema 5 · Sección 2 · Parámetros y retorno de valores",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-3": {
+        "kind": "theory",
+        "theme": "Tema",
+        "badge": "Tema 05 · Sección 3",
+        "navLabel": "Alcance de variables",
+        "title": "Alcance de las variables",
+        "learningOutcomeIds": [
+          "RA2"
+        ],
+        "intro": [
+          "El alcance (scope) responde a una pregunta esencial para la modularidad: ¿desde qué partes del programa es visible una variable y cuánto tiempo vive? Entenderlo evita errores silenciosos y prepara el terreno para razonar sobre la memoria en la Sección 4."
+        ],
+        "componentOrder": [
+          "s3-teoria-1",
+          "s3-figura-ambitos",
+          "s3-flashcards",
+          "s3-code-local",
+          "s3-teoria-2",
+          "s3-figura-legb",
+          "s3-carousel-legb",
+          "s3-stepper-sombra",
+          "s3-quiz-1",
+          "s3-teoria-3",
+          "s3-accordion-global",
+          "s3-stepper-contador",
+          "s3-saberes"
+        ],
+        "components": {
+          "s3-teoria-1": {
+            "type": "theory-block",
+            "title": "Variables locales y globales",
+            "eyebrow": "Base conceptual",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Una variable creada dentro de una función es local: existe solo mientras la función se ejecuta y desaparece cuando la función termina. Desde fuera de la función no se puede ver ni usar. Esta privacidad es deseable: garantiza que los cálculos internos de una función no contaminen el resto del programa.",
+              "Una variable creada en el cuerpo principal del programa, fuera de cualquier función, es global: puede leerse desde dentro de las funciones. Sin embargo, leer no es lo mismo que modificar; por defecto, una función que asigna a un nombre crea una variable local nueva, aunque exista una global con el mismo nombre.",
+              "Esta distinción es la base del aislamiento modular. Cada función trabaja en su propio espacio de nombres, como un operario que tiene su propia mesa de trabajo: puede consultar el tablero general (lo global), pero sus herramientas y piezas en proceso (lo local) no estorban a los demás."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "lock",
+                "text": "Local: nace y muere con la función; invisible desde fuera."
+              },
+              {
+                "icon": "public",
+                "text": "Global: visible para leer desde las funciones."
+              },
+              {
+                "icon": "shield_moon",
+                "text": "Asignar dentro de una función crea, por defecto, una variable local."
+              }
+            ],
+            "closing": [
+              "La figura de ámbitos te ayudará a visualizar dónde 'vive' cada variable."
+            ]
+          },
+          "s3-figura-ambitos": {
+            "type": "figure",
+            "title": "Ámbitos anidados: local dentro de global",
+            "assetId": "fig-ambitos",
+            "src": "",
+            "alt": "Diagrama de cajas concéntricas: una caja exterior 'ámbito global' que contiene una caja interior 'ámbito local de la función', con variables ubicadas en cada nivel.",
+            "caption": "El ámbito local está contenido en el global; una función ve hacia afuera, pero el exterior no ve adentro.",
+            "prompt": "Crear una figura didáctica en español con dos cajas concéntricas: la exterior rotulada 'Ámbito global' contiene la variable 'tarifa = 1500'; dentro, una caja 'Ámbito local de calcular_costo()' contiene 'total' y 'horas'. Flechas que indiquen 'la función puede leer tarifa (global)' y 'total y horas no existen fuera de la función'. Estilo de cajas anidadas, colores institucionales."
+          },
+          "s3-flashcards": {
+            "type": "flashcards",
+            "title": "Conceptos de alcance",
+            "cards": [
+              {
+                "term": "Variable local",
+                "definition": "Nombre creado dentro de una función; solo existe durante la ejecución de esa función y no es accesible desde fuera.",
+                "icon": "lock"
+              },
+              {
+                "term": "Variable global",
+                "definition": "Nombre definido en el cuerpo principal del módulo; puede leerse desde las funciones del mismo archivo.",
+                "icon": "public"
+              },
+              {
+                "term": "Espacio de nombres",
+                "definition": "Conjunto de nombres visibles en un punto del programa; cada función tiene el suyo, anidado en el global.",
+                "icon": "folder_managed"
+              },
+              {
+                "term": "Sombreado (shadowing)",
+                "definition": "Situación en que una variable local con el mismo nombre que una global oculta a la global dentro de la función.",
+                "icon": "filter_drama"
+              }
+            ]
+          },
+          "s3-code-local": {
+            "type": "code",
+            "title": "Variable local vs. global",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "alcance.py",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "instructions": [
+              "Ejecuta el archivo con python alcance.py y observa qué línea produce un error.",
+              "Comenta la última línea (print(total)) si quieres ver el resto de la salida sin la excepción.",
+              "Reflexiona: total existe dentro de calcular_costo pero no fuera; tarifa, en cambio, se lee sin problema dentro de la función."
+            ],
+            "code": "tarifa = 1500  # variable global\n\ndef calcular_costo(horas):\n    total = horas * tarifa  # lee la global tarifa; crea la local total\n    return total\n\nprint(calcular_costo(8))  # imprime 12000\nprint(total)              # NameError: total no existe aqui",
+            "expectedOutput": [
+              "Primero se imprime 12000. Luego Python lanza NameError: name 'total' is not defined, porque total es local a la función y deja de existir cuando esta termina. Esto demuestra el aislamiento del ámbito local."
+            ]
+          },
+          "s3-teoria-2": {
+            "type": "theory-block",
+            "title": "La regla LEGB: cómo Python resuelve un nombre",
+            "eyebrow": "Mecanismo de búsqueda",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Cuando Python encuentra un nombre, lo busca en un orden fijo conocido como regla LEGB: primero en el ámbito Local (la función actual), luego en el Enclosing (funciones que la contienen, si las hay), después en el Global (el módulo) y por último en el Built-in (los nombres predefinidos como len o print). Usa el primero que encuentra.",
+              "Este orden explica el sombreado: si dentro de una función defines una variable con el mismo nombre que una global, la búsqueda la encuentra primero en lo local y nunca llega a la global. La global no se modifica; simplemente queda oculta dentro de esa función.",
+              "Comprender LEGB es comprender por qué dos funciones pueden usar una variable llamada i sin interferir entre sí: cada i vive en su propio ámbito local. Es justamente lo que hace posible reutilizar funciones sin temer choques de nombres."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "search",
+                "text": "Orden de búsqueda: Local → Enclosing → Global → Built-in."
+              },
+              {
+                "icon": "filter_drama",
+                "text": "Un nombre local oculta (sombrea) uno global con el mismo nombre."
+              },
+              {
+                "icon": "done_all",
+                "text": "Cada función tiene su propio ámbito: no hay choque de nombres entre funciones."
+              }
+            ],
+            "closing": [
+              "El carrusel recorre los cuatro niveles de LEGB con ejemplos concretos."
+            ]
+          },
+          "s3-figura-legb": {
+            "type": "figure",
+            "title": "La escalera de búsqueda LEGB",
+            "assetId": "fig-legb",
+            "src": "",
+            "alt": "Diagrama en forma de escalera descendente con cuatro peldaños etiquetados Local, Enclosing, Global y Built-in, y una flecha que indica el orden de búsqueda de un nombre.",
+            "caption": "Python busca un nombre peldaño por peldaño y usa la primera coincidencia que encuentra.",
+            "prompt": "Crear una figura didáctica en español con una escalera o pila de cuatro niveles, de arriba hacia abajo: 'Local (función actual)', 'Enclosing (función contenedora)', 'Global (módulo)', 'Built-in (len, print)'. Una flecha vertical etiquetada 'orden de búsqueda' que recorre de Local a Built-in, con una marca de verificación en el primer nivel donde se encuentra el nombre. Estilo de diagrama por niveles, colores institucionales."
+          },
+          "s3-carousel-legb": {
+            "type": "carousel",
+            "title": "Los cuatro niveles de LEGB",
+            "slides": [
+              {
+                "label": "L",
+                "title": "Local",
+                "body": [
+                  "Nombres definidos dentro de la función en ejecución. Es el primer lugar donde Python busca, por ejemplo la variable total dentro de calcular_costo."
+                ],
+                "icon": "person"
+              },
+              {
+                "label": "E",
+                "title": "Enclosing",
+                "body": [
+                  "Ámbito de una función que contiene a otra (funciones anidadas). Útil en patrones avanzados; aparece antes que el global en la búsqueda."
+                ],
+                "icon": "account_tree"
+              },
+              {
+                "label": "G",
+                "title": "Global",
+                "body": [
+                  "Nombres definidos en el nivel principal del módulo, como tarifa. Las funciones los leen si no hay un local con ese nombre."
+                ],
+                "icon": "public"
+              },
+              {
+                "label": "B",
+                "title": "Built-in",
+                "body": [
+                  "Nombres que Python provee siempre: len, print, range, sum. Son el último recurso de la búsqueda."
+                ],
+                "icon": "inventory"
+              }
+            ]
+          },
+          "s3-stepper-sombra": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1: traza de sombreado",
+            "statement": "tarifa=1500 es global. Dentro de calcular_costo se hace tarifa=2000 (local) y total=horas*tarifa. Determina el costo para horas=4 y el valor de tarifa global tras la llamada.",
+            "steps": [
+              {
+                "title": "Entrar a la función",
+                "body": "Al asignar tarifa=2000 dentro de la función, se crea una variable local que sombrea a la global.",
+                "formula": "\\text{tarifa}_{\\text{local}}=2000",
+                "final": false
+              },
+              {
+                "title": "Resolver el nombre con LEGB",
+                "body": "Al calcular total, Python encuentra tarifa primero en lo local (2000).",
+                "formula": "\\text{total}=4 \\cdot 2000",
+                "final": false
+              },
+              {
+                "title": "Obtener el costo",
+                "body": "Se evalúa el producto dentro de la función.",
+                "formula": "\\text{total}=8000",
+                "final": false
+              },
+              {
+                "title": "Verificar la global",
+                "body": "La global no se tocó; al volver, tarifa sigue valiendo 1500.",
+                "formula": "\\text{tarifa}_{\\text{global}}=1500",
+                "final": true
+              }
+            ]
+          },
+          "s3-quiz-1": {
+            "type": "quiz",
+            "title": "Chequeo: resolución de nombres",
+            "questions": [
+              {
+                "prompt": "Una variable umbral=50 está definida fuera de las funciones. Dentro de una función se escribe solo print(umbral). ¿Qué ocurre?",
+                "options": [
+                  {
+                    "text": "Imprime 50: la función puede leer la global umbral según la regla LEGB.",
+                    "correct": true,
+                    "feedback": "Correcto: al no existir un umbral local, la búsqueda continúa hasta el ámbito global y encuentra 50."
+                  },
+                  {
+                    "text": "Lanza un error porque las globales no se ven dentro de funciones.",
+                    "correct": false,
+                    "feedback": "Revisa LEGB: leer una global desde una función sí está permitido; lo que requiere palabra clave especial es modificarla."
+                  },
+                  {
+                    "text": "Imprime None porque la variable no fue pasada como parámetro.",
+                    "correct": false,
+                    "feedback": "No es necesario pasarla como parámetro para leerla: la regla LEGB alcanza el ámbito global."
+                  }
+                ]
+              }
+            ]
+          },
+          "s3-teoria-3": {
+            "type": "theory-block",
+            "title": "Modificar globales y por qué conviene evitarlo",
+            "eyebrow": "Criterio de diseño",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Para que una función modifique una variable global (no solo leerla), Python exige declararla con la palabra clave global. Sin esa declaración, cualquier asignación crea una variable local. La palabra global existe, entonces, para hacer explícita una intención que de otro modo sería accidental.",
+              "Aunque es posible, modificar globales desde funciones se considera una mala práctica en programación estructurada: crea dependencias ocultas que dificultan saber quién cambió un valor y cuándo. En un sistema de control donde varias funciones comparten un estado global, un cambio inadvertido puede provocar comportamientos erráticos imposibles de reproducir.",
+              "La alternativa estructurada es comunicar datos por parámetros y retorno, como se vio en la Sección 2. Así cada función declara explícitamente qué recibe y qué entrega, y el flujo de información queda visible en las llamadas, no escondido en variables compartidas."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "key",
+                "text": "La palabra clave global permite modificar una global desde una función."
+              },
+              {
+                "icon": "visibility_off",
+                "text": "Las globales mutables crean dependencias ocultas difíciles de depurar."
+              },
+              {
+                "icon": "swap_horiz",
+                "text": "Prefiere parámetros y retorno para comunicar datos entre funciones."
+              }
+            ],
+            "closing": [
+              "El acordeón profundiza cuándo, excepcionalmente, una global es aceptable, y cómo sustituirla."
+            ]
+          },
+          "s3-accordion-global": {
+            "type": "accordion",
+            "title": "Profundización sobre el ámbito global",
+            "items": [
+              {
+                "icon": "key",
+                "title": "Qué hace exactamente la palabra clave global",
+                "open": true,
+                "body": [
+                  "Escribir global contador dentro de una función le indica a Python que toda asignación a contador en esa función debe afectar a la variable global, no crear una local. Sin esa línea, contador += 1 produciría un error porque Python trataría contador como local antes de que tuviera valor.",
+                  "Es importante entender que global no 'crea' la variable; declara que el nombre se refiere al ámbito global. Por eso suele usarse junto con una variable global previamente inicializada. Su uso debe ser raro y muy justificado."
+                ]
+              },
+              {
+                "icon": "tune",
+                "title": "Constantes globales: el caso aceptable",
+                "body": [
+                  "Hay un uso legítimo de lo global: las constantes de configuración que no cambian durante la ejecución, como GRAVEDAD = 9.81 o TARIFA_KWH = 750. Las funciones las leen sin declararlas con global porque solo las consultan, nunca las reasignan.",
+                  "Por convención se escriben en mayúsculas para señalar que son constantes. Este patrón es seguro porque no introduce estado mutable compartido: todas las funciones leen el mismo valor fijo, lo que es muy distinto de modificar una global durante la ejecución."
+                ]
+              },
+              {
+                "icon": "engineering",
+                "title": "Alternativa estructurada al estado global",
+                "body": [
+                  "Cuando varias funciones necesitan compartir y actualizar un estado —por ejemplo el conteo acumulado de piezas en una línea—, en lugar de una global mutable conviene pasar y retornar ese estado, o agruparlo en una estructura (un diccionario) que se entrega como parámetro.",
+                  "Así el flujo de datos queda explícito en las firmas de las funciones y en las llamadas. Cualquier persona que lea el programa sabe qué función toca el estado y en qué momento, lo que reduce los errores difíciles de reproducir típicos del estado global compartido."
+                ]
+              }
+            ]
+          },
+          "s3-stepper-contador": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 2: por qué falla un contador sin global",
+            "statement": "Existe piezas=0 global. Una función registrar() hace piezas += 1 sin declarar global. Explica el error y la corrección estructurada.",
+            "steps": [
+              {
+                "title": "Interpretar la asignación",
+                "body": "piezas += 1 equivale a piezas = piezas + 1, que es una asignación; Python marca piezas como local en la función.",
+                "final": false
+              },
+              {
+                "title": "Detectar el conflicto",
+                "body": "Para evaluar el lado derecho necesita el valor de piezas local, que aún no existe.",
+                "formula": "\\text{UnboundLocalError}",
+                "final": false
+              },
+              {
+                "title": "Opción 1: declarar global",
+                "body": "Añadir global piezas hace que la asignación afecte a la global; funciona, pero crea estado compartido.",
+                "final": false
+              },
+              {
+                "title": "Opción 2 (preferida): parámetro y retorno",
+                "body": "registrar(piezas) retorna piezas+1 y el principal reasigna; el flujo queda explícito y sin estado oculto.",
+                "formula": "\\text{piezas} = \\text{registrar(piezas)}",
+                "final": true
+              }
+            ]
+          },
+          "s3-saberes": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Estudia a fondo el alcance y los espacios de nombres en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) amplía la regla LEGB con funciones anidadas y closures, el uso de nonlocal y ejemplos de cómo el aislamiento de ámbitos sostiene la reutilización de módulos en proyectos de ingeniería."
+            ],
+            "reference": "Tema 5 · Sección 3 · Alcance de las variables",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-4": {
+        "kind": "theory",
+        "theme": "Tema",
+        "badge": "Tema 05 · Sección 4",
+        "navLabel": "Pila vs. memoria dinámica",
+        "title": "Pila vs. memoria dinámica",
+        "learningOutcomeIds": [
+          "RA2"
+        ],
+        "intro": [
+          "Este es el saber central del RA2: evaluar cómo se asigna la memoria durante la ejecución. Cada llamada a función usa la pila (stack); los datos que crecen y se comparten —listas, diccionarios, objetos— viven en la memoria dinámica o montículo (heap). Entender ambas regiones te permite estimar y controlar el consumo de recursos de un algoritmo."
+        ],
+        "componentOrder": [
+          "s4-teoria-1",
+          "s4-figura-stackheap",
+          "s4-flashcards",
+          "s4-tabla-comparativa",
+          "s4-teoria-2",
+          "s4-figura-pila-recursion",
+          "s4-carousel-pila",
+          "s4-stepper-pila",
+          "s4-chart-memoria",
+          "s4-teoria-3",
+          "s4-accordion-riesgos",
+          "s4-code-recursion",
+          "s4-stepper-iterativo",
+          "s4-saberes"
+        ],
+        "components": {
+          "s4-teoria-1": {
+            "type": "theory-block",
+            "title": "Dos regiones de memoria: pila y montículo",
+            "eyebrow": "Base conceptual",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Durante la ejecución, el programa usa principalmente dos regiones de memoria. La pila (stack) guarda el contexto de cada llamada a función: sus parámetros, sus variables locales y la dirección de retorno. Funciona como una pila de bandejas: cuando se llama a una función se apila un marco (frame); cuando la función termina, ese marco se desapila y su memoria se libera automáticamente.",
+              "El montículo o memoria dinámica (heap) guarda los datos cuyo tamaño no se conoce de antemano o que deben sobrevivir a la función que los creó: listas que crecen, diccionarios, objetos. En Python, cuando escribes lista = [1, 2, 3], el nombre lista vive en la pila (en su marco) pero el objeto [1, 2, 3] vive en el heap; la pila solo guarda una referencia a él.",
+              "La diferencia operativa es clave para el RA2: la memoria de la pila se asigna y libera de forma ordenada y automática al entrar y salir de cada función, mientras que la del heap se gestiona de forma dinámica durante la vida del dato. Evaluar un algoritmo implica saber qué parte de su memoria es pila (acotada por la profundidad de llamadas) y qué parte es heap (acotada por el volumen de datos)."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "layers",
+                "text": "Pila: marcos de llamada (parámetros, locales, retorno); LIFO, liberación automática."
+              },
+              {
+                "icon": "dataset",
+                "text": "Heap: datos dinámicos (listas, diccionarios, objetos) que pueden crecer y compartirse."
+              },
+              {
+                "icon": "link",
+                "text": "El nombre vive en la pila; el objeto grande vive en el heap, referenciado desde la pila."
+              }
+            ],
+            "sections": [
+              {
+                "title": "Por qué importa para el RA2",
+                "body": [
+                  "Evaluar la asignación de memoria de un algoritmo significa estimar su demanda de pila (profundidad de llamadas) y de heap (estructuras de datos), y anticipar riesgos como el desbordamiento de pila o el crecimiento descontrolado del heap."
+                ]
+              }
+            ],
+            "closing": [
+              "La figura siguiente muestra los dos territorios y cómo se conectan mediante referencias."
+            ]
+          },
+          "s4-figura-stackheap": {
+            "type": "figure",
+            "title": "Pila y montículo durante una llamada",
+            "assetId": "fig-stack-heap",
+            "src": "",
+            "alt": "Diagrama dividido en dos zonas: a la izquierda la pila con marcos apilados (main, calcular) que contienen variables locales; a la derecha el montículo con un objeto lista; una flecha desde un nombre en la pila apunta al objeto en el heap.",
+            "caption": "La pila apila un marco por llamada; el heap aloja el objeto que un nombre de la pila referencia.",
+            "prompt": "Crear una figura didáctica en español dividida en dos columnas. Izquierda rotulada 'Pila (stack)' con dos marcos apilados: 'main: lecturas (ref)' encima 'promedio(): suma, i'; cada marco etiquetado como 'frame'. Derecha rotulada 'Memoria dinámica (heap)' con un recuadro 'objeto lista [21.0, 23.5, 22.0]'. Una flecha desde 'lecturas (ref)' en la pila hacia el objeto del heap. Anotar 'el marco se libera al volver' en la pila. Estilo esquemático, colores institucionales."
+          },
+          "s4-flashcards": {
+            "type": "flashcards",
+            "title": "Memoria en ejecución",
+            "cards": [
+              {
+                "term": "Pila (stack)",
+                "definition": "Región de memoria que almacena los marcos de las llamadas a funciones; se administra de forma automática siguiendo el orden último en entrar, primero en salir (LIFO).",
+                "icon": "layers"
+              },
+              {
+                "term": "Marco de llamada (frame)",
+                "definition": "Bloque que la pila reserva por cada función activa con sus parámetros, variables locales y dirección de retorno.",
+                "icon": "crop_square"
+              },
+              {
+                "term": "Montículo (heap)",
+                "definition": "Región de memoria dinámica donde residen los objetos cuyo tamaño y tiempo de vida no dependen de una sola llamada, como listas y diccionarios.",
+                "icon": "dataset"
+              },
+              {
+                "term": "Referencia",
+                "definition": "Vínculo guardado en la pila que apunta a un objeto del heap; varios nombres pueden referenciar el mismo objeto.",
+                "icon": "link"
+              }
+            ]
+          },
+          "s4-tabla-comparativa": {
+            "type": "table",
+            "title": "Pila frente a montículo: comparación operativa",
+            "columns": [
+              "Criterio",
+              "Pila (stack)",
+              "Montículo (heap)"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Qué almacena",
+                  "Marcos de llamada: parámetros, locales, retorno",
+                  "Objetos dinámicos: listas, diccionarios, objetos"
+                ]
+              },
+              {
+                "cells": [
+                  "Asignación",
+                  {
+                    "badge": "Automática",
+                    "tone": "success"
+                  },
+                  {
+                    "badge": "Dinámica",
+                    "tone": "info"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  "Liberación",
+                  "Al terminar la función (desapilar)",
+                  "Cuando ya nadie referencia el objeto (recolector)"
+                ]
+              },
+              {
+                "cells": [
+                  "Orden",
+                  "LIFO (último en entrar, primero en salir)",
+                  "Sin orden fijo; según necesidad"
+                ]
+              },
+              {
+                "cells": [
+                  "Tamaño típico",
+                  "Acotado por la profundidad de llamadas",
+                  "Acotado por el volumen de datos"
+                ]
+              },
+              {
+                "cells": [
+                  "Riesgo característico",
+                  {
+                    "badge": "Desbordamiento de pila",
+                    "tone": "danger"
+                  },
+                  {
+                    "badge": "Crecimiento sin liberar",
+                    "tone": "warning"
+                  }
+                ]
+              }
+            ]
+          },
+          "s4-teoria-2": {
+            "type": "theory-block",
+            "title": "La pila de llamadas en acción",
+            "eyebrow": "Comportamiento LIFO",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Cada vez que se llama a una función, su marco se apila encima del marco de quien la llamó. Si main llama a procesar y procesar llama a validar, la pila tiene tres marcos apilados. Cuando validar termina, su marco se desapila y el control vuelve a procesar; cuando procesar termina, vuelve a main. Este orden estrictamente inverso es lo que significa LIFO.",
+              "La profundidad de la pila es la cantidad de marcos apilados a la vez. En llamadas normales es pequeña, pero en algoritmos recursivos puede crecer con el tamaño del problema: una recursión que se llama a sí misma n veces apila n marcos. Si esa profundidad supera el límite del intérprete, se produce un desbordamiento de pila (RecursionError en Python).",
+              "Evaluar la memoria de pila de un algoritmo, por tanto, equivale a estimar su profundidad máxima de llamadas. Una función iterativa mantiene la pila casi constante; una recursiva profunda la hace crecer proporcionalmente al problema. Esta es una decisión de diseño con consecuencias directas de memoria, justo lo que pide el RA2."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "swap_vert",
+                "text": "LIFO: el último marco apilado es el primero en liberarse."
+              },
+              {
+                "icon": "straighten",
+                "text": "Profundidad de pila ≈ número de llamadas activas simultáneas."
+              },
+              {
+                "icon": "error",
+                "text": "Recursión muy profunda → desbordamiento de pila ($\\text{RecursionError}$)."
+              }
+            ],
+            "closing": [
+              "El carrusel y el stepper muestran cómo se apilan y desapilan los marcos en una secuencia concreta."
+            ]
+          },
+          "s4-figura-pila-recursion": {
+            "type": "figure",
+            "title": "Pila profunda (recursión) vs. pila plana (iteración)",
+            "assetId": "fig-pila-recursion",
+            "src": "",
+            "alt": "Dos pilas lado a lado: a la izquierda una torre alta de muchos marcos idénticos de una función recursiva; a la derecha una pila baja de uno o dos marcos de una función iterativa.",
+            "caption": "La recursión apila un marco por llamada; la iteración mantiene la pila casi constante.",
+            "prompt": "Crear una figura didáctica en español con dos columnas. Izquierda rotulada 'Recursiva' con una torre alta de marcos apilados etiquetados 'suma_recursiva(...)' que se repite muchas veces, con una marca de advertencia '¡riesgo de desbordamiento!' arriba. Derecha rotulada 'Iterativa' con solo uno o dos marcos ('main', 'suma_iterativa') y la nota 'profundidad constante'. Estilo de marcos apilados, colores institucionales."
+          },
+          "s4-carousel-pila": {
+            "type": "carousel",
+            "title": "Apilar y desapilar marcos",
+            "slides": [
+              {
+                "label": "t1",
+                "title": "main activo",
+                "body": [
+                  "Comienza el programa: la pila contiene solo el marco de main con sus variables."
+                ],
+                "icon": "looks_one"
+              },
+              {
+                "label": "t2",
+                "title": "main llama a procesar",
+                "body": [
+                  "Se apila el marco de procesar encima de main. Ahora hay dos marcos; main queda en espera."
+                ],
+                "icon": "looks_two"
+              },
+              {
+                "label": "t3",
+                "title": "procesar llama a validar",
+                "body": [
+                  "Se apila validar. Tres marcos activos. La profundidad de pila es 3 en este instante."
+                ],
+                "icon": "looks_3"
+              },
+              {
+                "label": "t4",
+                "title": "validar retorna",
+                "body": [
+                  "El marco de validar se desapila y su memoria local se libera; el control vuelve a procesar."
+                ],
+                "icon": "undo"
+              },
+              {
+                "label": "t5",
+                "title": "todo se desapila",
+                "body": [
+                  "procesar retorna y se desapila; al final solo queda main. La pila se vació en orden inverso al de llamada."
+                ],
+                "icon": "done_all"
+              }
+            ]
+          },
+          "s4-stepper-pila": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1: profundidad máxima de la pila",
+            "statement": "main llama a leer_lote(), que llama a promediar(), que llama a redondear(). Ninguna es recursiva. Determina la profundidad máxima de la pila y qué se libera primero.",
+            "steps": [
+              {
+                "title": "Apilar en cadena",
+                "body": "Cada llamada apila un marco sobre el anterior: main, luego leer_lote, luego promediar, luego redondear.",
+                "final": false
+              },
+              {
+                "title": "Contar marcos simultáneos",
+                "body": "En el instante en que redondear se ejecuta, los cuatro marcos están apilados a la vez.",
+                "formula": "\\text{profundidad}_{\\max}=4",
+                "final": false
+              },
+              {
+                "title": "Aplicar LIFO al retorno",
+                "body": "Como redondear fue el último en apilarse, es el primero en liberarse al retornar.",
+                "final": false
+              },
+              {
+                "title": "Concluir",
+                "body": "Profundidad máxima 4; el orden de liberación es redondear → promediar → leer_lote → main.",
+                "formula": "\\text{libera: redondear} \\to \\text{main}",
+                "final": true
+              }
+            ]
+          },
+          "s4-chart-memoria": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Memoria de pila: recursión vs. iteración",
+            "description": [
+              "Hilo conductor: en la teoría vimos que la pila crece con la profundidad de llamadas. Aquí comparamos cómo evoluciona el número de marcos activos al procesar listas de tamaño creciente con una función recursiva (un marco por elemento) frente a una iterativa (profundidad casi constante), para sustentar la decisión de diseño del RA2."
+            ],
+            "note": "Lectura del gráfico: el eje horizontal es el tamaño de la lista (n) y el vertical, los marcos de pila activos en el peor momento. La serie recursiva crece linealmente (n marcos), acercándose al límite del intérprete y al riesgo de desbordamiento; la serie iterativa permanece plana en torno a 2 marcos. Conclusión: para n grande, la versión iterativa evalúa mejor la memoria de pila y evita el RecursionError.",
+            "height": "300px",
+            "labels": [
+              "n=100",
+              "n=500",
+              "n=1000",
+              "n=2000",
+              "n=3000"
+            ],
+            "datasets": [
+              {
+                "label": "Recursiva (marcos)",
+                "data": [
+                  100,
+                  500,
+                  1000,
+                  2000,
+                  3000
+                ]
+              },
+              {
+                "label": "Iterativa (marcos)",
+                "data": [
+                  2,
+                  2,
+                  2,
+                  2,
+                  2
+                ]
+              }
+            ],
+            "options": {
+              "scales": {
+                "y": {
+                  "title": {
+                    "display": true,
+                    "text": "Marcos de pila activos"
+                  }
+                },
+                "x": {
+                  "title": {
+                    "display": true,
+                    "text": "Tamaño de la lista n"
+                  }
+                }
+              }
+            }
+          },
+          "s4-teoria-3": {
+            "type": "theory-block",
+            "title": "Vida útil de los datos y liberación de memoria",
+            "eyebrow": "Gestión del heap",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Mientras la pila se libera sola al terminar cada función, los objetos del heap se liberan cuando ya nadie los referencia. Python usa un recolector de basura basado en conteo de referencias: cada objeto sabe cuántos nombres lo apuntan; cuando ese conteo llega a cero, la memoria se recupera. No tienes que liberar manualmente, pero sí debes evitar mantener referencias innecesarias.",
+              "Esto define el tiempo de vida (lifetime) de un dato. Una lista creada dentro de una función y no retornada deja de ser referenciada al terminar la función, por lo que su memoria del heap se recupera pronto. En cambio, una estructura guardada en una variable global o en una lista que crece indefinidamente permanece viva y consume memoria mientras el programa siga referenciándola.",
+              "Evaluar la asignación dinámica, en el sentido del RA2, incluye anticipar estas situaciones: una función que en cada llamada agrega datos a una lista global compartida hará crecer el heap sin liberar, un problema serio en un sistema de monitoreo que corre durante días. El diseño modular con datos de vida acotada es la defensa natural contra ese crecimiento."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "recycling",
+                "text": "El heap se libera por conteo de referencias: a cero referencias, se recupera la memoria."
+              },
+              {
+                "icon": "schedule",
+                "text": "El tiempo de vida de un dato depende de cuánto se le sigue referenciando."
+              },
+              {
+                "icon": "trending_up",
+                "text": "Acumular en estructuras globales hace crecer el heap sin liberar."
+              }
+            ],
+            "closing": [
+              "El acordeón detalla los dos riesgos opuestos de memoria y el código de la recursión los hace tangibles."
+            ]
+          },
+          "s4-accordion-riesgos": {
+            "type": "accordion",
+            "title": "Riesgos de memoria al ejecutar algoritmos",
+            "items": [
+              {
+                "icon": "stairs",
+                "title": "Desbordamiento de pila por recursión profunda",
+                "open": true,
+                "body": [
+                  "Cuando un algoritmo recursivo se llama a sí mismo demasiadas veces antes de alcanzar su caso base, apila tantos marcos que supera el límite del intérprete. Python lanza RecursionError; en lenguajes de más bajo nivel el síntoma es el clásico 'stack overflow'.",
+                  "La causa suele ser un caso base mal definido o un problema cuyo tamaño excede lo razonable para la recursión. La solución de diseño es convertir la recursión profunda en un ciclo iterativo, que mantiene la pila casi constante, o limitar y validar la profundidad esperada antes de ejecutar."
+                ]
+              },
+              {
+                "icon": "warning_amber",
+                "title": "Crecimiento descontrolado del heap",
+                "body": [
+                  "El riesgo opuesto ocurre en el heap: si una función acumula resultados en una estructura que nunca se vacía —por ejemplo, una lista global de todas las lecturas históricas de un sensor—, la memoria crece sin parar. En un proceso que corre semanas, esto agota la memoria disponible.",
+                  "La práctica preventiva es acotar la vida de los datos: procesar por bloques, descartar lo que ya no se necesita, o guardar resultados en disco en lugar de mantenerlos todos en memoria. Aquí se ve por qué el aislamiento de ámbitos de la Sección 3 ayuda: los datos locales se liberan solos al terminar la función."
+                ]
+              },
+              {
+                "icon": "balance",
+                "title": "Compartir referencias: ahorro y riesgo a la vez",
+                "body": [
+                  "Pasar una estructura grande por referencia (Sección 2) ahorra memoria porque no se copia: dos nombres apuntan al mismo objeto del heap. Es eficiente, pero implica que cualquiera de los dos puede modificarlo, afectando al otro.",
+                  "Evaluar la memoria, entonces, no es solo contar bytes: es decidir conscientemente cuándo compartir una referencia (eficiente, pero acoplado) y cuándo copiar (más memoria, pero aislado). Esta decisión equilibra consumo de recursos y seguridad de los datos, que es precisamente el tipo de análisis que exige el RA2."
+                ]
+              }
+            ]
+          },
+          "s4-code-recursion": {
+            "type": "code",
+            "title": "Medir la profundidad de pila de una función recursiva",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "profundidad_pila.py",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "instructions": [
+              "Lee el código: suma_recursiva apila un marco por cada elemento de la lista.",
+              "Guarda el archivo como profundidad_pila.py y ejecútalo con python profundidad_pila.py.",
+              "Aumenta n a 4000 o más para forzar el RecursionError y observar el desbordamiento de pila; luego reduce n para ver que con listas pequeñas funciona bien."
+            ],
+            "code": "import sys\n\ndef suma_recursiva(lista):\n    if not lista:                 # caso base\n        return 0\n    return lista[0] + suma_recursiva(lista[1:])  # apila un marco por elemento\n\nprint(\"Limite de recursion:\", sys.getrecursionlimit())\n\nn = 900\nlecturas = list(range(n))\nprint(\"Suma:\", suma_recursiva(lecturas))",
+            "expectedOutput": [
+              "Imprime el límite de recursión (típicamente 1000) y la suma de 0 a n-1 (404550 para n=900). Si subes n por encima del límite (p. ej. 4000), aparece RecursionError: maximum recursion depth exceeded, evidencia directa del desbordamiento de pila."
+            ]
+          },
+          "s4-stepper-iterativo": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 2: refactor a versión iterativa (pila acotada)",
+            "statement": "Convierte suma_recursiva en suma_iterativa para que la profundidad de pila no dependa de n. Compara el uso de pila para n=3000.",
+            "steps": [
+              {
+                "title": "Diagnosticar la recursiva",
+                "body": "La recursiva apila un marco por elemento: para n=3000 necesitaría 3000 marcos y desbordaría.",
+                "formula": "\\text{profundidad}_{\\text{rec}}=n=3000",
+                "final": false
+              },
+              {
+                "title": "Diseñar el ciclo",
+                "body": "Un acumulador y un for recorren la lista sin nuevas llamadas a sí misma.",
+                "formula": "\\text{total} \\mathrel{+}= x\\ \\text{para cada } x",
+                "final": false
+              },
+              {
+                "title": "Evaluar la pila resultante",
+                "body": "El ciclo vive en un solo marco; la pila no crece con n.",
+                "formula": "\\text{profundidad}_{\\text{iter}}=2\\ (\\text{constante})",
+                "final": false
+              },
+              {
+                "title": "Concluir el ahorro",
+                "body": "La versión iterativa procesa n=3000 sin riesgo de desbordamiento; misma respuesta, memoria de pila acotada.",
+                "formula": "\\text{total}=4498500",
+                "final": true
+              }
+            ]
+          },
+          "s4-saberes": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Evalúa la memoria con más profundidad en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) amplía la gestión de memoria con la notación de complejidad espacial $O(n)$, el conteo de referencias y el recolector de basura de Python, y casos industriales de fuga de memoria en sistemas de monitoreo de larga duración."
+            ],
+            "reference": "Tema 5 · Sección 4 · Pila vs. memoria dinámica",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      },
+      "seccion-5": {
+        "kind": "theory",
+        "theme": "Tema",
+        "badge": "Tema 05 · Sección 5",
+        "navLabel": "Programación estructurada",
+        "title": "Programación estructurada y diseño modular",
+        "learningOutcomeIds": [
+          "RA2"
+        ],
+        "intro": [
+          "La programación estructurada es el paradigma que integra todo lo anterior: construir programas con flujo claro (secuencia, selección e iteración), descompuestos en funciones de responsabilidad única que se comunican por parámetros y retorno, con un uso consciente de la memoria. En esta sección refactorizarás una solución previa en módulos y la analizarás, que es la evidencia del taller del Tema 05 (RA2)."
+        ],
+        "componentOrder": [
+          "s5-teoria-1",
+          "s5-figura-modular",
+          "s5-flashcards",
+          "s5-tabla-principios",
+          "s5-teoria-2",
+          "s5-carousel-refactor",
+          "s5-stepper-refactor",
+          "s5-code-modular",
+          "s5-teoria-3",
+          "s5-figura-memoria-modular",
+          "s5-accordion-criterios",
+          "s5-stepper-analisis",
+          "s5-evaluacion-taller",
+          "s5-saberes"
+        ],
+        "components": {
+          "s5-teoria-1": {
+            "type": "theory-block",
+            "title": "Qué es la programación estructurada",
+            "eyebrow": "Base conceptual",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "La programación estructurada, formalizada a partir del teorema de Böhm-Jacopini, afirma que cualquier algoritmo puede expresarse con solo tres estructuras de control: secuencia (instrucciones en orden), selección (if/else) e iteración (for/while). Prohíbe los saltos arbitrarios (goto) que enredan el flujo y vuelven el código imposible de seguir.",
+              "Sobre esa base, el diseño modular añade la descomposición en funciones: un problema grande se divide en subproblemas, cada uno resuelto por una función con una responsabilidad única, y la solución se compone llamando a esas funciones. El resultado es un programa que se lee de arriba abajo, se prueba por partes y se mantiene sin miedo.",
+              "Para el RA2, la programación estructurada es el marco que hace evaluable la memoria: como cada función define explícitamente sus datos locales (pila) y los datos que retorna o comparte (heap), es posible razonar sobre el consumo de recursos pieza por pieza, en lugar de enfrentar un bloque monolítico imposible de analizar."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "account_tree",
+                "text": "Tres estructuras bastan: secuencia, selección e iteración (Böhm-Jacopini)."
+              },
+              {
+                "icon": "view_module",
+                "text": "Diseño modular: dividir en funciones de responsabilidad única y componer."
+              },
+              {
+                "icon": "memory",
+                "text": "La modularidad hace evaluable la memoria por partes (pila/heap) — núcleo del RA2."
+              }
+            ],
+            "closing": [
+              "La figura compara un bloque monolítico con su versión modular antes de refactorizar."
+            ]
+          },
+          "s5-figura-modular": {
+            "type": "figure",
+            "title": "De un bloque monolítico a un diseño modular",
+            "assetId": "fig-modular",
+            "src": "",
+            "alt": "Diagrama de dos partes: a la izquierda un único bloque grande etiquetado 'todo en main'; a la derecha el mismo proceso dividido en funciones leer, validar, calcular y reportar, llamadas desde un main corto.",
+            "caption": "La descomposición convierte un bloque difícil de probar en módulos independientes y reutilizables.",
+            "prompt": "Crear una figura didáctica en español de dos columnas. Izquierda: un rectángulo grande y denso rotulado 'main(): leer + validar + calcular + reportar todo junto' con aspecto desordenado. Derecha: un 'main()' corto que llama en secuencia a cuatro cajas separadas 'leer_datos()', 'validar()', 'calcular_indicadores()' y 'reportar()', cada una con su propia entrada/salida. Flechas de composición del main a las funciones. Estilo de diagrama de bloques, colores institucionales."
+          },
+          "s5-flashcards": {
+            "type": "flashcards",
+            "title": "Programación estructurada y modularidad",
+            "cards": [
+              {
+                "term": "Programación estructurada",
+                "definition": "Paradigma que construye algoritmos con secuencia, selección e iteración, evitando saltos arbitrarios para lograr un flujo claro.",
+                "icon": "account_tree"
+              },
+              {
+                "term": "Modularidad",
+                "definition": "Descomposición de un problema en funciones de responsabilidad única que se combinan para resolver el todo.",
+                "icon": "view_module"
+              },
+              {
+                "term": "Refactorizar",
+                "definition": "Reorganizar el código (por ejemplo, extraer funciones) sin cambiar su comportamiento, para mejorar claridad, prueba y mantenimiento.",
+                "icon": "construction"
+              },
+              {
+                "term": "Acoplamiento",
+                "definition": "Grado de dependencia entre módulos; el diseño estructurado busca bajo acoplamiento y alta cohesión.",
+                "icon": "link_off"
+              }
+            ]
+          },
+          "s5-tabla-principios": {
+            "type": "table",
+            "title": "Principios del diseño modular y su efecto",
+            "columns": [
+              "Principio",
+              "Qué significa",
+              "Efecto en mantenimiento y memoria"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Responsabilidad única",
+                  "Cada función hace una sola tarea",
+                  "Fácil de probar; datos locales acotados (pila)"
+                ]
+              },
+              {
+                "cells": [
+                  "Alta cohesión",
+                  "Lo que va junto, agrupado en una función",
+                  "Lectura clara; menos variables compartidas"
+                ]
+              },
+              {
+                "cells": [
+                  "Bajo acoplamiento",
+                  "Funciones que dependen poco entre sí",
+                  "Cambios localizados; menos efectos colaterales en datos del heap"
+                ]
+              },
+              {
+                "cells": [
+                  "Comunicación explícita",
+                  "Datos por parámetros y retorno, no por globales",
+                  "Flujo de datos visible; vida de los datos predecible"
+                ]
+              }
+            ]
+          },
+          "s5-teoria-2": {
+            "type": "theory-block",
+            "title": "Cómo refactorizar una solución en funciones",
+            "eyebrow": "Procedimiento de refactorización",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Refactorizar es reescribir un programa que ya funciona para que quede modular, sin cambiar lo que hace. El procedimiento es sistemático: primero se identifican las responsabilidades del bloque monolítico (leer datos, validar, calcular, presentar); luego se extrae cada responsabilidad a una función con un nombre claro; finalmente, main queda como un orquestador corto que llama a esas funciones en orden.",
+              "Al extraer cada función se decide su interfaz: qué parámetros recibe y qué retorna. Aquí se aplica todo lo del tema: lo que la función necesita entra por parámetros (Sección 2), sus cálculos viven en variables locales que se liberan al terminar (Sección 3 y pila de la Sección 4), y los resultados salen por retorno en lugar de por globales.",
+              "El criterio de éxito es doble: el programa produce los mismos resultados que antes (no cambió el comportamiento) y ahora cada pieza puede probarse y reutilizarse por separado. Esta es exactamente la evidencia que pide el taller del Tema 05: una solución previa convertida en funciones modulares más su análisis de memoria."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "fact_check",
+                "text": "Identificar responsabilidades → extraer funciones → main orquestador."
+              },
+              {
+                "icon": "swap_horiz",
+                "text": "Cada función define su interfaz: parámetros de entrada, valor de retorno."
+              },
+              {
+                "icon": "verified",
+                "text": "Éxito: mismo comportamiento, piezas probables y reutilizables."
+              }
+            ],
+            "closing": [
+              "Sigue el carrusel y el stepper para refactorizar paso a paso un control de calidad de piezas."
+            ]
+          },
+          "s5-carousel-refactor": {
+            "type": "carousel",
+            "title": "Refactorización en cuatro pasos",
+            "slides": [
+              {
+                "label": "Paso 1",
+                "title": "Detectar responsabilidades",
+                "body": [
+                  "En el bloque original se distinguen cuatro tareas mezcladas: leer las medidas de las piezas, validar rangos, calcular el porcentaje de aprobadas y mostrar el reporte."
+                ],
+                "icon": "search"
+              },
+              {
+                "label": "Paso 2",
+                "title": "Extraer funciones",
+                "body": [
+                  "Cada tarea se convierte en una función: leer_medidas(), validar(medidas), tasa_aprobacion(medidas, tol) y reportar(tasa)."
+                ],
+                "icon": "content_cut"
+              },
+              {
+                "label": "Paso 3",
+                "title": "Definir interfaces",
+                "body": [
+                  "Se decide qué entra y qué sale de cada función; los datos viajan por parámetros y retorno, no por variables globales."
+                ],
+                "icon": "swap_horiz"
+              },
+              {
+                "label": "Paso 4",
+                "title": "Componer en main",
+                "body": [
+                  "main queda corto: llama a las funciones en orden y conecta sus salidas con sus entradas. El comportamiento es idéntico al original."
+                ],
+                "icon": "hub"
+              }
+            ]
+          },
+          "s5-stepper-refactor": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 1: refactorizar un control de calidad",
+            "statement": "Un bloque en main lee diámetros de piezas, descarta los que difieren más de la tolerancia del nominal y reporta el porcentaje aprobado. Refactorízalo en funciones y verifica que el resultado no cambia para [10.0, 10.2, 9.5, 10.1] con nominal 10.0 y tolerancia 0.3.",
+            "steps": [
+              {
+                "title": "Extraer la validación",
+                "body": "validar(d, nominal, tol) retorna True si |d - nominal| <= tol. Es una función de responsabilidad única.",
+                "formula": "|d - 10.0| \\le 0.3",
+                "final": false
+              },
+              {
+                "title": "Clasificar las piezas",
+                "body": "Se aplican: 10.0 ✓, 10.2 ✓, 9.5 ✗ (|9.5-10|=0.5>0.3), 10.1 ✓. Tres aprobadas de cuatro.",
+                "formula": "\\text{aprobadas}=3,\\ \\text{total}=4",
+                "final": false
+              },
+              {
+                "title": "Calcular la tasa en su función",
+                "body": "tasa_aprobacion retorna el porcentaje a partir de aprobadas y total.",
+                "formula": "\\text{tasa}=\\frac{3}{4}\\cdot 100 = 75\\%",
+                "final": false
+              },
+              {
+                "title": "Verificar equivalencia",
+                "body": "main compone las funciones y obtiene 75%, idéntico al bloque monolítico original. Comportamiento preservado.",
+                "formula": "\\text{tasa}=75\\%",
+                "final": true
+              }
+            ]
+          },
+          "s5-code-modular": {
+            "type": "code",
+            "title": "Versión modular del control de calidad",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "control_calidad.py",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "instructions": [
+              "Lee cómo main solo orquesta y cada cálculo vive en su propia función con datos locales.",
+              "Guarda el archivo como control_calidad.py y ejecútalo con python control_calidad.py.",
+              "Prueba con otra lista de diámetros o con otra tolerancia (por ejemplo 0.6) y confirma que solo cambian los argumentos de las llamadas, no el cuerpo de las funciones."
+            ],
+            "code": "def validar(d, nominal, tol):\n    return abs(d - nominal) <= tol\n\ndef tasa_aprobacion(medidas, nominal, tol):\n    aprobadas = [d for d in medidas if validar(d, nominal, tol)]\n    return len(aprobadas) / len(medidas) * 100\n\ndef reportar(tasa):\n    return f\"Aprobacion: {tasa:.1f}%\"\n\ndef main():\n    medidas = [10.0, 10.2, 9.5, 10.1]\n    tasa = tasa_aprobacion(medidas, nominal=10.0, tol=0.3)\n    print(reportar(tasa))\n\nmain()",
+            "expectedOutput": [
+              "Imprime 'Aprobacion: 75.0%'. Observa que la lista aprobadas es local a tasa_aprobacion: se crea en el heap durante esa llamada y se libera cuando la función retorna, evidencia del manejo acotado de memoria (RA2)."
+            ]
+          },
+          "s5-teoria-3": {
+            "type": "theory-block",
+            "title": "Analizar la memoria de una solución modular",
+            "eyebrow": "Evaluación de recursos (RA2)",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "body": [
+              "Una vez modularizada la solución, evaluar su memoria se vuelve un análisis por piezas. Para la pila, se estima la profundidad máxima de llamadas: en el control de calidad, main llama a tasa_aprobacion, que llama a validar dentro de una comprensión de lista; la profundidad es pequeña y constante, sin riesgo de desbordamiento.",
+              "Para el heap, se identifica qué estructuras se crean y cuánto viven. La lista aprobadas existe solo durante tasa_aprobacion y se libera al retornar; no hay acumulación global. Si el requisito fuera procesar millones de piezas en flujo, se evaluaría no construir la lista intermedia y contar directamente, reduciendo el pico de memoria del heap.",
+              "Este razonamiento —dónde nace cada dato, cuánto vive y cuándo se libera— es la evidencia central del RA2. La programación estructurada no es un fin estético: es lo que hace posible esta evaluación y, con ella, decisiones informadas sobre el consumo de recursos en sistemas de ingeniería que deben ser eficientes y confiables."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "layers",
+                "text": "Pila: estimar profundidad de llamadas; aquí es pequeña y constante."
+              },
+              {
+                "icon": "dataset",
+                "text": "Heap: identificar estructuras intermedias y su tiempo de vida."
+              },
+              {
+                "icon": "insights",
+                "text": "La evaluación por piezas sustenta decisiones de eficiencia (RA2)."
+              }
+            ],
+            "closing": [
+              "El acordeón fija los criterios de calidad del taller y el siguiente stepper muestra un análisis de memoria completo."
+            ]
+          },
+          "s5-figura-memoria-modular": {
+            "type": "figure",
+            "title": "Mapa de memoria del control de calidad modular",
+            "assetId": "fig-memoria-modular",
+            "src": "",
+            "alt": "Esquema de la pila con los marcos main, tasa_aprobacion y validar, y del heap con la lista de medidas y la lista intermedia aprobadas referenciadas desde el marco de tasa_aprobacion.",
+            "caption": "La profundidad de pila es pequeña y constante; la lista intermedia del heap vive solo durante tasa_aprobacion.",
+            "prompt": "Crear una figura didáctica en español dividida en dos zonas. Izquierda 'Pila (stack)' con tres marcos apilados: 'main()', 'tasa_aprobacion()', 'validar()'; anotar 'profundidad = 3, constante'. Derecha 'Memoria dinámica (heap)' con dos objetos: 'medidas [10.0, 10.2, 9.5, 10.1]' y 'aprobadas [10.0, 10.2, 10.1]'; flecha desde el marco 'tasa_aprobacion' hacia 'aprobadas' con la nota 'se libera al retornar'. Estilo esquemático, colores institucionales."
+          },
+          "s5-accordion-criterios": {
+            "type": "accordion",
+            "title": "Criterios para una buena solución modular",
+            "items": [
+              {
+                "icon": "checklist",
+                "title": "Cohesión y tamaño de las funciones",
+                "open": true,
+                "body": [
+                  "Una función cohesionada concentra una sola idea: si al describirla necesitas enumerar varias tareas inconexas, conviene partirla. Como referencia práctica, una función que no cabe de un vistazo en la pantalla suele estar haciendo demasiado.",
+                  "La cohesión facilita la prueba: puedes verificar validar() con casos límite (justo en la tolerancia, fuera de ella) sin ejecutar todo el programa. Esta capacidad de probar por partes es uno de los mayores beneficios de la modularidad frente al bloque monolítico."
+                ]
+              },
+              {
+                "icon": "link_off",
+                "title": "Bajo acoplamiento mediante interfaces claras",
+                "body": [
+                  "Dos funciones están poco acopladas cuando se comunican solo por sus parámetros y retornos, sin compartir variables globales mutables. Así, cambiar el interior de una función no obliga a tocar las demás mientras su interfaz se mantenga.",
+                  "El bajo acoplamiento también protege la memoria: como los datos viajan explícitamente, es fácil saber qué estructura se comparte por referencia y cuál se copia. Se evita el escenario de una global que varias funciones modifican y cuya vida útil nadie controla, fuente típica de fugas y errores intermitentes."
+                ]
+              },
+              {
+                "icon": "fact_check",
+                "title": "Evidencia esperada en el taller del Tema 05",
+                "body": [
+                  "El taller pide refactorizar una solución previa tuya (de los Temas 1 a 4) en funciones modulares y acompañarla de un análisis de memoria. La parte modular debe mostrar funciones de responsabilidad única, main como orquestador y comunicación por parámetros/retorno.",
+                  "El análisis de memoria debe identificar, para tu solución: la profundidad de pila (¿hay recursión que pueda desbordar?), las estructuras del heap y su tiempo de vida (¿algo se acumula sin liberar?), y al menos una decisión justificada de eficiencia (por ejemplo, evitar una lista intermedia). Ese análisis es lo que evidencia el RA2."
+                ]
+              }
+            ]
+          },
+          "s5-stepper-analisis": {
+            "type": "stepper",
+            "title": "Ejercicio resuelto 2: análisis de memoria de la solución modular",
+            "statement": "Para control_calidad.py procesando una lista de N diámetros, evalúa la profundidad de pila y la memoria del heap, e indica una optimización para N muy grande.",
+            "steps": [
+              {
+                "title": "Profundidad de pila",
+                "body": "La cadena de llamadas es main → tasa_aprobacion → validar; validar no es recursiva, así que la profundidad es constante (3), independiente de N.",
+                "formula": "\\text{profundidad}_{\\text{pila}}=3",
+                "final": false
+              },
+              {
+                "title": "Memoria del heap",
+                "body": "La lista aprobadas guarda hasta N elementos durante tasa_aprobacion y se libera al retornar.",
+                "formula": "\\text{heap}_{\\text{pico}} \\propto N",
+                "final": false
+              },
+              {
+                "title": "Detectar el costo evitable",
+                "body": "Construir la lista intermedia aprobadas solo para contarla duplica innecesariamente el dato en memoria.",
+                "final": false
+              },
+              {
+                "title": "Optimizar y concluir",
+                "body": "Reemplazar la lista por sum(1 for d in medidas if validar(...)) cuenta sin almacenar: el heap deja de crecer con N.",
+                "formula": "\\text{heap}_{\\text{pico}} \\propto 1",
+                "final": true
+              }
+            ]
+          },
+          "s5-evaluacion-taller": {
+            "type": "evaluation-activity",
+            "title": "Taller del Tema 05: refactorización modular y análisis de memoria",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "criterion": "CE2: el estudiante modulariza una solución previa y sustenta sus decisiones de pila y heap (RA2).",
+            "evidence": "Programa modular (funciones de responsabilidad única + main orquestador) a partir de una solución previa, acompañado de un análisis de memoria (profundidad de pila, estructuras del heap y su tiempo de vida, y al menos una decisión de eficiencia justificada).",
+            "technique": "Taller formativo",
+            "instrument": "Rúbrica analítica disciplinar",
+            "weight": "Formativa (sin ponderación numérica fija en el syllabus)",
+            "evaluationMoment": "avance",
+            "participationType": "individual",
+            "feedback": {
+              "strengths": "Funciones cohesionadas y bien nombradas; comunicación por parámetros/retorno; análisis de memoria correcto y específico.",
+              "improvement": "Funciones que aún mezclan responsabilidades, uso de globales mutables, o análisis de memoria genérico sin datos de la propia solución.",
+              "reinforcement": "Revisa la Sección 5 (refactorización) y la Sección 4 (pila/heap); rehaz el análisis sobre tu código real.",
+              "nextStep": "Lleva la solución modular y su análisis al Tema 06, donde será la base del proyecto integrador."
+            },
+            "rubric": {
+              "type": "analitica",
+              "levels": [
+                "No acreditable",
+                "Deficiente",
+                "Insuficiente",
+                "Aceptable",
+                "Bueno",
+                "Muy bueno",
+                "Sobresaliente"
+              ],
+              "criteria": [
+                {
+                  "name": "Modularidad (responsabilidad única, main orquestador)",
+                  "descriptors": {
+                    "Aceptable": "Divide en funciones, aunque alguna mezcla tareas.",
+                    "Sobresaliente": "Funciones cohesionadas, bajo acoplamiento, main breve y claro."
+                  }
+                },
+                {
+                  "name": "Comunicación por parámetros y retorno",
+                  "descriptors": {
+                    "Aceptable": "Usa parámetros pero conserva alguna global mutable.",
+                    "Sobresaliente": "Sin globales mutables; flujo de datos explícito y predecible."
+                  }
+                },
+                {
+                  "name": "Análisis de memoria (RA2)",
+                  "descriptors": {
+                    "Aceptable": "Menciona pila y heap de forma general.",
+                    "Sobresaliente": "Estima profundidad de pila, identifica estructuras del heap y su vida, y justifica una optimización."
+                  }
+                }
+              ]
+            }
+          },
+          "s5-saberes": {
+            "type": "saberes-link",
+            "eyebrow": "Documento de Saberes",
+            "icon": "menu_book",
+            "heading": "Consolida la programación estructurada en el Documento de Saberes",
+            "body": [
+              "El Documento de Saberes (PDF) desarrolla el teorema de Böhm-Jacopini, patrones de refactorización, cohesión y acoplamiento con ejemplos industriales, y enlaza esta sección con el proyecto integrador del Tema 06."
+            ],
+            "reference": "Tema 5 · Sección 5 · Programación estructurada y diseño modular",
+            "cta": "Consulta el Documento de Saberes (PDF) de la asignatura"
+          }
+        }
+      }
+    }
+  },
+  "pdf": {
+    "guideLabel": "DOCUMENTO DE SABERES VIRTUAL",
+    "kicker": "Aprendizaje guiado · Práctica aplicada · Autoevaluación",
+    "institution": "Universidad de América",
+    "year": "2026",
+    "title": "Funciones, modularidad y memoria",
+    "subtitle": "Documento de Saberes · Algoritmia Computacional I · Tema 05 de 06",
+    "purpose": "Desarrollar la modularización con funciones y la evaluación de la asignación de memoria (pila y memoria dinámica) bajo programación estructurada, evidenciando el RA2 con ejemplos transversales a las ingenierías.",
+    "structure": "Teoría · ejemplos resueltos · ejercicios · referencias APA.",
+    "sectionOrder": [
+      "pdf-intro",
+      "pdf-seccion-1",
+      "pdf-seccion-2",
+      "pdf-seccion-3",
+      "pdf-seccion-4",
+      "pdf-seccion-5",
+      "pdf-ejercicios",
+      "pdf-referencias"
+    ],
+    "sections": {
+      "pdf-intro": {
+        "title": "Presentación del Tema 05",
+        "intro": [
+          "Este capítulo del Documento de Saberes desarrolla el quinto tema de la asignatura: cómo organizar algoritmos en funciones reutilizables y cómo evaluar el uso de memoria durante su ejecución, alineado con el RA2."
+        ],
+        "componentOrder": [
+          "pdf-intro-detonadora",
+          "pdf-intro-objetivos",
+          "pdf-intro-mapa",
+          "pdf-intro-presaberes"
+        ],
+        "components": {
+          "pdf-intro-objetivos": {
+            "type": "objectives",
+            "title": "Objetivos del tema",
+            "items": [
+              {
+                "icon": "function",
+                "text": "Definir y llamar funciones para descomponer problemas de ingeniería."
+              },
+              {
+                "icon": "input",
+                "text": "Comunicar datos con parámetros y retorno."
+              },
+              {
+                "icon": "visibility",
+                "text": "Razonar el alcance de las variables (local/global)."
+              },
+              {
+                "icon": "memory",
+                "text": "Evaluar la asignación de memoria: pila frente a memoria dinámica (RA2)."
+              },
+              {
+                "icon": "architecture",
+                "text": "Aplicar programación estructurada para refactorizar y analizar una solución."
+              }
+            ]
+          },
+          "pdf-intro-mapa": {
+            "type": "list",
+            "title": "Mapa del capítulo",
+            "ordered": true,
+            "items": [
+              "Definición y llamada de funciones.",
+              "Parámetros y retorno de valores.",
+              "Alcance de las variables (regla LEGB).",
+              "Pila vs. memoria dinámica (stack/heap).",
+              "Programación estructurada y diseño modular.",
+              "Banco de ejercicios y referencias."
+            ]
+          },
+          "pdf-intro-presaberes": {
+            "type": "text",
+            "title": "Saberes previos necesarios",
+            "body": [
+              "Para aprovechar este capítulo conviene tener presentes las estructuras de control del Tema 3 (selección e iteración) y las estructuras de datos del Tema 4 (listas, tuplas, diccionarios y matrices), pues las funciones encapsularán esa lógica y manipularán esas estructuras.",
+              "El tema asume manejo básico de Python y nociones de Álgebra Lineal, requisito del programa. Todos los ejemplos son transversales a las ingenierías y se orientan a procesos industriales como bombeo, dosificación, control de calidad y monitoreo de sensores."
+            ]
+          },
+          "pdf-intro-detonadora": {
+            "type": "trigger-question",
+            "eyebrow": "Para empezar",
+            "question": "Si la misma rutina de dosificación aparece copiada y pegada en decenas de lugares de un sistema de control y debes corregirla porque cambió una norma, ¿cuánto te cuesta esa duplicación en mantenimiento, fiabilidad y uso de memoria, y por qué encapsularla en una única pieza que se carga una vez y se invoca cuando hace falta cambiaría la economía de tu programa?"
+          }
+        }
+      },
+      "pdf-seccion-1": {
+        "title": "Definición y llamada de funciones",
+        "intro": [
+          "En la presentación del tema reconocimos que un algoritmo escrito como una secuencia lineal de instrucciones se vuelve frágil a medida que crece: un controlador de envasado o un monitor de sensores acumula cientos de líneas que cuesta leer, probar y mantener. La salida a ese problema empieza aquí, con la unidad mínima de la modularidad.",
+          "En este primer capítulo aprenderás qué es una función, cómo se define y cómo se llama, y por qué esa sencilla distinción entre escribir una vez e invocar muchas veces cambia por completo la forma de construir software de ingeniería. Lo que descubras aquí —que una función es un contrato con nombre— será el cimiento de los cuatro capítulos siguientes."
+        ],
+        "componentOrder": [
+          "pdf-s1-teoria",
+          "pdf-s1-colflow",
+          "pdf-s1-keybox-def",
+          "pdf-s1-figura",
+          "pdf-s1-ejemplo",
+          "pdf-s1-code",
+          "pdf-s1-callout"
+        ],
+        "components": {
+          "pdf-s1-teoria": {
+            "type": "theory-block",
+            "title": "Definición, llamada y reutilización",
+            "body": [
+              "Conviene partir de una imagen cotidiana en la ingeniería de procesos. Cuando un operario debe calcular decenas de veces el caudal de distintas bombas, no vuelve a deducir la fórmula cada vez: tiene un procedimiento fijo al que solo le cambia los datos de entrada."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "bolt",
+                "text": "Definir registra; llamar ejecuta. Son dos momentos distintos del programa."
+              },
+              {
+                "icon": "repeat",
+                "text": "Escribir una vez, invocar muchas: menos duplicación, menos errores y un único punto de corrección."
+              }
+            ]
+          },
+          "pdf-s1-figura": {
+            "type": "figure",
+            "title": "Anatomía de una función en Python",
+            "assetId": "fig-anatomia-funcion",
+            "src": "",
+            "alt": "Diagrama que rotula las partes de una definición de función: palabra def, nombre, parámetros, dos puntos, cuerpo y return.",
+            "caption": "El encabezado declara la interfaz; el cuerpo implementa la tarea.",
+            "prompt": "Crear una figura didáctica en español que muestre la línea 'def calcular_caudal(area, velocidad):' con flechas etiquetadas señalando 'palabra clave def', 'nombre', 'parámetros' y 'dos puntos'; debajo el cuerpo indentado 'caudal = area * velocidad' y 'return caudal' etiquetados como 'cuerpo' y 'valor de retorno'. Estilo limpio, tipografía monoespaciada."
+          },
+          "pdf-s1-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: caudal de una bomba",
+            "context": [
+              "Se requiere calcular el caudal $Q = A \\cdot v$ para varias bombas de una línea de bombeo, con $A$ en $\\text{m}^2$ y $v$ en $\\text{m/s}$."
+            ],
+            "formula": "Q = A \\cdot v",
+            "solution": [
+              "Se define calcular_caudal(area, velocidad) que retorna el producto. Para una bomba con $A=0.02\\ \\text{m}^2$ y $v=2.5\\ \\text{m/s}$, la llamada calcular_caudal(0.02, 2.5) devuelve $Q=0.05\\ \\text{m}^3/\\text{s}$.",
+              "La misma función, invocada con otros datos, resuelve cualquier bomba sin reescribir la fórmula: si $A=0.05$ y $v=3.2$, entonces $Q=0.16\\ \\text{m}^3/\\text{s}$."
+            ]
+          },
+          "pdf-s1-code": {
+            "type": "code",
+            "title": "Definición y llamada en Python",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "caudal.py",
+            "instructions": [
+              "Guarda el fragmento como caudal.py y ejecútalo con python caudal.py desde una terminal. Identifica primero dónde termina la definición y dónde empiezan las dos llamadas; luego cambia los argumentos de las llamadas para comprobar que la misma función se reutiliza con datos distintos."
+            ],
+            "code": "def calcular_caudal(area, velocidad):\n    \"\"\"Caudal volumetrico Q = A * v, con A en m^2 y v en m/s.\"\"\"\n    caudal = area * velocidad\n    return caudal\n\n# La definicion de arriba no produce ninguna salida por si sola.\n# Solo estas dos llamadas ejecutan el cuerpo:\nprint(calcular_caudal(0.02, 2.5))\nprint(calcular_caudal(0.05, 3.2))",
+            "expectedOutput": [
+              "Imprime 0.05 y 0.16000000000000003."
+            ],
+            "explanation": [
+              "Léelo de arriba abajo siguiendo el flujo de control. Las tres primeras líneas solo definen la función: si borraras los dos print, el programa no mostraría nada, porque el cuerpo permanece inerte hasta ser invocado. Cada print dispara una llamada que vincula los argumentos a los parámetros (la primera con $A=0.02$ y $v=2.5$, la segunda con $A=0.05$ y $v=3.2$), ejecuta el mismo cuerpo y devuelve su resultado. Que el segundo valor aparezca como 0.16000000000000003 no es un error: es la imprecisión normal de los números de punto flotante, un detalle que en ingeniería se controla redondeando al reportar."
+            ]
+          },
+          "pdf-s1-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Cierre y puente hacia la siguiente sección",
+            "body": [
+              "Ya distingues definir de llamar y entiendes por qué una función es un contrato reutilizable que hace una sola cosa. Pero un contrato necesita términos claros sobre qué recibe y qué entrega: ¿cómo le pasamos los datos a la función y cómo nos devuelve sus resultados? Ese es precisamente el tema de la Sección 2, donde abriremos los dos canales de comunicación de una función —los parámetros y el retorno—.",
+              "Si deseas ampliar la distinción entre funciones y procedimientos y las convenciones profesionales para nombrarlas, encontrarás un desarrollo más extenso en la bibliografía básica y complementaria de la asignatura (Joyanes, 2013; Downey, 2015)."
+            ]
+          },
+          "pdf-s1-keybox-def": {
+            "type": "key-box",
+            "variant": "definicion",
+            "title": "Función",
+            "body": [
+              "Bloque de código con nombre propio que agrupa un conjunto de instrucciones para realizar una tarea concreta y que puede invocarse cuantas veces se necesite. Definir la función la registra en memoria; solo la llamada —el nombre seguido de paréntesis— ejecuta su cuerpo y devuelve el valor de $\\text{return}$."
+            ]
+          },
+          "pdf-s1-colflow": {
+            "type": "column-flow",
+            "body": [
+              "Una función es exactamente eso llevado al algoritmo: un conjunto de pasos al que le damos un nombre para poder usarlo sin volver a pensar en sus detalles internos. Como señala Joyanes (2013), la modularidad mediante subprogramas es el mecanismo central de la programación estructurada para dominar la complejidad de los problemas grandes dividiéndolos en piezas tratables.",
+              "Esa idea se concreta en dos momentos que es indispensable no confundir. El primero es la definición: en Python se escribe con la palabra reservada def, seguida de un nombre que debería ser un verbo descriptivo, una lista de parámetros entre paréntesis y un cuerpo indentado que casi siempre termina con return.",
+              "Definir, sin embargo, no ejecuta nada; tan solo registra la función en la memoria del programa y la deja disponible. El segundo momento es la llamada o invocación —el nombre seguido de paréntesis—, y es la única que dispara la ejecución del cuerpo.",
+              "Cuando esto ocurre, el control salta al interior de la función, se ejecutan sus instrucciones y, al terminar, regresa a la línea siguiente trayendo consigo el valor de retorno. Downey (2015) insiste en que comprender este ir y volver del flujo de control es el paso decisivo para dejar de ver un programa como una lista plana de órdenes y empezar a verlo como una composición de piezas.",
+              "El valor formativo de todo esto se resume en dos palabras: reutilización y legibilidad. Una fórmula escrita una sola vez se invoca en muchos lugares y, si algún día cambia, se corrige en uno solo en vez de en quince. Por eso una función bien diseñada respeta el principio de responsabilidad única: hace una sola cosa, la hace bien y la anuncia con un nombre que la describe.",
+              "Como verás a lo largo del capítulo, este criterio aparentemente estético es, en realidad, lo que hace que un algoritmo industrial sea probable, mantenible y seguro."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-2": {
+        "title": "Parámetros y retorno de valores",
+        "intro": [
+          "Cerramos la Sección 1 diciendo que una función es un contrato: promete realizar una tarea sin obligar a quien la usa a conocer su interior. Todo contrato, no obstante, necesita cláusulas explícitas sobre qué entra y qué sale. Esas cláusulas son los dos canales de comunicación que abrimos en este capítulo: lo que la función recibe, a través de sus parámetros, y lo que entrega, a través del retorno.",
+          "Aprenderás a pasar datos por posición y por nombre, a fijar valores por defecto y a devolver uno o varios resultados; verás además un matiz delicado —el de los datos mutables— que más adelante explicará por qué ciertos objetos viven en la memoria dinámica. Dominar estos canales es lo que separa una función verdaderamente reutilizable de un bloque rígido que solo sirve para un caso."
+        ],
+        "componentOrder": [
+          "pdf-s2-teoria",
+          "pdf-s2-colflow",
+          "pdf-s2-tabla",
+          "pdf-s2-twocol-mut",
+          "pdf-s2-ejemplo",
+          "pdf-s2-code",
+          "pdf-s2-callout"
+        ],
+        "components": {
+          "pdf-s2-teoria": {
+            "type": "theory-block",
+            "title": "Argumentos, valores por defecto y retorno",
+            "body": [
+              "Empecemos por el canal de entrada. Conviene distinguir con cuidado dos términos que el lenguaje cotidiano confunde: el parámetro es el nombre declarado en la definición, un recipiente vacío que espera un dato; el argumento es el valor concreto que se entrega en la llamada y que llena ese recipiente."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "swap_horiz",
+                "text": "Argumentos por posición o por nombre; valores por defecto para el caso común."
+              },
+              {
+                "icon": "warning",
+                "text": "Mutables (lista/diccionario) se modifican dentro de la función; inmutables no."
+              }
+            ]
+          },
+          "pdf-s2-tabla": {
+            "type": "table",
+            "title": "Formas de pasar argumentos",
+            "columns": [
+              "Forma",
+              "Sintaxis",
+              "Cuándo conviene"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Por posición",
+                  "dosificar(50, 0.3)",
+                  "Pocos parámetros, orden evidente."
+                ]
+              },
+              {
+                "cells": [
+                  "Por nombre",
+                  "dosificar(volumen=50, concentracion=0.3)",
+                  "Muchos parámetros o significado no obvio."
+                ]
+              },
+              {
+                "cells": [
+                  "Valor por defecto",
+                  "medir(sensor) usa unidades='C'",
+                  "Hay un caso común que no debe repetirse."
+                ]
+              }
+            ]
+          },
+          "pdf-s2-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: retorno múltiple de un análisis",
+            "context": [
+              "Una función analizar(lecturas) debe devolver a la vez el promedio, el máximo y el mínimo de un conjunto de mediciones $[21.0, 23.5, 22.0, 24.5]$."
+            ],
+            "formula": "\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i",
+            "solution": [
+              "La función retorna la tupla $(\\bar{x},\\ \\max,\\ \\min)$. El promedio es $\\bar{x}=\\frac{21.0+23.5+22.0+24.5}{4}=22.75$, el máximo es $24.5$ y el mínimo $21.0$.",
+              "En la llamada se desempaqueta: prom, mx, mn = analizar(lecturas), de modo que cada nombre recibe su componente en orden, evitando tres llamadas separadas."
+            ]
+          },
+          "pdf-s2-code": {
+            "type": "code",
+            "title": "Parámetros por nombre y valor por defecto",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "dosificar.py",
+            "instructions": [
+              "Guarda como dosificar.py y ejecútalo con python dosificar.py. Localiza el parámetro con valor por defecto (unidades) y observa que las dos primeras llamadas dan el mismo resultado aunque cambie el orden; la tercera muestra cómo sobrescribir el valor por defecto."
+            ],
+            "code": "def dosificar(volumen, concentracion, unidades='g/L'):\n    masa = volumen * concentracion\n    return f\"{masa} {unidades}\"\n\n# Por posicion: el orden de los argumentos sigue al de los parametros\nprint(dosificar(50, 0.3))\n# Por nombre: el orden ya no importa\nprint(dosificar(concentracion=0.3, volumen=50))\n# Sobrescribiendo el valor por defecto de unidades\nprint(dosificar(50, 0.3, unidades='mg/L'))",
+            "expectedOutput": [
+              "Imprime '15.0 g/L', luego '15.0 g/L' y finalmente '15.0 mg/L'."
+            ],
+            "explanation": [
+              "El fragmento materializa los tres conceptos de la sección en una misma función de dosificación. La primera y la segunda llamada producen exactamente el mismo resultado, lo que demuestra que pasar por posición y por nombre son equivalentes en cuanto al valor calculado; la diferencia es solo de claridad de lectura. La tercera llamada conserva el cálculo de la masa pero reemplaza el valor por defecto 'g/L' por 'mg/L', evidenciando que un valor por defecto cubre el caso común sin impedir que se sustituya cuando hace falta. Nota que la función usa return, no print, para entregar la cadena; gracias a ello el resultado podría guardarse o encadenarse con otra función, y no únicamente mostrarse."
+            ]
+          },
+          "pdf-s2-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Cierre y puente hacia la siguiente sección",
+            "body": [
+              "Con los parámetros y el retorno ya sabes cómo entran y salen los datos de una función. Pero ese flujo plantea una pregunta nueva: una vez dentro, ¿desde dónde es visible cada variable y cuánto tiempo vive? ¿Por qué un nombre creado dentro de la función desaparece al terminar, mientras otro definido fuera sigue accesible?",
+              "Responder a esto es el objeto de la Sección 3, dedicada al alcance de las variables, que además prepara el terreno para razonar sobre la memoria. Los argumentos variables (*args, **kwargs) y la discusión completa entre paso por valor y paso por referencia se amplían en la bibliografía complementaria (Downey, 2015; Oviedo, 2005)."
+            ]
+          },
+          "pdf-s2-twocol-mut": {
+            "type": "two-column",
+            "title": "Argumentos inmutables vs. mutables",
+            "columns": [
+              {
+                "title": "Inmutables (número, cadena)",
+                "body": [
+                  "La función trabaja sobre el valor sin alterar el original: lo que ocurre dentro no se ve fuera.",
+                  "Reasignar el parámetro no afecta a la variable que se pasó en la llamada."
+                ]
+              },
+              {
+                "title": "Mutables (lista, diccionario)",
+                "body": [
+                  "La función recibe una referencia al mismo objeto del montículo: si lo modifica, el cambio es visible fuera.",
+                  "Útil para actualizar estructuras grandes sin copiarlas, pero fuente de errores si no se documenta."
+                ]
+              }
+            ]
+          },
+          "pdf-s2-colflow": {
+            "type": "column-flow",
+            "body": [
+              "En def dosificar(volumen, concentracion), volumen y concentracion son parámetros; en la llamada dosificar(50, 0.3), los números 50 y 0.3 son los argumentos. Esos argumentos pueden pasarse por posición —respetando el orden de los parámetros— o por nombre, escribiendo parametro=valor, forma que vuelve la llamada inequívoca cuando hay varios parámetros y que Oviedo (2005) recomienda como práctica de claridad.",
+              "A ello se suman los valores por defecto, que permiten cubrir el caso más común sin obligar a repetirlo en cada invocación.",
+              "El canal de salida lo gobierna la sentencia return, que cumple dos efectos simultáneos: termina de inmediato la ejecución de la función y entrega un valor al punto de llamada. Si una función no incluye return, Python devuelve automáticamente el valor especial None. Una función puede, por tanto, devolver un solo valor, varios empaquetados en una tupla, o ninguno.",
+              "Aquí es crucial no confundir return con print: como advierte Downey (2015), imprimir escribe un texto en pantalla pero no entrega nada al programa, mientras que retornar deja un dato vivo que el resto del código puede seguir usando. Una función que solo imprime no puede encadenarse con otras, y por eso resulta inservible como pieza de una solución modular.",
+              "Queda un matiz crítico que conviene anticipar porque tendrá consecuencias en la memoria. El comportamiento de una función ante los datos que recibe depende de si esos datos son inmutables o mutables. Los inmutables —números y cadenas— no se ven afectados por lo que la función haga con ellos.",
+              "Los mutables —listas y diccionarios, vistos en el Tema 4— se pasan por referencia: la función recibe un acceso al mismo objeto y, si lo modifica, el cambio se observa también fuera.",
+              "Joyanes (2008) subraya que este reparto entre paso por valor y paso por referencia es una de las primeras fuentes de errores difíciles de rastrear, y es justamente el hilo que retomaremos en la Sección 4 al hablar del montículo."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-3": {
+        "title": "Alcance de las variables",
+        "intro": [
+          "Al abrir los canales de entrada y salida en la Sección 2 quedó pendiente una cuestión que ahora resolvemos: cuando un dato entra en una función y allí dentro nacen variables auxiliares, ¿dónde existen esas variables y por cuánto tiempo? La respuesta es el concepto de alcance, o scope, que define desde qué partes del programa es visible un nombre y cuándo deja de existir.",
+          "Lejos de ser un tecnicismo, el alcance es la garantía técnica del aislamiento modular del que venimos hablando: es lo que permite que dos funciones reutilicen el nombre i sin estorbarse.",
+          "En este capítulo distinguiremos variables locales y globales, presentaremos la regla LEGB con que Python resuelve cada nombre y veremos por qué entender dónde vive cada variable es el último escalón antes de poder evaluar, en la Sección 4, dónde vive cada dato en la memoria física."
+        ],
+        "componentOrder": [
+          "pdf-s3-teoria",
+          "pdf-s3-colflow",
+          "pdf-s3-keybox-global",
+          "pdf-s3-figura",
+          "pdf-s3-ejemplo",
+          "pdf-s3-code",
+          "pdf-s3-callout"
+        ],
+        "components": {
+          "pdf-s3-teoria": {
+            "type": "theory-block",
+            "title": "Local, global y la regla LEGB",
+            "body": [
+              "La distinción de partida es sencilla pero de consecuencias profundas. Una variable creada dentro de una función es local: existe únicamente durante la ejecución de esa función y es invisible desde fuera; cuando la función termina, desaparece. Una variable creada en el nivel principal del módulo, en cambio, es global y puede leerse desde las funciones del mismo archivo."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "search",
+                "text": "LEGB: Local → Enclosing → Global → Built-in."
+              },
+              {
+                "icon": "swap_horiz",
+                "text": "Prefiere parámetros y retorno antes que modificar globales."
+              }
+            ]
+          },
+          "pdf-s3-figura": {
+            "type": "figure",
+            "title": "Ámbitos anidados: local dentro de global",
+            "assetId": "fig-ambitos",
+            "src": "",
+            "alt": "Cajas concéntricas: ámbito global que contiene el ámbito local de una función.",
+            "caption": "La función ve hacia afuera (lee globales); el exterior no ve las variables locales.",
+            "prompt": "Crear una figura con dos cajas concéntricas: exterior 'Ámbito global' con 'tarifa = 1500'; interior 'Ámbito local de calcular_costo()' con 'total' y 'horas'. Anotar 'la función lee tarifa' y 'total/horas no existen fuera'. Estilo de cajas anidadas."
+          },
+          "pdf-s3-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: sombreado de una variable",
+            "context": [
+              "Sea tarifa=1500 global. Dentro de calcular_costo se asigna tarifa=2000 (local) y total=horas*tarifa, con horas=4."
+            ],
+            "solution": [
+              "Al asignar tarifa dentro de la función se crea una variable local que sombrea a la global. Al evaluar total, la regla LEGB encuentra primero la local: $\\text{total}=4 \\cdot 2000 = 8000$.",
+              "Tras la llamada, la variable global no cambió: sigue valiendo $1500$. El sombreado oculta, no modifica, la global."
+            ]
+          },
+          "pdf-s3-code": {
+            "type": "code",
+            "title": "Local vs. global en Python",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "alcance.py",
+            "instructions": [
+              "Guarda como alcance.py y ejecútalo con python alcance.py. Deja primero la última línea comentada para ver la salida correcta; luego quítale el comentario y vuelve a ejecutar para provocar el NameError y comprobar de primera mano que total es local."
+            ],
+            "code": "tarifa = 1500  # variable global del modulo\n\ndef calcular_costo(horas):\n    total = horas * tarifa  # lee la global tarifa; crea la local total\n    return total\n\nprint(calcular_costo(8))   # 12000\n# print(total)             # NameError: total no existe aqui",
+            "expectedOutput": [
+              "Imprime 12000. Si se descomenta la última línea, aparece NameError: name 'total' is not defined."
+            ],
+            "explanation": [
+              "Este pequeño programa pone a prueba la teoría con dos nombres de comportamiento opuesto. Dentro de calcular_costo, la expresión horas * tarifa lee sin problema la variable global tarifa: la regla LEGB no la halla en lo Local, sigue subiendo y la encuentra en lo Global. En cambio, total se crea por asignación dentro de la función, así que es local y solo existe durante la llamada; por eso $8 \\cdot 1500 = 12000$ se imprime correctamente, pero intentar usar total fuera lanza un NameError. El experimento hace tangible el aislamiento del ámbito local: la función puede mirar hacia afuera, pero el exterior no puede ver lo que ella crea por dentro."
+            ]
+          },
+          "pdf-s3-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Cierre y puente hacia la siguiente sección",
+            "body": [
+              "Ahora sabes que una variable local nace y muere con la llamada y que una global solo se lee, no se reasigna sin más. Esa frase —nace y muere con la llamada— encierra una pregunta física que aún no hemos respondido: ¿en qué parte de la memoria del computador vive realmente una variable local y por qué se libera sola al terminar la función?",
+              "La Sección 4 baja a ese nivel y distingue la memoria de pila de la memoria dinámica, el saber central del RA2. Las funciones anidadas, los closures y la palabra clave nonlocal se amplían en la bibliografía básica y complementaria (Joyanes, 2013; Downey, 2015)."
+            ]
+          },
+          "pdf-s3-keybox-global": {
+            "type": "key-box",
+            "variant": "alerta",
+            "title": "Evita modificar globales desde una función",
+            "body": [
+              "Reasignar una global con la palabra clave $\\text{global}$ introduce dependencias ocultas: el comportamiento de la función deja de depender solo de lo que recibe. Comunica los datos por parámetros y retorno para mantener un flujo visible y predecible, coherente con la programación estructurada."
+            ]
+          },
+          "pdf-s3-colflow": {
+            "type": "column-flow",
+            "body": [
+              "Hay un detalle que sorprende a quien empieza: por defecto, asignar un nombre dentro de una función crea siempre una variable local nueva, aunque exista una global con idéntico nombre. Leer una global es libre; reasignarla, no.",
+              "Joyanes (2013) describe esta privacidad como la base del encapsulamiento: cada subprograma trabaja en su propio espacio de nombres, igual que un operario dispone de su propia mesa de trabajo sin invadir la de los demás.",
+              "Para decidir a cuál de esos espacios pertenece un nombre, Python aplica un orden de búsqueda fijo conocido como regla LEGB: examina primero el ámbito Local —la función actual—, luego el Enclosing —las funciones que la contienen, si las hay—, después el Global —el módulo— y por último el Built-in, donde residen nombres predefinidos como len o print. Se queda con la primera coincidencia.",
+              "Este recorrido explica el fenómeno del sombreado (shadowing): si dentro de una función defines una variable con el mismo nombre que una global, la búsqueda la encuentra primero en lo local y nunca llega a la global, que queda oculta pero intacta. Comprender LEGB, observa Downey (2015), es comprender por qué reutilizar funciones jamás provoca choques de nombres entre ellas.",
+              "Queda la tentación de modificar directamente una variable global desde dentro de una función. Python lo permite mediante la palabra clave global, pero es una práctica desaconsejada porque introduce dependencias ocultas: el comportamiento de la función deja de depender solo de lo que recibe y empieza a depender de un estado externo invisible en su firma.",
+              "La alternativa coherente con la programación estructurada —y la que adoptaremos en la Sección 5— es comunicar los datos exclusivamente por parámetros y retorno, de modo que el flujo de información permanezca visible y predecible."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-4": {
+        "title": "Pila vs. memoria dinámica",
+        "intro": [
+          "Llegamos al corazón del tema. En la Sección 3 dijimos que una variable local 'nace y muere con la llamada' y dejamos abierta la pregunta de dónde vive físicamente y por qué se libera sola. Este capítulo responde a esa pregunta y, al hacerlo, desarrolla directamente el Resultado de Aprendizaje 2: evaluar la asignación de memoria en un computador para la ejecución de algoritmos.",
+          "Para ello distinguiremos dos regiones que el programa usa simultáneamente —la pila o stack, donde viven las llamadas, y el montículo o heap, donde viven los datos dinámicos— y aprenderás a leer un algoritmo estimando cuánta pila y cuánto heap demanda.",
+          "Esa lectura es la que permite anticipar dos fallas clásicas de la ingeniería de software, el desbordamiento de pila y el crecimiento de memoria sin liberar, antes de que ocurran en producción."
+        ],
+        "componentOrder": [
+          "pdf-s4-teoria",
+          "pdf-s4-colflow",
+          "pdf-s4-datahighlight",
+          "pdf-s4-tabla",
+          "pdf-s4-twocol-mem",
+          "pdf-s4-chart",
+          "pdf-s4-ejemplo",
+          "pdf-s4-code",
+          "pdf-s4-callout"
+        ],
+        "components": {
+          "pdf-s4-teoria": {
+            "type": "theory-block",
+            "title": "Pila (stack) y montículo (heap)",
+            "body": [
+              "Mientras un programa se ejecuta, el sistema le reserva dos regiones de memoria con lógicas opuestas. La pila guarda el contexto de cada llamada activa —sus parámetros, sus variables locales y la dirección de retorno— dentro de una estructura llamada marco de pila."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "layers",
+                "text": "Pila: marcos de llamada, LIFO, liberación automática al retornar."
+              },
+              {
+                "icon": "dataset",
+                "text": "Heap: objetos dinámicos, liberados por conteo de referencias cuando nadie los referencia."
+              }
+            ]
+          },
+          "pdf-s4-tabla": {
+            "type": "table",
+            "title": "Pila frente a montículo",
+            "columns": [
+              "Criterio",
+              "Pila (stack)",
+              "Montículo (heap)"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Qué almacena",
+                  "Marcos de llamada",
+                  "Objetos dinámicos"
+                ]
+              },
+              {
+                "cells": [
+                  "Liberación",
+                  "Automática al retornar (LIFO)",
+                  "Por conteo de referencias"
+                ]
+              },
+              {
+                "cells": [
+                  "Tamaño",
+                  "Profundidad de llamadas",
+                  "Volumen de datos"
+                ]
+              },
+              {
+                "cells": [
+                  "Riesgo",
+                  "Desbordamiento de pila",
+                  "Crecimiento sin liberar"
+                ]
+              }
+            ]
+          },
+          "pdf-s4-chart": {
+            "type": "chart",
+            "chartType": "line",
+            "title": "Memoria de pila: recursión vs. iteración",
+            "description": [
+              "La pila crece con la profundidad de llamadas. Este gráfico compara los marcos activos al sumar listas de tamaño creciente con una versión recursiva (un marco por elemento) y una iterativa (profundidad constante), para sustentar la decisión de diseño exigida por el RA2."
+            ],
+            "note": "El eje horizontal es el tamaño de la lista n y el vertical los marcos de pila activos en el peor momento. La serie recursiva crece linealmente (n marcos) y se acerca al límite del intérprete; la iterativa se mantiene plana en torno a 2. Conclusión: para n grande, la versión iterativa evalúa mejor la memoria de pila y evita el desbordamiento.",
+            "height": "300px",
+            "labels": [
+              "n=100",
+              "n=500",
+              "n=1000",
+              "n=2000",
+              "n=3000"
+            ],
+            "datasets": [
+              {
+                "label": "Recursiva (marcos)",
+                "data": [
+                  100,
+                  500,
+                  1000,
+                  2000,
+                  3000
+                ]
+              },
+              {
+                "label": "Iterativa (marcos)",
+                "data": [
+                  2,
+                  2,
+                  2,
+                  2,
+                  2
+                ]
+              }
+            ],
+            "caption": "Comparación de la profundidad de pila entre una suma recursiva y una iterativa."
+          },
+          "pdf-s4-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: profundidad máxima de la pila",
+            "context": [
+              "main llama a leer_lote(), que llama a promediar(), que llama a redondear(); ninguna es recursiva."
+            ],
+            "solution": [
+              "Cada llamada apila un marco sobre el anterior; en el instante en que redondear se ejecuta, hay cuatro marcos activos: la profundidad máxima es $4$.",
+              "Por el orden LIFO, redondear (el último apilado) es el primero en liberarse: el orden de liberación es redondear → promediar → leer_lote → main."
+            ]
+          },
+          "pdf-s4-code": {
+            "type": "code",
+            "title": "Medir el límite de recursión",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "profundidad_pila.py",
+            "instructions": [
+              "Guarda como profundidad_pila.py y ejecútalo con python profundidad_pila.py. Primero observa el límite de recursión y la suma; luego cambia el 900 por un valor mayor que ese límite (por ejemplo 1500) y vuelve a ejecutar para provocar deliberadamente el RecursionError."
+            ],
+            "code": "import sys\n\ndef suma_recursiva(lista):\n    if not lista:              # caso base: lista vacia\n        return 0\n    return lista[0] + suma_recursiva(lista[1:])  # un marco por elemento\n\nprint(sys.getrecursionlimit())          # limite del interprete\nprint(suma_recursiva(list(range(900)))) # 900 marcos: aun cabe",
+            "expectedOutput": [
+              "Imprime el límite (típicamente 1000) y la suma 404550. Con un tamaño mayor que el límite aparece RecursionError."
+            ],
+            "explanation": [
+              "El código convierte la teoría de la pila en una medición concreta. suma_recursiva se llama a sí misma una vez por cada elemento, de modo que sumar una lista de $n$ datos apila $n$ marcos: su demanda de pila crece de forma lineal, $O(n)$. Por eso con 900 elementos todavía cabe dentro del límite del intérprete y se obtiene la suma $0+1+\\dots+899 = 404550$, pero al superar ese límite la pila se desborda y aparece el RecursionError. La lección de evaluación es directa: un algoritmo iterativo que recorre la lista con un ciclo mantiene la profundidad de pila constante, $O(1)$, y por tanto es preferible cuando $n$ puede ser grande, tal como anticipa el gráfico de esta misma sección."
+            ]
+          },
+          "pdf-s4-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Cierre y puente hacia la siguiente sección",
+            "body": [
+              "Ya tienes la herramienta del RA2: leer un algoritmo estimando su demanda de pila (profundidad de llamadas) y de heap (volumen y vida de los datos). Falta unir todas las piezas del tema —funciones, parámetros, alcance y memoria— bajo un mismo marco de diseño. Eso hace la Sección 5: la programación estructurada, donde refactorizaremos una solución real y mostraremos cómo la modularidad vuelve la memoria evaluable parte por parte.",
+              "La complejidad espacial $O(n)$, el conteo de referencias y el recolector de basura, junto con casos de fuga de memoria en sistemas de monitoreo, se desarrollan en la bibliografía complementaria (Cormen et al., 2009; Downey, 2015)."
+            ]
+          },
+          "pdf-s4-datahighlight": {
+            "type": "data-highlight",
+            "title": "Demanda de pila: recursiva frente a iterativa",
+            "items": [
+              {
+                "value": "$O(n)$",
+                "label": "Pila de la suma recursiva (un marco por elemento)"
+              },
+              {
+                "value": "$O(1)$",
+                "label": "Pila de la suma iterativa (profundidad constante)"
+              },
+              {
+                "value": "1000",
+                "label": "Límite de recursión por defecto en CPython"
+              }
+            ]
+          },
+          "pdf-s4-twocol-mem": {
+            "type": "two-column",
+            "title": "Cómo se libera cada región",
+            "columns": [
+              {
+                "title": "Pila (stack)",
+                "body": [
+                  "Se libera sola al retornar: el marco de la llamada se desapila en orden LIFO.",
+                  "Su tamaño depende de la profundidad de las llamadas; una recursión muy profunda la desborda."
+                ]
+              },
+              {
+                "title": "Montículo (heap)",
+                "body": [
+                  "Se libera cuando ningún nombre referencia el objeto, mediante conteo de referencias.",
+                  "Su tamaño depende del volumen y la vida de los datos; acumular sin descartar la hace crecer sin control."
+                ]
+              }
+            ]
+          },
+          "pdf-s4-colflow": {
+            "type": "column-flow",
+            "body": [
+              "Cada vez que se invoca una función se apila un marco nuevo encima del anterior, y cada vez que una función retorna se desapila el suyo, siempre en orden LIFO (el último que entra es el primero que sale).",
+              "Por eso la liberación de la pila es automática y aquí se aclara el misterio de la sección anterior: una variable local desaparece sola porque su marco se desapila al terminar la función. El montículo o memoria dinámica, en cambio, guarda los objetos que crecen o que deben sobrevivir más allá de una sola llamada: listas, diccionarios y objetos en general.",
+              "Conviene precisar cómo conviven ambas regiones en Python. Cuando creas una lista, el nombre de la variable vive en la pila, dentro del marco de la función, pero el objeto lista en sí vive en el heap; la pila solo guarda una referencia que apunta a él.",
+              "Este es, de hecho, el mecanismo que explicaba en la Sección 2 por qué un objeto mutable pasado a una función puede modificarse 'desde dentro': dos nombres en marcos distintos pueden apuntar al mismo objeto del heap. La memoria del montículo no se libera al retornar, sino cuando ningún nombre sigue referenciando el objeto, mediante el conteo de referencias del intérprete.",
+              "Evaluar la memoria de un algoritmo —lo que pide el RA2— consiste, entonces, en estimar dos cantidades: su demanda de pila, dada por la profundidad de las llamadas, y su demanda de heap, dada por el volumen de los datos que mantiene vivos.",
+              "Cada región tiene su falla característica. La pila puede desbordarse cuando una recursión es demasiado profunda y se apilan más marcos de los que el intérprete admite, lo que en Python se manifiesta como un RecursionError. El heap, por su parte, puede crecer sin control cuando se acumulan datos en estructuras de larga vida que nunca se descartan.",
+              "Analizar la complejidad espacial de un algoritmo, en la línea de Cormen et al. (2009), es precisamente cuantificar cómo escalan ambas demandas con el tamaño del problema; ese análisis es el desempeño que el RA2 espera evidenciar."
+            ]
+          }
+        }
+      },
+      "pdf-seccion-5": {
+        "title": "Programación estructurada y diseño modular",
+        "intro": [
+          "Hemos recorrido las cuatro piezas del tema: definir y llamar funciones, comunicarlas con parámetros y retorno, entender el alcance de sus variables y evaluar la memoria que consumen. Falta el marco que las une y les da sentido de conjunto. Ese marco es la programación estructurada, el paradigma bajo el cual todas estas técnicas se vuelven una metodología de diseño y no un repertorio de trucos sueltos.",
+          "En este capítulo final aprenderás a refactorizar una solución que ya funciona para volverla modular sin alterar su resultado, y comprobarás cómo esa organización hace que la memoria —la preocupación del RA2— pueda evaluarse pieza por pieza. Con ello cerramos el Tema 05 y dejamos preparada la base del proyecto integrador del Tema 06."
+        ],
+        "componentOrder": [
+          "pdf-s5-teoria",
+          "pdf-s5-colflow",
+          "pdf-s5-keybox-bohm",
+          "pdf-s5-tabla",
+          "pdf-s5-ejemplo",
+          "pdf-s5-code",
+          "pdf-s5-callout"
+        ],
+        "components": {
+          "pdf-s5-teoria": {
+            "type": "theory-block",
+            "title": "Estructura, modularidad y evaluación de memoria",
+            "body": [
+              "El punto de partida es un resultado clásico. El teorema de Böhm-Jacopini, recogido por Joyanes (2013) como fundamento de la programación estructurada, demuestra que todo algoritmo puede expresarse combinando solo tres estructuras de control —secuencia, selección e iteración— sin necesidad de saltos arbitrarios. Renunciar a esos saltos no es una limitación, sino la condición que hace que un programa tenga un único flujo claro y rastreable."
+            ],
+            "keyIdeas": [
+              {
+                "icon": "view_module",
+                "text": "Dividir en funciones de responsabilidad única; main orquesta."
+              },
+              {
+                "icon": "insights",
+                "text": "Evaluar memoria por piezas: pila (profundidad) y heap (vida de los datos)."
+              }
+            ]
+          },
+          "pdf-s5-tabla": {
+            "type": "table",
+            "title": "Principios del diseño modular",
+            "columns": [
+              "Principio",
+              "Significado",
+              "Efecto"
+            ],
+            "rows": [
+              {
+                "cells": [
+                  "Responsabilidad única",
+                  "Una función, una tarea",
+                  "Prueba sencilla; pila acotada"
+                ]
+              },
+              {
+                "cells": [
+                  "Bajo acoplamiento",
+                  "Poca dependencia entre funciones",
+                  "Cambios localizados; menos efectos colaterales"
+                ]
+              },
+              {
+                "cells": [
+                  "Comunicación explícita",
+                  "Datos por parámetros y retorno",
+                  "Flujo visible; vida de los datos predecible"
+                ]
+              }
+            ]
+          },
+          "pdf-s5-ejemplo": {
+            "type": "example",
+            "title": "Ejemplo resuelto: refactorizar un control de calidad",
+            "context": [
+              "Un bloque en main lee diámetros $[10.0, 10.2, 9.5, 10.1]$, descarta los que difieren más de la tolerancia $0.3$ del nominal $10.0$ y reporta el porcentaje aprobado."
+            ],
+            "formula": "\\text{tasa} = \\frac{\\text{aprobadas}}{\\text{total}} \\cdot 100",
+            "solution": [
+              "Se extraen validar(d, nominal, tol), tasa_aprobacion(medidas, nominal, tol) y reportar(tasa); main solo las compone. Validación: 10.0 ✓, 10.2 ✓, 9.5 ✗ ($|9.5-10|=0.5>0.3$), 10.1 ✓, es decir 3 aprobadas de 4.",
+              "La tasa es $\\frac{3}{4}\\cdot 100 = 75\\%$, idéntica al bloque monolítico original. La lista intermedia de aprobadas vive solo durante tasa_aprobacion y se libera al retornar, lo que evidencia el manejo acotado del heap (RA2)."
+            ]
+          },
+          "pdf-s5-code": {
+            "type": "code",
+            "title": "Versión modular del control de calidad",
+            "language": "python",
+            "languageLabel": "Python",
+            "fileName": "control_calidad.py",
+            "instructions": [
+              "Guarda como control_calidad.py y ejecuta con python control_calidad.py. Cambia la lista o la tolerancia y observa que solo cambian los argumentos, no el cuerpo de las funciones."
+            ],
+            "code": "def validar(d, nominal, tol):\n    \"\"\"Una sola responsabilidad: decir si una pieza esta dentro de tolerancia.\"\"\"\n    return abs(d - nominal) <= tol\n\ndef tasa_aprobacion(medidas, nominal, tol):\n    \"\"\"Una sola responsabilidad: calcular el porcentaje aprobado.\"\"\"\n    aprobadas = [d for d in medidas if validar(d, nominal, tol)]\n    return len(aprobadas) / len(medidas) * 100\n\ndef main():\n    medidas = [10.0, 10.2, 9.5, 10.1]\n    print(f\"Aprobacion: {tasa_aprobacion(medidas, 10.0, 0.3):.1f}%\")\n\nmain()",
+            "expectedOutput": [
+              "Imprime 'Aprobacion: 75.0%'."
+            ],
+            "explanation": [
+              "El programa es deliberadamente modular para que el análisis de memoria sea sencillo. Cada función tiene una única responsabilidad —validar decide, tasa_aprobacion cuenta y main orquesta— y se comunican solo por parámetros y retorno, sin variables globales. Desde el RA2, la lectura es la siguiente: la profundidad de pila es constante y pequeña (main llama a tasa_aprobacion, que llama a validar una vez por dato, pero esas llamadas no se anidan, sino que se suceden), de modo que no hay riesgo de desbordamiento. En el heap, la única estructura que se crea es la lista aprobadas; al ser una variable local, vive solo durante la ejecución de tasa_aprobacion y se libera en cuanto la función retorna. El resultado, $\\frac{3}{4}\\cdot 100 = 75\\%$, es idéntico al del bloque monolítico original, lo que confirma que la refactorización preservó el comportamiento mientras volvió la memoria fácil de evaluar."
+            ]
+          },
+          "pdf-s5-callout": {
+            "type": "callout",
+            "tone": "info",
+            "title": "Cierre del tema y puente hacia el proyecto integrador",
+            "body": [
+              "Con esto cierras el Tema 05: ya sabes construir algoritmos a partir de funciones de responsabilidad única, comunicarlas con parámetros y retorno, controlar el alcance de sus variables y evaluar la memoria que consumen en la pila y en el heap. Estas cuatro destrezas son exactamente las que el proyecto integrador del Tema 06 te pedirá combinar en una solución algorítmica completa de orientación industrial.",
+              "Antes de avanzar, pon a prueba lo aprendido con el banco de ejercicios que sigue. Los patrones de refactorización, la cohesión y el acoplamiento con casos industriales se desarrollan en la bibliografía básica y complementaria (Joyanes, 2013; Molina & Jiménez, 2012)."
+            ]
+          },
+          "pdf-s5-keybox-bohm": {
+            "type": "key-box",
+            "variant": "clave",
+            "title": "Las tres estructuras de control",
+            "body": [
+              "El teorema de Böhm-Jacopini demuestra que todo algoritmo puede expresarse combinando solo secuencia, selección e iteración, sin saltos arbitrarios. Sobre ese cimiento, el diseño modular descompone el problema en funciones de responsabilidad única que un $\\text{main}$ se limita a orquestar."
+            ]
+          },
+          "pdf-s5-colflow": {
+            "type": "column-flow",
+            "body": [
+              "Sobre ese cimiento se construye el diseño modular: descomponer el problema en funciones de responsabilidad única que un programa principal, main, se limita a componer. El resultado son programas legibles, probables y mantenibles, justo lo que distingue una solución de ingeniería profesional de un guion improvisado.",
+              "La técnica concreta para llegar allí desde código existente se llama refactorización. Refactorizar es reorganizar un programa que ya funciona para hacerlo modular sin cambiar en absoluto su comportamiento observable: se identifican las responsabilidades mezcladas en un bloque grande, se extrae cada una a una función con su propia interfaz de parámetros y retorno, y se deja main como simple orquestador.",
+              "Oviedo (2005) insiste en que el criterio de éxito no es 'que se vea más bonito', sino producir exactamente el mismo resultado con piezas que ahora pueden probarse y reutilizarse por separado.",
+              "Aquí se cierra el círculo con el RA2. Una solución monolítica es difícil de evaluar en cuanto a memoria porque todo ocurre a la vez; una solución modular, en cambio, vuelve la memoria evaluable por partes.",
+              "Se puede examinar cada función y preguntarse, por un lado, por su profundidad de pila —¿incluye recursión que pueda desbordar?— y, por otro, por las estructuras que crea en el heap y su tiempo de vida —¿algún dato se acumula sin liberarse?—.",
+              "Esa lectura por piezas es la que permite justificar al menos una decisión de eficiencia, que es precisamente la evidencia que el Resultado de Aprendizaje 2 espera del estudiante."
+            ]
+          }
+        }
+      },
+      "pdf-ejercicios": {
+        "title": "Banco de ejercicios del Tema 05",
+        "intro": [
+          "El banco mezcla deliberadamente distintos tipos de trabajo —cálculo, código, análisis, reflexión y consulta— para que ejercites el tema desde varios ángulos y no solo mecánicamente. Cada ejercicio indica con su etiqueta qué se espera de ti. Resuelve combinando trabajo manual y verificación en Python, y, siempre que aplique, indica qué decisión de memoria sustenta tu respuesta (RA2)."
+        ],
+        "componentOrder": [
+          "pdf-ejercicios-banco",
+          "pdf-ejercicios-taller"
+        ],
+        "components": {
+          "pdf-ejercicios-banco": {
+            "type": "exercise-set",
+            "title": "Ejercicios variados",
+            "items": [
+              {
+                "kind": "practico",
+                "title": "Definir y usar una función de conversión",
+                "prompt": "Define una función celsius_a_fahrenheit(c) que retorne $F = \\frac{9}{5}c + 32$ y úsala para convertir una lectura de $25\\ ^{\\circ}\\text{C}$ de un sensor. Indica el valor retornado.",
+                "formula": "F = \\frac{9}{5}c + 32",
+                "answer": "F = (9/5)(25) + 32 = 77.0, es decir 77.0 ^{\\circ}F."
+              },
+              {
+                "kind": "practico",
+                "title": "Trazar una llamada con retorno",
+                "prompt": "Traza la llamada total = calcular_caudal(0.04, 1.5) para una función que retorna $A \\cdot v$. Indica el valor final de total y a qué línea regresa el control después del return.",
+                "formula": "Q = A \\cdot v = 0.04 \\cdot 1.5",
+                "answer": "total = 0.06 m^3/s; el control regresa a la línea de la asignación que hizo la llamada."
+              },
+              {
+                "kind": "analisis",
+                "title": "El defecto mutable que recuerda",
+                "prompt": "Una función acumular(dato, registro=[]) usa una lista vacía como valor por defecto y va agregando datos en cada llamada. Explica por qué el registro 'recuerda' valores de llamadas anteriores, relaciónalo con el momento en que se crea el objeto en el heap y reescribe la cabecera usando None como defecto para corregir el problema.",
+                "formula": "\\text{registro}=[]\\ \\Rightarrow\\ \\text{registro}=\\text{None}"
+              },
+              {
+                "kind": "analisis",
+                "title": "Sombreado de una variable global",
+                "prompt": "Dada tarifa=1500 declarada como global, una función ejecuta tarifa=2000 en su cuerpo y retorna horas*tarifa con horas=4. Determina cuánto vale la tarifa global después de la llamada, cuánto retorna la función y justifica ambas cosas aplicando la regla LEGB.",
+                "formula": "\\text{retorno}=4 \\cdot 2000;\\quad \\text{tarifa global}=?"
+              },
+              {
+                "kind": "codigo",
+                "title": "Recursiva frente a iterativa: profundidad de pila",
+                "prompt": "Implementa suma_recursiva y suma_iterativa para la misma lista, ejecútalas y observa cuál se acerca al RecursionError al crecer n. Explica en tu respuesta por qué difieren en profundidad de pila.",
+                "language": "python",
+                "code": "import sys\n\ndef suma_recursiva(lista):\n    if not lista:\n        return 0\n    return lista[0] + suma_recursiva(lista[1:])\n\ndef suma_iterativa(lista):\n    total = 0\n    for x in lista:\n        total += x\n    return total\n\ndatos = list(range(900))\nprint(sys.getrecursionlimit())\nprint(suma_recursiva(datos))\nprint(suma_iterativa(list(range(3000))))",
+                "expectedOutput": "Imprime el límite (típicamente 1000), la suma recursiva 404550 y la suma iterativa 4498500. Si en suma_recursiva se usa una lista mayor que el límite, se produce RecursionError; la iterativa, con profundidad de pila constante, no falla."
+              },
+              {
+                "kind": "codigo",
+                "title": "Verificar una refactorización modular",
+                "prompt": "Escribe un control de calidad en dos versiones: una monolítica dentro de main y otra refactorizada en al menos tres funciones de responsabilidad única (validar, calcular la tasa y reportar). Ejecuta ambas con los mismos datos y verifica con un assert que producen idéntico resultado.",
+                "language": "python",
+                "code": "def validar(d, nominal, tol):\n    return abs(d - nominal) <= tol\n\ndef tasa(medidas, nominal, tol):\n    aprobadas = [d for d in medidas if validar(d, nominal, tol)]\n    return len(aprobadas) / len(medidas) * 100\n\ndef version_monolitica(medidas, nominal, tol):\n    c = 0\n    for d in medidas:\n        if abs(d - nominal) <= tol:\n            c += 1\n    return c / len(medidas) * 100\n\nm = [10.0, 10.2, 9.5, 10.1]\nassert tasa(m, 10.0, 0.3) == version_monolitica(m, 10.0, 0.3)\nprint(f\"Aprobacion: {tasa(m, 10.0, 0.3):.1f}%\")",
+                "expectedOutput": "Imprime 'Aprobacion: 75.0%' sin que el assert falle, lo que confirma que la refactorización preservó el comportamiento."
+              },
+              {
+                "kind": "reflexion",
+                "title": "Cuándo dividir una función",
+                "prompt": "Reflexiona y argumenta: en tus propias palabras, ¿cómo decides que una función 'hace demasiado' y conviene dividirla en varias? ¿Qué señales del código te lo indican y qué beneficio concreto de mantenibilidad y de evaluación de memoria obtienes al separar responsabilidades? Responde en un párrafo con criterio propio."
+              },
+              {
+                "kind": "consulta",
+                "title": "El límite de recursión de Python",
+                "prompt": "Consulta en una fuente confiable cuál es el límite de recursión por defecto de CPython y cómo se inspecciona o modifica desde el programa.",
+                "steps": [
+                  "Ubica la función sys.getrecursionlimit() en la documentación oficial de Python o en la bibliografía del tema.",
+                  "Anota el valor por defecto y la función que permite cambiarlo (sys.setrecursionlimit).",
+                  "Explica por qué subir ese límite no siempre es seguro y relaciónalo con el tamaño del marco de pila."
+                ],
+                "deliverable": "Ficha breve (5 líneas) con el valor por defecto, las funciones implicadas y una advertencia, con la referencia consultada en APA 7."
+              },
+              {
+                "kind": "investigacion",
+                "title": "Recursión de cola y memoria en sistemas de monitoreo",
+                "prompt": "Investiga qué es la recursión de cola (tail recursion), por qué Python no la optimiza y qué implica eso para un sistema que monitorea un sensor durante una semana y podría acumular datos sin liberarlos en el heap.",
+                "steps": [
+                  "Busca una fuente académica reciente que defina la recursión de cola y su optimización (TCO).",
+                  "Resume en cinco líneas por qué CPython no aplica esa optimización y qué riesgo de pila implica.",
+                  "Propón para el caso del sensor una estrategia que acote la memoria del heap (procesar por bloques, descartar lecturas antiguas o persistir en disco) y justifica tu elección."
+                ],
+                "deliverable": "Informe de media página con la cita en APA 7 y la estrategia de memoria propuesta para el caso industrial."
+              }
+            ]
+          },
+          "pdf-ejercicios-taller": {
+            "type": "evaluation-activity",
+            "title": "Taller evaluativo del Tema 05",
+            "learningOutcomeIds": [
+              "RA2"
+            ],
+            "criterion": "CE2: Entrega soluciones informáticas modulares y genera soluciones mediante programación estructurada, evaluando la asignación de memoria.",
+            "evidence": "Refactorización de una solución previa en funciones modulares más un análisis de memoria (profundidad de pila, estructuras del heap y su tiempo de vida, y una decisión de eficiencia justificada).",
+            "technique": "Taller formativo",
+            "instrument": "Rúbrica analítica disciplinar",
+            "weight": "Formativa (sin ponderación numérica fija en el syllabus)",
+            "evaluationMoment": "avance",
+            "participationType": "individual",
+            "feedback": {
+              "strengths": "Funciones cohesionadas y bien nombradas; análisis de memoria específico de la propia solución.",
+              "improvement": "Funciones que mezclan responsabilidades o análisis de memoria genérico.",
+              "reinforcement": "Repasa las secciones 4 y 5 y rehaz el análisis sobre tu código real.",
+              "nextStep": "Reutiliza la solución modular como base del proyecto integrador del Tema 06."
+            },
+            "rubric": {
+              "type": "analitica",
+              "levels": [
+                "No acreditable",
+                "Deficiente",
+                "Insuficiente",
+                "Aceptable",
+                "Bueno",
+                "Muy bueno",
+                "Sobresaliente"
+              ],
+              "criteria": [
+                {
+                  "name": "Modularidad",
+                  "descriptors": {
+                    "Aceptable": "Divide en funciones aunque alguna mezcla tareas.",
+                    "Sobresaliente": "Funciones cohesionadas, bajo acoplamiento, main breve."
+                  }
+                },
+                {
+                  "name": "Análisis de memoria (RA2)",
+                  "descriptors": {
+                    "Aceptable": "Menciona pila y heap en general.",
+                    "Sobresaliente": "Estima profundidad de pila, identifica estructuras del heap y su vida, y justifica una optimización."
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "pdf-referencias": {
+        "title": "Referencias",
+        "intro": [
+          "Fuentes citadas en APA 7. Los recursos creados para este documento son de elaboración propia."
+        ],
+        "componentOrder": [
+          "pdf-referencias-lista"
+        ],
+        "components": {
+          "pdf-referencias-lista": {
+            "type": "references",
+            "title": "Referencias bibliográficas",
+            "items": [
+              "Joyanes Aguilar, L. (2013). Fundamentos generales de programación. McGraw-Hill Interamericana.",
+              "Joyanes Aguilar, L. (2008). Fundamentos de programación. McGraw Hill.",
+              "Oviedo Regino, E. (2005). Lógica de programación. Ecoe Ediciones.",
+              "Molina Martínez, J., & Jiménez Buendía, M. (2012). Programación gráfica para ingenieros. Alfaomega.",
+              "Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms (3rd ed.). MIT Press.",
+              "Downey, A. B. (2015). Think Python: How to think like a computer scientist (2nd ed.). O'Reilly Media.",
+              "Figuras y fragmentos de código del Tema 05 son de elaboración propia."
+            ]
+          }
+        }
+      }
+    }
+  }
+}
